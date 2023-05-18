@@ -2,4 +2,4 @@
 Sistema gestor de RRHH
 
 Login
-![Vista del login](descargas/WhatsApp Image 2023-05-17 at 22.35.42.jpg)
+![Vista del login](C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\login.jpg)
