@@ -1,5 +1,5 @@
 # talentium
-Sistema gestor de RRHH
+Sistema gestor de RRHH.
 
 Login
 
