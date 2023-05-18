@@ -1,0 +1,6 @@
+C:\Users\cecilia\source\repos\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\cecilia\source\repos\Talentium\Comun\bin\Debug\Comun.pdb
+C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.pdb
