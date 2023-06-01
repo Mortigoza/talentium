@@ -16,5 +16,12 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu menu = new frmMenu();
+            menu.Show();
+        }
     }
 }

@@ -4,3 +4,9 @@ C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyRef
 C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.dll
 C:\Users\cecilia\source\repos\Talentium\Comun\obj\Debug\Comun.pdb
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\bin\Debug\Comun.pdb
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
