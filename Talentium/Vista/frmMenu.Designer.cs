@@ -36,8 +36,8 @@
             this.altasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestiónDelTalentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónDelTalentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisYReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +50,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(240, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(235, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(324, 186);
             this.pictureBox1.TabIndex = 18;
@@ -61,7 +61,7 @@
             this.titulo.BackColor = System.Drawing.Color.Transparent;
             this.titulo.Font = new System.Drawing.Font("Berlin Sans FB", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.ForeColor = System.Drawing.Color.SteelBlue;
-            this.titulo.Location = new System.Drawing.Point(181, 274);
+            this.titulo.Location = new System.Drawing.Point(176, 274);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(450, 96);
             this.titulo.TabIndex = 19;
@@ -99,6 +99,7 @@
             this.altasToolStripMenuItem.Name = "altasToolStripMenuItem";
             this.altasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altasToolStripMenuItem.Text = "Altas";
+            this.altasToolStripMenuItem.Click += new System.EventHandler(this.altasToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -112,18 +113,18 @@
             this.bajasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bajasToolStripMenuItem.Text = "Bajas";
             // 
-            // gestiónDelTalentoToolStripMenuItem
-            // 
-            this.gestiónDelTalentoToolStripMenuItem.Name = "gestiónDelTalentoToolStripMenuItem";
-            this.gestiónDelTalentoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.gestiónDelTalentoToolStripMenuItem.Text = "Gestión del Talento";
-            // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            // 
+            // gestiónDelTalentoToolStripMenuItem
+            // 
+            this.gestiónDelTalentoToolStripMenuItem.Name = "gestiónDelTalentoToolStripMenuItem";
+            this.gestiónDelTalentoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.gestiónDelTalentoToolStripMenuItem.Text = "Gestión del Talento";
             // 
             // gestiónDeAsistenciasToolStripMenuItem
             // 
