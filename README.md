@@ -21,7 +21,7 @@ Módulo Administración del Personal - Altas
 
 - Solapa Datos Académicos
 
-![Vista de formulario Alta de Personal - solapa Datos Académicos](alta-datos-academicos.jpeg)
+![Vista de formulario Alta de Personal - solapa Datos Académicos](alta-datos-academ.jpeg)
 
 - Solapa Datos Laborales
 
