@@ -33,3 +33,4 @@ C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debu
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources

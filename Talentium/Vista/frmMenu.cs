@@ -31,5 +31,12 @@ namespace Vista
         {
 
         }
+
+        private void altasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAltaPersonal alta = new frmAltaPersonal();
+            alta.Show();
+        }
     }
 }
