@@ -21,7 +21,7 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Validaciones.Validar(txtUsername.Text, txtPassword.Text))
+            if (Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
             {
                 this.Hide();
                 frmMenu menu = new frmMenu();
