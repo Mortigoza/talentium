@@ -72,6 +72,7 @@
     <Compile Include="Properties\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UtilidadesForms.cs" />
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
     </EmbeddedResource>

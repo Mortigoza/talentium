@@ -54,15 +54,16 @@
             // 
             this.titulo.AutoSize = true;
             this.titulo.BackColor = System.Drawing.Color.Transparent;
-            this.titulo.Font = new System.Drawing.Font("Berlin Sans FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.Location = new System.Drawing.Point(64, 283);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(298, 71);
+            this.titulo.Size = new System.Drawing.Size(314, 73);
             this.titulo.TabIndex = 1;
             this.titulo.Text = "Talentium";
             // 
             // txtUsername
             // 
+            this.txtUsername.AccessibleName = "Usuario";
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(436, 173);
             this.txtUsername.Multiline = true;
@@ -70,9 +71,11 @@
             this.txtUsername.Size = new System.Drawing.Size(252, 30);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.Text = "Usuario";
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             // 
             // txtPassword
             // 
+            this.txtPassword.AccessibleName = "Contraseña";
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(436, 217);
             this.txtPassword.Multiline = true;
@@ -80,6 +83,7 @@
             this.txtPassword.Size = new System.Drawing.Size(252, 30);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // btnLogin
             // 
