@@ -12,11 +12,11 @@ namespace LogicaNegocio
     {
         private static int intentos = 5;
         private static DateTime horaBloqueo;
-        private static bool bloqueado;
-        private static double lapsoBloqueo = 1;
+        private static bool bloqueado = false;
+        private static double lapsoBloqueo = 10;
 
         public static int GetIntentos() { return intentos; }
-        public static DateTime GetHoraDesbloqueo() { return horaBloqueo.AddMinutes(lapsoBloqueo); }
+        public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
 
         public static bool ValUsr(string usuario, string password)
         {
@@ -32,7 +32,7 @@ namespace LogicaNegocio
             else valIntentos();
             if (comparar(digitoBd, digitoForm)) pswDigVal = true;
 
-            return usrVal && pswDigVal;
+            return usrVal && pswDigVal && !bloqueado;
         }
         private static bool comparar(string x1, string x2)
         {
@@ -46,8 +46,8 @@ namespace LogicaNegocio
             }
             else if (bloqueado == false)
             {
-                horaBloqueo = System.DateTime.Now;
                 bloqueado = true;
+                horaBloqueo = System.DateTime.Now;
             }
             else
             {

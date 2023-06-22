@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace Vista
             }
             else if (Validaciones.GetIntentos() == 0)
             {
-                MessageBox.Show($"El usuario se encuentra bloqueado de desbloquara a las {Validaciones.GetHoraDesbloqueo().Hour}:{Validaciones.GetHoraDesbloqueo().Minute}");
+                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
             }
         }
 
