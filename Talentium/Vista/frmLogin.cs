@@ -40,12 +40,12 @@ namespace Vista
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            UtilidadesForms.Prueba(txtUsername, this);
+            UtilidadesForms.TextboxDynamic(txtUsername, this);
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            UtilidadesForms.Prueba(txtPassword, this);
+            UtilidadesForms.TextboxDynamic(txtPassword, this);
         }
     }
 }

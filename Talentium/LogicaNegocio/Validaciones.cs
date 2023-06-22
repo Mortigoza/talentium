@@ -20,19 +20,25 @@ namespace LogicaNegocio
 
         public static bool ValUsr(string usuario, string password)
         {
-            bool usrVal = false, pswDigVal = false;
+            bool pswVal = false, pswDigVal = false;
 
-            string usrForm = Seguridad.Hash(Convert.ToString(usuario + password));
-            string usrBd = "d33f5358e56f51e8ec97773106f03f23e45f2b86a96770e99e3fd06128b7aca4";
+            string usrForm = usuario;
+            string usrBd = Seguridad.DesEncriptar("VAB1AHQAbwB6AA==");
+
+            string pswForm = Seguridad.Hash(Convert.ToString(usuario + password));
+            string pswBd = "d33f5358e56f51e8ec97773106f03f23e45f2b86a96770e99e3fd06128b7aca4";
 
             string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
             string digitoBd = "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9";
 
-            if (comparar(usrBd, usrForm)) usrVal = true;
-            else valIntentos();
+            if (comparar(usrForm, usrBd))
+            {
+                if (comparar(pswBd, pswForm)) pswVal = true;
+                else valIntentos();
+            }
             if (comparar(digitoBd, digitoForm)) pswDigVal = true;
 
-            return usrVal && pswDigVal && !bloqueado;
+            return pswVal && pswDigVal && !bloqueado;
         }
         private static bool comparar(string x1, string x2)
         {

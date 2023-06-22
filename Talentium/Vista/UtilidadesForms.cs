@@ -44,7 +44,7 @@ namespace Comun
         }
 
         // Maneja texto excrito en un textbox del formulario
-        public static void Prueba(TextBox txt, Control control)
+        public static void TextboxDynamic(TextBox txt, Control control)
         {
             restaurar(control);
             if (txt.Text == "" | txt.Text == txt.AccessibleName)
