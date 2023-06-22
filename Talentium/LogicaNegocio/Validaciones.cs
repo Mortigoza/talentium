@@ -10,18 +10,61 @@ namespace LogicaNegocio
 {
     public static class Validaciones
     {
+        private static int intentos = 5;
+        private static DateTime horaBloqueo;
+        private static bool bloqueado;
+        private static double lapsoBloqueo = 1;
+
+        public static int GetIntentos() { return intentos; }
+        public static DateTime GetHoraDesbloqueo() { return horaBloqueo.AddMinutes(lapsoBloqueo); }
+
         public static bool ValUsr(string usuario, string password)
         {
-            string usrForm = usuario;
-            string usrBd = Seguridad.DesEncriptar("VAB1AHQAbwB6AA==");
+            bool usrVal = false, pswDigVal = false;
 
-            string pswForm = Seguridad.Hash(Convert.ToString(password));
-            string pswBd = "b6501dce06f4732aecd5310389c7d9ba6c956c782521f8079d67a81c00979743";
+            string usrForm = Seguridad.Hash(Convert.ToString(usuario + password));
+            string usrBd = "d33f5358e56f51e8ec97773106f03f23e45f2b86a96770e99e3fd06128b7aca4";
 
             string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
             string digitoBd = "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9";
 
-            return usrBd == usrForm && pswBd == pswForm && digitoBd == digitoForm;
+            if (comparar(usrBd, usrForm)) usrVal = true;
+            else valIntentos();
+            if (comparar(digitoBd, digitoForm)) pswDigVal = true;
+
+            return usrVal && pswDigVal;
+        }
+        private static bool comparar(string x1, string x2)
+        {
+            return x1 == x2;
+        }
+        private static void valIntentos()
+        {
+            if (intentos > 0)
+            {
+                intentos--;
+            }
+            else if (bloqueado == false)
+            {
+                horaBloqueo = System.DateTime.Now;
+                bloqueado = true;
+            }
+            else
+            {
+                reactivar();
+            }
+        }
+        private static void reactivar()
+        {
+            if (bloqueado == false)
+            {
+
+            }
+            else if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo))
+            {
+                bloqueado = false;
+                intentos = 5;
+            }
         }
     }
 }

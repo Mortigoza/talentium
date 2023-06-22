@@ -27,9 +27,13 @@ namespace Vista
                 frmMenu menu = new frmMenu();
                 menu.Show();
             }
-            else
+            else if (Validaciones.GetIntentos() > 0)
             {
                 MessageBox.Show("Usuario o contraseña incorrecto.");
+            }
+            else if (Validaciones.GetIntentos() == 0)
+            {
+                MessageBox.Show($"El usuario se encuentra bloqueado de desbloquara a las {Validaciones.GetHoraDesbloqueo().Hour}:{Validaciones.GetHoraDesbloqueo().Minute}");
             }
         }
 
