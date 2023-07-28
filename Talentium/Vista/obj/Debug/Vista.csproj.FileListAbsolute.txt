@@ -34,3 +34,24 @@ C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debu
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\Comun.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Talentium.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
