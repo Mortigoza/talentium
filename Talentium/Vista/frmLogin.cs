@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LogicaNegocio;
 
 namespace Vista
 {
@@ -23,20 +22,23 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
-            {
-                this.Hide();
-                frmMenu menu = new frmMenu();
-                menu.Show();
-            }
-            else if (Validaciones.GetIntentos() > 0)
-            {
-                MessageBox.Show("Usuario o contraseña incorrecto.");
-            }
-            else if (Validaciones.GetIntentos() == 0)
-            {
-                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
-            }
+            CN_LogicaLogin usuario = new CN_LogicaLogin();
+            var validlogin = usuario.LoginUser(txtUsername.Text, txtPassword.Text);
+            MessageBox.Show("datos usuario: " + validlogin);
+            //if (Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
+            //{
+            //    this.Hide();
+            //    frmMenu menu = new frmMenu();
+            //    menu.Show();
+            //}
+            //else if (Validaciones.GetIntentos() > 0)
+            //{
+            //    MessageBox.Show("Usuario o contraseña incorrecto.");
+            //}
+            //else if (Validaciones.GetIntentos() == 0)
+            //{
+            //    MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
+            //}
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)

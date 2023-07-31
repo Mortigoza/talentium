@@ -77,3 +77,5 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talent
 C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 >>>>>>> MR-login
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb

@@ -14,7 +14,8 @@ namespace AccesoDatos
         private readonly string connectionstring;
         public CD_Conexion()
         {
-            connectionstring = "Server=localhost\\SQLEXPRESS;DataBase= loginRRHH;Integrated Security=true";
+            //connectionstring = "Server=localhost\\SQLEXPRESS;DataBase= loginRRHH;Integrated Security=true";
+            connectionstring = "Server=(local);DataBase= loginRRHH;Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {
