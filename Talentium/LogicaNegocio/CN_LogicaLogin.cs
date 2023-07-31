@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,14 @@ namespace LogicaNegocio
     public class CN_LogicaLogin
     {
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
-        public bool LoginUser(string usuario, string pass)
+        public DataTable LoginUser(string usuario, string pass)
         {
             try
             {
-                accesoDatos.Buscar(usuario, pass);
-                return true;
+                return accesoDatos.Buscar(usuario, pass); ;
             }
-            catch (Exception ex) { 
-            
-                return false;   
+            catch (Exception ex) {
+                throw ex;
             }
         }
     }

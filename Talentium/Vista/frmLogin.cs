@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Vista
 {
@@ -18,27 +19,25 @@ namespace Vista
         public Talentium()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            CN_LogicaLogin usuario = new CN_LogicaLogin();
-            var validlogin = usuario.LoginUser(txtUsername.Text, txtPassword.Text);
-            MessageBox.Show("datos usuario: " + validlogin);
-            //if (Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
-            //{
-            //    this.Hide();
-            //    frmMenu menu = new frmMenu();
-            //    menu.Show();
-            //}
-            //else if (Validaciones.GetIntentos() > 0)
-            //{
-            //    MessageBox.Show("Usuario o contraseña incorrecto.");
-            //}
-            //else if (Validaciones.GetIntentos() == 0)
-            //{
-            //    MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
-            //}
+            if (Validaciones.camposVacios(txtUsername.Text, txtPassword.Text))
+            {
+                CN_LogicaLogin login = new CN_LogicaLogin();
+                dataGridView1.DataSource = login.LoginUser(txtUsername.Text, txtPassword.Text);
+                dataGridView1.Refresh();
+            }
+            else if (Validaciones.GetIntentos() > 0)
+            {
+                MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Validaciones.GetIntentos() == 0)
+            {
+                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
+            }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
@@ -57,6 +56,16 @@ namespace Vista
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             UtilidadesForms.TextboxDynamic(txtPassword);
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '\0';
+        }
+
+        private void btnMostrar_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '*';
         }
     }
 }

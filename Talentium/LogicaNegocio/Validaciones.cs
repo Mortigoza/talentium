@@ -73,6 +73,13 @@ namespace LogicaNegocio
 
 
 // VALIDAR CARACTERES
+
+        // VALIDA SI HAY DATOS INGRESADOS
+        public static bool camposVacios(string usr, string psw)
+        {
+            if ((string.IsNullOrWhiteSpace(usr) | usr == "Usuario") | string.IsNullOrWhiteSpace(psw) | psw == "Contraseña") return false;
+            else return true;
+        }
         // VALIDA SI TIENE MINIMO 8 CARACTERES.
         private static bool minimoDeCaracteres(string str)
         {

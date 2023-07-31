@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AccesoDatos
 {
@@ -31,15 +32,15 @@ namespace AccesoDatos
                   }
               }
           }*/
-        public int Buscar(string usuario, string pass)
+        public DataTable Buscar(string usuario, string pass)
         {
             SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.NVarChar };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("loginConsulta_sp", listaParametros.ToArray());
-            int Id = (int)resultado.Rows[0][0];
-            return Id;
+            //int Id = (int)resultado.Rows[0][0];
+            return resultado;
         }
 
     }
