@@ -20,6 +20,7 @@ C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\LogicaNegocio\
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+<<<<<<< HEAD
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -31,3 +32,16 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+=======
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+>>>>>>> MR-login

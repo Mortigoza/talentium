@@ -10,9 +10,18 @@ C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debu
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
 C:\Users\cecilia\source\repos\PFIII_Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+<<<<<<< HEAD
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\bin\Debug\Comun.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\bin\Debug\Comun.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+=======
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\bin\Debug\Comun.pdb
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+>>>>>>> MR-login
