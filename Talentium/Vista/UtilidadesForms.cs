@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista;
 
 namespace Comun
 {
@@ -44,25 +45,20 @@ namespace Comun
         }
 
         // Maneja texto excrito en un textbox del formulario
-        public static void TextboxDynamic(TextBox txt, Control control)
+        public static void TextboxDynamic(TextBox txt)
         {
-            restaurar(control);
-            if (txt.Text == "" | txt.Text == txt.AccessibleName)
+            if (txt.Text == null || txt.Text == txt.AccessibleName)
             {
                 txt.Text = null;
                 txt.ForeColor = System.Drawing.Color.Black;
             }
         }
-        private static void restaurar(Control control)
+        public static void restaurar(TextBox txt)
         {
-            foreach (Control item in control.Controls)
+            if (txt.Text == "")
             {
-                if (item is TextBox text && (text.Text == "" | text.Text == text.AccessibleName))
-                {
-                    text.Text = text.AccessibleName;
-                    text.ForeColor = System.Drawing.Color.Gray;
-                }
-                if (item is GroupBox | item is Panel) restaurar(item);
+                txt.Text = txt.AccessibleName;
+                txt.ForeColor = System.Drawing.Color.Gray;
             }
         }
     }

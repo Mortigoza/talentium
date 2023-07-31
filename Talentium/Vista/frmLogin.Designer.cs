@@ -65,6 +65,7 @@
             // 
             this.txtUsername.AccessibleName = "Usuario";
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtUsername.Location = new System.Drawing.Point(436, 173);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
@@ -72,11 +73,13 @@
             this.txtUsername.TabIndex = 2;
             this.txtUsername.Text = "Usuario";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // txtPassword
             // 
             this.txtPassword.AccessibleName = "Contraseña";
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtPassword.Location = new System.Drawing.Point(436, 217);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
@@ -84,6 +87,7 @@
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnLogin
             // 

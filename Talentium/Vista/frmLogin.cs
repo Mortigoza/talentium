@@ -38,14 +38,22 @@ namespace Vista
             }
         }
 
-        private void txtUsername_Enter(object sender, EventArgs e)
+        private void txtUsername_Leave(object sender, EventArgs e)
         {
-            UtilidadesForms.TextboxDynamic(txtUsername, this);
+            UtilidadesForms.restaurar(txtUsername);
         }
 
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            UtilidadesForms.restaurar(txtPassword);
+        }
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            UtilidadesForms.TextboxDynamic(txtUsername);
+        }
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            UtilidadesForms.TextboxDynamic(txtPassword, this);
+            UtilidadesForms.TextboxDynamic(txtPassword);
         }
     }
 }
