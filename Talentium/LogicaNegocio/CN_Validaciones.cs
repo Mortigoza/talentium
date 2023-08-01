@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegocio
 {
-    public static class Validaciones
+    public static class CN_Validaciones
     {
         private static int intentos = 5;
         private static DateTime horaBloqueo;
@@ -72,9 +72,27 @@ namespace LogicaNegocio
         }
         public static bool ValUsr(string usuario, string password)
         {
+            bool pswVal = false, pswDigVal = false;//true provicional
 
-            return false;
+            string usrForm = usuario;
+            string usrBd = Seguridad.DesEncriptar(userCache.usuario);
+
+            string pswForm = Seguridad.Hash(Convert.ToString(usuario + password));
+            string pswBd = userCache.password;
+
+            string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
+            string digitoBd = "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9";
+
+            if (string.Equals(usrForm, usrBd))
+            {
+                if (string.Equals(pswBd, pswForm)) pswVal = true;
+                else valIntentos();
+            }
+            if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+
+            return pswVal && pswDigVal && !bloqueado;
         }
+
 
         // VALIDAR CARACTERES
 

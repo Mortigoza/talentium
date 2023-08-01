@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Vista
 {
@@ -24,26 +23,37 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Validaciones.camposVacios(txtUsername.Text, txtPassword.Text))
+            if (CN_Validaciones.camposVacios(txtUsername.Text, txtPassword.Text))
             {
                 CN_LogicaLogin login = new CN_LogicaLogin();
                 try
                 {
                     login.LoginUser(txtUsername.Text, txtPassword.Text);
-                    MessageBox.Show($"{userCache.id} {userCache.idPersona} {userCache.usuario} {userCache.password}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("El usuario o la contraseña son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El usuario o la contraseña son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                try
+                {
+                    if (CN_Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
+                    {
+                        MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            else if (Validaciones.GetIntentos() > 0)
+            else if (CN_Validaciones.GetIntentos() > 0)
             {
                 MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Validaciones.GetIntentos() == 0)
+            else if (CN_Validaciones.GetIntentos() == 0)
             {
-                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
+                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
             }
         }
 

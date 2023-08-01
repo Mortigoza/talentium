@@ -14,9 +14,13 @@ namespace LogicaNegocio
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
         public void LoginUser(string usuario, string pass)
         {
+            string usr = Seguridad.Encriptar(usuario);
+            string psw =  Seguridad.Hash(usuario+pass);
+            Console.WriteLine(usr);
+            Console.WriteLine(psw);
             try
             {
-                accesoDatos.Buscar(usuario, pass);
+                accesoDatos.Buscar(usr, psw);
             }
             catch (Exception ex) {
                 throw ex;
