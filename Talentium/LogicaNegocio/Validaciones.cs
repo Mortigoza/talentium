@@ -48,7 +48,7 @@ namespace LogicaNegocio
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
-        public static bool ValUsr(string usuario, string password)
+        public static bool ValUsr2(string usuario, string password)
         {
             bool pswVal = false, pswDigVal = false;
 
@@ -70,9 +70,13 @@ namespace LogicaNegocio
 
             return pswVal && pswDigVal && !bloqueado;
         }
+        public static bool ValUsr(string usuario, string password)
+        {
 
+            return false;
+        }
 
-// VALIDAR CARACTERES
+        // VALIDAR CARACTERES
 
         // VALIDA SI HAY DATOS INGRESADOS
         public static bool camposVacios(string usr, string psw)

@@ -45,3 +45,8 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talent
 C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\instituto\Projecto Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
 >>>>>>> MR-login
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Microsoft.OData.Edm.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Microsoft.OData.Edm.xml

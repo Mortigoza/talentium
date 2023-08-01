@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
-
+using Comun;
 
 namespace LogicaNegocio
 {
     public class CN_LogicaLogin
     {
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
-        public DataTable LoginUser(string usuario, string pass)
+        public void LoginUser(string usuario, string pass)
         {
             try
             {
-                return accesoDatos.Buscar(usuario, pass); ;
+                accesoDatos.Buscar(usuario, pass);
             }
             catch (Exception ex) {
                 throw ex;

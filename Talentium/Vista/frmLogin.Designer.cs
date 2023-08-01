@@ -37,9 +37,7 @@
             this.lblSesion = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -143,14 +141,6 @@
             this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             this.btnMostrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseUp);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 347);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(737, 112);
-            this.dataGridView1.TabIndex = 8;
-            // 
             // Talentium
             // 
             this.AcceptButton = this.btnLogin;
@@ -159,7 +149,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(771, 471);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblSesion);
@@ -174,7 +163,6 @@
             this.Name = "Talentium";
             this.Text = "Talentium - Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +178,6 @@
         private System.Windows.Forms.Label lblSesion;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

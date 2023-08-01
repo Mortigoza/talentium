@@ -27,8 +27,15 @@ namespace Vista
             if (Validaciones.camposVacios(txtUsername.Text, txtPassword.Text))
             {
                 CN_LogicaLogin login = new CN_LogicaLogin();
-                dataGridView1.DataSource = login.LoginUser(txtUsername.Text, txtPassword.Text);
-                dataGridView1.Refresh();
+                try
+                {
+                    login.LoginUser(txtUsername.Text, txtPassword.Text);
+                    MessageBox.Show($"{userCache.id} {userCache.idPersona} {userCache.usuario} {userCache.password}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("El usuario o la contraseña son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (Validaciones.GetIntentos() > 0)
             {
