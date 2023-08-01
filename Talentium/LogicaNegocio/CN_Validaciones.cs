@@ -13,24 +13,29 @@ namespace LogicaNegocio
     {
         private static int intentos = 5;
         private static DateTime horaBloqueo;
-        private static bool bloqueado = false;
         private static double lapsoBloqueo = 10;
+        private static bool activo = true;
 
         public static int GetIntentos() { return intentos; }
         public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
 
-// VALIDA USUARIO Y CONTRASEÑA.
+        // VALIDA USUARIO Y CONTRASEÑA.
         // MANEJA LOS INTENTOS DE CONTRASEÑA INCORRECTA.
         private static void valIntentos()
         {
+            if (userCache.bloqueo != null)
+            {
+                DateTime horaBloqueo = Convert.ToDateTime(userCache.bloqueo);
+            }
             if (intentos > 0)
             {
                 intentos--; // Resta un intento.
             }
-            else if (bloqueado == false)
+            else if (userCache.bloqueo == null)
             {
-                bloqueado = true;
                 horaBloqueo = System.DateTime.Now; // Bloquea y marca la hora de bloqueo.
+                activo = false;
+                Console.WriteLine("bloqueado");
             }
             else
             {
@@ -40,36 +45,14 @@ namespace LogicaNegocio
         // CHEKEA SI SE DEBE O NO DESBLOQUEAR EL USUARIO.
         private static void reactivar()
         {
-            if (bloqueado == false);
+            if (userCache.bloqueo == null);
             else if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo)) // Si ya paso el tiempo de bloqueo;
             {
-                bloqueado = false;
                 intentos = 5; // Desbloquea y restablece los intentos.
+                activo = true;
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
-        public static bool ValUsr2(string usuario, string password)
-        {
-            bool pswVal = false, pswDigVal = false;
-
-            string usrForm = usuario;
-            string usrBd = Seguridad.DesEncriptar("VAB1AHQAbwB6AA==");
-
-            string pswForm = Seguridad.Hash(Convert.ToString(usuario + password));
-            string pswBd = "d33f5358e56f51e8ec97773106f03f23e45f2b86a96770e99e3fd06128b7aca4";
-
-            string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
-            string digitoBd = "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9";
-
-            if (string.Equals(usrForm, usrBd))
-            {
-                if (string.Equals(pswBd, pswForm)) pswVal = true;
-                else valIntentos();
-            }
-            if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
-
-            return pswVal && pswDigVal && !bloqueado;
-        }
         public static bool ValUsr(string usuario, string password)
         {
             bool pswVal = false, pswDigVal = false;//true provicional
@@ -81,7 +64,7 @@ namespace LogicaNegocio
             string pswBd = userCache.password;
 
             string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
-            string digitoBd = "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9";
+            string digitoBd = userCache.digito;
 
             if (string.Equals(usrForm, usrBd))
             {
@@ -90,7 +73,7 @@ namespace LogicaNegocio
             }
             if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
 
-            return pswVal && pswDigVal && !bloqueado;
+            return pswVal && pswDigVal && activo;
         }
 
 

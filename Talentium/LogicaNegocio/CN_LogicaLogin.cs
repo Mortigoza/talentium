@@ -16,8 +16,10 @@ namespace LogicaNegocio
         {
             string usr = Seguridad.Encriptar(usuario);
             string psw =  Seguridad.Hash(usuario+pass);
-            Console.WriteLine(usr);
-            Console.WriteLine(psw);
+            string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
+            //Console.WriteLine(usr);
+            //Console.WriteLine(psw);
+            //Console.WriteLine(dig);
             try
             {
                 accesoDatos.Buscar(usr, psw);

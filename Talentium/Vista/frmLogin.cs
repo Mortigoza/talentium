@@ -30,9 +30,12 @@ namespace Vista
                 {
                     login.LoginUser(txtUsername.Text, txtPassword.Text);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("El usuario o la contraseña son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (CN_Validaciones.GetIntentos() > 0)
+                    {
+                        MessageBox.Show("El usuario o la contraseña son incorrectos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 try
                 {
@@ -51,9 +54,9 @@ namespace Vista
             {
                 MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (CN_Validaciones.GetIntentos() == 0)
+            if (CN_Validaciones.GetIntentos() == 0)
             {
-                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}");
+                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

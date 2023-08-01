@@ -63,7 +63,10 @@ namespace AccesoDatos
 
             userCache.nueva = (bool)resultado.Rows[0][9];
 
+            try { userCache.bloqueo = (DateTime)resultado.Rows[0][10]; }
+            catch { userCache.bloqueo = null; }
 
+            userCache.digito = (string)resultado.Rows[0][11];
         }
 
     }
