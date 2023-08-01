@@ -15,7 +15,7 @@ namespace LogicaNegocio
         public void LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
-            string psw =  Seguridad.Hash(usuario+pass);
+            string psw = Seguridad.Hash(usuario + pass);
             string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
             //Console.WriteLine(usr);
             //Console.WriteLine(psw);
@@ -24,8 +24,29 @@ namespace LogicaNegocio
             {
                 accesoDatos.Buscar(usr, psw);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
+            }
+        }
+        public void BloqueoUser(int id, DateTime? hBloqueo)
+        {
+            try
+            {
+                accesoDatos.Bloquear(id, hBloqueo);
+            }
+            catch
+            {
+            }
+        }
+        public void IntentosUser(int id, int intento)
+        {
+            try
+            {
+                accesoDatos.Intentos(id, intento);
+            }
+            catch
+            {
             }
         }
     }

@@ -65,8 +65,32 @@ namespace AccesoDatos
 
             try { userCache.bloqueo = (DateTime)resultado.Rows[0][10]; }
             catch { userCache.bloqueo = null; }
+            Console.WriteLine(userCache.bloqueo);
 
             userCache.digito = (string)resultado.Rows[0][11];
+            userCache.intentos = (int)resultado.Rows[0][12];
+        }
+        public void Bloquear(int id, DateTime? hBloqueo)
+        {
+            List<SqlParameter> listaParametros;
+            SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
+            if (hBloqueo != null)
+            {
+                SqlParameter param2 = new SqlParameter("@bloqueo", hBloqueo) { SqlDbType = SqlDbType.DateTime };
+                listaParametros = new List<SqlParameter>() { param1, param2 };
+            }
+            else
+            {
+                listaParametros = new List<SqlParameter>() { param1 };
+            }
+            DataTable resultado = EjecutarConsultas("bloqueo_usuario_sp", listaParametros.ToArray(), true);
+        }
+        public void Intentos(int id, int intento)
+        {
+            SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@intento", intento) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultado = EjecutarConsultas("intento_usuario_sp", listaParametros.ToArray(), true);
         }
 
     }

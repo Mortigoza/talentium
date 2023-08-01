@@ -41,7 +41,7 @@ namespace Vista
                 {
                     if (CN_Validaciones.ValUsr(txtUsername.Text, txtPassword.Text))
                     {
-                        MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)

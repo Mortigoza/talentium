@@ -11,12 +11,11 @@ namespace LogicaNegocio
 {
     public static class CN_Validaciones
     {
-        private static int intentos = 5;
         private static DateTime horaBloqueo;
-        private static double lapsoBloqueo = 10;
+        private static double lapsoBloqueo = 1;
         private static bool activo = true;
 
-        public static int GetIntentos() { return intentos; }
+        public static int GetIntentos() { return userCache.intentos; }
         public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
 
         // VALIDA USUARIO Y CONTRASEÑA.
@@ -25,22 +24,27 @@ namespace LogicaNegocio
         {
             if (userCache.bloqueo != null)
             {
-                DateTime horaBloqueo = Convert.ToDateTime(userCache.bloqueo);
             }
-            if (intentos > 0)
+            if (userCache.intentos > 0)
             {
-                intentos--; // Resta un intento.
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                try
+                {
+                    userCache.intentos--;
+                    logicaLogin.IntentosUser(userCache.id, userCache.intentos);
+                }
+                catch { }
             }
             else if (userCache.bloqueo == null)
             {
-                horaBloqueo = System.DateTime.Now; // Bloquea y marca la hora de bloqueo.
-                activo = false;
-                Console.WriteLine("bloqueado");
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                logicaLogin.BloqueoUser(userCache.id, System.DateTime.Now);
             }
             else
             {
                 reactivar(); // Chekea si ya paso el lapso de bloqueo.
             }
+            horaBloqueo = Convert.ToDateTime(userCache.bloqueo);
         }
         // CHEKEA SI SE DEBE O NO DESBLOQUEAR EL USUARIO.
         private static void reactivar()
@@ -48,8 +52,9 @@ namespace LogicaNegocio
             if (userCache.bloqueo == null);
             else if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo)) // Si ya paso el tiempo de bloqueo;
             {
-                intentos = 5; // Desbloquea y restablece los intentos.
-                activo = true;
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                logicaLogin.BloqueoUser(userCache.id, null);
+                logicaLogin.IntentosUser(userCache.id, 5);
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
@@ -73,7 +78,7 @@ namespace LogicaNegocio
             }
             if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
 
-            return pswVal && pswDigVal && activo;
+            return pswVal && pswDigVal && userCache.bloqueo == null;
         }
 
 
