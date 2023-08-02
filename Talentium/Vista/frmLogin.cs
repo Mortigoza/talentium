@@ -24,7 +24,6 @@ namespace Vista
         private void btnLogin_Click(object sender, EventArgs e)
         {
             CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text);
-            
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)

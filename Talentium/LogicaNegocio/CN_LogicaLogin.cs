@@ -30,6 +30,18 @@ namespace LogicaNegocio
             {
                 throw ex;
             }
+            if (CN_Validaciones.ValUsr(usuario, pass))
+            {
+                MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (DateTime.Now < CN_Validaciones.GetHoraDesbloqueo())
+            {
+                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show(CN_Validaciones.GetMensajeError(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         public void BloqueoUser(int id, DateTime? hBloqueo)
         {
@@ -64,22 +76,6 @@ namespace LogicaNegocio
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                try
-                {
-                    if (CN_Validaciones.ValUsr(usuario, password))
-                    {
-                        MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else if (DateTime.Now < CN_Validaciones.GetHoraDesbloqueo())
-                    {
-                        MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        MessageBox.Show(CN_Validaciones.GetMensajeError(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch { }
             }
             else
             {

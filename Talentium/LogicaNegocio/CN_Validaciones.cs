@@ -23,25 +23,28 @@ namespace LogicaNegocio
         // MANEJA LOS INTENTOS DE CONTRASEÑA INCORRECTA.
         private static void valIntentos()
         {
-            CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+            if (userCache.baja == null)
+            {
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
 
-            if (userCache.intentos > 0 && userCache.bloqueo == null)
-            {
-                try
+                if (userCache.intentos > 0 && userCache.bloqueo == null)
                 {
-                    userCache.intentos--;
-                    logicaLogin.IntentosUser(userCache.id, userCache.intentos);
+                    try
+                    {
+                        userCache.intentos--;
+                        logicaLogin.IntentosUser(userCache.id, userCache.intentos);
+                    }
+                    catch { }
                 }
-                catch { }
-            }
-            else if (userCache.intentos <= 0 && userCache.bloqueo == null)
-            {
-                logicaLogin.BloqueoUser(userCache.id, System.DateTime.Now);
-            }
-            else
-            {
-                reactivar(); // Chekea si ya paso el lapso de bloqueo.
-                mensajeError = "Usuario reactivado";
+                else if (userCache.intentos <= 0 && userCache.bloqueo == null)
+                {
+                    logicaLogin.BloqueoUser(userCache.id, System.DateTime.Now);
+                }
+                else
+                {
+                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
+                    mensajeError = "Usuario reactivado";
+                }
             }
         }
         // CHEKEA SI SE DEBE O NO DESBLOQUEAR EL USUARIO.
@@ -72,17 +75,19 @@ namespace LogicaNegocio
 
             mensajeError = "Sin errores de validacion";
 
-            if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
-            else mensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
-            if (string.Equals(usrForm, usrBd))
-            {
-                if (string.Equals(pswBd, pswForm)) pswVal = true;
-                else { valIntentos(); mensajeError = "Usuario o contraseña incorrectos."; }
+            if (userCache.baja == null) {
+                bajaVal = true;
+                if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+                else mensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
+                if (string.Equals(usrForm, usrBd))
+                {
+                    if (string.Equals(pswBd, pswForm)) pswVal = true;
+                    else mensajeError = "Usuario o contraseña incorrectos.";
+                }
+                else if (userCache.baja == null) { valIntentos(); mensajeError = "Usuario o contraseña incorrectos."; }
+                if (userCache.bloqueo == null) bloqVal = true;
+                else mensajeError = "Usuario bloqueado.";
             }
-            else mensajeError = "Usuario o contraseña incorrectos.";
-            if (userCache.bloqueo == null) bloqVal = true;
-            else mensajeError = "Usuario bloqueado.";
-            if (userCache.baja == null) bajaVal = true;
             else mensajeError = "El usuario se encuentra dado de baja.";
 
             return pswVal && pswDigVal && bloqVal && bajaVal;
