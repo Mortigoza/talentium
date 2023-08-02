@@ -37,10 +37,10 @@ namespace AccesoDatos
         public void Buscar(string usuario, string pass)
         {
             SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
-            SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.NVarChar };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
-            DataTable resultado = EjecutarConsultas("loginConsulta_sp", listaParametros.ToArray());
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("loginConsulta2_sp", listaParametros.ToArray());
 
             userCache.id = (int)resultado.Rows[0][0];
 
@@ -58,14 +58,13 @@ namespace AccesoDatos
 
             try { userCache.ultimoCambio = (DateTime)resultado.Rows[0][7]; }
             catch { userCache.ultimoCambio = null; }
-            try { userCache.desactivacion = (DateTime)resultado.Rows[0][8]; }
-            catch { userCache.desactivacion = null; }
+            try { userCache.bloqueo = (DateTime)resultado.Rows[0][8]; }
+            catch { userCache.bloqueo = null; }
 
             userCache.nueva = (bool)resultado.Rows[0][9];
 
-            try { userCache.bloqueo = (DateTime)resultado.Rows[0][10]; }
-            catch { userCache.bloqueo = null; }
-            Console.WriteLine(userCache.bloqueo);
+            try { userCache.fechaIntentos = (DateTime)resultado.Rows[0][10]; }
+            catch { userCache.fechaIntentos = null; }
 
             userCache.digito = (string)resultado.Rows[0][11];
             userCache.intentos = (int)resultado.Rows[0][12];

@@ -16,9 +16,9 @@ namespace Comun
         public static DateTime? baja { get; set; }
         public static int cambiaCada { get; set; }
         public static DateTime? ultimoCambio { get; set; }
-        public static DateTime? desactivacion { get; set; }
-        public static bool nueva { get; set; }
         public static DateTime? bloqueo { get; set; }
+        public static bool nueva { get; set; }
+        public static DateTime? fechaIntentos { get; set; }
         public static string digito { get; set; }
         public static int intentos { get; set; }
     }

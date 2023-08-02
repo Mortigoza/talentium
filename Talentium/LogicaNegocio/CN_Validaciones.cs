@@ -12,22 +12,21 @@ namespace LogicaNegocio
     public static class CN_Validaciones
     {
         private static DateTime horaBloqueo;
-        private static double lapsoBloqueo = 1;
-        private static bool activo = true;
+        private static double lapsoBloqueo = 0.1;
+        private static string mensajeError;
 
         public static int GetIntentos() { return userCache.intentos; }
         public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
+        public static string GetMensajeError() { return mensajeError; }
 
         // VALIDA USUARIO Y CONTRASEÑA.
         // MANEJA LOS INTENTOS DE CONTRASEÑA INCORRECTA.
         private static void valIntentos()
         {
-            if (userCache.bloqueo != null)
+            CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+
+            if (userCache.intentos > 0 && userCache.bloqueo == null)
             {
-            }
-            if (userCache.intentos > 0)
-            {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
                 try
                 {
                     userCache.intentos--;
@@ -35,24 +34,24 @@ namespace LogicaNegocio
                 }
                 catch { }
             }
-            else if (userCache.bloqueo == null)
+            else if (userCache.intentos <= 0 && userCache.bloqueo == null)
             {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
                 logicaLogin.BloqueoUser(userCache.id, System.DateTime.Now);
             }
             else
             {
                 reactivar(); // Chekea si ya paso el lapso de bloqueo.
+                mensajeError = "Usuario reactivado";
             }
-            horaBloqueo = Convert.ToDateTime(userCache.bloqueo);
         }
         // CHEKEA SI SE DEBE O NO DESBLOQUEAR EL USUARIO.
         private static void reactivar()
         {
-            if (userCache.bloqueo == null);
-            else if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo)) // Si ya paso el tiempo de bloqueo;
+            CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+            horaBloqueo = Convert.ToDateTime(userCache.bloqueo);
+
+            if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo) && userCache.bloqueo != null) // Si ya paso el tiempo de bloqueo;
             {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
                 logicaLogin.BloqueoUser(userCache.id, null);
                 logicaLogin.IntentosUser(userCache.id, 5);
             }
@@ -60,7 +59,7 @@ namespace LogicaNegocio
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
         public static bool ValUsr(string usuario, string password)
         {
-            bool pswVal = false, pswDigVal = false;//true provicional
+            bool pswVal = false, pswDigVal = false, bloqVal = false, bajaVal = false;
 
             string usrForm = usuario;
             string usrBd = Seguridad.DesEncriptar(userCache.usuario);
@@ -71,14 +70,22 @@ namespace LogicaNegocio
             string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
             string digitoBd = userCache.digito;
 
+            mensajeError = "Sin errores de validacion";
+
+            if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+            else mensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
             if (string.Equals(usrForm, usrBd))
             {
                 if (string.Equals(pswBd, pswForm)) pswVal = true;
-                else valIntentos();
+                else { valIntentos(); mensajeError = "Usuario o contraseña incorrectos."; }
             }
-            if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+            else mensajeError = "Usuario o contraseña incorrectos.";
+            if (userCache.bloqueo == null) bloqVal = true;
+            else mensajeError = "Usuario bloqueado.";
+            if (userCache.baja == null) bajaVal = true;
+            else mensajeError = "El usuario se encuentra dado de baja.";
 
-            return pswVal && pswDigVal && userCache.bloqueo == null;
+            return pswVal && pswDigVal && bloqVal && bajaVal;
         }
 
 

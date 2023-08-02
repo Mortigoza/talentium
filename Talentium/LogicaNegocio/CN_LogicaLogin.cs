@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AccesoDatos;
 using Comun;
 
@@ -47,6 +49,41 @@ namespace LogicaNegocio
             }
             catch
             {
+            }
+        }
+        public static void LogIn(string usuario, string password)
+        {
+            if (CN_Validaciones.camposVacios(usuario, password))
+            {
+                CN_LogicaLogin login = new CN_LogicaLogin();
+                try
+                {
+                    login.LoginUser(usuario, password);
+                }
+                catch
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                try
+                {
+                    if (CN_Validaciones.ValUsr(usuario, password))
+                    {
+                        MessageBox.Show("ENTRASTE", "BIEN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (DateTime.Now < CN_Validaciones.GetHoraDesbloqueo())
+                    {
+                        MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show(CN_Validaciones.GetMensajeError(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch { }
+            }
+            else
+            {
+                MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
