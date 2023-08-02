@@ -29,7 +29,7 @@ namespace Vista
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void altasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +37,11 @@ namespace Vista
             this.Hide();
             frmAltaPersonal alta = new frmAltaPersonal();
             alta.Show();
+        }
+
+        private void frmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

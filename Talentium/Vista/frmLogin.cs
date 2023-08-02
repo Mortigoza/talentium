@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class Talentium : Form
+    public partial class frmLogin : Form
     {
-        public Talentium()
+        public frmLogin()
         {
             InitializeComponent();
             txtPassword.PasswordChar = '*';
@@ -23,7 +23,12 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text);
+            if (CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text))
+            {
+                this.Hide();
+                frmMenu menu = new frmMenu();
+                menu.Show();
+            }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)

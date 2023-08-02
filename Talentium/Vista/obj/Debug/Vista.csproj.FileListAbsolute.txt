@@ -84,3 +84,4 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Microsoft.OData.Edm.xml
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
