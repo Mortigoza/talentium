@@ -59,6 +59,16 @@ namespace LogicaNegocio
                 logicaLogin.IntentosUser(userCache.id, 5);
             }
         }
+        private static void valFechaHoy()
+        {
+            DateTime fechaHoy = DateTime.Now;
+            DateTime fechaIntentos = userCache.fechaIntentos;
+            if (fechaHoy != fechaIntentos)
+            {
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                logicaLogin.CargarFechaHoyIntentosUser(userCache.id, fechaHoy);
+            }
+        }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
         public static bool ValUsr(string usuario, string password)
         {
@@ -70,7 +80,8 @@ namespace LogicaNegocio
             string pswForm = Seguridad.Hash(Convert.ToString(usuario + password));
             string pswBd = userCache.password;
 
-            string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
+            // Se hashea el digito con solo la password (reveer)
+            string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString()); 
             string digitoBd = userCache.digito;
 
             mensajeError = "Sin errores de validacion";
@@ -78,13 +89,28 @@ namespace LogicaNegocio
             if (userCache.baja == null) {
                 bajaVal = true;
                 if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+                // El mensaje de error es provisorio porque hay que bloquear el usuario
                 else mensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
+
                 if (string.Equals(usrForm, usrBd))
                 {
                     if (string.Equals(pswBd, pswForm)) pswVal = true;
-                    else mensajeError = "Usuario o contraseña incorrectos.";
+                    else
+                    {
+                        // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
+                        valFechaHoy();
+                        valIntentos();
+                        mensajeError = "Usuario o contraseña incorrectos."; 
+                    }
                 }
-                else if (userCache.baja == null) { valIntentos(); mensajeError = "Usuario o contraseña incorrectos."; }
+                else
+                {
+                    // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
+                    valFechaHoy();
+                    valIntentos();
+                    mensajeError = "Usuario o contraseña incorrectos.";
+                }
+
                 if (userCache.bloqueo == null) bloqVal = true;
                 else mensajeError = "Usuario bloqueado.";
             }

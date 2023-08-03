@@ -66,6 +66,16 @@ namespace LogicaNegocio
             {
             }
         }
+        public void CargarFechaHoyIntentosUser(int id, DateTime fechaIntentos)
+        {
+            try
+            {
+                accesoDatos.CargarFechaHoyIntentos(id, fechaIntentos, 5);
+            }
+            catch
+            {
+            }
+        }
         public static bool LogIn(string usuario, string password)
         {
             if (CN_Validaciones.camposVacios(usuario, password))

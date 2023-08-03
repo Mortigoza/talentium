@@ -63,8 +63,7 @@ namespace AccesoDatos
 
             userCache.nueva = (bool)resultado.Rows[0][9];
 
-            try { userCache.fechaIntentos = (DateTime)resultado.Rows[0][10]; }
-            catch { userCache.fechaIntentos = null; }
+            userCache.fechaIntentos = (DateTime)resultado.Rows[0][10];
 
             userCache.digito = (string)resultado.Rows[0][11];
             userCache.intentos = (int)resultado.Rows[0][12];
@@ -90,6 +89,14 @@ namespace AccesoDatos
             SqlParameter param2 = new SqlParameter("@intento", intento) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("intento_usuario_sp", listaParametros.ToArray(), true);
+        }
+        public void CargarFechaHoyIntentos(int id, DateTime fechaIntentos, int intentos)
+        {
+            SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@fechaIntentos", fechaIntentos) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param3 = new SqlParameter("@intentos", intentos) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            DataTable resultado = EjecutarConsultas("restablecimiento_de_intentos_sp", listaParametros.ToArray(), true);
         }
 
     }
