@@ -34,10 +34,9 @@ namespace AccesoDatos
                   }
               }
           }*/
-        public void Buscar(string usuario, string pass)
+        public void Buscar(string usuario)
         {
             SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
-            //SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.NVarChar };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable resultado = EjecutarConsultas("loginConsulta2_sp", listaParametros.ToArray());

@@ -25,7 +25,7 @@ namespace LogicaNegocio
             //Console.WriteLine(dig);
             try
             {
-                accesoDatos.Buscar(usr, psw);
+                accesoDatos.Buscar(usr);
             }
             catch (Exception ex)
             {
@@ -97,6 +97,10 @@ namespace LogicaNegocio
                 MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+        public void cargarCatche(string usuario)
+        {
+            accesoDatos.Buscar(usuario);
         }
     }
 }

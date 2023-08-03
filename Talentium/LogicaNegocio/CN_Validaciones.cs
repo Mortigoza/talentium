@@ -100,7 +100,7 @@ namespace LogicaNegocio
                         // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
                         valFechaHoy();
                         valIntentos();
-                        mensajeError = "Usuario o contraseña incorrectos."; 
+                        mensajeError = "Usuario o contraseña incorrectos.";
                     }
                 }
                 else
