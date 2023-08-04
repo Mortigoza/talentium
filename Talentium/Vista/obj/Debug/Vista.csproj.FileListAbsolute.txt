@@ -67,7 +67,6 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\bin\Debug\AccesoD
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
-C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Talentium.resources
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
@@ -76,3 +75,4 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.c
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources

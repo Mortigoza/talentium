@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace AccesoDatos
 {
-    public class CD_EjecutarSP: CD_Conexion
+    public class CD_EjecutarSP : CD_Conexion
     {
         public DataTable EjecutarConsultas(string NombreSP, SqlParameter[] sqlParameters, bool Directa = false)
         {

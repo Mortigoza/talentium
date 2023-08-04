@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 
 namespace AccesoDatos
@@ -15,6 +10,7 @@ namespace AccesoDatos
         public CD_Conexion()
         {
             connectionstring = "Server=localhost\\SQLEXPRESS;DataBase= loginRRHH;Integrated Security=true";
+            //connectionstring = "Server=(local);DataBase= loginRRHH;Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {
