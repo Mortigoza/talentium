@@ -21,12 +21,17 @@ namespace Vista
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //    this.Hide();
-            //    frmMenu menu = new frmMenu();
+            frmMenu menu = new frmMenu();
             //    menu.Show();
 
             CN_LogicaLogin usuario = new CN_LogicaLogin();
             var validlogin = usuario.LoginUser(txtUsername.Text, txtPassword.Text);
+            if (validlogin)
+            {
+                menu.Show();
+            }
             Console.WriteLine("datos usuario: "+ validlogin);
+
         }
     }
 }
