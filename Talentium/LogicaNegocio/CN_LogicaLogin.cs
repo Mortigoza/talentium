@@ -15,6 +15,10 @@ namespace LogicaNegocio
     public class CN_LogicaLogin
     {
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
+        public string message { get; set; }
+        public DateTime fechaHoy { get; set; }
+
+        public int id { get; set; }
         public bool LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
@@ -97,6 +101,71 @@ namespace LogicaNegocio
                 MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+        public  void usuarioEmail(string usuario) 
+        {
+           // string user = Seguridad.Encriptar(usuario);
+            DataTable tabla = accesoDatos.EmailDeRecupero(usuario);
+
+            //se valida que el usuario sea ingresado correctamente
+            if (tabla != null && tabla.Rows.Count > 0)
+            {
+                try
+                {
+
+                    CN_EnviarEmail email = new CN_EnviarEmail();
+
+                    //el usuario es correcto, por ello debemos genear el codigo y enviar el email
+                    string correo = Convert.ToString(tabla.Rows[0][0]);
+                    id = Convert.ToInt32(tabla.Rows[0][2]);
+                    var tup = email.obtenerCod();
+                    string cod = tup.Item1;
+                    DateTime fhCaducidad = tup.Item2;
+
+                    message = email.Enviar( id, correo, cod,fhCaducidad );
+                       
+
+                    //string feHoy = Convert.ToString(DateTime.Now);
+                    //string fechaHoy = feHoy.Substring(0, 8);
+                    //string fecha = Convert.ToString(tabla.Rows[0][1]);
+                    //string substFecha = fecha.Substring(0, 8);
+                    //if (fechaHoy == substFecha && !string.IsNullOrWhiteSpace(fecha))
+                    //{
+
+                    //}
+                    //else 
+                    //{
+                    //   /* string message = email.Enviar("mairaaracelirodriguez@gmail.com", "145E12");
+                    //    MessageBox.Show(message); */
+                    //}
+
+                    //Console.WriteLine(tabla);
+                    //Console.WriteLine(tabla.Rows[0][0]);
+
+
+                    /* string message = email.Enviar("mairaaracelirodriguez@gmail.com", "145E12");
+                      MessageBox.Show(message);*/
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error al intentar enviar el email: "+e);
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Usuario invalido. Porfavor verifique que el usuario sea correcto");
+            }
+
+            }
+
+        public void validCode(int id, string codEmail)
+        {
+            fechaHoy = DateTime.Now;
+
+            //se realiza el metodo para traer los campos de cod y fecha y validar ambos: 
+
+
+            //accesoDatos.Buscar(usuario);
         }
         public void cargarCatche(string usuario)
         {

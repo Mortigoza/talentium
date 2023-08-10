@@ -34,6 +34,17 @@ namespace AccesoDatos
                   }
               }
           }*/
+        //valida si existe el usuario y consulta la fh_cod_email y el campo cod email
+        public DataTable EmailDeRecupero(string usuario) 
+        {
+            SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ConsEmailRecupero_sp", listaParametros.ToArray());
+            return resultado;
+        }
+
+        //inserta la fh_cod_email y el campo cod email
         public void Buscar(string usuario)
         {
             SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
@@ -97,7 +108,16 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
             DataTable resultado = EjecutarConsultas("restablecimiento_de_intentos_sp", listaParametros.ToArray(), true);
         }
-
+        public void CargarCodyFHRecupero( int id, string cod, DateTime fechaCaducidad )
+        {
+            SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@fh_cod_email", fechaCaducidad) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param3 = new SqlParameter("@cod_email", cod) { SqlDbType = SqlDbType.NChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            
+                DataTable resultado = EjecutarConsultas("upCodFechaRecupero_sp", listaParametros.ToArray(), true);
+        
+            }
     }
 }
 

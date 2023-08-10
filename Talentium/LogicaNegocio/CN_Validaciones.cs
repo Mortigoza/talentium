@@ -59,6 +59,7 @@ namespace LogicaNegocio
                 logicaLogin.IntentosUser(UserCache.id, 5);
             }
         }
+
         private static void valFechaHoy()
         {
             DateTime fechaHoy = DateTime.Now;
