@@ -34,3 +34,12 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\A
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.AssemblyReference.cache
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb

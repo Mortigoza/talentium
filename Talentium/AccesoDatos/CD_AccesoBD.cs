@@ -89,12 +89,11 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("intento_usuario_sp", listaParametros.ToArray(), true);
         }
-        public void CargarFechaHoyIntentos(int id, DateTime fechaIntentos, int intentos)
+        public void RestaurarIntentos(int id, int intentos)
         {
             SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@fechaIntentos", fechaIntentos) { SqlDbType = SqlDbType.DateTime };
-            SqlParameter param3 = new SqlParameter("@intentos", intentos) { SqlDbType = SqlDbType.Int };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            SqlParameter param2 = new SqlParameter("@intentos", intentos) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("restablecimiento_de_intentos_sp", listaParametros.ToArray(), true);
         }
 

@@ -12,11 +12,21 @@ namespace LogicaNegocio
     public static class CN_Validaciones
     {
         private static DateTime horaBloqueo;
-        private static double lapsoBloqueo = 0.1;
+        private static double lapsoBloqueo = 0.2;
         private static string mensajeError;
 
         public static int GetIntentos() { return UserCache.intentos; }
-        public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
+        public static DateTime GetHoraDesbloqueo() {
+            try
+            {
+                horaBloqueo = Convert.ToDateTime(UserCache.bloqueo);
+                return horaBloqueo.AddMinutes(lapsoBloqueo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public static string GetMensajeError() { return mensajeError; }
 
         // VALIDA USUARIO Y CONTRASEÑA.
@@ -39,11 +49,12 @@ namespace LogicaNegocio
                 else if (UserCache.intentos <= 0 && UserCache.bloqueo == null)
                 {
                     logicaLogin.BloqueoUser(UserCache.id, System.DateTime.Now);
+                    logicaLogin.cargarCatche(UserCache.usuario);
                 }
                 else
                 {
-                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
                     mensajeError = "Usuario reactivado";
+                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
                 }
             }
         }
@@ -57,16 +68,6 @@ namespace LogicaNegocio
             {
                 logicaLogin.BloqueoUser(UserCache.id, null);
                 logicaLogin.IntentosUser(UserCache.id, 5);
-            }
-        }
-        private static void valFechaHoy()
-        {
-            DateTime fechaHoy = DateTime.Now;
-            DateTime fechaIntentos = UserCache.fechaIntentos;
-            if (fechaHoy != fechaIntentos)
-            {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
-                logicaLogin.CargarFechaHoyIntentosUser(UserCache.id, fechaHoy);
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
@@ -98,22 +99,17 @@ namespace LogicaNegocio
                     if (string.Equals(pswBd, pswForm)) pswVal = true;
                     else
                     {
-                        // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
-                        valFechaHoy();
-                        valIntentos();
                         mensajeError = "Usuario o contraseña incorrectos.";
+                        valIntentos();
                     }
-                }
-                else
-                {
-                    // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
-                    valFechaHoy();
-                    valIntentos();
-                    mensajeError = "Usuario o contraseña incorrectos.";
                 }
 
                 if (UserCache.bloqueo == null) bloqVal = true;
-                else mensajeError = "Usuario bloqueado.";
+                else
+                {
+                    mensajeError = "Usuario bloqueado.";
+                    valIntentos();
+                }
             }
             else mensajeError = "El usuario se encuentra dado de baja.";
 

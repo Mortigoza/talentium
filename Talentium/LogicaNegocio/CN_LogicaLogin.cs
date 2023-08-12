@@ -33,6 +33,8 @@ namespace LogicaNegocio
             }
             if (CN_Validaciones.ValUsr(usuario, pass))
             {
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                logicaLogin.RestaurarIntentosUser(UserCache.id);
                 return true;
             }
             else if (DateTime.Now < CN_Validaciones.GetHoraDesbloqueo())
@@ -42,7 +44,7 @@ namespace LogicaNegocio
             }
             else
             {
-                MessageBox.Show(CN_Validaciones.GetMensajeError(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(CN_Validaciones.GetMensajeError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
         }
@@ -66,11 +68,11 @@ namespace LogicaNegocio
             {
             }
         }
-        public void CargarFechaHoyIntentosUser(int id, DateTime fechaIntentos)
+        public void RestaurarIntentosUser(int id)
         {
             try
             {
-                accesoDatos.CargarFechaHoyIntentos(id, fechaIntentos, 5);
+                accesoDatos.RestaurarIntentos(id, 5);
             }
             catch
             {
@@ -88,13 +90,13 @@ namespace LogicaNegocio
                 }
                 catch
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Hay campos incompletos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hay campos incompletos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
