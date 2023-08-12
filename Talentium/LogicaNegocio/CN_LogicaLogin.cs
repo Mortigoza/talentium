@@ -158,14 +158,33 @@ namespace LogicaNegocio
 
             }
 
-        public void validCode(int id, string codEmail)
+        public bool validCode(int id, string codEmail)
         {
-            fechaHoy = DateTime.Now;
+            DataTable tabla = accesoDatos.ValidCode(id);
+            DateTime feHoy = DateTime.Now;
+            DateTime fechaCaducidad = Convert.ToDateTime(tabla.Rows[0][0]);
+            string cod = Convert.ToString(tabla.Rows[0][1]);    
+            DateTime feCad = Convert.ToDateTime(tabla.Rows[0][0]).AddHours(-1);
+            if (feHoy >= feCad && feHoy <= fechaCaducidad)
+            {
+                if (codEmail == cod)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                    //codigo erroneo, porfavor intente
+                }
+            }
+            else
+            { 
+                //el codigo caducó, desea enviarlo nuevamente?
+                return false;
+            }
 
-            //se realiza el metodo para traer los campos de cod y fecha y validar ambos: 
-
-
-            //accesoDatos.Buscar(usuario);
+            //se realiza el metodo para traer los campos de cod y fecha y validar ambos:
+            
         }
         public void cargarCatche(string usuario)
         {

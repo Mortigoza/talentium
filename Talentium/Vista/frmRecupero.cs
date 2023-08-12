@@ -29,7 +29,25 @@ namespace Vista
             if (!(string.IsNullOrWhiteSpace(textBoxUsuarioRec.Text)))
             {
                 CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
-                cnRecupero.usuarioEmail(textBoxUsuarioRec.Text);
+                try
+                {
+                    cnRecupero.usuarioEmail(textBoxUsuarioRec.Text);
+                    label4.Text = cnRecupero.message;
+                    label4.Visible = true;
+                    label6.Visible = true;
+                    codigo.Visible = true;
+                    Verificar.Visible = true;
+                    textBoxUsuarioRec.Enabled = true;
+                    btnContinuar.Visible = false;
+
+
+           // ocultar el boton, disablear el texbox usuario y agregar visible el textbox cod email y el boton verificar cod
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             } else
             {
                 MessageBox.Show("El campo no debe estar vacio");
@@ -39,8 +57,13 @@ namespace Vista
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            frmMenu menu = new frmMenu();
+            frmLogin menu = new frmLogin();
             menu.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

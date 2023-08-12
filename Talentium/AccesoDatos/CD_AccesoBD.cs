@@ -43,6 +43,14 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("ConsEmailRecupero_sp", listaParametros.ToArray());
             return resultado;
         }
+        public DataTable ValidCode(int id)
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", id) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ValidarCodEmail_sp", listaParametros.ToArray());
+            return resultado;
+        }
 
         //inserta la fh_cod_email y el campo cod email
         public void Buscar(string usuario)
@@ -117,7 +125,8 @@ namespace AccesoDatos
             
                 DataTable resultado = EjecutarConsultas("upCodFechaRecupero_sp", listaParametros.ToArray(), true);
         
-            }
+        }
+       
     }
 }
 
