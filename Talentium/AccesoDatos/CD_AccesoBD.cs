@@ -118,7 +118,7 @@ namespace AccesoDatos
         }
         public void CargarCodyFHRecupero( int id, string cod, DateTime fechaCaducidad )
         {
-            SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@id_usuario", id) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@fh_cod_email", fechaCaducidad) { SqlDbType = SqlDbType.DateTime };
             SqlParameter param3 = new SqlParameter("@cod_email", cod) { SqlDbType = SqlDbType.NChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };

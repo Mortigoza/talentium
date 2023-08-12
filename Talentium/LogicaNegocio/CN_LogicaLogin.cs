@@ -160,6 +160,7 @@ namespace LogicaNegocio
 
         public bool validCode(int id, string codEmail)
         {
+            //verificar como traer el id del usuario, si con la memoria cache o que.
             DataTable tabla = accesoDatos.ValidCode(id);
             DateTime feHoy = DateTime.Now;
             DateTime fechaCaducidad = Convert.ToDateTime(tabla.Rows[0][0]);

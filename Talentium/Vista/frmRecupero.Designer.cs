@@ -132,6 +132,7 @@
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "label4";
+            this.label4.Visible = false;
             // 
             // codigo
             // 

@@ -63,7 +63,14 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
 
+            bool valor = cnRecupero.validCode(cnRecupero.id, codigo.Text);
+
+            if (valor) 
+            {
+
+            }
         }
     }
 }
