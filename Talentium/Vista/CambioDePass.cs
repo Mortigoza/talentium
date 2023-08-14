@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Comun;
 using LogicaNegocio;
 
 namespace Vista
@@ -16,6 +17,8 @@ namespace Vista
         public CambioDePass()
         {
             InitializeComponent();
+            CN_PoliticaPassword config = new CN_PoliticaPassword();
+            config.ConsultaPoliticaPass();
         }
 
         private void CambioDePass_Load(object sender, EventArgs e)
@@ -52,6 +55,20 @@ namespace Vista
 
                 }
 
+            }
+        }
+
+        private void tbContra1_Leave(object sender, EventArgs e)
+        {
+            if (CN_Validaciones.ValCar(tbContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
+                ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales))
+            {
+                lblError.Visible = false;
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = CN_Validaciones.GetMensajeErrorLabel();
             }
         }
     }

@@ -143,13 +143,19 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("upPoliticaPass_sp", listaParametros.ToArray(), true);
 
         }
-        public DataTable ConsultaPoliticaPass()
+        public void ConsultaPoliticaPass()
         {
            
             List<SqlParameter> listaParametros = new List<SqlParameter>() { };
 
             DataTable resultado = EjecutarConsultas("consPoliticaPass_sp", listaParametros.ToArray());
-            return resultado;
+
+            ConfigCache.caracteres = (bool)resultado.Rows[0][1];
+            ConfigCache.mayusculas = (bool)resultado.Rows[0][2];
+            ConfigCache.numeros = (bool)resultado.Rows[0][3];
+            ConfigCache.especiales = (bool)resultado.Rows[0][4];
+            ConfigCache.passAnteriores = (bool)resultado.Rows[0][5];
+            ConfigCache.noDatosPersonales = (bool)resultado.Rows[0][6];
         }
         
 

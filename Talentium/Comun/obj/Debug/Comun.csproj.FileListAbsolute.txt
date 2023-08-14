@@ -22,3 +22,9 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.c
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\bin\Debug\Comun.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\bin\Debug\Comun.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
