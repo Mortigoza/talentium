@@ -18,7 +18,7 @@ namespace LogicaNegocio
         public string message { get; set; }
         public DateTime fechaHoy { get; set; }
 
-        public int id { get; set; }
+       
         public bool LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
@@ -117,12 +117,12 @@ namespace LogicaNegocio
 
                     //el usuario es correcto, por ello debemos genear el codigo y enviar el email
                     string correo = Convert.ToString(tabla.Rows[0][0]);
-                    id = Convert.ToInt32(tabla.Rows[0][2]);
+                    UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
                     var tup = email.obtenerCod();
                     string cod = tup.Item1;
                     DateTime fhCaducidad = tup.Item2;
 
-                    message = email.Enviar( id, correo, cod,fhCaducidad );
+                    message = email.Enviar(UserCache.id, correo, cod,fhCaducidad );
                        
 
                     //string feHoy = Convert.ToString(DateTime.Now);
@@ -155,13 +155,13 @@ namespace LogicaNegocio
             {
                 MessageBox.Show("Usuario invalido. Porfavor verifique que el usuario sea correcto");
             }
-
+            
             }
 
-        public bool validCode(int id, string codEmail)
+        public bool validCode( string codEmail)
         {
-            //verificar como traer el id del usuario, si con la memoria cache o que.
-            DataTable tabla = accesoDatos.ValidCode(id);
+            //se realiza el metodo para traer los campos de cod y fecha y validar ambos:
+            DataTable tabla = accesoDatos.ValidCode(UserCache.id);
             DateTime feHoy = DateTime.Now;
             DateTime fechaCaducidad = Convert.ToDateTime(tabla.Rows[0][0]);
             string cod = Convert.ToString(tabla.Rows[0][1]);    
@@ -174,17 +174,19 @@ namespace LogicaNegocio
                 }
                 else
                 {
-                    return false;
                     //codigo erroneo, porfavor intente
+                    MessageBox.Show("El codigo ingresado es incorrecto.");
+                    return false;
+                    
                 }
             }
             else
-            { 
-                //el codigo caducó, desea enviarlo nuevamente?
+            {
+                //el codigo caducó
+                MessageBox.Show("El codigo ingresado ya expiró, porfavor repita el procedimiento para obtener un nuevo codigo");
                 return false;
             }
 
-            //se realiza el metodo para traer los campos de cod y fecha y validar ambos:
             
         }
         public void cargarCatche(string usuario)

@@ -32,14 +32,21 @@ namespace Vista
                 try
                 {
                     cnRecupero.usuarioEmail(textBoxUsuarioRec.Text);
-                    label4.Text = cnRecupero.message;
-                    label4.Visible = true;
-                    label6.Visible = true;
-                    codigo.Visible = true;
-                    Verificar.Visible = true;
-                    textBoxUsuarioRec.Enabled = true;
-                    btnContinuar.Visible = false;
-
+                    string msj = cnRecupero.message.Substring(5);
+                    if (msj == "Error" || msj == "error")
+                    {
+                        MessageBox.Show(cnRecupero.message);
+                    }
+                    else 
+                    {
+                        label4.Text = cnRecupero.message;
+                        label4.Visible = true;
+                        label6.Visible = true;
+                        codigo.Visible = true;
+                        Verificar.Visible = true;
+                        textBoxUsuarioRec.Enabled = false;
+                        btnContinuar.Visible = false;
+                    }
 
            // ocultar el boton, disablear el texbox usuario y agregar visible el textbox cod email y el boton verificar cod
                     
@@ -65,12 +72,17 @@ namespace Vista
         {
             CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
 
-            bool valor = cnRecupero.validCode(cnRecupero.id, codigo.Text);
+            bool valor = cnRecupero.validCode(codigo.Text);
 
             if (valor) 
             {
 
+                
+                this.Hide();
+                CambioDePass cambioDePass =  new CambioDePass();
+                cambioDePass.Show();
             }
+
         }
     }
 }

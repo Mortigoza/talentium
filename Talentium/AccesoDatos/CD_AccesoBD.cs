@@ -41,6 +41,8 @@ namespace AccesoDatos
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable resultado = EjecutarConsultas("ConsEmailRecupero_sp", listaParametros.ToArray());
+                UserCache.id =Convert.ToInt32(resultado.Rows[0][2]);
+
             return resultado;
         }
         public DataTable ValidCode(int id)
