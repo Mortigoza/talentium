@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AccesoDatos;
 
 namespace LogicaNegocio
 {
-    internal class CN_PoliticaPassword
+    public class CN_PoliticaPassword
     {
+        
     }
 }

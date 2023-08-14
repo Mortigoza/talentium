@@ -52,6 +52,12 @@
     <Compile Include="CambioDePass.Designer.cs">
       <DependentUpon>CambioDePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigPoliticasPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigPoliticasPass.Designer.cs">
+      <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRecupero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="UtilidadesForm.cs" />
     <EmbeddedResource Include="CambioDePass.resx">
       <DependentUpon>CambioDePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigPoliticasPass.resx">
+      <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
