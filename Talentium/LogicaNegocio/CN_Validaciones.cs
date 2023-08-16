@@ -26,11 +26,12 @@ namespace LogicaNegocio
         // MANEJA LOS INTENTOS DE CONTRASEÑA INCORRECTA.
         private static void valIntentos()
         {
-            if (UserCache.baja == null)
+            DateTime fechaDefecto = Convert.ToDateTime("1900-01-01");
+            if (UserCache.baja == fechaDefecto)
             {
                 CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
 
-                if (UserCache.intentos > 0 && UserCache.bloqueo == null)
+                if (UserCache.intentos > 0 && UserCache.bloqueo == fechaDefecto)
                 {
                     try
                     {
@@ -89,17 +90,18 @@ namespace LogicaNegocio
             string digitoBd = UserCache.digito;
 
             mensajeError = "Sin errores de validacion";
-
-            if (UserCache.baja == null)
+             DateTime valorFechaDefecto = Convert.ToDateTime("1900-01-01");
+            if (UserCache.baja != null  || UserCache.baja == valorFechaDefecto)
             {
                 bajaVal = true;
-                if (string.Equals(digitoBd, digitoForm)) pswDigVal = true;
+                if (string.Equals(digitoBd.Trim(), digitoForm)) pswDigVal = true;
                 // El mensaje de error es provisorio porque hay que bloquear el usuario
                 else mensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
 
                 if (string.Equals(usrForm, usrBd))
                 {
-                    if (string.Equals(pswBd, pswForm)) pswVal = true;
+                    
+                    if (string.Equals(pswBd.Trim(), pswForm)) pswVal = true;
                     else
                     {
                         // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
@@ -116,7 +118,7 @@ namespace LogicaNegocio
                     mensajeError = "Usuario o contraseña incorrectos.";
                 }
 
-                if (UserCache.bloqueo == null) bloqVal = true;
+                if (UserCache.bloqueo == valorFechaDefecto) bloqVal = true;
                 else mensajeError = "Usuario bloqueado.";
             }
             else mensajeError = "El usuario se encuentra dado de baja.";

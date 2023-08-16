@@ -22,7 +22,7 @@ namespace LogicaNegocio
         public bool LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
-            string psw = Seguridad.Hash(usr + pass);
+            string psw = Seguridad.Hash(usuario + pass);
             string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
             //Console.WriteLine(usr);
             //Console.WriteLine(psw);

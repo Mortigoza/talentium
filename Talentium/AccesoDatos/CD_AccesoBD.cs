@@ -65,8 +65,7 @@ namespace AccesoDatos
           
             UserCache.id = (int)resultado.Rows[0][0];
 
-            UserCache.idPersona = (int)resultado.Rows[0][1]; 
-      
+            UserCache.idPersona = (int)resultado.Rows[0][1];
 
             UserCache.usuario = (string)resultado.Rows[0][2];
             UserCache.password = (string)resultado.Rows[0][3];
@@ -167,11 +166,13 @@ namespace AccesoDatos
             return resultado;
         }
 
-        public void InsertarNuevaPass( string user, string pass)
+        public void InsertarNuevaPass( string user, string pass, string dig)
         {
             SqlParameter param1 = new SqlParameter("@usuario", user) { SqlDbType = SqlDbType.VarChar };
             SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.VarChar };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            SqlParameter param3 = new SqlParameter("@digitoVerf", dig) { SqlDbType = SqlDbType.VarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
 
             DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
 

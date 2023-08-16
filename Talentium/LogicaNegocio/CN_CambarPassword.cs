@@ -25,9 +25,12 @@ namespace LogicaNegocio
         {
             //user ya viene hasheado
             try 
-            { 
-            string psw = Seguridad.Hash(user + pass);
-                acceso.InsertarNuevaPass(user, psw);
+            {
+                string usrBd = Seguridad.DesEncriptar(UserCache.usuario);
+                string psw = Seguridad.Hash(usrBd + pass);
+                string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
+
+                acceso.InsertarNuevaPass(user, psw, dig);
             }catch(Exception ex)
             {
                 MessageBox.Show("Error al actualiar la contraseña" + ex);
