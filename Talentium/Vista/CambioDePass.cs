@@ -23,7 +23,13 @@ namespace Vista
 
         private void CambioDePass_Load(object sender, EventArgs e)
         {
-           
+            CN_CambarPassword pass = new CN_CambarPassword();
+
+            DataTable pregUsuarios = pass.ObtenerPregutasUsuarios(7);//pasar el id por el userCache
+
+            comboBox1.DisplayMember = "Pregunta";
+            comboBox1.DataSource = pregUsuarios;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -33,28 +39,36 @@ namespace Vista
 
         private void continuar_Click(object sender, EventArgs e)
         {
+            CN_CambarPassword pass = new CN_CambarPassword();
             if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text)) 
             {
                 MessageBox.Show("Los campos no deben estar vacios");
-            }else { 
-                bool valor = CN_CambarPassword.ValidatePassword(tbContra1.Text);
-                if (valor)
+            }else {
+
+                if (tbContra1.Text == tbContra2.Text)
                 {
-                    if (tbContra1.Text == tbContra1.Text)
+                    if (comboBox1.SelectedItem != null)
                     {
+                        DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
+                       // int id = Convert.ToInt32(selectedRow["id_pregunta"]);
+                        string rta = selectedRow["respuesta"].ToString().Trim();
 
-
-                    } else 
-                    {
+                        if (respuesta.Text == rta)
+                        {
+                            //se realiza el update de la nueva pass y se hashea la misma. 
+                           pass.insertarPass(UserCache.usuario, tbContra2.Text);
+                            MessageBox.Show("Operación realizada con éxito");
+                            this.Hide();
+                            frmLogin login = new frmLogin();
+                            login.Show();
+                        }
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La clave debe contener al menos un carácter alfanumérico y al menos un carácter especial, y tener una longitud mínima de 8 caracteres. ");
-
+                    MessageBox.Show("Las contraseñas no coinciden");
                 }
-
             }
         }
 

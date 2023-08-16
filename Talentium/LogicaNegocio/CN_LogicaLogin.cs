@@ -22,7 +22,7 @@ namespace LogicaNegocio
         public bool LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
-            string psw = Seguridad.Hash(usuario + pass);
+            string psw = Seguridad.Hash(usr + pass);
             string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
             //Console.WriteLine(usr);
             //Console.WriteLine(psw);
@@ -104,8 +104,8 @@ namespace LogicaNegocio
         }
         public  void usuarioEmail(string usuario) 
         {
-           // string user = Seguridad.Encriptar(usuario);
-            DataTable tabla = accesoDatos.EmailDeRecupero(usuario);
+            string user = Seguridad.Encriptar(usuario);
+            DataTable tabla = accesoDatos.EmailDeRecupero(user);
 
             //se valida que el usuario sea ingresado correctamente
             if (tabla != null && tabla.Rows.Count > 0)
@@ -117,7 +117,7 @@ namespace LogicaNegocio
 
                     //el usuario es correcto, por ello debemos genear el codigo y enviar el email
                     string correo = Convert.ToString(tabla.Rows[0][0]);
-                    UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
+                    //UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
                     var tup = email.obtenerCod();
                     string cod = tup.Item1;
                     DateTime fhCaducidad = tup.Item2;

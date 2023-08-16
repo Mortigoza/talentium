@@ -81,7 +81,7 @@ namespace LogicaNegocio
             string usrForm = usuario;
             string usrBd = Seguridad.DesEncriptar(UserCache.usuario);
 
-            string pswForm = Seguridad.Hash(Convert.ToString(usuario + password));
+            string pswForm = Seguridad.Hash(Convert.ToString(usrBd + password));
             string pswBd = UserCache.password;
 
             // Se hashea el digito con solo la password (reveer)

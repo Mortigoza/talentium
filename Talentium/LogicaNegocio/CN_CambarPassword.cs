@@ -4,24 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Data;
+using AccesoDatos;
+using Comun;
+using System.Windows.Forms;
 
 namespace LogicaNegocio
 {
    public class CN_CambarPassword
     {
+        CD_AccesoBD acceso = new CD_AccesoBD();
 
-        public static bool ValidatePassword(string password)
+
+        public DataTable ObtenerPregutasUsuarios(int id)
         {
-            // Expresión regular que verifica la contraseña
-            string pattern = @"^(?=.*[A-Za-z0-9])(?=.*[@#$%^&+=!]).{8,}$";
-
-            return Regex.IsMatch(password, pattern);
+            return acceso.ConsultaPregSeg(id);
         }
 
-        //public string ChangePassword()
-        //{ 
-
-
-        //}
+        public void insertarPass(string user, string pass) 
+        {
+            //user ya viene hasheado
+            try 
+            { 
+            string psw = Seguridad.Hash(user + pass);
+                acceso.InsertarNuevaPass(user, psw);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al actualiar la contraseña" + ex);
+            }
+        }
     }
 }

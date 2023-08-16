@@ -42,6 +42,7 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable resultado = EjecutarConsultas("ConsEmailRecupero_sp", listaParametros.ToArray());
                 UserCache.id =Convert.ToInt32(resultado.Rows[0][2]);
+                UserCache.usuario = (string)resultado.Rows[0][4];
 
             return resultado;
         }
@@ -61,27 +62,25 @@ namespace AccesoDatos
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable resultado = EjecutarConsultas("loginConsulta2_sp", listaParametros.ToArray());
-
+          
             UserCache.id = (int)resultado.Rows[0][0];
 
-            try { UserCache.idPersona = (int)resultado.Rows[0][1]; }
-            catch { UserCache.idPersona = null; }
+            UserCache.idPersona = (int)resultado.Rows[0][1]; 
+      
 
             UserCache.usuario = (string)resultado.Rows[0][2];
             UserCache.password = (string)resultado.Rows[0][3];
             UserCache.alta = (DateTime)resultado.Rows[0][4];
 
-            try { UserCache.baja = (DateTime)resultado.Rows[0][5]; }
-            catch { UserCache.baja = null; }
+            UserCache.baja = (DateTime)resultado.Rows[0][5] ; 
+           
 
             UserCache.cambiaCada = (int)resultado.Rows[0][6];
 
-            try { UserCache.ultimoCambio = (DateTime)resultado.Rows[0][7]; }
-            catch { UserCache.ultimoCambio = null; }
-            try { UserCache.bloqueo = (DateTime)resultado.Rows[0][8]; }
-            catch { UserCache.bloqueo = null; }
+            UserCache.ultimoCambio = (DateTime)resultado.Rows[0][7];
+            UserCache.bloqueo = (DateTime)resultado.Rows[0][8];
 
-            UserCache.nueva = (bool)resultado.Rows[0][9];
+           // UserCache.nueva = (bool)resultado.Rows[0][9];
 
             UserCache.fechaIntentos = (DateTime)resultado.Rows[0][10];
 
@@ -157,8 +156,26 @@ namespace AccesoDatos
             ConfigCache.passAnteriores = (bool)resultado.Rows[0][5];
             ConfigCache.noDatosPersonales = (bool)resultado.Rows[0][6];
         }
-        
 
+        public DataTable ConsultaPregSeg(int usuario)
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", usuario) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("consultarPreguntas_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        public void InsertarNuevaPass( string user, string pass)
+        {
+            SqlParameter param1 = new SqlParameter("@usuario", user) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.VarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+
+            DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
+
+        }
     }
 }
 
