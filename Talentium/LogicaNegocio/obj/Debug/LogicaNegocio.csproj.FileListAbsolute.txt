@@ -42,6 +42,7 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -53,6 +54,8 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\tale
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+=======
+>>>>>>> 60f7e2a0cb441d69e3d39ea0b790b9a91a84229a
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll

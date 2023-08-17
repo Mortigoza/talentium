@@ -79,26 +79,18 @@ namespace AccesoDatos
             UserCache.ultimoCambio = (DateTime)resultado.Rows[0][7];
             UserCache.bloqueo = (DateTime)resultado.Rows[0][8];
 
-           // UserCache.nueva = (bool)resultado.Rows[0][9];
+            //UserCache.nueva = (bool)resultado.Rows[0][9];
 
-            UserCache.fechaIntentos = (DateTime)resultado.Rows[0][10];
-
-            UserCache.digito = (string)resultado.Rows[0][11];
-            UserCache.intentos = (int)resultado.Rows[0][12];
+            UserCache.digito = (string)resultado.Rows[0][10];
+            UserCache.intentos = (int)resultado.Rows[0][11];
         }
         public void Bloquear(int id, DateTime? hBloqueo)
         {
             List<SqlParameter> listaParametros;
             SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
-            if (hBloqueo != null)
-            {
-                SqlParameter param2 = new SqlParameter("@bloqueo", hBloqueo) { SqlDbType = SqlDbType.DateTime };
-                listaParametros = new List<SqlParameter>() { param1, param2 };
-            }
-            else
-            {
-                listaParametros = new List<SqlParameter>() { param1 };
-            }
+            SqlParameter param2 = new SqlParameter("@bloqueo", hBloqueo) { SqlDbType = SqlDbType.DateTime };
+            listaParametros = new List<SqlParameter>() { param1, param2 };
+
             DataTable resultado = EjecutarConsultas("bloqueo_usuario_sp", listaParametros.ToArray(), true);
         }
         public void Intentos(int id, int intento)
@@ -108,12 +100,12 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("intento_usuario_sp", listaParametros.ToArray(), true);
         }
-        public void CargarFechaHoyIntentos(int id, DateTime fechaIntentos, int intentos)
+        public void RestaurarIntentos(int id, int intentos)
         {
             SqlParameter param1 = new SqlParameter("@ID", id) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@fechaIntentos", fechaIntentos) { SqlDbType = SqlDbType.DateTime };
-            SqlParameter param3 = new SqlParameter("@intentos", intentos) { SqlDbType = SqlDbType.Int };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            SqlParameter param2 = new SqlParameter("@intentos", intentos) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+
             DataTable resultado = EjecutarConsultas("restablecimiento_de_intentos_sp", listaParametros.ToArray(), true);
         }
         public void CargarCodyFHRecupero( int id, string cod, DateTime fechaCaducidad )

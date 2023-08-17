@@ -14,11 +14,22 @@ namespace LogicaNegocio
         private static DateTime horaBloqueo;
         private static double lapsoBloqueo = 0.1;
         private static string mensajeError;
+        private static DateTime fechaDefecto = Convert.ToDateTime("1900-01-01");
 
         private static string mensajeErrorLabel; // NOTA: mover a otra clase mas adelante
 
         public static int GetIntentos() { return UserCache.intentos; }
-        public static DateTime GetHoraDesbloqueo() { valIntentos(); return horaBloqueo.AddMinutes(lapsoBloqueo); }
+        public static DateTime GetHoraDesbloqueo() {
+            try
+            {
+                horaBloqueo = Convert.ToDateTime(UserCache.bloqueo);
+                return horaBloqueo.AddMinutes(lapsoBloqueo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public static string GetMensajeError() { return mensajeError; }
         public static string GetMensajeErrorLabel() { return mensajeErrorLabel; }
 
@@ -26,7 +37,6 @@ namespace LogicaNegocio
         // MANEJA LOS INTENTOS DE CONTRASEÑA INCORRECTA.
         private static void valIntentos()
         {
-            DateTime fechaDefecto = Convert.ToDateTime("1900-01-01");
             if (UserCache.baja == fechaDefecto)
             {
                 CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
@@ -40,14 +50,15 @@ namespace LogicaNegocio
                     }
                     catch { }
                 }
-                else if (UserCache.intentos <= 0 && UserCache.bloqueo == null)
+                else if (UserCache.intentos <= 0 && UserCache.bloqueo == fechaDefecto)
                 {
                     logicaLogin.BloqueoUser(UserCache.id, System.DateTime.Now);
+                    logicaLogin.cargarCatche(UserCache.usuario);
                 }
                 else
                 {
-                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
                     mensajeError = "Usuario reactivado";
+                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
                 }
             }
         }
@@ -57,21 +68,10 @@ namespace LogicaNegocio
             CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
             horaBloqueo = Convert.ToDateTime(UserCache.bloqueo);
 
-            if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo) && UserCache.bloqueo != null) // Si ya paso el tiempo de bloqueo;
+            if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo) && UserCache.bloqueo != fechaDefecto) // Si ya paso el tiempo de bloqueo;
             {
-                logicaLogin.BloqueoUser(UserCache.id, null);
+                logicaLogin.BloqueoUser(UserCache.id, fechaDefecto);
                 logicaLogin.IntentosUser(UserCache.id, 5);
-            }
-        }
-
-        private static void valFechaHoy()
-        {
-            DateTime fechaHoy = DateTime.Now;
-            DateTime fechaIntentos = UserCache.fechaIntentos;
-            if (fechaHoy != fechaIntentos)
-            {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
-                logicaLogin.CargarFechaHoyIntentosUser(UserCache.id, fechaHoy);
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
@@ -91,7 +91,7 @@ namespace LogicaNegocio
 
             mensajeError = "Sin errores de validacion";
              DateTime valorFechaDefecto = Convert.ToDateTime("1900-01-01");
-            if (UserCache.baja != null  || UserCache.baja == valorFechaDefecto)
+            if (UserCache.baja != fechaDefecto || UserCache.baja == valorFechaDefecto)
             {
                 bajaVal = true;
                 if (string.Equals(digitoBd.Trim(), digitoForm)) pswDigVal = true;
@@ -104,22 +104,17 @@ namespace LogicaNegocio
                     if (string.Equals(pswBd.Trim(), pswForm)) pswVal = true;
                     else
                     {
-                        // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
-                        valFechaHoy();
-                        valIntentos();
                         mensajeError = "Usuario o contraseña incorrectos.";
+                        valIntentos();
                     }
                 }
+
+                if (UserCache.bloqueo == fechaDefecto) bloqVal = true;
                 else
                 {
-                    // Se va a llamar al metodo para validar la fecha de intentos con la de hoy
-                    valFechaHoy();
+                    mensajeError = "Usuario bloqueado.";
                     valIntentos();
-                    mensajeError = "Usuario o contraseña incorrectos.";
                 }
-
-                if (UserCache.bloqueo == valorFechaDefecto) bloqVal = true;
-                else mensajeError = "Usuario bloqueado.";
             }
             else mensajeError = "El usuario se encuentra dado de baja.";
 
