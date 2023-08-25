@@ -78,3 +78,14 @@ C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegoc
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

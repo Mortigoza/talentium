@@ -64,3 +64,12 @@ C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb

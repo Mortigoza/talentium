@@ -45,22 +45,23 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 155);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(111, 157);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(336, 193);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // titulo
             // 
             this.titulo.AutoSize = true;
             this.titulo.BackColor = System.Drawing.Color.Transparent;
-            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(85, 348);
+            this.titulo.Font = new System.Drawing.Font("Berlin Sans FB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Location = new System.Drawing.Point(96, 335);
             this.titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(387, 91);
+            this.titulo.Size = new System.Drawing.Size(375, 88);
             this.titulo.TabIndex = 1;
             this.titulo.Text = "Talentium";
             // 
@@ -69,8 +70,8 @@
             this.txtUsername.AccessibleName = "Usuario";
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtUsername.Location = new System.Drawing.Point(581, 213);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(561, 213);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(335, 36);
@@ -84,11 +85,10 @@
             this.txtPassword.AccessibleName = "Contraseña";
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtPassword.Location = new System.Drawing.Point(581, 267);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(561, 267);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(335, 36);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
@@ -102,8 +102,8 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLogin.Location = new System.Drawing.Point(581, 320);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Location = new System.Drawing.Point(561, 320);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(336, 37);
             this.btnLogin.TabIndex = 4;
@@ -117,7 +117,7 @@
             this.lblSesion.BackColor = System.Drawing.Color.Transparent;
             this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSesion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSesion.Location = new System.Drawing.Point(671, 180);
+            this.lblSesion.Location = new System.Drawing.Point(651, 176);
             this.lblSesion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSesion.Name = "lblSesion";
             this.lblSesion.Size = new System.Drawing.Size(154, 29);
@@ -129,7 +129,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(679, 362);
+            this.linkLabel1.Location = new System.Drawing.Point(659, 368);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(141, 16);
@@ -140,13 +140,17 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(925, 267);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMostrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrar.BackgroundImage")));
+            this.btnMostrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrar.FlatAppearance.BorderSize = 0;
+            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrar.Location = new System.Drawing.Point(905, 267);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(45, 37);
+            this.btnMostrar.Size = new System.Drawing.Size(40, 37);
             this.btnMostrar.TabIndex = 7;
-            this.btnMostrar.Text = "M";
-            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.UseVisualStyleBackColor = false;
             this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             this.btnMostrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseUp);
             // 
@@ -158,6 +162,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1028, 580);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblSesion);
@@ -165,11 +170,10 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.titulo);
-            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Talentium - Login";
