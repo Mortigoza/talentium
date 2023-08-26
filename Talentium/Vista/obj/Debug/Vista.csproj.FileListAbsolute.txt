@@ -76,7 +76,6 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.c
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
-<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -100,8 +99,6 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\tale
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePass.resources
-=======
->>>>>>> 60f7e2a0cb441d69e3d39ea0b790b9a91a84229a
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -174,3 +171,4 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources

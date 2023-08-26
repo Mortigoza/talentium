@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConsultaPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPersonal.Designer.cs">
+      <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesibilidad\frmConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmConsultaUsuario.Designer.cs">
+      <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CambioDePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +69,12 @@
     </Compile>
     <Compile Include="ConfigPoliticasPass.Designer.cs">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesibilidad\frmAltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmAltaUsuario.Designer.cs">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRecupero.cs">
       <SubType>Form</SubType>
@@ -91,6 +109,12 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
+    <EmbeddedResource Include="frmConsultaPersonal.resx">
+      <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmConsultaUsuario.resx">
+      <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CambioDePass.resx">
       <DependentUpon>CambioDePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmAltaUsuario.resx">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
