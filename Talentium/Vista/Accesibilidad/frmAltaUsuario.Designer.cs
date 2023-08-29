@@ -50,7 +50,7 @@
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblCambiaCada = new System.Windows.Forms.Label();
             this.lblContrasenia = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
+            this.lblPerfil = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
@@ -58,6 +58,8 @@
             this.btnCrearContrasenia = new System.Windows.Forms.Button();
             this.btnAsignarPermisos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisos = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCambiaCada)).BeginInit();
@@ -274,15 +276,15 @@
             this.lblContrasenia.TabIndex = 5;
             this.lblContrasenia.Text = "Contraseña";
             // 
-            // lblRol
+            // lblPerfil
             // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.BackColor = System.Drawing.Color.Transparent;
-            this.lblRol.Location = new System.Drawing.Point(56, 414);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(74, 13);
-            this.lblRol.TabIndex = 6;
-            this.lblRol.Text = "Rol (Permisos)";
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.BackColor = System.Drawing.Color.Transparent;
+            this.lblPerfil.Location = new System.Drawing.Point(56, 414);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(81, 13);
+            this.lblPerfil.TabIndex = 6;
+            this.lblPerfil.Text = "Perfil (Permisos)";
             // 
             // cmbRol
             // 
@@ -352,12 +354,32 @@
             this.btnDesasignarPermisos.Text = "<";
             this.btnDesasignarPermisos.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(232, 424);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnAdd.TabIndex = 21;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(655, 520);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(857, 555);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
             this.Controls.Add(this.btnCrearContrasenia);
@@ -365,7 +387,7 @@
             this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.cmbRol);
-            this.Controls.Add(this.lblRol);
+            this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.lblContrasenia);
@@ -413,7 +435,7 @@
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label lblCambiaCada;
         private System.Windows.Forms.Label lblContrasenia;
-        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
@@ -421,5 +443,7 @@
         private System.Windows.Forms.Button btnCrearContrasenia;
         private System.Windows.Forms.Button btnAsignarPermisos;
         private System.Windows.Forms.Button btnDesasignarPermisos;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

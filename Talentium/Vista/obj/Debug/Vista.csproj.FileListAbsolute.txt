@@ -172,3 +172,5 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources

@@ -10,7 +10,7 @@ namespace AccesoDatos
         public CD_Conexion()
         {
             //connectionstring = "Server=localhost\\SQLEXPRESS;DataBase= loginRRHH;Integrated Security=true";
-            connectionstring = "Server=(local);DataBase= bdmai;Integrated Security=true";
+            connectionstring = "Server=(local);DataBase= TalentiumBD;Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {

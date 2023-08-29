@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.Designer.cs">
+      <DependentUpon>frmAltaCertificacionServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmCertificacionServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmCertificacionServicios.Designer.cs">
+      <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
+    <EmbeddedResource Include="Analisis y reportes\frmAltaCertificacionServicios.resx">
+      <DependentUpon>frmAltaCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\frmCertificacionServicios.resx">
+      <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaPersonal.resx">
       <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
     </EmbeddedResource>
