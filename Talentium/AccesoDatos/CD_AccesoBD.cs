@@ -81,8 +81,8 @@ namespace AccesoDatos
 
             //UserCache.nueva = (bool)resultado.Rows[0][9];
 
-            UserCache.digito = (string)resultado.Rows[0][10];
-            UserCache.intentos = (int)resultado.Rows[0][11];
+            UserCache.digito = (string)resultado.Rows[0][11];
+            UserCache.intentos = (int)resultado.Rows[0][12];
         }
         public void Bloquear(int id, DateTime? hBloqueo)
         {

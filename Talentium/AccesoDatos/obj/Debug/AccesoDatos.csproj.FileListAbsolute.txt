@@ -34,7 +34,6 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\A
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb
-<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.dll
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.pdb
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.dll
@@ -44,8 +43,6 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\tale
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb
-=======
->>>>>>> 60f7e2a0cb441d69e3d39ea0b790b9a91a84229a
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\AccesoDatos\bin\Debug\Comun.dll
@@ -64,3 +61,12 @@ C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\bin\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\bin\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\AccesoDatos\obj\Debug\AccesoDatos.pdb

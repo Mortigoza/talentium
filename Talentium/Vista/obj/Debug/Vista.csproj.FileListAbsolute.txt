@@ -76,7 +76,6 @@ C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.c
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Downloads\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
-<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -100,8 +99,6 @@ C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\tale
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
 C:\Users\maira\OneDrive\Escritorio\instituto\Project Talentium\PF-talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePass.resources
-=======
->>>>>>> 60f7e2a0cb441d69e3d39ea0b790b9a91a84229a
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -150,3 +147,34 @@ C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\Vista\obj\D
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\Vista.exe
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\Vista.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\AccesoDatos.dll
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePass.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.exe
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempeño.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempeño.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
