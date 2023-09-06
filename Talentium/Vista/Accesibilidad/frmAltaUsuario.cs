@@ -14,10 +14,15 @@ namespace Vista
     public partial class frmAltaUsuario : Form
     {
         CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
+        int _index = -1;
         public frmAltaUsuario()
         {
             InitializeComponent();
             dtgPersonas.RowHeadersVisible = false;
+            dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgPersonas.AllowUserToAddRows = false;
+            dtgPersonas.AllowUserToResizeRows = false;
+            dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
         }
 
@@ -38,7 +43,7 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            usuario.InsertarNuevoUsuario(1, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
+            usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
         }
 
         private void btnCrearContrasenia_Click(object sender, EventArgs e)
@@ -68,6 +73,12 @@ namespace Vista
                 }
             }
 
+        }
+
+        private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
+            lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
         }
     }
 }

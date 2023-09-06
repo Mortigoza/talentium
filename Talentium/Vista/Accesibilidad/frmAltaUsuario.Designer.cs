@@ -69,6 +69,7 @@
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(648, 231);
             this.dtgPersonas.TabIndex = 0;
+            this.dtgPersonas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonas_RowEnter);
             // 
             // grpFiltro
             // 
