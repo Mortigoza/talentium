@@ -71,7 +71,7 @@ namespace LogicaNegocio
             if (DateTime.Now > horaBloqueo.AddMinutes(lapsoBloqueo) && UserCache.bloqueo != fechaDefecto) // Si ya paso el tiempo de bloqueo;
             {
                 logicaLogin.BloqueoUser(UserCache.id, fechaDefecto);
-                logicaLogin.IntentosUser(UserCache.id, 5);
+                logicaLogin.IntentosUser(UserCache.id, ConfigCache.intentos);
             }
         }
         // VALIDACION FINAL DE USUARIO Y CONTRASEÑA

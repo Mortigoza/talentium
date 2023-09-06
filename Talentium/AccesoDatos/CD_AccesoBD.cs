@@ -81,8 +81,8 @@ namespace AccesoDatos
 
             //UserCache.nueva = (bool)resultado.Rows[0][9];
 
-            UserCache.digito = (string)resultado.Rows[0][10];
-            UserCache.intentos = (int)resultado.Rows[0][11];
+            UserCache.digito = (string)resultado.Rows[0][11];
+            UserCache.intentos = (int)resultado.Rows[0][12];
         }
         public void Bloquear(int id, DateTime? hBloqueo)
         {
@@ -158,7 +158,7 @@ namespace AccesoDatos
             return resultado;
         }
 
-        public void InsertarNuevaPass( string user, string pass, string dig)
+        public void InsertarNuevaPass(string user, string pass, string dig)
         {
             SqlParameter param1 = new SqlParameter("@usuario", user) { SqlDbType = SqlDbType.VarChar };
             SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.VarChar };
@@ -167,6 +167,20 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
 
             DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
+
+        }
+        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@password", password) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@cambia_cada", cambia_cada) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@digito", digito) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param6 = new SqlParameter("@intentos", ConfigCache.intentos) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+
+            EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray(), true);
 
         }
     }

@@ -14,5 +14,6 @@ namespace Comun
         public static bool especiales { get; set; }
         public static bool passAnteriores { get; set; }
         public static bool noDatosPersonales { get; set; }
+        public static int intentos { get; set; }
     }
 }

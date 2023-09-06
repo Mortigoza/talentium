@@ -237,6 +237,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtContrasenia
             // 
@@ -335,6 +336,7 @@
             this.btnCrearContrasenia.TabIndex = 18;
             this.btnCrearContrasenia.Text = "R";
             this.btnCrearContrasenia.UseVisualStyleBackColor = true;
+            this.btnCrearContrasenia.Click += new System.EventHandler(this.btnCrearContrasenia_Click);
             // 
             // btnAsignarPermisos
             // 

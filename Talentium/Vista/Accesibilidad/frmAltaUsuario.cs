@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,17 @@ namespace Vista
         private void tbpUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
+            usuario.InsertarNuevoUsuario(1, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
+        }
+
+        private void btnCrearContrasenia_Click(object sender, EventArgs e)
+        {
+            txtContrasenia.Text = "aaf";
         }
     }
 }
