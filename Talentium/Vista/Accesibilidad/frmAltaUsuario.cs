@@ -20,13 +20,22 @@ namespace Vista
         {
             InitializeComponent();
             #region config
+            //dtg
+            dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
             dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgPersonas.AllowUserToAddRows = false;
             dtgPersonas.AllowUserToResizeRows = false;
             dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
+            //lblDatos
             lblDatosDtg.Text = "";
+            //cmb
+            cmbArea.DataSource = null;
+            cmbArea.DataSource = usuario.ConsultarAreas();
+            cmbArea.ValueMember = "id_area";
+            cmbArea.DisplayMember = "area";
+
             #endregion
         }
 
@@ -64,13 +73,14 @@ namespace Vista
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCuit.Text) && string.IsNullOrEmpty(txtNombre.Text) && string.IsNullOrEmpty(txtApellido.Text))
+            if (string.IsNullOrEmpty(txtCuit.Text) && string.IsNullOrEmpty(txtNombre.Text)
+                && string.IsNullOrEmpty(txtApellido.Text)&& (int) cmbArea.SelectedValue == -1)
             {
                 MessageBox.Show("Utilice al menos un filtro");
             }
             else
             {
-                DataTable dt = usuario.ConsultarPersonalAltaUsuario(txtCuit.Text, txtNombre.Text, txtApellido.Text);
+                DataTable dt = usuario.ConsultarPersonalAltaUsuario(txtCuit.Text, txtNombre.Text, txtApellido.Text, (int)cmbArea.SelectedValue);
 
                 if (dt.Rows.Count == 0)
                 {

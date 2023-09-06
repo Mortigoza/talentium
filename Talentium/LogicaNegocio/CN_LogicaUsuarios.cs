@@ -12,7 +12,7 @@ namespace LogicaNegocio
     public class CN_LogicaUsuarios
     {
 		CD_AccesoBD accesoDatos = new CD_AccesoBD();
-        public DataTable ConsultarPersonalAltaUsuario(string cuil, string nombre, string apellido)
+        public DataTable ConsultarPersonalAltaUsuario(string cuil, string nombre, string apellido, int area)
         {
             if (string.IsNullOrEmpty(cuil)) cuil = "\0";
             if (string.IsNullOrEmpty(nombre)) nombre = "\0";
@@ -20,7 +20,7 @@ namespace LogicaNegocio
 
             try
             {
-                return accesoDatos.ConsultarPersonalAltaUsuario(cuil, nombre, apellido);
+                return accesoDatos.ConsultarPersonalAltaUsuario(cuil, nombre, apellido, area);
             }
             catch (Exception ex)
             {
@@ -43,6 +43,17 @@ namespace LogicaNegocio
 
                 throw ex;
             }
+        }
+        public DataTable ConsultarAreas()
+        {
+            try
+            {
+                return accesoDatos.ConsultaAreas();
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
         }
     }
 }

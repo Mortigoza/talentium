@@ -183,17 +183,25 @@ namespace AccesoDatos
             EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray(), true);
 
         }
-        public DataTable ConsultarPersonalAltaUsuario(string cuil, string nombre, string apellido)
+        public DataTable ConsultarPersonalAltaUsuario(string cuil, string nombre, string apellido, int area)
         {
             SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param2 = new SqlParameter("@nombre", nombre) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param3 = new SqlParameter("@apellido", apellido) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@id_area", area) { SqlDbType = SqlDbType.Int };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4 };
 
             DataTable resultado = EjecutarConsultas("consultar_personal_alta_usuario_sp", listaParametros.ToArray());
             return resultado;
 
+        }
+        public DataTable ConsultaAreas()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() {};
+
+            DataTable resultado = EjecutarConsultas("consultar_areas_sp", listaParametros.ToArray());
+            return resultado;
         }
     }
 }

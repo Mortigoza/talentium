@@ -94,9 +94,6 @@
             // 
             this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Items.AddRange(new object[] {
-            "RRHH",
-            ""});
             this.cmbArea.Location = new System.Drawing.Point(17, 158);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(100, 21);
