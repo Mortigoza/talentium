@@ -15,15 +15,19 @@ namespace Vista
     {
         CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
         int _index = -1;
+        bool _usuario = true;
         public frmAltaUsuario()
         {
             InitializeComponent();
+            #region config
             dtgPersonas.RowHeadersVisible = false;
             dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgPersonas.AllowUserToAddRows = false;
             dtgPersonas.AllowUserToResizeRows = false;
             dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
+            lblDatosDtg.Text = "";
+            #endregion
         }
 
         private void frmAltaUsuario_Load(object sender, EventArgs e)
@@ -43,7 +47,14 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
+            if (_index > 0 && !_usuario)
+            {
+                usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
+            }
+            else
+            {
+                MessageBox.Show("Error de alta");
+            }
         }
 
         private void btnCrearContrasenia_Click(object sender, EventArgs e)
@@ -79,6 +90,15 @@ namespace Vista
         {
             _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
             lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
+
+            if (!string.IsNullOrEmpty(dtgPersonas.Rows[e.RowIndex].Cells[4].Value.ToString()))
+            {
+                _usuario = true;
+            }
+            else
+            {
+                _usuario = false;
+            }
         }
     }
 }
