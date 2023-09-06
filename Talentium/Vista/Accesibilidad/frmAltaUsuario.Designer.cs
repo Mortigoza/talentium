@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgPersonas = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
             this.cmbArea = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
@@ -68,40 +64,11 @@
             // dtgPersonas
             // 
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Area});
             this.dtgPersonas.Location = new System.Drawing.Point(184, 36);
             this.dtgPersonas.Name = "dtgPersonas";
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(648, 231);
             this.dtgPersonas.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Apellido";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CUIT/CUIL";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Area
-            // 
-            this.Area.HeaderText = "Area";
-            this.Area.Name = "Area";
-            this.Area.ReadOnly = true;
             // 
             // grpFiltro
             // 
@@ -142,6 +109,7 @@
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtApellido
             // 
@@ -416,10 +384,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgPersonas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
         private System.Windows.Forms.GroupBox grpFiltro;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.Button btnFiltrar;
