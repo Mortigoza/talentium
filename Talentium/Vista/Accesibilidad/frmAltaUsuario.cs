@@ -1,4 +1,5 @@
-﻿using LogicaNegocio;
+﻿using Comun;
+using LogicaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace Vista
         CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
         int _index = -1;
         bool _usuario = true;
+        DataTable dtListaBd; 
+        DataTable dtListaMem = new DataTable("Permisos");
         public frmAltaUsuario()
         {
             InitializeComponent();
@@ -35,6 +38,27 @@ namespace Vista
             cmbArea.DataSource = usuario.ConsultarAreas();
             cmbArea.ValueMember = "id_area";
             cmbArea.DisplayMember = "area";
+            //dt
+            DataColumn idColumn = new DataColumn();
+            idColumn.DataType = System.Type.GetType("System.Int32");
+            idColumn.ColumnName = "id_permiso";
+            dtListaMem.Columns.Add(idColumn);
+
+            DataColumn fNameColumn = new DataColumn();
+            fNameColumn.DataType = System.Type.GetType("System.String");
+            fNameColumn.ColumnName = "funcionalidad";
+            dtListaMem.Columns.Add(fNameColumn);
+            //lst
+            lstPermisos.DataSource = null;
+            dtListaBd = usuario.ConsultarPermisosLst();
+            lstPermisos.DataSource = dtListaBd;
+            lstPermisos.ValueMember = "id_permiso";
+            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DataSource = null;
+            lstPermisosAsignados.DataSource = dtListaMem;
+            lstPermisosAsignados.ValueMember = "id_permiso";
+            lstPermisosAsignados.DisplayMember = "funcionalidad";
+
 
             #endregion
         }
@@ -109,6 +133,25 @@ namespace Vista
             {
                 _usuario = false;
             }
+        }
+
+        private void btnAsignarPermisos_Click(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, lstPermisos.SelectedIndex);
+        }
+        private void lstPermisos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, lstPermisos.SelectedIndex);
+        }
+
+        private void btnDesasignarPermisos_Click(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, lstPermisosAsignados.SelectedIndex);
+        }
+
+        private void lstPermisosAsignados_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, lstPermisosAsignados.SelectedIndex);
         }
     }
 }

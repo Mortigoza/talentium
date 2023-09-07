@@ -198,9 +198,16 @@ namespace AccesoDatos
         }
         public DataTable ConsultaAreas()
         {
-            List<SqlParameter> listaParametros = new List<SqlParameter>() {};
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
 
             DataTable resultado = EjecutarConsultas("consultar_areas_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public DataTable ConsultarPermisosLst()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_permisos_lst_sp", listaParametros.ToArray());
             return resultado;
         }
     }

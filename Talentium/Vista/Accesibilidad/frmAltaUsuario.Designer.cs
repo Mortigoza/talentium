@@ -48,14 +48,14 @@
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.lblDatosDtg = new System.Windows.Forms.Label();
             this.btnCrearContrasenia = new System.Windows.Forms.Button();
             this.btnAsignarPermisos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisos = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lstPermisos = new System.Windows.Forms.ListBox();
+            this.lstPermisosAsignados = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCambiaCada)).BeginInit();
@@ -262,28 +262,6 @@
             this.cmbRol.Size = new System.Drawing.Size(168, 21);
             this.cmbRol.TabIndex = 7;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Alta_usuario",
-            "Mdf_usuario",
-            "Baja_usuario"});
-            this.checkedListBox1.Location = new System.Drawing.Point(297, 336);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(216, 154);
-            this.checkedListBox1.TabIndex = 15;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Alta_personas"});
-            this.checkedListBox2.Location = new System.Drawing.Point(565, 336);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(216, 154);
-            this.checkedListBox2.TabIndex = 16;
-            // 
             // lblDatosDtg
             // 
             this.lblDatosDtg.AutoSize = true;
@@ -306,21 +284,23 @@
             // 
             // btnAsignarPermisos
             // 
-            this.btnAsignarPermisos.Location = new System.Drawing.Point(519, 348);
+            this.btnAsignarPermisos.Location = new System.Drawing.Point(519, 332);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 19;
             this.btnAsignarPermisos.Text = ">";
             this.btnAsignarPermisos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisos.Click += new System.EventHandler(this.btnAsignarPermisos_Click);
             // 
             // btnDesasignarPermisos
             // 
-            this.btnDesasignarPermisos.Location = new System.Drawing.Point(519, 440);
+            this.btnDesasignarPermisos.Location = new System.Drawing.Point(519, 450);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 20;
             this.btnDesasignarPermisos.Text = "<";
             this.btnDesasignarPermisos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisos.Click += new System.EventHandler(this.btnDesasignarPermisos_Click);
             // 
             // btnAdd
             // 
@@ -340,20 +320,37 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lstPermisos
+            // 
+            this.lstPermisos.FormattingEnabled = true;
+            this.lstPermisos.Location = new System.Drawing.Point(297, 330);
+            this.lstPermisos.Name = "lstPermisos";
+            this.lstPermisos.Size = new System.Drawing.Size(216, 160);
+            this.lstPermisos.TabIndex = 23;
+            this.lstPermisos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPermisos_MouseDoubleClick);
+            // 
+            // lstPermisosAsignados
+            // 
+            this.lstPermisosAsignados.FormattingEnabled = true;
+            this.lstPermisosAsignados.Location = new System.Drawing.Point(565, 330);
+            this.lstPermisosAsignados.Name = "lstPermisosAsignados";
+            this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 160);
+            this.lstPermisosAsignados.TabIndex = 24;
+            this.lstPermisosAsignados.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPermisosAsignados_MouseDoubleClick);
+            // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(857, 555);
+            this.Controls.Add(this.lstPermisosAsignados);
+            this.Controls.Add(this.lstPermisos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
             this.Controls.Add(this.btnCrearContrasenia);
             this.Controls.Add(this.lblDatosDtg);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.btnAceptar);
@@ -401,13 +398,13 @@
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label lblDatosDtg;
         private System.Windows.Forms.Button btnCrearContrasenia;
         private System.Windows.Forms.Button btnAsignarPermisos;
         private System.Windows.Forms.Button btnDesasignarPermisos;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ListBox lstPermisos;
+        private System.Windows.Forms.ListBox lstPermisosAsignados;
     }
 }

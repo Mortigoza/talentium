@@ -55,5 +55,16 @@ namespace LogicaNegocio
             }
             return null;
         }
+        public DataTable ConsultarPermisosLst()
+        {
+            try
+            {
+                return accesoDatos.ConsultarPermisosLst();
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
     }
 }
