@@ -82,7 +82,13 @@ namespace Vista
         {
             if (_index > 0 && !_usuario)
             {
-                usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value));
+                List<int> permisos = new List<int>();
+                int len = dtListaMem.Rows.Count;
+                for (int i = 0; i < len; i++)
+                {
+                    permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                }
+                usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray());
             }
             else
             {
@@ -125,7 +131,7 @@ namespace Vista
             _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
             lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
 
-            if (!string.IsNullOrEmpty(dtgPersonas.Rows[e.RowIndex].Cells[4].Value.ToString()))
+            if (!string.IsNullOrEmpty(dtgPersonas.Rows[e.RowIndex].Cells[5].Value.ToString()))
             {
                 _usuario = true;
             }

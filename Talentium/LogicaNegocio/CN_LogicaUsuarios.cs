@@ -27,7 +27,7 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada)
+        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, int[] permisos)
         {
             string digito = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
 
@@ -36,11 +36,17 @@ namespace LogicaNegocio
 
             try
             {
-                accesoDatos.InsertarNuevoUsuario(id_persona, usuario, password, cambia_cada, digito);
+                int id_usuario = accesoDatos.InsertarNuevoUsuario(id_persona, usuario, password, cambia_cada, digito);
+                if (permisos.Length > 0)
+                {
+                    foreach (int id_permiso in permisos)
+                    {
+                        accesoDatos.InsertarNuevoPermisoUsuario(id_usuario, id_permiso);
+                    }
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

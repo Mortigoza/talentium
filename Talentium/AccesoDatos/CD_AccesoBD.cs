@@ -169,7 +169,7 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
 
         }
-        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito)
+        public int InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
@@ -180,7 +180,18 @@ namespace AccesoDatos
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
 
-            EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray(), true);
+            DataTable id_usuario = EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray());
+            return Convert.ToInt32(id_usuario.Rows[0][0]);
+
+        }
+        public void InsertarNuevoPermisoUsuario(int id_usuario, int id_permiso)
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", id_usuario) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_permiso", id_permiso) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2};
+
+            EjecutarConsultas("alta_permiso_de_usuario_sp", listaParametros.ToArray(), true);
 
         }
         public DataTable ConsultarPersonalAltaUsuario(string cuil, string nombre, string apellido, int area)
