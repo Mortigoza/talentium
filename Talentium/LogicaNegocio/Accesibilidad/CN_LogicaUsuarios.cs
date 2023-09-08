@@ -116,10 +116,10 @@ namespace LogicaNegocio
                 return (false, "Este empleado ya tiene un usuario asignado.");
             }
 
-            //if (/*username repetido*/) 
-            //{
-            //    return (false, "Ese nombre de usuario ya está en uso.");
-            //}
+            if (accesoDatos.ConsultarUsuarioRepetido(Seguridad.Encriptar(usr)))
+            {
+                return (false, "Ese nombre de usuario ya está en uso.");
+            }
 
 
             return (true, "");
