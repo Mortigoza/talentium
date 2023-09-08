@@ -94,5 +94,23 @@ namespace Comun
 
             return Resultado;
         }
+        public static string GenerarStringAleatorio(int largo = 8)
+        {
+            int longitudCodigo = largo; // Longitud del código alfanumérico
+            string caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+
+            char[] codigoAlfanumerico = new char[longitudCodigo];
+
+            for (int i = 0; i < longitudCodigo; i++)
+            {
+                int indiceCaracter = random.Next(caracteresPermitidos.Length);
+                codigoAlfanumerico[i] = caracteresPermitidos[indiceCaracter];
+            }
+
+            string codigoGenerado = new string(codigoAlfanumerico);
+
+            return codigoGenerado;
+        }
     }
 }

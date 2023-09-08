@@ -221,6 +221,21 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("consultar_permisos_lst_sp", listaParametros.ToArray());
             return resultado;
         }
+        public DataTable ConsultarPerfiles()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_perfiles_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public DataTable ConsultarPermisosPerfil(int id_perfil)
+        {
+            SqlParameter param1 = new SqlParameter("@id_perfil", id_perfil) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("consultar_permisos_perfil_sp", listaParametros.ToArray());
+            return resultado;
+        }
     }
 }
 

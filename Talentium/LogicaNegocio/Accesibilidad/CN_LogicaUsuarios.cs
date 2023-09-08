@@ -1,11 +1,13 @@
 ﻿using AccesoDatos;
 using Comun;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LogicaNegocio
 {
@@ -71,6 +73,56 @@ namespace LogicaNegocio
             {
             }
             return null;
+        }
+        public DataTable ConsultarPerfiles()
+        {
+            try
+            {
+                DataTable dt = accesoDatos.ConsultarPerfiles();
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(new Object[] { -1, "Ningúno" });
+                return dt;
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
+        public DataTable ConsultarPermisosPerfil(int id_perfil)
+        {
+            try
+            {
+                return accesoDatos.ConsultarPermisosPerfil(id_perfil);
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
+        public (bool, string) ValidarAltaUsuario(string usr, string psw, DataGridView dtg, int rowIndex)
+        {
+            if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
+            {
+                return (false, "Debe completar los campos.");
+            }
+
+            if (dtg.DataSource == null)
+            {
+                return (false, "Debe seleccionar a un empleado para asignarle este usuario.");
+            }
+
+            if (!string.IsNullOrEmpty(dtg.Rows[rowIndex].Cells[5].Value.ToString()))
+            {
+                return (false, "Este empleado ya tiene un usuario asignado.");
+            }
+
+            //if (/*username repetido*/) 
+            //{
+            //    return (false, "Ese nombre de usuario ya está en uso.");
+            //}
+
+
+            return (true, "");
         }
     }
 }

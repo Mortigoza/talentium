@@ -261,6 +261,7 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(168, 21);
             this.cmbRol.TabIndex = 7;
+            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // lblDatosDtg
             // 
@@ -268,9 +269,9 @@
             this.lblDatosDtg.BackColor = System.Drawing.Color.Transparent;
             this.lblDatosDtg.Location = new System.Drawing.Point(192, 279);
             this.lblDatosDtg.Name = "lblDatosDtg";
-            this.lblDatosDtg.Size = new System.Drawing.Size(159, 13);
+            this.lblDatosDtg.Size = new System.Drawing.Size(165, 13);
             this.lblDatosDtg.TabIndex = 17;
-            this.lblDatosDtg.Text = "Juan     Perez     20-44789418-2";
+            this.lblDatosDtg.Text = "Nombre     Apellido     CUIL/CUIT";
             // 
             // btnCrearContrasenia
             // 
