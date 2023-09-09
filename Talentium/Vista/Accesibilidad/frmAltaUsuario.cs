@@ -101,6 +101,7 @@ namespace Vista
                     permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
                 }
                 usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray());
+                usuario.MandarMail(_index, txtContrasenia.Text);
                 MessageBox.Show("Alta exitosa");
             }
             else

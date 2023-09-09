@@ -182,7 +182,6 @@ namespace AccesoDatos
 
             DataTable id_usuario = EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray());
             return Convert.ToInt32(id_usuario.Rows[0][0]);
-
         }
         public void InsertarNuevoPermisoUsuario(int id_usuario, int id_permiso)
         {
@@ -243,6 +242,15 @@ namespace AccesoDatos
 
             DataTable resultado = EjecutarConsultas("consultar_usuario_repetido_sp", listaParametros.ToArray());
             return resultado.Rows.Count != 0;
+        }
+        public string ConsultarMailPersona(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
+            return email.Rows[0][0].ToString();
         }
     }
 }

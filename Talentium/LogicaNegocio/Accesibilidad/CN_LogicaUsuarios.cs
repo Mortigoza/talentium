@@ -99,6 +99,18 @@ namespace LogicaNegocio
             }
             return null;
         }
+        public void MandarMail(int id_persona, string psw)
+        {
+            try
+            {
+                CN_EnviarEmail mail = new CN_EnviarEmail();
+                string _mail = accesoDatos.ConsultarMailPersona(id_persona);
+                mail.EnviarContraseña(_mail, psw);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
         public (bool, string) ValidarAltaUsuario(string usr, string psw, DataGridView dtg, int rowIndex)
         {
             if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
