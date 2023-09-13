@@ -5,6 +5,7 @@
 /packages/
 /.vs/
 /.suo/
+**/debug/
 *.user
 
 # Archivos de respaldo
