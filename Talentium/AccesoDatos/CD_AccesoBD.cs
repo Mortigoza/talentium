@@ -83,6 +83,8 @@ namespace AccesoDatos
 
             UserCache.digito = (string)resultado.Rows[0][11];
             UserCache.intentos = (int)resultado.Rows[0][12];
+            UserCache.nuevo = (bool)resultado.Rows[0][15];
+
         }
         public void Bloquear(int id, DateTime? hBloqueo)
         {
@@ -148,25 +150,52 @@ namespace AccesoDatos
             ConfigCache.noDatosPersonales = (bool)resultado.Rows[0][6];
         }
 
-        public DataTable ConsultaPregSeg(int usuario)
+        public DataTable ConsultarTodasPregSeg()
+        {
+            DataTable resultado = EjecutarConsultasSinParam("consultarPreguntas_sp");
+
+            return resultado;
+        }
+        public DataTable ConsultaRtaSeg(int usuario)
         {
             SqlParameter param1 = new SqlParameter("@id_usuario", usuario) { SqlDbType = SqlDbType.Int };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-            DataTable resultado = EjecutarConsultas("consultarPreguntas_sp", listaParametros.ToArray());
+            DataTable resultado = EjecutarConsultas("consultarRespuestas_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+        public DataTable Consulta1PgtaSeg(int pgtas)
+        {
+            SqlParameter param1 = new SqlParameter("@id_pregunta", pgtas) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("consultarPreg_sp", listaParametros.ToArray());
 
             return resultado;
         }
 
-        public void InsertarNuevaPass( string user, string pass, string dig)
+        public void InsertarNuevaPass( string user, string pass, string dig, bool nueva)
         {
             SqlParameter param1 = new SqlParameter("@usuario", user) { SqlDbType = SqlDbType.VarChar };
             SqlParameter param2 = new SqlParameter("@password", pass) { SqlDbType = SqlDbType.VarChar };
             SqlParameter param3 = new SqlParameter("@digitoVerf", dig) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param4 = new SqlParameter("@nuevo", nueva) { SqlDbType = SqlDbType.Bit };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4 };
+
+            DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
+
+        }
+        public void InsertarRespuestaSeg( int idUs, string rta, int idPregunta)
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", idUs) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@respuesta", rta) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param3 = new SqlParameter("@id_pregunta", idPregunta) { SqlDbType = SqlDbType.Int };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
 
-            DataTable resultado = EjecutarConsultas("upPassword_sp", listaParametros.ToArray(), true);
+            DataTable resultado = EjecutarConsultas("InsRespuesta_sp", listaParametros.ToArray(), true);
 
         }
     }

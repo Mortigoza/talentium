@@ -9,59 +9,56 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
-
 namespace Vista
 {
-    public partial class CambioDePass : Form
+    public partial class CambioDePassNU : Form
     {
-        public CambioDePass()
+        CN_CambarPassword pass = new CN_CambarPassword();
+        public CambioDePassNU()
         {
             InitializeComponent();
             CN_PoliticaPassword config = new CN_PoliticaPassword();
             config.ConsultaPoliticaPass();
         }
 
-        private void CambioDePass_Load(object sender, EventArgs e)
+        private void CambioDePassNU_Load(object sender, EventArgs e)
         {
-            CN_CambarPassword pass = new CN_CambarPassword();
+            
 
-            DataTable pregUsuarios = pass.ObtenerPregutasUsuarios(7);//pasar el id por el userCache
-
-            comboBox1.DisplayMember = "Pregunta";
-            comboBox1.DataSource = pregUsuarios;
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            DataTable preguntas = pass.ObtenerTodasPregutasSeg();
+            comboBox1.DisplayMember = "pregunta";
+            comboBox1.DataSource = preguntas;
         }
 
         private void continuar_Click(object sender, EventArgs e)
         {
-            CN_CambarPassword pass = new CN_CambarPassword();
-            if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text)) 
+            if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text))
             {
                 MessageBox.Show("Los campos no deben estar vacios");
-            }else {
+            }
+            else
+            {
 
                 if (tbContra1.Text == tbContra2.Text)
                 {
                     if (comboBox1.SelectedItem != null)
                     {
-                        DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
-                       // int id = Convert.ToInt32(selectedRow["id_pregunta"]);
-                        string rta = selectedRow["respuesta"].ToString().Trim();
+                         DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
+                        int id = Convert.ToInt32(selectedRow["id_pregunta"]);
+                        
+                        string rta = respuesta.Text.ToUpper();
 
-                        if (respuesta.Text == rta)
-                        {
-                            //se realiza el update de la nueva pass y se hashea la misma. 
-                           pass.insertarPass(UserCache.usuario, tbContra2.Text);
+                        // Se realiza el insert de las respuestas y preguntas.
+                        pass.insertarRta(UserCache.id, rta, id);
+
+                        // se realiza el update de la nueva pass y se hashea la misma. 
+                        pass.insertarPass(UserCache.usuario, tbContra2.Text);
+
                             MessageBox.Show("Operación realizada con éxito");
                             this.Hide();
                             frmLogin login = new frmLogin();
                             login.Show();
-                        }
+                       
 
                     }
                 }
@@ -84,6 +81,16 @@ namespace Vista
                 lblError.Visible = true;
                 lblError.Text = CN_Validaciones.GetMensajeErrorLabel();
             }
+        }
+
+        private void lblError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbContra1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

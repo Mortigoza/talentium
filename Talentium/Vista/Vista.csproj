@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CambioDePass.cs">
+    <Compile Include="CambioDePassNU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CambioDePass.Designer.cs">
-      <DependentUpon>CambioDePass.cs</DependentUpon>
+    <Compile Include="CambioDePassNU.Designer.cs">
+      <DependentUpon>CambioDePassNU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambioDePassRecupero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambioDePassRecupero.Designer.cs">
+      <DependentUpon>CambioDePassRecupero.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigPoliticasPass.cs">
       <SubType>Form</SubType>
@@ -133,8 +139,11 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
-    <EmbeddedResource Include="CambioDePass.resx">
-      <DependentUpon>CambioDePass.cs</DependentUpon>
+    <EmbeddedResource Include="CambioDePassNU.resx">
+      <DependentUpon>CambioDePassNU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambioDePassRecupero.resx">
+      <DependentUpon>CambioDePassRecupero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigPoliticasPass.resx">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>

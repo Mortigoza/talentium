@@ -30,6 +30,7 @@ namespace LogicaNegocio
             try
             {
                 accesoDatos.Buscar(usr);
+                
             }
             catch (Exception ex)
             {
@@ -89,7 +90,9 @@ namespace LogicaNegocio
                 CN_LogicaLogin login = new CN_LogicaLogin();
                 try
                 {
-                    if (login.LoginUser(usuario, password)) return true;
+                    if (login.LoginUser(usuario, password))
+                         return true; 
+                    
                     else return false;
                 }
                 catch

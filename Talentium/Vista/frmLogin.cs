@@ -25,9 +25,19 @@ namespace Vista
         {
             if (CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text))
             {
+                if (UserCache.nuevo)
+                {
+                    //llamar al form que cambia la contraseña.
+                    this.Hide();
+                    CambioDePassNU CP = new CambioDePassNU();
+                    CP.Show();
+                }
+                else 
+                { 
                 this.Hide();
                 frmMenu menu = new frmMenu();
                 menu.Show();
+                }
             }
         }
 

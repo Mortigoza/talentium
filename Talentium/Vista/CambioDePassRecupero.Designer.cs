@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class CambioDePass
+    partial class CambioDePassRecupero
     {
         /// <summary>
         /// Required designer variable.

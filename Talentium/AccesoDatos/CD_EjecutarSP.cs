@@ -40,5 +40,37 @@ namespace AccesoDatos
 
             }
         }
+        public DataTable EjecutarConsultasSinParam(string NombreSP, bool Directa = false)
+        {
+            DataTable DT = new DataTable();
+            try
+            {
+                using (SqlConnection CNN = GetConnection())
+                {
+                    CNN.Open();
+                    using (SqlCommand comando = new SqlCommand(NombreSP, CNN))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        if (!Directa)
+                        {
+                            DT.Load(comando.ExecuteReader());
+                        }
+                        else
+                        {
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                }
+                return DT;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al ejecutar procedimiento almacenado o Conexion a la Base de Datos. \n \n" + ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
     }
 }

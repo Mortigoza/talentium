@@ -1,0 +1,25 @@
+# Carpetas generadas por Visual Studio
+.vscode/
+/bin/
+/obj/
+/packages/
+/.vs/
+/.suo/
+*.user
+
+# Archivos de respaldo
+*.bak
+*.log
+
+# Archivos de configuración locales
+appsettings.Development.json
+launchSettings.json
+
+# Archivos compilados de Visual Studio
+*.dll
+*.pdb
+*.exe
+*.cache
+
+# Carpetas de salida de NuGet
+/packages/
