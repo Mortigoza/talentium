@@ -1,0 +1,41 @@
+# Ignorar archivos generados por Visual Studio
+.vscode/
+/bin/
+/obj/
+/packages/
+/.vs/
+/.suo/
+*.user
+
+# Ignorar archivos de respaldo
+*.bak
+*.log
+
+# Ignorar archivos de configuración locales
+appsettings.Development.json
+launchSettings.json
+
+# Ignorar archivos compilados de Visual Studio
+*.dll
+*.pdb
+*.exe
+*.cache
+
+# Ignorar carpetas de salida de NuGet
+/packages/
+
+# Ignorar archivos y carpetas en la capa de presentación
+Vista/bin/
+Vista/obj/
+
+# Ignorar archivos y carpetas en la capa de lógica de negocio
+LogicaNegocio/bin/
+LogicaNegocio/obj/
+
+# Ignorar archivos y carpetas en la capa de acceso a datos
+AccesoDatos/bin/
+AccesoDatos/obj/
+
+# Ignorar archivos y carpetas en la capa comun
+Comun/bin/
+Comun/obj/
