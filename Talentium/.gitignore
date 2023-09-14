@@ -1,26 +1,14 @@
-# Carpetas generadas por Visual Studio
-.vscode/
-/bin/
-/obj/
-/packages/
-/.vs/
-/.suo/
-**/debug/
-*.user
+# Ignorar archivos y carpetas en la capa de presentación
+Vista/bin/
+Vista/obj/
 
-# Archivos de respaldo
-*.bak
-*.log
+# Ignorar archivos y carpetas en la capa de lógica de negocio
+LogicaNegocio/bin/
+LogicaNegocio/obj/
 
-# Archivos de configuración locales
-appsettings.Development.json
-launchSettings.json
-
-# Archivos compilados de Visual Studio
-*.dll
-*.pdb
-*.exe
-*.cache
-
-# Carpetas de salida de NuGet
-/packages/
+# Ignorar archivos y carpetas en la capa de acceso a datos
+AccesoDatos/bin/
+AccesoDatos/obj/
+# Ignorar archivos y carpetas en la capa comun
+Comun/bin/
+Comun/obj/
