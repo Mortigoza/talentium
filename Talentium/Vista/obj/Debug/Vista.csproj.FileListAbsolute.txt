@@ -178,7 +178,6 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vist
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
-<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -211,7 +210,6 @@ C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Deb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
-=======
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -248,4 +246,3 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaProcesoDeSeleccion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
->>>>>>> bb67f92523b3088367ce664f5d7c8dd7a984a85f

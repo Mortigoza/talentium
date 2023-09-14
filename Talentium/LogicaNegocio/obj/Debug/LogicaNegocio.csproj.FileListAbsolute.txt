@@ -86,7 +86,6 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Logi
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
-<<<<<<< HEAD
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -98,7 +97,6 @@ C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
-=======
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -110,4 +108,3 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\ob
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
->>>>>>> bb67f92523b3088367ce664f5d7c8dd7a984a85f
