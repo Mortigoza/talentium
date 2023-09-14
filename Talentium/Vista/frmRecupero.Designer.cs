@@ -47,10 +47,11 @@
             // 
             // textBoxUsuarioRec
             // 
-            this.textBoxUsuarioRec.Location = new System.Drawing.Point(215, 180);
+            this.textBoxUsuarioRec.Location = new System.Drawing.Point(161, 146);
+            this.textBoxUsuarioRec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUsuarioRec.Multiline = true;
             this.textBoxUsuarioRec.Name = "textBoxUsuarioRec";
-            this.textBoxUsuarioRec.Size = new System.Drawing.Size(241, 30);
+            this.textBoxUsuarioRec.Size = new System.Drawing.Size(182, 25);
             this.textBoxUsuarioRec.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -63,9 +64,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(211, 157);
+            this.label1.Location = new System.Drawing.Point(158, 128);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ingrese su Usuario";
             // 
@@ -74,8 +76,9 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, -2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 58);
+            this.panel1.Size = new System.Drawing.Size(600, 47);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -83,9 +86,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(227, 13);
+            this.label2.Location = new System.Drawing.Point(170, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(361, 33);
+            this.label2.Size = new System.Drawing.Size(304, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Recupero de Contraseña";
             // 
@@ -94,9 +98,10 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(709, 404);
+            this.linkLabel1.Location = new System.Drawing.Point(532, 328);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(68, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(53, 20);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Volver";
@@ -109,10 +114,9 @@
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnContinuar.Location = new System.Drawing.Point(485, 177);
-            this.btnContinuar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnContinuar.Location = new System.Drawing.Point(364, 144);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(118, 33);
+            this.btnContinuar.Size = new System.Drawing.Size(88, 27);
             this.btnContinuar.TabIndex = 6;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = false;
@@ -121,17 +125,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 211);
+            this.label3.Location = new System.Drawing.Point(158, 246);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 7;
+            this.label3.Text = "Texto";
             // 
             // codigo
             // 
-            this.codigo.Location = new System.Drawing.Point(215, 269);
+            this.codigo.Location = new System.Drawing.Point(161, 219);
+            this.codigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codigo.Multiline = true;
             this.codigo.Name = "codigo";
-            this.codigo.Size = new System.Drawing.Size(241, 30);
+            this.codigo.Size = new System.Drawing.Size(182, 25);
             this.codigo.TabIndex = 9;
             this.codigo.Visible = false;
             // 
@@ -139,9 +146,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(211, 246);
+            this.label6.Location = new System.Drawing.Point(158, 200);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 20);
+            this.label6.Size = new System.Drawing.Size(118, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Ingrese el Código";
             this.label6.Visible = false;
@@ -154,10 +162,9 @@
             this.Verificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Verificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Verificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Verificar.Location = new System.Drawing.Point(485, 266);
-            this.Verificar.Margin = new System.Windows.Forms.Padding(4);
+            this.Verificar.Location = new System.Drawing.Point(364, 216);
             this.Verificar.Name = "Verificar";
-            this.Verificar.Size = new System.Drawing.Size(118, 35);
+            this.Verificar.Size = new System.Drawing.Size(88, 28);
             this.Verificar.TabIndex = 12;
             this.Verificar.Text = "Continuar";
             this.Verificar.UseVisualStyleBackColor = false;
@@ -166,10 +173,10 @@
             // 
             // frmRecupero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
-            this.ClientSize = new System.Drawing.Size(802, 450);
+            this.ClientSize = new System.Drawing.Size(602, 366);
             this.Controls.Add(this.Verificar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.codigo);
@@ -180,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxUsuarioRec);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmRecupero";
             this.Text = "Recupero de Contraseña";
             this.Load += new System.EventHandler(this.Form1_Load);

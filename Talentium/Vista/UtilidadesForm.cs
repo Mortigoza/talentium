@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,19 @@ namespace Comun
             {
                 txt.Text = txt.AccessibleName;
                 txt.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+        public static void moverListboxRow(ListBox ls1, ListBox ls2, DataTable dt1, DataTable dt2, int selectIndex)
+        {
+            if (ls1.Items.Count > 0)
+            {
+                DataRow row = dt2.NewRow();
+                row[0] = ls1.SelectedValue;
+                row[1] = ls1.Text;
+                dt2.Rows.Add(row);
+
+                dt1.Rows.RemoveAt(selectIndex);
+                ls2.Update();
             }
         }
     }

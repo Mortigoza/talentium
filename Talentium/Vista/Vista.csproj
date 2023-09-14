@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.Designer.cs">
+      <DependentUpon>frmAltaCertificacionServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmCertificacionServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analisis y reportes\frmCertificacionServicios.Designer.cs">
+      <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPersonal.Designer.cs">
+      <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesibilidad\frmConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmConsultaUsuario.Designer.cs">
+      <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CambioDePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +157,18 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
+    <EmbeddedResource Include="Analisis y reportes\frmAltaCertificacionServicios.resx">
+      <DependentUpon>frmAltaCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\frmCertificacionServicios.resx">
+      <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaPersonal.resx">
+      <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmConsultaUsuario.resx">
+      <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CambioDePass.resx">
       <DependentUpon>CambioDePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso De Seleccion\frmConsultaProcesoDeSeleccion.resx">
       <DependentUpon>frmConsultaProcesoDeSeleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmAltaUsuario.resx">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -75,7 +75,6 @@ C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegoc
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\talentium2023\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
-<<<<<<< HEAD
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -87,7 +86,6 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Logi
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
-=======
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
@@ -99,4 +97,3 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\ob
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
->>>>>>> 2bf127f93ae9ff0f3be3ece2b01936f6ec49ca98

@@ -80,7 +80,44 @@ namespace LogicaNegocio
                 }
             }
         }
-  
+        public string EnviarContraseña(string destEmail, string psw)
+        {
+            // Configura la información del remitente y destinatario
+            string fromEmail = "mairaaracelirodriguez2001@gmail.com";
+            string toEmail = destEmail;
+            string subject = "Alta de usuario Talentium";
+            string body = $"Tu contraseña del sistema Talentium es: {psw}";
 
-}
+            // Configura las credenciales del servidor SMTP
+            string smtpServer = "smtp.gmail.com";
+            int smtpPort = 587;
+            const string smtpUsername = "mairaaracelirodriguez2001@gmail.com";
+            const string smtpPassword = "hatongsavmlrtbok";
+
+            // Crea el objeto SmtpClient
+            using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
+            {
+                smtpClient.EnableSsl = true; // Habilita SSL/TLS si es necesario
+                smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+
+                // Crea el mensaje de correo electrónico
+                using (MailMessage mailMessage = new MailMessage(fromEmail, toEmail, subject, body))
+                {
+                    try
+                    {
+                        // Envía el correo electrónico
+                        smtpClient.Send(mailMessage);
+
+                        return "Se ha enviado el correo exitosamente al email asociado con su usuario.";
+                    }
+                    catch (Exception ex)
+                    {
+                        return "Error al enviar el correo: " + ex.Message;
+                    }
+                }
+            }
+        }
+
+
+    }
 }
