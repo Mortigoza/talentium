@@ -92,7 +92,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 63);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 59);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(56, 20);
             this.linkLabel1.TabIndex = 5;
@@ -127,7 +127,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(252, 328);
+            this.label4.Location = new System.Drawing.Point(334, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 8;
@@ -175,7 +175,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Verificar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.codigo);
@@ -186,6 +187,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxUsuarioRec);
+            this.MaximizeBox = false;
             this.Name = "frmRecupero";
             this.Text = "Recupero de Contraseña";
             this.Load += new System.EventHandler(this.Form1_Load);
