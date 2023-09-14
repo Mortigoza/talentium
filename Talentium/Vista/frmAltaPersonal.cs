@@ -72,5 +72,10 @@ namespace Vista
         {
             grbExp2.Visible = true;
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
