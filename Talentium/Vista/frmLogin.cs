@@ -75,5 +75,10 @@ namespace Vista
             frmRecupero recupero = new frmRecupero();
             recupero.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace LogicaNegocio
         {
             try
             {
-                accesoDatos.RestaurarIntentos(id, 5);
+                accesoDatos.RestaurarIntentos(id, ConfigCache.intentos);
             }
             catch
             {

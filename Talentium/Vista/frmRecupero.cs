@@ -39,8 +39,8 @@ namespace Vista
                     }
                     else 
                     {
-                        label4.Text = cnRecupero.message;
-                        label4.Visible = true;
+                        label3.Text = cnRecupero.message;
+                        label3.Visible = true;
                         label6.Visible = true;
                         codigo.Visible = true;
                         Verificar.Visible = true;
@@ -86,6 +86,11 @@ namespace Vista
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
