@@ -70,6 +70,9 @@
     <Compile Include="Accesibilidad\frmConsultaUsuario.Designer.cs">
       <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambioDePassNU.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CambioDePassNU.Designer.cs">
       <DependentUpon>CambioDePassNU.cs</DependentUpon>
     </Compile>
@@ -199,6 +202,12 @@
     <EmbeddedResource Include="Proceso De Seleccion\frmConsultaProcesoDeSeleccion.resx">
       <DependentUpon>frmConsultaProcesoDeSeleccion.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Accesibilidad\frmAltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmAltaUsuario.Designer.cs">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Accesibilidad\frmAltaUsuario.resx">
       <DependentUpon>frmAltaUsuario.cs</DependentUpon>
     </EmbeddedResource>

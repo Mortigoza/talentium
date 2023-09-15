@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambioDePass));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambioDePassRecupero));
             this.continuar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbContra2 = new System.Windows.Forms.TextBox();
