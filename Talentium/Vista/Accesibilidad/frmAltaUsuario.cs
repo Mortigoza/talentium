@@ -22,6 +22,7 @@ namespace Vista
         bool perfilCustom = false;
         DataTable dtListaBd; 
         DataTable dtListaMem = new DataTable("Permisos");
+        private string emailPersona = "";
         public frmAltaUsuario()
         {
             InitializeComponent();
@@ -100,9 +101,24 @@ namespace Vista
                 {
                     permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
                 }
-                usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray());
-                usuario.MandarMail(_index, txtContrasenia.Text);
-                MessageBox.Show("Alta exitosa");
+
+                string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
+                try
+                {
+                    if (string.IsNullOrEmpty(msg))
+                    {
+                        usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray(), txtEmail.Text);
+                        MessageBox.Show("Alta exitosa");
+                    }
+                    else
+                    {
+                        MessageBox.Show(msg);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
@@ -135,6 +151,7 @@ namespace Vista
                     dtgPersonas.DataSource = null;
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
+                    dtgPersonas.Columns[6].Visible = false;
                 }
             }
 
@@ -145,6 +162,11 @@ namespace Vista
             _rowIndex = e.RowIndex;
             _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
             lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
+            emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
+            if (chcEmail.Checked == false)
+            {
+                txtEmail.Text = emailPersona;
+            }
 
         }
 
@@ -235,6 +257,21 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void chcEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (chcEmail.Checked)
+            {
+                default:
+                    txtEmail.ReadOnly = true;
+                    txtEmail.Text = emailPersona;
+                    break;
+                case true:
+                    txtEmail.ReadOnly = false;
+                    txtEmail.Text = "";
+                    break;
+            }
         }
     }
 }

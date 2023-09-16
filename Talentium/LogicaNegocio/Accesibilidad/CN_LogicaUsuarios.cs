@@ -29,7 +29,7 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, int[] permisos)
+        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, int[] permisos, string mail)
         {
             string digito = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
 
@@ -38,7 +38,7 @@ namespace LogicaNegocio
 
             try
             {
-                int id_usuario = accesoDatos.InsertarNuevoUsuario(id_persona, usuario, password, cambia_cada, digito);
+                int id_usuario = accesoDatos.InsertarNuevoUsuario(id_persona, usuario, password, cambia_cada, digito, mail);
                 if (permisos.Length > 0)
                 {
                     foreach (int id_permiso in permisos)
@@ -99,17 +99,10 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public void MandarMail(int id_persona, string psw)
+        public string MandarMail(int id_persona, string psw, string mail)
         {
-            try
-            {
-                CN_EnviarEmail mail = new CN_EnviarEmail();
-                string _mail = accesoDatos.ConsultarMailPersona(id_persona);
-                mail.EnviarContraseña(_mail, psw);
-            }
-            catch (Exception ex)
-            {
-            }
+            CN_EnviarEmail email = new CN_EnviarEmail();
+            return email.EnviarContraseña(mail, psw);
         }
         public (bool, string) ValidarAltaUsuario(string usr, string psw, DataGridView dtg, int rowIndex)
         {

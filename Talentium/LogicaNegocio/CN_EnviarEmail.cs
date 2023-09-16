@@ -101,19 +101,20 @@ namespace LogicaNegocio
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
 
                 // Crea el mensaje de correo electrónico
-                using (MailMessage mailMessage = new MailMessage(fromEmail, toEmail, subject, body))
+
+                try
                 {
-                    try
+                    using (MailMessage mailMessage = new MailMessage(fromEmail, toEmail, subject, body))
                     {
                         // Envía el correo electrónico
                         smtpClient.Send(mailMessage);
 
-                        return "Se ha enviado el correo exitosamente al email asociado con su usuario.";
+                        return "";
                     }
-                    catch (Exception ex)
-                    {
-                        return "Error al enviar el correo: " + ex.Message;
-                    }
+                }
+                catch
+                {
+                    return "Correo electronico invalido";
                 }
             }
         }

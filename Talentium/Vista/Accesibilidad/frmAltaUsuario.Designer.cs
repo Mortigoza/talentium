@@ -56,6 +56,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lstPermisos = new System.Windows.Forms.ListBox();
             this.lstPermisosAsignados = new System.Windows.Forms.ListBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.chcEmail = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCambiaCada)).BeginInit();
@@ -172,7 +175,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(59, 352);
+            this.txtUsuario.Location = new System.Drawing.Point(47, 338);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 20);
             this.txtUsuario.TabIndex = 0;
@@ -184,7 +187,7 @@
             0,
             0,
             0});
-            this.nmrCambiaCada.Location = new System.Drawing.Point(59, 470);
+            this.nmrCambiaCada.Location = new System.Drawing.Point(47, 456);
             this.nmrCambiaCada.Maximum = new decimal(new int[] {
             360,
             0,
@@ -207,7 +210,7 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(59, 391);
+            this.txtContrasenia.Location = new System.Drawing.Point(47, 377);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.ReadOnly = true;
             this.txtContrasenia.Size = new System.Drawing.Size(167, 20);
@@ -217,7 +220,7 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(56, 336);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(44, 322);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(96, 13);
             this.lblNombreUsuario.TabIndex = 3;
@@ -227,7 +230,7 @@
             // 
             this.lblCambiaCada.AutoSize = true;
             this.lblCambiaCada.BackColor = System.Drawing.Color.Transparent;
-            this.lblCambiaCada.Location = new System.Drawing.Point(56, 454);
+            this.lblCambiaCada.Location = new System.Drawing.Point(44, 440);
             this.lblCambiaCada.Name = "lblCambiaCada";
             this.lblCambiaCada.Size = new System.Drawing.Size(128, 13);
             this.lblCambiaCada.TabIndex = 4;
@@ -237,7 +240,7 @@
             // 
             this.lblContrasenia.AutoSize = true;
             this.lblContrasenia.BackColor = System.Drawing.Color.Transparent;
-            this.lblContrasenia.Location = new System.Drawing.Point(56, 375);
+            this.lblContrasenia.Location = new System.Drawing.Point(44, 361);
             this.lblContrasenia.Name = "lblContrasenia";
             this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
             this.lblContrasenia.TabIndex = 5;
@@ -247,7 +250,7 @@
             // 
             this.lblPerfil.AutoSize = true;
             this.lblPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblPerfil.Location = new System.Drawing.Point(56, 414);
+            this.lblPerfil.Location = new System.Drawing.Point(44, 400);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblPerfil.TabIndex = 6;
@@ -257,7 +260,7 @@
             // 
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(58, 430);
+            this.cmbRol.Location = new System.Drawing.Point(46, 416);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(168, 21);
             this.cmbRol.TabIndex = 7;
@@ -275,7 +278,7 @@
             // 
             // btnCrearContrasenia
             // 
-            this.btnCrearContrasenia.Location = new System.Drawing.Point(232, 385);
+            this.btnCrearContrasenia.Location = new System.Drawing.Point(220, 371);
             this.btnCrearContrasenia.Name = "btnCrearContrasenia";
             this.btnCrearContrasenia.Size = new System.Drawing.Size(30, 30);
             this.btnCrearContrasenia.TabIndex = 18;
@@ -305,7 +308,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(232, 424);
+            this.btnAdd.Location = new System.Drawing.Point(220, 410);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(30, 30);
             this.btnAdd.TabIndex = 21;
@@ -340,11 +343,42 @@
             this.lstPermisosAsignados.TabIndex = 24;
             this.lstPermisosAsignados.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPermisosAsignados_MouseDoubleClick);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(46, 496);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(168, 20);
+            this.txtEmail.TabIndex = 25;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(44, 480);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 26;
+            this.lblEmail.Text = "Email";
+            // 
+            // chcEmail
+            // 
+            this.chcEmail.AutoSize = true;
+            this.chcEmail.Location = new System.Drawing.Point(220, 499);
+            this.chcEmail.Name = "chcEmail";
+            this.chcEmail.Size = new System.Drawing.Size(119, 17);
+            this.chcEmail.TabIndex = 27;
+            this.chcEmail.Text = "Email personalizado";
+            this.chcEmail.UseVisualStyleBackColor = true;
+            this.chcEmail.CheckedChanged += new System.EventHandler(this.chcEmail_CheckedChanged);
+            // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 555);
+            this.Controls.Add(this.chcEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lstPermisosAsignados);
             this.Controls.Add(this.lstPermisos);
             this.Controls.Add(this.btnCancelar);
@@ -408,5 +442,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ListBox lstPermisos;
         private System.Windows.Forms.ListBox lstPermisosAsignados;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.CheckBox chcEmail;
     }
 }
