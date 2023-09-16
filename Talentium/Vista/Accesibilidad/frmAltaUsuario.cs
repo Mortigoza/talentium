@@ -273,5 +273,23 @@ namespace Vista
                     break;
             }
         }
+
+        private void btnAsignarPermisosTodos_Click(object sender, EventArgs e)
+        {
+            for (int i = 0, len = lstPermisos.Items.Count; i < len; i++)
+            {
+                UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, 0);
+            }
+            PerfilCustom();
+        }
+
+        private void btnDesasignarPermisosTodos_Click(object sender, EventArgs e)
+        {
+            for (int i = 0, len = lstPermisosAsignados.Items.Count; i < len; i++)
+            {
+                UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, 0);
+            }
+            PerfilCustom();
+        }
     }
 }

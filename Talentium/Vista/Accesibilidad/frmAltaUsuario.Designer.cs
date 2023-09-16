@@ -59,6 +59,8 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.chcEmail = new System.Windows.Forms.CheckBox();
+            this.btnAsignarPermisosTodos = new System.Windows.Forms.Button();
+            this.btnDesasignarPermisosTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCambiaCada)).BeginInit();
@@ -288,7 +290,7 @@
             // 
             // btnAsignarPermisos
             // 
-            this.btnAsignarPermisos.Location = new System.Drawing.Point(519, 332);
+            this.btnAsignarPermisos.Location = new System.Drawing.Point(529, 368);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 19;
@@ -298,7 +300,7 @@
             // 
             // btnDesasignarPermisos
             // 
-            this.btnDesasignarPermisos.Location = new System.Drawing.Point(519, 450);
+            this.btnDesasignarPermisos.Location = new System.Drawing.Point(529, 409);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 20;
@@ -317,7 +319,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(655, 520);
+            this.btnCancelar.Location = new System.Drawing.Point(676, 520);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 22;
@@ -328,24 +330,24 @@
             // lstPermisos
             // 
             this.lstPermisos.FormattingEnabled = true;
-            this.lstPermisos.Location = new System.Drawing.Point(297, 330);
+            this.lstPermisos.Location = new System.Drawing.Point(307, 322);
             this.lstPermisos.Name = "lstPermisos";
-            this.lstPermisos.Size = new System.Drawing.Size(216, 160);
+            this.lstPermisos.Size = new System.Drawing.Size(216, 173);
             this.lstPermisos.TabIndex = 23;
             this.lstPermisos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPermisos_MouseDoubleClick);
             // 
             // lstPermisosAsignados
             // 
             this.lstPermisosAsignados.FormattingEnabled = true;
-            this.lstPermisosAsignados.Location = new System.Drawing.Point(565, 330);
+            this.lstPermisosAsignados.Location = new System.Drawing.Point(575, 322);
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
-            this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 160);
+            this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 173);
             this.lstPermisosAsignados.TabIndex = 24;
             this.lstPermisosAsignados.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPermisosAsignados_MouseDoubleClick);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(46, 496);
+            this.txtEmail.Location = new System.Drawing.Point(47, 495);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(168, 20);
@@ -354,7 +356,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(44, 480);
+            this.lblEmail.Location = new System.Drawing.Point(43, 479);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 26;
@@ -363,19 +365,42 @@
             // chcEmail
             // 
             this.chcEmail.AutoSize = true;
-            this.chcEmail.Location = new System.Drawing.Point(220, 499);
+            this.chcEmail.BackColor = System.Drawing.Color.Transparent;
+            this.chcEmail.Location = new System.Drawing.Point(113, 520);
             this.chcEmail.Name = "chcEmail";
             this.chcEmail.Size = new System.Drawing.Size(119, 17);
             this.chcEmail.TabIndex = 27;
             this.chcEmail.Text = "Email personalizado";
-            this.chcEmail.UseVisualStyleBackColor = true;
+            this.chcEmail.UseVisualStyleBackColor = false;
             this.chcEmail.CheckedChanged += new System.EventHandler(this.chcEmail_CheckedChanged);
+            // 
+            // btnAsignarPermisosTodos
+            // 
+            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(529, 322);
+            this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
+            this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
+            this.btnAsignarPermisosTodos.TabIndex = 28;
+            this.btnAsignarPermisosTodos.Text = ">>";
+            this.btnAsignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisosTodos.Click += new System.EventHandler(this.btnAsignarPermisosTodos_Click);
+            // 
+            // btnDesasignarPermisosTodos
+            // 
+            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(529, 455);
+            this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
+            this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
+            this.btnDesasignarPermisosTodos.TabIndex = 29;
+            this.btnDesasignarPermisosTodos.Text = "<<";
+            this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisosTodos.Click += new System.EventHandler(this.btnDesasignarPermisosTodos_Click);
             // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 555);
+            this.ClientSize = new System.Drawing.Size(857, 566);
+            this.Controls.Add(this.btnDesasignarPermisosTodos);
+            this.Controls.Add(this.btnAsignarPermisosTodos);
             this.Controls.Add(this.chcEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
@@ -445,5 +470,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.CheckBox chcEmail;
+        private System.Windows.Forms.Button btnAsignarPermisosTodos;
+        private System.Windows.Forms.Button btnDesasignarPermisosTodos;
     }
 }
