@@ -219,6 +219,9 @@ namespace Vista
         }
         public void configListbox(DataTable dtLeft, bool def = false, DataTable dtRight = null)
         {
+            // dtLeft trae todos los permisos
+            // dtRight trae los permisos asociados al perfil
+
             dtListaBd.Clear();
             if (def)
             {
@@ -230,10 +233,12 @@ namespace Vista
                         if (nLeft == (int)dtRight.Rows[j][0])
                         {
                             dtLeft.Rows.RemoveAt(i);
+                            i--;
                         }
                     }
                 }
             }
+            dtListaBd.Clear();
             dtListaBd = dtLeft;
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.Update();
