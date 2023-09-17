@@ -38,5 +38,12 @@ namespace Vista
             frmAltaPersonal alta = new frmAltaPersonal();
             alta.Show();
         }
+
+        private void áreasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAreas area = new frmAreas();
+            area.Show();
+        }
     }
 }

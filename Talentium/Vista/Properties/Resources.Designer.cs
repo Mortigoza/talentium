@@ -63,9 +63,41 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap data_management_data_processing_setting_configuration_gear_icon_190642 {
+            get {
+                object obj = ResourceManager.GetObject("data_management_data_processing_setting_configuration_gear_icon_190642", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo_pared_textura_blanca2 {
             get {
                 object obj = ResourceManager.GetObject("fondo-pared-textura-blanca2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824 {
+            get {
+                object obj = ResourceManager.GetObject("preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_21" +
+                        "0824", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241 {
+            get {
+                object obj = ResourceManager.GetObject("preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_21" +
+                        "08241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

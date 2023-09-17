@@ -277,6 +277,24 @@ namespace AccesoDatos
             DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
             return email.Rows[0][0].ToString();
         }
+
+        public void InsertarArea(string area)
+        {
+            SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("alta_area_sp", listaParametros.ToArray(), true);
+        }
+
+        public bool ConsultarAreaRepetida(string area)
+        {
+            SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoArea = EjecutarConsultas("consultar_area_repetida_sp", listaParametros.ToArray());
+
+            return resultadoArea.Rows.Count != 0;
+        }
     }
 }
 

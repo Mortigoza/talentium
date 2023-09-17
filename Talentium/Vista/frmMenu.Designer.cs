@@ -41,6 +41,8 @@
             this.gestiónDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisYReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +77,8 @@
             this.gestiónDelTalentoToolStripMenuItem,
             this.gestiónDeAsistenciasToolStripMenuItem,
             this.nóminaSalarialToolStripMenuItem,
-            this.análisisYReportesToolStripMenuItem});
+            this.análisisYReportesToolStripMenuItem,
+            this.accesibilidadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -97,26 +100,26 @@
             // altasToolStripMenuItem
             // 
             this.altasToolStripMenuItem.Name = "altasToolStripMenuItem";
-            this.altasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altasToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.altasToolStripMenuItem.Text = "Altas";
             this.altasToolStripMenuItem.Click += new System.EventHandler(this.altasToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
             // bajasToolStripMenuItem
             // 
             this.bajasToolStripMenuItem.Name = "bajasToolStripMenuItem";
-            this.bajasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bajasToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.bajasToolStripMenuItem.Text = "Bajas";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -143,6 +146,21 @@
             this.análisisYReportesToolStripMenuItem.Name = "análisisYReportesToolStripMenuItem";
             this.análisisYReportesToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
             this.análisisYReportesToolStripMenuItem.Text = "Análisis y Reportes";
+            // 
+            // accesibilidadToolStripMenuItem
+            // 
+            this.accesibilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.áreasToolStripMenuItem});
+            this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
+            this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
+            // 
+            // áreasToolStripMenuItem
+            // 
+            this.áreasToolStripMenuItem.Name = "áreasToolStripMenuItem";
+            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.áreasToolStripMenuItem.Text = "Áreas";
+            this.áreasToolStripMenuItem.Click += new System.EventHandler(this.áreasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -181,5 +199,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestiónDeAsistenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nóminaSalarialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisYReportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accesibilidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem áreasToolStripMenuItem;
     }
 }

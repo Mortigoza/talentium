@@ -243,6 +243,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Properties\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
@@ -269,6 +270,15 @@
       <Project>{510d3943-eef1-4329-9298-b67e5ac32638}</Project>
       <Name>LogicaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_management_data_processing_setting_configuration_gear_icon_190642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
