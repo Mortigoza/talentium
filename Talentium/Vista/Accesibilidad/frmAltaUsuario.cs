@@ -42,6 +42,7 @@ namespace Vista
             cmbArea.DataSource = usuario.ConsultarAreas();
             cmbArea.ValueMember = "id_area";
             cmbArea.DisplayMember = "area";
+            cmbArea.SelectedValue = -1;
             //cmb perfiles
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();

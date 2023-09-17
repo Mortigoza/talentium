@@ -56,7 +56,10 @@ namespace LogicaNegocio
         {
             try
             {
-                return accesoDatos.ConsultaAreas();
+                DataTable dt = accesoDatos.ConsultaAreas();
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(new Object[] { -1, "Ninguno" });
+                return dt;
             }
             catch (Exception ex)
             {
@@ -80,7 +83,7 @@ namespace LogicaNegocio
             {
                 DataTable dt = accesoDatos.ConsultarPerfiles();
                 DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Ningúno" });
+                dt.Rows.Add(new Object[] { -1, "Personalizado" });
                 return dt;
             }
             catch (Exception ex)
