@@ -16,5 +16,15 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void Áreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAreas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
