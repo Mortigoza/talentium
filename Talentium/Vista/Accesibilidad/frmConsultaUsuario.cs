@@ -15,7 +15,8 @@ namespace Vista
 {
     public partial class frmConsultaUsuario : Form
     {
-        int _index = -1;
+        private int _index = -1; // El id_usuario del registro seleccionado
+        private bool _void = false; // Determina si el dtg puede cargar un dtg vacio
         private string _usr = "";
         private string _nom = "";
         private string _ape = "";
@@ -59,20 +60,23 @@ namespace Vista
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text) && string.IsNullOrEmpty(txtNombre.Text)
-                && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1)
+                && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1 && _void == false)
             {
                 MessageBox.Show("Utilice al menos un filtro");
             }
             else
             {
                 CN_ConsultarUsuario cu = new CN_ConsultarUsuario();
-                _usr = txtUsuario.Text;
-                _nom = txtNombre.Text;
-                _ape = txtApellido.Text;
-                _area = (int)cmbArea.SelectedValue;
+                if (_void == false)
+                {
+                    _usr = txtUsuario.Text;
+                    _nom = txtNombre.Text;
+                    _ape = txtApellido.Text;
+                    _area = (int)cmbArea.SelectedValue;
+                }
                 DataTable dt = cu.ConsultarUsuario(_usr, _nom, _ape, _area,_estado);
 
-                if (dt.Rows.Count == 0)
+                if (dt.Rows.Count == 0 && _void == false)
                 {
                     MessageBox.Show("Ningun registro coinside");
                     _estado = !_estado;
@@ -94,7 +98,15 @@ namespace Vista
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_index.ToString());
+            if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked)
+            {
+                CN_BajaUsuario bu = new CN_BajaUsuario();
+                bu.BajaUsuario(_index);
+                _void = true;
+                btnFiltrar_Click(sender, e);
+                _void = false;
+                MessageBox.Show("a");
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -115,7 +127,9 @@ namespace Vista
                 _estado = true;
                 if (dtgPersonas.DataSource != null)
                 {
+                    _void = true;
                     btnFiltrar_Click(sender, e);
+                    _void = false;
                     rdbActivos.Checked = _estado;
                     rdbInactivos.Checked = !_estado;
                 }
@@ -129,7 +143,9 @@ namespace Vista
                 _estado = false;
                 if (dtgPersonas.DataSource != null)
                 {
+                    _void = true;
                     btnFiltrar_Click(sender, e);
+                    _void = false;
                     rdbActivos.Checked = _estado;
                     rdbInactivos.Checked = !_estado;
                 }
