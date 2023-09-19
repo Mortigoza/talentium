@@ -89,5 +89,18 @@ namespace Vista
                 txtModifArea.Clear();
             }
         }
+
+        private void btnCancelarCrear_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se ha cancelado la operación.");
+            txtArea.Clear();
+
+        }
+
+        private void btnCancelarModificar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se ha cancelado la operación.");
+            txtModifArea.Clear();
+        }
     }
 }
