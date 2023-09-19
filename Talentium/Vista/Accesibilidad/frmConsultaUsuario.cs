@@ -1,4 +1,5 @@
-﻿using LogicaNegocio;
+﻿using Comun;
+using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace Vista
     public partial class frmConsultaUsuario : Form
     {
         private int _idUsuario = -1; // El id_usuario del registro seleccionado
-        private int _idPersona = -1; // El id_usuario del registro seleccionado
         private bool _void = false; // Determina si el dtg puede cargar un dtg vacio
         private string _usr = "";
         private string _nom = "";
@@ -60,7 +60,7 @@ namespace Vista
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) && string.IsNullOrEmpty(txtNombre.Text)
+            if (string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtNombre.Text)
                 && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1 && _void == false)
             {
                 MessageBox.Show("Utilice al menos un filtro");
@@ -88,6 +88,11 @@ namespace Vista
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
                     dtgPersonas.AutoResizeColumns();
+                    if (_void == false)
+                    {
+                        UtilidadesForms.LimpiarControles(grpFiltro);
+                        cmbArea.SelectedValue = -1;
+                    }
                 }
             }
         }
@@ -103,9 +108,7 @@ namespace Vista
             {
                 CN_BajaUsuario bu = new CN_BajaUsuario();
                 bu.BajaUsuario(_idUsuario);
-                _void = true;
-                btnFiltrar_Click(sender, e);
-                _void = false;
+                dtgRefresh(sender, e);
                 MessageBox.Show("a");
             }
         }
@@ -114,24 +117,37 @@ namespace Vista
         {
             frmAltaUsuario alta = new frmAltaUsuario();
             alta.ShowDialog();
+
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmAltaUsuario mod = new frmAltaUsuario(_idUsuario);
-            mod.ShowDialog();
+            if (_estado && dtgPersonas.Rows.Count > 0 && _idUsuario > 0)
+            {
+                frmAltaUsuario mod = new frmAltaUsuario(_idUsuario);
+                mod.ShowDialog();
+                dtgRefresh(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un usuario activo.");
+            }
         }
 
         private void rdbActivos_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbActivos.Checked)
             {
+                btnAgregar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnBaja.Enabled = true;
+
                 _estado = true;
                 if (dtgPersonas.DataSource != null)
                 {
-                    _void = true;
-                    btnFiltrar_Click(sender, e);
-                    _void = false;
+                    dtgRefresh(sender, e);
                     rdbActivos.Checked = _estado;
                     rdbInactivos.Checked = !_estado;
                 }
@@ -142,16 +158,25 @@ namespace Vista
         {
             if (rdbInactivos.Checked)
             {
+                btnAgregar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnBaja.Enabled = false;
+
                 _estado = false;
                 if (dtgPersonas.DataSource != null)
                 {
-                    _void = true;
-                    btnFiltrar_Click(sender, e);
-                    _void = false;
+                    dtgRefresh(sender, e);
                     rdbActivos.Checked = _estado;
                     rdbInactivos.Checked = !_estado;
                 }
             }
+        }
+
+        public void dtgRefresh(object sender, EventArgs e)
+        {
+            _void = true;
+            btnFiltrar_Click(sender, e);
+            _void = false;
         }
     }
 }

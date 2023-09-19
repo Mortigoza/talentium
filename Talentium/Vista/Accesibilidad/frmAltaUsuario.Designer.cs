@@ -356,6 +356,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Location = new System.Drawing.Point(43, 479);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
@@ -398,6 +399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(857, 566);
             this.Controls.Add(this.btnDesasignarPermisosTodos);
             this.Controls.Add(this.btnAsignarPermisosTodos);

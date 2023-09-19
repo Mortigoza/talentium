@@ -187,6 +187,7 @@ namespace Vista
                             {
                                 usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray(), txtEmail.Text);
                                 MessageBox.Show("Alta exitosa");
+                                this.Dispose();
                             }
                             else
                             {
@@ -205,7 +206,7 @@ namespace Vista
                     break;
                 case true:
 
-                    Tuple<bool, string> verifmod = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text).ToTuple();
+                    Tuple<bool, string> verifmod = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, _idUsuario).ToTuple();
                     if (verifmod.Item1)
                     {
                         List<int> permisos = new List<int>();
@@ -226,6 +227,7 @@ namespace Vista
                                 int _cambiaCada = (int)nmrCambiaCada.Value;
                                 uu.UpUsuario(_idUsuario, _usuario, _pass, _cambiaCada, permisos.ToArray(), txtEmail.Text);
                                 MessageBox.Show("Modificación exitosa");
+                                this.Dispose();
                             }
                             else
                             {
@@ -271,6 +273,8 @@ namespace Vista
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
                     dtgPersonas.Columns[6].Visible = false;
+                    UtilidadesForms.LimpiarControles(grpFiltro);
+                    cmbArea.SelectedValue = -1;
                 }
             }
             dtgPersonas.AutoResizeColumns();
