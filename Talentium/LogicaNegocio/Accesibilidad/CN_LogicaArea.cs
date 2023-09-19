@@ -41,5 +41,18 @@ namespace LogicaNegocio.Accesibilidad
                 return true;
             }
         }
+
+        public bool AsociadoAPersona(int idArea)
+        {
+            if (accesoDatos.ConsultarAreaConPersona(idArea) == false)
+            {
+                accesoDatos.EliminarArea(idArea);
+                return false;
+            } else
+            {
+                return true;
+            }
+        }
+        
     }
 }

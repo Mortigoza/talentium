@@ -102,5 +102,24 @@ namespace Vista
             MessageBox.Show("Se ha cancelado la operación.");
             txtModifArea.Clear();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int idRegistroSeleccionado = 0;
+            DataRowView registroSeleccionado = lstAreas.SelectedItem as DataRowView;
+            if (registroSeleccionado != null)
+            {
+                idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_area"]);
+                if (area.AsociadoAPersona(idRegistroSeleccionado) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el área porque se encuentra en uso.");
+                } else
+                {
+                    MessageBox.Show("El área ha sido eliminda con éxito.");
+                    frmAreas_Load(sender, e);
+                }
+
+            }
+        }
     }
 }

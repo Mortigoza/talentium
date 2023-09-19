@@ -40,7 +40,7 @@
             this.btnGuardarModificar = new System.Windows.Forms.Button();
             this.txtModifArea = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -186,26 +186,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Área";
             // 
-            // button5
+            // btnBaja
             // 
-            this.button5.BackColor = System.Drawing.Color.Navy;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.Location = new System.Drawing.Point(194, 310);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 27);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Dar de Baja";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnBaja.BackColor = System.Drawing.Color.Navy;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBaja.Location = new System.Drawing.Point(194, 310);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(88, 27);
+            this.btnBaja.TabIndex = 6;
+            this.btnBaja.Text = "Dar de Baja";
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.button5_Click);
             // 
             // frmAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstAreas);
@@ -235,6 +236,6 @@
         private System.Windows.Forms.Button btnCancelarCrear;
         private System.Windows.Forms.Button btnCancelarModificar;
         private System.Windows.Forms.Button btnGuardarModificar;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBaja;
     }
 }

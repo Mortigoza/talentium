@@ -305,6 +305,22 @@ namespace AccesoDatos
             DataTable resultadoModifArea = EjecutarConsultas("modificar_area_sp", listaParametros.ToArray());
             return resultadoModifArea.Rows.Count != 0;
         }
+
+        public bool ConsultarAreaConPersona(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaArea = EjecutarConsultas("consultar_persona_area_sp", listaParametros.ToArray());
+            return resultadoPersonaArea.Rows.Count != 0;
+        }
+
+        public bool EliminarArea(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarArea = EjecutarConsultas("eliminar_area_sp", listaParametros.ToArray());
+            return resultadoEliminarArea.Rows.Count != 0;
+        }
     }
 }
 
