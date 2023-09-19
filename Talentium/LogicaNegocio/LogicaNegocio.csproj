@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesibilidad\CN_BajaUsuario.cs" />
+    <Compile Include="Accesibilidad\CN_ConsultarPermisosUsuario.cs" />
+    <Compile Include="Accesibilidad\CN_ConsultarPersonaMod.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarUsuario.cs" />
+    <Compile Include="Accesibilidad\CN_UpUsuario.cs" />
     <Compile Include="CN_CambarPassword.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
     <Compile Include="CN_LogicaLogin.cs" />

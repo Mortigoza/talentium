@@ -15,7 +15,8 @@ namespace Vista
 {
     public partial class frmConsultaUsuario : Form
     {
-        private int _index = -1; // El id_usuario del registro seleccionado
+        private int _idUsuario = -1; // El id_usuario del registro seleccionado
+        private int _idPersona = -1; // El id_usuario del registro seleccionado
         private bool _void = false; // Determina si el dtg puede cargar un dtg vacio
         private string _usr = "";
         private string _nom = "";
@@ -93,7 +94,7 @@ namespace Vista
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
+            _idUsuario = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace Vista
             if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked)
             {
                 CN_BajaUsuario bu = new CN_BajaUsuario();
-                bu.BajaUsuario(_index);
+                bu.BajaUsuario(_idUsuario);
                 _void = true;
                 btnFiltrar_Click(sender, e);
                 _void = false;
@@ -117,7 +118,8 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            frmAltaUsuario mod = new frmAltaUsuario(_idUsuario);
+            mod.ShowDialog();
         }
 
         private void rdbActivos_CheckedChanged(object sender, EventArgs e)

@@ -124,7 +124,22 @@ namespace LogicaNegocio
                 return (false, "Este empleado ya tiene un usuario asignado.");
             }
 
-            if (accesoDatos.ConsultarUsuarioRepetido(Seguridad.Encriptar(usr)))
+            if (accesoDatos.ConsultarUsuarioRepetido(Seguridad.Encriptar(usr)).Rows.Count > 0)
+            {
+                return (false, "Ese nombre de usuario ya está en uso.");
+            }
+
+
+            return (true, "");
+        }
+        public (bool, string) ValidarAltaUsuario(string usr, string psw)
+        {
+            if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
+            {
+                return (false, "Debe completar los campos.");
+            }
+
+            if (accesoDatos.ConsultarUsuarioRepetido(Seguridad.Encriptar(usr)).Rows.Count > 1)
             {
                 return (false, "Ese nombre de usuario ya está en uso.");
             }

@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Accesibilidad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ namespace Vista
 {
     public partial class frmAltaUsuario : Form
     {
+        private bool _mod = false;
+        private int _idUsuario;
+
         CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
         int _rowIndex = -1;
         int _index = -1;
@@ -23,10 +27,14 @@ namespace Vista
         DataTable dtListaBd; 
         DataTable dtListaMem = new DataTable("Permisos");
         private string emailPersona = "";
+        //Alta de usuario
         public frmAltaUsuario()
         {
             InitializeComponent();
             #region config
+
+            this.Text = "Alta de usuarios";
+
             //dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
@@ -75,6 +83,72 @@ namespace Vista
             configEnd = true;
         }
 
+        //Modificacion de usuario
+        public frmAltaUsuario(int id_usuario)
+        {
+            InitializeComponent();
+            #region config
+            _idUsuario = id_usuario;
+            _mod = true;
+            this.Text = "Modificación de usuarios";
+
+            //dtg
+            dtgPersonas.MultiSelect = false;
+            dtgPersonas.RowHeadersVisible = false;
+            dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgPersonas.AllowUserToAddRows = false;
+            dtgPersonas.AllowUserToResizeRows = false;
+            dtgPersonas.ReadOnly = true;
+            CN_ConsultarPersonaMod cpm = new CN_ConsultarPersonaMod();
+            DataTable dt = cpm.ConsultarPersonaMod(id_usuario);
+            dtgPersonas.DataSource = dt;
+            dtgPersonas.Columns[0].Visible = false;
+            dtgPersonas.Columns[6].Visible = false;
+            dtgPersonas.Columns[7].Visible = false;
+            dtgPersonas.Columns[8].Visible = false;
+            //Cargar datos
+            txtUsuario.Text = Seguridad.DesEncriptar(dt.Rows[0][7].ToString());
+            nmrCambiaCada.Value = (int)(dt.Rows[0][8]);
+            //cmb perfiles
+            cmbRol.DataSource = null;
+            cmbRol.DataSource = usuario.ConsultarPerfiles();
+            cmbRol.ValueMember = "id_grupo";
+            cmbRol.DisplayMember = "grupo";
+            cmbRol.SelectedValue = -1;
+            //dt
+            DataColumn idColumn = new DataColumn();
+            idColumn.DataType = System.Type.GetType("System.Int32");
+            idColumn.ColumnName = "id_permiso";
+            dtListaMem.Columns.Add(idColumn);
+
+            DataColumn fNameColumn = new DataColumn();
+            fNameColumn.DataType = System.Type.GetType("System.String");
+            fNameColumn.ColumnName = "funcionalidad";
+            dtListaMem.Columns.Add(fNameColumn);
+            //lst
+            lstPermisos.DataSource = null;
+            dtListaBd = usuario.ConsultarPermisosLst();
+            lstPermisos.DataSource = dtListaBd;
+            lstPermisos.ValueMember = "id_permiso";
+            lstPermisos.DisplayMember = "funcionalidad";
+
+            lstPermisosAsignados.DataSource = null;
+            lstPermisosAsignados.DataSource = dtListaMem;
+            lstPermisosAsignados.ValueMember = "id_permiso";
+            lstPermisosAsignados.DisplayMember = "funcionalidad";
+
+            CN_ConsultarPermisosUsuario cpu = new CN_ConsultarPermisosUsuario();
+            DataTable dtPermisosUsuario = cpu.ConsultarPermisosUsuario(id_usuario);
+            if (dtPermisosUsuario.Rows.Count > 0)
+            configListbox(usuario.ConsultarPermisosLst(), true, dtPermisosUsuario);
+
+            //Bloqueos
+            grpFiltro.Enabled = false;
+            dtgPersonas.Enabled = false;
+            #endregion
+            
+            configEnd = true;
+        }
         private void frmAltaUsuario_Load(object sender, EventArgs e)
         {
 
@@ -92,38 +166,82 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Tuple<bool, string> verif = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, dtgPersonas, _rowIndex).ToTuple();
-            if (verif.Item1)
+            switch (_mod)
             {
-                List<int> permisos = new List<int>();
-                int len = dtListaMem.Rows.Count;
-
-                for (int i = 0; i < len; i++)
-                {
-                    permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
-                }
-
-                string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
-                try
-                {
-                    if (string.IsNullOrEmpty(msg))
+                default:
+                    Tuple<bool, string> verif = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, dtgPersonas, _rowIndex).ToTuple();
+                    if (verif.Item1)
                     {
-                        usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray(), txtEmail.Text);
-                        MessageBox.Show("Alta exitosa");
+                        List<int> permisos = new List<int>();
+                        int len = dtListaMem.Rows.Count;
+
+                        for (int i = 0; i < len; i++)
+                        {
+                            permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                        }
+
+                        string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
+                        try
+                        {
+                            if (string.IsNullOrEmpty(msg))
+                            {
+                                usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray(), txtEmail.Text);
+                                MessageBox.Show("Alta exitosa");
+                            }
+                            else
+                            {
+                                MessageBox.Show(msg);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show(msg);
+                        MessageBox.Show(verif.Item2);
                     }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show(verif.Item2);
+                    break;
+                case true:
+
+                    Tuple<bool, string> verifmod = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text).ToTuple();
+                    if (verifmod.Item1)
+                    {
+                        List<int> permisos = new List<int>();
+                        int len = dtListaMem.Rows.Count;
+
+                        for (int i = 0; i < len; i++)
+                        {
+                            permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                        }
+                        string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
+                        try
+                        {
+                            if (string.IsNullOrEmpty(msg))
+                            {
+                                CN_UpUsuario uu = new CN_UpUsuario();
+                                string _usuario = txtUsuario.Text;
+                                string _pass = txtContrasenia.Text;
+                                int _cambiaCada = (int)nmrCambiaCada.Value;
+                                uu.UpUsuario(_idUsuario, _usuario, _pass, _cambiaCada, permisos.ToArray(), txtEmail.Text);
+                                MessageBox.Show("Modificación exitosa");
+                            }
+                            else
+                            {
+                                MessageBox.Show(msg);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(verifmod.Item2);
+                    }
+                    break;
             }
         }
 
@@ -155,18 +273,31 @@ namespace Vista
                     dtgPersonas.Columns[6].Visible = false;
                 }
             }
-
+            dtgPersonas.AutoResizeColumns();
         }
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _rowIndex = e.RowIndex;
-            _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
-            lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
-            emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
-            if (chcEmail.Checked == false)
+            switch (_mod)
             {
-                txtEmail.Text = emailPersona;
+                default:
+                    _rowIndex = e.RowIndex;
+                    _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
+                    lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
+                    emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    if (chcEmail.Checked == false)
+                    {
+                        txtEmail.Text = emailPersona;
+                    }
+                    break;
+                case true:
+                    _rowIndex = e.RowIndex;
+                    _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
+                    lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
+                    emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    txtEmail.Text = emailPersona;
+                    dtgPersonas.AutoResizeColumns();
+                    break;
             }
 
         }

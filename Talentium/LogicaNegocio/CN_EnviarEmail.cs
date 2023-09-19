@@ -85,7 +85,7 @@ namespace LogicaNegocio
             // Configura la información del remitente y destinatario
             string fromEmail = "mairaaracelirodriguez2001@gmail.com";
             string toEmail = destEmail;
-            string subject = "Alta de usuario Talentium";
+            string subject = "Usuario Talentium";
             string body = $"Tu contraseña del sistema Talentium es: {psw}";
 
             // Configura las credenciales del servidor SMTP
