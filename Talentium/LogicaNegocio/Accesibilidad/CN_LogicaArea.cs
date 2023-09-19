@@ -29,6 +29,17 @@ namespace LogicaNegocio.Accesibilidad
         {
             return accesoDatos.ConsultaAreas();
         }
-        
+
+        public bool ModificarArea(int idRegistroSeleccionado, string nuevaArea)
+        {
+            if (accesoDatos.ModificarArea(idRegistroSeleccionado, nuevaArea) == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

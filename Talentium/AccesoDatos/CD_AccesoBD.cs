@@ -295,6 +295,16 @@ namespace AccesoDatos
 
             return resultadoArea.Rows.Count != 0;
         }
+
+        public bool ModificarArea(int idRegistroSeleccionado, string nuevaArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idRegistroSeleccionado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nuevaArea", nuevaArea) { SqlDbType = SqlDbType.NVarChar };
+            
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifArea = EjecutarConsultas("modificar_area_sp", listaParametros.ToArray());
+            return resultadoModifArea.Rows.Count != 0;
+        }
     }
 }
 

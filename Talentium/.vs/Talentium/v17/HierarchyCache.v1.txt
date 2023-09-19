@@ -1,0 +1,262 @@
+﻿++Solución "Talentium" ‎(4 de 4 proyectos)
+i:{00000000-0000-0000-0000-000000000000}:Talentium.sln
+++LogicaNegocio
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{00000000-0000-0000-0000-000000000000}:LogicaNegocio
+++Properties
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\properties\
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\accesodatos\properties\
+i:{5015f051-4dea-4706-b591-03e53c16f613}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\comun\properties\
+++Referencias
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++Accesibilidad
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\accesibilidad\
+++CN_CambarPassword.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\cn_cambarpassword.cs
+++CN_EnviarEmail.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\cn_enviaremail.cs
+++CN_LogicaLogin.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\cn_logicalogin.cs
+++CN_PoliticaPassword.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\cn_politicapassword.cs
+++CN_Validaciones.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\cn_validaciones.cs
+++AssemblyInfo.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\assemblyinfo.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\properties\assemblyinfo.cs
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\accesodatos\properties\assemblyinfo.cs
+i:{5015f051-4dea-4706-b591-03e53c16f613}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\comun\properties\assemblyinfo.cs
+++AccesoDatos
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{00000000-0000-0000-0000-000000000000}:AccesoDatos
+++Comun
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{00000000-0000-0000-0000-000000000000}:Comun
+++Microsoft.CSharp
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Core
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Data
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Data.DataSetExtensions
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Net.Http
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Windows.Forms
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+++System.Xml
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++System.Xml.Linq
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:
+i:{5015f051-4dea-4706-b591-03e53c16f613}:
+++CN_LogicaUsuarios.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\accesibilidad\cn_logicausuarios.cs
+++CD_AccesoBD.cs
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\accesodatos\cd_accesobd.cs
+++CD_Conexion.cs
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\accesodatos\cd_conexion.cs
+++CD_EjecutarSP.cs
+i:{027cab7a-89ff-495d-957a-c5250ca2d92d}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\accesodatos\cd_ejecutarsp.cs
+++ConfigCache.cs
+i:{5015f051-4dea-4706-b591-03e53c16f613}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\comun\configcache.cs
+++Seguridad.cs
+i:{5015f051-4dea-4706-b591-03e53c16f613}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\comun\seguridad.cs
+++UserCache.cs
+i:{5015f051-4dea-4706-b591-03e53c16f613}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\comun\usercache.cs
+++Vista
+i:{00000000-0000-0000-0000-000000000000}:Vista
+++frmAltaUsuario.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmaltausuario.cs
+++frmConsultaUsuario.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmconsultausuario.cs
+++Analisis y reportes
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\
+++Evaluacion de desempeño
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\
+++Proceso De Seleccion
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\
+++App.config
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\app.config
+++CambioDePassNU.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassnu.cs
+++CambioDePassRecupero.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassrecupero.cs
+++ConfigPoliticasPass.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\configpoliticaspass.cs
+++frmAltaPersonal.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmaltapersonal.cs
+++frmConsultaPersonal.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmconsultapersonal.cs
+++frmLogin.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmlogin.cs
+++frmMenu.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmmenu.cs
+++frmRecupero.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmrecupero.cs
+++Program.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\program.cs
+++UtilidadesForm.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\utilidadesform.cs
+++Resources.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\resources.resx
+++Settings.settings
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\settings.settings
+++UserControl1.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\usercontrol1.cs
+++System.Deployment
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+++System.Drawing
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:
+++frmAltaUsuario.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmaltausuario.designer.cs
+++frmAltaUsuario.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmaltausuario.resx
+++frmConsultaUsuario.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmconsultausuario.designer.cs
+++frmConsultaUsuario.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmconsultausuario.resx
+++frmAltaCertificacionServicios.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmaltacertificacionservicios.cs
+++frmCertificacionServicios.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmcertificacionservicios.cs
+++frmAltaEvaluacionDesempeño.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmaltaevaluaciondesempeño.cs
+++frmConsultaEvaluacionDesempeño.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmconsultaevaluaciondesempeño.cs
+++frmABMCapacitaciones.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmabmcapacitaciones.cs
+++frmAltaProcesoDeSeleccion.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmaltaprocesodeseleccion.cs
+++frmConsultaProcesoDeSeleccion.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmconsultaprocesodeseleccion.cs
+++frmEntrevistaPreocupacionalCapacitacion.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmentrevistapreocupacionalcapacitacion.cs
+++frmModificarProcesoDeSeleccion.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmmodificarprocesodeseleccion.cs
+++CambioDePassNU.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassnu.designer.cs
+++CambioDePassNU.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassnu.resx
+++CambioDePassRecupero.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassrecupero.designer.cs
+++CambioDePassRecupero.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\cambiodepassrecupero.resx
+++ConfigPoliticasPass.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\configpoliticaspass.designer.cs
+++ConfigPoliticasPass.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\configpoliticaspass.resx
+++frmAltaPersonal.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmaltapersonal.designer.cs
+++frmAltaPersonal.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmaltapersonal.resx
+++frmConsultaPersonal.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmconsultapersonal.designer.cs
+++frmConsultaPersonal.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmconsultapersonal.resx
+++frmLogin.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmlogin.designer.cs
+++frmLogin.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmlogin.resx
+++frmMenu.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmmenu.designer.cs
+++frmMenu.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmmenu.resx
+++frmRecupero.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmrecupero.designer.cs
+++frmRecupero.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\frmrecupero.resx
+++Resources.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\resources.designer.cs
+++Settings.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\settings.designer.cs
+++UserControl1.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\usercontrol1.designer.cs
+++UserControl1.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\properties\usercontrol1.resx
+++frmAltaCertificacionServicios.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmaltacertificacionservicios.designer.cs
+++frmAltaCertificacionServicios.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmaltacertificacionservicios.resx
+++frmCertificacionServicios.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmcertificacionservicios.designer.cs
+++frmCertificacionServicios.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\analisis y reportes\frmcertificacionservicios.resx
+++frmAltaEvaluacionDesempeño.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmaltaevaluaciondesempeño.designer.cs
+++frmAltaEvaluacionDesempeño.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmaltaevaluaciondesempeño.resx
+++frmConsultaEvaluacionDesempeño.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmconsultaevaluaciondesempeño.designer.cs
+++frmConsultaEvaluacionDesempeño.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\evaluacion de desempeño\frmconsultaevaluaciondesempeño.resx
+++frmABMCapacitaciones.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmabmcapacitaciones.designer.cs
+++frmABMCapacitaciones.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmabmcapacitaciones.resx
+++frmAltaProcesoDeSeleccion.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmaltaprocesodeseleccion.designer.cs
+++frmAltaProcesoDeSeleccion.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmaltaprocesodeseleccion.resx
+++frmConsultaProcesoDeSeleccion.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmconsultaprocesodeseleccion.designer.cs
+++frmConsultaProcesoDeSeleccion.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmconsultaprocesodeseleccion.resx
+++frmEntrevistaPreocupacionalCapacitacion.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmentrevistapreocupacionalcapacitacion.designer.cs
+++frmEntrevistaPreocupacionalCapacitacion.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmentrevistapreocupacionalcapacitacion.resx
+++frmModificarProcesoDeSeleccion.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmmodificarprocesodeseleccion.designer.cs
+++frmModificarProcesoDeSeleccion.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\proceso de seleccion\frmmodificarprocesodeseleccion.resx
+++Vista (descargado)
+++Solución "Talentium" ‎(3 de 4 proyectos)
+++frmAreas.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmareas.cs
+++frmAreas.Designer.cs
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmareas.designer.cs
+++frmAreas.resx
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\accesibilidad\frmareas.resx
+++CN_LogicaArea.cs
+i:{510d3943-eef1-4329-9298-b67e5ac32638}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\logicanegocio\accesibilidad\cn_logicaarea.cs
+++Resources
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\resources\
+++data_management_data_processing_setting_configuration_gear_icon_190642.png
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\resources\data_management_data_processing_setting_configuration_gear_icon_190642.png
+++preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png
+++preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png
+i:{df9d8ca9-d558-4dfa-955e-743f943ac10c}:c:\users\cecilia\desktop\talentium 20230917\talentium\talentium\vista\resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png

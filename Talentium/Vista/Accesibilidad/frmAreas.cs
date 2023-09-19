@@ -19,6 +19,8 @@ namespace Vista
         public frmAreas()
         {
             InitializeComponent();
+
+            lstAreas.MouseDoubleClick += new MouseEventHandler(lstAreas_MouseDoubleClick);
         }
 
         private void Áreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace Vista
             DataTable DT = area.ObtenerAreas();
             lstAreas.DataSource = DT;
             lstAreas.DisplayMember = "area";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,10 +45,48 @@ namespace Vista
             {
                 MessageBox.Show("Alta de área exitosa");
                 txtArea.Clear();
+                frmAreas_Load(sender,e);
             } else
             {
                 MessageBox.Show("Ese nombre de área ya está en uso.");
                 txtArea.Clear();
+            }
+        }
+
+        private void lstAreas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataRowView registroSeleccionado = lstAreas.SelectedItem as DataRowView;
+
+            if (registroSeleccionado != null)
+            {
+                txtModifArea.Text = registroSeleccionado["area"].ToString();
+            }
+        }
+
+        private void btnGuardarModificar_Click(object sender, EventArgs e)
+        {
+            int idRegistroSeleccionado =0;
+            string nuevaArea = txtModifArea.Text;
+            DataRowView registroSeleccionado = lstAreas.SelectedItem as DataRowView;
+            if (registroSeleccionado != null)
+            {
+                idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_area"]);
+            }
+
+            if (string.IsNullOrWhiteSpace(nuevaArea))
+            {
+                MessageBox.Show("Debe completar los campos.");
+            }
+            else if (area.ModificarArea(idRegistroSeleccionado, nuevaArea) == false)
+            {
+                MessageBox.Show("Modificación de área exitosa");
+                txtModifArea.Clear();
+                frmAreas_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Ese nombre de área ya está en uso.");
+                txtModifArea.Clear();
             }
         }
     }

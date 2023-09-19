@@ -37,8 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnGuardarModificar = new System.Windows.Forms.Button();
+            this.txtModifArea = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -54,6 +54,7 @@
             this.lstAreas.Size = new System.Drawing.Size(253, 264);
             this.lstAreas.TabIndex = 0;
             this.lstAreas.SelectedIndexChanged += new System.EventHandler(this.Áreas_SelectedIndexChanged);
+            this.lstAreas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstAreas_MouseDoubleClick);
             // 
             // groupBox1
             // 
@@ -123,8 +124,8 @@
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.btnGuardarModificar);
+            this.groupBox2.Controls.Add(this.txtModifArea);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(302, 180);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -149,27 +150,28 @@
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGuardarModificar
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.Location = new System.Drawing.Point(190, 81);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(72, 25);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Guardar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGuardarModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnGuardarModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGuardarModificar.Location = new System.Drawing.Point(190, 81);
+            this.btnGuardarModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarModificar.Name = "btnGuardarModificar";
+            this.btnGuardarModificar.Size = new System.Drawing.Size(72, 25);
+            this.btnGuardarModificar.TabIndex = 4;
+            this.btnGuardarModificar.Text = "Guardar";
+            this.btnGuardarModificar.UseVisualStyleBackColor = false;
+            this.btnGuardarModificar.Click += new System.EventHandler(this.btnGuardarModificar_Click);
             // 
-            // textBox2
+            // txtModifArea
             // 
-            this.textBox2.Location = new System.Drawing.Point(61, 39);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtModifArea.Location = new System.Drawing.Point(61, 39);
+            this.txtModifArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModifArea.Name = "txtModifArea";
+            this.txtModifArea.Size = new System.Drawing.Size(177, 20);
+            this.txtModifArea.TabIndex = 3;
             // 
             // label2
             // 
@@ -226,11 +228,11 @@
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtModifArea;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGuardarModificar;
         private System.Windows.Forms.Button button5;
     }
 }
