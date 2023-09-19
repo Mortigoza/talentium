@@ -115,8 +115,18 @@ namespace Vista
                     MessageBox.Show("No se puede eliminar el área porque se encuentra en uso.");
                 } else
                 {
-                    MessageBox.Show("El área ha sido eliminada con éxito.");
-                    frmAreas_Load(sender, e);
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el área?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        MessageBox.Show("El área ha sido eliminada con éxito.");
+                        frmAreas_Load(sender, e);
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                    
                 }
 
             }
