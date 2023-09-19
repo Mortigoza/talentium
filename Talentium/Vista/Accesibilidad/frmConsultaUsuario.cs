@@ -22,11 +22,11 @@ namespace Vista
         private string _nom = "";
         private string _ape = "";
         private int _area = -1;
-        private bool _estado = true;
+        private bool _estado = true; // si estan puestos los registros activos o los inactivos
         public frmConsultaUsuario()
         {
             InitializeComponent();
-            //dtg
+            // dtg, configura el dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
             dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -34,7 +34,7 @@ namespace Vista
             dtgPersonas.AllowUserToResizeRows = false;
             dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
-            //cmb area
+            // cmb area, configura el cmb area
             cmbArea.DataSource = null;
             CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
             cmbArea.DataSource = usuario.ConsultarAreas();
@@ -62,13 +62,16 @@ namespace Vista
         {
             if (string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtNombre.Text)
                 && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1 && _void == false)
+            // Entra si los campos de filtrado estan todos en su estado por defecto
             {
                 MessageBox.Show("Utilice al menos un filtro");
             }
             else
+            //Entra si se usa al menos uno de los filtros
             {
                 CN_ConsultarUsuario cu = new CN_ConsultarUsuario();
                 if (_void == false)
+                // Si el dtg es ejecutado directamente por el usuario carga las variables con los campos de filtrado
                 {
                     _usr = txtUsuario.Text;
                     _nom = txtNombre.Text;
@@ -78,12 +81,14 @@ namespace Vista
                 DataTable dt = cu.ConsultarUsuario(_usr, _nom, _ape, _area,_estado);
 
                 if (dt.Rows.Count == 0 && _void == false)
+                // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
                 {
                     MessageBox.Show("Ningun registro coinside");
                     _estado = !_estado;
                 }
                 else
                 {
+                    // Carga los registros en el dtg
                     dtgPersonas.DataSource = null;
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
@@ -99,33 +104,42 @@ namespace Vista
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            //Cada vez que se selecciona un registro guarda el id_usuario de este
             _idUsuario = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked)
+            if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked && btnBaja.Name == "btnBaja")
             {
+                // Si el boton esta en modo baja: elimina de forma logica al usuario seleccionado
                 CN_BajaUsuario bu = new CN_BajaUsuario();
                 bu.BajaUsuario(_idUsuario);
                 dtgRefresh(sender, e);
-                MessageBox.Show("a");
+                MessageBox.Show("Usuario dado de baja exitosamente");
+            }
+            if (dtgPersonas.Rows.Count > 0 && rdbInactivos.Checked && btnBaja.Name == "btnReactivar")
+            {
+                // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
+                CN_ReactivarUsuario ru = new CN_ReactivarUsuario();
+                ru.ReactivarUsuario(_idUsuario);
+                dtgRefresh(sender, e);
+                MessageBox.Show("Usuario reactivado exitosamente");
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            // Abre el formulario de alta de usuario
             frmAltaUsuario alta = new frmAltaUsuario();
             alta.ShowDialog();
-
-
-
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (_estado && dtgPersonas.Rows.Count > 0 && _idUsuario > 0)
             {
+                // Abre el formulario de alta de usuario
                 frmAltaUsuario mod = new frmAltaUsuario(_idUsuario);
                 mod.ShowDialog();
                 dtgRefresh(sender, e);
@@ -138,11 +152,13 @@ namespace Vista
 
         private void rdbActivos_CheckedChanged(object sender, EventArgs e)
         {
+            // Configura los controles cuando se checkea el rdb activos
             if (rdbActivos.Checked)
             {
                 btnAgregar.Enabled = true;
                 btnModificar.Enabled = true;
-                btnBaja.Enabled = true;
+                btnBaja.Name = "btnBaja";
+                btnBaja.Text = "Dar de baja";
 
                 _estado = true;
                 if (dtgPersonas.DataSource != null)
@@ -156,11 +172,13 @@ namespace Vista
 
         private void rdbInactivos_CheckedChanged(object sender, EventArgs e)
         {
+            // Configura los controles cuando se checkea el rdb inactivos
             if (rdbInactivos.Checked)
             {
                 btnAgregar.Enabled = false;
                 btnModificar.Enabled = false;
-                btnBaja.Enabled = false;
+                btnBaja.Name = "btnReactivar";
+                btnBaja.Text = "Reactivar";
 
                 _estado = false;
                 if (dtgPersonas.DataSource != null)
@@ -172,6 +190,7 @@ namespace Vista
             }
         }
 
+        // Funcion que refresca el dtg simulando presionar el btnFiltrar
         public void dtgRefresh(object sender, EventArgs e)
         {
             _void = true;

@@ -16,18 +16,19 @@ namespace Vista
 {
     public partial class frmAltaUsuario : Form
     {
-        private bool _mod = false;
+        private bool _mod = false; // Si es modificacion de usuario (true) o alta de usuario (false)
         private int _idUsuario;
 
         CN_LogicaUsuarios usuario = new CN_LogicaUsuarios();
-        int _rowIndex = -1;
-        int _index = -1;
-        bool configEnd = false;
-        bool perfilCustom = false;
-        DataTable dtListaBd; 
-        DataTable dtListaMem = new DataTable("Permisos");
+        int _rowIndex = -1; // Index de la fila actual
+        int _index = -1; // Index del id_persona de la fila actual
+        bool configEnd = false; // Controla si la configuracion (el constructor) finalizó
+        bool perfilCustom = false; // Si es un perfil personalizado es true
+        DataTable dtListaBd; // Almacena los permisos existentes en la bd
+        DataTable dtListaMem = new DataTable("Permisos"); // Almacena los permisos asignados al usuario que sera dado de alta
         private string emailPersona = "";
-        //Alta de usuario
+
+        //Constructor Alta de usuario
         public frmAltaUsuario()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Vista
 
             this.Text = "Alta de usuarios";
 
-            //dtg
+            //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
             dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -57,7 +58,7 @@ namespace Vista
             cmbRol.ValueMember = "id_grupo";
             cmbRol.DisplayMember = "grupo";
             cmbRol.SelectedValue = -1;
-            //dt
+            //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
             idColumn.DataType = System.Type.GetType("System.Int32");
             idColumn.ColumnName = "id_permiso";
@@ -67,7 +68,7 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
-            //lst
+            //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
@@ -83,7 +84,7 @@ namespace Vista
             configEnd = true;
         }
 
-        //Modificacion de usuario
+        //Constructor Modificacion de usuario
         public frmAltaUsuario(int id_usuario)
         {
             InitializeComponent();
@@ -92,7 +93,7 @@ namespace Vista
             _mod = true;
             this.Text = "Modificación de usuarios";
 
-            //dtg
+            //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
             dtgPersonas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -115,7 +116,7 @@ namespace Vista
             cmbRol.ValueMember = "id_grupo";
             cmbRol.DisplayMember = "grupo";
             cmbRol.SelectedValue = -1;
-            //dt
+            //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
             idColumn.DataType = System.Type.GetType("System.Int32");
             idColumn.ColumnName = "id_permiso";
@@ -125,7 +126,7 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
-            //lst
+            //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
@@ -142,7 +143,7 @@ namespace Vista
             if (dtPermisosUsuario.Rows.Count > 0)
             configListbox(usuario.ConsultarPermisosLst(), true, dtPermisosUsuario);
 
-            //Bloqueos
+            //Bloqueos de controles
             grpFiltro.Enabled = false;
             dtgPersonas.Enabled = false;
             #endregion
@@ -168,23 +169,27 @@ namespace Vista
         {
             switch (_mod)
             {
-                default:
+                default:  // Si esta en modo alta 
+
+                    // Llama al metodo para validar que se puede dar de alta
                     Tuple<bool, string> verif = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, dtgPersonas, _rowIndex).ToTuple();
                     if (verif.Item1)
                     {
-                        List<int> permisos = new List<int>();
+                        List<int> permisos = new List<int>(); // lista de permisos
                         int len = dtListaMem.Rows.Count;
 
                         for (int i = 0; i < len; i++)
                         {
+                            // carga todos los permisos del dtListaMem en la lista permisos
                             permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
                         }
-
+                        // Intenta enviar un mail (si se puede manda la contraseña y devuelve un mensaje vacio, sino devuelve un mensaje de error)
                         string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
                         try
                         {
                             if (string.IsNullOrEmpty(msg))
                             {
+                                // Si el mail se envio correctamente hace la alta
                                 usuario.InsertarNuevoUsuario(_index, txtUsuario.Text, txtContrasenia.Text, Convert.ToInt32(nmrCambiaCada.Value), permisos.ToArray(), txtEmail.Text);
                                 MessageBox.Show("Alta exitosa");
                                 this.Dispose();
@@ -204,23 +209,27 @@ namespace Vista
                         MessageBox.Show(verif.Item2);
                     }
                     break;
-                case true:
+                case true: // Si esta en modo modificacion 
 
+                    // Llama al metodo para validar que se puede modificar
                     Tuple<bool, string> verifmod = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, _idUsuario).ToTuple();
                     if (verifmod.Item1)
                     {
-                        List<int> permisos = new List<int>();
+                        List<int> permisos = new List<int>(); // Lista permisos
                         int len = dtListaMem.Rows.Count;
 
                         for (int i = 0; i < len; i++)
                         {
+                            // carga todos los permisos del dtListaMem en la lista permisos
                             permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
                         }
+                        // Intenta enviar un mail (si se puede manda la contraseña y devuelve un mensaje vacio, sino devuelve un mensaje de error)
                         string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
                         try
                         {
                             if (string.IsNullOrEmpty(msg))
                             {
+                                // Si el mail se envio correctamente hace la modificacion
                                 CN_UpUsuario uu = new CN_UpUsuario();
                                 string _usuario = txtUsuario.Text;
                                 string _pass = txtContrasenia.Text;
@@ -241,6 +250,7 @@ namespace Vista
                     }
                     else
                     {
+                        // Mensaje de error devuelto por el metodo de verificacion
                         MessageBox.Show(verifmod.Item2);
                     }
                     break;
@@ -249,6 +259,7 @@ namespace Vista
 
         private void btnCrearContrasenia_Click(object sender, EventArgs e)
         {
+            // Crea una contraseña aleatoria para el usuario
             txtContrasenia.Text = Seguridad.GenerarStringAleatorio();
         }
 
@@ -256,19 +267,23 @@ namespace Vista
         {
             if (string.IsNullOrEmpty(txtCuit.Text) && string.IsNullOrEmpty(txtNombre.Text)
                 && string.IsNullOrEmpty(txtApellido.Text)&& (int) cmbArea.SelectedValue == -1)
+            // Entra si los campos de filtrado estan todos en su estado por defecto
             {
                 MessageBox.Show("Utilice al menos un filtro");
             }
             else
+            //Entra si se usa al menos uno de los filtros
             {
                 DataTable dt = usuario.ConsultarPersonalAltaUsuario(txtCuit.Text, txtNombre.Text, txtApellido.Text, (int)cmbArea.SelectedValue);
 
                 if (dt.Rows.Count == 0)
                 {
+                    // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
                     MessageBox.Show("Ningun registro coinside");
                 }
                 else
                 {
+                    // Carga los registros en el dtg
                     dtgPersonas.DataSource = null;
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
@@ -284,7 +299,9 @@ namespace Vista
         {
             switch (_mod)
             {
-                default:
+                default: // Si esta en modo alta 
+
+                    // Carga variables y carga el lblDatosDtg
                     _rowIndex = e.RowIndex;
                     _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
                     lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
@@ -294,7 +311,9 @@ namespace Vista
                         txtEmail.Text = emailPersona;
                     }
                     break;
-                case true:
+                case true: // Si esta en modo modificacion 
+
+                    // Carga variables y carga el lblDatosDtg
                     _rowIndex = e.RowIndex;
                     _index = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
                     lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
@@ -308,29 +327,34 @@ namespace Vista
 
         private void btnAsignarPermisos_Click(object sender, EventArgs e)
         {
+            // Mueve el permiso seleccionado a la derecha
             UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, lstPermisos.SelectedIndex);
             PerfilCustom();
         }
         private void lstPermisos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            // Mueve el permiso seleccionado a la derecha
             UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, lstPermisos.SelectedIndex);
             PerfilCustom();
         }
 
         private void btnDesasignarPermisos_Click(object sender, EventArgs e)
         {
+            // Mueve el permiso seleccionado a la izquierda
             UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, lstPermisosAsignados.SelectedIndex);
             PerfilCustom();
         }
 
         private void lstPermisosAsignados_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            // Mueve el permiso seleccionado a la izquierda
             UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, lstPermisosAsignados.SelectedIndex);
             PerfilCustom();
         }
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Se encarga de cargar el perfil seleccionado en los permisos asignados
             if (configEnd && !perfilCustom)
             {
                 int id_perfil = -1;
@@ -345,53 +369,14 @@ namespace Vista
 
                 if (id_perfil != -1)
                 {
+                    // Si se selecciona un perfil especifico se cargan los permisos
                     configListbox(dtPermisosDef, true, dtPermisosPerfil);
                 }
                 else
                 {
+                    // Si se selecciona un perfil personalizado se establecen por defecto (todos los permisos a la izquierda)
                     configListbox(dtPermisosDef);
                 }
-            }
-        }
-        public void configListbox(DataTable dtLeft, bool def = false, DataTable dtRight = null)
-        {
-            // dtLeft trae todos los permisos
-            // dtRight trae los permisos asociados al perfil
-
-            dtListaBd.Clear();
-            if (def)
-            {
-                for (int i = 0; i < dtLeft.Rows.Count; i++)
-                {
-                    int nLeft = (int)dtLeft.Rows[i][0];
-                    for (int j = 0; j < dtRight.Rows.Count; j++)
-                    {
-                        if (nLeft == (int)dtRight.Rows[j][0])
-                        {
-                            dtLeft.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                }
-            }
-            dtListaBd.Clear();
-            dtListaBd = dtLeft;
-            lstPermisos.DataSource = dtListaBd;
-            lstPermisos.Update();
-
-            dtListaMem.Clear();
-            if (def) dtListaMem = dtRight;
-            lstPermisosAsignados.DataSource = dtListaMem;
-            lstPermisosAsignados.Update();
-        }
-        public void PerfilCustom()
-        {
-
-            if ((int)cmbRol.SelectedValue != -1)
-            {
-                perfilCustom = true;
-                cmbRol.SelectedValue = -1;
-                perfilCustom = false;
             }
         }
 
@@ -431,6 +416,50 @@ namespace Vista
                 UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, 0);
             }
             PerfilCustom();
+        }
+        // Funciones
+        // Configura el los listbox en base a una lista de permisos
+        public void configListbox(DataTable dtLeft, bool def = false, DataTable dtRight = null)
+        {
+            // dtLeft trae todos los permisos
+            // dtRight trae los permisos asociados al perfil
+
+            dtListaBd.Clear();
+            if (def)
+            {
+                for (int i = 0; i < dtLeft.Rows.Count; i++)
+                {
+                    int nLeft = (int)dtLeft.Rows[i][0];
+                    for (int j = 0; j < dtRight.Rows.Count; j++)
+                    {
+                        if (nLeft == (int)dtRight.Rows[j][0])
+                        {
+                            dtLeft.Rows.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+            }
+            dtListaBd.Clear();
+            dtListaBd = dtLeft;
+            lstPermisos.DataSource = dtListaBd;
+            lstPermisos.Update();
+
+            dtListaMem.Clear();
+            if (def) dtListaMem = dtRight;
+            lstPermisosAsignados.DataSource = dtListaMem;
+            lstPermisosAsignados.Update();
+        }
+
+        // Pone el Perfil personalizado sin alterar el estado de los listbox ni los datatables de permisos
+        public void PerfilCustom()
+        {
+            if ((int)cmbRol.SelectedValue != -1)
+            {
+                perfilCustom = true;
+                cmbRol.SelectedValue = -1;
+                perfilCustom = false;
+            }
         }
     }
 }
