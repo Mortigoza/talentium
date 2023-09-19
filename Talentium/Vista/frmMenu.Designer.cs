@@ -43,6 +43,7 @@
             this.análisisYReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +151,8 @@
             // accesibilidadToolStripMenuItem
             // 
             this.accesibilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.áreasToolStripMenuItem});
+            this.áreasToolStripMenuItem,
+            this.puestosToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
@@ -161,6 +163,13 @@
             this.áreasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.áreasToolStripMenuItem.Text = "Áreas";
             this.áreasToolStripMenuItem.Click += new System.EventHandler(this.áreasToolStripMenuItem_Click);
+            // 
+            // puestosToolStripMenuItem
+            // 
+            this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puestosToolStripMenuItem.Text = "Puestos";
+            this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -201,5 +210,6 @@
         private System.Windows.Forms.ToolStripMenuItem análisisYReportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accesibilidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem áreasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
     }
 }

@@ -45,5 +45,12 @@ namespace Vista
             frmAreas area = new frmAreas();
             area.Show();
         }
+
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPuesto puestos = new frmPuesto();
+            puestos.Show();
+        }
     }
 }

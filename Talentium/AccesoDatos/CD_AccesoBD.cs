@@ -321,6 +321,14 @@ namespace AccesoDatos
             DataTable resultadoEliminarArea = EjecutarConsultas("eliminar_area_sp", listaParametros.ToArray());
             return resultadoEliminarArea.Rows.Count != 0;
         }
+
+        public DataTable ConsultaPuestos()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_puestos_sp", listaParametros.ToArray());
+            return resultado;
+        }
     }
 }
 

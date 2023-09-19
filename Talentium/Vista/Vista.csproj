@@ -106,6 +106,12 @@
     <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.Designer.cs">
       <DependentUpon>frmConsultaEvaluacionDesempeño.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuesto.Designer.cs">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proceso De Seleccion\frmABMCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPuesto.resx">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso De Seleccion\frmABMCapacitaciones.resx">
       <DependentUpon>frmABMCapacitaciones.cs</DependentUpon>

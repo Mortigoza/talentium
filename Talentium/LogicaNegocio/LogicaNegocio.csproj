@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accesibilidad\CN_LogicaArea.cs" />
+    <Compile Include="Accesibilidad\CN_LogicaPuestos.cs" />
     <Compile Include="CN_CambarPassword.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
     <Compile Include="CN_LogicaLogin.cs" />

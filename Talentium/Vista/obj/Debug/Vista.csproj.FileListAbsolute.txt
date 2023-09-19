@@ -285,3 +285,4 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
