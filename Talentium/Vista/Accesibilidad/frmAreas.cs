@@ -119,6 +119,7 @@ namespace Vista
 
                     if (resultado == DialogResult.OK)
                     {
+                        area.EliminarArea(idRegistroSeleccionado);
                         MessageBox.Show("El área ha sido eliminada con éxito.");
                         frmAreas_Load(sender, e);
                     }

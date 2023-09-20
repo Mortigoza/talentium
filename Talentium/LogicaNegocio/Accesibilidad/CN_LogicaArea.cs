@@ -46,9 +46,20 @@ namespace LogicaNegocio.Accesibilidad
         {
             if (accesoDatos.ConsultarAreaConPersona(idArea) == false)
             {
-                accesoDatos.EliminarArea(idArea);
                 return false;
             } else
+            {
+                return true;
+            }
+        }
+
+        public bool EliminarArea(int idArea)
+        {
+            if (accesoDatos.EliminarArea(idArea) == false) //no elimino nada
+            {
+                return false;
+            }
+            else
             {
                 return true;
             }
