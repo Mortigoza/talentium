@@ -329,6 +329,51 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("consultar_puestos_sp", listaParametros.ToArray());
             return resultado;
         }
+
+        public void InsertarPuesto(string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("alta_puesto_sp", listaParametros.ToArray(), true);
+        }
+
+        public bool ConsultarPuestoRepetido(string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPuesto = EjecutarConsultas("consultar_puesto_repetido_sp", listaParametros.ToArray());
+
+            return resultadoPuesto.Rows.Count != 0;
+        }
+
+        public bool ModificarPuesto(int idRegistroSeleccionado, string nuevoPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idRegistroSeleccionado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nuevoPuesto", nuevoPuesto) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifPuesto = EjecutarConsultas("modificar_puesto_sp", listaParametros.ToArray());
+            return resultadoModifPuesto.Rows.Count != 0;
+        }
+
+        public bool ConsultarPuestoConPersona(int idPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idPuesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaPuesto = EjecutarConsultas("consultar_persona_puesto_sp", listaParametros.ToArray());
+            return resultadoPersonaPuesto.Rows.Count != 0;
+        }
+
+        public bool EliminarPuesto(int idPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idPuesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarPuesto = EjecutarConsultas("eliminar_puesto_sp", listaParametros.ToArray());
+            return resultadoEliminarPuesto.Rows.Count != 0;
+        }
+
     }
 }
 

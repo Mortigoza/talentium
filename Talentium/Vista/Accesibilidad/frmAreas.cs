@@ -40,10 +40,10 @@ namespace Vista
         {
             if (string.IsNullOrWhiteSpace(txtArea.Text))
             {
-                MessageBox.Show("Debe completar los campos.");
+                MessageBox.Show("Debe completar el campo.");
             } else if(area.validarArea(txtArea.Text) == false)
             {
-                MessageBox.Show("Alta de área exitosa");
+                MessageBox.Show("Alta de área exitosa.");
                 txtArea.Clear();
                 frmAreas_Load(sender,e);
             } else

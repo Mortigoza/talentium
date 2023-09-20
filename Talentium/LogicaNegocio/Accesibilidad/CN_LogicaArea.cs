@@ -14,11 +14,11 @@ namespace LogicaNegocio.Accesibilidad
 
         public bool validarArea(string area)
         {
-            if (accesoDatos.ConsultarAreaRepetida(area) == false) //entra acá cuando no es repetido: FALSE
+            if (accesoDatos.ConsultarAreaRepetida(area) == false) 
             {
                 accesoDatos.InsertarArea(area);
                 return false;
-            } //si es TRUE es repetido
+            } 
             else
             {
                 return true;

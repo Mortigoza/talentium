@@ -74,6 +74,7 @@
             this.btnCancelarModificar.TabIndex = 3;
             this.btnCancelarModificar.Text = "Cancelar";
             this.btnCancelarModificar.UseVisualStyleBackColor = false;
+            this.btnCancelarModificar.Click += new System.EventHandler(this.btnCancelarModificar_Click);
             // 
             // btnGuardarModificar
             // 
@@ -88,6 +89,7 @@
             this.btnGuardarModificar.TabIndex = 2;
             this.btnGuardarModificar.Text = "Guardar";
             this.btnGuardarModificar.UseVisualStyleBackColor = false;
+            this.btnGuardarModificar.Click += new System.EventHandler(this.btnGuardarModificar_Click);
             // 
             // txtPuestoModificar
             // 
@@ -121,6 +123,7 @@
             this.btnBaja.TabIndex = 14;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // groupBox1
             // 
@@ -151,6 +154,7 @@
             this.btnCancelarCrear.TabIndex = 3;
             this.btnCancelarCrear.Text = "Cancelar";
             this.btnCancelarCrear.UseVisualStyleBackColor = false;
+            this.btnCancelarCrear.Click += new System.EventHandler(this.btnCancelarCrear_Click);
             // 
             // btnGuardarCrear
             // 
@@ -165,6 +169,7 @@
             this.btnGuardarCrear.TabIndex = 2;
             this.btnGuardarCrear.Text = "Guardar";
             this.btnGuardarCrear.UseVisualStyleBackColor = false;
+            this.btnGuardarCrear.Click += new System.EventHandler(this.btnGuardarCrear_Click);
             // 
             // txtPuestoCrear
             // 
@@ -193,6 +198,7 @@
             this.lstPuestos.Name = "lstPuestos";
             this.lstPuestos.Size = new System.Drawing.Size(253, 264);
             this.lstPuestos.TabIndex = 11;
+            this.lstPuestos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstPuestos_MouseDoubleClick);
             // 
             // frmPuesto
             // 
