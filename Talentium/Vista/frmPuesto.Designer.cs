@@ -98,6 +98,7 @@
             this.txtPuestoModificar.Name = "txtPuestoModificar";
             this.txtPuestoModificar.Size = new System.Drawing.Size(177, 20);
             this.txtPuestoModificar.TabIndex = 1;
+            this.txtPuestoModificar.TextChanged += new System.EventHandler(this.txtPuestoModificar_TextChanged);
             // 
             // lblPuestoModificar
             // 
@@ -178,6 +179,7 @@
             this.txtPuestoCrear.Name = "txtPuestoCrear";
             this.txtPuestoCrear.Size = new System.Drawing.Size(177, 20);
             this.txtPuestoCrear.TabIndex = 1;
+            this.txtPuestoCrear.TextChanged += new System.EventHandler(this.txtPuestoCrear_TextChanged);
             // 
             // lblPuestoCrear
             // 

@@ -17,6 +17,12 @@ namespace Vista
         public frmPuesto()
         {
             InitializeComponent();
+
+            //para que cuando al iniciar el form el boton de cancelar no esté habilitado
+            btnCancelarCrear.Enabled = false;
+            txtPuestoCrear.TextChanged += txtPuestoCrear_TextChanged;
+            btnCancelarModificar.Enabled = false;
+            txtPuestoModificar.TextChanged += txtPuestoModificar_TextChanged;
         }
 
         private void frmPuesto_Load(object sender, EventArgs e)
@@ -123,6 +129,18 @@ namespace Vista
                 }
 
             }
+        }
+
+        private void txtPuestoCrear_TextChanged(object sender, EventArgs e)
+        {
+            bool estaCompleto = !string.IsNullOrWhiteSpace(txtPuestoCrear.Text);
+            btnCancelarCrear.Enabled = estaCompleto;
+        }
+
+        private void txtPuestoModificar_TextChanged(object sender, EventArgs e)
+        {
+            bool estaCompletoModif = !string.IsNullOrWhiteSpace(txtPuestoModificar.Text);
+            btnCancelarModificar.Enabled = estaCompletoModif;
         }
     }
 }

@@ -18,51 +18,28 @@ namespace LogicaNegocio.Accesibilidad
 
         public bool validarPuesto(string puesto)
         {
-            if (accesoDatos.ConsultarPuestoRepetido(puesto) == false)
+            if (!accesoDatos.ConsultarPuestoRepetido(puesto))
             {
                 accesoDatos.InsertarPuesto(puesto);
                 return false;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
 
         public bool ModificarPuesto(int idRegistroSeleccionado, string nuevoPuesto)
         {
-            if (accesoDatos.ModificarPuesto(idRegistroSeleccionado, nuevoPuesto) == false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return accesoDatos.ModificarPuesto(idRegistroSeleccionado, nuevoPuesto);
         }
 
         public bool AsociadoAPersona(int idPuesto)
         {
-            if (accesoDatos.ConsultarPuestoConPersona(idPuesto) == false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return accesoDatos.ConsultarPuestoConPersona(idPuesto);
         }
 
         public bool EliminarPuesto(int idPuesto)
         {
-            if(accesoDatos.EliminarPuesto(idPuesto) == false) //no elimino nada
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return accesoDatos.EliminarPuesto(idPuesto);
         }
     }
 
