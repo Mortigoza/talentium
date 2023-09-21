@@ -278,6 +278,8 @@ namespace AccesoDatos
             return email.Rows[0][0].ToString();
         }
 
+        /****************************** FORM AREA *****************************/
+
         public void InsertarArea(string area)
         {
             SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
@@ -322,6 +324,7 @@ namespace AccesoDatos
             return resultadoEliminarArea.Rows.Count != 0;
         }
 
+        /****************************** FORM PUESTOS *****************************/
         public DataTable ConsultaPuestos()
         {
             List<SqlParameter> listaParametros = new List<SqlParameter>() { };
@@ -373,6 +376,8 @@ namespace AccesoDatos
             DataTable resultadoEliminarPuesto = EjecutarConsultas("eliminar_puesto_sp", listaParametros.ToArray());
             return resultadoEliminarPuesto.Rows.Count != 0;
         }
+
+        /******************** FORM ALTA EVALUACION DE DESEMPEÑO ********************/
 
     }
 }
