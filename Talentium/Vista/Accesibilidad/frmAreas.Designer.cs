@@ -109,6 +109,7 @@
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(177, 20);
             this.txtArea.TabIndex = 1;
+            this.txtArea.TextChanged += new System.EventHandler(this.txtArea_TextChanged);
             // 
             // label1
             // 
@@ -174,6 +175,7 @@
             this.txtModifArea.Name = "txtModifArea";
             this.txtModifArea.Size = new System.Drawing.Size(177, 20);
             this.txtModifArea.TabIndex = 3;
+            this.txtModifArea.TextChanged += new System.EventHandler(this.txtModifArea_TextChanged);
             // 
             // label2
             // 
@@ -205,6 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.groupBox2);

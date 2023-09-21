@@ -21,6 +21,12 @@ namespace Vista
             InitializeComponent();
 
             lstAreas.MouseDoubleClick += new MouseEventHandler(lstAreas_MouseDoubleClick);
+
+            //para que cuando al iniciar el form el boton de cancelar no esté habilitado
+            btnCancelarCrear.Enabled = false;
+            txtArea.TextChanged += txtArea_TextChanged;
+            btnCancelarModificar.Enabled = false;
+            txtModifArea.TextChanged += txtModifArea_TextChanged;
         }
 
         private void Áreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,26 +44,34 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtArea.Text))
+            // el trim elimina espacios en blanco al principio y al final
+            string areaNombre = txtArea.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(areaNombre))
             {
                 MessageBox.Show("Debe completar el campo.");
-            } else if(area.ValidarArea(txtArea.Text) == false)
+            }
+            else
             {
-                MessageBox.Show("Alta de área exitosa.");
-                txtArea.Clear();
-                frmAreas_Load(sender,e);
-            } else
-            {
-                MessageBox.Show("Ese nombre de área ya está en uso.");
-                txtArea.Clear();
+                bool esAreaValida = area.ValidarArea(areaNombre);
+
+                if (!esAreaValida)
+                {
+                    MessageBox.Show("Alta de área exitosa.");
+                    txtArea.Clear();
+                    frmAreas_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Ese nombre de área ya está en uso.");
+                    txtArea.Clear();
+                }
             }
         }
 
         private void lstAreas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DataRowView registroSeleccionado = lstAreas.SelectedItem as DataRowView;
-
-            if (registroSeleccionado != null)
+            if (lstAreas.SelectedItem is DataRowView registroSeleccionado)
             {
                 txtModifArea.Text = registroSeleccionado["area"].ToString();
             }
@@ -65,28 +79,31 @@ namespace Vista
 
         private void btnGuardarModificar_Click(object sender, EventArgs e)
         {
-            int idRegistroSeleccionado =0;
-            string nuevaArea = txtModifArea.Text;
-            DataRowView registroSeleccionado = lstAreas.SelectedItem as DataRowView;
-            if (registroSeleccionado != null)
+            if (lstAreas.SelectedItem is DataRowView registroSeleccionado)
             {
-                idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_area"]);
-            }
+                int idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_area"]);
+                string nuevaArea = txtModifArea.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nuevaArea))
-            {
-                MessageBox.Show("Debe completar los campos.");
-            }
-            else if (area.ModificarArea(idRegistroSeleccionado, nuevaArea) == false)
-            {
-                MessageBox.Show("Modificación de área exitosa");
-                txtModifArea.Clear();
-                frmAreas_Load(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Ese nombre de área ya está en uso.");
-                txtModifArea.Clear();
+                if (string.IsNullOrWhiteSpace(nuevaArea))
+                {
+                    MessageBox.Show("Debe completar los campos.");
+                }
+                else
+                {
+                    bool modificacionExitosa = area.ModificarArea(idRegistroSeleccionado, nuevaArea);
+
+                    if (modificacionExitosa)
+                    {
+                        MessageBox.Show("Modificación de área exitosa");
+                        txtModifArea.Clear();
+                        frmAreas_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ese nombre de área ya está en uso.");
+                        txtModifArea.Clear();
+                    }
+                }
             }
         }
 
@@ -94,7 +111,6 @@ namespace Vista
         {
             MessageBox.Show("Se ha cancelado la operación.");
             txtArea.Clear();
-
         }
 
         private void btnCancelarModificar_Click(object sender, EventArgs e)
@@ -127,10 +143,20 @@ namespace Vista
                     {
                         MessageBox.Show("Se ha cancelado la operación.");
                     }
-                    
                 }
-
             }
+        }
+
+        private void txtArea_TextChanged(object sender, EventArgs e)
+        {
+            bool estaCompleto = !string.IsNullOrWhiteSpace(txtArea.Text);
+            btnCancelarCrear.Enabled = estaCompleto;
+        }
+
+        private void txtModifArea_TextChanged(object sender, EventArgs e)
+        {
+            bool estaCompletoModif = !string.IsNullOrWhiteSpace(txtModifArea.Text);
+            btnCancelarModificar.Enabled = estaCompletoModif;
         }
     }
 }
