@@ -94,11 +94,11 @@
     <Compile Include="ConfigPoliticasPass.Designer.cs">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.cs">
+    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.Designer.cs">
-      <DependentUpon>frmAltaEvaluacionDesempeño.cs</DependentUpon>
+    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.Designer.cs">
+      <DependentUpon>frmAltaEvaluacionDesempenio.cs</DependentUpon>
     </Compile>
     <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.cs">
       <SubType>Form</SubType>
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="ConfigPoliticasPass.resx">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.resx">
-      <DependentUpon>frmAltaEvaluacionDesempeño.cs</DependentUpon>
+    <EmbeddedResource Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.resx">
+      <DependentUpon>frmAltaEvaluacionDesempenio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.resx">
       <DependentUpon>frmConsultaEvaluacionDesempeño.cs</DependentUpon>

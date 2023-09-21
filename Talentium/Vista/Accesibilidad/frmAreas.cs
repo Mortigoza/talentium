@@ -41,7 +41,7 @@ namespace Vista
             if (string.IsNullOrWhiteSpace(txtArea.Text))
             {
                 MessageBox.Show("Debe completar el campo.");
-            } else if(area.validarArea(txtArea.Text) == false)
+            } else if(area.ValidarArea(txtArea.Text) == false)
             {
                 MessageBox.Show("Alta de área exitosa.");
                 txtArea.Clear();

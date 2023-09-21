@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Evaluacion_de_desempeño;
 
 namespace Vista
 {
@@ -51,6 +52,13 @@ namespace Vista
             this.Hide();
             frmPuesto puestos = new frmPuesto();
             puestos.Show();
+        }
+
+        private void crearEvaluacionDeDesempenioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAltaEvaluacionDesempenio evaluacionDesempenio = new frmAltaEvaluacionDesempenio();
+            evaluacionDesempenio.Show();
         }
     }
 }

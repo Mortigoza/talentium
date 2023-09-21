@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista.Evaluacion_de_desempeño
 {
-    public partial class frmAltaEvaluacionDesempeño : Form
+    public partial class frmAltaEvaluacionDesempenio : Form
     {
-        public frmAltaEvaluacionDesempeño()
+        public frmAltaEvaluacionDesempenio()
         {
             InitializeComponent();
         }

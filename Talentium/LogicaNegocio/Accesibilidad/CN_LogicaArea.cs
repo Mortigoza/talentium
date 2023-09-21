@@ -12,17 +12,15 @@ namespace LogicaNegocio.Accesibilidad
     {
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
 
-        public bool validarArea(string area)
+        public bool ValidarArea(string area)
         {
-            if (accesoDatos.ConsultarAreaRepetida(area) == false) 
+            if (!accesoDatos.ConsultarAreaRepetida(area))
             {
                 accesoDatos.InsertarArea(area);
                 return false;
-            } 
-            else
-            {
-                return true;
             }
+
+            return true;
         }
 
         public DataTable ObtenerAreas()
@@ -30,40 +28,23 @@ namespace LogicaNegocio.Accesibilidad
             return accesoDatos.ConsultaAreas();
         }
 
+        // Si el resultado es false, devuelve false. Si es true, devuelve true
         public bool ModificarArea(int idRegistroSeleccionado, string nuevaArea)
         {
-            if (accesoDatos.ModificarArea(idRegistroSeleccionado, nuevaArea) == false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return accesoDatos.ModificarArea(idRegistroSeleccionado, nuevaArea);
         }
 
+        // Si el resultado es false, devuelve false. Si es true, devuelve true
         public bool AsociadoAPersona(int idArea)
         {
-            if (accesoDatos.ConsultarAreaConPersona(idArea) == false)
-            {
-                return false;
-            } else
-            {
-                return true;
-            }
+            return accesoDatos.ConsultarAreaConPersona(idArea);
         }
 
+        // Si el resultado es false, devuelve false. Si es true, devuelve true
         public bool EliminarArea(int idArea)
         {
-            if (accesoDatos.EliminarArea(idArea) == false) //no elimino nada
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return accesoDatos.EliminarArea(idArea);
         }
-        
+
     }
 }

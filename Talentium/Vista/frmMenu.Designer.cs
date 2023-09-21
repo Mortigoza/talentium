@@ -44,6 +44,7 @@
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearEvaluacionDeDesempenioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +127,8 @@
             // 
             // gestiónDelTalentoToolStripMenuItem
             // 
+            this.gestiónDelTalentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearEvaluacionDeDesempenioToolStripMenuItem});
             this.gestiónDelTalentoToolStripMenuItem.Name = "gestiónDelTalentoToolStripMenuItem";
             this.gestiónDelTalentoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.gestiónDelTalentoToolStripMenuItem.Text = "Gestión del Talento";
@@ -160,16 +163,23 @@
             // áreasToolStripMenuItem
             // 
             this.áreasToolStripMenuItem.Name = "áreasToolStripMenuItem";
-            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.áreasToolStripMenuItem.Text = "Áreas";
             this.áreasToolStripMenuItem.Click += new System.EventHandler(this.áreasToolStripMenuItem_Click);
             // 
             // puestosToolStripMenuItem
             // 
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
+            // 
+            // crearEvaluacionDeDesempenioToolStripMenuItem
+            // 
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Name = "crearEvaluacionDeDesempenioToolStripMenuItem";
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Text = "Crear Evaluación de Desempeño";
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Click += new System.EventHandler(this.crearEvaluacionDeDesempenioToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -211,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem accesibilidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem áreasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearEvaluacionDeDesempenioToolStripMenuItem;
     }
 }

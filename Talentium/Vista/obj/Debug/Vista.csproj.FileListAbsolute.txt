@@ -266,7 +266,6 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
-C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempeño.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempeño.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
@@ -286,3 +285,4 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
