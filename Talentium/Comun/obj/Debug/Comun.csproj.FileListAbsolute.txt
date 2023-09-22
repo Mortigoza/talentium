@@ -40,3 +40,9 @@ C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Comun\obj\Deb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Comun\bin\Debug\Comun.pdb
