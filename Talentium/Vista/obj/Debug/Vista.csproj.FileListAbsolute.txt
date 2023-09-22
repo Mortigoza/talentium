@@ -247,3 +247,10 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
