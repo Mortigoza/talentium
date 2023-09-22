@@ -80,8 +80,6 @@ namespace AccesoDatos
             UserCache.intentos = (int)resultado.Rows[0][10];
 
             UserCache.nuevo = (bool)resultado.Rows[0][13];
-            UserCache.nuevo = (bool)resultado.Rows[0][15];
-            UserCache.nuevo = (bool)resultado.Rows[0][15];
 
         }
         public void Bloquear(int id, DateTime? hBloqueo)
