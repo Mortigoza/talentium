@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgPersonas = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
             this.cmbArea = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
@@ -42,7 +37,7 @@
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -56,47 +51,12 @@
             // dtgPersonas
             // 
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column3,
-            this.Apellido,
-            this.Column2,
-            this.Area});
             this.dtgPersonas.Location = new System.Drawing.Point(184, 36);
             this.dtgPersonas.Name = "dtgPersonas";
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(648, 366);
             this.dtgPersonas.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Usuario";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Nombre";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Cambia Cada";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Area
-            // 
-            this.Area.HeaderText = "Area";
-            this.Area.Name = "Area";
-            this.Area.ReadOnly = true;
+            this.dtgPersonas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonas_RowEnter);
             // 
             // grpFiltro
             // 
@@ -108,7 +68,7 @@
             this.grpFiltro.Controls.Add(this.lblNombreUsuario);
             this.grpFiltro.Controls.Add(this.txtNombre);
             this.grpFiltro.Controls.Add(this.lblApellido);
-            this.grpFiltro.Controls.Add(this.txtCuit);
+            this.grpFiltro.Controls.Add(this.txtUsuario);
             this.grpFiltro.Controls.Add(this.lblNombre);
             this.grpFiltro.Location = new System.Drawing.Point(24, 36);
             this.grpFiltro.Name = "grpFiltro";
@@ -137,6 +97,7 @@
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtApellido
             // 
@@ -182,12 +143,12 @@
             this.lblApellido.TabIndex = 2;
             this.lblApellido.Text = "Apellido";
             // 
-            // txtCuit
+            // txtUsuario
             // 
-            this.txtCuit.Location = new System.Drawing.Point(17, 41);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
-            this.txtCuit.TabIndex = 4;
+            this.txtUsuario.Location = new System.Drawing.Point(17, 41);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 4;
             // 
             // lblNombre
             // 
@@ -207,6 +168,7 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -216,6 +178,7 @@
             this.btnModificar.TabIndex = 14;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBaja
             // 
@@ -225,6 +188,7 @@
             this.btnBaja.TabIndex = 15;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // rdbActivos
             // 
@@ -238,6 +202,7 @@
             this.rdbActivos.TabStop = true;
             this.rdbActivos.Text = "Activos";
             this.rdbActivos.UseVisualStyleBackColor = false;
+            this.rdbActivos.CheckedChanged += new System.EventHandler(this.rdbActivos_CheckedChanged);
             // 
             // rdbInactivos
             // 
@@ -249,6 +214,7 @@
             this.rdbInactivos.TabIndex = 17;
             this.rdbInactivos.Text = "Inactivos";
             this.rdbInactivos.UseVisualStyleBackColor = false;
+            this.rdbInactivos.CheckedChanged += new System.EventHandler(this.rdbInactivos_CheckedChanged);
             // 
             // frmConsultaUsuario
             // 
@@ -288,14 +254,9 @@
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Area;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBaja;

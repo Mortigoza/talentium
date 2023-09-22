@@ -69,9 +69,8 @@ namespace AccesoDatos
             UserCache.password = (string)resultado.Rows[0][2];
             UserCache.alta = (DateTime)resultado.Rows[0][3];
 
-            UserCache.baja = (DateTime)resultado.Rows[0][4] ; 
+            UserCache.baja = (DateTime)resultado.Rows[0][4]; 
            
-
             UserCache.cambiaCada = (int)resultado.Rows[0][5];
 
             UserCache.ultimoCambio = (DateTime)resultado.Rows[0][6];
@@ -79,7 +78,10 @@ namespace AccesoDatos
 
             UserCache.digito = (string)resultado.Rows[0][9];
             UserCache.intentos = (int)resultado.Rows[0][10];
+
             UserCache.nuevo = (bool)resultado.Rows[0][13];
+            UserCache.nuevo = (bool)resultado.Rows[0][15];
+            UserCache.nuevo = (bool)resultado.Rows[0][15];
 
         }
         public void Bloquear(int id, DateTime? hBloqueo)
@@ -194,7 +196,7 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("InsRespuesta_sp", listaParametros.ToArray(), true);
 
         }
-        public int InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito)
+        public int InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito, string mail)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
@@ -202,8 +204,9 @@ namespace AccesoDatos
             SqlParameter param4 = new SqlParameter("@cambia_cada", cambia_cada) { SqlDbType = SqlDbType.Int };
             SqlParameter param5 = new SqlParameter("@digito", digito) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param6 = new SqlParameter("@intentos", ConfigCache.intentos) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@email", mail) { SqlDbType = SqlDbType.NVarChar };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7 };
 
             DataTable id_usuario = EjecutarConsultas("alta_usuario_sp", listaParametros.ToArray());
             return Convert.ToInt32(id_usuario.Rows[0][0]);
@@ -260,13 +263,13 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("consultar_permisos_perfil_sp", listaParametros.ToArray());
             return resultado;
         }
-        public bool ConsultarUsuarioRepetido(string usuario)
+        public DataTable ConsultarUsuarioRepetido(string usuario)
         {
             SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
 
             DataTable resultado = EjecutarConsultas("consultar_usuario_repetido_sp", listaParametros.ToArray());
-            return resultado.Rows.Count != 0;
+            return resultado;
         }
         public string ConsultarMailPersona(int id_persona)
         {
