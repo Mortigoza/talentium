@@ -79,6 +79,7 @@ namespace Vista
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
             lstPermisosAsignados.DisplayMember = "funcionalidad";
+
             #endregion
 
             configEnd = true;
@@ -107,9 +108,16 @@ namespace Vista
             dtgPersonas.Columns[6].Visible = false;
             dtgPersonas.Columns[7].Visible = false;
             dtgPersonas.Columns[8].Visible = false;
+
             //Cargar datos
             txtUsuario.Text = Seguridad.DesEncriptar(dt.Rows[0][7].ToString());
             nmrCambiaCada.Value = (int)(dt.Rows[0][8]);
+            //Bloqueos de controles
+            grpFiltro.Enabled = false;
+            dtgPersonas.Enabled = false;
+            txtUsuario.Enabled = false;
+            txtContrasenia.Enabled = false;
+            btnCrearContrasenia.Visible = false;
             //cmb perfiles
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();
@@ -143,9 +151,6 @@ namespace Vista
             if (dtPermisosUsuario.Rows.Count > 0)
             configListbox(usuario.ConsultarPermisosLst(), true, dtPermisosUsuario);
 
-            //Bloqueos de controles
-            grpFiltro.Enabled = false;
-            dtgPersonas.Enabled = false;
             #endregion
             
             configEnd = true;
@@ -167,6 +172,9 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            int len;
+            string msg;
+            List<int> permisos = new List<int>(); // Lista permisos
             switch (_mod)
             {
                 default:  // Si esta en modo alta 
@@ -175,8 +183,8 @@ namespace Vista
                     Tuple<bool, string> verif = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, dtgPersonas, _rowIndex).ToTuple();
                     if (verif.Item1)
                     {
-                        List<int> permisos = new List<int>(); // lista de permisos
-                        int len = dtListaMem.Rows.Count;
+                         // lista de permisos
+                        len = dtListaMem.Rows.Count;
 
                         for (int i = 0; i < len; i++)
                         {
@@ -184,7 +192,7 @@ namespace Vista
                             permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
                         }
                         // Intenta enviar un mail (si se puede manda la contraseña y devuelve un mensaje vacio, sino devuelve un mensaje de error)
-                        string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
+                        msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
                         try
                         {
                             if (string.IsNullOrEmpty(msg))
@@ -208,50 +216,29 @@ namespace Vista
                     {
                         MessageBox.Show(verif.Item2);
                     }
+
                     break;
+
                 case true: // Si esta en modo modificacion 
 
-                    // Llama al metodo para validar que se puede modificar
-                    Tuple<bool, string> verifmod = usuario.ValidarAltaUsuario(txtUsuario.Text, txtContrasenia.Text, _idUsuario).ToTuple();
-                    if (verifmod.Item1)
-                    {
-                        List<int> permisos = new List<int>(); // Lista permisos
-                        int len = dtListaMem.Rows.Count;
+                    len = dtListaMem.Rows.Count;
 
-                        for (int i = 0; i < len; i++)
-                        {
-                            // carga todos los permisos del dtListaMem en la lista permisos
-                            permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
-                        }
-                        // Intenta enviar un mail (si se puede manda la contraseña y devuelve un mensaje vacio, sino devuelve un mensaje de error)
-                        string msg = usuario.MandarMail(_index, txtContrasenia.Text, txtEmail.Text);
-                        try
-                        {
-                            if (string.IsNullOrEmpty(msg))
-                            {
-                                // Si el mail se envio correctamente hace la modificacion
-                                CN_UpUsuario uu = new CN_UpUsuario();
-                                string _usuario = txtUsuario.Text;
-                                string _pass = txtContrasenia.Text;
-                                int _cambiaCada = (int)nmrCambiaCada.Value;
-                                uu.UpUsuario(_idUsuario, _usuario, _pass, _cambiaCada, permisos.ToArray(), txtEmail.Text);
-                                MessageBox.Show("Modificación exitosa");
-                                this.Dispose();
-                            }
-                            else
-                            {
-                                MessageBox.Show(msg);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                    else
+                    for (int i = 0; i < len; i++)
                     {
-                        // Mensaje de error devuelto por el metodo de verificacion
-                        MessageBox.Show(verifmod.Item2);
+                        // carga todos los permisos del dtListaMem en la lista permisos
+                        permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                    }
+                    try
+                    {
+                        // Hace la modificacion
+                        CN_UpUsuario uu = new CN_UpUsuario();
+                        uu.UpUsuario(_idUsuario, (int)nmrCambiaCada.Value, permisos.ToArray(), txtEmail.Text);
+                        MessageBox.Show("Modificación exitosa");
+                        this.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                     break;
             }
@@ -402,20 +389,28 @@ namespace Vista
 
         private void btnAsignarPermisosTodos_Click(object sender, EventArgs e)
         {
-            for (int i = 0, len = lstPermisos.Items.Count; i < len; i++)
+            if (lstPermisos.Items.Count > 0)
             {
-                UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, 0);
+                lstPermisos.SelectedIndex = 0;
+                for (int i = 0, len = lstPermisos.Items.Count; i < len; i++)
+                {
+                    UtilidadesForms.moverListboxRow(lstPermisos, lstPermisosAsignados, dtListaBd, dtListaMem, 0);
+                }
+                PerfilCustom();
             }
-            PerfilCustom();
         }
 
         private void btnDesasignarPermisosTodos_Click(object sender, EventArgs e)
         {
-            for (int i = 0, len = lstPermisosAsignados.Items.Count; i < len; i++)
+            if (lstPermisosAsignados.Items.Count > 0)
             {
-                UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, 0);
+                lstPermisosAsignados.SelectedIndex = 0;
+                for (int i = 0, len = lstPermisosAsignados.Items.Count; i < len; i++)
+                {
+                    UtilidadesForms.moverListboxRow(lstPermisosAsignados, lstPermisos, dtListaMem, dtListaBd, 0);
+                }
+                PerfilCustom();
             }
-            PerfilCustom();
         }
         // Funciones
         // Configura el los listbox en base a una lista de permisos

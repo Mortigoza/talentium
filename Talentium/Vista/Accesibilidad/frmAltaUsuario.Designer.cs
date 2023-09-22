@@ -52,7 +52,6 @@
             this.btnCrearContrasenia = new System.Windows.Forms.Button();
             this.btnAsignarPermisos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisos = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lstPermisos = new System.Windows.Forms.ListBox();
             this.lstPermisosAsignados = new System.Windows.Forms.ListBox();
@@ -308,15 +307,6 @@
             this.btnDesasignarPermisos.UseVisualStyleBackColor = true;
             this.btnDesasignarPermisos.Click += new System.EventHandler(this.btnDesasignarPermisos_Click);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(220, 410);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(30, 30);
-            this.btnAdd.TabIndex = 21;
-            this.btnAdd.Text = "+";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(676, 520);
@@ -409,7 +399,6 @@
             this.Controls.Add(this.lstPermisosAsignados);
             this.Controls.Add(this.lstPermisos);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
             this.Controls.Add(this.btnCrearContrasenia);
@@ -465,7 +454,6 @@
         private System.Windows.Forms.Button btnCrearContrasenia;
         private System.Windows.Forms.Button btnAsignarPermisos;
         private System.Windows.Forms.Button btnDesasignarPermisos;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ListBox lstPermisos;
         private System.Windows.Forms.ListBox lstPermisosAsignados;

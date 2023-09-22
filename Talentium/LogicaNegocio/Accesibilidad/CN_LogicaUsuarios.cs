@@ -132,26 +132,5 @@ namespace LogicaNegocio
 
             return (true, "");
         }
-        public (bool, string) ValidarAltaUsuario(string usr, string psw, int id_usuario)
-        {
-            if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
-            {
-                return (false, "Debe completar los campos.");
-            }
-
-            string _usr = Seguridad.Encriptar(usr);
-            DataTable dtUsr = accesoDatos.ConsultarUsuarioRepetido(_usr);
-
-            if (dtUsr.Rows.Count > 0)
-            {
-                if ((int)dtUsr.Rows[0][1] != id_usuario)
-                {
-                    return (false, "Ese nombre de usuario ya está en uso.");
-                }
-            }
-
-
-            return (true, "");
-        }
     }
 }

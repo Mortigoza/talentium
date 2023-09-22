@@ -12,15 +12,11 @@ namespace LogicaNegocio.Accesibilidad
     {
         CD_UpUsuario uu = new CD_UpUsuario();
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
-        public void UpUsuario(int id_usuario, string usuario, string password, int cambia_cada, int[] permisos, string mail)
+        public void UpUsuario(int id_usuario, int cambia_cada, int[] permisos, string mail)
         {
-            string digito = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
-            password = Seguridad.Hash(usuario + password);
-            usuario = Seguridad.Encriptar(usuario);
-
             try
             {
-                uu.UpUsuario(id_usuario, usuario, password, cambia_cada, digito, mail);
+                uu.UpUsuario(id_usuario, cambia_cada, mail);
                 if (permisos.Length > 0)
                 {
                     foreach (int id_permiso in permisos)

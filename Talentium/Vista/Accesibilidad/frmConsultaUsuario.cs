@@ -110,21 +110,30 @@ namespace Vista
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            DialogResult msgBox;
             if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked && btnBaja.Name == "btnBaja")
             {
-                // Si el boton esta en modo baja: elimina de forma logica al usuario seleccionado
-                CN_BajaUsuario bu = new CN_BajaUsuario();
-                bu.BajaUsuario(_idUsuario);
-                dtgRefresh(sender, e);
-                MessageBox.Show("Usuario dado de baja exitosamente");
+                msgBox = MessageBox.Show("¿Desea dar de baja este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (msgBox == DialogResult.Yes)
+                {
+                    // Si el boton esta en modo baja: elimina de forma logica al usuario seleccionado
+                    CN_BajaUsuario bu = new CN_BajaUsuario();
+                    bu.BajaUsuario(_idUsuario);
+                    dtgRefresh(sender, e);
+                    MessageBox.Show("Usuario dado de baja exitosamente");
+                }
             }
             if (dtgPersonas.Rows.Count > 0 && rdbInactivos.Checked && btnBaja.Name == "btnReactivar")
             {
-                // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
-                CN_ReactivarUsuario ru = new CN_ReactivarUsuario();
-                ru.ReactivarUsuario(_idUsuario);
-                dtgRefresh(sender, e);
-                MessageBox.Show("Usuario reactivado exitosamente");
+                msgBox = MessageBox.Show("¿Desea reactivar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (msgBox == DialogResult.Yes)
+                {
+                    // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
+                    CN_ReactivarUsuario ru = new CN_ReactivarUsuario();
+                    ru.ReactivarUsuario(_idUsuario);
+                    dtgRefresh(sender, e);
+                    MessageBox.Show("Usuario reactivado exitosamente");
+                }
             }
         }
 
