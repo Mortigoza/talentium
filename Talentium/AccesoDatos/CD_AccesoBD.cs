@@ -409,9 +409,28 @@ namespace AccesoDatos
             SqlParameter param2 = new SqlParameter("@mes", mes) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param3 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
-            DataTable resultadoPuesto = EjecutarConsultas("consultar_evaluacion_repetida_sp", listaParametros.ToArray());
+            DataTable resultadoEvaluacionRepetida = EjecutarConsultas("consultar_evaluacion_repetida_sp", listaParametros.ToArray());
 
-            return resultadoPuesto.Rows.Count != 0;
+            return resultadoEvaluacionRepetida.Rows.Count != 0;
+        }
+
+        public DataTable ConsultarEvaluacion(string anio, int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoEvaluacion = EjecutarConsultas("consultar_evaluacion_sp", listaParametros.ToArray());
+
+            return resultadoEvaluacion;
+        }
+
+        public DataTable ConsultarEvaluacionSoloPersona(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEvaluacionPersona = EjecutarConsultas("consultar_evaluacion_persona_sp", listaParametros.ToArray());
+
+            return resultadoEvaluacionPersona;
         }
     }
 }

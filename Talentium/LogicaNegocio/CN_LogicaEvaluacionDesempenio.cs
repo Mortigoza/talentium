@@ -33,5 +33,10 @@ namespace LogicaNegocio
 
             return true;
         }
+
+        //public DataTable ObtenerEvaluacion(string anio)
+        //{
+
+        //}
     }
 }
