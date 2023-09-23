@@ -56,6 +56,22 @@ namespace Vista.Evaluacion_de_desempeño
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (cmbPersonal.SelectedItem != null && cmbPersonal.SelectedValue != null)
+            {
+                DataRowView empleadoSeleccionado = cmbPersonal.SelectedItem as DataRowView;
+
+                string nombres = empleadoSeleccionado["nombres"].ToString();
+                string apellidos = empleadoSeleccionado["apellidos"].ToString();
+                string nombreApellido = $"{apellidos}, {nombres}";
+
+                lblNombreYApellido.Text = nombreApellido;
+
+                string cuil = empleadoSeleccionado["cuit_cuil"].ToString();
+                lblCuil.Text = cuil;
+
+                lblNombreYApellido.Visible = true;
+                lblCuil.Visible = true;
+            }
             //string anio = cmbAnio.SelectedValue.ToString();
             //string
             //if (!string.IsNullOrEmpty(anio))
