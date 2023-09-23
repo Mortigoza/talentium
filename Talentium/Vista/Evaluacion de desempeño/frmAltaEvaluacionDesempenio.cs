@@ -58,5 +58,45 @@ namespace Vista.Evaluacion_de_desempeño
                 cmbPersonal.Items.Clear();
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string anio = cmbAnio.SelectedValue.ToString();
+            string mes = cmbMes.SelectedValue.ToString();
+            int efectTareas = Convert.ToInt32(dtgEvaluacion.CurrentRow.Cells["Efectividad"].Value);
+            int puntualidad = Convert.ToInt32(dtgEvaluacion.CurrentRow.Cells["Puntualidad"].Value);
+            int relSup = Convert.ToInt32(dtgEvaluacion.CurrentRow.Cells["RelSuperiores"].Value);
+            int disciplina = Convert.ToInt32(dtgEvaluacion.CurrentRow.Cells["Disciplina"].Value);
+            int desempEquipo = Convert.ToInt32(dtgEvaluacion.CurrentRow.Cells["DesempEquipo"].Value);
+
+            DataRowView selectedEmpleado = cmbPersonal.SelectedItem as DataRowView;
+            int id_persona = Convert.ToInt32(selectedEmpleado["id_persona"]);
+
+            DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
+            int id_area = Convert.ToInt32(selectedArea["id_area"]);
+
+            evaluacionDesempenio.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, 
+                disciplina, desempEquipo, id_persona, id_area);
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (cmbPersonal.SelectedItem != null)
+            {
+                // Obtener el ID, nombre y apellido de la persona seleccionada del ComboBox
+                int id_persona = Convert.ToInt32(((DataRowView)cmbPersonal.SelectedItem)["id_persona"]);
+                string nombre = ((DataRowView)cmbPersonal.SelectedItem)["nombres"].ToString();
+                string apellido = ((DataRowView)cmbPersonal.SelectedItem)["apellidos"].ToString();
+
+                // Obtener la fila actual del DataGridView
+                int rowIndex = dtgEvaluacion.CurrentRow.Index;
+
+                // Concatenar el nombre y apellido
+                string nombreCompleto = $"{apellido}, {nombre}";
+
+                // Asignar el nombre y apellido a la celda en la columna "NombreApellido"
+                dtgEvaluacion.Rows[rowIndex].Cells["NombreApellido"].Value = nombreCompleto;
+            }
+        }
     }
 }

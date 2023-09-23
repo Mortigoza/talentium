@@ -386,6 +386,24 @@ namespace AccesoDatos
             return resultadoPersonaArea;
         }
 
+        public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad, int relSup, 
+            int disciplina, int desempEquipo, int id_persona, int id_area)
+        {
+            SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@mes", mes) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@efectTareas", efectTareas) { SqlDbType = SqlDbType.Int };
+            SqlParameter param4 = new SqlParameter("@puntualidad", puntualidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@relSup", relSup) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@disciplina", disciplina) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@desempEquipo", desempEquipo) { SqlDbType = SqlDbType.Int };
+            SqlParameter param8 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param9 = new SqlParameter("@id_area", id_area) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, 
+                param6, param7, param8, param9 };
+
+            EjecutarConsultas("insertar_evaluacion_desempenio_sp", listaParametros.ToArray(), true);
+        }
+
     }
 }
 

@@ -21,5 +21,12 @@ namespace LogicaNegocio
             return accesoDatos.ConsultarPersonaConArea(idArea);
 
         }
+
+        public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad,
+                                               int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
+        {
+            accesoDatos.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
+                idPersona, idArea);
+        }
     }
 }
