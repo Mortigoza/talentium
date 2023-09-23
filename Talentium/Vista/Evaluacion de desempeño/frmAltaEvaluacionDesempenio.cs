@@ -37,6 +37,9 @@ namespace Vista.Evaluacion_de_desempeño
             List<string> DTMeses = combos.CargarMesCombobox();
             cmbMes.DataSource = DTMeses;
 
+            dtgEvaluacion.RowCount = 2;
+            dtgEvaluacion.AllowUserToAddRows = false;
+
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,26 +78,36 @@ namespace Vista.Evaluacion_de_desempeño
             DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
             int id_area = Convert.ToInt32(selectedArea["id_area"]);
 
+            bool algunaCeldaSinCompletar = false;
+
             foreach (DataGridViewRow row in dtgEvaluacion.Rows)
             {
-                DataGridViewComboBoxCell comboBoxCelda = row.Cells["Efectividad"] as DataGridViewComboBoxCell;
-                if (comboBoxCelda != null && comboBoxCelda.Value == null)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    MessageBox.Show("Por favor, seleccione una opción en todos los campos antes de guardar.", "Aviso", 
+                    if (cell is DataGridViewComboBoxCell comboBoxCell && comboBoxCell.Value == null)
+                    {
+                        algunaCeldaSinCompletar = true;
+                        break;  
+                    }
+                }
+                if (algunaCeldaSinCompletar)
+                {
+                    MessageBox.Show("Por favor, seleccione una opción en todos los campos antes de guardar.", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                } else
-                {
-                    bool esEvaluacionValida = evaluacionDesempenio.ValidarEvaluacion(anio, mes, efectTareas, puntualidad, 
-                        relSup, disciplina,desempEquipo, id_persona, id_area);
+                }
 
-                    if (!esEvaluacionValida)
-                    {
-                        MessageBox.Show("Alta de Evaluación de Desempeño exitosa.");
-                    } else
-                    {
-                        MessageBox.Show("La Evaluación de desempeño que intenta crear ya se encuentra registrada anteriormente.");
-                    }
+                bool esEvaluacionValida = evaluacionDesempenio.ValidarEvaluacion(anio, mes, efectTareas, puntualidad,
+                                                                relSup, disciplina, desempEquipo, id_persona, id_area);
+
+                if (!esEvaluacionValida)
+                {
+                    MessageBox.Show("Alta de Evaluación de Desempeño exitosa.");
+                    // me falta vaciar el form para que pueda ingresar otro.
+                }
+                else
+                {
+                    MessageBox.Show("La Evaluación de desempeño que intenta crear ya se encuentra registrada anteriormente.");
                 }
             }
         }
