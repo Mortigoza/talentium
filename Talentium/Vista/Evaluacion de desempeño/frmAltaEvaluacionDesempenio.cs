@@ -37,10 +37,6 @@ namespace Vista.Evaluacion_de_desempeño
             List<string> DTMeses = combos.CargarMesCombobox();
             cmbMes.DataSource = DTMeses;
 
-            //// cargar el combo de las personas segun el area elegido en el combo anterior
-            //DataTable DTPersona = evaluacionDesempenio.ObtenerPersonaConArea(cmbAreas.SelectedIndex);
-            //cmbPersonal.DataSource = DTPersona;
-            //cmbPersonal.DisplayMember = "nombres";
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,12 +44,12 @@ namespace Vista.Evaluacion_de_desempeño
             DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
             int idAreaSeleccionada = Convert.ToInt32(selectedArea["id_area"]);
             DataTable DTEmpleados = evaluacionDesempenio.ObtenerPersonaConArea(idAreaSeleccionada);
+            DTEmpleados.Columns.Add("NombreCompleto", typeof(string), "APELLIDOS + ', ' + NOMBRES");
+
             if (DTEmpleados != null && DTEmpleados.Rows.Count > 0)
             {
-                // Asignar la lista de empleados al ComboBox de empleados
                 cmbPersonal.DataSource = DTEmpleados;
-                cmbPersonal.DisplayMember = "nombres";
-                
+                cmbPersonal.DisplayMember = "NombreCompleto";
             }
             else
             {
