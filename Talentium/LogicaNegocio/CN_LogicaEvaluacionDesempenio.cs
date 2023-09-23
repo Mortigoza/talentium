@@ -33,27 +33,5 @@ namespace LogicaNegocio
 
             return true;
         }
-
-        // tengo que hacer un metodo que valide que la evaluacion no este ya creada:
-        // seria de este estilo:
-        // public bool ValidarEvaluacion(string anio, string mes, int efectTareas, int puntualidad,
-        //               int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
-        // {
-        //    if (!accesoDatos.ConsultarEvaluacionRepetida(anio, mes, id_persona))
-        //    {
-        //        accesoDatos.InsertarEvaluacionDesempenioanio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
-        //              idPersona, idArea);
-        //        return false;
-        //    }
-
-        //    return true;
-        // }
-
-        //public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad,
-        //                                       int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
-        //{
-        //    accesoDatos.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
-        //        idPersona, idArea);
-        //}
     }
 }

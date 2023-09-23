@@ -103,7 +103,10 @@ namespace Vista.Evaluacion_de_desempeño
                 if (!esEvaluacionValida)
                 {
                     MessageBox.Show("Alta de Evaluación de Desempeño exitosa.");
-                    // me falta vaciar el form para que pueda ingresar otro.
+                    UtilidadesForms.LimpiarDataGrid(dtgEvaluacion);
+                    // ya se limpia el data grid pero me faltan los otros controles.
+                    // UtilidadesForms.LimpiarControles(groupBox1);
+                    // UtilidadesForms.LimpiarControles(groupBox2);
                 }
                 else
                 {

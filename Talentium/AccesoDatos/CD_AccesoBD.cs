@@ -403,8 +403,6 @@ namespace AccesoDatos
 
             EjecutarConsultas("insertar_evaluacion_desempenio_sp", listaParametros.ToArray(), true);
         }
-
-        //tengo que hacer un SP para ver que no haya una evaluación repetida en la BD
         public bool ConsultarEvaluacionRepetida(string anio, string mes, int id_persona)
         {
             SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };

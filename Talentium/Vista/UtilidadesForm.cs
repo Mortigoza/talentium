@@ -75,5 +75,16 @@ namespace Comun
                 ls2.Update();
             }
         }
+        public static void LimpiarDataGrid(DataGridView dataGridView)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    cell.Value = null;
+                }
+            }
+        }
+        
     }
 }
