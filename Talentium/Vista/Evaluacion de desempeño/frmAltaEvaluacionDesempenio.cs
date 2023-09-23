@@ -75,8 +75,28 @@ namespace Vista.Evaluacion_de_desempeño
             DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
             int id_area = Convert.ToInt32(selectedArea["id_area"]);
 
-            evaluacionDesempenio.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, 
-                disciplina, desempEquipo, id_persona, id_area);
+            foreach (DataGridViewRow row in dtgEvaluacion.Rows)
+            {
+                DataGridViewComboBoxCell comboBoxCelda = row.Cells["Efectividad"] as DataGridViewComboBoxCell;
+                if (comboBoxCelda != null && comboBoxCelda.Value == null)
+                {
+                    MessageBox.Show("Por favor, seleccione una opción en todos los campos antes de guardar.", "Aviso", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                } else
+                {
+                    bool esEvaluacionValida = evaluacionDesempenio.ValidarEvaluacion(anio, mes, efectTareas, puntualidad, 
+                        relSup, disciplina,desempEquipo, id_persona, id_area);
+
+                    if (!esEvaluacionValida)
+                    {
+                        MessageBox.Show("Alta de Evaluación de Desempeño exitosa.");
+                    } else
+                    {
+                        MessageBox.Show("La Evaluación de desempeño que intenta crear ya se encuentra registrada anteriormente.");
+                    }
+                }
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -96,6 +116,8 @@ namespace Vista.Evaluacion_de_desempeño
 
                 // Asignar el nombre y apellido a la celda en la columna "NombreApellido"
                 dtgEvaluacion.Rows[rowIndex].Cells["NombreApellido"].Value = nombreCompleto;
+
+                btnGuardar.Enabled = true;
             }
         }
     }

@@ -21,12 +21,39 @@ namespace LogicaNegocio
             return accesoDatos.ConsultarPersonaConArea(idArea);
 
         }
-
-        public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad,
-                                               int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
+        public bool ValidarEvaluacion(string anio, string mes, int efectTareas, int puntualidad,
+            int relSup, int disciplina, int desempEquipo, int id_persona, int id_area)
         {
-            accesoDatos.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
-                idPersona, idArea);
+            if (!accesoDatos.ConsultarEvaluacionRepetida(anio, mes, id_persona))
+            {
+                accesoDatos.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
+                      id_persona, id_area);
+                return false;
+            }
+
+            return true;
         }
+
+        // tengo que hacer un metodo que valide que la evaluacion no este ya creada:
+        // seria de este estilo:
+        // public bool ValidarEvaluacion(string anio, string mes, int efectTareas, int puntualidad,
+        //               int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
+        // {
+        //    if (!accesoDatos.ConsultarEvaluacionRepetida(anio, mes, id_persona))
+        //    {
+        //        accesoDatos.InsertarEvaluacionDesempenioanio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
+        //              idPersona, idArea);
+        //        return false;
+        //    }
+
+        //    return true;
+        // }
+
+        //public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad,
+        //                                       int relSup, int disciplina, int desempEquipo, int idPersona, int idArea)
+        //{
+        //    accesoDatos.InsertarEvaluacionDesempenio(anio, mes, efectTareas, puntualidad, relSup, disciplina, desempEquipo, 
+        //        idPersona, idArea);
+        //}
     }
 }
