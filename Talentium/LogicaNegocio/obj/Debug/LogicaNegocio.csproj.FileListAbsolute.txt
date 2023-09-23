@@ -119,3 +119,7 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\LogicaNegocio\ob
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

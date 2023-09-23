@@ -286,3 +286,14 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.exe
+C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.pdb
