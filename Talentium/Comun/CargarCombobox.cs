@@ -17,6 +17,7 @@ namespace Comun
             {
                 listaAnios.Add(i.ToString());
             }
+            listaAnios.Reverse();
             return listaAnios;
         }
         public List<string> CargarMesCombobox()

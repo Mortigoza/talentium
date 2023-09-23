@@ -23,24 +23,44 @@ namespace Vista.Evaluacion_de_desempeño
 
         private void frmAltaEvaluacionDesempeño_Load(object sender, EventArgs e)
         {
+            // cargar combo de Area
             DataTable DT = evaluacionDesempenio.ObtenerAreas();
             cmbAreas.DataSource = DT;
             cmbAreas.DisplayMember = "area";
-            cmbAreas.SelectedIndex = -1;
+            cmbAreas.ValueMember = "id_area";
 
-            DataTable DTPersona = evaluacionDesempenio.ConsultarPersonaConArea(cmbAreas.SelectedIndex);
-            cmbAreas.DataSource = DTPersona;
-            cmbAreas.DisplayMember = "Apellido";
-            cmbAreas.SelectedIndex = -1;
-            
-
+            // cargar el combo de los años
             List<string> DTAnio = combos.CargarAnioCombobox();
             cmbAnio.DataSource = DTAnio;
 
+            // cargar el combo de los meses
             List<string> DTMeses = combos.CargarMesCombobox();
             cmbMes.DataSource = DTMeses;
 
+            //// cargar el combo de las personas segun el area elegido en el combo anterior
+            //DataTable DTPersona = evaluacionDesempenio.ObtenerPersonaConArea(cmbAreas.SelectedIndex);
+            //cmbPersonal.DataSource = DTPersona;
+            //cmbPersonal.DisplayMember = "nombres";
+        }
 
+        private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
+            int idAreaSeleccionada = Convert.ToInt32(selectedArea["id_area"]);
+            DataTable DTEmpleados = evaluacionDesempenio.ObtenerPersonaConArea(idAreaSeleccionada);
+            if (DTEmpleados != null && DTEmpleados.Rows.Count > 0)
+            {
+                // Asignar la lista de empleados al ComboBox de empleados
+                cmbPersonal.DataSource = DTEmpleados;
+                cmbPersonal.DisplayMember = "nombres";
+                
+            }
+            else
+            {
+                // Si no hay empleados para mostrar, limpia el ComboBox de empleados
+                cmbPersonal.DataSource = null;
+                cmbPersonal.Items.Clear();
+            }
         }
     }
 }

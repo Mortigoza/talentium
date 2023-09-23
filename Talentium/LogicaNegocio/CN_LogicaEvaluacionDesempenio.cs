@@ -16,7 +16,7 @@ namespace LogicaNegocio
             return accesoDatos.ConsultaAreas();
         }
 
-        public DataTable ConsultarPersonaConArea(int idArea)
+        public DataTable ObtenerPersonaConArea(int idArea)
         {
             return accesoDatos.ConsultarPersonaConArea(idArea);
 

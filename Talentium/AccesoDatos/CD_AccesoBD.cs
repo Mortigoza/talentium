@@ -378,6 +378,13 @@ namespace AccesoDatos
         }
 
         /******************** FORM ALTA EVALUACION DE DESEMPEÑO ********************/
+        public DataTable ConsultarPersonaConArea(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaArea = EjecutarConsultas("consultar_persona_area_sp", listaParametros.ToArray());
+            return resultadoPersonaArea;
+        }
 
     }
 }
