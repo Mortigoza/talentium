@@ -28,7 +28,7 @@ namespace Vista.Evaluacion_de_desempeño
             cmbAreas.DisplayMember = "area";
             cmbAreas.SelectedIndex = -1;
 
-            DataTable DTPersona = evaluacionDesempenio.ObtenerPersonaConArea(cmbAreas.SelectedIndex);
+            DataTable DTPersona = evaluacionDesempenio.ConsultarPersonaConArea(cmbAreas.SelectedIndex);
             cmbAreas.DataSource = DTPersona;
             cmbAreas.DisplayMember = "Apellido";
             cmbAreas.SelectedIndex = -1;
