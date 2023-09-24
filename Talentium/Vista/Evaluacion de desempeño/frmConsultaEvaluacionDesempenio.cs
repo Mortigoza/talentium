@@ -33,6 +33,8 @@ namespace Vista.Evaluacion_de_desempeño
             List<string> DTAnio = combos.CargarAnioCombobox();
             DTAnio.Insert(0, "");
             cmbAnio.DataSource = DTAnio;
+
+            dtgConsultaEvaluacion.AllowUserToAddRows = false;
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,18 +84,17 @@ namespace Vista.Evaluacion_de_desempeño
                 dtgConsultaEvaluacion.DataSource = evaluacionDesempenio.ObtenerEvaluacion(anio, id_persona);
                 CargarColumnasDataGrid();
                 dtgConsultaEvaluacion.Columns["Anio"].Visible = false;
-                //dtgConsultaEvaluacion.Columns["MesEvaluacion"].DataPropertyName = "mes";
-                //dtgConsultaEvaluacion.Columns["EfectTareas"].DataPropertyName = "efectividadTarea";
-                //dtgConsultaEvaluacion.Columns["Puntualidad"].DataPropertyName = "puntualidad";
-                //dtgConsultaEvaluacion.Columns["RelSup"].DataPropertyName = "relacionSuperiores";
-                //dtgConsultaEvaluacion.Columns["Disciplina"].DataPropertyName = "disciplina";
-                //dtgConsultaEvaluacion.Columns["DesempEquipo"].DataPropertyName = "desempenioEquipo";
+                int cantidadEvaluacion = dtgConsultaEvaluacion.Rows.Count;
+                lblCantidadEval.Text = cantidadEvaluacion.ToString();
+
             }
             else
             {
                 dtgConsultaEvaluacion.Columns["Anio"].Visible = true;
                 dtgConsultaEvaluacion.DataSource = evaluacionDesempenio.ObtenerEvaluacionPersona(id_persona);
                 CargarColumnasDataGrid();
+                int cantidadEvaluacion = dtgConsultaEvaluacion.Rows.Count;
+                lblCantidadEval.Text = cantidadEvaluacion.ToString();
             }
         }
 

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaEvaluacionDesempenio));
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblCantidadEval = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblCuil = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,15 +66,15 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label11
+            // lblCantidadEval
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(265, 305);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "25";
+            this.lblCantidadEval.AutoSize = true;
+            this.lblCantidadEval.Location = new System.Drawing.Point(265, 305);
+            this.lblCantidadEval.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCantidadEval.Name = "lblCantidadEval";
+            this.lblCantidadEval.Size = new System.Drawing.Size(13, 13);
+            this.lblCantidadEval.TabIndex = 33;
+            this.lblCantidadEval.Text = "0";
             // 
             // label10
             // 
@@ -277,7 +277,7 @@
             this.ClientSize = new System.Drawing.Size(746, 349);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblCantidadEval);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cmbAnio);
             this.Controls.Add(this.cmbPersonal);
@@ -302,7 +302,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCantidadEval;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblCuil;
         private System.Windows.Forms.Label label6;
