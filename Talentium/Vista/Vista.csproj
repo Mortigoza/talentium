@@ -70,6 +70,12 @@
     <Compile Include="Accesibilidad\frmAreas.Designer.cs">
       <DependentUpon>frmAreas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempenio.Designer.cs">
       <DependentUpon>frmConsultaEvaluacionDesempenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConvenios.Designer.cs">
+      <DependentUpon>frmConvenios.cs</DependentUpon>
     </Compile>
     <Compile Include="Lenguajes\Idioma.cs" />
     <Compile Include="Lenguajes\Strings.en-US.Designer.cs">
@@ -215,6 +227,9 @@
     <EmbeddedResource Include="Analisis y reportes\frmCertificacionServicios.resx">
       <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaPersonal.resx">
       <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConvenios.resx">
+      <DependentUpon>frmConvenios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
