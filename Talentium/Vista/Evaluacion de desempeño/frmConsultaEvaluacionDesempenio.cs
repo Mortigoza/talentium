@@ -31,6 +31,7 @@ namespace Vista.Evaluacion_de_desempeño
 
             // cargar el combo de los años
             List<string> DTAnio = combos.CargarAnioCombobox();
+            DTAnio.Insert(0, "");
             cmbAnio.DataSource = DTAnio;
         }
 
@@ -45,6 +46,7 @@ namespace Vista.Evaluacion_de_desempeño
             {
                 cmbPersonal.DataSource = DTEmpleados;
                 cmbPersonal.DisplayMember = "NombreCompleto";
+                cmbPersonal.ValueMember = "id_persona";
             }
             else
             {
@@ -72,16 +74,38 @@ namespace Vista.Evaluacion_de_desempeño
                 lblNombreYApellido.Visible = true;
                 lblCuil.Visible = true;
             }
-            //string anio = cmbAnio.SelectedValue.ToString();
-            //string
-            //if (!string.IsNullOrEmpty(anio))
-            //{
-            //    evaluacionDesempenio.ObtenerEvaluacion(anio);
-            //}
-            //else
-            //{
-            //    evaluacionDesempenio.ObtenerEvaluacionPersona();
-            //}
+            string anio = cmbAnio.SelectedValue.ToString();
+            int id_persona = Convert.ToInt32(cmbPersonal.SelectedValue);
+            dtgConsultaEvaluacion.AutoGenerateColumns = false;
+            if (!string.IsNullOrEmpty(anio) && anio!="")
+            {
+                dtgConsultaEvaluacion.DataSource = evaluacionDesempenio.ObtenerEvaluacion(anio, id_persona);
+                CargarColumnasDataGrid();
+                dtgConsultaEvaluacion.Columns["Anio"].Visible = false;
+                //dtgConsultaEvaluacion.Columns["MesEvaluacion"].DataPropertyName = "mes";
+                //dtgConsultaEvaluacion.Columns["EfectTareas"].DataPropertyName = "efectividadTarea";
+                //dtgConsultaEvaluacion.Columns["Puntualidad"].DataPropertyName = "puntualidad";
+                //dtgConsultaEvaluacion.Columns["RelSup"].DataPropertyName = "relacionSuperiores";
+                //dtgConsultaEvaluacion.Columns["Disciplina"].DataPropertyName = "disciplina";
+                //dtgConsultaEvaluacion.Columns["DesempEquipo"].DataPropertyName = "desempenioEquipo";
+            }
+            else
+            {
+                dtgConsultaEvaluacion.Columns["Anio"].Visible = true;
+                dtgConsultaEvaluacion.DataSource = evaluacionDesempenio.ObtenerEvaluacionPersona(id_persona);
+                CargarColumnasDataGrid();
+            }
+        }
+
+        public void CargarColumnasDataGrid()
+        {
+            dtgConsultaEvaluacion.Columns["MesEvaluacion"].DataPropertyName = "mes";
+            dtgConsultaEvaluacion.Columns["EfectTareas"].DataPropertyName = "efectividadTarea";
+            dtgConsultaEvaluacion.Columns["Puntualidad"].DataPropertyName = "puntualidad";
+            dtgConsultaEvaluacion.Columns["RelSup"].DataPropertyName = "relacionSuperiores";
+            dtgConsultaEvaluacion.Columns["Disciplina"].DataPropertyName = "disciplina";
+            dtgConsultaEvaluacion.Columns["DesempEquipo"].DataPropertyName = "desempenioEquipo";
+            dtgConsultaEvaluacion.Columns["Anio"].DataPropertyName = "anio";
         }
     }
 }

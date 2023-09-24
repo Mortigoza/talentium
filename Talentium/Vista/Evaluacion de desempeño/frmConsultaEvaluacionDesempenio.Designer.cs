@@ -43,13 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtgConsultaEvaluacion = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MesEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EfectTareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puntualidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DesempEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(321, 95);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(72, 19);
             this.btnBuscar.TabIndex = 34;
@@ -110,7 +111,7 @@
             // 
             this.cmbAnio.FormattingEnabled = true;
             this.cmbAnio.Location = new System.Drawing.Point(210, 94);
-            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAnio.Name = "cmbAnio";
             this.cmbAnio.Size = new System.Drawing.Size(92, 21);
             this.cmbAnio.TabIndex = 27;
@@ -121,7 +122,7 @@
             this.cmbPersonal.Items.AddRange(new object[] {
             "sdsad"});
             this.cmbPersonal.Location = new System.Drawing.Point(210, 63);
-            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPersonal.Name = "cmbPersonal";
             this.cmbPersonal.Size = new System.Drawing.Size(92, 21);
             this.cmbPersonal.TabIndex = 26;
@@ -141,7 +142,7 @@
             // 
             this.cmbAreas.FormattingEnabled = true;
             this.cmbAreas.Location = new System.Drawing.Point(210, 25);
-            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAreas.Name = "cmbAreas";
             this.cmbAreas.Size = new System.Drawing.Size(92, 21);
             this.cmbAreas.TabIndex = 24;
@@ -179,20 +180,23 @@
             // 
             // dtgConsultaEvaluacion
             // 
+            this.dtgConsultaEvaluacion.BackgroundColor = System.Drawing.Color.White;
             this.dtgConsultaEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgConsultaEvaluacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.Anio,
+            this.MesEvaluacion,
+            this.EfectTareas,
+            this.Puntualidad,
+            this.Disciplina,
+            this.RelSup,
+            this.DesempEquipo});
             this.dtgConsultaEvaluacion.Location = new System.Drawing.Point(17, 132);
-            this.dtgConsultaEvaluacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgConsultaEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgConsultaEvaluacion.Name = "dtgConsultaEvaluacion";
             this.dtgConsultaEvaluacion.RowHeadersWidth = 51;
+            this.dtgConsultaEvaluacion.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgConsultaEvaluacion.RowTemplate.Height = 24;
-            this.dtgConsultaEvaluacion.Size = new System.Drawing.Size(683, 162);
+            this.dtgConsultaEvaluacion.Size = new System.Drawing.Size(707, 162);
             this.dtgConsultaEvaluacion.TabIndex = 20;
             // 
             // label1
@@ -204,48 +208,6 @@
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "Filtro por empleado *";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mes de Evaluacion";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 105;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Efectividad en las tareas";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 105;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Puntualidad";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 105;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Disciplina";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 105;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Relacion con superiores";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 105;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Desempeño en equipo";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 105;
             // 
             // grpDatos
             // 
@@ -260,11 +222,59 @@
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos del empleado";
             // 
+            // Anio
+            // 
+            this.Anio.HeaderText = "Año";
+            this.Anio.Name = "Anio";
+            this.Anio.Width = 60;
+            // 
+            // MesEvaluacion
+            // 
+            this.MesEvaluacion.HeaderText = "Mes de Evaluacion";
+            this.MesEvaluacion.MinimumWidth = 6;
+            this.MesEvaluacion.Name = "MesEvaluacion";
+            this.MesEvaluacion.Width = 90;
+            // 
+            // EfectTareas
+            // 
+            this.EfectTareas.HeaderText = "Efectividad en las tareas";
+            this.EfectTareas.MinimumWidth = 6;
+            this.EfectTareas.Name = "EfectTareas";
+            this.EfectTareas.Width = 95;
+            // 
+            // Puntualidad
+            // 
+            this.Puntualidad.HeaderText = "Puntualidad";
+            this.Puntualidad.MinimumWidth = 6;
+            this.Puntualidad.Name = "Puntualidad";
+            this.Puntualidad.Width = 95;
+            // 
+            // Disciplina
+            // 
+            this.Disciplina.HeaderText = "Disciplina";
+            this.Disciplina.MinimumWidth = 6;
+            this.Disciplina.Name = "Disciplina";
+            this.Disciplina.Width = 95;
+            // 
+            // RelSup
+            // 
+            this.RelSup.HeaderText = "Relacion con superiores";
+            this.RelSup.MinimumWidth = 6;
+            this.RelSup.Name = "RelSup";
+            this.RelSup.Width = 95;
+            // 
+            // DesempEquipo
+            // 
+            this.DesempEquipo.HeaderText = "Desempeño en equipo";
+            this.DesempEquipo.MinimumWidth = 6;
+            this.DesempEquipo.Name = "DesempEquipo";
+            this.DesempEquipo.Width = 95;
+            // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 349);
+            this.ClientSize = new System.Drawing.Size(746, 349);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label11);
@@ -277,7 +287,7 @@
             this.Controls.Add(this.dtgConsultaEvaluacion);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaEvaluacionDesempenio";
             this.Text = "Consultar Evaluacion de Desempeño";
             this.Load += new System.EventHandler(this.frmConsultaEvaluacionDesempenio_Load);
@@ -305,12 +315,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgConsultaEvaluacion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.GroupBox grpDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MesEvaluacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EfectTareas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Puntualidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Disciplina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RelSup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DesempEquipo;
     }
 }

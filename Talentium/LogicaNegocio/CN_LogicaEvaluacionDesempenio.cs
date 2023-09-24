@@ -34,9 +34,14 @@ namespace LogicaNegocio
             return true;
         }
 
-        //public DataTable ObtenerEvaluacion(string anio)
-        //{
+        public DataTable ObtenerEvaluacion(string anio, int id_persona)
+        {
+            return accesoDatos.ConsultarEvaluacion(anio, id_persona);
+        }
 
-        //}
+        public DataTable ObtenerEvaluacionPersona(int id_persona)
+        {
+            return accesoDatos.ConsultarEvaluacionSoloPersona(id_persona);
+        }
     }
 }
