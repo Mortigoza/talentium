@@ -61,7 +61,7 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(80, 306);
+            this.btnBaja.Location = new System.Drawing.Point(80, 263);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(114, 25);
             this.btnBaja.TabIndex = 4;
