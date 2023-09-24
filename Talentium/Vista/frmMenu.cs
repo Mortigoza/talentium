@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Evaluacion_de_desempeño;
 
 namespace Vista
 {
@@ -37,6 +38,39 @@ namespace Vista
             this.Hide();
             frmAltaPersonal alta = new frmAltaPersonal();
             alta.Show();
+        }
+
+        private void áreasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAreas area = new frmAreas();
+            area.Show();
+        }
+
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPuesto puestos = new frmPuesto();
+            puestos.Show();
+        }
+
+        private void crearEvaluacionDeDesempenioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAltaEvaluacionDesempenio evaluacionDesempenio = new frmAltaEvaluacionDesempenio();
+            evaluacionDesempenio.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaEvaluacionDesempenio consultarEvaluacionDesempenio = new frmConsultaEvaluacionDesempenio();
+            consultarEvaluacionDesempenio.Show();
         }
     }
 }

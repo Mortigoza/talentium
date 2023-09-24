@@ -64,6 +64,12 @@
     <Compile Include="Analisis y reportes\frmCertificacionServicios.Designer.cs">
       <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesibilidad\frmAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmAreas.Designer.cs">
+      <DependentUpon>frmAreas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,17 +100,17 @@
     <Compile Include="ConfigPoliticasPass.Designer.cs">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.cs">
+    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.Designer.cs">
-      <DependentUpon>frmAltaEvaluacionDesempeño.cs</DependentUpon>
+    <Compile Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.Designer.cs">
+      <DependentUpon>frmAltaEvaluacionDesempenio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.cs">
+    <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempenio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.Designer.cs">
-      <DependentUpon>frmConsultaEvaluacionDesempeño.cs</DependentUpon>
+    <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempenio.Designer.cs">
+      <DependentUpon>frmConsultaEvaluacionDesempenio.cs</DependentUpon>
     </Compile>
     <Compile Include="Lenguajes\Idioma.cs" />
     <Compile Include="Lenguajes\Strings.en-US.Designer.cs">
@@ -121,6 +127,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuesto.Designer.cs">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Proceso De Seleccion\frmABMCapacitaciones.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,9 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
+    <EmbeddedResource Include="Accesibilidad\frmAreas.resx">
+      <DependentUpon>frmAreas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accesibilidad\frmPerfiles.resx">
       <DependentUpon>frmPerfiles.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,11 +224,11 @@
     <EmbeddedResource Include="ConfigPoliticasPass.resx">
       <DependentUpon>ConfigPoliticasPass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Evaluacion de desempeño\frmAltaEvaluacionDesempeño.resx">
-      <DependentUpon>frmAltaEvaluacionDesempeño.cs</DependentUpon>
+    <EmbeddedResource Include="Evaluacion de desempeño\frmAltaEvaluacionDesempenio.resx">
+      <DependentUpon>frmAltaEvaluacionDesempenio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempeño.resx">
-      <DependentUpon>frmConsultaEvaluacionDesempeño.cs</DependentUpon>
+    <EmbeddedResource Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempenio.resx">
+      <DependentUpon>frmConsultaEvaluacionDesempenio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
@@ -229,6 +244,9 @@
     <EmbeddedResource Include="Lenguajes\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPuesto.resx">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso De Seleccion\frmABMCapacitaciones.resx">
       <DependentUpon>frmABMCapacitaciones.cs</DependentUpon>
@@ -288,6 +306,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_management_data_processing_setting_configuration_gear_icon_190642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Comun\Comun.csproj">

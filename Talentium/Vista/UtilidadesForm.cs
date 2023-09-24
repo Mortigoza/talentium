@@ -61,6 +61,17 @@ namespace Comun
                 ls2.Update();
             }
         }
+        public static void LimpiarDataGrid(DataGridView dataGridView)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    cell.Value = null;
+                }
+            }
+        }
+
         public static void CargarComboLenguajes(ComboBox cmb)
         {
             cmb.DataSource = Idioma.ObtenerIdiomas();//Cargo el Combo con la lista de la clase Idioma
@@ -68,5 +79,6 @@ namespace Comun
             cmb.ValueMember = "InfoCultura";//Guardo la informacion Cultural en el Combo
             cmb.SelectedValue = Settings.Default.Idioma; //Selecciono el idioma guardado por defecto
         }
+
     }
 }

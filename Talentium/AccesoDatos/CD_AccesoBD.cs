@@ -278,6 +278,161 @@ namespace AccesoDatos
             DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
             return email.Rows[0][0].ToString();
         }
+
+        /****************************** FORM AREA *****************************/
+
+        public void InsertarArea(string area)
+        {
+            SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("alta_area_sp", listaParametros.ToArray(), true);
+        }
+
+        public bool ConsultarAreaRepetida(string area)
+        {
+            SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoArea = EjecutarConsultas("consultar_area_repetida_sp", listaParametros.ToArray());
+
+            return resultadoArea.Rows.Count != 0;
+        }
+
+        public bool ModificarArea(int idRegistroSeleccionado, string nuevaArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idRegistroSeleccionado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nuevaArea", nuevaArea) { SqlDbType = SqlDbType.NVarChar };
+            
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifArea = EjecutarConsultas("modificar_area_sp", listaParametros.ToArray());
+            return resultadoModifArea.Rows.Count != 0;
+        }
+
+        public bool ConsultarAreaConPersona(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaArea = EjecutarConsultas("consultar_persona_area_sp", listaParametros.ToArray());
+            return resultadoPersonaArea.Rows.Count != 0;
+        }
+
+        public bool EliminarArea(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarArea = EjecutarConsultas("eliminar_area_sp", listaParametros.ToArray());
+            return resultadoEliminarArea.Rows.Count != 0;
+        }
+
+        /****************************** FORM PUESTOS *****************************/
+        public DataTable ConsultaPuestos()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_puestos_sp", listaParametros.ToArray());
+            return resultado;
+        }
+
+        public void InsertarPuesto(string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("alta_puesto_sp", listaParametros.ToArray(), true);
+        }
+
+        public bool ConsultarPuestoRepetido(string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPuesto = EjecutarConsultas("consultar_puesto_repetido_sp", listaParametros.ToArray());
+
+            return resultadoPuesto.Rows.Count != 0;
+        }
+
+        public bool ModificarPuesto(int idRegistroSeleccionado, string nuevoPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idRegistroSeleccionado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nuevoPuesto", nuevoPuesto) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifPuesto = EjecutarConsultas("modificar_puesto_sp", listaParametros.ToArray());
+            return resultadoModifPuesto.Rows.Count != 0;
+        }
+
+        public bool ConsultarPuestoConPersona(int idPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idPuesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaPuesto = EjecutarConsultas("consultar_persona_puesto_sp", listaParametros.ToArray());
+            return resultadoPersonaPuesto.Rows.Count != 0;
+        }
+
+        public bool EliminarPuesto(int idPuesto)
+        {
+            SqlParameter param1 = new SqlParameter("@idPuesto", idPuesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarPuesto = EjecutarConsultas("eliminar_puesto_sp", listaParametros.ToArray());
+            return resultadoEliminarPuesto.Rows.Count != 0;
+        }
+
+        /******************** FORM ALTA EVALUACION DE DESEMPEÑO ********************/
+        public DataTable ConsultarPersonaConArea(int idArea)
+        {
+            SqlParameter param1 = new SqlParameter("@idArea", idArea) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaArea = EjecutarConsultas("consultar_persona_area_sp", listaParametros.ToArray());
+            return resultadoPersonaArea;
+        }
+
+        public void InsertarEvaluacionDesempenio(string anio, string mes, int efectTareas, int puntualidad, int relSup, 
+            int disciplina, int desempEquipo, int id_persona, int id_area)
+        {
+            SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@mes", mes) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@efectTareas", efectTareas) { SqlDbType = SqlDbType.Int };
+            SqlParameter param4 = new SqlParameter("@puntualidad", puntualidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@relSup", relSup) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@disciplina", disciplina) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@desempEquipo", desempEquipo) { SqlDbType = SqlDbType.Int };
+            SqlParameter param8 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param9 = new SqlParameter("@id_area", id_area) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, 
+                param6, param7, param8, param9 };
+
+            EjecutarConsultas("insertar_evaluacion_desempenio_sp", listaParametros.ToArray(), true);
+        }
+        public bool ConsultarEvaluacionRepetida(string anio, string mes, int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@mes", mes) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            DataTable resultadoEvaluacionRepetida = EjecutarConsultas("consultar_evaluacion_repetida_sp", listaParametros.ToArray());
+
+            return resultadoEvaluacionRepetida.Rows.Count != 0;
+        }
+
+        public DataTable ConsultarEvaluacion(string anio, int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@anio", anio) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoEvaluacion = EjecutarConsultas("consultar_evaluacion_sp", listaParametros.ToArray());
+
+            return resultadoEvaluacion;
+        }
+
+        public DataTable ConsultarEvaluacionSoloPersona(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEvaluacionPersona = EjecutarConsultas("consultar_evaluacion_persona_sp", listaParametros.ToArray());
+
+            return resultadoEvaluacionPersona;
+        }
     }
 }
 

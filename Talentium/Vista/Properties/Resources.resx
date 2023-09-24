@@ -121,4 +121,13 @@
   <data name="fondo-pared-textura-blanca2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo-pared-textura-blanca2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data_management_data_processing_setting_configuration_gear_icon_190642" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\data_management_data_processing_setting_configuration_gear_icon_190642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
