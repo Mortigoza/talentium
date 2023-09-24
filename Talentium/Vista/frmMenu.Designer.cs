@@ -38,13 +38,15 @@
             this.bajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDelTalentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearEvaluacionDeDesempenioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisYReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearEvaluacionDeDesempenioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +135,16 @@
             this.gestiónDelTalentoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.gestiónDelTalentoToolStripMenuItem.Text = "Gestión del Talento";
             // 
+            // crearEvaluacionDeDesempenioToolStripMenuItem
+            // 
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.crearToolStripMenuItem,
+            this.consultarToolStripMenuItem1});
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Name = "crearEvaluacionDeDesempenioToolStripMenuItem";
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Text = "Evaluación de Desempeño";
+            this.crearEvaluacionDeDesempenioToolStripMenuItem.Click += new System.EventHandler(this.crearEvaluacionDeDesempenioToolStripMenuItem_Click);
+            // 
             // gestiónDeAsistenciasToolStripMenuItem
             // 
             this.gestiónDeAsistenciasToolStripMenuItem.Name = "gestiónDeAsistenciasToolStripMenuItem";
@@ -174,12 +186,19 @@
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
-            // crearEvaluacionDeDesempenioToolStripMenuItem
+            // crearToolStripMenuItem
             // 
-            this.crearEvaluacionDeDesempenioToolStripMenuItem.Name = "crearEvaluacionDeDesempenioToolStripMenuItem";
-            this.crearEvaluacionDeDesempenioToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
-            this.crearEvaluacionDeDesempenioToolStripMenuItem.Text = "Crear Evaluación de Desempeño";
-            this.crearEvaluacionDeDesempenioToolStripMenuItem.Click += new System.EventHandler(this.crearEvaluacionDeDesempenioToolStripMenuItem_Click);
+            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearToolStripMenuItem.Text = "Crear";
+            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // frmMenu
             // 
@@ -222,5 +241,7 @@
         private System.Windows.Forms.ToolStripMenuItem áreasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearEvaluacionDeDesempenioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
     }
 }

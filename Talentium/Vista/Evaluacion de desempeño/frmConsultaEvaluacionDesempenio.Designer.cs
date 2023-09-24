@@ -69,7 +69,7 @@
             // lblCantidadEval
             // 
             this.lblCantidadEval.AutoSize = true;
-            this.lblCantidadEval.Location = new System.Drawing.Point(265, 305);
+            this.lblCantidadEval.Location = new System.Drawing.Point(166, 305);
             this.lblCantidadEval.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidadEval.Name = "lblCantidadEval";
             this.lblCantidadEval.Size = new System.Drawing.Size(13, 13);
@@ -82,9 +82,9 @@
             this.label10.Location = new System.Drawing.Point(14, 305);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(241, 13);
+            this.label10.Size = new System.Drawing.Size(148, 13);
             this.label10.TabIndex = 32;
-            this.label10.Text = "TOTAL DE EVALUACIONES HASTA LA FECHA:";
+            this.label10.Text = "TOTAL DE EVALUACIONES:";
             // 
             // lblCuil
             // 

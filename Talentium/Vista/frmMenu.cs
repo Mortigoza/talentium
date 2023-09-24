@@ -56,9 +56,21 @@ namespace Vista
 
         private void crearEvaluacionDeDesempenioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             this.Hide();
             frmAltaEvaluacionDesempenio evaluacionDesempenio = new frmAltaEvaluacionDesempenio();
             evaluacionDesempenio.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaEvaluacionDesempenio consultarEvaluacionDesempenio = new frmConsultaEvaluacionDesempenio();
+            consultarEvaluacionDesempenio.Show();
         }
     }
 }
