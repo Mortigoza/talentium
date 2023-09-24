@@ -43,6 +43,7 @@ namespace Comun
             {
                 if (item is TextBox txt) txt.Text = null;
                 if (item is ComboBox cmb) cmb.Text = null;
+                if (item is RichTextBox rtxt) rtxt.Text = null;
                 if (item is GroupBox | item is Panel) LimpiarControles(item);
             }
         }

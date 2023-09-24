@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\frmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmPerfiles.Designer.cs">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
+    <EmbeddedResource Include="Accesibilidad\frmPerfiles.resx">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CambioDePassNU.resx">
       <DependentUpon>CambioDePassNU.cs</DependentUpon>
     </EmbeddedResource>

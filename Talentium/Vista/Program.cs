@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Accesibilidad;
 
 namespace Vista
 {
@@ -18,7 +19,7 @@ namespace Vista
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigCache.intentos = 5; //INTENTOS POR DEFECTO PARA QUE SE BLOQUEE
-            Application.Run(new frmLogin());
+            Application.Run(new frmPerfiles());
         }
     }
 }

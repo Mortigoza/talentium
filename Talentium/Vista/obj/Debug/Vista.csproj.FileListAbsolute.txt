@@ -291,3 +291,4 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.en-US.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.es-AR.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmPerfiles.resources
