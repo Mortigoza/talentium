@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista;
+using Vista.Lenguajes;
+using Vista.Properties;
 
 namespace Comun
 {
@@ -45,23 +47,6 @@ namespace Comun
             }
         }
 
-        // Maneja texto excrito en un textbox del formulario
-        public static void TextboxDynamic(TextBox txt)
-        {
-            if (txt.Text == null || txt.Text == txt.AccessibleName)
-            {
-                txt.Text = null;
-                txt.ForeColor = System.Drawing.Color.Black;
-            }
-        }
-        public static void restaurar(TextBox txt)
-        {
-            if (txt.Text == "")
-            {
-                txt.Text = txt.AccessibleName;
-                txt.ForeColor = System.Drawing.Color.Gray;
-            }
-        }
         public static void moverListboxRow(ListBox ls1, ListBox ls2, DataTable dt1, DataTable dt2, int selectIndex)
         {
             if (ls1.Items.Count > 0)
@@ -85,6 +70,14 @@ namespace Comun
                 }
             }
         }
-        
+
+        public static void CargarComboLenguajes(ComboBox cmb)
+        {
+            cmb.DataSource = Idioma.ObtenerIdiomas();//Cargo el Combo con la lista de la clase Idioma
+            cmb.DisplayMember = "Nombre"; //Muestro el "campo" nombre de la lista
+            cmb.ValueMember = "InfoCultura";//Guardo la informacion Cultural en el Combo
+            cmb.SelectedValue = Settings.Default.Idioma; //Selecciono el idioma guardado por defecto
+        }
+
     }
 }

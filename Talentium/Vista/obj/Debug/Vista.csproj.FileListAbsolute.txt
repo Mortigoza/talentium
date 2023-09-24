@@ -259,6 +259,8 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\bin\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.exe
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
@@ -266,6 +268,7 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempeño.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempeño.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
@@ -282,8 +285,6 @@ C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
-C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.exe
-C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
@@ -336,3 +337,17 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\b
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempenio.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\en-US\Vista.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\es-AR\Vista.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.en-US.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.es-AR.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.en-US.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.es-AR.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\en-US\Vista.resources.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\es-AR\Vista.resources.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll

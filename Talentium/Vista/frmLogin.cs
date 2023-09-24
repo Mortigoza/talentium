@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
+using Vista.Properties;
 
 namespace Vista
 {
@@ -18,6 +20,8 @@ namespace Vista
         public frmLogin()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+            UtilidadesForms.CargarComboLenguajes(cmbLenguaje);//Llamo al metodo que cargara el ComboBox
             txtPassword.PasswordChar = '*';
         }
 
@@ -41,24 +45,6 @@ namespace Vista
             }
         }
 
-        private void txtUsername_Leave(object sender, EventArgs e)
-        {
-            UtilidadesForms.restaurar(txtUsername);
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            UtilidadesForms.restaurar(txtPassword);
-        }
-        private void txtUsername_Enter(object sender, EventArgs e)
-        {
-            UtilidadesForms.TextboxDynamic(txtUsername);
-        }
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            UtilidadesForms.TextboxDynamic(txtPassword);
-        }
-
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
             txtPassword.PasswordChar = '\0';
@@ -79,6 +65,13 @@ namespace Vista
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbLenguaje_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Settings.Default.Idioma = cmbLenguaje.SelectedValue.ToString();//Cargo el idioma seleccionado por el combo
+            Settings.Default.Save(); //Guardo el idioma seleccionado para que quede grabado
+            Idioma.CargarIdioma(this.Controls, this);//Llamo al metodo que cambiara el idioma en los formularios
         }
     }
 }

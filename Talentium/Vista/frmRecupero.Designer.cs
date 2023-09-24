@@ -48,7 +48,7 @@
             // textBoxUsuarioRec
             // 
             this.textBoxUsuarioRec.Location = new System.Drawing.Point(161, 146);
-            this.textBoxUsuarioRec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsuarioRec.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsuarioRec.Multiline = true;
             this.textBoxUsuarioRec.Name = "textBoxUsuarioRec";
             this.textBoxUsuarioRec.Size = new System.Drawing.Size(182, 25);
@@ -76,7 +76,7 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 47);
             this.panel1.TabIndex = 3;
@@ -131,11 +131,12 @@
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Texto";
+            this.label3.Visible = false;
             // 
             // codigo
             // 
             this.codigo.Location = new System.Drawing.Point(161, 219);
-            this.codigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.codigo.Margin = new System.Windows.Forms.Padding(2);
             this.codigo.Multiline = true;
             this.codigo.Name = "codigo";
             this.codigo.Size = new System.Drawing.Size(182, 25);
@@ -187,7 +188,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxUsuarioRec);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRecupero";
             this.Text = "Recupero de Contraseña";
             this.Load += new System.EventHandler(this.Form1_Load);

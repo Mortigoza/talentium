@@ -85,7 +85,7 @@ namespace LogicaNegocio
             // Configura la información del remitente y destinatario
             string fromEmail = "mairaaracelirodriguez2001@gmail.com";
             string toEmail = destEmail;
-            string subject = "Alta de usuario Talentium";
+            string subject = "Usuario Talentium";
             string body = $"Tu contraseña del sistema Talentium es: {psw}";
 
             // Configura las credenciales del servidor SMTP
@@ -101,19 +101,20 @@ namespace LogicaNegocio
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
 
                 // Crea el mensaje de correo electrónico
-                using (MailMessage mailMessage = new MailMessage(fromEmail, toEmail, subject, body))
+
+                try
                 {
-                    try
+                    using (MailMessage mailMessage = new MailMessage(fromEmail, toEmail, subject, body))
                     {
                         // Envía el correo electrónico
                         smtpClient.Send(mailMessage);
 
-                        return "Se ha enviado el correo exitosamente al email asociado con su usuario.";
+                        return "";
                     }
-                    catch (Exception ex)
-                    {
-                        return "Error al enviar el correo: " + ex.Message;
-                    }
+                }
+                catch
+                {
+                    return "Correo electronico invalido";
                 }
             }
         }

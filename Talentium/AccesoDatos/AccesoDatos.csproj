@@ -43,7 +43,13 @@
   <ItemGroup>
     <Compile Include="CD_AccesoBD.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="Accesibilidad\CD_BajaUsuario.cs" />
+    <Compile Include="Accesibilidad\CD_ConsultarPermisosUsuario.cs" />
+    <Compile Include="Accesibilidad\CD_ConsultarPersonaMod.cs" />
+    <Compile Include="Accesibilidad\CD_ConsultarUsuario.cs" />
     <Compile Include="CD_EjecutarSP.cs" />
+    <Compile Include="Accesibilidad\CD_ReactivarUsuario.cs" />
+    <Compile Include="Accesibilidad\CD_UpUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
