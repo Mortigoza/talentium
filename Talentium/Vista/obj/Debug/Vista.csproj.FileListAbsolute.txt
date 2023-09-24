@@ -238,8 +238,6 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempeño.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempeño.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
@@ -351,3 +349,7 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\b
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\es-AR\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempenio.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
