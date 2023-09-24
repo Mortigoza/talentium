@@ -54,19 +54,20 @@
             this.btnAgregar.Location = new System.Drawing.Point(80, 205);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(114, 36);
-            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(80, 257);
+            this.btnBaja.Location = new System.Drawing.Point(80, 306);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(114, 25);
-            this.btnBaja.TabIndex = 2;
+            this.btnBaja.TabIndex = 4;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // dtgPerfiles
             // 
@@ -83,21 +84,23 @@
             this.txtNombrePermiso.MaxLength = 30;
             this.txtNombrePermiso.Name = "txtNombrePermiso";
             this.txtNombrePermiso.Size = new System.Drawing.Size(199, 20);
-            this.txtNombrePermiso.TabIndex = 5;
+            this.txtNombrePermiso.TabIndex = 1;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BulletIndent = 1;
             this.txtDescripcion.Location = new System.Drawing.Point(36, 113);
             this.txtDescripcion.MaxLength = 100;
-            this.txtDescripcion.Multiline = false;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(199, 86);
-            this.txtDescripcion.TabIndex = 6;
+            this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.Text = "";
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // lblNombrePerfil
             // 
             this.lblNombrePerfil.AutoSize = true;
+            this.lblNombrePerfil.BackColor = System.Drawing.Color.Transparent;
             this.lblNombrePerfil.Location = new System.Drawing.Point(33, 58);
             this.lblNombrePerfil.Name = "lblNombrePerfil";
             this.lblNombrePerfil.Size = new System.Drawing.Size(86, 13);
@@ -107,6 +110,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.lblDescripcion.Location = new System.Drawing.Point(33, 97);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
@@ -118,7 +122,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(588, 550);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(83, 26);
-            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -150,6 +154,7 @@
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
             this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 173);
             this.lstPermisosAsignados.TabIndex = 33;
+            this.lstPermisosAsignados.DoubleClick += new System.EventHandler(this.lstPermisosAsignados_DoubleClick);
             // 
             // lstPermisos
             // 
@@ -158,6 +163,7 @@
             this.lstPermisos.Name = "lstPermisos";
             this.lstPermisos.Size = new System.Drawing.Size(216, 173);
             this.lstPermisos.TabIndex = 32;
+            this.lstPermisos.DoubleClick += new System.EventHandler(this.lstPermisos_DoubleClick);
             // 
             // btnDesasignarPermisos
             // 
@@ -182,17 +188,19 @@
             // chcModificar
             // 
             this.chcModificar.AutoSize = true;
+            this.chcModificar.BackColor = System.Drawing.Color.Transparent;
             this.chcModificar.Location = new System.Drawing.Point(276, 326);
             this.chcModificar.Name = "chcModificar";
             this.chcModificar.Size = new System.Drawing.Size(69, 17);
             this.chcModificar.TabIndex = 36;
             this.chcModificar.Text = "Modificar";
-            this.chcModificar.UseVisualStyleBackColor = true;
+            this.chcModificar.UseVisualStyleBackColor = false;
             this.chcModificar.CheckedChanged += new System.EventHandler(this.chcModificar_CheckedChanged);
             // 
             // lblPermisos
             // 
             this.lblPermisos.AutoSize = true;
+            this.lblPermisos.BackColor = System.Drawing.Color.Transparent;
             this.lblPermisos.Location = new System.Drawing.Point(47, 370);
             this.lblPermisos.Name = "lblPermisos";
             this.lblPermisos.Size = new System.Drawing.Size(49, 13);
@@ -202,6 +210,7 @@
             // lblPermisosAsignados
             // 
             this.lblPermisosAsignados.AutoSize = true;
+            this.lblPermisosAsignados.BackColor = System.Drawing.Color.Transparent;
             this.lblPermisosAsignados.Location = new System.Drawing.Point(315, 370);
             this.lblPermisosAsignados.Name = "lblPermisosAsignados";
             this.lblPermisosAsignados.Size = new System.Drawing.Size(100, 13);
@@ -212,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(683, 588);
             this.Controls.Add(this.lblPermisosAsignados);
             this.Controls.Add(this.lblPermisos);
@@ -233,6 +243,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPerfiles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfiles";
             ((System.ComponentModel.ISupportInitialize)(this.dtgPerfiles)).EndInit();
             this.ResumeLayout(false);
