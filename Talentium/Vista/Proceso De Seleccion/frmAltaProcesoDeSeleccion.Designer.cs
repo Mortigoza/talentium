@@ -54,29 +54,29 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtAlternativo = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
-            this.txtNacimiento = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtCalle = new System.Windows.Forms.TextBox();
-            this.txtLocalidad = new System.Windows.Forms.TextBox();
-            this.txtPartido = new System.Windows.Forms.TextBox();
-            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.txtNro = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtDpto = new System.Windows.Forms.TextBox();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
+            this.cmbPartido = new System.Windows.Forms.ComboBox();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.grpAltaCandidato.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAltaCandidato
             // 
             this.grpAltaCandidato.BackColor = System.Drawing.SystemColors.Control;
+            this.grpAltaCandidato.Controls.Add(this.dtpNacimiento);
+            this.grpAltaCandidato.Controls.Add(this.cmbLocalidad);
+            this.grpAltaCandidato.Controls.Add(this.cmbPartido);
+            this.grpAltaCandidato.Controls.Add(this.cmbProvincia);
             this.grpAltaCandidato.Controls.Add(this.txtDpto);
             this.grpAltaCandidato.Controls.Add(this.txtPiso);
             this.grpAltaCandidato.Controls.Add(this.txtNro);
             this.grpAltaCandidato.Controls.Add(this.txtCalle);
-            this.grpAltaCandidato.Controls.Add(this.txtLocalidad);
-            this.grpAltaCandidato.Controls.Add(this.txtPartido);
-            this.grpAltaCandidato.Controls.Add(this.txtProvincia);
-            this.grpAltaCandidato.Controls.Add(this.txtNacimiento);
             this.grpAltaCandidato.Controls.Add(this.txtCorreo);
             this.grpAltaCandidato.Controls.Add(this.txtAlternativo);
             this.grpAltaCandidato.Controls.Add(this.txtCelular);
@@ -351,14 +351,6 @@
             this.txtCelular.Size = new System.Drawing.Size(93, 20);
             this.txtCelular.TabIndex = 35;
             // 
-            // txtNacimiento
-            // 
-            this.txtNacimiento.Enabled = false;
-            this.txtNacimiento.Location = new System.Drawing.Point(141, 217);
-            this.txtNacimiento.Name = "txtNacimiento";
-            this.txtNacimiento.Size = new System.Drawing.Size(93, 20);
-            this.txtNacimiento.TabIndex = 38;
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Enabled = false;
@@ -374,30 +366,6 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(93, 20);
             this.txtCalle.TabIndex = 42;
-            // 
-            // txtLocalidad
-            // 
-            this.txtLocalidad.Enabled = false;
-            this.txtLocalidad.Location = new System.Drawing.Point(399, 125);
-            this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(93, 20);
-            this.txtLocalidad.TabIndex = 41;
-            // 
-            // txtPartido
-            // 
-            this.txtPartido.Enabled = false;
-            this.txtPartido.Location = new System.Drawing.Point(399, 96);
-            this.txtPartido.Name = "txtPartido";
-            this.txtPartido.Size = new System.Drawing.Size(93, 20);
-            this.txtPartido.TabIndex = 40;
-            // 
-            // txtProvincia
-            // 
-            this.txtProvincia.Enabled = false;
-            this.txtProvincia.Location = new System.Drawing.Point(399, 65);
-            this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(93, 20);
-            this.txtProvincia.TabIndex = 39;
             // 
             // txtNro
             // 
@@ -422,6 +390,46 @@
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(24, 20);
             this.txtDpto.TabIndex = 45;
+            // 
+            // cmbProvincia
+            // 
+            this.cmbProvincia.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbProvincia.Enabled = false;
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Location = new System.Drawing.Point(399, 63);
+            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(93, 21);
+            this.cmbProvincia.TabIndex = 46;
+            // 
+            // cmbPartido
+            // 
+            this.cmbPartido.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPartido.Enabled = false;
+            this.cmbPartido.FormattingEnabled = true;
+            this.cmbPartido.Location = new System.Drawing.Point(399, 95);
+            this.cmbPartido.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbPartido.Name = "cmbPartido";
+            this.cmbPartido.Size = new System.Drawing.Size(93, 21);
+            this.cmbPartido.TabIndex = 47;
+            // 
+            // cmbLocalidad
+            // 
+            this.cmbLocalidad.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbLocalidad.Enabled = false;
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Location = new System.Drawing.Point(399, 126);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(93, 21);
+            this.cmbLocalidad.TabIndex = 48;
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.Location = new System.Drawing.Point(141, 218);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(93, 20);
+            this.dtpNacimiento.TabIndex = 49;
             // 
             // frmAltaProcesoDeSeleccion
             // 
@@ -468,14 +476,14 @@
         private System.Windows.Forms.TextBox txtPiso;
         private System.Windows.Forms.TextBox txtNro;
         private System.Windows.Forms.TextBox txtCalle;
-        private System.Windows.Forms.TextBox txtLocalidad;
-        private System.Windows.Forms.TextBox txtPartido;
-        private System.Windows.Forms.TextBox txtProvincia;
-        private System.Windows.Forms.TextBox txtNacimiento;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtAlternativo;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
+        private System.Windows.Forms.ComboBox cmbPartido;
+        private System.Windows.Forms.ComboBox cmbProvincia;
     }
 }
