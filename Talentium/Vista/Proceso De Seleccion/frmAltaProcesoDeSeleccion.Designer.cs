@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaProcesoDeSeleccion));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpAltaCandidato = new System.Windows.Forms.GroupBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -63,51 +63,51 @@
             this.txtNro = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtDpto = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.grpAltaCandidato.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpAltaCandidato
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.txtDpto);
-            this.groupBox1.Controls.Add(this.txtPiso);
-            this.groupBox1.Controls.Add(this.txtNro);
-            this.groupBox1.Controls.Add(this.txtCalle);
-            this.groupBox1.Controls.Add(this.txtLocalidad);
-            this.groupBox1.Controls.Add(this.txtPartido);
-            this.groupBox1.Controls.Add(this.txtProvincia);
-            this.groupBox1.Controls.Add(this.txtNacimiento);
-            this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.txtAlternativo);
-            this.groupBox1.Controls.Add(this.txtCelular);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.btnValidar);
-            this.groupBox1.Controls.Add(this.lblDpto);
-            this.groupBox1.Controls.Add(this.txtCuilCuit);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblPiso);
-            this.groupBox1.Controls.Add(this.lblLocalidad);
-            this.groupBox1.Controls.Add(this.lblPartido);
-            this.groupBox1.Controls.Add(this.cmbPuesto);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.lblNro);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.lblProvincia);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(32, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(529, 265);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Alta de candidato";
+            this.grpAltaCandidato.BackColor = System.Drawing.SystemColors.Control;
+            this.grpAltaCandidato.Controls.Add(this.txtDpto);
+            this.grpAltaCandidato.Controls.Add(this.txtPiso);
+            this.grpAltaCandidato.Controls.Add(this.txtNro);
+            this.grpAltaCandidato.Controls.Add(this.txtCalle);
+            this.grpAltaCandidato.Controls.Add(this.txtLocalidad);
+            this.grpAltaCandidato.Controls.Add(this.txtPartido);
+            this.grpAltaCandidato.Controls.Add(this.txtProvincia);
+            this.grpAltaCandidato.Controls.Add(this.txtNacimiento);
+            this.grpAltaCandidato.Controls.Add(this.txtCorreo);
+            this.grpAltaCandidato.Controls.Add(this.txtAlternativo);
+            this.grpAltaCandidato.Controls.Add(this.txtCelular);
+            this.grpAltaCandidato.Controls.Add(this.txtApellido);
+            this.grpAltaCandidato.Controls.Add(this.txtNombre);
+            this.grpAltaCandidato.Controls.Add(this.btnValidar);
+            this.grpAltaCandidato.Controls.Add(this.lblDpto);
+            this.grpAltaCandidato.Controls.Add(this.txtCuilCuit);
+            this.grpAltaCandidato.Controls.Add(this.label1);
+            this.grpAltaCandidato.Controls.Add(this.lblPiso);
+            this.grpAltaCandidato.Controls.Add(this.lblLocalidad);
+            this.grpAltaCandidato.Controls.Add(this.lblPartido);
+            this.grpAltaCandidato.Controls.Add(this.cmbPuesto);
+            this.grpAltaCandidato.Controls.Add(this.label13);
+            this.grpAltaCandidato.Controls.Add(this.lblNro);
+            this.grpAltaCandidato.Controls.Add(this.label10);
+            this.grpAltaCandidato.Controls.Add(this.lblProvincia);
+            this.grpAltaCandidato.Controls.Add(this.label7);
+            this.grpAltaCandidato.Controls.Add(this.label6);
+            this.grpAltaCandidato.Controls.Add(this.label5);
+            this.grpAltaCandidato.Controls.Add(this.label4);
+            this.grpAltaCandidato.Controls.Add(this.label3);
+            this.grpAltaCandidato.Controls.Add(this.label2);
+            this.grpAltaCandidato.Location = new System.Drawing.Point(32, 33);
+            this.grpAltaCandidato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAltaCandidato.Name = "grpAltaCandidato";
+            this.grpAltaCandidato.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAltaCandidato.Size = new System.Drawing.Size(529, 265);
+            this.grpAltaCandidato.TabIndex = 7;
+            this.grpAltaCandidato.TabStop = false;
+            this.grpAltaCandidato.Text = "Alta de candidato";
             // 
             // cmbPuesto
             // 
@@ -246,6 +246,7 @@
             this.btnValidar.Text = "Validar";
             this.btnValidar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnValidar.UseVisualStyleBackColor = false;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // txtCuilCuit
             // 
@@ -320,105 +321,105 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(141, 65);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(93, 20);
             this.txtNombre.TabIndex = 33;
             // 
             // txtApellido
             // 
+            this.txtApellido.Enabled = false;
             this.txtApellido.Location = new System.Drawing.Point(141, 96);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(93, 20);
             this.txtApellido.TabIndex = 34;
             // 
             // txtAlternativo
             // 
+            this.txtAlternativo.Enabled = false;
             this.txtAlternativo.Location = new System.Drawing.Point(141, 157);
             this.txtAlternativo.Name = "txtAlternativo";
-            this.txtAlternativo.ReadOnly = true;
             this.txtAlternativo.Size = new System.Drawing.Size(93, 20);
             this.txtAlternativo.TabIndex = 36;
             // 
             // txtCelular
             // 
+            this.txtCelular.Enabled = false;
             this.txtCelular.Location = new System.Drawing.Point(141, 126);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.ReadOnly = true;
             this.txtCelular.Size = new System.Drawing.Size(93, 20);
             this.txtCelular.TabIndex = 35;
             // 
             // txtNacimiento
             // 
+            this.txtNacimiento.Enabled = false;
             this.txtNacimiento.Location = new System.Drawing.Point(141, 217);
             this.txtNacimiento.Name = "txtNacimiento";
-            this.txtNacimiento.ReadOnly = true;
             this.txtNacimiento.Size = new System.Drawing.Size(93, 20);
             this.txtNacimiento.TabIndex = 38;
             // 
             // txtCorreo
             // 
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(141, 186);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(93, 20);
             this.txtCorreo.TabIndex = 37;
             // 
             // txtCalle
             // 
+            this.txtCalle.Enabled = false;
             this.txtCalle.Location = new System.Drawing.Point(399, 156);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.ReadOnly = true;
             this.txtCalle.Size = new System.Drawing.Size(93, 20);
             this.txtCalle.TabIndex = 42;
             // 
             // txtLocalidad
             // 
+            this.txtLocalidad.Enabled = false;
             this.txtLocalidad.Location = new System.Drawing.Point(399, 125);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.ReadOnly = true;
             this.txtLocalidad.Size = new System.Drawing.Size(93, 20);
             this.txtLocalidad.TabIndex = 41;
             // 
             // txtPartido
             // 
+            this.txtPartido.Enabled = false;
             this.txtPartido.Location = new System.Drawing.Point(399, 96);
             this.txtPartido.Name = "txtPartido";
-            this.txtPartido.ReadOnly = true;
             this.txtPartido.Size = new System.Drawing.Size(93, 20);
             this.txtPartido.TabIndex = 40;
             // 
             // txtProvincia
             // 
+            this.txtProvincia.Enabled = false;
             this.txtProvincia.Location = new System.Drawing.Point(399, 65);
             this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.ReadOnly = true;
             this.txtProvincia.Size = new System.Drawing.Size(93, 20);
             this.txtProvincia.TabIndex = 39;
             // 
             // txtNro
             // 
+            this.txtNro.Enabled = false;
             this.txtNro.Location = new System.Drawing.Point(321, 186);
             this.txtNro.Name = "txtNro";
-            this.txtNro.ReadOnly = true;
             this.txtNro.Size = new System.Drawing.Size(33, 20);
             this.txtNro.TabIndex = 43;
             // 
             // txtPiso
             // 
+            this.txtPiso.Enabled = false;
             this.txtPiso.Location = new System.Drawing.Point(399, 186);
             this.txtPiso.Name = "txtPiso";
-            this.txtPiso.ReadOnly = true;
             this.txtPiso.Size = new System.Drawing.Size(24, 20);
             this.txtPiso.TabIndex = 44;
             // 
             // txtDpto
             // 
+            this.txtDpto.Enabled = false;
             this.txtDpto.Location = new System.Drawing.Point(467, 186);
             this.txtDpto.Name = "txtDpto";
-            this.txtDpto.ReadOnly = true;
             this.txtDpto.Size = new System.Drawing.Size(24, 20);
             this.txtDpto.TabIndex = 45;
             // 
@@ -428,21 +429,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 356);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpAltaCandidato);
             this.Controls.Add(this.btnGuardar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAltaProcesoDeSeleccion";
             this.Text = "Alta Candidato en Proceso de Seleccion";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpAltaCandidato.ResumeLayout(false);
+            this.grpAltaCandidato.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpAltaCandidato;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnGuardar;
