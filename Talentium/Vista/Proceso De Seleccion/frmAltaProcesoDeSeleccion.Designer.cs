@@ -219,9 +219,9 @@
             this.label3.Location = new System.Drawing.Point(35, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Apellido";
+            this.label3.Text = "Apellido/s";
             // 
             // label2
             // 
@@ -229,9 +229,9 @@
             this.label2.Location = new System.Drawing.Point(35, 67);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre/s";
             // 
             // btnValidar
             // 
