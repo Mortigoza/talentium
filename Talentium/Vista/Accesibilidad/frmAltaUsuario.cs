@@ -56,7 +56,7 @@ namespace Vista
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();
             cmbRol.ValueMember = "id_grupo";
-            cmbRol.DisplayMember = "grupo";
+            cmbRol.DisplayMember = "Perfil";
             cmbRol.SelectedValue = -1;
             //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
@@ -122,7 +122,7 @@ namespace Vista
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();
             cmbRol.ValueMember = "id_grupo";
-            cmbRol.DisplayMember = "grupo";
+            cmbRol.DisplayMember = "Perfil";
             cmbRol.SelectedValue = -1;
             //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
