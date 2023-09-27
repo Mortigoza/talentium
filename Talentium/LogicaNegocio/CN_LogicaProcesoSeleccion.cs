@@ -16,5 +16,34 @@ namespace LogicaNegocio
         {
             return accesoDatos.ConsultarCandidato(cuil);
         }
+
+        public DataTable obtenerProvincia()
+        {
+            return accesoDatos.ConsultarProvincia();
+        }
+
+        public DataTable ObtenerPartido(int id_provincia)
+        {
+            return accesoDatos.ConsultarPartido(id_provincia);
+        }
+
+        public DataTable ObtenerLocalidad(int id_partido)
+        {
+            return accesoDatos.ConsultarLocalidad(id_partido);
+        }
+
+        public bool InsertarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
+            string correo, DateTime fecha_nacimiento, int id_localidad, string calle, int nro, string dpto, string piso,
+            int id_puesto)
+        {
+            accesoDatos.IngresarCandidato(cuil, nombres, apellidos, tel_celular, tel_alternativo, correo, fecha_nacimiento,
+                id_localidad, calle, nro, dpto, piso, id_puesto);
+            return true;
+        }
+
+        public DataTable ObtenerPuestos()
+        {
+            return accesoDatos.ConsultaPuestos();
+        }
     }
 }

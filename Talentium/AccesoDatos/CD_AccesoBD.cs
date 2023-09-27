@@ -467,6 +467,31 @@ namespace AccesoDatos
 
             EjecutarConsultas("alta_candidato_sp", listaParametros.ToArray(), true);
         }
+
+        public DataTable ConsultarProvincia()
+        {
+            DataTable provincias = EjecutarConsultasSinParam("consultar_provincias_sp");
+
+            return provincias;
+        }
+
+        public DataTable ConsultarPartido(int id_provincia)
+        {
+            SqlParameter param1 = new SqlParameter("@id_provincia", id_provincia) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable partido = EjecutarConsultas("consultar_partido_sp", listaParametros.ToArray());
+
+            return partido;
+        }
+
+        public DataTable ConsultarLocalidad(int id_partido)
+        {
+            SqlParameter param1 = new SqlParameter("@idPartido", id_partido) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable localidad = EjecutarConsultas("consultar_localidad_sp", listaParametros.ToArray());
+
+            return localidad;
+        }
     }
 }
 
