@@ -32,11 +32,11 @@
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbEtapa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCuilCuit = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,7 +64,7 @@
             this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnMostrarTodos.Location = new System.Drawing.Point(30, 314);
-            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(112, 33);
             this.btnMostrarTodos.TabIndex = 13;
@@ -77,7 +77,7 @@
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnMostrar.Location = new System.Drawing.Point(756, 314);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(78, 33);
             this.btnMostrar.TabIndex = 12;
@@ -86,30 +86,32 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cmbEtapa);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtCuilCuit);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbPuesto);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(216, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(416, 106);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // comboBox3
+            // cmbEtapa
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(131, 67);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(168, 21);
-            this.comboBox3.TabIndex = 8;
+            this.cmbEtapa.FormattingEnabled = true;
+            this.cmbEtapa.Location = new System.Drawing.Point(131, 67);
+            this.cmbEtapa.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEtapa.Name = "cmbEtapa";
+            this.cmbEtapa.Size = new System.Drawing.Size(168, 21);
+            this.cmbEtapa.TabIndex = 8;
+            this.cmbEtapa.DropDown += new System.EventHandler(this.cmbEtapa_DropDown);
+            this.cmbEtapa.TextChanged += new System.EventHandler(this.cmbEtapa_TextChanged);
             // 
             // label4
             // 
@@ -127,29 +129,34 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscar.Location = new System.Drawing.Point(344, 65);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 26);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtCuilCuit
             // 
             this.txtCuilCuit.Location = new System.Drawing.Point(131, 15);
-            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuilCuit.Name = "txtCuilCuit";
             this.txtCuilCuit.Size = new System.Drawing.Size(168, 20);
             this.txtCuilCuit.TabIndex = 5;
+            this.txtCuilCuit.TextChanged += new System.EventHandler(this.txtCuilCuit_TextChanged);
+            this.txtCuilCuit.Leave += new System.EventHandler(this.txtCuilCuit_Leave);
             // 
-            // comboBox1
+            // cmbPuesto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 41);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(168, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cmbPuesto.FormattingEnabled = true;
+            this.cmbPuesto.Location = new System.Drawing.Point(131, 41);
+            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbPuesto.Name = "cmbPuesto";
+            this.cmbPuesto.Size = new System.Drawing.Size(168, 21);
+            this.cmbPuesto.TabIndex = 3;
+            this.cmbPuesto.DropDown += new System.EventHandler(this.cmbPuesto_DropDown);
+            this.cmbPuesto.TextChanged += new System.EventHandler(this.cmbPuesto_TextChanged);
             // 
             // label2
             // 
@@ -190,7 +197,7 @@
             this.Column12,
             this.Column13});
             this.dataGridView1.Location = new System.Drawing.Point(30, 173);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -202,14 +209,14 @@
             this.Nombre.HeaderText = "Etapa";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.Nombre.Width = 95;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Estado";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.Column1.Width = 95;
             // 
             // Column8
             // 
@@ -306,9 +313,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaProcesoDeSeleccion";
-            this.Text = "Consultar Candidatos en Proceso de Seleccion";
+            this.Text = "Consultar Candidatos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -321,11 +328,11 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbEtapa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtCuilCuit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
