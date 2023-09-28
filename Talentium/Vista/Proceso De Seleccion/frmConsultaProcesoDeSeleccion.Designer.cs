@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaProcesoDeSeleccion));
             this.btnMostrarTodos = new System.Windows.Forms.Button();
-            this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnEtapas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbEtapa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,18 +75,20 @@
             this.btnMostrarTodos.Text = "Ingresar Empleado";
             this.btnMostrarTodos.UseVisualStyleBackColor = false;
             // 
-            // btnMostrar
+            // btnEtapas
             // 
-            this.btnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMostrar.Location = new System.Drawing.Point(756, 314);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(78, 33);
-            this.btnMostrar.TabIndex = 12;
-            this.btnMostrar.Text = "Ir a Etapas";
-            this.btnMostrar.UseVisualStyleBackColor = false;
+            this.btnEtapas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnEtapas.Enabled = false;
+            this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEtapas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEtapas.Location = new System.Drawing.Point(756, 314);
+            this.btnEtapas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEtapas.Name = "btnEtapas";
+            this.btnEtapas.Size = new System.Drawing.Size(78, 33);
+            this.btnEtapas.TabIndex = 12;
+            this.btnEtapas.Text = "Ir a Etapas";
+            this.btnEtapas.UseVisualStyleBackColor = false;
+            this.btnEtapas.Click += new System.EventHandler(this.btnEtapas_Click);
             // 
             // groupBox1
             // 
@@ -211,6 +213,7 @@
             this.dtgCandidatos.RowTemplate.Height = 24;
             this.dtgCandidatos.Size = new System.Drawing.Size(804, 122);
             this.dtgCandidatos.TabIndex = 8;
+            this.dtgCandidatos.SelectionChanged += new System.EventHandler(this.dtgCandidatos_SelectionChanged);
             // 
             // Etapa
             // 
@@ -338,7 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 379);
             this.Controls.Add(this.btnMostrarTodos);
-            this.Controls.Add(this.btnMostrar);
+            this.Controls.Add(this.btnEtapas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -355,7 +358,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnMostrarTodos;
-        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnEtapas;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbEtapa;
         private System.Windows.Forms.Label label4;

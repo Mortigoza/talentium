@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
+using Vista.Gestion_de_Talento;
 
 namespace Vista
 {
@@ -104,6 +105,24 @@ namespace Vista
             dtgCandidatos.Columns["CP"].DataPropertyName = "codPos";
             dtgCandidatos.Columns["Partido"].DataPropertyName = "partido";
             dtgCandidatos.Columns["Provincia"].DataPropertyName = "provincia";
+        }
+
+        private void dtgCandidatos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgCandidatos.SelectedRows.Count > 0)
+            {
+                btnEtapas.Enabled = true;
+            }
+        }
+
+        private void btnEtapas_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
+            string nombre = seleccionado.Cells["Nombre"].Value.ToString();
+            string apellido = seleccionado.Cells["Apellido"].Value.ToString();
+            string puesto = seleccionado.Cells["Puesto"].Value.ToString();
+            frmEntrevistaPreocupacionalCapacitacion etapa = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto);
+            etapa.Show();
         }
     }
 }

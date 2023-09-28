@@ -50,5 +50,15 @@ namespace LogicaNegocio
         {
             return accesoDatos.ConsultarCandidatoFiltros(cuil, id_puesto, etapa);
         }
+
+        public DataTable ObtenerEmpleados(int id_area)
+        {
+            return accesoDatos.ConsultarPersonaConArea(id_area);
+        }
+
+        public DataTable ObtenerAreas()
+        {
+            return accesoDatos.ConsultaAreas();
+        }
     }
 }
