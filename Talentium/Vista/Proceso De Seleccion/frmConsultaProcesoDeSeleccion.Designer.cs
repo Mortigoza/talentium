@@ -39,23 +39,27 @@
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgCandidatos = new System.Windows.Forms.DataGridView();
+            this.Etapa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alternativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMostrarTodos
@@ -178,130 +182,155 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CUIL/CUIT";
             // 
-            // dataGridView1
+            // dtgCandidatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Etapa,
+            this.Estado,
+            this.Puesto,
+            this.Cuil,
             this.Nombre,
-            this.Column1,
-            this.Column8,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 173);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(804, 122);
-            this.dataGridView1.TabIndex = 8;
+            this.Apellido,
+            this.Celular,
+            this.Alternativo,
+            this.Correo,
+            this.Nacimiento,
+            this.Calle,
+            this.Nro,
+            this.Piso,
+            this.Dpto,
+            this.Localidad,
+            this.CP,
+            this.Partido,
+            this.Provincia});
+            this.dtgCandidatos.Location = new System.Drawing.Point(30, 173);
+            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgCandidatos.Name = "dtgCandidatos";
+            this.dtgCandidatos.RowHeadersWidth = 51;
+            this.dtgCandidatos.RowTemplate.Height = 24;
+            this.dtgCandidatos.Size = new System.Drawing.Size(804, 122);
+            this.dtgCandidatos.TabIndex = 8;
+            // 
+            // Etapa
+            // 
+            this.Etapa.HeaderText = "Etapa";
+            this.Etapa.MinimumWidth = 6;
+            this.Etapa.Name = "Etapa";
+            this.Etapa.Width = 95;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 95;
+            // 
+            // Puesto
+            // 
+            this.Puesto.HeaderText = "Puesto a postularse";
+            this.Puesto.MinimumWidth = 6;
+            this.Puesto.Name = "Puesto";
+            this.Puesto.Width = 125;
+            // 
+            // Cuil
+            // 
+            this.Cuil.HeaderText = "CUIT/CUIL";
+            this.Cuil.MinimumWidth = 6;
+            this.Cuil.Name = "Cuil";
+            this.Cuil.Width = 105;
             // 
             // Nombre
             // 
-            this.Nombre.HeaderText = "Etapa";
+            this.Nombre.HeaderText = "Nombre";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 95;
+            this.Nombre.Width = 125;
             // 
-            // Column1
+            // Apellido
             // 
-            this.Column1.HeaderText = "Estado";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 95;
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.MinimumWidth = 6;
+            this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 125;
             // 
-            // Column8
+            // Celular
             // 
-            this.Column8.HeaderText = "Puesto a postularse";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
+            this.Celular.HeaderText = "Telefono celular";
+            this.Celular.MinimumWidth = 6;
+            this.Celular.Name = "Celular";
+            this.Celular.Width = 105;
             // 
-            // Column2
+            // Alternativo
             // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Alternativo.DataPropertyName = "Segunda entrevista";
+            this.Alternativo.HeaderText = "Telefono alternativo";
+            this.Alternativo.MinimumWidth = 6;
+            this.Alternativo.Name = "Alternativo";
+            this.Alternativo.Width = 105;
             // 
-            // Column3
+            // Correo
             // 
-            this.Column3.HeaderText = "Apellido";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.Correo.HeaderText = "Correo Electronico";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.Width = 125;
             // 
-            // Column4
+            // Nacimiento
             // 
-            this.Column4.HeaderText = "CUIT/CUIL";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            this.Nacimiento.HeaderText = "Fecha de nacimiento";
+            this.Nacimiento.MinimumWidth = 6;
+            this.Nacimiento.Name = "Nacimiento";
+            this.Nacimiento.Width = 95;
             // 
-            // Column5
+            // Calle
             // 
-            this.Column5.HeaderText = "Telefono celular";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Calle.HeaderText = "Calle ";
+            this.Calle.MinimumWidth = 6;
+            this.Calle.Name = "Calle";
+            this.Calle.Width = 105;
             // 
-            // Column6
+            // Nro
             // 
-            this.Column6.DataPropertyName = "Segunda entrevista";
-            this.Column6.HeaderText = "Telefono alternativo";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
+            this.Nro.HeaderText = "N°";
+            this.Nro.MinimumWidth = 6;
+            this.Nro.Name = "Nro";
+            this.Nro.Width = 80;
             // 
-            // Column7
+            // Piso
             // 
-            this.Column7.HeaderText = "Correo Electronico";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
+            this.Piso.HeaderText = "Piso";
+            this.Piso.Name = "Piso";
+            this.Piso.Width = 80;
             // 
-            // Column9
+            // Dpto
             // 
-            this.Column9.HeaderText = "Fecha de nacimiento";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
+            this.Dpto.HeaderText = "Dpto";
+            this.Dpto.Name = "Dpto";
+            this.Dpto.Width = 80;
             // 
-            // Column10
+            // Localidad
             // 
-            this.Column10.HeaderText = "Localidad";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.MinimumWidth = 6;
+            this.Localidad.Name = "Localidad";
+            this.Localidad.Width = 105;
             // 
-            // Column11
+            // CP
             // 
-            this.Column11.HeaderText = "Nacionalidad";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 125;
+            this.CP.HeaderText = "CP";
+            this.CP.Name = "CP";
+            this.CP.Width = 80;
             // 
-            // Column12
+            // Partido
             // 
-            this.Column12.HeaderText = "Calle ";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 125;
+            this.Partido.HeaderText = "Partido";
+            this.Partido.Name = "Partido";
             // 
-            // Column13
+            // Provincia
             // 
-            this.Column13.HeaderText = "N°";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 125;
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
             // 
             // frmConsultaProcesoDeSeleccion
             // 
@@ -311,14 +340,14 @@
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaProcesoDeSeleccion";
             this.Text = "Consultar Candidatos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,20 +364,24 @@
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgCandidatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Etapa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alternativo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Piso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dpto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
     }
 }

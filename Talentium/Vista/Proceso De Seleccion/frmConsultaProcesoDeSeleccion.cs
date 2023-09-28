@@ -60,6 +60,14 @@ namespace Vista
             
                 MessageBox.Show("Por favor, utiliza al menos un filtro para la búsqueda.", "Aviso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else
+            {
+                dtgCandidatos.AutoGenerateColumns = false;
+                string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
+                int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
+                string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedItem as string;
+                dtgCandidatos.DataSource = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
+                CargarColumnasDataGrid();
             }
         }
 
@@ -74,6 +82,28 @@ namespace Vista
         {
             List<string> lista = new List<string>{"Primera entrevista", "Segunda entrevista", "Preocupacional"};
             cmbEtapa.DataSource = lista;
+        }
+
+        public void CargarColumnasDataGrid()
+        {
+            dtgCandidatos.Columns["Etapa"].DataPropertyName = "etapa";
+            dtgCandidatos.Columns["Estado"].DataPropertyName = "estado";
+            dtgCandidatos.Columns["Puesto"].DataPropertyName = "nombre_puesto";
+            dtgCandidatos.Columns["Cuil"].DataPropertyName = "cuit_cuil";
+            dtgCandidatos.Columns["Nombre"].DataPropertyName = "nombres";
+            dtgCandidatos.Columns["Apellido"].DataPropertyName = "apellidos";
+            dtgCandidatos.Columns["Celular"].DataPropertyName = "tel_celular";
+            dtgCandidatos.Columns["Alternativo"].DataPropertyName = "tel_alternativo";
+            dtgCandidatos.Columns["Correo"].DataPropertyName = "correo";
+            dtgCandidatos.Columns["Nacimiento"].DataPropertyName = "fecha_nacimiento";
+            dtgCandidatos.Columns["Calle"].DataPropertyName = "calle";
+            dtgCandidatos.Columns["Nro"].DataPropertyName = "nro";
+            dtgCandidatos.Columns["Piso"].DataPropertyName = "piso";
+            dtgCandidatos.Columns["Dpto"].DataPropertyName = "dpto";
+            dtgCandidatos.Columns["Localidad"].DataPropertyName = "localidad";
+            dtgCandidatos.Columns["CP"].DataPropertyName = "codPos";
+            dtgCandidatos.Columns["Partido"].DataPropertyName = "partido";
+            dtgCandidatos.Columns["Provincia"].DataPropertyName = "provincia";
         }
     }
 }

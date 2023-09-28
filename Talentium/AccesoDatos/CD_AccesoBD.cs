@@ -492,6 +492,17 @@ namespace AccesoDatos
 
             return localidad;
         }
+
+        public DataTable ConsultarCandidatoFiltros(string cuil, int id_puesto, string etapa)
+        {
+            SqlParameter param1 = new SqlParameter("@cuit_cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@id_puesto", id_puesto) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@etapa", etapa) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            DataTable candidatos = EjecutarConsultas("consultar_candidato_filtros_sp", listaParametros.ToArray());
+
+            return candidatos;
+        }
     }
 }
 
