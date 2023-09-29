@@ -65,12 +65,18 @@ namespace Vista.Gestion_de_Talento
             if (fechaSeleccionada < DateTime.Now) 
             {
                 cmbEstadoEntrevista.Enabled = true;
+                cmbEmpleados.Enabled = false;
+                cmbAreas.Enabled = false;
             }
             else
             {
                 cmbEstadoEntrevista.Enabled = false;
                 cmbEstadoEntrevista.SelectedItem = null;
+                cmbEmpleados.Enabled = true;
+                cmbAreas.Enabled = true;
             }
+
+            // tengo que hacer que el boton guardar haga que se modifiquen en el candidato las columnas estado y etapa
         }
     }
 }
