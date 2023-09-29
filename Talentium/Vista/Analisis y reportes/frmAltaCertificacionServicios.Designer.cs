@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgCertificados = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rdbActivos = new System.Windows.Forms.RadioButton();
             this.rdbInactivos = new System.Windows.Forms.RadioButton();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
@@ -39,9 +42,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtt = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblFechaSolicitud = new System.Windows.Forms.Label();
@@ -66,6 +66,24 @@
             this.dtgCertificados.RowHeadersVisible = false;
             this.dtgCertificados.Size = new System.Drawing.Size(509, 231);
             this.dtgCertificados.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Apellido";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "CUIT/CUIL";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // rdbActivos
             // 
@@ -168,24 +186,6 @@
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Apellido";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CUIT/CUIL";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // dtt
             // 
             this.dtt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -241,6 +241,7 @@
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -268,7 +269,10 @@
             this.Controls.Add(this.rdbInactivos);
             this.Controls.Add(this.rdbActivos);
             this.Controls.Add(this.dtgCertificados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAltaCertificacionServicios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alta de certificacion de servicios";
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).EndInit();
             this.grpFiltro.ResumeLayout(false);

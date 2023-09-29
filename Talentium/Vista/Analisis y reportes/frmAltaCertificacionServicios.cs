@@ -16,5 +16,14 @@ namespace Vista.Analisis_y_reportes
         {
             InitializeComponent();
         }
+        public frmAltaCertificacionServicios(int id_certificacion, int id_empleado)
+        {
+            InitializeComponent();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
