@@ -157,7 +157,6 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vist
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
-C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePass.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
@@ -247,3 +246,10 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
+C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources

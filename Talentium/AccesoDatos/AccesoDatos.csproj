@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion Personal\CD_AccesoBDComboBox.cs" />
+    <Compile Include="Administracion Personal\CD_AccesoBDPersonacs.cs" />
     <Compile Include="CD_AccesoBD.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_EjecutarSP.cs" />
