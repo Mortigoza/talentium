@@ -52,6 +52,21 @@
     <Compile Include="Accesibilidad\frmPerfiles.Designer.cs">
       <DependentUpon>frmPerfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Analisis y reportes\Etapas.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Etapas.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Analisis y reportes\Etapas.Designer.cs">
+      <DependentUpon>Etapas.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Analisis y reportes\Etapas.es-AR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Etapas.es-AR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +229,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accesibilidad\frmPerfiles.resx">
       <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.es-AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.es-AR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CambioDePassNU.resx">
       <DependentUpon>CambioDePassNU.cs</DependentUpon>

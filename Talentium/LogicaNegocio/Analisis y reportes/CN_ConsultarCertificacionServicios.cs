@@ -22,5 +22,14 @@ namespace LogicaNegocio.Analisis_y_reportes
             DataTable dt = ccs.ConsultaCertificacionServicios(cuit, nombre, apellido, etapa);
             return dt;
         }
+        public DataTable ConsultaPersonalCertificacion(string cuit, string nombre, string apellido, bool estado)
+        {
+            if (string.IsNullOrEmpty(cuit)) cuit = "\0";
+            if (string.IsNullOrEmpty(nombre)) nombre = "\0";
+            if (string.IsNullOrEmpty(apellido)) apellido = "\0";
+
+            DataTable dt = ccs.ConsultaPersonalCertificacion(cuit, nombre, apellido, estado);
+            return dt;
+        }
     }
 }

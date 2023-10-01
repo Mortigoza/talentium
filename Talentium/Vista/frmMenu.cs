@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Analisis_y_reportes;
 using Vista.Evaluacion_de_desempeño;
 
 namespace Vista
@@ -71,6 +72,12 @@ namespace Vista
             this.Hide();
             frmConsultaEvaluacionDesempenio consultarEvaluacionDesempenio = new frmConsultaEvaluacionDesempenio();
             consultarEvaluacionDesempenio.Show();
+        }
+
+        private void certificacionDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCertificacionServicios frm = new frmCertificacionServicios();
+            frm.ShowDialog();
         }
     }
 }

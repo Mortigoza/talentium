@@ -39,14 +39,15 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDelTalentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearEvaluacionDeDesempenioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisYReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.certificacionDeServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             // titulo
             // 
             this.titulo.BackColor = System.Drawing.Color.Transparent;
-            this.titulo.Font = new System.Drawing.Font("Berlin Sans FB", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.ForeColor = System.Drawing.Color.SteelBlue;
             this.titulo.Location = new System.Drawing.Point(176, 274);
             this.titulo.Name = "titulo";
@@ -145,6 +146,20 @@
             this.crearEvaluacionDeDesempenioToolStripMenuItem.Text = "Evaluación de Desempeño";
             this.crearEvaluacionDeDesempenioToolStripMenuItem.Click += new System.EventHandler(this.crearEvaluacionDeDesempenioToolStripMenuItem_Click);
             // 
+            // crearToolStripMenuItem
+            // 
+            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.crearToolStripMenuItem.Text = "Crear";
+            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
+            // 
             // gestiónDeAsistenciasToolStripMenuItem
             // 
             this.gestiónDeAsistenciasToolStripMenuItem.Name = "gestiónDeAsistenciasToolStripMenuItem";
@@ -159,6 +174,8 @@
             // 
             // análisisYReportesToolStripMenuItem
             // 
+            this.análisisYReportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.certificacionDeServiciosToolStripMenuItem});
             this.análisisYReportesToolStripMenuItem.Name = "análisisYReportesToolStripMenuItem";
             this.análisisYReportesToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
             this.análisisYReportesToolStripMenuItem.Text = "Análisis y Reportes";
@@ -186,19 +203,12 @@
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
-            // crearToolStripMenuItem
+            // certificacionDeServiciosToolStripMenuItem
             // 
-            this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.crearToolStripMenuItem.Text = "Crear";
-            this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
-            // 
-            // consultarToolStripMenuItem1
-            // 
-            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem1.Text = "Consultar";
-            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
+            this.certificacionDeServiciosToolStripMenuItem.Name = "certificacionDeServiciosToolStripMenuItem";
+            this.certificacionDeServiciosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.certificacionDeServiciosToolStripMenuItem.Text = "Certificacion de servicios";
+            this.certificacionDeServiciosToolStripMenuItem.Click += new System.EventHandler(this.certificacionDeServiciosToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -243,5 +253,6 @@
         private System.Windows.Forms.ToolStripMenuItem crearEvaluacionDeDesempenioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem certificacionDeServiciosToolStripMenuItem;
     }
 }

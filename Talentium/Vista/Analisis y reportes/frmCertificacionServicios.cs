@@ -17,7 +17,7 @@ namespace Vista.Analisis_y_reportes
     {
         int _rowIndex = -1; // Index de la fila actual
         int _index = -1; // Index del id_persona de la fila actual
-        int _etapa = 0;
+        int _estado = 0;
         public frmCertificacionServicios()
         {
             InitializeComponent();
@@ -35,18 +35,18 @@ namespace Vista.Analisis_y_reportes
         private void dtgCertificados_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             _rowIndex = e.RowIndex;
-            _index = Convert.ToInt32(dtgCertificados.Rows[e.RowIndex].Cells[0].Value);
+            _index = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[0].Value);
         }
         private void rdbEnProceso_CheckedChanged(object sender, EventArgs e)
         {
-            _etapa = 0;
+            _estado = 0;
             btnAgregar.Enabled = true;
             UtilidadesForms.LimpiarControles(grpFiltro);
             refreshDtg();
         }
         private void rdbFinalizados_CheckedChanged(object sender, EventArgs e)
         {
-            _etapa = 1;
+            _estado = 1;
             btnAgregar.Enabled = false;
             UtilidadesForms.LimpiarControles(grpFiltro);
             refreshDtg();
@@ -72,14 +72,32 @@ namespace Vista.Analisis_y_reportes
         {
             int id_certificacion = _index;
             int id_empleado = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[8].Value);
-            frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado);
+            int etapa;
+            switch (dtgCertificados.Rows[_rowIndex].Cells[5].Value.ToString())
+            {
+                default:
+                    switch (_estado)
+                    {
+                        default:
+                            etapa = 2;
+                            break;
+                        case 1:
+                            etapa = 3;
+                            break;
+                    }
+                    break;
+                case "":
+                    etapa = 1;
+                    break;
+            }
+            frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado, etapa);
             acs.ShowDialog();
         }
         #region metodos
         public int refreshDtg(bool filtro = false)
         {
             CN_ConsultarCertificacionServicios ccs = new CN_ConsultarCertificacionServicios();
-            DataTable dt = ccs.ConsultaCertificacionServicios(txtCuit.Text, txtNombre.Text, txtApellido.Text, _etapa);
+            DataTable dt = ccs.ConsultaCertificacionServicios(txtCuit.Text, txtNombre.Text, txtApellido.Text, _estado);
             if (!filtro || (filtro && dt.Rows.Count > 0))
             {
                 dtgCertificados.DataSource = dt;
