@@ -54,7 +54,8 @@
     <Compile Include="Accesibilidad\CN_ReactivarUsuario.cs" />
     <Compile Include="Accesibilidad\CN_UpPerfil.cs" />
     <Compile Include="Accesibilidad\CN_UpUsuario.cs" />
-    <Compile Include="Analisis y reportes\CN_ConsultarCertificacionServicios.cs" />
+    <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
+    <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
     <Compile Include="CN_CambarPassword.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
     <Compile Include="CN_LogicaEvaluacionDesempenio.cs" />

@@ -67,6 +67,7 @@ namespace Vista.Analisis_y_reportes
         {
             frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios();
             acs.ShowDialog();
+            refreshDtg();
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -92,12 +93,13 @@ namespace Vista.Analisis_y_reportes
             }
             frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado, etapa);
             acs.ShowDialog();
+            refreshDtg();
         }
         #region metodos
         public int refreshDtg(bool filtro = false)
         {
-            CN_ConsultarCertificacionServicios ccs = new CN_ConsultarCertificacionServicios();
-            DataTable dt = ccs.ConsultaCertificacionServicios(txtCuit.Text, txtNombre.Text, txtApellido.Text, _estado);
+            CN_CertificacionServicios cs = new CN_CertificacionServicios();
+            DataTable dt = cs.ConsultaCertificacionServicios(txtCuit.Text, txtNombre.Text, txtApellido.Text, _estado);
             if (!filtro || (filtro && dt.Rows.Count > 0))
             {
                 dtgCertificados.DataSource = dt;
