@@ -37,20 +37,24 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaja = new System.Windows.Forms.Button();
             this.grpCrear = new System.Windows.Forms.GroupBox();
-            this.lblConvenio = new System.Windows.Forms.Label();
-            this.txtConvenio = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblSeguridadSalud = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblObraSocial = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.txtJornada = new System.Windows.Forms.TextBox();
-            this.lblJornada = new System.Windows.Forms.Label();
+            this.btnGuardarCrear = new System.Windows.Forms.Button();
+            this.btnCancelarCrear = new System.Windows.Forms.Button();
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.lblSueldo = new System.Windows.Forms.Label();
+            this.txtJornada = new System.Windows.Forms.TextBox();
+            this.lblJornada = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblObraSocial = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSeguridadSalud = new System.Windows.Forms.Label();
+            this.txtConvenio = new System.Windows.Forms.TextBox();
+            this.lblConvenio = new System.Windows.Forms.Label();
             this.grpModificar = new System.Windows.Forms.GroupBox();
+            this.btnGuardarModif = new System.Windows.Forms.Button();
             this.txtSueldoModif = new System.Windows.Forms.TextBox();
+            this.btnCancelarModif = new System.Windows.Forms.Button();
             this.lblSueldoModif = new System.Windows.Forms.Label();
             this.txtJornadaModif = new System.Windows.Forms.TextBox();
             this.lblJornadaModif = new System.Windows.Forms.Label();
@@ -62,10 +66,6 @@
             this.lblSeguridadSaludModif = new System.Windows.Forms.Label();
             this.txtConvenioModif = new System.Windows.Forms.TextBox();
             this.lblConvenioModif = new System.Windows.Forms.Label();
-            this.btnCancelarCrear = new System.Windows.Forms.Button();
-            this.btnGuardarCrear = new System.Windows.Forms.Button();
-            this.btnGuardarModif = new System.Windows.Forms.Button();
-            this.btnCancelarModif = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).BeginInit();
             this.grpCrear.SuspendLayout();
             this.grpModificar.SuspendLayout();
@@ -149,70 +149,40 @@
             this.grpCrear.TabStop = false;
             this.grpCrear.Text = "Crear Convenio";
             // 
-            // lblConvenio
+            // btnGuardarCrear
             // 
-            this.lblConvenio.AutoSize = true;
-            this.lblConvenio.Location = new System.Drawing.Point(18, 32);
-            this.lblConvenio.Name = "lblConvenio";
-            this.lblConvenio.Size = new System.Drawing.Size(52, 13);
-            this.lblConvenio.TabIndex = 0;
-            this.lblConvenio.Text = "Convenio";
+            this.btnGuardarCrear.Location = new System.Drawing.Point(190, 209);
+            this.btnGuardarCrear.Name = "btnGuardarCrear";
+            this.btnGuardarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCrear.TabIndex = 13;
+            this.btnGuardarCrear.Text = "Guardar";
+            this.btnGuardarCrear.UseVisualStyleBackColor = true;
             // 
-            // txtConvenio
+            // btnCancelarCrear
             // 
-            this.txtConvenio.Location = new System.Drawing.Point(77, 32);
-            this.txtConvenio.Name = "txtConvenio";
-            this.txtConvenio.Size = new System.Drawing.Size(188, 20);
-            this.txtConvenio.TabIndex = 1;
+            this.btnCancelarCrear.Location = new System.Drawing.Point(21, 209);
+            this.btnCancelarCrear.Name = "btnCancelarCrear";
+            this.btnCancelarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarCrear.TabIndex = 12;
+            this.btnCancelarCrear.Text = "Cancelar";
+            this.btnCancelarCrear.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtSueldo
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 143);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtSueldo.Location = new System.Drawing.Point(198, 102);
+            this.txtSueldo.Name = "txtSueldo";
+            this.txtSueldo.ReadOnly = true;
+            this.txtSueldo.Size = new System.Drawing.Size(67, 20);
+            this.txtSueldo.TabIndex = 11;
             // 
-            // lblSeguridadSalud
+            // lblSueldo
             // 
-            this.lblSeguridadSalud.AutoSize = true;
-            this.lblSeguridadSalud.Location = new System.Drawing.Point(18, 143);
-            this.lblSeguridadSalud.Name = "lblSeguridadSalud";
-            this.lblSeguridadSalud.Size = new System.Drawing.Size(93, 13);
-            this.lblSeguridadSalud.TabIndex = 2;
-            this.lblSeguridadSalud.Text = "Seguridad y Salud";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(117, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // lblObraSocial
-            // 
-            this.lblObraSocial.AutoSize = true;
-            this.lblObraSocial.Location = new System.Drawing.Point(18, 177);
-            this.lblObraSocial.Name = "lblObraSocial";
-            this.lblObraSocial.Size = new System.Drawing.Size(62, 13);
-            this.lblObraSocial.TabIndex = 4;
-            this.lblObraSocial.Text = "Obra Social";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(18, 71);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
-            this.lblCategoria.TabIndex = 6;
-            this.lblCategoria.Text = "Categoria";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(77, 62);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(188, 21);
-            this.cmbCategoria.TabIndex = 7;
+            this.lblSueldo.AutoSize = true;
+            this.lblSueldo.Location = new System.Drawing.Point(152, 105);
+            this.lblSueldo.Name = "lblSueldo";
+            this.lblSueldo.Size = new System.Drawing.Size(40, 13);
+            this.lblSueldo.TabIndex = 10;
+            this.lblSueldo.Text = "Sueldo";
             // 
             // txtJornada
             // 
@@ -231,22 +201,71 @@
             this.lblJornada.TabIndex = 8;
             this.lblJornada.Text = "Jornada";
             // 
-            // txtSueldo
+            // cmbCategoria
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(198, 102);
-            this.txtSueldo.Name = "txtSueldo";
-            this.txtSueldo.ReadOnly = true;
-            this.txtSueldo.Size = new System.Drawing.Size(67, 20);
-            this.txtSueldo.TabIndex = 11;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(77, 62);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(188, 21);
+            this.cmbCategoria.TabIndex = 7;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
-            // lblSueldo
+            // lblCategoria
             // 
-            this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Location = new System.Drawing.Point(152, 105);
-            this.lblSueldo.Name = "lblSueldo";
-            this.lblSueldo.Size = new System.Drawing.Size(40, 13);
-            this.lblSueldo.TabIndex = 10;
-            this.lblSueldo.Text = "Sueldo";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(18, 71);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.TabIndex = 6;
+            this.lblCategoria.Text = "Categoria";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(117, 177);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(148, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // lblObraSocial
+            // 
+            this.lblObraSocial.AutoSize = true;
+            this.lblObraSocial.Location = new System.Drawing.Point(18, 177);
+            this.lblObraSocial.Name = "lblObraSocial";
+            this.lblObraSocial.Size = new System.Drawing.Size(62, 13);
+            this.lblObraSocial.TabIndex = 4;
+            this.lblObraSocial.Text = "Obra Social";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(117, 143);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // lblSeguridadSalud
+            // 
+            this.lblSeguridadSalud.AutoSize = true;
+            this.lblSeguridadSalud.Location = new System.Drawing.Point(18, 143);
+            this.lblSeguridadSalud.Name = "lblSeguridadSalud";
+            this.lblSeguridadSalud.Size = new System.Drawing.Size(93, 13);
+            this.lblSeguridadSalud.TabIndex = 2;
+            this.lblSeguridadSalud.Text = "Seguridad y Salud";
+            // 
+            // txtConvenio
+            // 
+            this.txtConvenio.Location = new System.Drawing.Point(77, 32);
+            this.txtConvenio.Name = "txtConvenio";
+            this.txtConvenio.Size = new System.Drawing.Size(188, 20);
+            this.txtConvenio.TabIndex = 1;
+            // 
+            // lblConvenio
+            // 
+            this.lblConvenio.AutoSize = true;
+            this.lblConvenio.Location = new System.Drawing.Point(18, 32);
+            this.lblConvenio.Name = "lblConvenio";
+            this.lblConvenio.Size = new System.Drawing.Size(52, 13);
+            this.lblConvenio.TabIndex = 0;
+            this.lblConvenio.Text = "Convenio";
             // 
             // grpModificar
             // 
@@ -271,6 +290,15 @@
             this.grpModificar.TabStop = false;
             this.grpModificar.Text = "Modificar Convenio";
             // 
+            // btnGuardarModif
+            // 
+            this.btnGuardarModif.Location = new System.Drawing.Point(190, 209);
+            this.btnGuardarModif.Name = "btnGuardarModif";
+            this.btnGuardarModif.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarModif.TabIndex = 15;
+            this.btnGuardarModif.Text = "Guardar";
+            this.btnGuardarModif.UseVisualStyleBackColor = true;
+            // 
             // txtSueldoModif
             // 
             this.txtSueldoModif.Location = new System.Drawing.Point(198, 102);
@@ -278,6 +306,15 @@
             this.txtSueldoModif.ReadOnly = true;
             this.txtSueldoModif.Size = new System.Drawing.Size(67, 20);
             this.txtSueldoModif.TabIndex = 11;
+            // 
+            // btnCancelarModif
+            // 
+            this.btnCancelarModif.Location = new System.Drawing.Point(21, 209);
+            this.btnCancelarModif.Name = "btnCancelarModif";
+            this.btnCancelarModif.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarModif.TabIndex = 14;
+            this.btnCancelarModif.Text = "Cancelar";
+            this.btnCancelarModif.UseVisualStyleBackColor = true;
             // 
             // lblSueldoModif
             // 
@@ -370,42 +407,6 @@
             this.lblConvenioModif.TabIndex = 0;
             this.lblConvenioModif.Text = "Convenio";
             // 
-            // btnCancelarCrear
-            // 
-            this.btnCancelarCrear.Location = new System.Drawing.Point(21, 209);
-            this.btnCancelarCrear.Name = "btnCancelarCrear";
-            this.btnCancelarCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarCrear.TabIndex = 12;
-            this.btnCancelarCrear.Text = "Cancelar";
-            this.btnCancelarCrear.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardarCrear
-            // 
-            this.btnGuardarCrear.Location = new System.Drawing.Point(190, 209);
-            this.btnGuardarCrear.Name = "btnGuardarCrear";
-            this.btnGuardarCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarCrear.TabIndex = 13;
-            this.btnGuardarCrear.Text = "Guardar";
-            this.btnGuardarCrear.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardarModif
-            // 
-            this.btnGuardarModif.Location = new System.Drawing.Point(190, 209);
-            this.btnGuardarModif.Name = "btnGuardarModif";
-            this.btnGuardarModif.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarModif.TabIndex = 15;
-            this.btnGuardarModif.Text = "Guardar";
-            this.btnGuardarModif.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelarModif
-            // 
-            this.btnCancelarModif.Location = new System.Drawing.Point(21, 209);
-            this.btnCancelarModif.Name = "btnCancelarModif";
-            this.btnCancelarModif.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarModif.TabIndex = 14;
-            this.btnCancelarModif.Text = "Cancelar";
-            this.btnCancelarModif.UseVisualStyleBackColor = true;
-            // 
             // frmConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +418,7 @@
             this.Controls.Add(this.dtgConvenio);
             this.Name = "frmConvenios";
             this.Text = "Convenios";
+            this.Load += new System.EventHandler(this.frmConvenios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).EndInit();
             this.grpCrear.ResumeLayout(false);
             this.grpCrear.PerformLayout();

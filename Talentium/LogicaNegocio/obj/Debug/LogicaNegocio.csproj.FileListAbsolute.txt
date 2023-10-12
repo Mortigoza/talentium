@@ -134,3 +134,14 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\LogicaN
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.pdb
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\bin\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
