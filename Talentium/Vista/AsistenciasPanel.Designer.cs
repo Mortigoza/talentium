@@ -37,7 +37,6 @@
             this.valorArea = new System.Windows.Forms.Label();
             this.valorApellido = new System.Windows.Forms.Label();
             this.valorNombre = new System.Windows.Forms.Label();
-            this.periodo = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -47,12 +46,13 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMotivo = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkPeriodo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,48 +105,38 @@
             this.valorPuesto.AutoSize = true;
             this.valorPuesto.Location = new System.Drawing.Point(387, 64);
             this.valorPuesto.Name = "valorPuesto";
-            this.valorPuesto.Size = new System.Drawing.Size(79, 16);
+            this.valorPuesto.Size = new System.Drawing.Size(15, 16);
             this.valorPuesto.TabIndex = 5;
-            this.valorPuesto.Text = "valorPuesto";
+            this.valorPuesto.Text = "--";
             this.valorPuesto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.valorPuesto.Click += new System.EventHandler(this.valorPuesto_Click);
             // 
             // valorArea
             // 
             this.valorArea.AutoSize = true;
             this.valorArea.Location = new System.Drawing.Point(387, 28);
             this.valorArea.Name = "valorArea";
-            this.valorArea.Size = new System.Drawing.Size(66, 16);
+            this.valorArea.Size = new System.Drawing.Size(15, 16);
             this.valorArea.TabIndex = 6;
-            this.valorArea.Text = "valorArea";
+            this.valorArea.Text = "--";
             // 
             // valorApellido
             // 
             this.valorApellido.AutoSize = true;
             this.valorApellido.Location = new System.Drawing.Point(86, 64);
             this.valorApellido.Name = "valorApellido";
-            this.valorApellido.Size = new System.Drawing.Size(87, 16);
+            this.valorApellido.Size = new System.Drawing.Size(15, 16);
             this.valorApellido.TabIndex = 7;
-            this.valorApellido.Text = "valorApellido";
+            this.valorApellido.Text = "--";
             // 
             // valorNombre
             // 
             this.valorNombre.AutoSize = true;
             this.valorNombre.Location = new System.Drawing.Point(86, 28);
             this.valorNombre.Name = "valorNombre";
-            this.valorNombre.Size = new System.Drawing.Size(89, 16);
+            this.valorNombre.Size = new System.Drawing.Size(15, 16);
             this.valorNombre.TabIndex = 8;
-            this.valorNombre.Text = "valorNombre:";
-            // 
-            // periodo
-            // 
-            this.periodo.AutoSize = true;
-            this.periodo.Location = new System.Drawing.Point(13, 122);
-            this.periodo.Name = "periodo";
-            this.periodo.Size = new System.Drawing.Size(76, 20);
-            this.periodo.TabIndex = 9;
-            this.periodo.TabStop = true;
-            this.periodo.Text = "Periodo";
-            this.periodo.UseVisualStyleBackColor = true;
+            this.valorNombre.Text = "--";
             // 
             // dateTimePicker1
             // 
@@ -157,10 +147,11 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(407, 204);
+            this.dateTimePicker2.Location = new System.Drawing.Point(434, 203);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // checkBox1
             // 
@@ -176,11 +167,12 @@
             // fecha
             // 
             this.fecha.AutoSize = true;
-            this.fecha.Location = new System.Drawing.Point(10, 172);
+            this.fecha.Location = new System.Drawing.Point(81, 158);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(48, 16);
             this.fecha.TabIndex = 13;
             this.fecha.Text = "Fecha:";
+            this.fecha.Click += new System.EventHandler(this.fecha_Click);
             // 
             // fechaDesde
             // 
@@ -194,18 +186,20 @@
             // fechaHasta
             // 
             this.fechaHasta.AutoSize = true;
-            this.fechaHasta.Location = new System.Drawing.Point(317, 208);
+            this.fechaHasta.Location = new System.Drawing.Point(344, 207);
             this.fechaHasta.Name = "fechaHasta";
             this.fechaHasta.Size = new System.Drawing.Size(84, 16);
             this.fechaHasta.TabIndex = 15;
             this.fechaHasta.Text = "Fecha hasta:";
+            this.fechaHasta.Click += new System.EventHandler(this.fechaHasta_Click);
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(64, 166);
+            this.dateTimePicker3.Location = new System.Drawing.Point(131, 155);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker3.TabIndex = 16;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // label6
             // 
@@ -225,13 +219,13 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Otro:";
             // 
-            // comboBox1
+            // cmbMotivo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(64, 259);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
-            this.comboBox1.TabIndex = 19;
+            this.cmbMotivo.FormattingEnabled = true;
+            this.cmbMotivo.Location = new System.Drawing.Point(64, 259);
+            this.cmbMotivo.Name = "cmbMotivo";
+            this.cmbMotivo.Size = new System.Drawing.Size(196, 24);
+            this.cmbMotivo.TabIndex = 19;
             // 
             // textBox1
             // 
@@ -268,6 +262,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -277,18 +272,31 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkPeriodo
+            // 
+            this.checkPeriodo.AutoSize = true;
+            this.checkPeriodo.Location = new System.Drawing.Point(11, 126);
+            this.checkPeriodo.Name = "checkPeriodo";
+            this.checkPeriodo.Size = new System.Drawing.Size(77, 20);
+            this.checkPeriodo.TabIndex = 25;
+            this.checkPeriodo.Text = "Periodo";
+            this.checkPeriodo.UseVisualStyleBackColor = true;
+            this.checkPeriodo.CheckedChanged += new System.EventHandler(this.checkPeriodo_CheckedChanged);
             // 
             // AsistenciasPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 565);
+            this.Controls.Add(this.checkPeriodo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbMotivo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker3);
@@ -298,7 +306,6 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.periodo);
             this.Controls.Add(this.valorNombre);
             this.Controls.Add(this.valorApellido);
             this.Controls.Add(this.valorArea);
@@ -329,7 +336,6 @@
         private System.Windows.Forms.Label valorArea;
         private System.Windows.Forms.Label valorApellido;
         private System.Windows.Forms.Label valorNombre;
-        private System.Windows.Forms.RadioButton periodo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -339,11 +345,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMotivo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkPeriodo;
     }
 }

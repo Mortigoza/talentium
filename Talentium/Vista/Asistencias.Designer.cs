@@ -32,7 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.abrirAlta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridAlta = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.puestosAltas = new System.Windows.Forms.ComboBox();
@@ -46,6 +46,11 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.periodo = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,15 +60,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.periodo = new System.Windows.Forms.RadioButton();
+            this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,7 +108,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridAlta);
             this.groupBox2.Location = new System.Drawing.Point(303, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(782, 380);
@@ -115,18 +116,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal";
             // 
-            // dataGridView1
+            // dataGridAlta
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(770, 353);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridAlta.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAlta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Abrir});
+            this.dataGridAlta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridAlta.Location = new System.Drawing.Point(6, 21);
+            this.dataGridAlta.Name = "dataGridAlta";
+            this.dataGridAlta.RowHeadersWidth = 51;
+            this.dataGridAlta.RowTemplate.Height = 24;
+            this.dataGridAlta.Size = new System.Drawing.Size(770, 353);
+            this.dataGridAlta.TabIndex = 12;
+            this.dataGridAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -143,6 +147,7 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label13
             // 
@@ -203,6 +208,7 @@
             this.areasAltas.Name = "areasAltas";
             this.areasAltas.Size = new System.Drawing.Size(223, 24);
             this.areasAltas.TabIndex = 9;
+            this.areasAltas.SelectedIndexChanged += new System.EventHandler(this.areasAltas_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -270,6 +276,51 @@
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtros";
+            // 
+            // periodo
+            // 
+            this.periodo.AutoSize = true;
+            this.periodo.Location = new System.Drawing.Point(8, 147);
+            this.periodo.Name = "periodo";
+            this.periodo.Size = new System.Drawing.Size(76, 20);
+            this.periodo.TabIndex = 29;
+            this.periodo.TabStop = true;
+            this.periodo.Text = "Periodo";
+            this.periodo.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(0, 64);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Puesto:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(57, 61);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(217, 24);
+            this.comboBox5.TabIndex = 27;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(51, 31);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(223, 24);
+            this.comboBox2.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 16);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Àrea:";
             // 
             // label12
             // 
@@ -344,50 +395,17 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "CUIL:";
             // 
-            // label14
+            // Abrir
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(0, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 16);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Puesto:";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(57, 61);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(217, 24);
-            this.comboBox5.TabIndex = 27;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(51, 31);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(223, 24);
-            this.comboBox2.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 16);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Àrea:";
-            // 
-            // periodo
-            // 
-            this.periodo.AutoSize = true;
-            this.periodo.Location = new System.Drawing.Point(8, 147);
-            this.periodo.Name = "periodo";
-            this.periodo.Size = new System.Drawing.Size(76, 20);
-            this.periodo.TabIndex = 29;
-            this.periodo.TabStop = true;
-            this.periodo.Text = "Periodo";
-            this.periodo.UseVisualStyleBackColor = true;
+            this.Abrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Abrir.HeaderText = "Abrir";
+            this.Abrir.MinimumWidth = 6;
+            this.Abrir.Name = "Abrir";
+            this.Abrir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abrir.Text = "Abrir";
+            this.Abrir.ToolTipText = "Click";
+            this.Abrir.UseColumnTextForButtonValue = true;
+            this.Abrir.Width = 80;
             // 
             // Asistencias
             // 
@@ -400,7 +418,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -417,7 +435,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridAlta;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buscarAlta;
         private System.Windows.Forms.TextBox cuilAltas;
@@ -446,5 +464,6 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewButtonColumn Abrir;
     }
 }
