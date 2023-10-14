@@ -60,5 +60,19 @@ namespace LogicaNegocio
         {
             return accesoDatos.ConsultaAreas();
         }
+
+        public bool ModificarEtapa(string estado, string etapa)
+        {
+            return accesoDatos.ModificarEtapa(estado, etapa);
+        }
+
+        public bool ModificarEstado(int id_candidato, string estado)
+        {
+            return accesoDatos.ModificarEstado(id_candidato, estado);
+        }
+        public bool InsertarSegundaEntrevista(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
+        {
+            return accesoDatos.InsertarSegundaEntrevista(id_candidato, fecha_etapa, area, entrevistador);
+        }
     }
 }

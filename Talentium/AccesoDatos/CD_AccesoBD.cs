@@ -503,6 +503,39 @@ namespace AccesoDatos
 
             return candidatos;
         }
+
+        public bool ModificarEtapa(string estado, string etapa)
+        {
+            SqlParameter param1 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@etapa", etapa) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable modifEtapa = EjecutarConsultas("modificar_entrevista_sp", listaParametros.ToArray());
+
+            return modifEtapa.Rows.Count != 0;
+        }
+        public bool ModificarEstado(int id_candidato, string estado)
+        {
+            SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@nuevoEstado", estado) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable modifEstado = EjecutarConsultas("modificar_estado_entrevista_sp", listaParametros.ToArray());
+
+            return modifEstado.Rows.Count != 0;
+        }
+
+        public bool InsertarSegundaEntrevista(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
+        {
+            SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@fecha_etapa", fecha_etapa) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param3 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@nombre_apellido", entrevistador) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param5 = new SqlParameter("@etapa", etapa) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param6 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3,param4};
+            DataTable modifEtapa = EjecutarConsultas("insertar_segunda_entrevista_sp", listaParametros.ToArray());
+
+            return modifEtapa.Rows.Count != 0;
+        }
     }
 }
 

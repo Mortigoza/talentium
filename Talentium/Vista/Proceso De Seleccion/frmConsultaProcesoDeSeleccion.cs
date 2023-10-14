@@ -32,12 +32,6 @@ namespace Vista
         }
 
         private bool filtroUtilizado = false;
-        //private void controlesUsados()
-        //{
-        //    txtCuilCuit.TextChanged += txtCuilCuit_TextChanged;
-        //    cmbPuesto.SelectedIndexChanged += cmbPuesto_TextChanged;
-        //    cmbEtapa.SelectedIndexChanged += cmbEtapa_TextChanged;
-        //}
 
         private void cmbPuesto_TextChanged(object sender, EventArgs e)
         {
@@ -67,7 +61,13 @@ namespace Vista
                 string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
                 int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
                 string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedItem as string;
-                dtgCandidatos.DataSource = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
+                DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
+                dtgCandidatos.DataSource = DTCandidatos;
+                for (int i = 0; i < dtgCandidatos.Rows.Count-1; i++)
+                {
+                    int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
+                    dtgCandidatos.Rows[i].Tag = id;
+                }
                 CargarColumnasDataGrid();
             }
         }
@@ -118,10 +118,11 @@ namespace Vista
         private void btnEtapas_Click(object sender, EventArgs e)
         {
             DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
+            int idCandidatoSeleccionado = (int)dtgCandidatos.SelectedRows[0].Tag;
             string nombre = seleccionado.Cells["Nombre"].Value.ToString();
             string apellido = seleccionado.Cells["Apellido"].Value.ToString();
             string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-            frmEntrevistaPreocupacionalCapacitacion etapa = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto);
+            frmEntrevistaPreocupacionalCapacitacion etapa = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, idCandidatoSeleccionado);
             etapa.Show();
         }
     }
