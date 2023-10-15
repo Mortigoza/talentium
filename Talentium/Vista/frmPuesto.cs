@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio.Accesibilidad;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -16,6 +17,7 @@ namespace Vista
         CN_LogicaPuestos puesto = new CN_LogicaPuestos();
         public frmPuesto()
         {
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             InitializeComponent();
 
             //para que cuando al iniciar el form el boton de cancelar no esté habilitado

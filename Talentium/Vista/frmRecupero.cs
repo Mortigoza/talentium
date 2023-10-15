@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -16,6 +17,7 @@ namespace Vista
         public frmRecupero()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
         private void Form1_Load(object sender, EventArgs e)

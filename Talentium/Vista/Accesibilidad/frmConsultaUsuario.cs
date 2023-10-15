@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -26,6 +27,7 @@ namespace Vista
         public frmConsultaUsuario()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             // dtg, configura el dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;

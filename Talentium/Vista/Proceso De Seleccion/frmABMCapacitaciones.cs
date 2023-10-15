@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista.Gestion_de_Talento
 {
@@ -15,6 +16,12 @@ namespace Vista.Gestion_de_Talento
         public frmABMCapacitaciones()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

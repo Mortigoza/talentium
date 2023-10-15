@@ -117,11 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAgregar" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnBaja" xml:space="preserve">
+    <value>Discharge</value>
+  </data>
+  <data name="btnCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCerrar" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnContinuar" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="btnDetalles" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="btnFiltrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="btnGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="btnLogin" xml:space="preserve">
-    <value>Enter</value>
+    <value>Log in</value>
+  </data>
+  <data name="btnModificar" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="btnValidar" xml:space="preserve">
+    <value>Validate</value>
   </data>
   <data name="frmLogin" xml:space="preserve">
-    <value>Talentium - LogIn</value>
+    <value>Talentium - Login</value>
+  </data>
+  <data name="grpFiltro" xml:space="preserve">
+    <value>Filter</value>
   </data>
   <data name="lblContrasenia" xml:space="preserve">
     <value>Password</value>
@@ -130,12 +163,201 @@
     <value>Language</value>
   </data>
   <data name="lblSesion" xml:space="preserve">
-    <value>Sing In</value>
+    <value>Sign in</value>
   </data>
   <data name="lblUsuario" xml:space="preserve">
-    <value>Username</value>
+    <value>User</value>
   </data>
   <data name="lnkRecupero" xml:space="preserve">
-    <value>Restore password</value>
+    <value>Recover password</value>
+  </data>
+  <data name="rdbActivos" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="rdbEnProceso" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="rdbFinalizados" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="rdbInactivos" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="btnAceptar" xml:space="preserve">
+    <value>Acept</value>
+  </data>
+  <data name="btnReactivar" xml:space="preserve">
+    <value>Reactivate</value>
+  </data>
+  <data name="chcModificar" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="lblApellido" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="lblArea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="lblCategoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lblEtapa" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="lblJornada" xml:space="preserve">
+    <value>Workday</value>
+  </data>
+  <data name="lblNombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblPermisos" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="lblPermisosAsignados" xml:space="preserve">
+    <value>Assigned Permissions</value>
+  </data>
+  <data name="lblPuesto" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="lblSueldo" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="chcEmail" xml:space="preserve">
+    <value>Custom email</value>
+  </data>
+  <data name="frmAltaCertificacionServicios" xml:space="preserve">
+    <value>Service certification - Release</value>
+  </data>
+  <data name="frmAltaEvaluacionDesempenio" xml:space="preserve">
+    <value>Performance evaluations - Release</value>
+  </data>
+  <data name="frmAltaUsuario" xml:space="preserve">
+    <value>Users - Release</value>
+  </data>
+  <data name="frmAreas" xml:space="preserve">
+    <value>Areas</value>
+  </data>
+  <data name="frmCambioDePassNU" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="frmCambioDePassRecupero" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="frmCategorias" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="frmCertificacionServicios" xml:space="preserve">
+    <value>Service certification</value>
+  </data>
+  <data name="frmConsultaEvaluacionDesempenio" xml:space="preserve">
+    <value>Performance evaluations</value>
+  </data>
+  <data name="frmConsultaPersonal" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="frmConsultaUsuario" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="frmConvenios" xml:space="preserve">
+    <value>Agreements</value>
+  </data>
+  <data name="frmPerfiles" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="frmPuesto" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="frmRecupero" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="grpCrearArea" xml:space="preserve">
+    <value>Create area</value>
+  </data>
+  <data name="grpCrearPuesto" xml:space="preserve">
+    <value>Create position</value>
+  </data>
+  <data name="grpDatosEmpleado" xml:space="preserve">
+    <value>Employee data</value>
+  </data>
+  <data name="grpModificarArea" xml:space="preserve">
+    <value>Modify area</value>
+  </data>
+  <data name="grpModificarPuesto" xml:space="preserve">
+    <value>Modify position</value>
+  </data>
+  <data name="grpPeriodoEvaluacion" xml:space="preserve">
+    <value>Evaluation period</value>
+  </data>
+  <data name="lblAnio" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="lblCambiaCada" xml:space="preserve">
+    <value>Change password every</value>
+  </data>
+  <data name="lblCategoriaModif" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lblConvenioModif" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="lblDescripcion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblEmpleado" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="lblIngreseCodigo" xml:space="preserve">
+    <value>Enter the code</value>
+  </data>
+  <data name="lblIngreseUsuario" xml:space="preserve">
+    <value>Enter your username</value>
+  </data>
+  <data name="lblJonadaModif" xml:space="preserve">
+    <value>Workday</value>
+  </data>
+  <data name="lblMes" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="lblNombrePerfil" xml:space="preserve">
+    <value>Profile name</value>
+  </data>
+  <data name="lblNombreUsuario" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="lblNuevaPass" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="lblObraSocial" xml:space="preserve">
+    <value>Health insurance</value>
+  </data>
+  <data name="lblObraSocialModif" xml:space="preserve">
+    <value>Health insurance</value>
+  </data>
+  <data name="lblPerfil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="lblPreguntaSeguridad" xml:space="preserve">
+    <value>Security question</value>
+  </data>
+  <data name="lblPreguntasSeguridad" xml:space="preserve">
+    <value>Security questions</value>
+  </data>
+  <data name="lblReingresarPass" xml:space="preserve">
+    <value>Re-enter password</value>
+  </data>
+  <data name="lblRespuesta" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="lblSeguridadSalud" xml:space="preserve">
+    <value>Security and health</value>
+  </data>
+  <data name="lblSeguridadSaludModif" xml:space="preserve">
+    <value>Security and health</value>
+  </data>
+  <data name="lblSueldoModif" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="lblTotalEvaluaciones" xml:space="preserve">
+    <value>Total evaluations</value>
   </data>
 </root>

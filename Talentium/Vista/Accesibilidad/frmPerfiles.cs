@@ -30,8 +30,6 @@ namespace Vista.Accesibilidad
             Idioma.CargarIdioma(this.Controls, this);
             #region config
 
-            this.Text = "Alta de usuarios";
-
             //dtg configura el dtg
             dtgPerfiles.MultiSelect = false;
             dtgPerfiles.RowHeadersVisible = false;

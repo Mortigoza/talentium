@@ -10,6 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista.Analisis_y_reportes
 {
@@ -21,6 +22,7 @@ namespace Vista.Analisis_y_reportes
         public frmCertificacionServicios()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             //dtg configura el dtg
             dtgCertificados.MultiSelect = false;
             dtgCertificados.RowHeadersVisible = false;

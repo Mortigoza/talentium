@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Accesibilidad;
 using Vista.Analisis_y_reportes;
 using Vista.Evaluacion_de_desempeño;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -18,6 +20,7 @@ namespace Vista
         public frmMenu()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             string permisos = "";
             PermisosCache[] listaPermisos = PermisosCache.GetPermisos();
             for (int i = 0, len = listaPermisos.Length; i < len; i++)
@@ -39,6 +42,8 @@ namespace Vista
                 puestosToolStripMenuItem, áreasToolStripMenuItem
             };
             UtilidadesForms.checkPermiso(items, Permisos.Gestion_Jerarquia);
+            UtilidadesForms.checkPermiso(usuariosToolStripMenuItem, Permisos.Gestion_Usuario);
+            UtilidadesForms.checkPermiso(perfilesToolStripMenuItem, Permisos.Gestion_Perfiles);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -99,6 +104,18 @@ namespace Vista
         private void certificacionDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCertificacionServicios frm = new frmCertificacionServicios();
+            frm.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaUsuario frm = new frmConsultaUsuario();
+            frm.ShowDialog();
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerfiles frm = new frmPerfiles();
             frm.ShowDialog();
         }
     }

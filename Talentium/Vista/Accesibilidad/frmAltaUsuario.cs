@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -32,6 +33,7 @@ namespace Vista
         public frmAltaUsuario()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             #region config
 
             this.Text = "Alta de usuarios";
@@ -89,6 +91,7 @@ namespace Vista
         public frmAltaUsuario(int id_usuario)
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             #region config
             _idUsuario = id_usuario;
             _mod = true;
