@@ -15,22 +15,22 @@ namespace AccesoDatos.Analisis_y_reportes
         private DateTime fecha;
         private int fechaIndex;
 
-        public int SetIdEmpleado
+        public int IdEmpleado
         {
             get => idEmpleado;
             set => idEmpleado = value;
         }
-        public int SetIdCertificacion
+        public int IdCertificacion
         {
             get => idCertificacion;
             set => idCertificacion = value;
         }
-        public DateTime SetFecha
+        public DateTime Fecha
         {
             get => fecha;
             set => fecha = value;
         }
-        public int SetFechaIndex
+        public int FechaIndex
         {
             get => fechaIndex;
             set => fechaIndex = value;

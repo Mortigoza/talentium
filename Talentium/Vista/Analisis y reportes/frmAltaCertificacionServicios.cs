@@ -123,8 +123,8 @@ namespace Vista.Analisis_y_reportes
 
                     if (verif.Item1)
                     {
-                        cs.SetIdEmpleado = _idPersona;
-                        cs.SetFecha = dttFecha.Value;
+                        cs.IdEmpleado = _idPersona;
+                        cs.Fecha = dttFecha.Value;
                         cs.AltaCertificacion();
                         this.Dispose();
                     }
@@ -134,9 +134,9 @@ namespace Vista.Analisis_y_reportes
                     }
                     break;
                 case true:
-                    cs.SetIdCertificacion = _idCertificacion;
-                    cs.SetFecha = dttFecha.Value;
-                    cs.SetFechaIndex = cmbEtapa.SelectedIndex;
+                    cs.IdCertificacion = _idCertificacion;
+                    cs.Fecha = dttFecha.Value;
+                    cs.FechaIndex = cmbEtapa.SelectedIndex;
                     cs.UpFechaCertificacion();
                     this.Dispose();
                     break;

@@ -20,22 +20,22 @@ namespace LogicaNegocio.Analisis_y_reportes
         #endregion
 
         #region Propiedades
-        public int SetIdEmpleado
+        public int IdEmpleado
         {
             get => idEmpleado;
             set => idEmpleado = value;
         }
-        public int SetIdCertificacion
+        public int IdCertificacion
         {
             get => idCertificacion;
             set => idCertificacion = value;
         }
-        public DateTime SetFecha
+        public DateTime Fecha
         {
             get => fecha;
             set => fecha = value;
         }
-        public int SetFechaIndex
+        public int FechaIndex
         {
             get => fechaIndex;
             set => fechaIndex = value;
@@ -83,17 +83,17 @@ namespace LogicaNegocio.Analisis_y_reportes
         #region Alta
         public void AltaCertificacion()
         {
-            cs.SetIdEmpleado = idEmpleado;
-            cs.SetFecha = fecha;
+            cs.IdEmpleado = idEmpleado;
+            cs.Fecha = fecha;
             cs.AltaCertificacion();
         }
         #endregion
         #region Modificacion
         public void UpFechaCertificacion()
         {
-            cs.SetIdCertificacion = idCertificacion;
-            cs.SetFecha = fecha;
-            cs.SetFechaIndex = fechaIndex;
+            cs.IdCertificacion = idCertificacion;
+            cs.Fecha = fecha;
+            cs.FechaIndex = fechaIndex;
             cs.UpFechaCertificacion();
         }
         #endregion
