@@ -287,7 +287,7 @@
       <LastGenOutput>Strings.es-AR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPuesto.resx">

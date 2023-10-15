@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,7 +59,7 @@ namespace LogicaNegocio
             {
                 DataTable dt = accesoDatos.ConsultaAreas();
                 DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Todas" });
+                dt.Rows.Add(new Object[] { -1, "Todas"});
                 return dt;
             }
             catch (Exception ex)

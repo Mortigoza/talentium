@@ -169,7 +169,7 @@ namespace Vista
                 btnAgregar.Enabled = true;
                 btnModificar.Enabled = true;
                 btnBaja.Name = "btnBaja";
-                btnBaja.Text = "Dar de baja";
+                btnBaja.Text = Strings.btnBaja;
 
                 _estado = true;
                 if (dtgPersonas.DataSource != null)
@@ -189,7 +189,7 @@ namespace Vista
                 btnAgregar.Enabled = false;
                 btnModificar.Enabled = false;
                 btnBaja.Name = "btnReactivar";
-                btnBaja.Text = "Reactivar";
+                btnBaja.Text = Strings.btnReactivar;
 
                 _estado = false;
                 if (dtgPersonas.DataSource != null)

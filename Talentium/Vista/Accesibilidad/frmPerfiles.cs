@@ -212,7 +212,7 @@ namespace Vista.Accesibilidad
                         if (dtgPerfiles.Rows.Count > 0)
                         {
                             btnAgregar.Name = "btnModificar";
-                            btnAgregar.Text = "Modificar";
+                            btnAgregar.Text = Strings.btnModificar;
                             btnBaja.Enabled = false;
                             cargarCamposMod(dtPermisosDef);
                         }
@@ -223,7 +223,7 @@ namespace Vista.Accesibilidad
                         break;
                     case false:
                         btnAgregar.Name = "btnAgregar";
-                        btnAgregar.Text = "Agregar";
+                        btnAgregar.Text = Strings.btnAgregar;
                         btnBaja.Enabled = true;
                         UtilidadesForms.LimpiarControles(this);
                         configListbox(dtPermisosDef);

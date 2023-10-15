@@ -360,4 +360,10 @@
   <data name="lblTotalEvaluaciones" xml:space="preserve">
     <value>Total evaluations</value>
   </data>
+  <data name="frmModUsuario" xml:space="preserve">
+    <value>Users - Modification</value>
+  </data>
+  <data name="frmMenu" xml:space="preserve">
+    <value>Talentium - Menu</value>
+  </data>
 </root>

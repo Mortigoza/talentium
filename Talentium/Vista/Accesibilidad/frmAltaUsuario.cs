@@ -36,7 +36,7 @@ namespace Vista
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             #region config
 
-            this.Text = "Alta de usuarios";
+            this.Text = Strings.frmAltaUsuario;
 
             //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
@@ -95,7 +95,8 @@ namespace Vista
             #region config
             _idUsuario = id_usuario;
             _mod = true;
-            this.Text = "Modificación de usuarios";
+            this.Text =
+            this.Text = Strings.frmModUsuario;
 
             //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
