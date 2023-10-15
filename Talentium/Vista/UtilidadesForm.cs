@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,46 @@ namespace Comun
             cmb.DisplayMember = "Nombre"; //Muestro el "campo" nombre de la lista
             cmb.ValueMember = "InfoCultura";//Guardo la informacion Cultural en el Combo
             cmb.SelectedValue = Settings.Default.Idioma; //Selecciono el idioma guardado por defecto
+        }
+        public static void checkPermiso(ToolStripMenuItem control, string permiso)
+        {
+            PermisosCache[] permisos = PermisosCache.GetPermisos();
+            for (int i = 0, len = permisos.Length; i < len; i++)
+            {
+                if (permisos[i].Permiso == permiso)
+                {
+                    return;
+                }
+            }
+            control.Enabled = false;
+            control.BackColor = SystemColors.MenuBar;
+        }
+        public static void checkPermiso(List<ToolStripMenuItem> controles, string permiso)
+        {
+            foreach (ToolStripMenuItem control in controles)
+            {
+                checkPermiso(control, permiso);
+            }
+        }
+        public static void checkPermiso(Control control, string permiso)
+        {
+            PermisosCache[] permisos = PermisosCache.GetPermisos();
+            for (int i = 0, len = permisos.Length; i < len; i++)
+            {
+                if (permisos[i].Permiso == permiso)
+                {
+                    return;
+                }
+            }
+            control.Enabled = false;
+            control.BackColor = SystemColors.MenuBar;
+        }
+        public static void checkPermiso(List<Control> controles, string permiso)
+        {
+            foreach (Control control in controles)
+            {
+                checkPermiso(control, permiso);
+            }
         }
 
     }

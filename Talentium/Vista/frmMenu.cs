@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Comun;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,27 @@ namespace Vista
         public frmMenu()
         {
             InitializeComponent();
+            string permisos = "";
+            PermisosCache[] listaPermisos = PermisosCache.GetPermisos();
+            for (int i = 0, len = listaPermisos.Length; i < len; i++)
+            {
+                permisos += $"{listaPermisos[i].Id}: {listaPermisos[i].Permiso}\n";
+            }
+            MessageBox.Show(permisos);
+
+
+            List<ToolStripMenuItem> items;
+            UtilidadesForms.checkPermiso(altasToolStripMenuItem, Permisos.Alta_personal);
+            items = new List<ToolStripMenuItem> {
+                editarToolStripMenuItem, bajasToolStripMenuItem, consultarToolStripMenuItem
+            };
+            UtilidadesForms.checkPermiso(items, Permisos.Gestion_personal);
+            UtilidadesForms.checkPermiso(certificacionDeServiciosToolStripMenuItem, Permisos.Gestion_Certificado);
+            UtilidadesForms.checkPermiso(altasToolStripMenuItem, Permisos.Alta_personal);
+            items = new List<ToolStripMenuItem> {
+                puestosToolStripMenuItem, áreasToolStripMenuItem
+            };
+            UtilidadesForms.checkPermiso(items, Permisos.Gestion_Jerarquia);
         }
 
         private void label2_Click(object sender, EventArgs e)

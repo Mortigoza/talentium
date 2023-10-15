@@ -36,8 +36,10 @@ namespace Vista
                     CambioDePassNU CP = new CambioDePassNU();
                     CP.Show();
                 }
-                else 
-                { 
+                else
+                {
+                CN_TraerPermisos tp = new CN_TraerPermisos();
+                tp.TraerPermisos();
                 this.Hide();
                 frmMenu menu = new frmMenu();
                 menu.Show();

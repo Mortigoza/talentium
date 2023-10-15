@@ -62,6 +62,7 @@
     <Compile Include="CN_LogicaLogin.cs" />
     <Compile Include="Accesibilidad\CN_LogicaUsuarios.cs" />
     <Compile Include="CN_PoliticaPassword.cs" />
+    <Compile Include="CN_TraerPermisos.cs" />
     <Compile Include="CN_Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
