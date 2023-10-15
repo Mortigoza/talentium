@@ -12,7 +12,38 @@ namespace LogicaNegocio.Analisis_y_reportes
 {
     public class CN_CertificacionServicios
     {
+        #region Atributos
+        private int idEmpleado;
+        private int idCertificacion;
+        private DateTime fecha;
+        private int fechaIndex;
+        #endregion
+
+        #region Propiedades
+        public int SetIdEmpleado
+        {
+            get => idEmpleado;
+            set => idEmpleado = value;
+        }
+        public int SetIdCertificacion
+        {
+            get => idCertificacion;
+            set => idCertificacion = value;
+        }
+        public DateTime SetFecha
+        {
+            get => fecha;
+            set => fecha = value;
+        }
+        public int SetFechaIndex
+        {
+            get => fechaIndex;
+            set => fechaIndex = value;
+        }
+        #endregion
+
         CD_CertificacionServicios cs = new CD_CertificacionServicios();
+        #region Consultas
         public DataTable ConsultaCertificacionServicios(string cuit, string nombre, string apellido, int etapa)
         {
             if (string.IsNullOrEmpty(cuit)) cuit = "\0";
@@ -31,10 +62,6 @@ namespace LogicaNegocio.Analisis_y_reportes
             DataTable dt = cs.ConsultaPersonalCertificacion(cuit, nombre, apellido, estado);
             return dt;
         }
-        public void AltaCertificacion(int idEmpleado, DateTime fechaPedido)
-        {
-            cs.AltaCertificacion(idEmpleado, fechaPedido);
-        }
         public DateTime? ConsultaFechaUltimaCertificacion(int idEmpleado)
         {
             DataTable resultado = cs.ConsultaFechaUltimaCertificacion(idEmpleado);
@@ -45,16 +72,30 @@ namespace LogicaNegocio.Analisis_y_reportes
                 case 0:
                     return null;
             }
-             
+
         }
         public DataTable ConsultaPersonaCertificacion(int idCertificacion)
         {
             DataTable dt = cs.ConsultaPersonaCertificacion(idCertificacion);
             return dt;
         }
-        public void UpFechaCertificacion(int idCertificacion, DateTime fecha, int fechaIndex)
+        #endregion
+        #region Alta
+        public void AltaCertificacion()
         {
-            cs.UpFechaCertificacion(idCertificacion, fecha, fechaIndex);
+            cs.SetIdEmpleado = idEmpleado;
+            cs.SetFecha = fecha;
+            cs.AltaCertificacion();
         }
+        #endregion
+        #region Modificacion
+        public void UpFechaCertificacion()
+        {
+            cs.SetIdCertificacion = idCertificacion;
+            cs.SetFecha = fecha;
+            cs.SetFechaIndex = fechaIndex;
+            cs.UpFechaCertificacion();
+        }
+        #endregion
     }
 }

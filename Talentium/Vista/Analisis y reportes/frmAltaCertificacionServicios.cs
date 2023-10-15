@@ -25,7 +25,7 @@ namespace Vista.Analisis_y_reportes
         private int _etapa = 0;
 
         int _rowIndex = -1; // Index de la fila actual
-        int _index = -1; // Index del id_persona de la fila actual
+        int _idPersona = -1; // Index del id_persona de la fila actual
 
         // Filtros
         string _cuit;
@@ -119,11 +119,13 @@ namespace Vista.Analisis_y_reportes
             switch (_mod)
             {
                 default:
-                    verif = cm.verif(dttFecha, dtgCertificados, _index).ToTuple();
+                    verif = cm.verif(dttFecha, dtgCertificados, _idPersona).ToTuple();
 
                     if (verif.Item1)
                     {
-                        cs.AltaCertificacion(_index, dttFecha.Value);
+                        cs.SetIdEmpleado = _idPersona;
+                        cs.SetFecha = dttFecha.Value;
+                        cs.AltaCertificacion();
                         this.Dispose();
                     }
                     else
@@ -132,7 +134,10 @@ namespace Vista.Analisis_y_reportes
                     }
                     break;
                 case true:
-                    cs.UpFechaCertificacion(_idCertificacion, dttFecha.Value, cmbEtapa.SelectedIndex);
+                    cs.SetIdCertificacion = _idCertificacion;
+                    cs.SetFecha = dttFecha.Value;
+                    cs.SetFechaIndex = cmbEtapa.SelectedIndex;
+                    cs.UpFechaCertificacion();
                     this.Dispose();
                     break;
             }
@@ -256,7 +261,7 @@ namespace Vista.Analisis_y_reportes
         private void dtgCertificados_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             _rowIndex = e.RowIndex;
-            _index = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[0].Value);
+            _idPersona = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[0].Value);
             lblPersona.Text = $"{dtgCertificados.Rows[_rowIndex].Cells[1].Value}    {dtgCertificados.Rows[_rowIndex].Cells[2].Value}    {dtgCertificados.Rows[_rowIndex].Cells[3].Value}";
 
         }

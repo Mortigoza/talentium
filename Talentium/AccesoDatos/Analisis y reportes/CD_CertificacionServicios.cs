@@ -10,6 +10,31 @@ namespace AccesoDatos.Analisis_y_reportes
 {
     public class CD_CertificacionServicios: CD_EjecutarSP
     {
+        private int idEmpleado;
+        private int idCertificacion;
+        private DateTime fecha;
+        private int fechaIndex;
+
+        public int SetIdEmpleado
+        {
+            get => idEmpleado;
+            set => idEmpleado = value;
+        }
+        public int SetIdCertificacion
+        {
+            get => idCertificacion;
+            set => idCertificacion = value;
+        }
+        public DateTime SetFecha
+        {
+            get => fecha;
+            set => fecha = value;
+        }
+        public int SetFechaIndex
+        {
+            get => fechaIndex;
+            set => fechaIndex = value;
+        }
         public DataTable ConsultaCertificacionServicios(string cuit, string nombre, string apellido, int etapa)
         {
             SqlParameter param1 = new SqlParameter("@cuit", cuit) { SqlDbType = SqlDbType.NVarChar };
@@ -34,10 +59,10 @@ namespace AccesoDatos.Analisis_y_reportes
             DataTable resultado = EjecutarConsultas("consultar_personal_certificacion_sp", listaParametros.ToArray());
             return resultado;
         }
-        public void AltaCertificacion(int idEmpleado, DateTime fechaPedido)
+        public void AltaCertificacion()
         {
             SqlParameter param1 = new SqlParameter("@id_persona", idEmpleado) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@fecha_solicitud", fechaPedido) { SqlDbType = SqlDbType.Date };
+            SqlParameter param2 = new SqlParameter("@fecha_solicitud", fecha) { SqlDbType = SqlDbType.Date };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
 
@@ -61,7 +86,7 @@ namespace AccesoDatos.Analisis_y_reportes
             DataTable resultado = EjecutarConsultas("consultar_persona_certificacion_sp", listaParametros.ToArray());
             return resultado;
         }
-        public void UpFechaCertificacion(int idCertificacion, DateTime fecha, int fechaIndex)
+        public void UpFechaCertificacion()
         {
             SqlParameter param1 = new SqlParameter("@id_certificacion", idCertificacion) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@fecha", fecha) { SqlDbType = SqlDbType.Date };
