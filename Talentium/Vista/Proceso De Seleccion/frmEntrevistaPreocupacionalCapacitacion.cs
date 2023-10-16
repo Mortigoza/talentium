@@ -27,6 +27,8 @@ namespace Vista.Gestion_de_Talento
             lblNombreApellido.Text = $"{nombre} {apellido}";
             lblPuesto.Text = puesto;
             this.idCandidato = idCandidatoSeleccionado;
+            lblNombreApellidoP.Text = $"{nombre} {apellido}";
+            lblPuestoP.Text = puesto;
             //dtpEntrevista.MinDate = DateTime.Today;
         }
 
@@ -85,14 +87,8 @@ namespace Vista.Gestion_de_Talento
                 cmbAreas.Enabled = true;
             }
         }
-
-        //private bool cambiosDetectados = false;
         private void cmbEstadoEntrevista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cmbEstadoEntrevista.Enabled && cmbEstadoEntrevista.Text != null)
-            //{
-            //    cambiosDetectados = true;
-            //}
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -108,7 +104,7 @@ namespace Vista.Gestion_de_Talento
                 }
                 
                 string estado = cmbEstadoEntrevista.Text;
-                proceso.ModificarEstado(idCandidato, estado);
+                proceso.ModificarEstado(idCandidato, estado, null);
                 MessageBox.Show("Los datos han sido guardados correctamente.");
                 if (estado == "APTO")
                 {
@@ -123,7 +119,7 @@ namespace Vista.Gestion_de_Talento
                 DateTime fecha_etapa = dtpEntrevista.Value;
                 string area = cmbAreas.Text;
                 string entrevistador = cmbEmpleados.Text;
-                proceso.InsertarSegundaEntrevista(idCandidato, fecha_etapa, area, entrevistador);
+                proceso.InsertarEtapa(idCandidato, fecha_etapa, area, entrevistador);
                 MessageBox.Show("Los datos han sido guardados correctamente.");
                 tabPreocupacional.Enabled = false;
             }
@@ -140,6 +136,57 @@ namespace Vista.Gestion_de_Talento
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
             tabPreocupacional.Enabled = false;
+        }
+
+        // *************** Preocupacional **************** 
+
+        private void dtpPreocupacional_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaSeleccionada = dtpPreocupacional.Value;
+
+            if (fechaSeleccionada < DateTime.Now)
+            {
+                cmbEstadoPreocupacional.Enabled = true;
+                rchPatologias.Enabled = true;
+            }
+            else
+            {
+                cmbEstadoPreocupacional.Enabled = false;
+                cmbEstadoPreocupacional.Text = "PROGRAMADA";
+                rchPatologias.Enabled = false;
+            }
+        }
+
+        private void cmbEstadoPreocupacional_DropDown(object sender, EventArgs e)
+        {
+            List<string> estados = new List<string>() { "APTO", "NO APTO" };
+            cmbEstadoPreocupacional.DataSource = estados;
+        }
+
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            int idCandidato = IdCandidato;
+            if (cmbEstadoPreocupacional.Enabled)
+            {
+
+                if (cmbEstadoPreocupacional.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un estado.");
+                    return;
+                }
+
+                string estado = cmbEstadoPreocupacional.Text;
+                string patologias = rchPatologias.Text;
+                proceso.ModificarEstado(idCandidato, estado, patologias);
+                MessageBox.Show("Los datos han sido guardados correctamente.");
+            }
+            else
+            {
+                DateTime fecha_etapa = dtpPreocupacional.Value;
+                proceso.InsertarEtapa(idCandidato, fecha_etapa, null, null);
+                MessageBox.Show("Los datos han sido guardados correctamente.");
+                tabPreocupacional.Enabled = false;
+            }
         }
     }
 }

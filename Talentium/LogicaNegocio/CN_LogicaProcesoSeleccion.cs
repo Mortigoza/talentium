@@ -10,33 +10,34 @@ namespace LogicaNegocio
 {
     public class CN_LogicaProcesoSeleccion
     {
+        CD_Seleccion seleccionDatos = new CD_Seleccion();
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
 
         public bool ExisteCandidato(string cuil)
         {
-            return accesoDatos.ConsultarCandidato(cuil);
+            return seleccionDatos.ConsultarCandidato(cuil);
         }
 
         public DataTable obtenerProvincia()
         {
-            return accesoDatos.ConsultarProvincia();
+            return seleccionDatos.ConsultarProvincia();
         }
 
         public DataTable ObtenerPartido(int id_provincia)
         {
-            return accesoDatos.ConsultarPartido(id_provincia);
+            return seleccionDatos.ConsultarPartido(id_provincia);
         }
 
         public DataTable ObtenerLocalidad(int id_partido)
         {
-            return accesoDatos.ConsultarLocalidad(id_partido);
+            return seleccionDatos.ConsultarLocalidad(id_partido);
         }
 
         public bool InsertarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
             string correo, DateTime fecha_nacimiento, int id_localidad, string calle, int nro, string dpto, string piso,
             int id_puesto)
         {
-            accesoDatos.IngresarCandidato(cuil, nombres, apellidos, tel_celular, tel_alternativo, correo, fecha_nacimiento,
+            seleccionDatos.IngresarCandidato(cuil, nombres, apellidos, tel_celular, tel_alternativo, correo, fecha_nacimiento,
                 id_localidad, calle, nro, dpto, piso, id_puesto);
             return true;
         }
@@ -48,7 +49,7 @@ namespace LogicaNegocio
 
         public DataTable ObtenerCandidatosFiltros(string cuil, int id_puesto, string etapa)
         {
-            return accesoDatos.ConsultarCandidatoFiltros(cuil, id_puesto, etapa);
+            return seleccionDatos.ConsultarCandidatoFiltros(cuil, id_puesto, etapa);
         }
 
         public DataTable ObtenerEmpleados(int id_area)
@@ -63,16 +64,17 @@ namespace LogicaNegocio
 
         public bool ModificarEtapa(string estado, string etapa)
         {
-            return accesoDatos.ModificarEtapa(estado, etapa);
+            //return seleccionDatos.ModificarEtapa(estado, etapa);
+            return true;
         }
 
-        public bool ModificarEstado(int id_candidato, string estado)
+        public bool ModificarEstado(int id_candidato, string estado, string patologias)
         {
-            return accesoDatos.ModificarEstado(id_candidato, estado);
+            return seleccionDatos.ModificarEstado(id_candidato, estado, patologias);
         }
-        public bool InsertarSegundaEntrevista(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
+        public bool InsertarEtapa(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
         {
-            return accesoDatos.InsertarSegundaEntrevista(id_candidato, fecha_etapa, area, entrevistador);
+            return seleccionDatos.InsertarEtapa(id_candidato, fecha_etapa, area, entrevistador);
         }
     }
 }
