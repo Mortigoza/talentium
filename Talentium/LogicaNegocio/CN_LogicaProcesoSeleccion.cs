@@ -76,5 +76,9 @@ namespace LogicaNegocio
         {
             return seleccionDatos.InsertarEtapa(id_candidato, fecha_etapa, area, entrevistador);
         }
+        public DataTable ObtenerDatosEtapas(int id_candidato)
+        {
+            return seleccionDatos.ConsultarDatosEtapas(id_candidato);
+        }
     }
 }

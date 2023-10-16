@@ -116,5 +116,18 @@ namespace AccesoDatos
 
             return modifEtapa.Rows.Count != 0;
         }
+        public DataTable ConsultarDatosEtapas(int id_candidato)
+        {
+            SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
+            //SqlParameter param2 = new SqlParameter("@fecha_etapa", fecha_etapa) { SqlDbType = SqlDbType.DateTime };
+            //SqlParameter param3 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param4 = new SqlParameter("@incluir_patologias", patologias) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param5 = new SqlParameter("@incluir_area", area) { SqlDbType = SqlDbType.NVarChar };
+            //SqlParameter param6 = new SqlParameter("@incluir_nombre_apellido", nombreApellido) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 /*param2, param3, param4, param5, param6 */};
+            DataTable datosEtapas = EjecutarConsultas("obtener_datos_etapas_sp", listaParametros.ToArray());
+
+            return datosEtapas;
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace Vista.Gestion_de_Talento
     {
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
         private int idCandidato;
-        
+        List<string> estados = new List<string>() { "APTO", "NO APTO" };
+
         public int IdCandidato
         {
             get { return idCandidato; }
@@ -34,7 +35,6 @@ namespace Vista.Gestion_de_Talento
 
         private void cmbEstadoEntrevista_DropDown(object sender, EventArgs e)
         {
-            List<string> estados = new List<string>() { "APTO", "NO APTO" };
             cmbEstadoEntrevista.DataSource = estados;
         }
 
@@ -125,6 +125,30 @@ namespace Vista.Gestion_de_Talento
             }
         }
 
+        public void SeleccionarTab(int indiceTab)
+        {
+
+            DataTable datosEtapa = proceso.ObtenerDatosEtapas(idCandidato);
+            if (indiceTab >= 0 && indiceTab < tabEtapas.TabCount)
+            {
+                tabEtapas.SelectedIndex = indiceTab;
+            }
+            if (indiceTab == 0)
+            {
+                DataRow row = datosEtapa.Rows[0];
+                dtpEntrevista.Text = row["fecha_etapa"].ToString();
+                cmbAreas.Text = row["area"].ToString();
+                cmbEmpleados.Text = row["nombreApellido"].ToString();
+                cmbEstadoEntrevista.Text = row["estado"].ToString();
+            } else
+            {
+                DataRow row = datosEtapa.Rows[0];
+                dtpPreocupacional.Text = row["fecha_etapa"].ToString();
+                cmbEstadoPreocupacional.Text = row["estado"].ToString();
+                rchPatologias.AppendText(row["patologias"].ToString());
+            }
+        }
+
         private void tabEtapas_Selecting(object sender, TabControlCancelEventArgs e)
         {
             if ((e.TabPageIndex == 1 && !tabPreocupacional.Enabled))
@@ -159,7 +183,6 @@ namespace Vista.Gestion_de_Talento
 
         private void cmbEstadoPreocupacional_DropDown(object sender, EventArgs e)
         {
-            List<string> estados = new List<string>() { "APTO", "NO APTO" };
             cmbEstadoPreocupacional.DataSource = estados;
         }
 
@@ -185,7 +208,6 @@ namespace Vista.Gestion_de_Talento
                 DateTime fecha_etapa = dtpPreocupacional.Value;
                 proceso.InsertarEtapa(idCandidato, fecha_etapa, null, null);
                 MessageBox.Show("Los datos han sido guardados correctamente.");
-                tabPreocupacional.Enabled = false;
             }
         }
     }

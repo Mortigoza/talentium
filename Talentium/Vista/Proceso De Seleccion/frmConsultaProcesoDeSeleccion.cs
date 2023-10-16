@@ -18,6 +18,7 @@ namespace Vista
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
+            
         }
 
         private void txtCuilCuit_Leave(object sender, EventArgs e)
@@ -122,8 +123,21 @@ namespace Vista
             string nombre = seleccionado.Cells["Nombre"].Value.ToString();
             string apellido = seleccionado.Cells["Apellido"].Value.ToString();
             string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-            frmEntrevistaPreocupacionalCapacitacion etapa = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, idCandidatoSeleccionado);
-            etapa.Show();
+            frmEntrevistaPreocupacionalCapacitacion etapas = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, idCandidatoSeleccionado);
+            if (dtgCandidatos.SelectedRows.Count > 0)
+            {
+                string etapa = dtgCandidatos.SelectedRows[0].Cells["Etapa"].Value.ToString();
+
+                if (etapa.Equals("Preocupacional", StringComparison.OrdinalIgnoreCase))
+                {
+                    etapas.SeleccionarTab(1);
+                }
+                else if (etapa.Equals("Segunda Entrevista", StringComparison.OrdinalIgnoreCase))
+                {
+                    etapas.SeleccionarTab(0);
+                }
+            }
+            etapas.Show();
         }
     }
 }
