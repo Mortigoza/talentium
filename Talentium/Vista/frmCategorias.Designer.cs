@@ -59,21 +59,23 @@
             this.dtgCategoria.AllowUserToDeleteRows = false;
             this.dtgCategoria.BackgroundColor = System.Drawing.Color.White;
             this.dtgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoria.Location = new System.Drawing.Point(37, 37);
+            this.dtgCategoria.Location = new System.Drawing.Point(49, 46);
+            this.dtgCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCategoria.Name = "dtgCategoria";
             this.dtgCategoria.ReadOnly = true;
             this.dtgCategoria.RowHeadersWidth = 51;
             this.dtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCategoria.Size = new System.Drawing.Size(357, 352);
+            this.dtgCategoria.Size = new System.Drawing.Size(476, 433);
             this.dtgCategoria.TabIndex = 0;
             this.dtgCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
             this.dtgCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(320, 396);
+            this.btnBaja.Location = new System.Drawing.Point(427, 487);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(75, 23);
+            this.btnBaja.Size = new System.Drawing.Size(100, 28);
             this.btnBaja.TabIndex = 1;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -89,18 +91,21 @@
             this.grpCrearCategoria.Controls.Add(this.lblJornada);
             this.grpCrearCategoria.Controls.Add(this.txtCategoria);
             this.grpCrearCategoria.Controls.Add(this.lblCategoria);
-            this.grpCrearCategoria.Location = new System.Drawing.Point(413, 37);
+            this.grpCrearCategoria.Location = new System.Drawing.Point(551, 46);
+            this.grpCrearCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.grpCrearCategoria.Name = "grpCrearCategoria";
-            this.grpCrearCategoria.Size = new System.Drawing.Size(250, 172);
+            this.grpCrearCategoria.Padding = new System.Windows.Forms.Padding(4);
+            this.grpCrearCategoria.Size = new System.Drawing.Size(333, 212);
             this.grpCrearCategoria.TabIndex = 2;
             this.grpCrearCategoria.TabStop = false;
             this.grpCrearCategoria.Text = "Crear Categoria";
             // 
             // btnGuardarCrear
             // 
-            this.btnGuardarCrear.Location = new System.Drawing.Point(146, 143);
+            this.btnGuardarCrear.Location = new System.Drawing.Point(195, 176);
+            this.btnGuardarCrear.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarCrear.Name = "btnGuardarCrear";
-            this.btnGuardarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCrear.Size = new System.Drawing.Size(100, 28);
             this.btnGuardarCrear.TabIndex = 7;
             this.btnGuardarCrear.Text = "Guardar";
             this.btnGuardarCrear.UseVisualStyleBackColor = true;
@@ -108,9 +113,10 @@
             // 
             // btnCancelarCrear
             // 
-            this.btnCancelarCrear.Location = new System.Drawing.Point(19, 143);
+            this.btnCancelarCrear.Location = new System.Drawing.Point(25, 176);
+            this.btnCancelarCrear.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarCrear.Name = "btnCancelarCrear";
-            this.btnCancelarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarCrear.Size = new System.Drawing.Size(100, 28);
             this.btnCancelarCrear.TabIndex = 6;
             this.btnCancelarCrear.Text = "Cancelar";
             this.btnCancelarCrear.UseVisualStyleBackColor = true;
@@ -118,49 +124,58 @@
             // 
             // txtSueldo
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(86, 102);
+            this.txtSueldo.Location = new System.Drawing.Point(137, 126);
+            this.txtSueldo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSueldo.Name = "txtSueldo";
-            this.txtSueldo.Size = new System.Drawing.Size(135, 20);
+            this.txtSueldo.Size = new System.Drawing.Size(179, 22);
             this.txtSueldo.TabIndex = 5;
+            this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // lblSueldo
             // 
             this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Location = new System.Drawing.Point(16, 105);
+            this.lblSueldo.Location = new System.Drawing.Point(21, 129);
+            this.lblSueldo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSueldo.Name = "lblSueldo";
-            this.lblSueldo.Size = new System.Drawing.Size(40, 13);
+            this.lblSueldo.Size = new System.Drawing.Size(50, 16);
             this.lblSueldo.TabIndex = 4;
             this.lblSueldo.Text = "Sueldo";
             // 
             // txtJornada
             // 
-            this.txtJornada.Location = new System.Drawing.Point(86, 65);
+            this.txtJornada.Location = new System.Drawing.Point(137, 81);
+            this.txtJornada.Margin = new System.Windows.Forms.Padding(4);
             this.txtJornada.Name = "txtJornada";
-            this.txtJornada.Size = new System.Drawing.Size(135, 20);
+            this.txtJornada.Size = new System.Drawing.Size(179, 22);
             this.txtJornada.TabIndex = 3;
+            this.txtJornada.TextChanged += new System.EventHandler(this.txtJornada_TextChanged);
+            this.txtJornada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJornada_KeyPress);
             // 
             // lblJornada
             // 
             this.lblJornada.AutoSize = true;
-            this.lblJornada.Location = new System.Drawing.Point(16, 68);
+            this.lblJornada.Location = new System.Drawing.Point(21, 84);
+            this.lblJornada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJornada.Name = "lblJornada";
-            this.lblJornada.Size = new System.Drawing.Size(45, 13);
+            this.lblJornada.Size = new System.Drawing.Size(108, 16);
             this.lblJornada.TabIndex = 2;
-            this.lblJornada.Text = "Jornada";
+            this.lblJornada.Text = "Horas Laborales";
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(86, 30);
+            this.txtCategoria.Location = new System.Drawing.Point(137, 38);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(135, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(179, 22);
             this.txtCategoria.TabIndex = 1;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(16, 33);
+            this.lblCategoria.Location = new System.Drawing.Point(21, 41);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(66, 16);
             this.lblCategoria.TabIndex = 0;
             this.lblCategoria.Text = "Categoria";
             // 
@@ -174,18 +189,22 @@
             this.grpModificarCategoria.Controls.Add(this.lblJornadaModif);
             this.grpModificarCategoria.Controls.Add(this.txtCategoriaModif);
             this.grpModificarCategoria.Controls.Add(this.lblCategoriaModif);
-            this.grpModificarCategoria.Location = new System.Drawing.Point(413, 217);
+            this.grpModificarCategoria.Location = new System.Drawing.Point(551, 267);
+            this.grpModificarCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.grpModificarCategoria.Name = "grpModificarCategoria";
-            this.grpModificarCategoria.Size = new System.Drawing.Size(250, 172);
+            this.grpModificarCategoria.Padding = new System.Windows.Forms.Padding(4);
+            this.grpModificarCategoria.Size = new System.Drawing.Size(333, 212);
             this.grpModificarCategoria.TabIndex = 8;
             this.grpModificarCategoria.TabStop = false;
             this.grpModificarCategoria.Text = "Modificar Categoria";
+            this.grpModificarCategoria.Enter += new System.EventHandler(this.grpModificarCategoria_Enter);
             // 
             // btnGuardarModif
             // 
-            this.btnGuardarModif.Location = new System.Drawing.Point(146, 143);
+            this.btnGuardarModif.Location = new System.Drawing.Point(195, 176);
+            this.btnGuardarModif.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarModif.Name = "btnGuardarModif";
-            this.btnGuardarModif.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarModif.Size = new System.Drawing.Size(100, 28);
             this.btnGuardarModif.TabIndex = 7;
             this.btnGuardarModif.Text = "Guardar";
             this.btnGuardarModif.UseVisualStyleBackColor = true;
@@ -193,9 +212,10 @@
             // 
             // btnCancelarModif
             // 
-            this.btnCancelarModif.Location = new System.Drawing.Point(19, 143);
+            this.btnCancelarModif.Location = new System.Drawing.Point(25, 176);
+            this.btnCancelarModif.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarModif.Name = "btnCancelarModif";
-            this.btnCancelarModif.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarModif.Size = new System.Drawing.Size(100, 28);
             this.btnCancelarModif.TabIndex = 6;
             this.btnCancelarModif.Text = "Cancelar";
             this.btnCancelarModif.UseVisualStyleBackColor = true;
@@ -203,61 +223,71 @@
             // 
             // txtSueldoModif
             // 
-            this.txtSueldoModif.Location = new System.Drawing.Point(86, 102);
+            this.txtSueldoModif.Location = new System.Drawing.Point(137, 126);
+            this.txtSueldoModif.Margin = new System.Windows.Forms.Padding(4);
             this.txtSueldoModif.Name = "txtSueldoModif";
-            this.txtSueldoModif.Size = new System.Drawing.Size(135, 20);
+            this.txtSueldoModif.Size = new System.Drawing.Size(179, 22);
             this.txtSueldoModif.TabIndex = 5;
+            this.txtSueldoModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoModif_KeyPress);
             // 
             // lblSueldoModif
             // 
             this.lblSueldoModif.AutoSize = true;
-            this.lblSueldoModif.Location = new System.Drawing.Point(16, 105);
+            this.lblSueldoModif.Location = new System.Drawing.Point(21, 129);
+            this.lblSueldoModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSueldoModif.Name = "lblSueldoModif";
-            this.lblSueldoModif.Size = new System.Drawing.Size(40, 13);
+            this.lblSueldoModif.Size = new System.Drawing.Size(50, 16);
             this.lblSueldoModif.TabIndex = 4;
             this.lblSueldoModif.Text = "Sueldo";
             // 
             // txtJornadaModif
             // 
-            this.txtJornadaModif.Location = new System.Drawing.Point(86, 65);
+            this.txtJornadaModif.Location = new System.Drawing.Point(137, 81);
+            this.txtJornadaModif.Margin = new System.Windows.Forms.Padding(4);
             this.txtJornadaModif.Name = "txtJornadaModif";
-            this.txtJornadaModif.Size = new System.Drawing.Size(135, 20);
+            this.txtJornadaModif.Size = new System.Drawing.Size(179, 22);
             this.txtJornadaModif.TabIndex = 3;
+            this.txtJornadaModif.TextChanged += new System.EventHandler(this.txtJornadaModif_TextChanged);
+            this.txtJornadaModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJornadaModif_KeyPress);
             // 
             // lblJornadaModif
             // 
             this.lblJornadaModif.AutoSize = true;
-            this.lblJornadaModif.Location = new System.Drawing.Point(16, 68);
+            this.lblJornadaModif.Location = new System.Drawing.Point(21, 84);
+            this.lblJornadaModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJornadaModif.Name = "lblJornadaModif";
-            this.lblJornadaModif.Size = new System.Drawing.Size(45, 13);
+            this.lblJornadaModif.Size = new System.Drawing.Size(108, 16);
             this.lblJornadaModif.TabIndex = 2;
-            this.lblJornadaModif.Text = "Jornada";
+            this.lblJornadaModif.Text = "Horas Laborales";
             // 
             // txtCategoriaModif
             // 
-            this.txtCategoriaModif.Location = new System.Drawing.Point(86, 30);
+            this.txtCategoriaModif.Location = new System.Drawing.Point(137, 38);
+            this.txtCategoriaModif.Margin = new System.Windows.Forms.Padding(4);
             this.txtCategoriaModif.Name = "txtCategoriaModif";
-            this.txtCategoriaModif.Size = new System.Drawing.Size(135, 20);
+            this.txtCategoriaModif.Size = new System.Drawing.Size(179, 22);
             this.txtCategoriaModif.TabIndex = 1;
             // 
             // lblCategoriaModif
             // 
             this.lblCategoriaModif.AutoSize = true;
-            this.lblCategoriaModif.Location = new System.Drawing.Point(16, 33);
+            this.lblCategoriaModif.Location = new System.Drawing.Point(21, 41);
+            this.lblCategoriaModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoriaModif.Name = "lblCategoriaModif";
-            this.lblCategoriaModif.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoriaModif.Size = new System.Drawing.Size(66, 16);
             this.lblCategoriaModif.TabIndex = 0;
             this.lblCategoriaModif.Text = "Categoria";
             // 
             // frmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 453);
+            this.ClientSize = new System.Drawing.Size(939, 558);
             this.Controls.Add(this.grpModificarCategoria);
             this.Controls.Add(this.grpCrearCategoria);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgCategoria);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCategorias";
             this.Text = "Categorias";
             this.Load += new System.EventHandler(this.frmCategorias_Load);

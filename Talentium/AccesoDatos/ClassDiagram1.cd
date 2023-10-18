@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AccesoDatos.CD_AccesoBD">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAKBAEJAgCoAJAEIAACQigswhAgAAAAAEYABAICKAIE=</HashCode>
+      <FileName>CD_AccesoBD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccesoDatos.CD_Categorias" Collapsed="true">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAIAAABAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>CD_Categorias.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

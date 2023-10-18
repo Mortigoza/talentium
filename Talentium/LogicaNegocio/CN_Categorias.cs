@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace LogicaNegocio
 {
-    public class Categorias
+    public class CN_Categorias
     {
-        CD_AccesoBD _CDAcceso = new CD_AccesoBD();
+        CD_Categorias _CDAcceso = new CD_Categorias();
 
         public DataTable ObtenerCategoria()
         {
