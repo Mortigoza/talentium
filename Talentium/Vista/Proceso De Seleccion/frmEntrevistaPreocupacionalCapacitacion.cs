@@ -16,6 +16,7 @@ namespace Vista.Gestion_de_Talento
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
         private int idCandidato;
         List<string> estados = new List<string>() { "APTO", "NO APTO" };
+        private bool seleccionarTab = true;
 
         public int IdCandidato
         {
@@ -71,21 +72,7 @@ namespace Vista.Gestion_de_Talento
 
         private void dtpEntrevista_ValueChanged(object sender, EventArgs e)
         {
-            DateTime fechaSeleccionada = dtpEntrevista.Value;
-
-            if (fechaSeleccionada < DateTime.Now) 
-            {
-                cmbEstadoEntrevista.Enabled = true;
-                cmbEmpleados.Enabled = false;
-                cmbAreas.Enabled = false;
-            }
-            else
-            {
-                cmbEstadoEntrevista.Enabled = false;
-                cmbEstadoEntrevista.Text = "PROGRAMADA";
-                cmbEmpleados.Enabled = true;
-                cmbAreas.Enabled = true;
-            }
+            FechaSeleccionadaSegundaEntrevista();
         }
         private void cmbEstadoEntrevista_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,12 +127,39 @@ namespace Vista.Gestion_de_Talento
                 cmbAreas.Text = row["area"].ToString();
                 cmbEmpleados.Text = row["nombreApellido"].ToString();
                 cmbEstadoEntrevista.Text = row["estado"].ToString();
+                if (cmbEstadoEntrevista.Text != "APTO")
+                {
+                    //tabPreocupacional.Enabled = true;
+                    FechaSeleccionadaSegundaEntrevista();
+                } else
+                {
+                    tabEtapas.SelectTab(1);
+                    seleccionarTab = false;
+                    //foreach (Control control in tabSegundaEntrevista.Controls)
+                    //{
+                    //    control.Enabled = false;
+                    //}
+                    foreach (Control control in tabPreocupacional.Controls)
+                    {
+                        control.Enabled = true;
+                    }
+
+                }
             } else
             {
+                tabSegundaEntrevista.Enabled = false;
                 DataRow row = datosEtapa.Rows[0];
                 dtpPreocupacional.Text = row["fecha_etapa"].ToString();
                 cmbEstadoPreocupacional.Text = row["estado"].ToString();
                 rchPatologias.AppendText(row["patologias"].ToString());
+                if(cmbEstadoPreocupacional.Text != "PROGRAMADA")
+                {
+                    foreach (Control control in tabPreocupacional.Controls)
+                    {
+                        control.Enabled = true;
+                    }
+                }
+                
             }
         }
 
@@ -159,7 +173,25 @@ namespace Vista.Gestion_de_Talento
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
-            tabPreocupacional.Enabled = false;
+            //tabPreocupacional.Enabled = false;
+        }
+
+        public void FechaSeleccionadaSegundaEntrevista()
+        {
+            DateTime fechaSeleccionada = dtpEntrevista.Value;
+            if (fechaSeleccionada < DateTime.Now)
+            {
+                cmbEstadoEntrevista.Enabled = true;
+                cmbEmpleados.Enabled = false;
+                cmbAreas.Enabled = false;
+            }
+            else
+            {
+                cmbEstadoEntrevista.Enabled = false;
+                cmbEstadoEntrevista.Text = "PROGRAMADA";
+                cmbEmpleados.Enabled = true;
+                cmbAreas.Enabled = true;
+            }
         }
 
         // *************** Preocupacional **************** 
@@ -202,12 +234,22 @@ namespace Vista.Gestion_de_Talento
                 string patologias = rchPatologias.Text;
                 proceso.ModificarEstado(idCandidato, estado, patologias);
                 MessageBox.Show("Los datos han sido guardados correctamente.");
+                
             }
             else
             {
                 DateTime fecha_etapa = dtpPreocupacional.Value;
                 proceso.InsertarEtapa(idCandidato, fecha_etapa, null, null);
                 MessageBox.Show("Los datos han sido guardados correctamente.");
+            }
+        }
+        
+
+        private void tabEtapas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!seleccionarTab)
+            {
+                tabEtapas.SelectedTab = null;
             }
         }
     }

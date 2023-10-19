@@ -604,6 +604,7 @@
             this.tabEtapas.SelectedIndex = 0;
             this.tabEtapas.Size = new System.Drawing.Size(552, 366);
             this.tabEtapas.TabIndex = 0;
+            this.tabEtapas.SelectedIndexChanged += new System.EventHandler(this.tabEtapas_SelectedIndexChanged);
             this.tabEtapas.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabEtapas_Selecting);
             // 
             // frmEntrevistaPreocupacionalCapacitacion
