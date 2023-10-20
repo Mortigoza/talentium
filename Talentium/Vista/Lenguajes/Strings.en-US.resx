@@ -366,4 +366,7 @@
   <data name="frmMenu" xml:space="preserve">
     <value>Talentium - Menu</value>
   </data>
+  <data name="lblConvenio" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
 </root>

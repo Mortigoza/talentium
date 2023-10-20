@@ -15,8 +15,8 @@ namespace Vista
     {
         public frmConvenios()
         {
-            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
