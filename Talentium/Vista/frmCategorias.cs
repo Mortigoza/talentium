@@ -22,11 +22,23 @@ namespace Vista
         public frmCategorias()
         {
             InitializeComponent();
+           DeshabilitarModificacion();
+        }
+        private void DeshabilitarModificacion()
+        {
+            grpModificarCategoria.Enabled = false;
+       
+        }
+
+        private void HabilitarModificacion()
+        {
+            grpModificarCategoria.Enabled = true;
+  
         }
         private void CargarGrid()
         {
-            
-            var ObtenerCateogria = _categoria.ObtenerCategoria();
+ 
+            DataTable ObtenerCateogria = _categoria.ObtenerCategoria();
 
             DataTable dt = new DataTable();
             dtgCategoria.DataSource = ObtenerCateogria;
@@ -87,35 +99,38 @@ namespace Vista
             LimpiarControlesModificacion();
         }
 
+
         private void btnBaja_Click(object sender, EventArgs e)
         {
+
             try
             {
+
                 int valor = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+                bool eliminacionExitosa = _categoria.EliminarCategoria(valor);
 
-                _categoria.EliminarCategoria(valor);
-                CargarGrid();
-                MessageBox.Show ("La categoria fue dada de baja con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                if (eliminacionExitosa)
+                {
+                    MessageBox.Show("La categoria se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar la categoria.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al eliminar la categoria: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            CargarGrid();
+      
+
         }
 
         private void dtgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewCell celda = dtgCategoria.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                id_categoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
-                txtCategoriaModif.Text =  dtgCategoria.SelectedCells[1].Value.ToString();
-                txtJornadaModif.Text = dtgCategoria.SelectedCells[2].Value.ToString();
-                txtSueldoModif.Text = dtgCategoria.SelectedCells[3].Value.ToString();
-
-            }
+            DeshabilitarModificacion();
+            LimpiarControlesModificacion();
         }
 
         private void btnGuardarModif_Click(object sender, EventArgs e)
@@ -193,6 +208,37 @@ namespace Vista
         }
 
         private void txtJornadaModif_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            id_categoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+            txtCategoriaModif.Text = dtgCategoria.SelectedCells[1].Value.ToString();
+            txtJornadaModif.Text = dtgCategoria.SelectedCells[2].Value.ToString();
+            txtSueldoModif.Text = dtgCategoria.SelectedCells[3].Value.ToString();
+            HabilitarModificacion();
+        }
+
+   
+
+        private void dtgCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell celda = dtgCategoria.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                id_categoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+                txtCategoriaModif.Text = dtgCategoria.SelectedCells[1].Value.ToString();
+                txtJornadaModif.Text = dtgCategoria.SelectedCells[2].Value.ToString();
+                txtSueldoModif.Text = dtgCategoria.SelectedCells[3].Value.ToString();
+              
+            }
+            HabilitarModificacion();
+        }
+
+        private void dtgCategoria_Leave(object sender, EventArgs e)
         {
 
         }

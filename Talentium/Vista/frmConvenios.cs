@@ -23,7 +23,8 @@ namespace Vista
             txtJornada.Enabled = false;
             txtSueldoModif.Enabled = false;
             txtJornadaModif.Enabled = false;
-            txtCategoriaModif.Enabled = false;
+            DeshabilitarModificaciones();
+           
 
             CargarGrid();
         }
@@ -34,10 +35,14 @@ namespace Vista
             {
                 return;
             }
-            var seleccion = cmbCategoria.SelectedValue.ToString();
-            var categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
-            txtJornada.Text = categoria.Rows[0]["jornada"].ToString();
-            txtSueldo.Text = categoria.Rows[0]["sueldos"].ToString();
+            if (cmbCategoria.SelectedIndex != -1)
+            {
+                string seleccion = cmbCategoria.SelectedValue.ToString();
+                DataTable categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
+                txtJornada.Text = categoria.Rows[0]["jornada"].ToString();
+                txtSueldo.Text = categoria.Rows[0]["sueldos"].ToString();
+            }
+            
             
           
         }
@@ -48,9 +53,10 @@ namespace Vista
             var ObtenerConvenio = _convenio.ObtenerConvenio();
 
             dtgConvenio.DataSource = ObtenerConvenio;
-
             dtgConvenio.Columns["id_convenio"].Visible = false;
+            dtgConvenio.Columns["id_convenio1"].Visible = false;
             dtgConvenio.Columns["id_categoria"].Visible = false;
+
 
 
         }
@@ -76,9 +82,10 @@ namespace Vista
         private void btnGuardarCrear_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtConvenio.Text) ||
+            if ((string.IsNullOrWhiteSpace(txtConvenio.Text) ||
               string.IsNullOrWhiteSpace(txtObraSocial.Text) ||
               string.IsNullOrWhiteSpace(txtSeguridadSalud.Text))
+              || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -101,9 +108,10 @@ namespace Vista
         private void btnGuardarModif_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtConvenioModif.Text) ||
+            if ((string.IsNullOrWhiteSpace(txtConvenioModif.Text) ||
          string.IsNullOrWhiteSpace(txtObraSocialModif.Text) ||
          string.IsNullOrWhiteSpace(txtSeguridadSaludModif.Text))
+         || cmbCateModif.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -124,46 +132,36 @@ namespace Vista
 
         }
 
-
-        private void LimpiarControlesModificacion()
-        {
-            txtConvenioModif.Text = null;
-            txtSeguridadSalud.Text = null;
-            txtObraSocialModif.Text = null;
-        }
-
         private void dtgConvenio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewCell celda = dtgConvenio.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
-                txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
-                txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
-                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
-                txtCategoriaModif.Text = dtgConvenio.SelectedCells[6].Value.ToString();
-                txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
-                txtJornadaModif.Text= dtgConvenio.SelectedCells[8].Value.ToString();
-
-             
-
-            }
+            DeshabilitarModificaciones();
+            LimpiarControlesModif();
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+
             try
             {
-                int valor = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
 
-                _convenio.EliminarConvenio(valor);
-                CargarGrid();
-                MessageBox.Show("El convenio fue dada de baja con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int valor = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+                bool eliminacionExitosa = _convenio.EliminarConvenio(valor);
+
+                if (eliminacionExitosa)
+                {
+                    MessageBox.Show("El convenio se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el convenio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al eliminar el convenio: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            CargarGrid();
+         
         }
 
         private void cmbCateModif_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,11 +170,14 @@ namespace Vista
             {
                 return;
             }
-            
-            var seleccion = cmbCateModif.SelectedValue.ToString();
-            var categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
-            txtJornadaModif.Text = categoria.Rows[0]["jornada"].ToString();
-            txtSueldoModif.Text = categoria.Rows[0]["sueldos"].ToString();
+            if (cmbCateModif.SelectedIndex != -1)
+            {
+                string seleccion = cmbCateModif.SelectedValue.ToString();
+                DataTable categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
+                txtJornadaModif.Text = categoria.Rows[0]["jornada"].ToString();
+                txtSueldoModif.Text = categoria.Rows[0]["sueldos"].ToString();
+            }
+          
             
         }
 
@@ -247,6 +248,77 @@ namespace Vista
         private void cmbCateModif_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void LimpiarControles()
+        {
+            txtConvenio.Text = null;
+            cmbCategoria.SelectedIndex = -1;
+            txtObraSocial.Text = null;
+            txtSeguridadSalud.Text = null;
+            txtJornada.Text = null;
+            txtSueldo.Text = null;
+        }
+
+        private void LimpiarControlesModif()
+        {
+            txtConvenioModif.Text = null;
+            cmbCateModif.SelectedIndex = -1;
+            txtObraSocialModif.Text = null;
+            txtSeguridadSaludModif.Text = null;
+            txtJornadaModif.Text = null;
+            txtSueldoModif.Text = null;
+        }
+
+
+        private void btnCancelarCrear_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
+
+        private void btnCancelarModif_Click(object sender, EventArgs e)
+        {
+            LimpiarControlesModif();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+            txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
+            txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
+            txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+            txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
+            txtJornadaModif.Text = dtgConvenio.SelectedCells[8].Value.ToString();
+            cmbCateModif.SelectedValue = int.Parse(dtgConvenio.SelectedCells[4].Value.ToString());
+        }
+
+        private void dtgConvenio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell celda = dtgConvenio.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+                txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
+                txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
+                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+                txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
+                txtJornadaModif.Text = dtgConvenio.SelectedCells[8].Value.ToString();
+                cmbCateModif.SelectedValue = int.Parse(dtgConvenio.SelectedCells[4].Value.ToString());
+            }
+            HabilitarModificaciones();
+
+        }
+
+        public void HabilitarModificaciones()
+        {
+         grpModificar.Enabled = true;
+        }
+
+        public void DeshabilitarModificaciones()
+        {
+
+            grpModificar.Enabled = false;
+       
         }
     }
 }

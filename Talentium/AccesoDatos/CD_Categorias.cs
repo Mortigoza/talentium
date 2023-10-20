@@ -28,11 +28,19 @@ namespace AccesoDatos
             EjecutarConsultas("InsertCategoria_sp", listaParametros.ToArray(), true);
         }
 
-        public void EliminarCategorias(int id_categoria)
+        //public void EliminarCategorias(int id_categoria)
+        //{
+        //    List<SqlParameter> parametros = new List<SqlParameter>();
+        //    parametros.Add(new SqlParameter("@id_categoria", id_categoria));
+        //    EjecutarConsultas("EliminarCategoria", parametros.ToArray(), true);
+        //}
+
+        public DataTable EliminarCategoria(int id_categoria)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@id_categoria", id_categoria));
-            EjecutarConsultas("EliminarCategoria", parametros.ToArray(), true);
+            DataTable dt = EjecutarConsultas("EliminarCategoria_sp", parametros.ToArray());
+            return dt;
         }
 
 

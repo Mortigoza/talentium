@@ -48,6 +48,7 @@
             this.lblJornadaModif = new System.Windows.Forms.Label();
             this.txtCategoriaModif = new System.Windows.Forms.TextBox();
             this.lblCategoriaModif = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).BeginInit();
             this.grpCrearCategoria.SuspendLayout();
             this.grpModificarCategoria.SuspendLayout();
@@ -68,7 +69,8 @@
             this.dtgCategoria.Size = new System.Drawing.Size(476, 433);
             this.dtgCategoria.TabIndex = 0;
             this.dtgCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
-            this.dtgCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
+            this.dtgCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellDoubleClick);
+            this.dtgCategoria.Leave += new System.EventHandler(this.dtgCategoria_Leave);
             // 
             // btnBaja
             // 
@@ -278,11 +280,22 @@
             this.lblCategoriaModif.TabIndex = 0;
             this.lblCategoriaModif.Text = "Categoria";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(770, 491);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 24);
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 558);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModificarCategoria);
             this.Controls.Add(this.grpCrearCategoria);
             this.Controls.Add(this.btnBaja);
@@ -322,5 +335,6 @@
         private System.Windows.Forms.Label lblJornadaModif;
         private System.Windows.Forms.TextBox txtCategoriaModif;
         private System.Windows.Forms.Label lblCategoriaModif;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

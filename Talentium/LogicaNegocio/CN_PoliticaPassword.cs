@@ -10,7 +10,7 @@ namespace LogicaNegocio
 {
     public class CN_PoliticaPassword
     {
-        CD_AccesoBD accesoDatos = new CD_AccesoBD();
+        CD_PoliticasPass accesoDatos = new CD_PoliticasPass();
         public void upPolPass(bool min_carct, bool comb_may, bool num_letras, bool caract_esp, bool contra_ant, bool datos_per)
         {
             try

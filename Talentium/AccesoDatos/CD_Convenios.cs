@@ -59,11 +59,12 @@ namespace AccesoDatos
         }
 
 
-        public void EliminarConvenio(int id_convenio)
+        public DataTable EliminarConvenio(int id_convenio)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@id_convenio", id_convenio));
-            EjecutarConsultas("EliminarConvenio_sp", parametros.ToArray(), true);
+            DataTable dt = EjecutarConsultas("EliminarConvenio_sp", parametros.ToArray());
+            return dt; 
         }
     }
 }

@@ -46,6 +46,7 @@
             this.txtConvenio = new System.Windows.Forms.TextBox();
             this.lblConvenio = new System.Windows.Forms.Label();
             this.grpModificar = new System.Windows.Forms.GroupBox();
+            this.cmbCateModif = new System.Windows.Forms.ComboBox();
             this.btnGuardarModif = new System.Windows.Forms.Button();
             this.txtSueldoModif = new System.Windows.Forms.TextBox();
             this.btnCancelarModif = new System.Windows.Forms.Button();
@@ -59,8 +60,7 @@
             this.lblSeguridadSaludModif = new System.Windows.Forms.Label();
             this.txtConvenioModif = new System.Windows.Forms.TextBox();
             this.lblConvenioModif = new System.Windows.Forms.Label();
-            this.txtCategoriaModif = new System.Windows.Forms.TextBox();
-            this.cmbCateModif = new System.Windows.Forms.ComboBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).BeginInit();
             this.grpCrear.SuspendLayout();
             this.grpModificar.SuspendLayout();
@@ -82,6 +82,7 @@
             this.dtgConvenio.TabIndex = 0;
             this.dtgConvenio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellContentClick);
             this.dtgConvenio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellContentClick);
+            this.dtgConvenio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellDoubleClick);
             // 
             // btnBaja
             // 
@@ -139,6 +140,7 @@
             this.btnCancelarCrear.TabIndex = 12;
             this.btnCancelarCrear.Text = "Cancelar";
             this.btnCancelarCrear.UseVisualStyleBackColor = true;
+            this.btnCancelarCrear.Click += new System.EventHandler(this.btnCancelarCrear_Click);
             // 
             // txtSueldo
             // 
@@ -180,6 +182,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(132, 76);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4);
@@ -259,7 +262,6 @@
             // grpModificar
             // 
             this.grpModificar.Controls.Add(this.cmbCateModif);
-            this.grpModificar.Controls.Add(this.txtCategoriaModif);
             this.grpModificar.Controls.Add(this.btnGuardarModif);
             this.grpModificar.Controls.Add(this.txtSueldoModif);
             this.grpModificar.Controls.Add(this.btnCancelarModif);
@@ -281,6 +283,17 @@
             this.grpModificar.TabIndex = 12;
             this.grpModificar.TabStop = false;
             this.grpModificar.Text = "Modificar Convenio";
+            // 
+            // cmbCateModif
+            // 
+            this.cmbCateModif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCateModif.FormattingEnabled = true;
+            this.cmbCateModif.Location = new System.Drawing.Point(123, 79);
+            this.cmbCateModif.Name = "cmbCateModif";
+            this.cmbCateModif.Size = new System.Drawing.Size(249, 24);
+            this.cmbCateModif.TabIndex = 17;
+            this.cmbCateModif.SelectedIndexChanged += new System.EventHandler(this.cmbCateModif_SelectedIndexChanged);
+            this.cmbCateModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCateModif_KeyPress);
             // 
             // btnGuardarModif
             // 
@@ -311,6 +324,7 @@
             this.btnCancelarModif.TabIndex = 14;
             this.btnCancelarModif.Text = "Cancelar";
             this.btnCancelarModif.UseVisualStyleBackColor = true;
+            this.btnCancelarModif.Click += new System.EventHandler(this.btnCancelarModif_Click);
             // 
             // lblSueldoModif
             // 
@@ -408,30 +422,22 @@
             this.lblConvenioModif.TabIndex = 0;
             this.lblConvenioModif.Text = "Convenio";
             // 
-            // txtCategoriaModif
+            // btnModificar
             // 
-            this.txtCategoriaModif.Location = new System.Drawing.Point(123, 81);
-            this.txtCategoriaModif.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCategoriaModif.Name = "txtCategoriaModif";
-            this.txtCategoriaModif.ReadOnly = true;
-            this.txtCategoriaModif.Size = new System.Drawing.Size(91, 22);
-            this.txtCategoriaModif.TabIndex = 16;
-            // 
-            // cmbCateModif
-            // 
-            this.cmbCateModif.FormattingEnabled = true;
-            this.cmbCateModif.Location = new System.Drawing.Point(251, 79);
-            this.cmbCateModif.Name = "cmbCateModif";
-            this.cmbCateModif.Size = new System.Drawing.Size(121, 24);
-            this.cmbCateModif.TabIndex = 17;
-            this.cmbCateModif.SelectedIndexChanged += new System.EventHandler(this.cmbCateModif_SelectedIndexChanged);
-            this.cmbCateModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCateModif_KeyPress);
+            this.btnModificar.Location = new System.Drawing.Point(830, 524);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 13;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModificar);
             this.Controls.Add(this.grpCrear);
             this.Controls.Add(this.btnBaja);
@@ -482,7 +488,7 @@
         private System.Windows.Forms.Label lblSeguridadSaludModif;
         private System.Windows.Forms.TextBox txtConvenioModif;
         private System.Windows.Forms.Label lblConvenioModif;
-        private System.Windows.Forms.TextBox txtCategoriaModif;
         private System.Windows.Forms.ComboBox cmbCateModif;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
