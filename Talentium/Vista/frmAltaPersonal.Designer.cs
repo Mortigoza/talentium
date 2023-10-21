@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaPersonal));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPersonales = new System.Windows.Forms.TabPage();
+            this.lblFaltanLlenarCampos = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label70 = new System.Windows.Forms.Label();
             this.cmbArea = new System.Windows.Forms.ComboBox();
@@ -96,8 +97,23 @@
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
+            this.tabAcademicos = new System.Windows.Forms.TabPage();
+            this.label75 = new System.Windows.Forms.Label();
+            this.grbSuperior1 = new System.Windows.Forms.GroupBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.cmbProgreso = new System.Windows.Forms.ComboBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtInsitutcionSuperior = new System.Windows.Forms.TextBox();
+            this.cmbEgreso = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.cmbNivelAcademico = new System.Windows.Forms.ComboBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.cmbIngreso = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
@@ -109,54 +125,49 @@
             this.label31 = new System.Windows.Forms.Label();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.label29 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbProgreso2 = new System.Windows.Forms.ComboBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.cmbEgreso3 = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtInstitucionEducativa = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cmbProgreso = new System.Windows.Forms.ComboBox();
+            this.cmbProgreso1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.cmbEgreso = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbEgreso1 = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.cmbIngreso = new System.Windows.Forms.ComboBox();
+            this.cmbIngreso1 = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.txtInsitutcionSuperior = new System.Windows.Forms.TextBox();
-            this.txtCarrera = new System.Windows.Forms.TextBox();
+            this.txtInsitutcionSuperior1 = new System.Windows.Forms.TextBox();
+            this.txtTitulo1 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.cmbNivelAcademico = new System.Windows.Forms.ComboBox();
+            this.cmbNivelAcademico1 = new System.Windows.Forms.ComboBox();
             this.grbSuperior = new System.Windows.Forms.GroupBox();
-            this.cmbProgreso1 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.cmbProgreso2 = new System.Windows.Forms.ComboBox();
             this.label67 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.cmbEgreso1 = new System.Windows.Forms.ComboBox();
+            this.txtInsitutcionSuperior2 = new System.Windows.Forms.TextBox();
+            this.cmbEgreso2 = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.cmbNivelAcademico2 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.cmbIngreso1 = new System.Windows.Forms.ComboBox();
+            this.cmbIngreso2 = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtTitulo2 = new System.Windows.Forms.TextBox();
+            this.tabLaborales = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label74 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.grbExp2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.nupPersonalACargo2 = new System.Windows.Forms.NumericUpDown();
+            this.txtPuesto2 = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtEmpresa2 = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
-            this.label54 = new System.Windows.Forms.Label();
             this.cmbLaboralEgreso2 = new System.Windows.Forms.ComboBox();
             this.label55 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso2 = new System.Windows.Forms.ComboBox();
@@ -164,11 +175,11 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.grbExp3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.nupPersonalACargo3 = new System.Windows.Forms.NumericUpDown();
+            this.txtPuesto3 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso3 = new System.Windows.Forms.ComboBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txtEmpresa3 = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso3 = new System.Windows.Forms.ComboBox();
             this.label60 = new System.Windows.Forms.Label();
@@ -176,12 +187,13 @@
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
             this.nupPersonalACargo = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
             this.cmbLaboralEgreso = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso = new System.Windows.Forms.ComboBox();
@@ -189,73 +201,86 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.grbExp1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
+            this.nupPersonalACargo1 = new System.Windows.Forms.NumericUpDown();
+            this.txtPuesto1 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso1 = new System.Windows.Forms.ComboBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtEmpresa1 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso1 = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupHijos)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabAcademicos.SuspendLayout();
+            this.grbSuperior1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.grbSuperior.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabLaborales.SuspendLayout();
             this.grbExp2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo2)).BeginInit();
             this.grbExp3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo3)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).BeginInit();
             this.grbExp1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(31, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1000, 555);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tabPersonales);
+            this.tabControl.Controls.Add(this.tabAcademicos);
+            this.tabControl.Controls.Add(this.tabLaborales);
+            this.tabControl.Location = new System.Drawing.Point(31, 15);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1000, 551);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
             // 
-            // tabPage1
+            // tabPersonales
             // 
-            this.tabPage1.Controls.Add(this.groupBox7);
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.btbBuscarImagen);
-            this.tabPage1.Controls.Add(this.pctFoto);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(992, 526);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Datos Personales";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPersonales.Controls.Add(this.lblFaltanLlenarCampos);
+            this.tabPersonales.Controls.Add(this.groupBox7);
+            this.tabPersonales.Controls.Add(this.checkBox1);
+            this.tabPersonales.Controls.Add(this.button4);
+            this.tabPersonales.Controls.Add(this.button3);
+            this.tabPersonales.Controls.Add(this.button2);
+            this.tabPersonales.Controls.Add(this.btbBuscarImagen);
+            this.tabPersonales.Controls.Add(this.pctFoto);
+            this.tabPersonales.Controls.Add(this.groupBox3);
+            this.tabPersonales.Controls.Add(this.groupBox2);
+            this.tabPersonales.Location = new System.Drawing.Point(4, 25);
+            this.tabPersonales.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPersonales.Name = "tabPersonales";
+            this.tabPersonales.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPersonales.Size = new System.Drawing.Size(992, 522);
+            this.tabPersonales.TabIndex = 0;
+            this.tabPersonales.Text = "Datos Personales";
+            this.tabPersonales.UseVisualStyleBackColor = true;
+            this.tabPersonales.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // lblFaltanLlenarCampos
+            // 
+            this.lblFaltanLlenarCampos.AutoSize = true;
+            this.lblFaltanLlenarCampos.ForeColor = System.Drawing.Color.Red;
+            this.lblFaltanLlenarCampos.Location = new System.Drawing.Point(35, 465);
+            this.lblFaltanLlenarCampos.Name = "lblFaltanLlenarCampos";
+            this.lblFaltanLlenarCampos.Size = new System.Drawing.Size(284, 16);
+            this.lblFaltanLlenarCampos.TabIndex = 45;
+            this.lblFaltanLlenarCampos.Text = "* FALTAN LLENAR CAMPOS OBLIGATORIOS";
             // 
             // groupBox7
             // 
@@ -385,6 +410,7 @@
             this.button2.Size = new System.Drawing.Size(47, 39);
             this.button2.TabIndex = 4;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btbBuscarImagen
             // 
@@ -538,6 +564,7 @@
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(265, 24);
             this.cmbLocalidad.TabIndex = 31;
+            this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
             // txtDpto
             // 
@@ -657,6 +684,7 @@
             this.cmbNacionalidad.Name = "cmbNacionalidad";
             this.cmbNacionalidad.Size = new System.Drawing.Size(170, 24);
             this.cmbNacionalidad.TabIndex = 55;
+            this.cmbNacionalidad.SelectedIndexChanged += new System.EventHandler(this.cmbNacionalidad_SelectedIndexChanged);
             // 
             // button15
             // 
@@ -669,7 +697,7 @@
             this.button15.TabIndex = 54;
             this.button15.Text = "Validar";
             this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.Click += new System.EventHandler(this.btbValidarCuil);
             // 
             // cmbTipoTelAlternativo
             // 
@@ -906,7 +934,7 @@
             this.txtCuitCuil.Name = "txtCuitCuil";
             this.txtCuitCuil.Size = new System.Drawing.Size(188, 22);
             this.txtCuitCuil.TabIndex = 32;
-            this.txtCuitCuil.Text = "20-39918293-0";
+            this.txtCuitCuil.Text = "20399182930";
             // 
             // label5
             // 
@@ -926,6 +954,7 @@
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(177, 24);
             this.cmbGenero.TabIndex = 33;
+            this.cmbGenero.SelectedIndexChanged += new System.EventHandler(this.cmbGenero_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -947,38 +976,192 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Nro Documento *";
             // 
-            // tabPage2
+            // tabAcademicos
             // 
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.groupBox5);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(992, 526);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Datos Académicos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabAcademicos.Controls.Add(this.label75);
+            this.tabAcademicos.Controls.Add(this.grbSuperior1);
+            this.tabAcademicos.Controls.Add(this.groupBox5);
+            this.tabAcademicos.Controls.Add(this.groupBox4);
+            this.tabAcademicos.Location = new System.Drawing.Point(4, 25);
+            this.tabAcademicos.Margin = new System.Windows.Forms.Padding(4);
+            this.tabAcademicos.Name = "tabAcademicos";
+            this.tabAcademicos.Padding = new System.Windows.Forms.Padding(4);
+            this.tabAcademicos.Size = new System.Drawing.Size(992, 522);
+            this.tabAcademicos.TabIndex = 1;
+            this.tabAcademicos.Text = "Datos Académicos";
+            this.tabAcademicos.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // label75
             // 
-            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(823, 417);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 44);
-            this.button8.TabIndex = 73;
-            this.button8.Text = "Continuar";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(35, 232);
+            this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(195, 16);
+            this.label75.TabIndex = 89;
+            this.label75.Text = "Agregar Formación Académica";
+            // 
+            // grbSuperior1
+            // 
+            this.grbSuperior1.Controls.Add(this.label73);
+            this.grbSuperior1.Controls.Add(this.cmbProgreso);
+            this.grbSuperior1.Controls.Add(this.button16);
+            this.grbSuperior1.Controls.Add(this.label30);
+            this.grbSuperior1.Controls.Add(this.txtInsitutcionSuperior);
+            this.grbSuperior1.Controls.Add(this.cmbEgreso);
+            this.grbSuperior1.Controls.Add(this.label35);
+            this.grbSuperior1.Controls.Add(this.label38);
+            this.grbSuperior1.Controls.Add(this.cmbNivelAcademico);
+            this.grbSuperior1.Controls.Add(this.label65);
+            this.grbSuperior1.Controls.Add(this.cmbIngreso);
+            this.grbSuperior1.Controls.Add(this.label71);
+            this.grbSuperior1.Controls.Add(this.label72);
+            this.grbSuperior1.Controls.Add(this.txtTitulo);
+            this.grbSuperior1.Location = new System.Drawing.Point(36, 252);
+            this.grbSuperior1.Margin = new System.Windows.Forms.Padding(4);
+            this.grbSuperior1.Name = "grbSuperior1";
+            this.grbSuperior1.Padding = new System.Windows.Forms.Padding(4);
+            this.grbSuperior1.Size = new System.Drawing.Size(423, 262);
+            this.grbSuperior1.TabIndex = 88;
+            this.grbSuperior1.TabStop = false;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(9, 214);
+            this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(315, 16);
+            this.label73.TabIndex = 88;
+            this.label73.Text = "____________________________________________";
+            // 
+            // cmbProgreso
+            // 
+            this.cmbProgreso.FormattingEnabled = true;
+            this.cmbProgreso.Location = new System.Drawing.Point(275, 175);
+            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProgreso.Name = "cmbProgreso";
+            this.cmbProgreso.Size = new System.Drawing.Size(105, 24);
+            this.cmbProgreso.TabIndex = 87;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.Transparent;
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Location = new System.Drawing.Point(374, 206);
+            this.button16.Margin = new System.Windows.Forms.Padding(4);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(32, 28);
+            this.button16.TabIndex = 88;
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(275, 155);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(71, 16);
+            this.label30.TabIndex = 86;
+            this.label30.Text = "Progreso *";
+            // 
+            // txtInsitutcionSuperior
+            // 
+            this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 80);
+            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
+            this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
+            this.txtInsitutcionSuperior.TabIndex = 73;
+            // 
+            // cmbEgreso
+            // 
+            this.cmbEgreso.FormattingEnabled = true;
+            this.cmbEgreso.Location = new System.Drawing.Point(139, 175);
+            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbEgreso.Name = "cmbEgreso";
+            this.cmbEgreso.Size = new System.Drawing.Size(111, 24);
+            this.cmbEgreso.TabIndex = 84;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(8, 14);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(46, 16);
+            this.label35.TabIndex = 80;
+            this.label35.Text = "Nivel *";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(136, 155);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(99, 16);
+            this.label38.TabIndex = 83;
+            this.label38.Text = "Año de egreso ";
+            // 
+            // cmbNivelAcademico
+            // 
+            this.cmbNivelAcademico.FormattingEnabled = true;
+            this.cmbNivelAcademico.Location = new System.Drawing.Point(11, 33);
+            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbNivelAcademico.Name = "cmbNivelAcademico";
+            this.cmbNivelAcademico.Size = new System.Drawing.Size(177, 24);
+            this.cmbNivelAcademico.TabIndex = 76;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(7, 60);
+            this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(135, 16);
+            this.label65.TabIndex = 74;
+            this.label65.Text = "Institución educativa *";
+            // 
+            // cmbIngreso
+            // 
+            this.cmbIngreso.FormattingEnabled = true;
+            this.cmbIngreso.Location = new System.Drawing.Point(11, 175);
+            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbIngreso.Name = "cmbIngreso";
+            this.cmbIngreso.Size = new System.Drawing.Size(112, 24);
+            this.cmbIngreso.TabIndex = 82;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(7, 108);
+            this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(48, 16);
+            this.label71.TabIndex = 77;
+            this.label71.Text = "Titulo *";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(8, 156);
+            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(106, 16);
+            this.label72.TabIndex = 81;
+            this.label72.Text = "Año de ingreso *";
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Location = new System.Drawing.Point(12, 128);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(392, 22);
+            this.txtTitulo.TabIndex = 75;
             // 
             // groupBox5
             // 
@@ -992,7 +1175,7 @@
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Controls.Add(this.radioButton8);
             this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Location = new System.Drawing.Point(516, 196);
+            this.groupBox5.Location = new System.Drawing.Point(36, 47);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
@@ -1117,135 +1300,42 @@
             this.label29.TabIndex = 88;
             this.label29.Text = "Inglés";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbProgreso2);
-            this.groupBox1.Controls.Add(this.label65);
-            this.groupBox1.Controls.Add(this.cmbEgreso3);
-            this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Controls.Add(this.txtInstitucionEducativa);
-            this.groupBox1.Controls.Add(this.txtTitulo);
-            this.groupBox1.Controls.Add(this.label35);
-            this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Location = new System.Drawing.Point(516, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(423, 173);
-            this.groupBox1.TabIndex = 71;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Formación Secundaria";
-            // 
-            // cmbProgreso2
-            // 
-            this.cmbProgreso2.FormattingEnabled = true;
-            this.cmbProgreso2.Location = new System.Drawing.Point(16, 136);
-            this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbProgreso2.Name = "cmbProgreso2";
-            this.cmbProgreso2.Size = new System.Drawing.Size(105, 24);
-            this.cmbProgreso2.TabIndex = 71;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(13, 116);
-            this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(98, 16);
-            this.label65.TabIndex = 70;
-            this.label65.Text = "Año cursando *";
-            // 
-            // cmbEgreso3
-            // 
-            this.cmbEgreso3.FormattingEnabled = true;
-            this.cmbEgreso3.Location = new System.Drawing.Point(159, 136);
-            this.cmbEgreso3.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbEgreso3.Name = "cmbEgreso3";
-            this.cmbEgreso3.Size = new System.Drawing.Size(105, 24);
-            this.cmbEgreso3.TabIndex = 69;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 22);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(135, 16);
-            this.label30.TabIndex = 55;
-            this.label30.Text = "Institución educativa *";
-            // 
-            // txtInstitucionEducativa
-            // 
-            this.txtInstitucionEducativa.Location = new System.Drawing.Point(16, 42);
-            this.txtInstitucionEducativa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtInstitucionEducativa.Name = "txtInstitucionEducativa";
-            this.txtInstitucionEducativa.Size = new System.Drawing.Size(389, 22);
-            this.txtInstitucionEducativa.TabIndex = 54;
-            this.txtInstitucionEducativa.Text = "Colegio Superior Victoria";
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Location = new System.Drawing.Point(16, 89);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(389, 22);
-            this.txtTitulo.TabIndex = 62;
-            this.txtTitulo.Text = "Economia y Administracion";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(12, 69);
-            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(48, 16);
-            this.label35.TabIndex = 67;
-            this.label35.Text = "Título *";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(160, 116);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(71, 16);
-            this.label38.TabIndex = 68;
-            this.label38.Text = "Progreso *";
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.cmbProgreso);
+            this.groupBox4.Controls.Add(this.cmbProgreso1);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.label66);
             this.groupBox4.Controls.Add(this.label42);
-            this.groupBox4.Controls.Add(this.cmbEgreso);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.cmbEgreso1);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.cmbIngreso);
+            this.groupBox4.Controls.Add(this.cmbIngreso1);
             this.groupBox4.Controls.Add(this.label39);
-            this.groupBox4.Controls.Add(this.txtInsitutcionSuperior);
-            this.groupBox4.Controls.Add(this.txtCarrera);
+            this.groupBox4.Controls.Add(this.txtInsitutcionSuperior1);
+            this.groupBox4.Controls.Add(this.txtTitulo1);
             this.groupBox4.Controls.Add(this.label40);
             this.groupBox4.Controls.Add(this.label41);
             this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.cmbNivelAcademico);
+            this.groupBox4.Controls.Add(this.cmbNivelAcademico1);
             this.groupBox4.Controls.Add(this.grbSuperior);
-            this.groupBox4.Location = new System.Drawing.Point(45, 15);
+            this.groupBox4.Location = new System.Drawing.Point(545, 8);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(425, 446);
+            this.groupBox4.Size = new System.Drawing.Size(439, 506);
             this.groupBox4.TabIndex = 70;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Formación Superior";
+            this.groupBox4.Text = "Formación Academica";
+            this.groupBox4.Visible = false;
             // 
-            // cmbProgreso
+            // cmbProgreso1
             // 
-            this.cmbProgreso.FormattingEnabled = true;
-            this.cmbProgreso.Location = new System.Drawing.Point(272, 182);
-            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbProgreso.Name = "cmbProgreso";
-            this.cmbProgreso.Size = new System.Drawing.Size(105, 24);
-            this.cmbProgreso.TabIndex = 73;
+            this.cmbProgreso1.FormattingEnabled = true;
+            this.cmbProgreso1.Location = new System.Drawing.Point(272, 182);
+            this.cmbProgreso1.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProgreso1.Name = "cmbProgreso1";
+            this.cmbProgreso1.Size = new System.Drawing.Size(105, 24);
+            this.cmbProgreso1.TabIndex = 73;
             // 
             // button5
             // 
@@ -1283,14 +1373,28 @@
             this.label42.TabIndex = 85;
             this.label42.Text = "____________________________________________";
             // 
-            // cmbEgreso
+            // button1
             // 
-            this.cmbEgreso.FormattingEnabled = true;
-            this.cmbEgreso.Location = new System.Drawing.Point(144, 181);
-            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbEgreso.Name = "cmbEgreso";
-            this.cmbEgreso.Size = new System.Drawing.Size(111, 24);
-            this.cmbEgreso.TabIndex = 72;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(379, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 27);
+            this.button1.TabIndex = 85;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // cmbEgreso1
+            // 
+            this.cmbEgreso1.FormattingEnabled = true;
+            this.cmbEgreso1.Location = new System.Drawing.Point(144, 181);
+            this.cmbEgreso1.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbEgreso1.Name = "cmbEgreso1";
+            this.cmbEgreso1.Size = new System.Drawing.Size(111, 24);
+            this.cmbEgreso1.TabIndex = 72;
             // 
             // label24
             // 
@@ -1298,18 +1402,18 @@
             this.label24.Location = new System.Drawing.Point(141, 161);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(104, 16);
+            this.label24.Size = new System.Drawing.Size(99, 16);
             this.label24.TabIndex = 71;
-            this.label24.Text = "Año de egreso *";
+            this.label24.Text = "Año de egreso ";
             // 
-            // cmbIngreso
+            // cmbIngreso1
             // 
-            this.cmbIngreso.FormattingEnabled = true;
-            this.cmbIngreso.Location = new System.Drawing.Point(16, 181);
-            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbIngreso.Name = "cmbIngreso";
-            this.cmbIngreso.Size = new System.Drawing.Size(112, 24);
-            this.cmbIngreso.TabIndex = 69;
+            this.cmbIngreso1.FormattingEnabled = true;
+            this.cmbIngreso1.Location = new System.Drawing.Point(16, 181);
+            this.cmbIngreso1.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbIngreso1.Name = "cmbIngreso1";
+            this.cmbIngreso1.Size = new System.Drawing.Size(112, 24);
+            this.cmbIngreso1.TabIndex = 69;
             // 
             // label39
             // 
@@ -1321,23 +1425,23 @@
             this.label39.TabIndex = 55;
             this.label39.Text = "Institución educativa *";
             // 
-            // txtInsitutcionSuperior
+            // txtInsitutcionSuperior1
             // 
-            this.txtInsitutcionSuperior.Location = new System.Drawing.Point(15, 89);
-            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
-            this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
-            this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
-            this.txtInsitutcionSuperior.TabIndex = 54;
-            this.txtInsitutcionSuperior.Text = "Insituto 172";
+            this.txtInsitutcionSuperior1.Location = new System.Drawing.Point(15, 89);
+            this.txtInsitutcionSuperior1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior1.Name = "txtInsitutcionSuperior1";
+            this.txtInsitutcionSuperior1.Size = new System.Drawing.Size(393, 22);
+            this.txtInsitutcionSuperior1.TabIndex = 54;
+            this.txtInsitutcionSuperior1.Text = "Insituto 172";
             // 
-            // txtCarrera
+            // txtTitulo1
             // 
-            this.txtCarrera.Location = new System.Drawing.Point(16, 135);
-            this.txtCarrera.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(392, 22);
-            this.txtCarrera.TabIndex = 62;
-            this.txtCarrera.Text = "Analista de Sistemas";
+            this.txtTitulo1.Location = new System.Drawing.Point(16, 135);
+            this.txtTitulo1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo1.Name = "txtTitulo1";
+            this.txtTitulo1.Size = new System.Drawing.Size(392, 22);
+            this.txtTitulo1.TabIndex = 62;
+            this.txtTitulo1.Text = "Analista de Sistemas";
             // 
             // label40
             // 
@@ -1345,9 +1449,9 @@
             this.label40.Location = new System.Drawing.Point(11, 116);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(60, 16);
+            this.label40.Size = new System.Drawing.Size(48, 16);
             this.label40.TabIndex = 67;
-            this.label40.Text = "Carrera *";
+            this.label40.Text = "Titulo *";
             // 
             // label41
             // 
@@ -1369,52 +1473,71 @@
             this.label36.TabIndex = 70;
             this.label36.Text = "Nivel *";
             // 
-            // cmbNivelAcademico
+            // cmbNivelAcademico1
             // 
-            this.cmbNivelAcademico.FormattingEnabled = true;
-            this.cmbNivelAcademico.Location = new System.Drawing.Point(15, 39);
-            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbNivelAcademico.Name = "cmbNivelAcademico";
-            this.cmbNivelAcademico.Size = new System.Drawing.Size(177, 24);
-            this.cmbNivelAcademico.TabIndex = 65;
+            this.cmbNivelAcademico1.FormattingEnabled = true;
+            this.cmbNivelAcademico1.Location = new System.Drawing.Point(15, 39);
+            this.cmbNivelAcademico1.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbNivelAcademico1.Name = "cmbNivelAcademico1";
+            this.cmbNivelAcademico1.Size = new System.Drawing.Size(177, 24);
+            this.cmbNivelAcademico1.TabIndex = 65;
             // 
             // grbSuperior
             // 
-            this.grbSuperior.Controls.Add(this.cmbProgreso1);
+            this.grbSuperior.Controls.Add(this.button8);
+            this.grbSuperior.Controls.Add(this.cmbProgreso2);
             this.grbSuperior.Controls.Add(this.label67);
             this.grbSuperior.Controls.Add(this.button7);
-            this.grbSuperior.Controls.Add(this.textBox14);
-            this.grbSuperior.Controls.Add(this.cmbEgreso1);
+            this.grbSuperior.Controls.Add(this.txtInsitutcionSuperior2);
+            this.grbSuperior.Controls.Add(this.cmbEgreso2);
             this.grbSuperior.Controls.Add(this.label37);
             this.grbSuperior.Controls.Add(this.label25);
-            this.grbSuperior.Controls.Add(this.comboBox15);
+            this.grbSuperior.Controls.Add(this.cmbNivelAcademico2);
             this.grbSuperior.Controls.Add(this.label26);
-            this.grbSuperior.Controls.Add(this.cmbIngreso1);
+            this.grbSuperior.Controls.Add(this.cmbIngreso2);
             this.grbSuperior.Controls.Add(this.label27);
             this.grbSuperior.Controls.Add(this.label28);
-            this.grbSuperior.Controls.Add(this.textBox16);
+            this.grbSuperior.Controls.Add(this.txtTitulo2);
             this.grbSuperior.Location = new System.Drawing.Point(8, 228);
             this.grbSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.grbSuperior.Name = "grbSuperior";
             this.grbSuperior.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSuperior.Size = new System.Drawing.Size(409, 210);
+            this.grbSuperior.Size = new System.Drawing.Size(423, 270);
             this.grbSuperior.TabIndex = 87;
             this.grbSuperior.TabStop = false;
             this.grbSuperior.Visible = false;
             // 
-            // cmbProgreso1
+            // button8
             // 
-            this.cmbProgreso1.FormattingEnabled = true;
-            this.cmbProgreso1.Location = new System.Drawing.Point(271, 175);
-            this.cmbProgreso1.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbProgreso1.Name = "cmbProgreso1";
-            this.cmbProgreso1.Size = new System.Drawing.Size(105, 24);
-            this.cmbProgreso1.TabIndex = 87;
+            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button8.Location = new System.Drawing.Point(299, 217);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 44);
+            this.button8.TabIndex = 73;
+            this.button8.Text = "Continuar";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // cmbProgreso2
+            // 
+            this.cmbProgreso2.FormattingEnabled = true;
+            this.cmbProgreso2.Location = new System.Drawing.Point(265, 165);
+            this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProgreso2.Name = "cmbProgreso2";
+            this.cmbProgreso2.Size = new System.Drawing.Size(105, 24);
+            this.cmbProgreso2.TabIndex = 87;
             // 
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(271, 155);
+            this.label67.Location = new System.Drawing.Point(265, 144);
             this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(71, 16);
@@ -1435,27 +1558,27 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // textBox14
+            // txtInsitutcionSuperior2
             // 
-            this.textBox14.Location = new System.Drawing.Point(7, 80);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(393, 22);
-            this.textBox14.TabIndex = 73;
+            this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(8, 70);
+            this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
+            this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(393, 22);
+            this.txtInsitutcionSuperior2.TabIndex = 73;
             // 
-            // cmbEgreso1
+            // cmbEgreso2
             // 
-            this.cmbEgreso1.FormattingEnabled = true;
-            this.cmbEgreso1.Location = new System.Drawing.Point(135, 175);
-            this.cmbEgreso1.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbEgreso1.Name = "cmbEgreso1";
-            this.cmbEgreso1.Size = new System.Drawing.Size(111, 24);
-            this.cmbEgreso1.TabIndex = 84;
+            this.cmbEgreso2.FormattingEnabled = true;
+            this.cmbEgreso2.Location = new System.Drawing.Point(136, 165);
+            this.cmbEgreso2.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbEgreso2.Name = "cmbEgreso2";
+            this.cmbEgreso2.Size = new System.Drawing.Size(111, 24);
+            this.cmbEgreso2.TabIndex = 84;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(4, 14);
+            this.label37.Location = new System.Drawing.Point(5, 4);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(46, 16);
@@ -1465,82 +1588,110 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(132, 155);
+            this.label25.Location = new System.Drawing.Point(133, 145);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(104, 16);
+            this.label25.Size = new System.Drawing.Size(99, 16);
             this.label25.TabIndex = 83;
-            this.label25.Text = "Año de egreso *";
+            this.label25.Text = "Año de egreso ";
             // 
-            // comboBox15
+            // cmbNivelAcademico2
             // 
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(7, 33);
-            this.comboBox15.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(177, 24);
-            this.comboBox15.TabIndex = 76;
+            this.cmbNivelAcademico2.FormattingEnabled = true;
+            this.cmbNivelAcademico2.Location = new System.Drawing.Point(8, 23);
+            this.cmbNivelAcademico2.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbNivelAcademico2.Name = "cmbNivelAcademico2";
+            this.cmbNivelAcademico2.Size = new System.Drawing.Size(177, 24);
+            this.cmbNivelAcademico2.TabIndex = 76;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 60);
+            this.label26.Location = new System.Drawing.Point(4, 50);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(135, 16);
             this.label26.TabIndex = 74;
             this.label26.Text = "Institución educativa *";
             // 
-            // cmbIngreso1
+            // cmbIngreso2
             // 
-            this.cmbIngreso1.FormattingEnabled = true;
-            this.cmbIngreso1.Location = new System.Drawing.Point(7, 175);
-            this.cmbIngreso1.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbIngreso1.Name = "cmbIngreso1";
-            this.cmbIngreso1.Size = new System.Drawing.Size(112, 24);
-            this.cmbIngreso1.TabIndex = 82;
+            this.cmbIngreso2.FormattingEnabled = true;
+            this.cmbIngreso2.Location = new System.Drawing.Point(8, 165);
+            this.cmbIngreso2.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbIngreso2.Name = "cmbIngreso2";
+            this.cmbIngreso2.Size = new System.Drawing.Size(112, 24);
+            this.cmbIngreso2.TabIndex = 82;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 108);
+            this.label27.Location = new System.Drawing.Point(4, 98);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 16);
+            this.label27.Size = new System.Drawing.Size(48, 16);
             this.label27.TabIndex = 77;
-            this.label27.Text = "Carrera *";
+            this.label27.Text = "Titulo *";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(4, 156);
+            this.label28.Location = new System.Drawing.Point(5, 146);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(106, 16);
             this.label28.TabIndex = 81;
             this.label28.Text = "Año de ingreso *";
             // 
-            // textBox16
+            // txtTitulo2
             // 
-            this.textBox16.Location = new System.Drawing.Point(8, 128);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(392, 22);
-            this.textBox16.TabIndex = 75;
+            this.txtTitulo2.Location = new System.Drawing.Point(9, 118);
+            this.txtTitulo2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo2.Name = "txtTitulo2";
+            this.txtTitulo2.Size = new System.Drawing.Size(392, 22);
+            this.txtTitulo2.TabIndex = 75;
             // 
-            // tabPage3
+            // tabLaborales
             // 
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.grbExp2);
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(992, 526);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Datos Laborales";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabLaborales.Controls.Add(this.button17);
+            this.tabLaborales.Controls.Add(this.label74);
+            this.tabLaborales.Controls.Add(this.button9);
+            this.tabLaborales.Controls.Add(this.grbExp2);
+            this.tabLaborales.Controls.Add(this.groupBox6);
+            this.tabLaborales.Location = new System.Drawing.Point(4, 25);
+            this.tabLaborales.Margin = new System.Windows.Forms.Padding(4);
+            this.tabLaborales.Name = "tabLaborales";
+            this.tabLaborales.Padding = new System.Windows.Forms.Padding(4);
+            this.tabLaborales.Size = new System.Drawing.Size(992, 522);
+            this.tabLaborales.TabIndex = 2;
+            this.tabLaborales.Text = "Datos Laborales";
+            this.tabLaborales.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Transparent;
+            this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button17.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Location = new System.Drawing.Point(242, 5);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(32, 28);
+            this.button17.TabIndex = 95;
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(35, 11);
+            this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(179, 16);
+            this.label74.TabIndex = 94;
+            this.label74.Text = "Agregar Experiencia Laboral";
             // 
             // button9
             // 
@@ -1561,13 +1712,13 @@
             // 
             // grbExp2
             // 
-            this.grbExp2.Controls.Add(this.numericUpDown3);
-            this.grbExp2.Controls.Add(this.textBox27);
+            this.grbExp2.Controls.Add(this.label54);
+            this.grbExp2.Controls.Add(this.nupPersonalACargo2);
+            this.grbExp2.Controls.Add(this.txtPuesto2);
             this.grbExp2.Controls.Add(this.button12);
-            this.grbExp2.Controls.Add(this.textBox19);
+            this.grbExp2.Controls.Add(this.txtEmpresa2);
             this.grbExp2.Controls.Add(this.label53);
             this.grbExp2.Controls.Add(this.button13);
-            this.grbExp2.Controls.Add(this.label54);
             this.grbExp2.Controls.Add(this.cmbLaboralEgreso2);
             this.grbExp2.Controls.Add(this.label55);
             this.grbExp2.Controls.Add(this.cmbLaboralIngreso2);
@@ -1585,20 +1736,30 @@
             this.grbExp2.Text = "Experiencia Laboral";
             this.grbExp2.Visible = false;
             // 
-            // numericUpDown3
+            // label54
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(282, 146);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown3.TabIndex = 104;
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(12, 187);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(315, 16);
+            this.label54.TabIndex = 105;
+            this.label54.Text = "____________________________________________";
             // 
-            // textBox27
+            // nupPersonalACargo2
             // 
-            this.textBox27.Location = new System.Drawing.Point(15, 51);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(393, 22);
-            this.textBox27.TabIndex = 102;
+            this.nupPersonalACargo2.Location = new System.Drawing.Point(282, 146);
+            this.nupPersonalACargo2.Name = "nupPersonalACargo2";
+            this.nupPersonalACargo2.Size = new System.Drawing.Size(120, 22);
+            this.nupPersonalACargo2.TabIndex = 104;
+            // 
+            // txtPuesto2
+            // 
+            this.txtPuesto2.Location = new System.Drawing.Point(15, 51);
+            this.txtPuesto2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto2.Name = "txtPuesto2";
+            this.txtPuesto2.Size = new System.Drawing.Size(393, 22);
+            this.txtPuesto2.TabIndex = 102;
             // 
             // button12
             // 
@@ -1614,13 +1775,13 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // textBox19
+            // txtEmpresa2
             // 
-            this.textBox19.Location = new System.Drawing.Point(15, 98);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(393, 22);
-            this.textBox19.TabIndex = 90;
+            this.txtEmpresa2.Location = new System.Drawing.Point(15, 98);
+            this.txtEmpresa2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa2.Name = "txtEmpresa2";
+            this.txtEmpresa2.Size = new System.Drawing.Size(393, 22);
+            this.txtEmpresa2.TabIndex = 90;
             // 
             // label53
             // 
@@ -1648,16 +1809,6 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(15, 187);
-            this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(364, 16);
-            this.label54.TabIndex = 85;
-            this.label54.Text = "___________________________________________________";
-            // 
             // cmbLaboralEgreso2
             // 
             this.cmbLaboralEgreso2.FormattingEnabled = true;
@@ -1673,9 +1824,9 @@
             this.label55.Location = new System.Drawing.Point(145, 127);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(104, 16);
+            this.label55.Size = new System.Drawing.Size(91, 16);
             this.label55.TabIndex = 71;
-            this.label55.Text = "Año de egreso *";
+            this.label55.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso2
             // 
@@ -1702,9 +1853,9 @@
             this.label57.Location = new System.Drawing.Point(12, 127);
             this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(106, 16);
+            this.label57.Size = new System.Drawing.Size(96, 16);
             this.label57.TabIndex = 68;
-            this.label57.Text = "Año de ingreso *";
+            this.label57.Text = "Desde el año *";
             // 
             // label58
             // 
@@ -1718,11 +1869,11 @@
             // 
             // grbExp3
             // 
-            this.grbExp3.Controls.Add(this.numericUpDown4);
-            this.grbExp3.Controls.Add(this.textBox28);
+            this.grbExp3.Controls.Add(this.nupPersonalACargo3);
+            this.grbExp3.Controls.Add(this.txtPuesto3);
             this.grbExp3.Controls.Add(this.button14);
             this.grbExp3.Controls.Add(this.cmbLaboralEgreso3);
-            this.grbExp3.Controls.Add(this.textBox22);
+            this.grbExp3.Controls.Add(this.txtEmpresa3);
             this.grbExp3.Controls.Add(this.label59);
             this.grbExp3.Controls.Add(this.cmbLaboralIngreso3);
             this.grbExp3.Controls.Add(this.label60);
@@ -1739,20 +1890,20 @@
             this.grbExp3.Visible = false;
             this.grbExp3.Enter += new System.EventHandler(this.grbExp3_Enter);
             // 
-            // numericUpDown4
+            // nupPersonalACargo3
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(274, 164);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown4.TabIndex = 105;
+            this.nupPersonalACargo3.Location = new System.Drawing.Point(274, 164);
+            this.nupPersonalACargo3.Name = "nupPersonalACargo3";
+            this.nupPersonalACargo3.Size = new System.Drawing.Size(120, 22);
+            this.nupPersonalACargo3.TabIndex = 105;
             // 
-            // textBox28
+            // txtPuesto3
             // 
-            this.textBox28.Location = new System.Drawing.Point(6, 63);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(393, 22);
-            this.textBox28.TabIndex = 101;
+            this.txtPuesto3.Location = new System.Drawing.Point(6, 63);
+            this.txtPuesto3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto3.Name = "txtPuesto3";
+            this.txtPuesto3.Size = new System.Drawing.Size(393, 22);
+            this.txtPuesto3.TabIndex = 101;
             // 
             // button14
             // 
@@ -1777,13 +1928,13 @@
             this.cmbLaboralEgreso3.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralEgreso3.TabIndex = 98;
             // 
-            // textBox22
+            // txtEmpresa3
             // 
-            this.textBox22.Location = new System.Drawing.Point(7, 114);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(393, 22);
-            this.textBox22.TabIndex = 100;
+            this.txtEmpresa3.Location = new System.Drawing.Point(7, 114);
+            this.txtEmpresa3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa3.Name = "txtEmpresa3";
+            this.txtEmpresa3.Size = new System.Drawing.Size(393, 22);
+            this.txtEmpresa3.TabIndex = 100;
             // 
             // label59
             // 
@@ -1791,9 +1942,10 @@
             this.label59.Location = new System.Drawing.Point(137, 143);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(104, 16);
+            this.label59.Size = new System.Drawing.Size(91, 16);
             this.label59.TabIndex = 97;
-            this.label59.Text = "Año de egreso *";
+            this.label59.Text = "Hasta el año *";
+            this.label59.Click += new System.EventHandler(this.label59_Click);
             // 
             // cmbLaboralIngreso3
             // 
@@ -1830,9 +1982,9 @@
             this.label62.Location = new System.Drawing.Point(4, 143);
             this.label62.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(106, 16);
+            this.label62.Size = new System.Drawing.Size(96, 16);
             this.label62.TabIndex = 95;
-            this.label62.Text = "Año de ingreso *";
+            this.label62.Text = "Desde el año *";
             // 
             // label63
             // 
@@ -1846,12 +1998,13 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.button18);
             this.groupBox6.Controls.Add(this.nupPersonalACargo);
             this.groupBox6.Controls.Add(this.txtPuesto);
             this.groupBox6.Controls.Add(this.txtEmpresa);
             this.groupBox6.Controls.Add(this.label51);
             this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.cmbLaboralEgreso);
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.cmbLaboralIngreso);
@@ -1859,7 +2012,7 @@
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.grbExp1);
-            this.groupBox6.Location = new System.Drawing.Point(45, 7);
+            this.groupBox6.Location = new System.Drawing.Point(38, 12);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -1867,6 +2020,32 @@
             this.groupBox6.TabIndex = 71;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Experiencia Laboral";
+            this.groupBox6.Visible = false;
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(17, 186);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(315, 16);
+            this.label32.TabIndex = 104;
+            this.label32.Text = "____________________________________________";
+            // 
+            // button18
+            // 
+            this.button18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button18.BackgroundImage")));
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button18.FlatAppearance.BorderSize = 0;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Location = new System.Drawing.Point(380, 15);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(29, 27);
+            this.button18.TabIndex = 104;
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // nupPersonalACargo
             // 
@@ -1919,16 +2098,6 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(15, 187);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(364, 16);
-            this.label32.TabIndex = 85;
-            this.label32.Text = "___________________________________________________";
-            // 
             // cmbLaboralEgreso
             // 
             this.cmbLaboralEgreso.FormattingEnabled = true;
@@ -1944,9 +2113,9 @@
             this.label33.Location = new System.Drawing.Point(145, 127);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(104, 16);
+            this.label33.Size = new System.Drawing.Size(91, 16);
             this.label33.TabIndex = 71;
-            this.label33.Text = "Año de egreso *";
+            this.label33.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso
             // 
@@ -1973,9 +2142,9 @@
             this.label44.Location = new System.Drawing.Point(12, 127);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(106, 16);
+            this.label44.Size = new System.Drawing.Size(96, 16);
             this.label44.TabIndex = 68;
-            this.label44.Text = "Año de ingreso *";
+            this.label44.Text = "Desde el año *";
             // 
             // label45
             // 
@@ -1989,13 +2158,13 @@
             // 
             // grbExp1
             // 
-            this.grbExp1.Controls.Add(this.numericUpDown2);
-            this.grbExp1.Controls.Add(this.textBox26);
-            this.grbExp1.Controls.Add(this.label50);
             this.grbExp1.Controls.Add(this.button11);
+            this.grbExp1.Controls.Add(this.nupPersonalACargo1);
+            this.grbExp1.Controls.Add(this.txtPuesto1);
+            this.grbExp1.Controls.Add(this.label50);
             this.grbExp1.Controls.Add(this.button10);
             this.grbExp1.Controls.Add(this.cmbLaboralEgreso1);
-            this.grbExp1.Controls.Add(this.textBox17);
+            this.grbExp1.Controls.Add(this.txtEmpresa1);
             this.grbExp1.Controls.Add(this.label46);
             this.grbExp1.Controls.Add(this.cmbLaboralIngreso1);
             this.grbExp1.Controls.Add(this.label47);
@@ -2010,31 +2179,6 @@
             this.grbExp1.TabIndex = 87;
             this.grbExp1.TabStop = false;
             this.grbExp1.Visible = false;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(274, 167);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 94;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(6, 67);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(393, 22);
-            this.textBox26.TabIndex = 103;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(9, 206);
-            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(357, 16);
-            this.label50.TabIndex = 102;
-            this.label50.Text = "__________________________________________________";
             // 
             // button11
             // 
@@ -2051,6 +2195,31 @@
             this.button11.TabIndex = 101;
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
+            // nupPersonalACargo1
+            // 
+            this.nupPersonalACargo1.Location = new System.Drawing.Point(274, 167);
+            this.nupPersonalACargo1.Name = "nupPersonalACargo1";
+            this.nupPersonalACargo1.Size = new System.Drawing.Size(120, 22);
+            this.nupPersonalACargo1.TabIndex = 94;
+            // 
+            // txtPuesto1
+            // 
+            this.txtPuesto1.Location = new System.Drawing.Point(6, 67);
+            this.txtPuesto1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto1.Name = "txtPuesto1";
+            this.txtPuesto1.Size = new System.Drawing.Size(393, 22);
+            this.txtPuesto1.TabIndex = 103;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(9, 206);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(315, 16);
+            this.label50.TabIndex = 102;
+            this.label50.Text = "____________________________________________";
             // 
             // button10
             // 
@@ -2075,13 +2244,13 @@
             this.cmbLaboralEgreso1.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralEgreso1.TabIndex = 98;
             // 
-            // textBox17
+            // txtEmpresa1
             // 
-            this.textBox17.Location = new System.Drawing.Point(7, 114);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(393, 22);
-            this.textBox17.TabIndex = 100;
+            this.txtEmpresa1.Location = new System.Drawing.Point(7, 114);
+            this.txtEmpresa1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa1.Name = "txtEmpresa1";
+            this.txtEmpresa1.Size = new System.Drawing.Size(393, 22);
+            this.txtEmpresa1.TabIndex = 100;
             // 
             // label46
             // 
@@ -2089,9 +2258,9 @@
             this.label46.Location = new System.Drawing.Point(137, 143);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(104, 16);
+            this.label46.Size = new System.Drawing.Size(91, 16);
             this.label46.TabIndex = 97;
-            this.label46.Text = "Año de egreso *";
+            this.label46.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso1
             // 
@@ -2128,9 +2297,9 @@
             this.label48.Location = new System.Drawing.Point(4, 143);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(106, 16);
+            this.label48.Size = new System.Drawing.Size(96, 16);
             this.label48.TabIndex = 95;
-            this.label48.Text = "Año de ingreso *";
+            this.label48.Text = "Desde el año *";
             // 
             // label49
             // 
@@ -2147,16 +2316,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1067, 579);
+            this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAltaPersonal";
             this.Text = "Administración del Personal - Altas";
             this.Load += new System.EventHandler(this.frmAltaPersonal_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControl.ResumeLayout(false);
+            this.tabPersonales.ResumeLayout(false);
+            this.tabPersonales.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
@@ -2165,38 +2334,40 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupHijos)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabAcademicos.ResumeLayout(false);
+            this.tabAcademicos.PerformLayout();
+            this.grbSuperior1.ResumeLayout(false);
+            this.grbSuperior1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.grbSuperior.ResumeLayout(false);
             this.grbSuperior.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabLaborales.ResumeLayout(false);
+            this.tabLaborales.PerformLayout();
             this.grbExp2.ResumeLayout(false);
             this.grbExp2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo2)).EndInit();
             this.grbExp3.ResumeLayout(false);
             this.grbExp3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo3)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).EndInit();
             this.grbExp1.ResumeLayout(false);
             this.grbExp1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPersonales;
+        private System.Windows.Forms.TabPage tabAcademicos;
+        private System.Windows.Forms.TabPage tabLaborales;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btbBuscarImagen;
@@ -2250,37 +2421,30 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.ComboBox cmbNivelAcademico;
+        private System.Windows.Forms.ComboBox cmbNivelAcademico1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox cmbIngreso;
+        private System.Windows.Forms.ComboBox cmbIngreso1;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txtInsitutcionSuperior;
-        private System.Windows.Forms.TextBox txtCarrera;
+        private System.Windows.Forms.TextBox txtInsitutcionSuperior1;
+        private System.Windows.Forms.TextBox txtTitulo1;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.ComboBox cmbEgreso;
+        private System.Windows.Forms.ComboBox cmbEgreso1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox cmbEgreso1;
+        private System.Windows.Forms.ComboBox cmbEgreso2;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cmbIngreso1;
+        private System.Windows.Forms.ComboBox cmbIngreso2;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtInsitutcionSuperior2;
+        private System.Windows.Forms.TextBox txtTitulo2;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox cmbNivelAcademico2;
         private System.Windows.Forms.GroupBox grbSuperior;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbEgreso3;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtInstitucionEducativa;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radioButton9;
@@ -2297,7 +2461,6 @@
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso;
@@ -2307,14 +2470,13 @@
         private System.Windows.Forms.GroupBox grbExp1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtEmpresa1;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.GroupBox grbExp2;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtEmpresa2;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso2;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso2;
@@ -2324,7 +2486,7 @@
         private System.Windows.Forms.GroupBox grbExp3;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso3;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox txtEmpresa3;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso3;
         private System.Windows.Forms.Label label60;
@@ -2346,25 +2508,46 @@
         private System.Windows.Forms.ComboBox cmbConvenio;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtPuesto2;
+        private System.Windows.Forms.TextBox txtPuesto3;
         private System.Windows.Forms.TextBox txtPuesto;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.ComboBox cmbProgreso2;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.ComboBox cmbProgreso;
-        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TextBox txtPuesto1;
         private System.Windows.Forms.ComboBox cmbProgreso1;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.ComboBox cmbProgreso2;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.ComboBox cmbNacionalidad;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown nupPersonalACargo2;
+        private System.Windows.Forms.NumericUpDown nupPersonalACargo3;
         private System.Windows.Forms.NumericUpDown nupPersonalACargo;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nupPersonalACargo1;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.GroupBox grbSuperior1;
+        private System.Windows.Forms.ComboBox cmbProgreso;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtInsitutcionSuperior;
+        private System.Windows.Forms.ComboBox cmbEgreso;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox cmbNivelAcademico;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.ComboBox cmbIngreso;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblFaltanLlenarCampos;
     }
 }

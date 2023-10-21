@@ -9,15 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio.Administracion_Del_Personal;
+using LogicaNegocio;
+
 
 namespace Vista
 {
     public partial class frmAltaPersonal : Form
     {
-        CN_AdministracionPersonal logica = new CN_AdministracionPersonal();
+        CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
+
+        CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
+        private bool inicial = true;
+
         public frmAltaPersonal()
         {
             InitializeComponent();
+          
+            DeshabilitarCampos();
+            lblFaltanLlenarCampos.Visible = false;
+
+
         }
 
         private void label19_Click(object sender, EventArgs e)
@@ -76,10 +87,60 @@ namespace Vista
             grbExp2.Visible = true;
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void btbValidarCuil(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
+            {
+                MessageBox.Show("El campo no puede estar vacío.");
+            }
+            else
+            {
+                // Verificar si la entrada contiene solo números y tiene exactamente 11 dígitos
+                if (EsNumero(txtCuitCuil.Text))
+                {
+                    if (txtCuitCuil.Text.Length == 11)
+                    {
+                        bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
+                        if (valor)
+                        {
+                            DeshabilitarCampos();
+                            MessageBox.Show("El Cuit/Cuil ya esta asociado a un empleado");
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cuil Disponible");
+                            HabilitarCampos();
+
+                        }
+                    }
+                    else
+                    {
+                        DeshabilitarCampos();
+                        MessageBox.Show("El campo debe contener 11 digitos.");
+                    }
+                }
+                else
+                {
+                    DeshabilitarCampos();
+                    MessageBox.Show("La entrada debe contener solamente numeros.");
+                }
+            }
         }
+
+        private bool EsNumero(string input )
+        {
+            foreach (char c in input)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false; // La cadena contiene caracteres que no son números
+                }
+            }
+            return true; // La cadena contiene solo números
+        }
+
+ 
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -88,9 +149,9 @@ namespace Vista
 
         private void frmAltaPersonal_Load(object sender, EventArgs e)
         {
-  
-           
-         
+            //tabControl.TabPages[1].Enabled = false;
+            //tabControl.TabPages[2].Enabled = false;
+
 
 
             DataTable provincia = logica.ObtenerProvincia();
@@ -98,26 +159,6 @@ namespace Vista
             cmbProvincia.DisplayMember = "provincia";
             cmbProvincia.ValueMember = "id_provincia";
             //cmbProvincia.SelectedIndex = -1;
-
-
-            //DataTable partido = logica.ObtenerPartido();
-            //cmbPartido.DataSource = partido;
-            //cmbPartido.DisplayMember = "partido";
-            //cmbPartido.ValueMember = "id_partido";
-            //cmbPartido.SelectedIndex = -1;
-
-
-            //DataTable localidades = logica.ObtenerLocalidades();
-            //cmbLocalidad.DataSource = localidades;
-            //cmbLocalidad.DisplayMember = "localidad";
-            //cmbLocalidad.ValueMember = "id_localidad";
-            //if (cmbLocalidad.SelectedItem != null)
-            //{
-            //    string codigoPostal = cmbLocalidad.SelectedValue.ToString();
-            //    txtCodigoPostal.Text = codigoPostal;
-            //}
-
-            //cmbLocalidad.SelectedIndex = -1;
 
             DataTable genero = logica.ObtenerGenero();
             cmbGenero.DataSource = genero;
@@ -130,22 +171,10 @@ namespace Vista
             cmbTipoTelAlternativo.DisplayMember = "tipo";
             cmbTipoTelAlternativo.ValueMember = "id_tipo";
             //cmbTipoTelAlternativo.SelectedIndex = -1;
-
-            DataTable tipotel1 = logica.ObtenerTipoTel();
-            cmbTipoTel.DataSource = tipotel1;
+            cmbTipoTel.DataSource = tipotel.Copy();
             cmbTipoTel.DisplayMember = "tipo";
             cmbTipoTel.ValueMember = "id_tipo";
             //cmbTipoTel.SelectedIndex = -1;
-
-
-            DataTable nivelacademico = logica.ObtenerNivelAcademico();
-            cmbNivelAcademico.DataSource = nivelacademico;
-            cmbNivelAcademico.DisplayMember = "nivel";
-            cmbNivelAcademico.ValueMember = "id_nivel";
-            //cmbNivelAcademico2.DataSource = nivelacademico;
-            //cmbNivelAcademico2.DisplayMember = "nivel";
-            //cmbNivelAcademico2.ValueMember = "id_nivel";
-            //cmbNivelAcademico.SelectedIndex = -1;
 
             DataTable estadocivil = logica.ObtenerEstadoCivil();
             cmbEstadoCivil.DataSource = estadocivil;
@@ -172,16 +201,14 @@ namespace Vista
             cmbProgreso.DisplayMember = "estado_progreso";
             cmbProgreso.ValueMember = "id_progreso";
             //cmbProgreso.SelectedIndex = -1;
-
-            cmbProgreso1.DataSource = progreso;
+            cmbProgreso1.DataSource = progreso.Copy();
             cmbProgreso1.DisplayMember = "estado_progreso";
             cmbProgreso1.ValueMember = "id_progreso";
-            //cmbProgreso1.SelectedIndex = -1;
-
-            cmbProgreso2.DataSource = progreso;
+            //cmbProgreso.SelectedIndex = -1;
+            cmbProgreso2.DataSource = progreso.Copy();
             cmbProgreso2.DisplayMember = "estado_progreso";
             cmbProgreso2.ValueMember = "id_progreso";
-            //cmbProgreso2.SelectedIndex = -1;
+            //cmbProgreso1.SelectedIndex = -1;
 
             DataTable convenio = logica.ObtenerConvenio();
             cmbConvenio.DataSource = convenio;
@@ -201,6 +228,9 @@ namespace Vista
             cmbArea.ValueMember = "id_area";
             //cmbArea.SelectedIndex = -1;
 
+
+            //ComboBox Solapa Academico*************
+
             // Agrega los años desde 1900 hasta el año actual a la lista
             int anioActual = DateTime.Now.Year;
             List<string> listaDeAnios = new List<string>();
@@ -208,17 +238,38 @@ namespace Vista
             for (int i = anioActual; i >= 1900; i--)
             {
                 listaDeAnios.Add(i.ToString());
-            }      
+            }
             // Selecciona el ComboBox en el cual se cargan los años
             cmbIngreso.Items.AddRange(listaDeAnios.ToArray());
-            //ComboBox Solapa Academico
-            cmbEgreso.Items.AddRange(listaDeAnios.ToArray());
             cmbIngreso1.Items.AddRange(listaDeAnios.ToArray());
+            cmbIngreso2.Items.AddRange(listaDeAnios.ToArray());
+            cmbEgreso.Items.AddRange(listaDeAnios.ToArray());
             cmbEgreso1.Items.AddRange(listaDeAnios.ToArray());
-            cmbEgreso3.Items.AddRange(listaDeAnios.ToArray());
+            cmbEgreso2.Items.AddRange(listaDeAnios.ToArray());
+
+            cmbIngreso.SelectedIndex = 0;
+            cmbIngreso1.SelectedIndex = 0;
+            cmbIngreso2.SelectedIndex = 0;
+            cmbEgreso.SelectedIndex = 0;
+            cmbEgreso1.SelectedIndex = 0;
+            cmbEgreso2.SelectedIndex = 0;
+
+            DataTable nivelacademico = logica.ObtenerNivelAcademico();
+            cmbNivelAcademico.DataSource = nivelacademico;
+            cmbNivelAcademico.DisplayMember = "nivel";
+            cmbNivelAcademico.ValueMember = "id_nivel";
+            cmbNivelAcademico.SelectedIndex = -1;
+            cmbNivelAcademico1.DataSource = nivelacademico.Copy();
+            cmbNivelAcademico1.DisplayMember = "nivel";
+            cmbNivelAcademico1.ValueMember = "id_nivel";
+            cmbNivelAcademico1.SelectedIndex = -1;
+            cmbNivelAcademico2.DataSource = nivelacademico.Copy();
+            cmbNivelAcademico2.DisplayMember = "nivel";
+            cmbNivelAcademico2.ValueMember = "id_nivel";
+            cmbNivelAcademico2.SelectedIndex = -1;
+
 
             //ComboBox Solapa Laboral
-
             cmbLaboralIngreso.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralEgreso.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralIngreso1.Items.AddRange(listaDeAnios.ToArray());
@@ -227,6 +278,17 @@ namespace Vista
             cmbLaboralEgreso2.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralIngreso3.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralEgreso3.Items.AddRange(listaDeAnios.ToArray());
+
+            cmbLaboralIngreso.SelectedIndex = 0;
+            cmbLaboralEgreso.SelectedIndex = 0;
+            cmbLaboralIngreso1.SelectedIndex = 0;
+            cmbLaboralEgreso1.SelectedIndex = 0;
+            cmbLaboralIngreso2.SelectedIndex = 0;
+            cmbLaboralEgreso2.SelectedIndex = 0;
+            cmbLaboralIngreso3.SelectedIndex = 0;
+            cmbLaboralEgreso3.SelectedIndex = 0;
+
+
         }
 
         private void grbExp3_Enter(object sender, EventArgs e)
@@ -236,14 +298,79 @@ namespace Vista
 
         private void button9_Click(object sender, EventArgs e)
         {
-            CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
             Persona insert = new Persona();
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-            #region Mapeo
 
-            insert. apellidos = txtApellidos.Text;
+
+            bool todosCamposValidos = true;
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is GroupBox)
+                {
+                    GroupBox groupbox = (GroupBox)control;
+                    if (string.IsNullOrWhiteSpace(groupbox.Text))
+                    {
+                        todosCamposValidos = false;
+                        break;  // Puedes usar break si deseas detener la validación en el primer campo vacío.
+                    }
+                }
+
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        todosCamposValidos = false;
+                        break;  // Puedes usar break si deseas detener la validación en el primer campo vacío.
+                    }
+                }
+                else if (control is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    if (comboBox.SelectedIndex == -1)
+                    {
+                        todosCamposValidos = false;
+                        break;  // Puedes usar break si deseas detener la validación en el primer ComboBox sin selección.
+                    }
+                }
+                else if (control is DateTimePicker)
+                {
+                    DateTimePicker dateTimePicker = (DateTimePicker)control;
+                    if (dateTimePicker.Value == dateTimePicker.MinDate)
+                    {
+                        todosCamposValidos = false;
+                        break;  // Puedes usar break si deseas detener la validación en el primer DateTimePicker no seleccionado.
+                    }
+                }
+                else if (control is NumericUpDown)
+                {
+                    NumericUpDown numericUpDown = (NumericUpDown)control;
+                    if (numericUpDown.Value == 0)
+                    {
+                        todosCamposValidos = false;
+                        break;  // Puedes usar break si deseas detener la validación en el primer NumericUpDown con valor cero.
+                    }
+                }
+            }
+
+            if (todosCamposValidos)
+            {
+                // Todos los campos están llenos.
+                // Puedes continuar con tu lógica de procesamiento.
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Error de validación");
+            }
+
+
+            #region Mapeo
+            
+
+            insert.apellidos = txtApellidos.Text;
             insert.nombres = txtNombres.Text;
             insert.id_tipo_doc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
             insert.nro_doc = txtDni.Text;
@@ -253,74 +380,110 @@ namespace Vista
             insert.dpto = txtDpto.Text;
             insert.piso = txtPiso.Text;
             insert.id_localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
-            insert.id_puesto = int.Parse (cmbPuesto.SelectedValue.ToString());
+            insert.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
             insert.id_area = int.Parse(cmbArea.SelectedValue.ToString());
             insert.email = txtEmail.Text;
             insert.id_nacionalidad = int.Parse(cmbNacionalidad.SelectedValue.ToString());
-
             insert.id_genero = int.Parse(cmbGenero.SelectedValue.ToString());
             insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
-
-
-
             insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
-            insert.hijos = nupHijos.Text.Length;
-            insert.id_convenio = int.Parse (cmbConvenio.SelectedValue.ToString());
+            insert.hijos = (int)nupHijos.Value;
+            insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
             insert.foto_perfil = ms.GetBuffer();
-            //insert.telefono = txtTelefono.Text;
-            //insert.tipo = cmbTipoTel.Text;
-            //insert.telefono_alternativo = txtTelefonoAlternativo.Text;
-            //insert.tipo2 = cmbTipoTel.Text;
-            //insert.contacto = txtContacto.Text;
-            //insert.codigo_postal = txtCodigoPostal.Text;
-            //insert.partido = cmbPartido.Text;
-            //insert.provincia = cmbProvincia.Text;
-
+            insert.telefono = txtTelefono.Text;
+            insert.id_tipo = (int)cmbTipoTel.SelectedValue;
+            insert.telefono_alternativo = txtTelefonoAlternativo.Text;
+            insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
+            insert.contacto = txtContacto.Text;
 
 
             //ACADEMICOS
-            insert.id_nivel = cmbNivelAcademico.Text.Length;
-            insert.institucion = txtInsitutcionSuperior.Text;
-            insert.carrera = txtCarrera.Text;
-            insert.año_ingreso = cmbIngreso.Text.Length;
-            insert.año_egreso = cmbEgreso.Text.Length;
-            // string año_cursado = txtApellidos.Text;
+            insert.id_nivel = int.Parse(cmbNivelAcademico1.SelectedValue.ToString());
+            insert.institucion = txtInsitutcionSuperior1.Text;
+            insert.carrera = txtTitulo1.Text;
+            insert.año_ingreso = int.Parse(cmbIngreso1.SelectedItem.ToString());
+            insert.año_egreso = int.Parse(cmbEgreso1.SelectedItem.ToString());
             insert.titulo = txtTitulo.Text;
+            insert.id_progreso = int.Parse(cmbProgreso1.SelectedValue.ToString());
+            insert.id_progreso = cmbProgreso2.Text.Length;
 
             //LABORAL
 
             insert.puesto = txtPuesto.Text;
             insert.empresa = txtEmpresa.Text;
-            insert.fecha_ingreso = cmbLaboralIngreso.Text.Length;
-            insert.fecha_egreso = cmbLaboralEgreso.Text.Length;
-            insert.personal_a_cargo = nupPersonalACargo.Text.Length;
-# endregion
+            insert.fecha_ingreso = int.Parse(cmbLaboralIngreso.SelectedItem.ToString());
+            insert.fecha_egreso = int.Parse(cmbLaboralEgreso.SelectedItem.ToString());
+            insert.personal_a_cargo = (int)nupPersonalACargo.Value;
+            #endregion
+            logicaPersona.InsertarPersona(insert);
 
-            try
-            {
-                // Llamar al método de la capa de lógica de negocio para insertar una persona
-                logicaPersona.InsertarPersona( insert);
-     
-
-                MessageBox.Show("La persona se ha insertado correctamente.");
-            }
-            catch (Exception ex)
-            {
-                // Manejar cualquier excepción que pueda ocurrir
-                MessageBox.Show("Se produjo un error al insertar la persona: " + ex.Message);
-            }
+   
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+       
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
 
+            bool todosCompletos = true;
+
+            List<Control> verificarCampos = new List<Control>
+            {
+                txtApellidos,txtNombres,txtTelefono,txtCuitCuil,txtDni,txtEmail,txtCalle,txtPuesto,
+                cmbArea,cmbConvenio,cmbPuesto,cmbGenero,cmbLocalidad,cmbNacionalidad,cmbPartido,cmbEstadoCivil,cmbProvincia
+                ,nupHijos,cmbEstadoCivil,cmbTipoDoc,cmbTipoTel
+                //CONTROLAR QUE ESTEN TODOS LOS CAMPOS 
+
+            };
+
+            foreach (Control control in verificarCampos)
+            {
+                if (control is TextBox textbox)
+                {
+                    if (string.IsNullOrEmpty(textbox.Text))
+                    {
+                        todosCompletos = false;
+                        ResaltarEnRojo(control);
+                    }
+                }
+            }
+
+            if (todosCompletos == true)
+            
+            {
+                
+                MessageBox.Show("Todos los campos obligatorios estan completos");
+                //RestaurarColorPredeterminado();
+                tabControl.SelectedTab = tabAcademicos;
+               
+
+            }
+            else
+            {
+                MessageBox.Show("Faltan llenar campos obligatorios");
+                lblFaltanLlenarCampos.Visible = false;
+            }
+
+
+
+
         }
 
+
+        private void RestaurarColorPredeterminado (Control control)
+        {
+            control.ForeColor = SystemColors.Window;
+        }
+
+        private void ResaltarEnRojo (Control control)
+        {
+            control.ForeColor = Color.Red;
+        }
+    
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -389,6 +552,131 @@ namespace Vista
                     cmbLocalidad.Items.Clear();
                 }
             }
+        }
+
+
+        public void HabilitarCampos()
+        {
+            
+
+            foreach (TabPage tabPage in tabControl.TabPages)
+            {
+                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
+                {
+                    foreach (Control control in groupBox.Controls)
+                    {
+                        control.Enabled = true; // Habilitar todos los controles dentro del GroupBox
+                    }
+                }
+            }
+        }
+        public void DeshabilitarCampos ()
+        {
+       
+            foreach (TabPage tabPage in tabControl.TabPages)
+            {
+                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
+                {
+                    foreach (Control control in groupBox.Controls)
+                    {
+                        if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker) && control != txtCuitCuil)
+                        {
+                            control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            groupBox4.Visible = true;
+        }
+
+        private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!e.TabPage.Enabled)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label59_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            groupBox6.Visible = true;
+            button17.Visible = false;
+            label74.Visible = false;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            groupBox6.Visible = false;
+            button17.Visible = true;
+            label74.Visible = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            groupBox4.Visible = false;
+        }
+
+        private void cmbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbGenero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Configura el cuadro de diálogo para seleccionar archivos de imagen
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.png;*.bmp;*.gif|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Lee la imagen seleccionada
+                    string rutaImagen = openFileDialog.FileName;
+                    Image imagen = Image.FromFile(rutaImagen);
+
+                    // Muestra la imagen en el PictureBox
+                    pctFoto.Image = imagen;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView partidoSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
+            string variable = partidoSeleccionada["cod_postal"].ToString();
+            txtCodigoPostal.Text = variable;
         }
     }
 }

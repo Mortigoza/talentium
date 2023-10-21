@@ -103,6 +103,20 @@ namespace AccesoDatos.Administracion_Personal
         }
 
 
+        public DataTable ObtenerCodigoPostal(int id_localidad)
+        {
+            
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_localidad", id_localidad));
+           var respuesta = EjecutarConsultas("ObtenerCodigoPostal_sp", parametros.ToArray(), true);
+            return respuesta;
+        }
+
+
+
+
+
+
 
 
     }

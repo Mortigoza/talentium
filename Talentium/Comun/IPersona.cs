@@ -11,5 +11,7 @@ namespace Comun
         void InsertarPersona(Persona insert);
         void EliminarPersona (Persona insert);
         void ConsultarPersona(Persona insert);
+
+
     }
 }

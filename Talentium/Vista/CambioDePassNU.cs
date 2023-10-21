@@ -92,5 +92,15 @@ namespace Vista
         {
 
         }
+
+        private void tbContra1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbContra2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

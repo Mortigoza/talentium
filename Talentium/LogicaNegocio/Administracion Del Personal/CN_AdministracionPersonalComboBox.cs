@@ -11,7 +11,7 @@ using AccesoDatos.Administracion_Personal;
 
 namespace LogicaNegocio.Administracion_Del_Personal
 {
-    public class CN_AdministracionPersonal
+    public class CN_AdministracionPersonalComboBox
     {
         CD_AccesoBDComboBox accesoDatos = new CD_AccesoBDComboBox();
 
@@ -94,6 +94,13 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
             DataTable area = accesoDatos.ListarArea();
             return area;
+        }
+
+        public DataTable ObtenerCodigoPostal(int id_localidad)
+        {
+
+           return accesoDatos.ObtenerCodigoPostal(id_localidad);
+    
         }
 
     }

@@ -31,14 +31,21 @@ namespace Comun
 
         public byte[] foto_perfil  { get; set; }
         
-      /*string telefono, string tipo, string telefono_alternativo, string tipo2,
-      string contacto,string codigo_postal, string partido, string provincia,*/ 
+        public string telefono { get; set; }
+        public int id_tipo { get; set; }
+        public string telefono_alternativo { get; set; }
+        public int id_tipo_alternativo { get; set; }
+        public string contacto   { get; set; }
+
+        public string codigo_postal { get; set; }
+   
         public int id_nivel { get; set; }
         public string institucion { get; set; }
         public string carrera { get; set; }
         public int  año_ingreso { get; set; }
         public int año_egreso { get; set; }
         public string titulo { get; set; }
+        public int id_progreso { get; set; }
         public string puesto { get; set; }
         public string empresa { get; set; }
         public int fecha_ingreso { get; set; }
