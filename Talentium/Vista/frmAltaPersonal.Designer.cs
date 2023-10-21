@@ -1666,6 +1666,7 @@
             this.tabLaborales.TabIndex = 2;
             this.tabLaborales.Text = "Datos Laborales";
             this.tabLaborales.UseVisualStyleBackColor = true;
+            this.tabLaborales.Click += new System.EventHandler(this.tabLaborales_Click);
             // 
             // button17
             // 

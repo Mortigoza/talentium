@@ -19,7 +19,11 @@ namespace Vista
         CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
+
+
         private bool inicial = true;
+        private int infoLaborales = 0;
+        private int infoAcademicos = 0;
 
         public frmAltaPersonal()
         {
@@ -55,11 +59,15 @@ namespace Vista
         private void button6_Click(object sender, EventArgs e)
         {
             grbExp1.Visible = true;
+            button18.Visible = false;
+            infoLaborales++;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             grbExp1.Visible = false;
+            button18.Visible = true;
+            infoLaborales--;
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -70,25 +78,34 @@ namespace Vista
         private void button12_Click(object sender, EventArgs e)
         {
             grbExp2.Visible = false;
+            button10.Visible = true;
+            infoLaborales--;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             grbExp3.Visible = true;
+            button12.Visible =false;
+            infoLaborales++;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             grbExp3.Visible = false;
+            button12.Visible =true;
+            infoLaborales--;
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
             grbExp2.Visible = true;
+            button10.Visible = false;
+            infoLaborales++;
         }
 
         private void btbValidarCuil(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
             {
                 MessageBox.Show("El campo no puede estar vacío.");
@@ -409,13 +426,29 @@ namespace Vista
 
             //LABORAL
 
-            insert.puesto = txtPuesto.Text;
-            insert.empresa = txtEmpresa.Text;
-            insert.fecha_ingreso = int.Parse(cmbLaboralIngreso.SelectedItem.ToString());
-            insert.fecha_egreso = int.Parse(cmbLaboralEgreso.SelectedItem.ToString());
-            insert.personal_a_cargo = (int)nupPersonalACargo.Value;
+            insert.puesto1 = txtPuesto.Text;
+            insert.puesto2 = txtPuesto1.Text;
+            insert.puesto3 = txtPuesto2.Text;
+            insert.puesto4 = txtPuesto3.Text;
+            insert.empresa1 = txtEmpresa.Text;
+            insert.empresa2 = txtEmpresa1.Text;
+            insert.empresa3 = txtEmpresa2.Text;
+            insert.empresa4 = txtEmpresa3.Text;
+            insert.fecha_ingreso1 = int.Parse(cmbLaboralIngreso.SelectedItem.ToString());
+            insert.fecha_ingreso2 = int.Parse(cmbLaboralIngreso1.SelectedItem.ToString());
+            insert.fecha_ingreso3 = int.Parse(cmbLaboralIngreso2.SelectedItem.ToString());
+            insert.fecha_ingreso4 = int.Parse(cmbLaboralIngreso3.SelectedItem.ToString());
+            insert.fecha_egreso1 = int.Parse(cmbLaboralEgreso.SelectedItem.ToString());
+            insert.fecha_egreso2 = int.Parse(cmbLaboralEgreso1.SelectedItem.ToString());
+            insert.fecha_egreso3 = int.Parse(cmbLaboralEgreso2.SelectedItem.ToString());
+            insert.fecha_egreso4 = int.Parse(cmbLaboralEgreso3.SelectedItem.ToString());
+            insert.personal_a_cargo1 = (int)nupPersonalACargo.Value;
+            insert.personal_a_cargo2 = (int)nupPersonalACargo1.Value;
+            insert.personal_a_cargo3 = (int)nupPersonalACargo2.Value;
+            insert.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
             #endregion
-            logicaPersona.InsertarPersona(insert);
+            logicaPersona.InsertarPersona(insert, infoLaborales);
+            
 
    
             
@@ -623,6 +656,8 @@ namespace Vista
             groupBox6.Visible = true;
             button17.Visible = false;
             label74.Visible = false;
+
+            infoLaborales++;
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -630,6 +665,7 @@ namespace Vista
             groupBox6.Visible = false;
             button17.Visible = true;
             label74.Visible = true;
+            infoLaborales--;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -677,6 +713,11 @@ namespace Vista
             DataRowView partidoSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
             string variable = partidoSeleccionada["cod_postal"].ToString();
             txtCodigoPostal.Text = variable;
+        }
+
+        private void tabLaborales_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

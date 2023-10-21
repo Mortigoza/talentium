@@ -85,15 +85,25 @@ namespace AccesoDatos.Administracion_Personal
                 new SqlParameter("año_egreso",insert. año_egreso),
                 new SqlParameter("titulo", insert.titulo),
                 new SqlParameter("id_progreso", insert.id_progreso),
-                new SqlParameter("puesto", insert.puesto),
-                new SqlParameter("empresa", insert.empresa),
-                new SqlParameter("fecha_ingreso" , insert.fecha_ingreso),
-                new SqlParameter("fecha_egreso", insert.fecha_egreso),
-                new SqlParameter("personal_a_cargo", insert.personal_a_cargo),
+               
                  };
             DataTable resultado = EjecutarConsultas("InsertarPersonas_sp", listaParametros.ToArray());
             return resultado;
         }
+
+        public void InsertarInformacionLaboral( int id_persona,string puesto, string empresa, int fecha_ingreso, int fecha_egreso, int personal_a_cargo)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@empresa", empresa) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@fecha_ingreso", fecha_ingreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@fecha_egreso", fecha_egreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@personal_a_cargo", personal_a_cargo) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+
+            DataTable resultado = EjecutarConsultas("InsertarInformacionLaboral_sp", listaParametros.ToArray(), true);
+        }
+
 
         //Este metodo del SP devuelve un bool (true o false) por lo que va a necesitar del retorno.
         public bool ValidarCuit(string cuit_cuil)

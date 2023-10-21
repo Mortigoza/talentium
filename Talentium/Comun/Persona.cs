@@ -37,8 +37,10 @@ namespace Comun
         public int id_tipo_alternativo { get; set; }
         public string contacto   { get; set; }
 
-        public string codigo_postal { get; set; }
+
    
+
+        //informacion academica
         public int id_nivel { get; set; }
         public string institucion { get; set; }
         public string carrera { get; set; }
@@ -46,11 +48,29 @@ namespace Comun
         public int año_egreso { get; set; }
         public string titulo { get; set; }
         public int id_progreso { get; set; }
-        public string puesto { get; set; }
-        public string empresa { get; set; }
-        public int fecha_ingreso { get; set; }
-        public int fecha_egreso { get; set; } 
-        public int personal_a_cargo { get; set; }
+
+
+        //informacion laboral
+        public string puesto1 { get; set; }
+        public string puesto2 { get; set; }
+        public string puesto3 { get; set; }
+        public string puesto4 { get; set; }
+        public string empresa1 { get; set; }
+        public string empresa2{ get; set; }
+        public string empresa3 { get; set; }
+        public string empresa4 { get; set; }
+        public int fecha_ingreso1 { get; set; }
+        public int fecha_ingreso2 { get; set; }
+        public int fecha_ingreso3 { get; set; }
+        public int fecha_ingreso4 { get; set; }
+        public int fecha_egreso1 { get; set; }
+        public int fecha_egreso2 { get; set; }
+        public int fecha_egreso3 { get; set; }
+        public int fecha_egreso4 { get; set; }
+        public int personal_a_cargo1{ get; set; }
+        public int personal_a_cargo2 { get; set; }
+        public int personal_a_cargo3 { get; set; }
+        public int personal_a_cargo4 { get; set; }
 
 
 
