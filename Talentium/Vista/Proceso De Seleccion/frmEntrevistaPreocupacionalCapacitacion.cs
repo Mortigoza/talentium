@@ -142,7 +142,7 @@ namespace Vista.Gestion_de_Talento
             } else
             {
                 tabSegundaEntrevista.Enabled = false;
-                
+                tabPreocupacional.Enabled = true;
                 DataRow row = datosEtapa.Rows[0];
                 dtpPreocupacional.Text = row["fecha_etapa"].ToString();
                 cmbEstadoPreocupacional.Text = row["estado"].ToString();
@@ -167,15 +167,24 @@ namespace Vista.Gestion_de_Talento
 
             if (e.TabPage == tabSegundaEntrevista)
             {
-                if (cmbEstadoPreocupacional!=null)
+                if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
                 {
                     e.Cancel = true;
+                    tabPreocupacional.Enabled = true;
                 }
             }
         }
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
+            {
+                tabPreocupacional.Enabled = true;
+            } else
+            {
+                tabPreocupacional.Enabled = false;
+            }
+            
         }
 
         public void FechaSeleccionadaSegundaEntrevista()
