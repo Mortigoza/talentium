@@ -129,25 +129,20 @@ namespace Vista.Gestion_de_Talento
                 cmbEstadoEntrevista.Text = row["estado"].ToString();
                 if (cmbEstadoEntrevista.Text != "APTO")
                 {
-                    //tabPreocupacional.Enabled = true;
                     FechaSeleccionadaSegundaEntrevista();
                 } else
                 {
                     tabEtapas.SelectTab(1);
                     seleccionarTab = false;
-                    //foreach (Control control in tabSegundaEntrevista.Controls)
-                    //{
-                    //    control.Enabled = false;
-                    //}
                     foreach (Control control in tabPreocupacional.Controls)
                     {
                         control.Enabled = true;
                     }
-
                 }
             } else
             {
                 tabSegundaEntrevista.Enabled = false;
+                
                 DataRow row = datosEtapa.Rows[0];
                 dtpPreocupacional.Text = row["fecha_etapa"].ToString();
                 cmbEstadoPreocupacional.Text = row["estado"].ToString();
@@ -169,15 +164,23 @@ namespace Vista.Gestion_de_Talento
             {
                 e.Cancel = true;
             }
+
+            if (e.TabPage == tabSegundaEntrevista)
+            {
+                if (cmbEstadoPreocupacional!=null)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
-            //tabPreocupacional.Enabled = false;
         }
 
         public void FechaSeleccionadaSegundaEntrevista()
         {
+            lblEtiqueta.Visible = false;
             DateTime fechaSeleccionada = dtpEntrevista.Value;
             if (fechaSeleccionada < DateTime.Now)
             {

@@ -75,6 +75,7 @@
             this.cmbEstadoEntrevista = new System.Windows.Forms.ComboBox();
             this.lblEstadoEntrevista = new System.Windows.Forms.Label();
             this.tabEtapas = new System.Windows.Forms.TabControl();
+            this.lblEtiqueta = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -418,6 +419,7 @@
             // 
             // grpEntrevista
             // 
+            this.grpEntrevista.Controls.Add(this.lblEtiqueta);
             this.grpEntrevista.Controls.Add(this.lblEntrevistador);
             this.grpEntrevista.Controls.Add(this.cmbAreas);
             this.grpEntrevista.Controls.Add(this.lblAreaEntrevistador);
@@ -607,6 +609,15 @@
             this.tabEtapas.SelectedIndexChanged += new System.EventHandler(this.tabEtapas_SelectedIndexChanged);
             this.tabEtapas.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabEtapas_Selecting);
             // 
+            // lblEtiqueta
+            // 
+            this.lblEtiqueta.AutoSize = true;
+            this.lblEtiqueta.Location = new System.Drawing.Point(203, 23);
+            this.lblEtiqueta.Name = "lblEtiqueta";
+            this.lblEtiqueta.Size = new System.Drawing.Size(132, 13);
+            this.lblEtiqueta.TabIndex = 37;
+            this.lblEtiqueta.Text = "Seleccione una fecha       ";
+            // 
             // frmEntrevistaPreocupacionalCapacitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,5 +697,6 @@
         private System.Windows.Forms.ComboBox cmbEstadoEntrevista;
         private System.Windows.Forms.Label lblEstadoEntrevista;
         private System.Windows.Forms.TabControl tabEtapas;
+        private System.Windows.Forms.Label lblEtiqueta;
     }
 }
