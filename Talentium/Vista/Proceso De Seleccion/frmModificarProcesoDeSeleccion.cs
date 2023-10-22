@@ -100,11 +100,9 @@ namespace Vista
             if (!candidatoModificado)
             {
                 MessageBox.Show("Modificación de Candidato exitosa.");
-
                 Close();
             }
         }
-
         private void cmbProvincia_DropDown(object sender, EventArgs e)
         {
             cmbProvincia.DataSource = proceso.ObtenerProvincia();

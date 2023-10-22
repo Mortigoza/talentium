@@ -20,7 +20,6 @@ namespace Vista
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
-            
         }
 
         private void txtCuilCuit_Leave(object sender, EventArgs e)
@@ -166,14 +165,30 @@ namespace Vista
                     Dpto = filaSeleccionada.Cells["Dpto"].Value.ToString(),
                     Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString()
                 };
+                
                 frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(datosSeleccionados);
-                formModificar.Show();
-                //me falta recargar el data grid 
+                formModificar.ShowDialog();
+                FrmModificarProcesoDeSeleccion_DataGridUpdated();
             }
             else
             {
                 MessageBox.Show("Selecciona una fila antes de abrir el formulario.");
             }
+        }
+        public void FrmModificarProcesoDeSeleccion_DataGridUpdated()
+        {
+            // Actualiza el DataGridView, por ejemplo, volviendo a cargar los datos.
+            string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
+            int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
+            string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedValue as string;
+            DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
+            dtgCandidatos.DataSource = DTCandidatos;
+            for (int i = 0; i < dtgCandidatos.Rows.Count - 1; i++)
+            {
+                int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
+                dtgCandidatos.Rows[i].Tag = id;
+            }
+            CargarColumnasDataGrid();
         }
     }
 }
