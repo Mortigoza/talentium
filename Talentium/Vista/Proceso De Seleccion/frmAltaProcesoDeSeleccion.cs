@@ -111,7 +111,7 @@ namespace Vista
 
         private void cmbProvincia_DropDown(object sender, EventArgs e)
         {
-            cmbProvincia.DataSource = proceso.obtenerProvincia();
+            cmbProvincia.DataSource = proceso.ObtenerProvincia();
             cmbProvincia.DisplayMember = "provincia";
             cmbProvincia.ValueMember = "id_provincia";
         }

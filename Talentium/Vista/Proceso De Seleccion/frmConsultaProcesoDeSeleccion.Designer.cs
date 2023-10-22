@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaProcesoDeSeleccion));
-            this.btnMostrarTodos = new System.Windows.Forms.Button();
+            this.btnIngresarEmpleado = new System.Windows.Forms.Button();
             this.btnEtapas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbEtapa = new System.Windows.Forms.ComboBox();
@@ -58,22 +58,23 @@
             this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnMostrarTodos
+            // btnIngresarEmpleado
             // 
-            this.btnMostrarTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(30, 314);
-            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(112, 33);
-            this.btnMostrarTodos.TabIndex = 13;
-            this.btnMostrarTodos.Text = "Ingresar Empleado";
-            this.btnMostrarTodos.UseVisualStyleBackColor = false;
+            this.btnIngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnIngresarEmpleado.Location = new System.Drawing.Point(146, 314);
+            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
+            this.btnIngresarEmpleado.Size = new System.Drawing.Size(112, 33);
+            this.btnIngresarEmpleado.TabIndex = 13;
+            this.btnIngresarEmpleado.Text = "Ingresar Empleado";
+            this.btnIngresarEmpleado.UseVisualStyleBackColor = false;
             // 
             // btnEtapas
             // 
@@ -335,12 +336,27 @@
             this.Provincia.HeaderText = "Provincia";
             this.Provincia.Name = "Provincia";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnModificar.Location = new System.Drawing.Point(30, 314);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(112, 33);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar Candidato";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmConsultaProcesoDeSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 379);
-            this.Controls.Add(this.btnMostrarTodos);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnIngresarEmpleado);
             this.Controls.Add(this.btnEtapas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgCandidatos);
@@ -357,7 +373,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnMostrarTodos;
+        private System.Windows.Forms.Button btnIngresarEmpleado;
         private System.Windows.Forms.Button btnEtapas;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbEtapa;
@@ -386,5 +402,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

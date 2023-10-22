@@ -18,7 +18,7 @@ namespace LogicaNegocio
             return seleccionDatos.ConsultarCandidato(cuil);
         }
 
-        public DataTable obtenerProvincia()
+        public DataTable ObtenerProvincia()
         {
             return seleccionDatos.ConsultarProvincia();
         }
@@ -61,13 +61,6 @@ namespace LogicaNegocio
         {
             return accesoDatos.ConsultaAreas();
         }
-
-        public bool ModificarEtapa(string estado, string etapa)
-        {
-            //return seleccionDatos.ModificarEtapa(estado, etapa);
-            return true;
-        }
-
         public bool ModificarEstado(int id_candidato, string estado, string patologias)
         {
             return seleccionDatos.ModificarEstado(id_candidato, estado, patologias);
@@ -79,6 +72,13 @@ namespace LogicaNegocio
         public DataTable ObtenerDatosEtapas(int id_candidato)
         {
             return seleccionDatos.ConsultarDatosEtapas(id_candidato);
+        }
+        public bool ModificarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
+            string correo, DateTime fecha_nacimiento, int id_localidad, string calle, int nro, string dpto, string piso,
+            int id_puesto)
+        {
+            return seleccionDatos.ModificarCandidato(cuil, nombres, apellidos, tel_celular, tel_alternativo, correo, fecha_nacimiento,
+                id_localidad, calle, nro, dpto, piso, id_puesto);
         }
     }
 }

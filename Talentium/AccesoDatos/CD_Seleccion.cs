@@ -44,6 +44,30 @@ namespace AccesoDatos
             EjecutarConsultas("alta_candidato_sp", listaParametros.ToArray(), true);
         }
 
+        public bool ModificarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
+            string correo, DateTime fecha_nacimiento, int id_localidad, string calle, int nro, string dpto, string piso,
+            int id_puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@cuil_original", cuil) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nombres", nombres) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@apellidos", apellidos) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@tel_celular", tel_celular) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param5 = new SqlParameter("@tel_alternativo", tel_alternativo) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param6 = new SqlParameter("@correo", correo) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param7 = new SqlParameter("@fecha_nacimiento", fecha_nacimiento) { SqlDbType = SqlDbType.Date };
+            SqlParameter param8 = new SqlParameter("@id_localidad", id_localidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param9 = new SqlParameter("@calle", calle) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param10 = new SqlParameter("@nro", nro) { SqlDbType = SqlDbType.Int };
+            SqlParameter param11 = new SqlParameter("@dpto", dpto) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param12 = new SqlParameter("@piso", piso) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param13 = new SqlParameter("@id_puesto", id_puesto) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5,
+                param6, param7, param8, param9, param10, param11, param12, param13 };
+
+            DataTable modifCandidato = EjecutarConsultas("modificar_candidato_sp", listaParametros.ToArray(), true);
+            return modifCandidato.Rows.Count != 0;
+        }
+
         public DataTable ConsultarProvincia()
         {
             DataTable provincias = EjecutarConsultasSinParam("consultar_provincias_sp");
@@ -79,17 +103,6 @@ namespace AccesoDatos
 
             return candidatos;
         }
-
-        public bool ModificarEtapa(string estado, string etapa)
-        {
-            //SqlParameter param1 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
-            //SqlParameter param2 = new SqlParameter("@etapa", etapa) { SqlDbType = SqlDbType.NVarChar };
-            //List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
-            //DataTable modifEtapa = EjecutarConsultas("modificar_entrevista_sp", listaParametros.ToArray());
-
-            //return modifEtapa.Rows.Count != 0;
-            return true;
-        }
         public bool ModificarEstado(int id_candidato, string estado, string patologias)
         {
             SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
@@ -119,12 +132,7 @@ namespace AccesoDatos
         public DataTable ConsultarDatosEtapas(int id_candidato)
         {
             SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
-            //SqlParameter param2 = new SqlParameter("@fecha_etapa", fecha_etapa) { SqlDbType = SqlDbType.DateTime };
-            //SqlParameter param3 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
-            //SqlParameter param4 = new SqlParameter("@incluir_patologias", patologias) { SqlDbType = SqlDbType.NVarChar };
-            //SqlParameter param5 = new SqlParameter("@incluir_area", area) { SqlDbType = SqlDbType.NVarChar };
-            //SqlParameter param6 = new SqlParameter("@incluir_nombre_apellido", nombreApellido) { SqlDbType = SqlDbType.NVarChar };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 /*param2, param3, param4, param5, param6 */};
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable datosEtapas = EjecutarConsultas("obtener_datos_etapas_sp", listaParametros.ToArray());
 
             return datosEtapas;
