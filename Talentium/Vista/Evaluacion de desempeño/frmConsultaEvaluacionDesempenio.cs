@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
 using Comun;
+using Vista.Lenguajes;
 
 namespace Vista.Evaluacion_de_desempeño
 {
@@ -19,6 +20,7 @@ namespace Vista.Evaluacion_de_desempeño
         public frmConsultaEvaluacionDesempenio()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
         private void frmConsultaEvaluacionDesempenio_Load(object sender, EventArgs e)

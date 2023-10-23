@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgCertificados = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rdbActivos = new System.Windows.Forms.RadioButton();
             this.rdbInactivos = new System.Windows.Forms.RadioButton();
             this.grpFiltro = new System.Windows.Forms.GroupBox();
@@ -39,11 +42,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtt = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dttFecha = new System.Windows.Forms.DateTimePicker();
+            this.cmbEtapa = new System.Windows.Forms.ComboBox();
             this.lblFechaSolicitud = new System.Windows.Forms.Label();
             this.lblEtapa = new System.Windows.Forms.Label();
             this.lblPersona = new System.Windows.Forms.Label();
@@ -66,6 +66,26 @@
             this.dtgCertificados.RowHeadersVisible = false;
             this.dtgCertificados.Size = new System.Drawing.Size(509, 231);
             this.dtgCertificados.TabIndex = 0;
+            this.dtgCertificados.DataSourceChanged += new System.EventHandler(this.dtgCertificados_DataSourceChanged);
+            this.dtgCertificados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCertificados_RowEnter);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Apellido";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "CUIT/CUIL";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // rdbActivos
             // 
@@ -79,6 +99,7 @@
             this.rdbActivos.TabStop = true;
             this.rdbActivos.Text = "Activos";
             this.rdbActivos.UseVisualStyleBackColor = false;
+            this.rdbActivos.CheckedChanged += new System.EventHandler(this.rdbActivos_CheckedChanged);
             // 
             // rdbInactivos
             // 
@@ -90,6 +111,7 @@
             this.rdbInactivos.TabIndex = 2;
             this.rdbInactivos.Text = "Inactivos";
             this.rdbInactivos.UseVisualStyleBackColor = false;
+            this.rdbInactivos.CheckedChanged += new System.EventHandler(this.rdbInactivos_CheckedChanged);
             // 
             // grpFiltro
             // 
@@ -116,10 +138,12 @@
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(17, 119);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 5;
@@ -137,6 +161,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(17, 80);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 6;
@@ -154,6 +179,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(17, 41);
+            this.txtCuit.MaxLength = 15;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 4;
@@ -168,40 +194,23 @@
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
-            // Column1
+            // dttFecha
             // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.dttFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttFecha.Location = new System.Drawing.Point(38, 335);
+            this.dttFecha.Name = "dttFecha";
+            this.dttFecha.Size = new System.Drawing.Size(100, 20);
+            this.dttFecha.TabIndex = 14;
             // 
-            // Column2
+            // cmbEtapa
             // 
-            this.Column2.HeaderText = "Apellido";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CUIT/CUIL";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // dtt
-            // 
-            this.dtt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtt.Location = new System.Drawing.Point(38, 335);
-            this.dtt.Name = "dtt";
-            this.dtt.Size = new System.Drawing.Size(100, 20);
-            this.dtt.TabIndex = 14;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 295);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cmbEtapa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEtapa.FormattingEnabled = true;
+            this.cmbEtapa.Location = new System.Drawing.Point(38, 295);
+            this.cmbEtapa.Name = "cmbEtapa";
+            this.cmbEtapa.Size = new System.Drawing.Size(100, 21);
+            this.cmbEtapa.TabIndex = 15;
+            this.cmbEtapa.SelectedIndexChanged += new System.EventHandler(this.cmbEtapa_SelectedIndexChanged);
             // 
             // lblFechaSolicitud
             // 
@@ -229,9 +238,9 @@
             this.lblPersona.BackColor = System.Drawing.Color.Transparent;
             this.lblPersona.Location = new System.Drawing.Point(184, 277);
             this.lblPersona.Name = "lblPersona";
-            this.lblPersona.Size = new System.Drawing.Size(165, 13);
+            this.lblPersona.Size = new System.Drawing.Size(141, 13);
             this.lblPersona.TabIndex = 18;
-            this.lblPersona.Text = "Juan      Perez      20-44789418-2";
+            this.lblPersona.Text = "Nombre Apellido CUIT/CUIL";
             // 
             // btnAceptar
             // 
@@ -241,6 +250,7 @@
             this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -250,6 +260,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAltaCertificacionServicios
             // 
@@ -262,13 +273,16 @@
             this.Controls.Add(this.lblPersona);
             this.Controls.Add(this.lblEtapa);
             this.Controls.Add(this.lblFechaSolicitud);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dtt);
+            this.Controls.Add(this.cmbEtapa);
+            this.Controls.Add(this.dttFecha);
             this.Controls.Add(this.grpFiltro);
             this.Controls.Add(this.rdbInactivos);
             this.Controls.Add(this.rdbActivos);
             this.Controls.Add(this.dtgCertificados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAltaCertificacionServicios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alta de certificacion de servicios";
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).EndInit();
             this.grpFiltro.ResumeLayout(false);
@@ -294,8 +308,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DateTimePicker dtt;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dttFecha;
+        private System.Windows.Forms.ComboBox cmbEtapa;
         private System.Windows.Forms.Label lblFechaSolicitud;
         private System.Windows.Forms.Label lblEtapa;
         private System.Windows.Forms.Label lblPersona;

@@ -46,6 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\frmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmPerfiles.Designer.cs">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analisis y reportes\Etapas.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Etapas.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Analisis y reportes\Etapas.Designer.cs">
+      <DependentUpon>Etapas.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Analisis y reportes\Etapas.es-AR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Etapas.es-AR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Analisis y reportes\frmAltaCertificacionServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +84,12 @@
     </Compile>
     <Compile Include="Accesibilidad\frmAreas.Designer.cs">
       <DependentUpon>frmAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConsultaPersonal.cs">
       <SubType>Form</SubType>
@@ -105,6 +132,12 @@
     </Compile>
     <Compile Include="Evaluacion de desempeño\frmConsultaEvaluacionDesempenio.Designer.cs">
       <DependentUpon>frmConsultaEvaluacionDesempenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConvenios.Designer.cs">
+      <DependentUpon>frmConvenios.cs</DependentUpon>
     </Compile>
     <Compile Include="Lenguajes\Idioma.cs" />
     <Compile Include="Lenguajes\Strings.en-US.Designer.cs">
@@ -194,6 +227,21 @@
     <EmbeddedResource Include="Accesibilidad\frmAreas.resx">
       <DependentUpon>frmAreas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmPerfiles.resx">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analisis y reportes\Etapas.es-AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Etapas.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CambioDePassNU.resx">
       <DependentUpon>CambioDePassNU.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -206,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Analisis y reportes\frmCertificacionServicios.resx">
       <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaPersonal.resx">
       <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
@@ -225,6 +276,9 @@
     <EmbeddedResource Include="frmAltaPersonal.resx">
       <DependentUpon>frmAltaPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConvenios.resx">
+      <DependentUpon>frmConvenios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.en-US.Designer.cs</LastGenOutput>
@@ -234,7 +288,7 @@
       <LastGenOutput>Strings.es-AR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPuesto.resx">
@@ -300,6 +354,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\data_management_data_processing_setting_configuration_gear_icon_190642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Comun\Comun.csproj">
       <Project>{5015f051-4dea-4706-b591-03e53c16f613}</Project>
       <Name>Comun</Name>
@@ -308,15 +371,6 @@
       <Project>{510d3943-eef1-4329-9298-b67e5ac32638}</Project>
       <Name>LogicaNegocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\data_management_data_processing_setting_configuration_gear_icon_190642.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

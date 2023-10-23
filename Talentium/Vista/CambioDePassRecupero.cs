@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -18,6 +19,7 @@ namespace Vista
         public CambioDePassRecupero()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             CN_PoliticaPassword config = new CN_PoliticaPassword();
             config.ConsultaPoliticaPass();
         

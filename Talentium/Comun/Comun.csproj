@@ -44,6 +44,8 @@
     <Compile Include="CargarCombobox.cs" />
     <Compile Include="ConfigCache.cs" />
     <Compile Include="DatosCandidato.cs" />
+    <Compile Include="Permisos.cs" />
+    <Compile Include="PermisosCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="UserCache.cs" />

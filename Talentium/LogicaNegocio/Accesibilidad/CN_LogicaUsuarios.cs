@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,7 +59,7 @@ namespace LogicaNegocio
             {
                 DataTable dt = accesoDatos.ConsultaAreas();
                 DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Todas" });
+                dt.Rows.Add(new Object[] { -1, "Todas"});
                 return dt;
             }
             catch (Exception ex)
@@ -77,13 +78,16 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public DataTable ConsultarPerfiles()
+        public DataTable ConsultarPerfiles(bool cmb = true)
         {
             try
             {
                 DataTable dt = accesoDatos.ConsultarPerfiles();
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Personalizado" });
+                if (cmb)
+                {
+                    DataRow dr = dt.NewRow();
+                    dt.Rows.Add(new Object[] { -1, "Personalizado" });
+                }
                 return dt;
             }
             catch (Exception ex)

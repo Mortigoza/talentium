@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 using LogicaNegocio;
 using Comun;
 
@@ -170,6 +171,7 @@ namespace Vista
                 MessageBox.Show("El candidato que intenta ingresar ya se encuentra registrado anteriormente.");
             }
             
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
     }
 }

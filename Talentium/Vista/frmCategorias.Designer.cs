@@ -34,14 +34,14 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaja = new System.Windows.Forms.Button();
             this.grpCrearCategoria = new System.Windows.Forms.GroupBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblJornada = new System.Windows.Forms.Label();
+            this.btnGuardarCrear = new System.Windows.Forms.Button();
+            this.btnCancelarCrear = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblSueldo = new System.Windows.Forms.Label();
-            this.btnCancelarCrear = new System.Windows.Forms.Button();
-            this.btnGuardarCrear = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblJornada = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.grpModificarCategoria = new System.Windows.Forms.GroupBox();
             this.btnGuardarModif = new System.Windows.Forms.Button();
             this.btnCancelarModif = new System.Windows.Forms.Button();
@@ -92,6 +92,7 @@
             this.btnBaja.TabIndex = 1;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // grpCrearCategoria
             // 
@@ -110,37 +111,23 @@
             this.grpCrearCategoria.TabStop = false;
             this.grpCrearCategoria.Text = "Crear Categoria";
             // 
-            // lblCategoria
+            // btnGuardarCrear
             // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(16, 33);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
-            this.lblCategoria.TabIndex = 0;
-            this.lblCategoria.Text = "Categoria";
+            this.btnGuardarCrear.Location = new System.Drawing.Point(146, 143);
+            this.btnGuardarCrear.Name = "btnGuardarCrear";
+            this.btnGuardarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCrear.TabIndex = 7;
+            this.btnGuardarCrear.Text = "Guardar";
+            this.btnGuardarCrear.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnCancelarCrear
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(86, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // lblJornada
-            // 
-            this.lblJornada.AutoSize = true;
-            this.lblJornada.Location = new System.Drawing.Point(16, 68);
-            this.lblJornada.Name = "lblJornada";
-            this.lblJornada.Size = new System.Drawing.Size(45, 13);
-            this.lblJornada.TabIndex = 2;
-            this.lblJornada.Text = "Jornada";
+            this.btnCancelarCrear.Location = new System.Drawing.Point(19, 143);
+            this.btnCancelarCrear.Name = "btnCancelarCrear";
+            this.btnCancelarCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarCrear.TabIndex = 6;
+            this.btnCancelarCrear.Text = "Cancelar";
+            this.btnCancelarCrear.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
@@ -158,23 +145,37 @@
             this.lblSueldo.TabIndex = 4;
             this.lblSueldo.Text = "Sueldo";
             // 
-            // btnCancelarCrear
+            // textBox2
             // 
-            this.btnCancelarCrear.Location = new System.Drawing.Point(19, 143);
-            this.btnCancelarCrear.Name = "btnCancelarCrear";
-            this.btnCancelarCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarCrear.TabIndex = 6;
-            this.btnCancelarCrear.Text = "Cancelar";
-            this.btnCancelarCrear.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(86, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.TabIndex = 3;
             // 
-            // btnGuardarCrear
+            // lblJornada
             // 
-            this.btnGuardarCrear.Location = new System.Drawing.Point(146, 143);
-            this.btnGuardarCrear.Name = "btnGuardarCrear";
-            this.btnGuardarCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarCrear.TabIndex = 7;
-            this.btnGuardarCrear.Text = "Guardar";
-            this.btnGuardarCrear.UseVisualStyleBackColor = true;
+            this.lblJornada.AutoSize = true;
+            this.lblJornada.Location = new System.Drawing.Point(16, 68);
+            this.lblJornada.Name = "lblJornada";
+            this.lblJornada.Size = new System.Drawing.Size(45, 13);
+            this.lblJornada.TabIndex = 2;
+            this.lblJornada.Text = "Jornada";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(86, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(16, 33);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.TabIndex = 0;
+            this.lblCategoria.Text = "Categoria";
             // 
             // grpModificarCategoria
             // 

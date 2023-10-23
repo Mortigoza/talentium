@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LogicaNegocio;
 using Vista.Gestion_de_Talento;
 using Comun;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -20,6 +21,7 @@ namespace Vista
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
         private void txtCuilCuit_Leave(object sender, EventArgs e)

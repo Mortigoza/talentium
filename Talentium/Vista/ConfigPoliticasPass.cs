@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -18,6 +19,7 @@ namespace Vista
         public ConfigPoliticasPass()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             config.ConsultaPoliticaPass();
 
             chcChar.Checked = ConfigCache.caracteres;

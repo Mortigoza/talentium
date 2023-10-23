@@ -41,13 +41,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -55,20 +48,13 @@
             // dtgCertificados
             // 
             this.dtgCertificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCertificados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column4});
             this.dtgCertificados.Location = new System.Drawing.Point(179, 50);
             this.dtgCertificados.Name = "dtgCertificados";
             this.dtgCertificados.ReadOnly = true;
             this.dtgCertificados.RowHeadersVisible = false;
             this.dtgCertificados.Size = new System.Drawing.Size(714, 357);
             this.dtgCertificados.TabIndex = 0;
+            this.dtgCertificados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCertificados_RowEnter);
             // 
             // rdbEnProceso
             // 
@@ -94,6 +80,7 @@
             this.rdbFinalizados.TabIndex = 2;
             this.rdbFinalizados.Text = "Finalizados";
             this.rdbFinalizados.UseVisualStyleBackColor = false;
+            this.rdbFinalizados.CheckedChanged += new System.EventHandler(this.rdbFinalizados_CheckedChanged);
             // 
             // grpFiltro
             // 
@@ -120,10 +107,12 @@
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(17, 119);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 5;
@@ -141,6 +130,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(17, 80);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 6;
@@ -158,6 +148,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(17, 41);
+            this.txtCuit.MaxLength = 15;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 4;
@@ -180,6 +171,7 @@
             this.btnAgregar.TabIndex = 14;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -189,48 +181,7 @@
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Apellido";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CUIT/CUIL";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha Solicitud";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Fecha recepcion";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Fecha entrega";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Etapa";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmCertificacionServicios
             // 
@@ -244,7 +195,10 @@
             this.Controls.Add(this.rdbFinalizados);
             this.Controls.Add(this.rdbEnProceso);
             this.Controls.Add(this.dtgCertificados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCertificacionServicios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Certificacion de servicios";
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).EndInit();
             this.grpFiltro.ResumeLayout(false);
@@ -269,12 +223,5 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

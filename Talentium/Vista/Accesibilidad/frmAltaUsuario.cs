@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -32,9 +33,10 @@ namespace Vista
         public frmAltaUsuario()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             #region config
 
-            this.Text = "Alta de usuarios";
+            this.Text = Strings.frmAltaUsuario;
 
             //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
@@ -56,7 +58,7 @@ namespace Vista
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();
             cmbRol.ValueMember = "id_grupo";
-            cmbRol.DisplayMember = "grupo";
+            cmbRol.DisplayMember = "Perfil";
             cmbRol.SelectedValue = -1;
             //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
@@ -89,10 +91,12 @@ namespace Vista
         public frmAltaUsuario(int id_usuario)
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             #region config
             _idUsuario = id_usuario;
             _mod = true;
-            this.Text = "Modificación de usuarios";
+            this.Text =
+            this.Text = Strings.frmModUsuario;
 
             //dtg configura el dtg
             dtgPersonas.MultiSelect = false;
@@ -122,7 +126,7 @@ namespace Vista
             cmbRol.DataSource = null;
             cmbRol.DataSource = usuario.ConsultarPerfiles();
             cmbRol.ValueMember = "id_grupo";
-            cmbRol.DisplayMember = "grupo";
+            cmbRol.DisplayMember = "Perfil";
             cmbRol.SelectedValue = -1;
             //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();

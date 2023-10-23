@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbEtapa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtCuilCuit = new System.Windows.Forms.TextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnModificarCandidato = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +95,7 @@
             // 
             this.groupBox1.Controls.Add(this.cmbEtapa);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.txtCuilCuit);
             this.groupBox1.Controls.Add(this.cmbPuesto);
             this.groupBox1.Controls.Add(this.label2);
@@ -130,19 +130,19 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Etapa";
             // 
-            // btnBuscar
+            // btnFiltrar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscar.Location = new System.Drawing.Point(344, 65);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 26);
-            this.btnBuscar.TabIndex = 6;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnFiltrar.Location = new System.Drawing.Point(344, 65);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(56, 26);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtCuilCuit
             // 
@@ -336,26 +336,26 @@
             this.Provincia.HeaderText = "Provincia";
             this.Provincia.Name = "Provincia";
             // 
-            // btnModificar
+            // btnModificarCandidato
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificar.Location = new System.Drawing.Point(30, 314);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(112, 33);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar Candidato";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);
+            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarCandidato.Name = "btnModificarCandidato";
+            this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
+            this.btnModificarCandidato.TabIndex = 14;
+            this.btnModificarCandidato.Text = "Modificar Candidato";
+            this.btnModificarCandidato.UseVisualStyleBackColor = false;
+            this.btnModificarCandidato.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmConsultaProcesoDeSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 379);
-            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnModificarCandidato);
             this.Controls.Add(this.btnIngresarEmpleado);
             this.Controls.Add(this.btnEtapas);
             this.Controls.Add(this.groupBox1);
@@ -378,7 +378,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbEtapa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox txtCuilCuit;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label2;
@@ -402,6 +402,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnModificarCandidato;
     }
 }

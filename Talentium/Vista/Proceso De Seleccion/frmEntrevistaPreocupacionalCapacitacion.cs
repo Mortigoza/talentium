@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
+using Vista.Lenguajes;
 
 namespace Vista.Gestion_de_Talento
 {
@@ -263,6 +264,7 @@ namespace Vista.Gestion_de_Talento
             {
                 tabEtapas.SelectedTab = null;
             }
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
     }
 }

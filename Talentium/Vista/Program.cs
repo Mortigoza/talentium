@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Evaluacion_de_desempeño;
+using Vista.Accesibilidad;
+using Vista.Analisis_y_reportes;
 
 namespace Vista
 {

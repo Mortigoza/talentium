@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LogicaNegocio;
 using Comun;
 using LogicaNegocio.Accesibilidad;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -19,6 +20,7 @@ namespace Vista
         public frmAreas()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
 
             lstAreas.MouseDoubleClick += new MouseEventHandler(lstAreas_MouseDoubleClick);
 

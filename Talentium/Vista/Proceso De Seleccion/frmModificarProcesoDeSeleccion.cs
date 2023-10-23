@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using Vista.Lenguajes;
+
 
 namespace Vista
 {
@@ -159,6 +161,7 @@ namespace Vista
                     cmbLocalidad.Items.Clear();
                 }
             }
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
     }
 }

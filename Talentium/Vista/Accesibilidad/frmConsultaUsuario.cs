@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -26,6 +27,7 @@ namespace Vista
         public frmConsultaUsuario()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             // dtg, configura el dtg
             dtgPersonas.MultiSelect = false;
             dtgPersonas.RowHeadersVisible = false;
@@ -167,7 +169,7 @@ namespace Vista
                 btnAgregar.Enabled = true;
                 btnModificar.Enabled = true;
                 btnBaja.Name = "btnBaja";
-                btnBaja.Text = "Dar de baja";
+                btnBaja.Text = Strings.btnBaja;
 
                 _estado = true;
                 if (dtgPersonas.DataSource != null)
@@ -187,7 +189,7 @@ namespace Vista
                 btnAgregar.Enabled = false;
                 btnModificar.Enabled = false;
                 btnBaja.Name = "btnReactivar";
-                btnBaja.Text = "Reactivar";
+                btnBaja.Text = Strings.btnReactivar;
 
                 _estado = false;
                 if (dtgPersonas.DataSource != null)

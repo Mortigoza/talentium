@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\CD_AltaPerfil.cs" />
+    <Compile Include="Accesibilidad\CD_BajaPerfil.cs" />
+    <Compile Include="Accesibilidad\CD_ConsultarPermisosPerfil.cs" />
+    <Compile Include="Accesibilidad\CD_UpPerfil.cs" />
+    <Compile Include="Analisis y reportes\CD_CertificacionServicios.cs" />
     <Compile Include="CD_AccesoBD.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="Accesibilidad\CD_BajaUsuario.cs" />
@@ -51,6 +56,7 @@
     <Compile Include="Accesibilidad\CD_ReactivarUsuario.cs" />
     <Compile Include="Accesibilidad\CD_UpUsuario.cs" />
     <Compile Include="CD_Seleccion.cs" />
+    <Compile Include="CD_TraerPermisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
