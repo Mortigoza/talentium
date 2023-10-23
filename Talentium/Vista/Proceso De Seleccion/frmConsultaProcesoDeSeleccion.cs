@@ -125,7 +125,11 @@ namespace Vista
                     {
                         btnIngresarEmpleado.Enabled = true;
                         return;
+                    } else
+                    {
+                        btnIngresarEmpleado.Enabled = false;
                     }
+                    
                 }
             }
         }
@@ -158,28 +162,7 @@ namespace Vista
         {
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
-                DataGridViewRow filaSeleccionada = dtgCandidatos.SelectedRows[0];
-
-                DatosCandidato datosSeleccionados = new DatosCandidato
-                {
-                    CuilCuit = filaSeleccionada.Cells["Cuil"].Value.ToString(),
-                    Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString(),
-                    Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString(),
-                    Celular = filaSeleccionada.Cells["Celular"].Value.ToString(),
-                    Alternativo = filaSeleccionada.Cells["Alternativo"].Value.ToString(),
-                    Correo = filaSeleccionada.Cells["Correo"].Value.ToString(),
-                    Nacimiento = Convert.ToDateTime(filaSeleccionada.Cells["Nacimiento"].Value),
-                    Provincia = filaSeleccionada.Cells["Provincia"].Value.ToString(),
-                    Partido = filaSeleccionada.Cells["Partido"].Value.ToString(),
-                    Localidad = filaSeleccionada.Cells["Localidad"].Value.ToString(),
-                    Calle = filaSeleccionada.Cells["Calle"].Value.ToString(),
-                    Nro = Convert.ToInt32(filaSeleccionada.Cells["Nro"].Value),
-                    Piso = filaSeleccionada.Cells["Piso"].Value.ToString(),
-                    Dpto = filaSeleccionada.Cells["Dpto"].Value.ToString(),
-                    Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString()
-                };
-                
-                frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(datosSeleccionados);
+                frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
                 formModificar.ShowDialog();
                 FrmModificarProcesoDeSeleccion_DataGridUpdated();
             }
@@ -202,6 +185,42 @@ namespace Vista
                 dtgCandidatos.Rows[i].Tag = id;
             }
             CargarColumnasDataGrid();
+        }
+
+        private void btnIngresarEmpleado_Click(object sender, EventArgs e)
+        {
+            if (dtgCandidatos.SelectedRows.Count > 0)
+            {
+                DatosCandidato();
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                frmAltaPersonal.ShowDialog();
+            }
+        }
+
+        private DatosCandidato DatosCandidato()
+        {
+            DataGridViewRow filaSeleccionada = dtgCandidatos.SelectedRows[0];
+
+            DatosCandidato datosSeleccionados = new DatosCandidato
+            {
+                CuilCuit = filaSeleccionada.Cells["Cuil"].Value.ToString(),
+                Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString(),
+                Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString(),
+                Celular = filaSeleccionada.Cells["Celular"].Value.ToString(),
+                Alternativo = filaSeleccionada.Cells["Alternativo"].Value.ToString(),
+                Correo = filaSeleccionada.Cells["Correo"].Value.ToString(),
+                Nacimiento = Convert.ToDateTime(filaSeleccionada.Cells["Nacimiento"].Value),
+                Provincia = filaSeleccionada.Cells["Provincia"].Value.ToString(),
+                Partido = filaSeleccionada.Cells["Partido"].Value.ToString(),
+                Localidad = filaSeleccionada.Cells["Localidad"].Value.ToString(),
+                Calle = filaSeleccionada.Cells["Calle"].Value.ToString(),
+                Nro = Convert.ToInt32(filaSeleccionada.Cells["Nro"].Value),
+                Piso = filaSeleccionada.Cells["Piso"].Value.ToString(),
+                Dpto = filaSeleccionada.Cells["Dpto"].Value.ToString(),
+                Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString()
+            };
+
+            return datosSeleccionados;
         }
     }
 }

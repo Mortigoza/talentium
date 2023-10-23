@@ -76,6 +76,7 @@
             this.btnIngresarEmpleado.TabIndex = 13;
             this.btnIngresarEmpleado.Text = "Ingresar Empleado";
             this.btnIngresarEmpleado.UseVisualStyleBackColor = false;
+            this.btnIngresarEmpleado.Click += new System.EventHandler(this.btnIngresarEmpleado_Click);
             // 
             // btnEtapas
             // 
