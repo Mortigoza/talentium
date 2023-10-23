@@ -66,6 +66,7 @@
             // btnIngresarEmpleado
             // 
             this.btnIngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnIngresarEmpleado.Enabled = false;
             this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIngresarEmpleado.Location = new System.Drawing.Point(146, 314);
@@ -339,6 +340,7 @@
             // btnModificarCandidato
             // 
             this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificarCandidato.Enabled = false;
             this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);

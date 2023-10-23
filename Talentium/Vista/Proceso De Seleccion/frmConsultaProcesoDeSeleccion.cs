@@ -116,6 +116,17 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 btnEtapas.Enabled = true;
+                btnModificarCandidato.Enabled = true;
+                DataGridViewRow seleccionada = dtgCandidatos.SelectedRows[0];
+
+                if (seleccionada.Cells["Etapa"].Value.ToString() == "Preocupacional")
+                {
+                    if (seleccionada.Cells["Estado"].Value.ToString() == "APTO")
+                    {
+                        btnIngresarEmpleado.Enabled = true;
+                        return;
+                    }
+                }
             }
         }
 
