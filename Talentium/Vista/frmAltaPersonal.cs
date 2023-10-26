@@ -181,43 +181,44 @@ namespace Vista
             cmbProvincia.DataSource = provincia;
             cmbProvincia.DisplayMember = "provincia";
             cmbProvincia.ValueMember = "id_provincia";
-            //cmbProvincia.SelectedIndex = -1;
+            cmbProvincia.SelectedIndex = -1;
 
             DataTable genero = logica.ObtenerGenero();
             cmbGenero.DataSource = genero;
             cmbGenero.DisplayMember = "genero";
             cmbGenero.ValueMember = "id_genero";
-            //cmbGenero.SelectedIndex = -1;
+            cmbGenero.SelectedIndex = -1;
 
             DataTable tipotel = logica.ObtenerTipoTel();
             cmbTipoTelAlternativo.DataSource = tipotel;
             cmbTipoTelAlternativo.DisplayMember = "tipo";
             cmbTipoTelAlternativo.ValueMember = "id_tipo";
-            //cmbTipoTelAlternativo.SelectedIndex = -1;
+            cmbTipoTelAlternativo.SelectedIndex = -1;
             cmbTipoTel.DataSource = tipotel.Copy();
             cmbTipoTel.DisplayMember = "tipo";
             cmbTipoTel.ValueMember = "id_tipo";
-            //cmbTipoTel.SelectedIndex = -1;
+            cmbTipoTel.SelectedIndex = -1;
 
             DataTable estadocivil = logica.ObtenerEstadoCivil();
             cmbEstadoCivil.DataSource = estadocivil;
             cmbEstadoCivil.DisplayMember = "estado_civil";
             cmbEstadoCivil.ValueMember = "id_estado_civil";
-            //cmbEstadoCivil.SelectedIndex = -1;
+            cmbEstadoCivil.SelectedIndex = -1;
 
 
             DataTable nacionalidad = logica.ObtenerNacionalidad();
             cmbNacionalidad.DataSource = nacionalidad;
             cmbNacionalidad.DisplayMember = "nacionalidad";
             cmbNacionalidad.ValueMember = "id_nacionalidad";
-            //cmbNacionalidad.SelectedIndex = -1;
-            
+            cmbNacionalidad.SelectedIndex = -1;
+
             DataTable tipodoc = logica.ObtenerTipoDoc();
             cmbTipoDoc.DataSource = tipodoc;
             cmbTipoDoc.DisplayMember = "tipo_doc";
             cmbTipoDoc.ValueMember = "id_tipo_doc";
-            //cmbTipoDoc.SelectedIndex = -1;
+            cmbTipoDoc.SelectedIndex = -1;
 
+            cmbPartido.SelectedIndex = -1;
 
             DataTable progreso = logica.ObtenerProgreso();
             cmbProgreso.DataSource = progreso;
@@ -237,19 +238,19 @@ namespace Vista
             cmbConvenio.DataSource = convenio;
             cmbConvenio.DisplayMember = "convenio";
             cmbConvenio.ValueMember = "id_convenio";
-            //cmbConvenio.SelectedIndex = -1;
-            
+            cmbConvenio.SelectedIndex = -1;
+
             DataTable puesto = logica.ObtenerPuesto();
             cmbPuesto.DataSource = puesto;
             cmbPuesto.DisplayMember = "puesto";
             cmbPuesto.ValueMember = "id_puesto";
-            //cmbPuesto.SelectedIndex = -1;
-            
+            cmbPuesto.SelectedIndex = -1;
+
             DataTable area = logica.ObtenerArea();
             cmbArea.DataSource = area;
             cmbArea.DisplayMember = "area";
             cmbArea.ValueMember = "id_area";
-            //cmbArea.SelectedIndex = -1;
+            cmbArea.SelectedIndex = -1;
 
 
             //ComboBox Solapa Academico*************
@@ -327,9 +328,20 @@ namespace Vista
             {
                 #region Mapeo
                 Persona insert = new Persona();
+             
+                if (pctFoto.Image != null)
+                {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    insert.foto_perfil = ms.GetBuffer();
+                }
+                else
+                {
+                    insert.foto_perfil = new byte[0];
+                }
+               
 
-                System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+               
 
 
                 insert.apellidos = txtApellidos.Text;
@@ -351,7 +363,7 @@ namespace Vista
                 insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
                 insert.hijos = (int)nupHijos.Value;
                 insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
-                insert.foto_perfil = ms.GetBuffer();
+                
                 insert.telefono = txtTelefono.Text;
                 insert.id_tipo = (int)cmbTipoTel.SelectedValue;
                 insert.telefono_alternativo = txtTelefonoAlternativo.Text;
@@ -433,7 +445,7 @@ namespace Vista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //ValidarTodosLosCampos();
+           
             if (validarVacios(tabPersonales))
             {
                
@@ -471,26 +483,42 @@ namespace Vista
             bool todosCompletos = true;
             foreach (Control c in control.Controls)
             {
-                if (c is GroupBox)
+                if (c is GroupBox grp)
                 {
-                    if (!validarVacios((GroupBox)c, count))
+                    if (!validarVacios(grp, count))
                     {
                         todosCompletos = false;
                     }
                 }
-                if (c is TextBox &&
+                if (c is TextBox txt &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
                     (count == -1 | c.AccessibleDescription.Length - 1 < count))
                 {
                     if (string.IsNullOrEmpty(c.Text))
                     {
-                        //errorProvider1.SetError(c, "Oblicatiorio");
-                        cambiarColorLabel((TextBox)c, Color.Red);
+                        //errorProvider1.SetError(txt, "Oblicatiorio");
+                        cambiarColorLabel(txt, Color.Red);
                         todosCompletos = false;
                     }
                     else
                     {
-                        cambiarColorLabel((TextBox)c, Color.Black);
+                        cambiarColorLabel(txt, Color.Black);
+                        //errorProvider1.SetError(txt, "");
+                    }
+                }
+                if (c is ComboBox cmb &&
+                    !string.IsNullOrEmpty(c.AccessibleDescription) &&
+                    (count == -1 | c.AccessibleDescription.Length - 1 < count))
+                {
+                    if (cmb.SelectedIndex == -1)
+                    {
+                        //errorProvider1.SetError(c, "Oblicatiorio");
+                        cambiarColorLabel(cmb, Color.Red);
+                        todosCompletos = false;
+                    }
+                    else
+                    {
+                        cambiarColorLabel(cmb, Color.Black);
                         //errorProvider1.SetError(c, "");
                     }
                 }
@@ -506,13 +534,14 @@ namespace Vista
             return persona && academico && laboral;
         }
 
-        private void cambiarColorLabel(TextBox textBox, Color color)
+        private void cambiarColorLabel(Control control, Color color)
         {
-            foreach (Control siblingControl in textBox.Parent.Controls)
+            foreach (Control c in control.Parent.Controls)
             {
-                if (siblingControl is Label label && label.Tag != null && label.Tag.ToString() == textBox.Name)
+                if (c is Label lbl && lbl.Tag != null &&
+                    lbl.Tag.ToString() == control.Name)
                 {
-                    label.ForeColor = color;
+                    lbl.ForeColor = color;
                 }
             }            
         }

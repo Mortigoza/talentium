@@ -309,10 +309,12 @@
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(44, 16);
             this.label70.TabIndex = 47;
+            this.label70.Tag = "cmbArea";
             this.label70.Text = "Area *";
             // 
             // cmbArea
             // 
+            this.cmbArea.AccessibleDescription = "O";
             this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Location = new System.Drawing.Point(25, 38);
@@ -328,6 +330,7 @@
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(57, 16);
             this.label69.TabIndex = 45;
+            this.label69.Tag = "cmbPuesto";
             this.label69.Text = "Puesto *";
             // 
             // label64
@@ -338,6 +341,7 @@
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(72, 16);
             this.label64.TabIndex = 43;
+            this.label64.Tag = "cmbConvenio";
             this.label64.Text = "Convenio *";
             // 
             // label52
@@ -352,6 +356,7 @@
             // 
             // cmbConvenio
             // 
+            this.cmbConvenio.AccessibleDescription = "O";
             this.cmbConvenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConvenio.FormattingEnabled = true;
             this.cmbConvenio.Location = new System.Drawing.Point(26, 148);
@@ -361,6 +366,7 @@
             // 
             // cmbPuesto
             // 
+            this.cmbPuesto.AccessibleDescription = "O";
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(25, 90);
@@ -488,10 +494,12 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 16);
             this.label9.TabIndex = 33;
+            this.label9.Tag = "cmbProvincia";
             this.label9.Text = "Provincia *";
             // 
             // cmbPartido
             // 
+            this.cmbPartido.AccessibleDescription = "O";
             this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPartido.FormattingEnabled = true;
             this.cmbPartido.Location = new System.Drawing.Point(237, 41);
@@ -509,6 +517,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 16);
             this.label14.TabIndex = 38;
+            this.label14.Tag = "txtCalle";
             this.label14.Text = "Calle *";
             // 
             // txtCodigoPostal
@@ -521,6 +530,7 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.AccessibleDescription = "O";
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(28, 41);
@@ -549,6 +559,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 16);
             this.label10.TabIndex = 34;
+            this.label10.Tag = "cmbPartido";
             this.label10.Text = "Partido *";
             // 
             // txtCalle
@@ -574,6 +585,7 @@
             // 
             // cmbLocalidad
             // 
+            this.cmbLocalidad.AccessibleDescription = "O";
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(29, 95);
@@ -600,6 +612,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 16);
             this.label11.TabIndex = 35;
+            this.label11.Tag = "cmbLocalidad";
             this.label11.Text = "Localidad *";
             // 
             // label16
@@ -620,6 +633,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 16);
             this.label15.TabIndex = 39;
+            this.label15.Tag = "txtNro";
             this.label15.Text = "Altura *";
             // 
             // label17
@@ -678,6 +692,7 @@
             // 
             // cmbTipoDoc
             // 
+            this.cmbTipoDoc.AccessibleDescription = "O";
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Location = new System.Drawing.Point(18, 145);
             this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(4);
@@ -693,10 +708,12 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(43, 16);
             this.label68.TabIndex = 56;
+            this.label68.Tag = "cmbTipoDoc";
             this.label68.Text = "Tipo *";
             // 
             // cmbNacionalidad
             // 
+            this.cmbNacionalidad.AccessibleDescription = "O";
             this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.FormattingEnabled = true;
             this.cmbNacionalidad.Location = new System.Drawing.Point(21, 289);
@@ -720,6 +737,7 @@
             // 
             // cmbTipoTelAlternativo
             // 
+            this.cmbTipoTelAlternativo.AccessibleDescription = "O";
             this.cmbTipoTelAlternativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelAlternativo.FormattingEnabled = true;
             this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(200, 242);
@@ -736,10 +754,12 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 16);
             this.label23.TabIndex = 52;
+            this.label23.Tag = "cmbTipoTelAlternativo";
             this.label23.Text = "Tipo *";
             // 
             // cmbTipoTel
             // 
+            this.cmbTipoTel.AccessibleDescription = "O";
             this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTel.FormattingEnabled = true;
             this.cmbTipoTel.Location = new System.Drawing.Point(244, 194);
@@ -756,6 +776,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 16);
             this.label21.TabIndex = 50;
+            this.label21.Tag = "cmbTipoTel";
             this.label21.Text = "Tipo *";
             // 
             // txtTelefono
@@ -777,6 +798,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 16);
             this.label22.TabIndex = 48;
+            this.label22.Tag = "txtTelefono";
             this.label22.Text = "Teléfono *";
             // 
             // txtEmail
@@ -808,6 +830,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 16);
             this.label8.TabIndex = 30;
+            this.label8.Tag = "txtEmail";
             this.label8.Text = "Correo electronico *";
             // 
             // label20
@@ -818,6 +841,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(60, 16);
             this.label20.TabIndex = 46;
+            this.label20.Tag = "";
             this.label20.Text = "Contacto";
             // 
             // txtTelefonoAlternativo
@@ -848,6 +872,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(135, 16);
             this.label19.TabIndex = 44;
+            this.label19.Tag = "txtTelefonoAlternativo";
             this.label19.Text = "Teléfono Alternativo *";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
@@ -882,6 +907,7 @@
             // 
             // cmbEstadoCivil
             // 
+            this.cmbEstadoCivil.AccessibleDescription = "O";
             this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(20, 390);
@@ -909,6 +935,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 16);
             this.label13.TabIndex = 39;
+            this.label13.Tag = "cmbNacionalidad";
             this.label13.Text = "Nacionalidad *";
             // 
             // txtNombres
@@ -931,6 +958,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 29;
+            this.label7.Tag = "cmbEstadoCivil";
             this.label7.Text = "Estado civil *";
             // 
             // txtDni
@@ -982,10 +1010,12 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 38;
+            this.label5.Tag = "cmbGenero";
             this.label5.Text = "Género *";
             // 
             // cmbGenero
             // 
+            this.cmbGenero.AccessibleDescription = "O";
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Location = new System.Drawing.Point(216, 289);
@@ -1013,6 +1043,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 36;
+            this.label3.Tag = "txtDni";
             this.label3.Text = "Nro Documento *";
             // 
             // tabAcademicos
@@ -1187,7 +1218,7 @@
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(135, 16);
             this.label65.TabIndex = 74;
-            this.label65.Tag = "txtInstitucionSuperior";
+            this.label65.Tag = "txtInsitutcionSuperior";
             this.label65.Text = "Institución educativa *";
             // 
             // cmbIngreso
@@ -1208,6 +1239,7 @@
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(48, 16);
             this.label71.TabIndex = 77;
+            this.label71.Tag = "txtTitulo";
             this.label71.Text = "Titulo *";
             // 
             // label72
@@ -1494,6 +1526,7 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(135, 16);
             this.label39.TabIndex = 55;
+            this.label39.Tag = "txtInsitutcionSuperior1";
             this.label39.Text = "Institución educativa *";
             // 
             // txtInsitutcionSuperior1
@@ -1525,6 +1558,7 @@
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(48, 16);
             this.label40.TabIndex = 67;
+            this.label40.Tag = "txtTitulo1";
             this.label40.Text = "Titulo *";
             // 
             // label41
@@ -1695,6 +1729,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(48, 16);
             this.label27.TabIndex = 77;
+            this.label27.Tag = "txtTitulo2";
             this.label27.Text = "Titulo *";
             // 
             // label28
@@ -1863,6 +1898,7 @@
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(70, 16);
             this.label53.TabIndex = 89;
+            this.label53.Tag = "txtEmpresa2";
             this.label53.Text = "Empresa *";
             // 
             // button13
@@ -1939,6 +1975,7 @@
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(57, 16);
             this.label58.TabIndex = 70;
+            this.label58.Tag = "txtPuesto2";
             this.label58.Text = "Puesto *";
             // 
             // grbExp3
@@ -2054,6 +2091,7 @@
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(70, 16);
             this.label61.TabIndex = 99;
+            this.label61.Tag = "txtEmpresa3";
             this.label61.Text = "Empresa *";
             // 
             // label62
@@ -2163,6 +2201,7 @@
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(70, 16);
             this.label51.TabIndex = 89;
+            this.label51.Tag = "txtEmpresa";
             this.label51.Text = "Empresa *";
             // 
             // button6
@@ -2239,6 +2278,7 @@
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(57, 16);
             this.label45.TabIndex = 70;
+            this.label45.Tag = "txtPuesto";
             this.label45.Text = "Puesto *";
             // 
             // grbExp1
@@ -2380,6 +2420,7 @@
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(70, 16);
             this.label34.TabIndex = 99;
+            this.label34.Tag = "txtEmpresa1";
             this.label34.Text = "Empresa *";
             // 
             // label48
@@ -2400,6 +2441,7 @@
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(57, 16);
             this.label49.TabIndex = 96;
+            this.label49.Tag = "txtPuesto1";
             this.label49.Text = "Puesto *";
             // 
             // errorProvider1
