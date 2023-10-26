@@ -41,13 +41,28 @@ namespace Comun
    
 
         //informacion academica
-        public int id_nivel { get; set; }
-        public string institucion { get; set; }
-        public string carrera { get; set; }
-        public int  año_ingreso { get; set; }
-        public int año_egreso { get; set; }
-        public string titulo { get; set; }
-        public int id_progreso { get; set; }
+        public int id_nivel1{ get; set; }
+        public int id_nivel2 { get; set; }
+        public int id_nivel3 { get; set; }
+
+        public string institucion1 { get; set; }
+        public string institucion2 { get; set; }
+        public string institucion3 { get; set; }
+        public string carrera1 { get; set; }
+        public string carrera2 { get; set; }
+        public string carrera3 { get; set; }
+        public int  año_ingreso1 { get; set; }
+        public int año_ingreso2 { get; set; }
+        public int año_ingreso3 { get; set; }
+        public int año_egreso1 { get; set; }
+        public int año_egreso2 { get; set; }
+        public int año_egreso3 { get; set; }
+        public string titulo1 { get; set; }
+        public string titulo2 { get; set; }
+        public string titulo3 { get; set; }
+        public int id_progreso1 { get; set; }
+        public int id_progreso2 { get; set; }
+        public int id_progreso3 { get; set; }
 
 
         //informacion laboral

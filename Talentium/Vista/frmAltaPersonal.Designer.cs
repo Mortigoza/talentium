@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaPersonal));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPersonales = new System.Windows.Forms.TabPage();
@@ -42,8 +43,8 @@
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btbEliminarImagen = new System.Windows.Forms.Button();
+            this.btbEditarImagen = new System.Windows.Forms.Button();
             this.btbBuscarImagen = new System.Windows.Forms.Button();
             this.pctFoto = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -98,6 +99,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAcademicos = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.label75 = new System.Windows.Forms.Label();
             this.grbSuperior1 = new System.Windows.Forms.GroupBox();
             this.label73 = new System.Windows.Forms.Label();
@@ -142,7 +144,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.cmbNivelAcademico1 = new System.Windows.Forms.ComboBox();
             this.grbSuperior = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.cmbProgreso2 = new System.Windows.Forms.ComboBox();
             this.label67 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -214,6 +215,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl.SuspendLayout();
             this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -235,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).BeginInit();
             this.grbExp1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -256,8 +259,8 @@
             this.tabPersonales.Controls.Add(this.groupBox7);
             this.tabPersonales.Controls.Add(this.checkBox1);
             this.tabPersonales.Controls.Add(this.button4);
-            this.tabPersonales.Controls.Add(this.button3);
-            this.tabPersonales.Controls.Add(this.button2);
+            this.tabPersonales.Controls.Add(this.btbEliminarImagen);
+            this.tabPersonales.Controls.Add(this.btbEditarImagen);
             this.tabPersonales.Controls.Add(this.btbBuscarImagen);
             this.tabPersonales.Controls.Add(this.pctFoto);
             this.tabPersonales.Controls.Add(this.groupBox3);
@@ -310,6 +313,7 @@
             // 
             // cmbArea
             // 
+            this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Location = new System.Drawing.Point(25, 38);
             this.cmbArea.Name = "cmbArea";
@@ -348,6 +352,7 @@
             // 
             // cmbConvenio
             // 
+            this.cmbConvenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConvenio.FormattingEnabled = true;
             this.cmbConvenio.Location = new System.Drawing.Point(26, 148);
             this.cmbConvenio.Name = "cmbConvenio";
@@ -356,6 +361,7 @@
             // 
             // cmbPuesto
             // 
+            this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(25, 90);
             this.cmbPuesto.Name = "cmbPuesto";
@@ -389,28 +395,28 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btbEliminarImagen
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(903, 149);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 39);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btbEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEliminarImagen.BackgroundImage")));
+            this.btbEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btbEliminarImagen.Location = new System.Drawing.Point(903, 149);
+            this.btbEliminarImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btbEliminarImagen.Name = "btbEliminarImagen";
+            this.btbEliminarImagen.Size = new System.Drawing.Size(47, 39);
+            this.btbEliminarImagen.TabIndex = 5;
+            this.btbEliminarImagen.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btbEditarImagen
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(903, 100);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(47, 39);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btbEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEditarImagen.BackgroundImage")));
+            this.btbEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btbEditarImagen.Location = new System.Drawing.Point(903, 100);
+            this.btbEditarImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btbEditarImagen.Name = "btbEditarImagen";
+            this.btbEditarImagen.Size = new System.Drawing.Size(47, 39);
+            this.btbEditarImagen.TabIndex = 4;
+            this.btbEditarImagen.UseVisualStyleBackColor = true;
+            this.btbEditarImagen.Click += new System.EventHandler(this.button2_Click);
             // 
             // btbBuscarImagen
             // 
@@ -486,6 +492,7 @@
             // 
             // cmbPartido
             // 
+            this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPartido.FormattingEnabled = true;
             this.cmbPartido.Location = new System.Drawing.Point(237, 41);
             this.cmbPartido.Margin = new System.Windows.Forms.Padding(4);
@@ -514,6 +521,7 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(28, 41);
             this.cmbProvincia.Margin = new System.Windows.Forms.Padding(4);
@@ -524,11 +532,14 @@
             // 
             // txtNro
             // 
+            this.txtNro.AccessibleDescription = "O";
             this.txtNro.Location = new System.Drawing.Point(237, 150);
             this.txtNro.Margin = new System.Windows.Forms.Padding(4);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(53, 22);
             this.txtNro.TabIndex = 34;
+            this.txtNro.Text = "500";
+            this.txtNro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNro_KeyPress);
             // 
             // label10
             // 
@@ -542,11 +553,15 @@
             // 
             // txtCalle
             // 
+            this.txtCalle.AccessibleDescription = "O";
             this.txtCalle.Location = new System.Drawing.Point(28, 150);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(4);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(192, 22);
             this.txtCalle.TabIndex = 35;
+            this.txtCalle.Text = "Calle Falsa";
+            this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
             // txtPiso
             // 
@@ -555,9 +570,11 @@
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(53, 22);
             this.txtPiso.TabIndex = 36;
+            this.txtPiso.Text = "1";
             // 
             // cmbLocalidad
             // 
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(29, 95);
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);
@@ -573,6 +590,7 @@
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(53, 22);
             this.txtDpto.TabIndex = 37;
+            this.txtDpto.Text = "A";
             // 
             // label11
             // 
@@ -679,6 +697,7 @@
             // 
             // cmbNacionalidad
             // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.FormattingEnabled = true;
             this.cmbNacionalidad.Location = new System.Drawing.Point(21, 289);
             this.cmbNacionalidad.Name = "cmbNacionalidad";
@@ -701,6 +720,7 @@
             // 
             // cmbTipoTelAlternativo
             // 
+            this.cmbTipoTelAlternativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelAlternativo.FormattingEnabled = true;
             this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(200, 242);
             this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(4);
@@ -714,12 +734,13 @@
             this.label23.Location = new System.Drawing.Point(196, 224);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 16);
+            this.label23.Size = new System.Drawing.Size(43, 16);
             this.label23.TabIndex = 52;
-            this.label23.Text = "Tipo";
+            this.label23.Text = "Tipo *";
             // 
             // cmbTipoTel
             // 
+            this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTel.FormattingEnabled = true;
             this.cmbTipoTel.Location = new System.Drawing.Point(244, 194);
             this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(4);
@@ -739,12 +760,14 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.AccessibleDescription = "O";
             this.txtTelefono.Location = new System.Drawing.Point(20, 195);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(215, 22);
             this.txtTelefono.TabIndex = 47;
             this.txtTelefono.Text = "1158778869";
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label22
             // 
@@ -758,6 +781,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.AccessibleDescription = "O";
             this.txtEmail.Location = new System.Drawing.Point(200, 148);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
@@ -773,6 +797,8 @@
             this.txtContacto.Size = new System.Drawing.Size(80, 22);
             this.txtContacto.TabIndex = 45;
             this.txtContacto.Text = "Hermano";
+            this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
+            this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
             // label8
             // 
@@ -796,6 +822,7 @@
             // 
             // txtTelefonoAlternativo
             // 
+            this.txtTelefonoAlternativo.AccessibleDescription = "O";
             this.txtTelefonoAlternativo.Location = new System.Drawing.Point(20, 243);
             this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
@@ -803,6 +830,7 @@
             this.txtTelefonoAlternativo.TabIndex = 43;
             this.txtTelefonoAlternativo.Text = "1158778859";
             this.txtTelefonoAlternativo.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.txtTelefonoAlternativo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlternativo_KeyPress);
             // 
             // nupHijos
             // 
@@ -818,9 +846,9 @@
             this.label19.Location = new System.Drawing.Point(16, 224);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 16);
+            this.label19.Size = new System.Drawing.Size(135, 16);
             this.label19.TabIndex = 44;
-            this.label19.Text = "Teléfono Alternativo";
+            this.label19.Text = "Teléfono Alternativo *";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
@@ -843,15 +871,18 @@
             // 
             // txtApellidos
             // 
+            this.txtApellidos.AccessibleDescription = "O";
             this.txtApellidos.Location = new System.Drawing.Point(204, 102);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(188, 22);
             this.txtApellidos.TabIndex = 30;
             this.txtApellidos.Text = "Gomez";
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // cmbEstadoCivil
             // 
+            this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(20, 390);
             this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(4);
@@ -862,11 +893,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 82);
+            this.label1.Location = new System.Drawing.Point(18, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 19;
+            this.label1.Tag = "txtNombres";
             this.label1.Text = "Nombres *";
             // 
             // label13
@@ -881,12 +913,15 @@
             // 
             // txtNombres
             // 
+            this.txtNombres.AccessibleDescription = "O";
+            this.txtNombres.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNombres.Location = new System.Drawing.Point(19, 102);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(171, 22);
             this.txtNombres.TabIndex = 18;
             this.txtNombres.Text = "Facundo";
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label7
             // 
@@ -900,12 +935,14 @@
             // 
             // txtDni
             // 
+            this.txtDni.AccessibleDescription = "O";
             this.txtDni.Location = new System.Drawing.Point(98, 147);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(92, 22);
             this.txtDni.TabIndex = 31;
             this.txtDni.Text = "39918293";
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label6
             // 
@@ -925,6 +962,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 35;
+            this.label2.Tag = "txtApellidos";
             this.label2.Text = "Apellidos *";
             // 
             // txtCuitCuil
@@ -948,6 +986,7 @@
             // 
             // cmbGenero
             // 
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Location = new System.Drawing.Point(216, 289);
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
@@ -978,6 +1017,7 @@
             // 
             // tabAcademicos
             // 
+            this.tabAcademicos.Controls.Add(this.button8);
             this.tabAcademicos.Controls.Add(this.label75);
             this.tabAcademicos.Controls.Add(this.grbSuperior1);
             this.tabAcademicos.Controls.Add(this.groupBox5);
@@ -990,6 +1030,24 @@
             this.tabAcademicos.TabIndex = 1;
             this.tabAcademicos.Text = "Datos Académicos";
             this.tabAcademicos.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button8.Location = new System.Drawing.Point(860, 459);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 44);
+            this.button8.TabIndex = 73;
+            this.button8.Text = "Continuar";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label75
             // 
@@ -1037,6 +1095,7 @@
             // 
             // cmbProgreso
             // 
+            this.cmbProgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso.FormattingEnabled = true;
             this.cmbProgreso.Location = new System.Drawing.Point(275, 175);
             this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
@@ -1072,14 +1131,17 @@
             // 
             // txtInsitutcionSuperior
             // 
+            this.txtInsitutcionSuperior.AccessibleDescription = "O";
             this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 80);
             this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior.TabIndex = 73;
+            this.txtInsitutcionSuperior.Text = "Colegio 1";
             // 
             // cmbEgreso
             // 
+            this.cmbEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso.FormattingEnabled = true;
             this.cmbEgreso.Location = new System.Drawing.Point(139, 175);
             this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4);
@@ -1109,6 +1171,7 @@
             // 
             // cmbNivelAcademico
             // 
+            this.cmbNivelAcademico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico.FormattingEnabled = true;
             this.cmbNivelAcademico.Location = new System.Drawing.Point(11, 33);
             this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
@@ -1124,10 +1187,12 @@
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(135, 16);
             this.label65.TabIndex = 74;
+            this.label65.Tag = "txtInstitucionSuperior";
             this.label65.Text = "Institución educativa *";
             // 
             // cmbIngreso
             // 
+            this.cmbIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso.FormattingEnabled = true;
             this.cmbIngreso.Location = new System.Drawing.Point(11, 175);
             this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4);
@@ -1157,11 +1222,14 @@
             // 
             // txtTitulo
             // 
+            this.txtTitulo.AccessibleDescription = "O";
             this.txtTitulo.Location = new System.Drawing.Point(12, 128);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo.TabIndex = 75;
+            this.txtTitulo.Text = "Titulo 1";
+            this.txtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo_KeyPress);
             // 
             // groupBox5
             // 
@@ -1322,7 +1390,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(439, 506);
+            this.groupBox4.Size = new System.Drawing.Size(439, 443);
             this.groupBox4.TabIndex = 70;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Formación Academica";
@@ -1330,6 +1398,7 @@
             // 
             // cmbProgreso1
             // 
+            this.cmbProgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso1.FormattingEnabled = true;
             this.cmbProgreso1.Location = new System.Drawing.Point(272, 182);
             this.cmbProgreso1.Margin = new System.Windows.Forms.Padding(4);
@@ -1389,6 +1458,7 @@
             // 
             // cmbEgreso1
             // 
+            this.cmbEgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso1.FormattingEnabled = true;
             this.cmbEgreso1.Location = new System.Drawing.Point(144, 181);
             this.cmbEgreso1.Margin = new System.Windows.Forms.Padding(4);
@@ -1408,6 +1478,7 @@
             // 
             // cmbIngreso1
             // 
+            this.cmbIngreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso1.FormattingEnabled = true;
             this.cmbIngreso1.Location = new System.Drawing.Point(16, 181);
             this.cmbIngreso1.Margin = new System.Windows.Forms.Padding(4);
@@ -1427,6 +1498,7 @@
             // 
             // txtInsitutcionSuperior1
             // 
+            this.txtInsitutcionSuperior1.AccessibleDescription = "OI";
             this.txtInsitutcionSuperior1.Location = new System.Drawing.Point(15, 89);
             this.txtInsitutcionSuperior1.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior1.Name = "txtInsitutcionSuperior1";
@@ -1436,12 +1508,14 @@
             // 
             // txtTitulo1
             // 
+            this.txtTitulo1.AccessibleDescription = "OI";
             this.txtTitulo1.Location = new System.Drawing.Point(16, 135);
             this.txtTitulo1.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo1.Name = "txtTitulo1";
             this.txtTitulo1.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo1.TabIndex = 62;
             this.txtTitulo1.Text = "Analista de Sistemas";
+            this.txtTitulo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo1_KeyPress);
             // 
             // label40
             // 
@@ -1475,6 +1549,7 @@
             // 
             // cmbNivelAcademico1
             // 
+            this.cmbNivelAcademico1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico1.FormattingEnabled = true;
             this.cmbNivelAcademico1.Location = new System.Drawing.Point(15, 39);
             this.cmbNivelAcademico1.Margin = new System.Windows.Forms.Padding(4);
@@ -1484,7 +1559,6 @@
             // 
             // grbSuperior
             // 
-            this.grbSuperior.Controls.Add(this.button8);
             this.grbSuperior.Controls.Add(this.cmbProgreso2);
             this.grbSuperior.Controls.Add(this.label67);
             this.grbSuperior.Controls.Add(this.button7);
@@ -1502,31 +1576,15 @@
             this.grbSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.grbSuperior.Name = "grbSuperior";
             this.grbSuperior.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSuperior.Size = new System.Drawing.Size(423, 270);
+            this.grbSuperior.Size = new System.Drawing.Size(423, 202);
             this.grbSuperior.TabIndex = 87;
             this.grbSuperior.TabStop = false;
             this.grbSuperior.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(299, 217);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 44);
-            this.button8.TabIndex = 73;
-            this.button8.Text = "Continuar";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.grbSuperior.Enter += new System.EventHandler(this.grbSuperior_Enter);
             // 
             // cmbProgreso2
             // 
+            this.cmbProgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso2.FormattingEnabled = true;
             this.cmbProgreso2.Location = new System.Drawing.Point(265, 165);
             this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(4);
@@ -1560,14 +1618,17 @@
             // 
             // txtInsitutcionSuperior2
             // 
+            this.txtInsitutcionSuperior2.AccessibleDescription = "OII";
             this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(8, 70);
             this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
             this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior2.TabIndex = 73;
+            this.txtInsitutcionSuperior2.Text = "Colegio 3";
             // 
             // cmbEgreso2
             // 
+            this.cmbEgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso2.FormattingEnabled = true;
             this.cmbEgreso2.Location = new System.Drawing.Point(136, 165);
             this.cmbEgreso2.Margin = new System.Windows.Forms.Padding(4);
@@ -1597,6 +1658,7 @@
             // 
             // cmbNivelAcademico2
             // 
+            this.cmbNivelAcademico2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico2.FormattingEnabled = true;
             this.cmbNivelAcademico2.Location = new System.Drawing.Point(8, 23);
             this.cmbNivelAcademico2.Margin = new System.Windows.Forms.Padding(4);
@@ -1612,10 +1674,12 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(135, 16);
             this.label26.TabIndex = 74;
+            this.label26.Tag = "txtInsitutcionSuperior2";
             this.label26.Text = "Institución educativa *";
             // 
             // cmbIngreso2
             // 
+            this.cmbIngreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso2.FormattingEnabled = true;
             this.cmbIngreso2.Location = new System.Drawing.Point(8, 165);
             this.cmbIngreso2.Margin = new System.Windows.Forms.Padding(4);
@@ -1645,11 +1709,14 @@
             // 
             // txtTitulo2
             // 
+            this.txtTitulo2.AccessibleDescription = "OII";
             this.txtTitulo2.Location = new System.Drawing.Point(9, 118);
             this.txtTitulo2.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo2.Name = "txtTitulo2";
             this.txtTitulo2.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo2.TabIndex = 75;
+            this.txtTitulo2.Text = "Titulo 3";
+            this.txtTitulo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo2_KeyPress);
             // 
             // tabLaborales
             // 
@@ -1756,11 +1823,13 @@
             // 
             // txtPuesto2
             // 
+            this.txtPuesto2.AccessibleDescription = "OII";
             this.txtPuesto2.Location = new System.Drawing.Point(15, 51);
             this.txtPuesto2.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto2.Name = "txtPuesto2";
             this.txtPuesto2.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto2.TabIndex = 102;
+            this.txtPuesto2.Text = "Basurero";
             // 
             // button12
             // 
@@ -1778,11 +1847,13 @@
             // 
             // txtEmpresa2
             // 
+            this.txtEmpresa2.AccessibleDescription = "OII";
             this.txtEmpresa2.Location = new System.Drawing.Point(15, 98);
             this.txtEmpresa2.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresa2.Name = "txtEmpresa2";
             this.txtEmpresa2.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa2.TabIndex = 90;
+            this.txtEmpresa2.Text = "Basurandia";
             // 
             // label53
             // 
@@ -1812,6 +1883,7 @@
             // 
             // cmbLaboralEgreso2
             // 
+            this.cmbLaboralEgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso2.FormattingEnabled = true;
             this.cmbLaboralEgreso2.Location = new System.Drawing.Point(149, 146);
             this.cmbLaboralEgreso2.Margin = new System.Windows.Forms.Padding(4);
@@ -1831,6 +1903,7 @@
             // 
             // cmbLaboralIngreso2
             // 
+            this.cmbLaboralIngreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso2.FormattingEnabled = true;
             this.cmbLaboralIngreso2.Location = new System.Drawing.Point(15, 145);
             this.cmbLaboralIngreso2.Margin = new System.Windows.Forms.Padding(4);
@@ -1900,11 +1973,13 @@
             // 
             // txtPuesto3
             // 
+            this.txtPuesto3.AccessibleDescription = "OIII";
             this.txtPuesto3.Location = new System.Drawing.Point(6, 63);
             this.txtPuesto3.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto3.Name = "txtPuesto3";
             this.txtPuesto3.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto3.TabIndex = 101;
+            this.txtPuesto3.Text = "Barrendero";
             // 
             // button14
             // 
@@ -1922,6 +1997,7 @@
             // 
             // cmbLaboralEgreso3
             // 
+            this.cmbLaboralEgreso3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso3.FormattingEnabled = true;
             this.cmbLaboralEgreso3.Location = new System.Drawing.Point(141, 162);
             this.cmbLaboralEgreso3.Margin = new System.Windows.Forms.Padding(4);
@@ -1931,11 +2007,13 @@
             // 
             // txtEmpresa3
             // 
+            this.txtEmpresa3.AccessibleDescription = "OIII";
             this.txtEmpresa3.Location = new System.Drawing.Point(7, 114);
             this.txtEmpresa3.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresa3.Name = "txtEmpresa3";
             this.txtEmpresa3.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa3.TabIndex = 100;
+            this.txtEmpresa3.Text = "Barrendaria";
             // 
             // label59
             // 
@@ -1950,6 +2028,7 @@
             // 
             // cmbLaboralIngreso3
             // 
+            this.cmbLaboralIngreso3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso3.FormattingEnabled = true;
             this.cmbLaboralIngreso3.Location = new System.Drawing.Point(7, 161);
             this.cmbLaboralIngreso3.Margin = new System.Windows.Forms.Padding(4);
@@ -1995,6 +2074,7 @@
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(57, 16);
             this.label63.TabIndex = 96;
+            this.label63.Tag = "txtPuesto3";
             this.label63.Text = "Puesto *";
             // 
             // groupBox6
@@ -2057,6 +2137,7 @@
             // 
             // txtPuesto
             // 
+            this.txtPuesto.AccessibleDescription = "O";
             this.txtPuesto.Location = new System.Drawing.Point(14, 51);
             this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto.Name = "txtPuesto";
@@ -2066,6 +2147,7 @@
             // 
             // txtEmpresa
             // 
+            this.txtEmpresa.AccessibleDescription = "O";
             this.txtEmpresa.Location = new System.Drawing.Point(15, 98);
             this.txtEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresa.Name = "txtEmpresa";
@@ -2101,6 +2183,7 @@
             // 
             // cmbLaboralEgreso
             // 
+            this.cmbLaboralEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso.FormattingEnabled = true;
             this.cmbLaboralEgreso.Location = new System.Drawing.Point(149, 146);
             this.cmbLaboralEgreso.Margin = new System.Windows.Forms.Padding(4);
@@ -2120,6 +2203,7 @@
             // 
             // cmbLaboralIngreso
             // 
+            this.cmbLaboralIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso.FormattingEnabled = true;
             this.cmbLaboralIngreso.Location = new System.Drawing.Point(15, 145);
             this.cmbLaboralIngreso.Margin = new System.Windows.Forms.Padding(4);
@@ -2206,11 +2290,13 @@
             // 
             // txtPuesto1
             // 
+            this.txtPuesto1.AccessibleDescription = "OI";
             this.txtPuesto1.Location = new System.Drawing.Point(6, 67);
             this.txtPuesto1.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto1.Name = "txtPuesto1";
             this.txtPuesto1.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto1.TabIndex = 103;
+            this.txtPuesto1.Text = "Cartonero";
             // 
             // label50
             // 
@@ -2238,6 +2324,7 @@
             // 
             // cmbLaboralEgreso1
             // 
+            this.cmbLaboralEgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso1.FormattingEnabled = true;
             this.cmbLaboralEgreso1.Location = new System.Drawing.Point(141, 162);
             this.cmbLaboralEgreso1.Margin = new System.Windows.Forms.Padding(4);
@@ -2247,11 +2334,13 @@
             // 
             // txtEmpresa1
             // 
+            this.txtEmpresa1.AccessibleDescription = "OI";
             this.txtEmpresa1.Location = new System.Drawing.Point(7, 114);
             this.txtEmpresa1.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresa1.Name = "txtEmpresa1";
             this.txtEmpresa1.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa1.TabIndex = 100;
+            this.txtEmpresa1.Text = "Cartolandia";
             // 
             // label46
             // 
@@ -2265,6 +2354,7 @@
             // 
             // cmbLaboralIngreso1
             // 
+            this.cmbLaboralIngreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso1.FormattingEnabled = true;
             this.cmbLaboralIngreso1.Location = new System.Drawing.Point(7, 161);
             this.cmbLaboralIngreso1.Margin = new System.Windows.Forms.Padding(4);
@@ -2311,6 +2401,11 @@
             this.label49.Size = new System.Drawing.Size(57, 16);
             this.label49.TabIndex = 96;
             this.label49.Text = "Puesto *";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAltaPersonal
             // 
@@ -2359,6 +2454,7 @@
             this.grbExp1.ResumeLayout(false);
             this.grbExp1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2369,8 +2465,8 @@
         private System.Windows.Forms.TabPage tabPersonales;
         private System.Windows.Forms.TabPage tabAcademicos;
         private System.Windows.Forms.TabPage tabLaborales;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btbEliminarImagen;
+        private System.Windows.Forms.Button btbEditarImagen;
         private System.Windows.Forms.Button btbBuscarImagen;
         private System.Windows.Forms.PictureBox pctFoto;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -2550,5 +2646,6 @@
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblFaltanLlenarCampos;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

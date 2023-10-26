@@ -21,7 +21,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
         }
 
 
-        public void InsertarPersona(Persona insert, int infoLaborales)
+        public void InsertarPersona(Persona insert, int infoLaborales, int infoAcademicos)
         {
             try
             {
@@ -29,6 +29,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
                 int id_persona = Convert.ToInt32(dt.Rows[0][0]);
                 InsertarTelefono(insert, id_persona);
                 InsertarInformacionLaboral(insert,id_persona,infoLaborales);
+                InsertarInformacionAcademica(insert,id_persona,infoAcademicos);
 
     
             }
@@ -65,8 +66,29 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
             }
             //Console.WriteLine("----------------------------------------------------");
+        }
+        public void InsertarInformacionAcademica (Persona insert, int id_persona, int cantidad)
+        {
+            Dictionary<int, (int id_nivel, string institucion, string carrera, int año_ingreso ,int año_egreso, string titulo, int id_progreso )> informacionAcademica
+              = new Dictionary<int, (int, string, string, int, int,string,int)>
+          {
+                { 1, (insert.id_nivel1, insert.institucion1, insert.carrera1,  insert.año_ingreso1, insert.año_egreso1, insert.titulo1, insert.id_progreso1) },
+                { 2, (insert.id_nivel2, insert.institucion2, insert.carrera2,  insert.año_ingreso2, insert.año_egreso2, insert.titulo2, insert.id_progreso2)},
+                { 3, (insert.id_nivel3, insert.institucion3, insert.carrera3,  insert.año_ingreso3, insert.año_egreso3, insert.titulo3, insert.id_progreso3) },
+             
 
-
+          };
+            for (int i = 1; i <= cantidad; i++)
+            {
+                int id_nivel = informacionAcademica[i].id_nivel;
+                string institucion = informacionAcademica[i].institucion;
+                string carrera = informacionAcademica[i].carrera;
+                int año_ingreso = informacionAcademica[i].año_ingreso;
+                int año_egreso = informacionAcademica[i].año_egreso;
+                string titulo = informacionAcademica[i].titulo;
+                int id_progreso = informacionAcademica[i].id_progreso;
+                AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel,institucion,carrera,año_ingreso,año_egreso,titulo,id_progreso);
+            }
         }
 
         //se crea instancia y se almacena en "AccesoDatos"
