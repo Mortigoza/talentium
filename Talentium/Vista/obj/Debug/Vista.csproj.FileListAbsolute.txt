@@ -254,3 +254,5 @@ C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Deb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\en-US\LogicaNegocio.resources.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\es-AR\LogicaNegocio.resources.dll

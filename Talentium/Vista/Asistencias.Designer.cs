@@ -33,7 +33,10 @@
             this.abrirAlta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridAlta = new System.Windows.Forms.DataGridView();
+            this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.puestosAltas = new System.Windows.Forms.ComboBox();
             this.buscarAlta = new System.Windows.Forms.Button();
@@ -44,23 +47,25 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridModificar = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.periodo = new System.Windows.Forms.RadioButton();
+            this.periodo = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.PuestoMod = new System.Windows.Forms.ComboBox();
+            this.AreaMod = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.FechaHastaMod = new System.Windows.Forms.DateTimePicker();
+            this.fechaDesdeMod = new System.Windows.Forms.DateTimePicker();
+            this.FechaMod = new System.Windows.Forms.DateTimePicker();
+            this.buscarMod = new System.Windows.Forms.Button();
+            this.CuilMod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,7 +73,7 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridModificar)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,8 +137,22 @@
             this.dataGridAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Abrir
+            // 
+            this.Abrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Abrir.HeaderText = "Abrir";
+            this.Abrir.MinimumWidth = 6;
+            this.Abrir.Name = "Abrir";
+            this.Abrir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abrir.Text = "Abrir";
+            this.Abrir.ToolTipText = "Click";
+            this.Abrir.UseColumnTextForButtonValue = true;
+            this.Abrir.Width = 80;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.puestosAltas);
             this.groupBox1.Controls.Add(this.buscarAlta);
@@ -149,6 +168,26 @@
             this.groupBox1.Text = "Filtros";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(48, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(12, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(40, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(12, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "*";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -161,9 +200,9 @@
             // puestosAltas
             // 
             this.puestosAltas.FormattingEnabled = true;
-            this.puestosAltas.Location = new System.Drawing.Point(57, 70);
+            this.puestosAltas.Location = new System.Drawing.Point(66, 70);
             this.puestosAltas.Name = "puestosAltas";
-            this.puestosAltas.Size = new System.Drawing.Size(217, 24);
+            this.puestosAltas.Size = new System.Drawing.Size(208, 24);
             this.puestosAltas.TabIndex = 15;
             // 
             // buscarAlta
@@ -204,9 +243,9 @@
             // areasAltas
             // 
             this.areasAltas.FormattingEnabled = true;
-            this.areasAltas.Location = new System.Drawing.Point(51, 40);
+            this.areasAltas.Location = new System.Drawing.Point(66, 40);
             this.areasAltas.Name = "areasAltas";
-            this.areasAltas.Size = new System.Drawing.Size(223, 24);
+            this.areasAltas.Size = new System.Drawing.Size(208, 24);
             this.areasAltas.TabIndex = 9;
             this.areasAltas.SelectedIndexChanged += new System.EventHandler(this.areasAltas_SelectedIndexChanged);
             // 
@@ -234,7 +273,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.dataGridModificar);
             this.groupBox3.Location = new System.Drawing.Point(303, 15);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(782, 379);
@@ -242,33 +281,37 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Personal";
             // 
-            // dataGridView2
+            // dataGridModificar
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 17);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(770, 353);
-            this.dataGridView2.TabIndex = 12;
+            this.dataGridModificar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridModificar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Modificar});
+            this.dataGridModificar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridModificar.Location = new System.Drawing.Point(2, 17);
+            this.dataGridModificar.Name = "dataGridModificar";
+            this.dataGridModificar.RowHeadersWidth = 51;
+            this.dataGridModificar.RowTemplate.Height = 24;
+            this.dataGridModificar.Size = new System.Drawing.Size(770, 353);
+            this.dataGridModificar.TabIndex = 12;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.periodo);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.comboBox5);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.PuestoMod);
+            this.groupBox4.Controls.Add(this.AreaMod);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.dateTimePicker3);
-            this.groupBox4.Controls.Add(this.dateTimePicker2);
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.FechaHastaMod);
+            this.groupBox4.Controls.Add(this.fechaDesdeMod);
+            this.groupBox4.Controls.Add(this.FechaMod);
+            this.groupBox4.Controls.Add(this.buscarMod);
+            this.groupBox4.Controls.Add(this.CuilMod);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Location = new System.Drawing.Point(7, 15);
             this.groupBox4.Name = "groupBox4";
@@ -276,17 +319,38 @@
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtros";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // periodo
             // 
             this.periodo.AutoSize = true;
-            this.periodo.Location = new System.Drawing.Point(8, 147);
+            this.periodo.Location = new System.Drawing.Point(0, 148);
             this.periodo.Name = "periodo";
-            this.periodo.Size = new System.Drawing.Size(76, 20);
-            this.periodo.TabIndex = 29;
-            this.periodo.TabStop = true;
+            this.periodo.Size = new System.Drawing.Size(77, 20);
+            this.periodo.TabIndex = 32;
             this.periodo.Text = "Periodo";
             this.periodo.UseVisualStyleBackColor = true;
+            this.periodo.CheckedChanged += new System.EventHandler(this.periodo_CheckedChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(48, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 16);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(40, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(12, 16);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "*";
             // 
             // label14
             // 
@@ -297,21 +361,22 @@
             this.label14.TabIndex = 28;
             this.label14.Text = "Puesto:";
             // 
-            // comboBox5
+            // PuestoMod
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(57, 61);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(217, 24);
-            this.comboBox5.TabIndex = 27;
+            this.PuestoMod.FormattingEnabled = true;
+            this.PuestoMod.Location = new System.Drawing.Point(66, 61);
+            this.PuestoMod.Name = "PuestoMod";
+            this.PuestoMod.Size = new System.Drawing.Size(208, 24);
+            this.PuestoMod.TabIndex = 27;
             // 
-            // comboBox2
+            // AreaMod
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(51, 31);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(223, 24);
-            this.comboBox2.TabIndex = 26;
+            this.AreaMod.FormattingEnabled = true;
+            this.AreaMod.Location = new System.Drawing.Point(66, 31);
+            this.AreaMod.Name = "AreaMod";
+            this.AreaMod.Size = new System.Drawing.Size(208, 24);
+            this.AreaMod.TabIndex = 26;
+            this.AreaMod.SelectedIndexChanged += new System.EventHandler(this.AreaMod_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -349,42 +414,43 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Fecha hasta:";
             // 
-            // dateTimePicker3
+            // FechaHastaMod
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(90, 259);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(184, 22);
-            this.dateTimePicker3.TabIndex = 19;
+            this.FechaHastaMod.Location = new System.Drawing.Point(90, 259);
+            this.FechaHastaMod.Name = "FechaHastaMod";
+            this.FechaHastaMod.Size = new System.Drawing.Size(184, 22);
+            this.FechaHastaMod.TabIndex = 19;
             // 
-            // dateTimePicker2
+            // fechaDesdeMod
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(90, 220);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(184, 22);
-            this.dateTimePicker2.TabIndex = 18;
+            this.fechaDesdeMod.Location = new System.Drawing.Point(90, 220);
+            this.fechaDesdeMod.Name = "fechaDesdeMod";
+            this.fechaDesdeMod.Size = new System.Drawing.Size(184, 22);
+            this.fechaDesdeMod.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // FechaMod
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(74, 183);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 17;
+            this.FechaMod.Location = new System.Drawing.Point(74, 183);
+            this.FechaMod.Name = "FechaMod";
+            this.FechaMod.Size = new System.Drawing.Size(200, 22);
+            this.FechaMod.TabIndex = 17;
             // 
-            // button2
+            // buscarMod
             // 
-            this.button2.Location = new System.Drawing.Point(203, 341);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 32);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buscarMod.Location = new System.Drawing.Point(203, 341);
+            this.buscarMod.Name = "buscarMod";
+            this.buscarMod.Size = new System.Drawing.Size(81, 32);
+            this.buscarMod.TabIndex = 13;
+            this.buscarMod.Text = "Buscar";
+            this.buscarMod.UseVisualStyleBackColor = true;
+            this.buscarMod.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // CuilMod
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 22);
-            this.textBox4.TabIndex = 14;
+            this.CuilMod.Location = new System.Drawing.Point(51, 103);
+            this.CuilMod.Name = "CuilMod";
+            this.CuilMod.Size = new System.Drawing.Size(223, 22);
+            this.CuilMod.TabIndex = 14;
             // 
             // label5
             // 
@@ -395,17 +461,14 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "CUIL:";
             // 
-            // Abrir
+            // Modificar
             // 
-            this.Abrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Abrir.HeaderText = "Abrir";
-            this.Abrir.MinimumWidth = 6;
-            this.Abrir.Name = "Abrir";
-            this.Abrir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Abrir.Text = "Abrir";
-            this.Abrir.ToolTipText = "Click";
-            this.Abrir.UseColumnTextForButtonValue = true;
-            this.Abrir.Width = 80;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Text = "Abrir";
+            this.Modificar.Width = 125;
             // 
             // Asistencias
             // 
@@ -423,7 +486,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridModificar)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -444,26 +507,31 @@
         private System.Windows.Forms.ComboBox areasAltas;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridModificar;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker FechaHastaMod;
+        private System.Windows.Forms.DateTimePicker fechaDesdeMod;
+        private System.Windows.Forms.DateTimePicker FechaMod;
+        private System.Windows.Forms.Button buscarMod;
+        private System.Windows.Forms.TextBox CuilMod;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button abrirAlta;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox puestosAltas;
-        private System.Windows.Forms.RadioButton periodo;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox PuestoMod;
+        private System.Windows.Forms.ComboBox AreaMod;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewButtonColumn Abrir;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox periodo;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
     }
 }

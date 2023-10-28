@@ -34,6 +34,8 @@ namespace Vista
             fechaHasta.Visible = false;
             dateTimePicker1.Visible = false;
             dateTimePicker2.Visible = false;
+            textBox1.Visible = false;
+            label7.Visible = false;
         }
 
         private void AsistenciasPanel_Load(object sender, EventArgs e)
@@ -78,13 +80,27 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
-            datos.idPersona = idPer;
-            datos.fecha = dateTimePicker3.Value;
-            datos.fecha_desde = dateTimePicker1.Value;
-            datos.fecha_hasta = dateTimePicker2.Value;
-           // datos.idMotivo = selectedMotivo["id_motivo"];
+            try
+            {
+                DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+                asistencias.IdPersona = idPer;
+                asistencias.Fecha = dateTimePicker3.Value;
+                asistencias.FechaDesde = dateTimePicker1.Value;
+                asistencias.FechaHasta = dateTimePicker2.Value;
+                asistencias.IdMotivo = selectedMotivo["id_motivo"];
+                asistencias.OtroMotivo = textBox1.Text;
+                asistencias.Justificada = checkBox1.Checked;
+                asistencias.Observaciones = textBox2.Text;
+                asistencias.Periodo = checkPeriodo.Checked;
+                asistencias.insertarAsistencias();
+                this.Hide();
+                MessageBox.Show("operación realizada con éxito");
 
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error al insertar la asistencia: "+ ex);
+            }
         }
 
         private void checkPeriodo_CheckedChanged(object sender, EventArgs e)
@@ -117,6 +133,22 @@ namespace Vista
         private void button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void cmbMotivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+            var valor = asistencias.revisarMotivo(selectedMotivo["id_motivo"]);
+            if (valor == 9)
+            {
+                textBox1.Visible = true;
+                label7.Visible = true;
+            }
+            else 
+            {
+                textBox1.Visible = false;
+                label7.Visible = false;
+            }
         }
     }
 }

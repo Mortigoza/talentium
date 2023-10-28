@@ -15,15 +15,5 @@ namespace Comun
         public string Puesto { get; set; }
         public string Area { get; set; }
 
-        //insert
-
-        public bool periodo { get; set; }
-        public DateTime fecha { get; set; }
-        public DateTime fecha_desde { get; set; }
-        public DateTime fecha_hasta { get; set; }
-        public int idMotivo { get; set; }
-        public string otro_motivo { get; set; }
-        public bool justificada { get; set; }
-        public string observaciones { get; set; }
     }
 }

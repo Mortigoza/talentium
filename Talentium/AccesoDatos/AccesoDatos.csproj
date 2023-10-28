@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CD_AccesoBD.cs" />
     <Compile Include="CD_Asistencias.cs" />
+    <Compile Include="CD_Capacitaciones.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_EjecutarSP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

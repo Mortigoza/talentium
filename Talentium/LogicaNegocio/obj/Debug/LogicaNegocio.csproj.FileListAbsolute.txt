@@ -108,3 +108,11 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\ob
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.GenerateResource.cache
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Niveles.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Niveles.en-US.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Niveles.es-AR.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\en-US\LogicaNegocio.resources.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\es-AR\LogicaNegocio.resources.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\en-US\LogicaNegocio.resources.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\es-AR\LogicaNegocio.resources.dll

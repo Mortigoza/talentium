@@ -3,18 +3,151 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace Vista.Gestion_de_Talento
 {
     public partial class frmABMCapacitaciones : Form
     {
+        CN_Capacitaciones cnCapacitaciones = new CN_Capacitaciones();
+        int _rowIndex = -1;
+        int _idCapacitacion = -1;
         public frmABMCapacitaciones()
         {
             InitializeComponent();
+            //idiomas
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Niveles.Culture = Thread.CurrentThread.CurrentUICulture;
+            cmbNivelAlta.Items.AddRange(new string[] { Niveles.cmbNivel0, Niveles.cmbNivel1, Niveles.cmbNivel2 });
+            cmbNivelMod.Items.AddRange(new string[] { Niveles.cmbNivel0, Niveles.cmbNivel1, Niveles.cmbNivel2 });
+            cmbExternaInternaAlta.Items.AddRange(new string[] { Niveles.cmbExternaInterna0, Niveles.cmbExternaInterna1 });
+            cmbExternaInternaMod.Items.AddRange(new string[] { Niveles.cmbExternaInterna0, Niveles.cmbExternaInterna1 });
+
+
+            //cmbArea
+            DataTable cnCapa = cnCapacitaciones.area();
+            cmbAreaAlta.ValueMember = "id_area";
+            cmbAreaAlta.DisplayMember = "area";
+            cmbAreaAlta.DataSource = cnCapa;
+            cmbAreaAlta.SelectedIndex = -1;
+            cmbAreaMod.ValueMember = "id_area";
+            cmbAreaMod.DisplayMember = "area";
+            cmbAreaMod.DataSource = cnCapa;
+            cmbAreaMod.SelectedIndex = -1;
+            //dtg
+            dtgCapacitacion.Columns.Clear();
+        }
+        public void limpiarControles(Control control)
+        {
+            foreach (Control item in control.Controls)
+            {
+                if (item is TextBox txt) txt.Text = null;
+                if (item is ComboBox cmb) cmb.SelectedIndex = -1;
+                if (item is GroupBox | item is Panel) limpiarControles(item);
+            }
+        }
+        public void cargarDTG(bool like)
+        {
+            DataTable cap;
+            //traer capacitaciones al dtg
+            if (like == false)
+            {
+                cap = cnCapacitaciones.ConsultaCapacitaciones();
+            }
+            else 
+            {
+                cap = cnCapacitaciones.filtrarCapacitaciones(txtFiltro.Text);
+
+            }
+            dtgCapacitacion.DataSource = null;
+            dtgCapacitacion.DataSource = cap;
+            dtgCapacitacion.AllowUserToAddRows = false;
+            dtgCapacitacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgCapacitacion.MultiSelect = false;
+            dtgCapacitacion.RowHeadersVisible = false;
+            dtgCapacitacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgCapacitacion.AllowUserToAddRows = false;
+            dtgCapacitacion.AllowUserToResizeRows = false;
+            dtgCapacitacion.ReadOnly = true;
+
+            // Ocultar las demás columnas
+
+            dtgCapacitacion.Columns[0].Visible = false;
+            dtgCapacitacion.Columns[2].Visible = false;
+            dtgCapacitacion.Columns[4].Visible = false;
+            dtgCapacitacion.Columns[5].Visible = false;
+        }
+        private void frmABMCapacitaciones_Load(object sender, EventArgs e)
+        {
+
+            cargarDTG(false);
+        }
+
+
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+            cnCapacitaciones.IdArea = cmbAreaAlta.SelectedValue;
+            cnCapacitaciones.Capacitacion = txtNombreAlta.Text;
+            cnCapacitaciones.IdNivel = cmbNivelAlta.SelectedIndex;
+            cnCapacitaciones.ExternaInterna = cmbExternaInternaAlta.SelectedIndex;
+            cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoAlta.Text;
+            cnCapacitaciones.AltaCapacitaciones();
+            cargarDTG(false);
+            limpiarControles(this);
+        }
+
+        private void dtgCapacitacion_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            _rowIndex = e.RowIndex;
+            _idCapacitacion = Convert.ToInt32(dtgCapacitacion.Rows[_rowIndex].Cells[0].Value);
+            
+        }
+        public void cargaCtrMod() 
+        {
+            txtNombreMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[1].Value.ToString();
+            cmbNivelMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[2].Value;
+            cmbAreaMod.SelectedValue = (int)dtgCapacitacion.Rows[_rowIndex].Cells[4].Value;
+            cmbExternaInternaMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[5].Value;
+            txtTiempoEstimadoMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[6].Value.ToString();
+
+
+        }
+        private void btnDtgMod_Click(object sender, EventArgs e)
+        {
+            cargaCtrMod();   
+
+        }
+
+        private void dtgCapacitacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cargaCtrMod();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
+            cnCapacitaciones.IdArea = cmbAreaMod.SelectedValue;
+            cnCapacitaciones.Capacitacion = txtNombreMod.Text;
+            cnCapacitaciones.IdNivel = cmbNivelMod.SelectedIndex;
+            cnCapacitaciones.ExternaInterna = cmbExternaInternaMod.SelectedIndex;
+            cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoMod.Text;
+            cnCapacitaciones.ModificarCapacitaciones();
+
+            cargarDTG(false);
+            limpiarControles(this);
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            cargarDTG(true);
         }
     }
 }

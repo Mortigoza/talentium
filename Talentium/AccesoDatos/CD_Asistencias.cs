@@ -8,9 +8,74 @@ using System.Threading.Tasks;
 using Comun;
 namespace AccesoDatos
 {
+
     public class CD_Asistencias : CD_EjecutarSP
     {
-        C_Asistencias modelo = new C_Asistencias();  
+
+        public int idPersona;
+        public bool periodo;
+        public DateTime? fecha;
+        public DateTime? fecha_desde;
+        public DateTime? fecha_hasta;
+        public int idMotivo;
+        public string otro_motivo;
+        public bool justificada;
+        public string observaciones;
+
+        public int IdPersona
+        {
+            get { return idPersona; }
+            set { idPersona = value; }
+        }
+
+        public bool Periodo
+        {
+            get { return periodo; }
+            set { periodo = value; }
+        }
+
+        public DateTime? Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
+        public DateTime? FechaDesde
+        {
+            get { return fecha_desde; }
+            set { fecha_desde = value; }
+        }
+
+        public DateTime? FechaHasta
+        {
+            get { return fecha_hasta; }
+            set { fecha_hasta = value; }
+        }
+
+        public int IdMotivo
+        {
+            get { return idMotivo; }
+            set { idMotivo = value; }
+        }
+
+        public string OtroMotivo
+        {
+            get { return otro_motivo; }
+            set { otro_motivo = value; }
+        }
+
+        public bool Justificada
+        {
+            get { return justificada; }
+            set { justificada = value; }
+        }
+
+        public string Observaciones
+        {
+            get { return observaciones; }
+            set { observaciones = value; }
+        }
+
         //traer area
         public DataTable Areas()
         {
@@ -54,15 +119,18 @@ namespace AccesoDatos
         }
 
         //el filtro para modificar y consultar trae: nombre, apellido, area, puesto, justificada
-        public DataTable ConsultaAsistenciasMod(int idPersona, DateTime fecha, DateTime fechaDesde, DateTime fechaHasta)
+        public DataTable ConsultaAsistenciasMod( int idArea, int idPuesto, string cuil, DateTime? fecha, DateTime? fechaDesde, DateTime? fechaHasta)
         {
-            SqlParameter param1 = new SqlParameter("@id_persona", idPersona) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@fecha", fecha) { SqlDbType = SqlDbType.Date };
-            SqlParameter param3 = new SqlParameter("@fecha_desde", fechaDesde) { SqlDbType = SqlDbType.Date };
-            SqlParameter param4 = new SqlParameter("@fecha_hasta", fechaHasta) { SqlDbType = SqlDbType.Date };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
-            DataTable resultado = EjecutarConsultas("FiltroModConsAsistencias_SP", listaParametros.ToArray());
+            SqlParameter param1 = new SqlParameter("@id_area", idArea) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_puesto", idPuesto) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@fecha", fecha) { SqlDbType = SqlDbType.Date };
+            SqlParameter param5 = new SqlParameter("@fecha_desde", fechaDesde) { SqlDbType = SqlDbType.Date };
+            SqlParameter param6 = new SqlParameter("@fecha_hasta", fechaHasta) { SqlDbType = SqlDbType.Date };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+            DataTable resultado = EjecutarConsultas("FiltroObtenerAsistencias_SP", listaParametros.ToArray());
 
             return resultado;
         }
@@ -79,15 +147,15 @@ namespace AccesoDatos
         //insertar asistencia
         public void CargarAsistencia()
         {
-            SqlParameter param1 = new SqlParameter("@id_persona", modelo.idPersona) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@periodo", modelo.periodo) { SqlDbType = SqlDbType.Bit };
-            SqlParameter param3 = new SqlParameter("@fecha", modelo.fecha) { SqlDbType = SqlDbType.Date };
-            SqlParameter param4 = new SqlParameter("@fecha_desde", modelo.fecha_desde) { SqlDbType = SqlDbType.Date };
-            SqlParameter param5 = new SqlParameter("@fecha_hasta", modelo.fecha_hasta) { SqlDbType = SqlDbType.Date };
-            SqlParameter param6 = new SqlParameter("@id_motivo", modelo.idMotivo) { SqlDbType = SqlDbType.Int };
-            SqlParameter param7 = new SqlParameter("@otro_motivo", modelo.otro_motivo) { SqlDbType = SqlDbType.NChar};
-            SqlParameter param8 = new SqlParameter("@justificada", modelo.justificada) { SqlDbType = SqlDbType.Bit };
-            SqlParameter param9 = new SqlParameter("@observaciones", modelo.observaciones) { SqlDbType = SqlDbType.NVarChar};
+            SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@periodo", periodo) { SqlDbType = SqlDbType.Bit };
+            SqlParameter param3 = new SqlParameter("@fecha", fecha) { SqlDbType = SqlDbType.Date };
+            SqlParameter param4 = new SqlParameter("@fecha_desde", fecha_desde) { SqlDbType = SqlDbType.Date };
+            SqlParameter param5 = new SqlParameter("@fecha_hasta", fecha_hasta) { SqlDbType = SqlDbType.Date };
+            SqlParameter param6 = new SqlParameter("@id_motivo", idMotivo) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@otro_motivo", otro_motivo) { SqlDbType = SqlDbType.NChar};
+            SqlParameter param8 = new SqlParameter("@justificada", justificada) { SqlDbType = SqlDbType.Bit };
+            SqlParameter param9 = new SqlParameter("@observaciones", observaciones) { SqlDbType = SqlDbType.NVarChar};
 
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7, param8, param9 };

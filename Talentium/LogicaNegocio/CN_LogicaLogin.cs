@@ -123,7 +123,7 @@ namespace LogicaNegocio
                     //el usuario es correcto, por ello debemos genear el codigo y enviar el email
                     string correo = Convert.ToString(tabla.Rows[0][0]);
                     //UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
-                    var tup = email.obtenerCod();
+                    var tup = email.ObtenerCod();
                     string cod = tup.Item1;
                     DateTime fhCaducidad = tup.Item2;
 

@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMCapacitaciones));
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgCapacitacion = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.grpModificacion = new System.Windows.Forms.GroupBox();
+            this.cmbExternaInternaMod = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbNivelMod = new System.Windows.Forms.ComboBox();
+            this.cmbAreaMod = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.txtTiempoEstimadoMod = new System.Windows.Forms.TextBox();
+            this.btnCancelarMod = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNombreMod = new System.Windows.Forms.TextBox();
+            this.grpAlta = new System.Windows.Forms.GroupBox();
+            this.cmbExternaInternaAlta = new System.Windows.Forms.ComboBox();
+            this.cmbAreaAlta = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbNivelAlta = new System.Windows.Forms.ComboBox();
+            this.btnCancelarAlta = new System.Windows.Forms.Button();
+            this.btnAlta = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblAltaCapacitacion = new System.Windows.Forms.Label();
+            this.txtTiempoEstimadoAlta = new System.Windows.Forms.TextBox();
+            this.txtNombreAlta = new System.Windows.Forms.TextBox();
+            this.btnDtgMod = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
+            this.grpModificacion.SuspendLayout();
+            this.grpAlta.SuspendLayout();
             this.SuspendLayout();
             // 
             // button5
@@ -78,13 +78,14 @@
             this.button5.TabIndex = 13;
             this.button5.Text = "Buscar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox9
+            // txtFiltro
             // 
-            this.textBox9.Location = new System.Drawing.Point(347, 35);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(274, 22);
-            this.textBox9.TabIndex = 12;
+            this.txtFiltro.Location = new System.Drawing.Point(347, 35);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(274, 22);
+            this.txtFiltro.TabIndex = 12;
             // 
             // label9
             // 
@@ -105,20 +106,22 @@
             this.button3.Text = "Dar de Baja";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dtgCapacitacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgCapacitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCapacitacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(73, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 458);
-            this.dataGridView1.TabIndex = 9;
+            this.dtgCapacitacion.Location = new System.Drawing.Point(31, 103);
+            this.dtgCapacitacion.Name = "dtgCapacitacion";
+            this.dtgCapacitacion.RowHeadersWidth = 51;
+            this.dtgCapacitacion.RowTemplate.Height = 24;
+            this.dtgCapacitacion.Size = new System.Drawing.Size(613, 458);
+            this.dtgCapacitacion.TabIndex = 9;
+            this.dtgCapacitacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCapacitacion_CellDoubleClick);
+            this.dtgCapacitacion.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCapacitacion_RowEnter);
             // 
             // Column1
             // 
@@ -148,209 +151,63 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
             // 
-            // groupBox2
+            // grpModificacion
             // 
-            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Location = new System.Drawing.Point(672, 354);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(425, 248);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Modificacion";
+            this.grpModificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpModificacion.Controls.Add(this.cmbExternaInternaMod);
+            this.grpModificacion.Controls.Add(this.label6);
+            this.grpModificacion.Controls.Add(this.cmbNivelMod);
+            this.grpModificacion.Controls.Add(this.cmbAreaMod);
+            this.grpModificacion.Controls.Add(this.label7);
+            this.grpModificacion.Controls.Add(this.label8);
+            this.grpModificacion.Controls.Add(this.label11);
+            this.grpModificacion.Controls.Add(this.txtTiempoEstimadoMod);
+            this.grpModificacion.Controls.Add(this.btnCancelarMod);
+            this.grpModificacion.Controls.Add(this.btnModificar);
+            this.grpModificacion.Controls.Add(this.label5);
+            this.grpModificacion.Controls.Add(this.txtNombreMod);
+            this.grpModificacion.Location = new System.Drawing.Point(672, 354);
+            this.grpModificacion.Name = "grpModificacion";
+            this.grpModificacion.Size = new System.Drawing.Size(425, 248);
+            this.grpModificacion.TabIndex = 8;
+            this.grpModificacion.TabStop = false;
+            this.grpModificacion.Text = "Modificacion";
             // 
-            // button4
+            // cmbExternaInternaMod
             // 
-            this.button4.Location = new System.Drawing.Point(263, 194);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 29);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(344, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cmbExternaInternaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbExternaInternaMod.FormattingEnabled = true;
+            this.cmbExternaInternaMod.Location = new System.Drawing.Point(6, 153);
+            this.cmbExternaInternaMod.Name = "cmbExternaInternaMod";
+            this.cmbExternaInternaMod.Size = new System.Drawing.Size(126, 24);
+            this.cmbExternaInternaMod.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(225, 30);
+            this.label6.Location = new System.Drawing.Point(208, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tiempo estimado";
+            this.label6.Size = new System.Drawing.Size(137, 16);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Nivel de capacitacion";
             // 
-            // label5
+            // cmbNivelMod
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 16);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nombre de capacitacion";
+            this.cmbNivelMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivelMod.FormattingEnabled = true;
+            this.cmbNivelMod.Location = new System.Drawing.Point(211, 60);
+            this.cmbNivelMod.Name = "cmbNivelMod";
+            this.cmbNivelMod.Size = new System.Drawing.Size(191, 24);
+            this.cmbNivelMod.TabIndex = 16;
             // 
-            // textBox6
+            // cmbAreaMod
             // 
-            this.textBox6.Location = new System.Drawing.Point(228, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(191, 22);
-            this.textBox6.TabIndex = 2;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(9, 62);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 22);
-            this.textBox5.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(672, 103);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(425, 245);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Alta";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(263, 205);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 29);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Cancelar";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Location = new System.Drawing.Point(344, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Nivel de capacitacion";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Externa/Interna";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tiempo estimado";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nombre de capacitacion";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 159);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(106, 22);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(139, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 22);
-            this.textBox1.TabIndex = 0;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(228, 66);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 24);
-            this.comboBox2.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(267, 129);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 16);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Área";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(272, 159);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(147, 24);
-            this.comboBox3.TabIndex = 15;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(272, 155);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 24);
-            this.comboBox1.TabIndex = 21;
+            this.cmbAreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAreaMod.FormattingEnabled = true;
+            this.cmbAreaMod.Location = new System.Drawing.Point(272, 155);
+            this.cmbAreaMod.Name = "cmbAreaMod";
+            this.cmbAreaMod.Size = new System.Drawing.Size(147, 24);
+            this.cmbAreaMod.TabIndex = 21;
             // 
             // label7
             // 
@@ -379,39 +236,209 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "Tiempo estimado";
             // 
-            // textBox4
+            // txtTiempoEstimadoMod
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 155);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(106, 22);
-            this.textBox4.TabIndex = 17;
+            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(139, 155);
+            this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
+            this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 22);
+            this.txtTiempoEstimadoMod.TabIndex = 16;
             // 
-            // textBox7
+            // btnCancelarMod
             // 
-            this.textBox7.Location = new System.Drawing.Point(139, 155);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(106, 22);
-            this.textBox7.TabIndex = 16;
+            this.btnCancelarMod.Location = new System.Drawing.Point(263, 194);
+            this.btnCancelarMod.Name = "btnCancelarMod";
+            this.btnCancelarMod.Size = new System.Drawing.Size(75, 29);
+            this.btnCancelarMod.TabIndex = 11;
+            this.btnCancelarMod.Text = "Cancelar";
+            this.btnCancelarMod.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModificar.Location = new System.Drawing.Point(344, 194);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 29);
+            this.btnModificar.TabIndex = 10;
+            this.btnModificar.Text = "Guardar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Nombre de capacitacion";
+            // 
+            // txtNombreMod
+            // 
+            this.txtNombreMod.Location = new System.Drawing.Point(9, 62);
+            this.txtNombreMod.Name = "txtNombreMod";
+            this.txtNombreMod.Size = new System.Drawing.Size(172, 22);
+            this.txtNombreMod.TabIndex = 1;
+            // 
+            // grpAlta
+            // 
+            this.grpAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpAlta.Controls.Add(this.cmbExternaInternaAlta);
+            this.grpAlta.Controls.Add(this.cmbAreaAlta);
+            this.grpAlta.Controls.Add(this.label10);
+            this.grpAlta.Controls.Add(this.cmbNivelAlta);
+            this.grpAlta.Controls.Add(this.btnCancelarAlta);
+            this.grpAlta.Controls.Add(this.btnAlta);
+            this.grpAlta.Controls.Add(this.label4);
+            this.grpAlta.Controls.Add(this.label3);
+            this.grpAlta.Controls.Add(this.label2);
+            this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
+            this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
+            this.grpAlta.Controls.Add(this.txtNombreAlta);
+            this.grpAlta.Location = new System.Drawing.Point(672, 103);
+            this.grpAlta.Name = "grpAlta";
+            this.grpAlta.Size = new System.Drawing.Size(425, 245);
+            this.grpAlta.TabIndex = 7;
+            this.grpAlta.TabStop = false;
+            this.grpAlta.Text = "Alta";
+            // 
+            // cmbExternaInternaAlta
+            // 
+            this.cmbExternaInternaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbExternaInternaAlta.FormattingEnabled = true;
+            this.cmbExternaInternaAlta.Location = new System.Drawing.Point(6, 159);
+            this.cmbExternaInternaAlta.Name = "cmbExternaInternaAlta";
+            this.cmbExternaInternaAlta.Size = new System.Drawing.Size(120, 24);
+            this.cmbExternaInternaAlta.TabIndex = 16;
+            // 
+            // cmbAreaAlta
+            // 
+            this.cmbAreaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAreaAlta.FormattingEnabled = true;
+            this.cmbAreaAlta.Location = new System.Drawing.Point(272, 159);
+            this.cmbAreaAlta.Name = "cmbAreaAlta";
+            this.cmbAreaAlta.Size = new System.Drawing.Size(147, 24);
+            this.cmbAreaAlta.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(267, 129);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Área";
+            // 
+            // cmbNivelAlta
+            // 
+            this.cmbNivelAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivelAlta.FormattingEnabled = true;
+            this.cmbNivelAlta.Location = new System.Drawing.Point(228, 66);
+            this.cmbNivelAlta.Name = "cmbNivelAlta";
+            this.cmbNivelAlta.Size = new System.Drawing.Size(191, 24);
+            this.cmbNivelAlta.TabIndex = 13;
+            // 
+            // btnCancelarAlta
+            // 
+            this.btnCancelarAlta.Location = new System.Drawing.Point(263, 205);
+            this.btnCancelarAlta.Name = "btnCancelarAlta";
+            this.btnCancelarAlta.Size = new System.Drawing.Size(75, 29);
+            this.btnCancelarAlta.TabIndex = 10;
+            this.btnCancelarAlta.Text = "Cancelar";
+            this.btnCancelarAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnAlta
+            // 
+            this.btnAlta.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAlta.Location = new System.Drawing.Point(344, 205);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(75, 29);
+            this.btnAlta.TabIndex = 9;
+            this.btnAlta.Text = "Guardar";
+            this.btnAlta.UseVisualStyleBackColor = false;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(225, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Nivel de capacitacion";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Externa/Interna";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(132, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tiempo estimado";
+            // 
+            // lblAltaCapacitacion
+            // 
+            this.lblAltaCapacitacion.AutoSize = true;
+            this.lblAltaCapacitacion.Location = new System.Drawing.Point(6, 32);
+            this.lblAltaCapacitacion.Name = "lblAltaCapacitacion";
+            this.lblAltaCapacitacion.Size = new System.Drawing.Size(155, 16);
+            this.lblAltaCapacitacion.TabIndex = 4;
+            this.lblAltaCapacitacion.Text = "Nombre de capacitacion";
+            // 
+            // txtTiempoEstimadoAlta
+            // 
+            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(139, 159);
+            this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
+            this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 22);
+            this.txtTiempoEstimadoAlta.TabIndex = 1;
+            // 
+            // txtNombreAlta
+            // 
+            this.txtNombreAlta.Location = new System.Drawing.Point(9, 68);
+            this.txtNombreAlta.Name = "txtNombreAlta";
+            this.txtNombreAlta.Size = new System.Drawing.Size(172, 22);
+            this.txtNombreAlta.TabIndex = 0;
+            // 
+            // btnDtgMod
+            // 
+            this.btnDtgMod.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDtgMod.Location = new System.Drawing.Point(406, 571);
+            this.btnDtgMod.Name = "btnDtgMod";
+            this.btnDtgMod.Size = new System.Drawing.Size(104, 31);
+            this.btnDtgMod.TabIndex = 14;
+            this.btnDtgMod.Text = "Modificar";
+            this.btnDtgMod.UseVisualStyleBackColor = false;
+            this.btnDtgMod.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
             // frmABMCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 607);
+            this.Controls.Add(this.btnDtgMod);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dtgCapacitacion);
+            this.Controls.Add(this.grpModificacion);
+            this.Controls.Add(this.grpAlta);
             this.Name = "frmABMCapacitaciones";
             this.Text = "frmABMCapacitaciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmABMCapacitaciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).EndInit();
+            this.grpModificacion.ResumeLayout(false);
+            this.grpModificacion.PerformLayout();
+            this.grpAlta.ResumeLayout(false);
+            this.grpAlta.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,39 +447,40 @@
         #endregion
 
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgCapacitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox grpModificacion;
+        private System.Windows.Forms.ComboBox cmbAreaMod;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTiempoEstimadoMod;
+        private System.Windows.Forms.Button btnCancelarMod;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txtNombreMod;
+        private System.Windows.Forms.GroupBox grpAlta;
+        private System.Windows.Forms.ComboBox cmbAreaAlta;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbNivelAlta;
+        private System.Windows.Forms.Button btnCancelarAlta;
+        private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblAltaCapacitacion;
+        private System.Windows.Forms.TextBox txtTiempoEstimadoAlta;
+        private System.Windows.Forms.TextBox txtNombreAlta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbNivelMod;
+        private System.Windows.Forms.ComboBox cmbExternaInternaMod;
+        private System.Windows.Forms.ComboBox cmbExternaInternaAlta;
+        private System.Windows.Forms.Button btnDtgMod;
     }
 }
