@@ -103,5 +103,9 @@ namespace LogicaNegocio.Administracion_Del_Personal
     
         }
 
+
+
+
+       
     }
 }

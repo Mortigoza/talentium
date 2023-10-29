@@ -100,5 +100,16 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
 
 
+
+
+
+        public DataTable ObtenerPersona()
+        {
+            return AccesoDatos.ObtenerPersona();
+        }
+
+
+
+
     }
 }

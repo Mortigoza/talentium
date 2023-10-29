@@ -30,6 +30,8 @@ namespace Comun
         public int id_convenio { get; set; }
 
         public byte[] foto_perfil  { get; set; }
+
+        public DateTime fecha_alta { get; set; }
         
         public string telefono { get; set; }
         public int id_tipo { get; set; }
@@ -41,6 +43,8 @@ namespace Comun
    
 
         //informacion academica
+
+        public int id_idioma { get; set; }
         public int id_nivel1{ get; set; }
         public int id_nivel2 { get; set; }
         public int id_nivel3 { get; set; }

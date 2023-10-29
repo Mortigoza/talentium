@@ -24,16 +24,18 @@ namespace Vista
         private bool inicial = true;
         private int infoLaborales = 0;
         private int infoAcademicos = 1;
+        private int nivelEspaniol = -1;
+        private int nivelIngles = -1;
 
 
-        
+
 
         public frmAltaPersonal()
         {
             InitializeComponent();
           
             DeshabilitarCampos();
-            lblFaltanLlenarCampos.Visible = false;
+           
 
 
         }
@@ -137,6 +139,7 @@ namespace Vista
                             MessageBox.Show("Cuil Disponible");
                             HabilitarCampos();
                             txtCuitCuil.Enabled = false;
+                            pctFoto.Enabled = true;
 
                         }
                     }
@@ -322,9 +325,9 @@ namespace Vista
 
         private void button9_Click(object sender, EventArgs e)
         {
-           
-  
-            if (validarTodos())
+
+            Tuple<bool, string> validacion = validarTodos();
+            if (validacion.Item1)
             {
                 #region Mapeo
                 Persona insert = new Persona();
@@ -363,6 +366,7 @@ namespace Vista
                 insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
                 insert.hijos = (int)nupHijos.Value;
                 insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                insert.fecha_alta = dttFechaAlta.Value;
                 
                 insert.telefono = txtTelefono.Text;
                 insert.id_tipo = (int)cmbTipoTel.SelectedValue;
@@ -418,12 +422,15 @@ namespace Vista
                 insert.personal_a_cargo3 = (int)nupPersonalACargo2.Value;
                 insert.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
                 #endregion
+
+                lblFaltanCampos2.Visible = false;
                 logicaPersona.InsertarPersona(insert, infoLaborales, infoAcademicos);
                 MessageBox.Show("Valido");
             }
             else
             {
-                MessageBox.Show("Faltan llenar campos obligatorios");
+                lblFaltanCampos2.Visible = true;
+                MessageBox.Show($"Faltan campos obligatorios de:{validacion.Item2}");
             }
    
         }
@@ -432,6 +439,7 @@ namespace Vista
         {
            if( validarVacios(tabAcademicos, infoAcademicos))
             {
+                lblFaltanCampos1.Visible = false;
                 tabControl.TabPages[2].Enabled = true;
                 RestaurarColorPredeterminado(tabAcademicos);
                 MessageBox.Show("Todos los campos obligatorios estan completos");
@@ -439,6 +447,7 @@ namespace Vista
             }
             else
             {
+                lblFaltanCampos1.Visible = true;
                 MessageBox.Show("Faltan campos obligatorios");
             }
         }
@@ -448,7 +457,7 @@ namespace Vista
            
             if (validarVacios(tabPersonales))
             {
-               
+                lblFaltanCampos.Visible = false;
                 tabControl.TabPages[1].Enabled = true;
                 RestaurarColorPredeterminado(tabPersonales);
                 MessageBox.Show("Todos los campos obligatorios estan completos");
@@ -456,6 +465,7 @@ namespace Vista
             }
             else
             {
+                lblFaltanCampos.Visible = true;
                 MessageBox.Show("Faltan campos obligatorios");
             }
         }
@@ -494,7 +504,7 @@ namespace Vista
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
                     (count == -1 | c.AccessibleDescription.Length - 1 < count))
                 {
-                    if (string.IsNullOrEmpty(c.Text))
+                    if (string.IsNullOrWhiteSpace(c.Text))
                     {
                         //errorProvider1.SetError(txt, "Oblicatiorio");
                         cambiarColorLabel(txt, Color.Red);
@@ -525,13 +535,17 @@ namespace Vista
             }
             return todosCompletos;
         }
-        private bool validarTodos()
+        private Tuple<bool,string> validarTodos()
         {
+            string msg = "";
             bool persona = validarVacios(tabPersonales);
             bool academico = validarVacios(tabAcademicos, infoAcademicos);
             bool laboral = validarVacios(tabLaborales, infoLaborales);
+            if (!persona) msg += "\n" + tabPersonales.Text;
+            if (!academico) msg += "\n" + tabAcademicos.Text;
+            if (!laboral) msg += "\n" + tabLaborales.Text;
 
-            return persona && academico && laboral;
+            return (persona && academico && laboral, msg).ToTuple();
         }
 
         private void cambiarColorLabel(Control control, Color color)
@@ -563,8 +577,9 @@ namespace Vista
                     Image imagen = Image.FromFile(rutaImagen);
 
                     // Muestra la imagen en el PictureBox
+                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
                     pctFoto.Image = imagen;
-                }
+                }   
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -629,7 +644,6 @@ namespace Vista
                     foreach (Control control in groupBox.Controls)
                     {
                         button4.Enabled = true;
-                        btbBuscarImagen.Enabled = true;
                         btbEditarImagen.Enabled = true;
                         btbEliminarImagen.Enabled = true;
                       
@@ -650,7 +664,6 @@ namespace Vista
                         if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker ) && control != txtCuitCuil)
                         {
                             button4.Enabled = false;
-                            btbBuscarImagen.Enabled = false;
                             btbEditarImagen.Enabled = false;
                             btbEliminarImagen.Enabled = false;
                             control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
@@ -741,6 +754,7 @@ namespace Vista
                     Image imagen = Image.FromFile(rutaImagen);
 
                     // Muestra la imagen en el PictureBox
+                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
                     pctFoto.Image = imagen;
                 }
                 catch (Exception ex)
@@ -876,6 +890,57 @@ namespace Vista
 
         }
 
-     
+        private void btbEliminarImagen_Click(object sender, EventArgs e)
+        {
+            pctFoto.Image = null;
+        }
+
+        private void Espaniol_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbBasico.Checked)
+            {
+                nivelEspaniol = 0;
+            }
+            if (rdbIntermedio.Checked)
+            {
+                nivelEspaniol = 1;
+            }
+            if (rdbAvanzado.Checked)
+            {
+                nivelEspaniol = 2;
+            }
+            if (rdbNativo.Checked)
+            {
+                nivelEspaniol = 3;
+            }
+            if (button8.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
+            {
+                button8.Enabled = true;
+            }
+        }
+
+        private void Ingles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbBasicoEn.Checked)
+            {
+                nivelIngles = 0;
+            }
+            if (rdbIntermedioEn.Checked)
+            {
+                nivelIngles = 1;
+            }
+            if (rdbAvanzadoEn.Checked)
+            {
+                nivelIngles = 2;
+            }
+            if (rdbNativoEn.Checked)
+            {
+                nivelIngles = 3;
+            }
+            if (button8.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
+            {
+                button8.Enabled = true;
+            }
+        }
     }
 }

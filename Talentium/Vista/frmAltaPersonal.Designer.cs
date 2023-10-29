@@ -32,8 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaPersonal));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPersonales = new System.Windows.Forms.TabPage();
-            this.lblFaltanLlenarCampos = new System.Windows.Forms.Label();
+            this.lblFaltanCampos = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dttFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.label75 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.cmbArea = new System.Windows.Forms.ComboBox();
             this.label69 = new System.Windows.Forms.Label();
@@ -41,11 +43,9 @@
             this.label52 = new System.Windows.Forms.Label();
             this.cmbConvenio = new System.Windows.Forms.ComboBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.btbEliminarImagen = new System.Windows.Forms.Button();
             this.btbEditarImagen = new System.Windows.Forms.Button();
-            this.btbBuscarImagen = new System.Windows.Forms.Button();
             this.pctFoto = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -99,8 +99,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAcademicos = new System.Windows.Forms.TabPage();
+            this.grpIngles = new System.Windows.Forms.GroupBox();
+            this.rdbNativoEn = new System.Windows.Forms.RadioButton();
+            this.rdbBasicoEn = new System.Windows.Forms.RadioButton();
+            this.rdbIntermedioEn = new System.Windows.Forms.RadioButton();
+            this.rdbAvanzadoEn = new System.Windows.Forms.RadioButton();
+            this.lblFaltanCampos1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.label75 = new System.Windows.Forms.Label();
             this.grbSuperior1 = new System.Windows.Forms.GroupBox();
             this.label73 = new System.Windows.Forms.Label();
             this.cmbProgreso = new System.Windows.Forms.ComboBox();
@@ -116,17 +121,11 @@
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.label31 = new System.Windows.Forms.Label();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.label29 = new System.Windows.Forms.Label();
+            this.grpEspaniol = new System.Windows.Forms.GroupBox();
+            this.rdbNativo = new System.Windows.Forms.RadioButton();
+            this.rdbAvanzado = new System.Windows.Forms.RadioButton();
+            this.rdbIntermedio = new System.Windows.Forms.RadioButton();
+            this.rdbBasico = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cmbProgreso1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -158,6 +157,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.txtTitulo2 = new System.Windows.Forms.TextBox();
             this.tabLaborales = new System.Windows.Forms.TabPage();
+            this.lblFaltanCampos2 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
             this.label74 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -224,8 +224,9 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupHijos)).BeginInit();
             this.tabAcademicos.SuspendLayout();
+            this.grpIngles.SuspendLayout();
             this.grbSuperior1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.grpEspaniol.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.grbSuperior.SuspendLayout();
             this.tabLaborales.SuspendLayout();
@@ -245,23 +246,22 @@
             this.tabControl.Controls.Add(this.tabPersonales);
             this.tabControl.Controls.Add(this.tabAcademicos);
             this.tabControl.Controls.Add(this.tabLaborales);
-            this.tabControl.Location = new System.Drawing.Point(31, 15);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1000, 551);
+            this.tabControl.Size = new System.Drawing.Size(1067, 579);
             this.tabControl.TabIndex = 0;
             this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
             // 
             // tabPersonales
             // 
-            this.tabPersonales.Controls.Add(this.lblFaltanLlenarCampos);
+            this.tabPersonales.Controls.Add(this.lblFaltanCampos);
             this.tabPersonales.Controls.Add(this.groupBox7);
-            this.tabPersonales.Controls.Add(this.checkBox1);
             this.tabPersonales.Controls.Add(this.button4);
             this.tabPersonales.Controls.Add(this.btbEliminarImagen);
             this.tabPersonales.Controls.Add(this.btbEditarImagen);
-            this.tabPersonales.Controls.Add(this.btbBuscarImagen);
             this.tabPersonales.Controls.Add(this.pctFoto);
             this.tabPersonales.Controls.Add(this.groupBox3);
             this.tabPersonales.Controls.Add(this.groupBox2);
@@ -269,24 +269,28 @@
             this.tabPersonales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPersonales.Name = "tabPersonales";
             this.tabPersonales.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPersonales.Size = new System.Drawing.Size(992, 522);
+            this.tabPersonales.Size = new System.Drawing.Size(1059, 550);
             this.tabPersonales.TabIndex = 0;
             this.tabPersonales.Text = "Datos Personales";
             this.tabPersonales.UseVisualStyleBackColor = true;
             this.tabPersonales.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // lblFaltanLlenarCampos
+            // lblFaltanCampos
             // 
-            this.lblFaltanLlenarCampos.AutoSize = true;
-            this.lblFaltanLlenarCampos.ForeColor = System.Drawing.Color.Red;
-            this.lblFaltanLlenarCampos.Location = new System.Drawing.Point(35, 465);
-            this.lblFaltanLlenarCampos.Name = "lblFaltanLlenarCampos";
-            this.lblFaltanLlenarCampos.Size = new System.Drawing.Size(284, 16);
-            this.lblFaltanLlenarCampos.TabIndex = 45;
-            this.lblFaltanLlenarCampos.Text = "* FALTAN LLENAR CAMPOS OBLIGATORIOS";
+            this.lblFaltanCampos.AutoSize = true;
+            this.lblFaltanCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaltanCampos.ForeColor = System.Drawing.Color.Red;
+            this.lblFaltanCampos.Location = new System.Drawing.Point(525, 513);
+            this.lblFaltanCampos.Name = "lblFaltanCampos";
+            this.lblFaltanCampos.Size = new System.Drawing.Size(267, 20);
+            this.lblFaltanCampos.TabIndex = 45;
+            this.lblFaltanCampos.Text = "* Faltan llenar campos obligatorios";
+            this.lblFaltanCampos.Visible = false;
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.dttFechaAlta);
+            this.groupBox7.Controls.Add(this.label75);
             this.groupBox7.Controls.Add(this.label70);
             this.groupBox7.Controls.Add(this.cmbArea);
             this.groupBox7.Controls.Add(this.label69);
@@ -294,12 +298,33 @@
             this.groupBox7.Controls.Add(this.label52);
             this.groupBox7.Controls.Add(this.cmbConvenio);
             this.groupBox7.Controls.Add(this.cmbPuesto);
-            this.groupBox7.Location = new System.Drawing.Point(487, 29);
+            this.groupBox7.Location = new System.Drawing.Point(529, 29);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(197, 178);
+            this.groupBox7.Size = new System.Drawing.Size(197, 246);
             this.groupBox7.TabIndex = 44;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Ocupación";
+            // 
+            // dttFechaAlta
+            // 
+            this.dttFechaAlta.Checked = false;
+            this.dttFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttFechaAlta.Location = new System.Drawing.Point(26, 192);
+            this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(4);
+            this.dttFechaAlta.Name = "dttFechaAlta";
+            this.dttFechaAlta.Size = new System.Drawing.Size(147, 22);
+            this.dttFechaAlta.TabIndex = 58;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(25, 173);
+            this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(120, 16);
+            this.label75.TabIndex = 48;
+            this.label75.Tag = "cmbConvenio";
+            this.label75.Text = "Fecha de Ingreso *";
             // 
             // label70
             // 
@@ -336,7 +361,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(25, 120);
+            this.label64.Location = new System.Drawing.Point(25, 123);
             this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(72, 16);
@@ -359,7 +384,7 @@
             this.cmbConvenio.AccessibleDescription = "O";
             this.cmbConvenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConvenio.FormattingEnabled = true;
-            this.cmbConvenio.Location = new System.Drawing.Point(26, 148);
+            this.cmbConvenio.Location = new System.Drawing.Point(26, 141);
             this.cmbConvenio.Name = "cmbConvenio";
             this.cmbConvenio.Size = new System.Drawing.Size(148, 24);
             this.cmbConvenio.TabIndex = 1;
@@ -374,16 +399,6 @@
             this.cmbPuesto.Size = new System.Drawing.Size(148, 24);
             this.cmbPuesto.TabIndex = 0;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(487, 423);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(164, 20);
-            this.checkBox1.TabIndex = 43;
-            this.checkBox1.Text = "Es usuario del sistema";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -392,7 +407,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(846, 413);
+            this.button4.Location = new System.Drawing.Point(909, 489);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(105, 44);
@@ -405,18 +420,19 @@
             // 
             this.btbEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEliminarImagen.BackgroundImage")));
             this.btbEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btbEliminarImagen.Location = new System.Drawing.Point(903, 149);
+            this.btbEliminarImagen.Location = new System.Drawing.Point(917, 223);
             this.btbEliminarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btbEliminarImagen.Name = "btbEliminarImagen";
             this.btbEliminarImagen.Size = new System.Drawing.Size(47, 39);
             this.btbEliminarImagen.TabIndex = 5;
             this.btbEliminarImagen.UseVisualStyleBackColor = true;
+            this.btbEliminarImagen.Click += new System.EventHandler(this.btbEliminarImagen_Click);
             // 
             // btbEditarImagen
             // 
             this.btbEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEditarImagen.BackgroundImage")));
             this.btbEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btbEditarImagen.Location = new System.Drawing.Point(903, 100);
+            this.btbEditarImagen.Location = new System.Drawing.Point(781, 223);
             this.btbEditarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btbEditarImagen.Name = "btbEditarImagen";
             this.btbEditarImagen.Size = new System.Drawing.Size(47, 39);
@@ -424,29 +440,19 @@
             this.btbEditarImagen.UseVisualStyleBackColor = true;
             this.btbEditarImagen.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btbBuscarImagen
-            // 
-            this.btbBuscarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbBuscarImagen.BackgroundImage")));
-            this.btbBuscarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btbBuscarImagen.Location = new System.Drawing.Point(903, 52);
-            this.btbBuscarImagen.Margin = new System.Windows.Forms.Padding(4);
-            this.btbBuscarImagen.Name = "btbBuscarImagen";
-            this.btbBuscarImagen.Size = new System.Drawing.Size(47, 39);
-            this.btbBuscarImagen.TabIndex = 3;
-            this.btbBuscarImagen.UseVisualStyleBackColor = true;
-            this.btbBuscarImagen.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pctFoto
             // 
             this.pctFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctFoto.BackgroundImage")));
             this.pctFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctFoto.Enabled = false;
             this.pctFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctFoto.InitialImage")));
-            this.pctFoto.Location = new System.Drawing.Point(708, 29);
+            this.pctFoto.Location = new System.Drawing.Point(781, 39);
             this.pctFoto.Margin = new System.Windows.Forms.Padding(4);
             this.pctFoto.Name = "pctFoto";
             this.pctFoto.Size = new System.Drawing.Size(183, 178);
             this.pctFoto.TabIndex = 2;
             this.pctFoto.TabStop = false;
+            this.pctFoto.DoubleClick += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -466,11 +472,11 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Location = new System.Drawing.Point(487, 222);
+            this.groupBox3.Location = new System.Drawing.Point(529, 282);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(464, 180);
+            this.groupBox3.Size = new System.Drawing.Size(464, 188);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Domicilio";
@@ -525,6 +531,7 @@
             this.txtCodigoPostal.Location = new System.Drawing.Point(310, 96);
             this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.ReadOnly = true;
             this.txtCodigoPostal.Size = new System.Drawing.Size(125, 22);
             this.txtCodigoPostal.TabIndex = 32;
             // 
@@ -681,7 +688,7 @@
             this.groupBox2.Controls.Add(this.cmbGenero);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(35, 16);
+            this.groupBox2.Location = new System.Drawing.Point(65, 29);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -716,7 +723,7 @@
             this.cmbNacionalidad.AccessibleDescription = "O";
             this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.FormattingEnabled = true;
-            this.cmbNacionalidad.Location = new System.Drawing.Point(21, 289);
+            this.cmbNacionalidad.Location = new System.Drawing.Point(21, 336);
             this.cmbNacionalidad.Name = "cmbNacionalidad";
             this.cmbNacionalidad.Size = new System.Drawing.Size(170, 24);
             this.cmbNacionalidad.TabIndex = 55;
@@ -740,7 +747,7 @@
             this.cmbTipoTelAlternativo.AccessibleDescription = "O";
             this.cmbTipoTelAlternativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelAlternativo.FormattingEnabled = true;
-            this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(200, 242);
+            this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(199, 287);
             this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTelAlternativo.Name = "cmbTipoTelAlternativo";
             this.cmbTipoTelAlternativo.Size = new System.Drawing.Size(104, 24);
@@ -749,7 +756,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(196, 224);
+            this.label23.Location = new System.Drawing.Point(195, 269);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 16);
@@ -762,7 +769,7 @@
             this.cmbTipoTel.AccessibleDescription = "O";
             this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTel.FormattingEnabled = true;
-            this.cmbTipoTel.Location = new System.Drawing.Point(244, 194);
+            this.cmbTipoTel.Location = new System.Drawing.Point(242, 240);
             this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel.Name = "cmbTipoTel";
             this.cmbTipoTel.Size = new System.Drawing.Size(149, 24);
@@ -771,7 +778,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(240, 175);
+            this.label21.Location = new System.Drawing.Point(238, 221);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 16);
@@ -782,7 +789,7 @@
             // txtTelefono
             // 
             this.txtTelefono.AccessibleDescription = "O";
-            this.txtTelefono.Location = new System.Drawing.Point(20, 195);
+            this.txtTelefono.Location = new System.Drawing.Point(18, 241);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(215, 22);
@@ -793,7 +800,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(16, 175);
+            this.label22.Location = new System.Drawing.Point(14, 221);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 16);
@@ -804,16 +811,16 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleDescription = "O";
-            this.txtEmail.Location = new System.Drawing.Point(200, 148);
+            this.txtEmail.Location = new System.Drawing.Point(22, 192);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(195, 22);
+            this.txtEmail.Size = new System.Drawing.Size(373, 22);
             this.txtEmail.TabIndex = 27;
             this.txtEmail.Text = "gomezfacundonahuel@outlook.com";
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(313, 243);
+            this.txtContacto.Location = new System.Drawing.Point(312, 288);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(4);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(80, 22);
@@ -825,7 +832,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(196, 128);
+            this.label8.Location = new System.Drawing.Point(18, 172);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 16);
@@ -836,7 +843,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(309, 224);
+            this.label20.Location = new System.Drawing.Point(308, 269);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(60, 16);
@@ -847,7 +854,7 @@
             // txtTelefonoAlternativo
             // 
             this.txtTelefonoAlternativo.AccessibleDescription = "O";
-            this.txtTelefonoAlternativo.Location = new System.Drawing.Point(20, 243);
+            this.txtTelefonoAlternativo.Location = new System.Drawing.Point(19, 288);
             this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
             this.txtTelefonoAlternativo.Size = new System.Drawing.Size(171, 22);
@@ -867,7 +874,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(16, 224);
+            this.label19.Location = new System.Drawing.Point(15, 269);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(135, 16);
@@ -888,10 +895,12 @@
             // 
             // dtpFechaDeNacimiento
             // 
-            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(20, 340);
+            this.dtpFechaDeNacimiento.Checked = false;
+            this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(21, 390);
             this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
-            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(373, 22);
+            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(130, 22);
             this.dtpFechaDeNacimiento.TabIndex = 25;
             // 
             // txtApellidos
@@ -910,10 +919,10 @@
             this.cmbEstadoCivil.AccessibleDescription = "O";
             this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(20, 390);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(169, 389);
             this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(249, 24);
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(92, 24);
             this.cmbEstadoCivil.TabIndex = 26;
             // 
             // label1
@@ -930,7 +939,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 269);
+            this.label13.Location = new System.Drawing.Point(16, 316);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 16);
@@ -953,7 +962,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 370);
+            this.label7.Location = new System.Drawing.Point(167, 369);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 16);
@@ -964,10 +973,10 @@
             // txtDni
             // 
             this.txtDni.AccessibleDescription = "O";
-            this.txtDni.Location = new System.Drawing.Point(98, 147);
+            this.txtDni.Location = new System.Drawing.Point(98, 146);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(92, 22);
+            this.txtDni.Size = new System.Drawing.Size(293, 22);
             this.txtDni.TabIndex = 31;
             this.txtDni.Text = "39918293";
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
@@ -975,7 +984,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 320);
+            this.label6.Location = new System.Drawing.Point(17, 370);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 16);
@@ -1005,7 +1014,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 269);
+            this.label5.Location = new System.Drawing.Point(201, 317);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
@@ -1018,10 +1027,10 @@
             this.cmbGenero.AccessibleDescription = "O";
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Location = new System.Drawing.Point(216, 289);
+            this.cmbGenero.Location = new System.Drawing.Point(201, 337);
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(177, 24);
+            this.cmbGenero.Size = new System.Drawing.Size(192, 24);
             this.cmbGenero.TabIndex = 33;
             this.cmbGenero.SelectedIndexChanged += new System.EventHandler(this.cmbGenero_SelectedIndexChanged);
             // 
@@ -1048,47 +1057,116 @@
             // 
             // tabAcademicos
             // 
+            this.tabAcademicos.Controls.Add(this.grpIngles);
+            this.tabAcademicos.Controls.Add(this.lblFaltanCampos1);
             this.tabAcademicos.Controls.Add(this.button8);
-            this.tabAcademicos.Controls.Add(this.label75);
             this.tabAcademicos.Controls.Add(this.grbSuperior1);
-            this.tabAcademicos.Controls.Add(this.groupBox5);
+            this.tabAcademicos.Controls.Add(this.grpEspaniol);
             this.tabAcademicos.Controls.Add(this.groupBox4);
             this.tabAcademicos.Location = new System.Drawing.Point(4, 25);
             this.tabAcademicos.Margin = new System.Windows.Forms.Padding(4);
             this.tabAcademicos.Name = "tabAcademicos";
             this.tabAcademicos.Padding = new System.Windows.Forms.Padding(4);
-            this.tabAcademicos.Size = new System.Drawing.Size(992, 522);
+            this.tabAcademicos.Size = new System.Drawing.Size(1059, 550);
             this.tabAcademicos.TabIndex = 1;
             this.tabAcademicos.Text = "Datos Académicos";
             this.tabAcademicos.UseVisualStyleBackColor = true;
+            // 
+            // grpIngles
+            // 
+            this.grpIngles.Controls.Add(this.rdbNativoEn);
+            this.grpIngles.Controls.Add(this.rdbBasicoEn);
+            this.grpIngles.Controls.Add(this.rdbIntermedioEn);
+            this.grpIngles.Controls.Add(this.rdbAvanzadoEn);
+            this.grpIngles.Location = new System.Drawing.Point(288, 29);
+            this.grpIngles.Name = "grpIngles";
+            this.grpIngles.Size = new System.Drawing.Size(200, 123);
+            this.grpIngles.TabIndex = 91;
+            this.grpIngles.TabStop = false;
+            this.grpIngles.Text = "Ingles";
+            // 
+            // rdbNativoEn
+            // 
+            this.rdbNativoEn.AutoSize = true;
+            this.rdbNativoEn.Location = new System.Drawing.Point(7, 84);
+            this.rdbNativoEn.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbNativoEn.Name = "rdbNativoEn";
+            this.rdbNativoEn.Size = new System.Drawing.Size(67, 20);
+            this.rdbNativoEn.TabIndex = 102;
+            this.rdbNativoEn.TabStop = true;
+            this.rdbNativoEn.Text = "Nativo";
+            this.rdbNativoEn.UseVisualStyleBackColor = true;
+            this.rdbNativoEn.CheckedChanged += new System.EventHandler(this.Ingles_CheckedChanged);
+            // 
+            // rdbBasicoEn
+            // 
+            this.rdbBasicoEn.AutoSize = true;
+            this.rdbBasicoEn.Location = new System.Drawing.Point(7, 22);
+            this.rdbBasicoEn.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbBasicoEn.Name = "rdbBasicoEn";
+            this.rdbBasicoEn.Size = new System.Drawing.Size(70, 20);
+            this.rdbBasicoEn.TabIndex = 99;
+            this.rdbBasicoEn.TabStop = true;
+            this.rdbBasicoEn.Text = "Básico";
+            this.rdbBasicoEn.UseVisualStyleBackColor = true;
+            this.rdbBasicoEn.CheckedChanged += new System.EventHandler(this.Ingles_CheckedChanged);
+            // 
+            // rdbIntermedioEn
+            // 
+            this.rdbIntermedioEn.AutoSize = true;
+            this.rdbIntermedioEn.Location = new System.Drawing.Point(7, 43);
+            this.rdbIntermedioEn.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbIntermedioEn.Name = "rdbIntermedioEn";
+            this.rdbIntermedioEn.Size = new System.Drawing.Size(91, 20);
+            this.rdbIntermedioEn.TabIndex = 100;
+            this.rdbIntermedioEn.TabStop = true;
+            this.rdbIntermedioEn.Text = "Intermedio";
+            this.rdbIntermedioEn.UseVisualStyleBackColor = true;
+            this.rdbIntermedioEn.CheckedChanged += new System.EventHandler(this.Ingles_CheckedChanged);
+            // 
+            // rdbAvanzadoEn
+            // 
+            this.rdbAvanzadoEn.AutoSize = true;
+            this.rdbAvanzadoEn.Location = new System.Drawing.Point(7, 64);
+            this.rdbAvanzadoEn.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbAvanzadoEn.Name = "rdbAvanzadoEn";
+            this.rdbAvanzadoEn.Size = new System.Drawing.Size(89, 20);
+            this.rdbAvanzadoEn.TabIndex = 101;
+            this.rdbAvanzadoEn.TabStop = true;
+            this.rdbAvanzadoEn.Text = "Avanzado";
+            this.rdbAvanzadoEn.UseVisualStyleBackColor = true;
+            this.rdbAvanzadoEn.CheckedChanged += new System.EventHandler(this.Ingles_CheckedChanged);
+            // 
+            // lblFaltanCampos1
+            // 
+            this.lblFaltanCampos1.AutoSize = true;
+            this.lblFaltanCampos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaltanCampos1.ForeColor = System.Drawing.Color.Red;
+            this.lblFaltanCampos1.Location = new System.Drawing.Point(525, 513);
+            this.lblFaltanCampos1.Name = "lblFaltanCampos1";
+            this.lblFaltanCampos1.Size = new System.Drawing.Size(267, 20);
+            this.lblFaltanCampos1.TabIndex = 90;
+            this.lblFaltanCampos1.Text = "* Faltan llenar campos obligatorios";
+            this.lblFaltanCampos1.Visible = false;
             // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button8.Enabled = false;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(860, 459);
+            this.button8.Location = new System.Drawing.Point(909, 489);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 44);
+            this.button8.Size = new System.Drawing.Size(105, 44);
             this.button8.TabIndex = 73;
             this.button8.Text = "Continuar";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(35, 232);
-            this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(195, 16);
-            this.label75.TabIndex = 89;
-            this.label75.Text = "Agregar Formación Académica";
             // 
             // grbSuperior1
             // 
@@ -1106,18 +1184,19 @@
             this.grbSuperior1.Controls.Add(this.label71);
             this.grbSuperior1.Controls.Add(this.label72);
             this.grbSuperior1.Controls.Add(this.txtTitulo);
-            this.grbSuperior1.Location = new System.Drawing.Point(36, 252);
+            this.grbSuperior1.Location = new System.Drawing.Point(65, 194);
             this.grbSuperior1.Margin = new System.Windows.Forms.Padding(4);
             this.grbSuperior1.Name = "grbSuperior1";
             this.grbSuperior1.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSuperior1.Size = new System.Drawing.Size(423, 262);
+            this.grbSuperior1.Size = new System.Drawing.Size(423, 278);
             this.grbSuperior1.TabIndex = 88;
             this.grbSuperior1.TabStop = false;
+            this.grbSuperior1.Text = "Formación Academica";
             // 
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(9, 214);
+            this.label73.Location = new System.Drawing.Point(9, 230);
             this.label73.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(315, 16);
@@ -1128,7 +1207,7 @@
             // 
             this.cmbProgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso.FormattingEnabled = true;
-            this.cmbProgreso.Location = new System.Drawing.Point(275, 175);
+            this.cmbProgreso.Location = new System.Drawing.Point(275, 191);
             this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProgreso.Name = "cmbProgreso";
             this.cmbProgreso.Size = new System.Drawing.Size(105, 24);
@@ -1142,7 +1221,7 @@
             this.button16.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(374, 206);
+            this.button16.Location = new System.Drawing.Point(374, 222);
             this.button16.Margin = new System.Windows.Forms.Padding(4);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(32, 28);
@@ -1153,7 +1232,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(275, 155);
+            this.label30.Location = new System.Drawing.Point(275, 171);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(71, 16);
@@ -1163,7 +1242,7 @@
             // txtInsitutcionSuperior
             // 
             this.txtInsitutcionSuperior.AccessibleDescription = "O";
-            this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 80);
+            this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 96);
             this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
@@ -1174,7 +1253,7 @@
             // 
             this.cmbEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso.FormattingEnabled = true;
-            this.cmbEgreso.Location = new System.Drawing.Point(139, 175);
+            this.cmbEgreso.Location = new System.Drawing.Point(139, 191);
             this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEgreso.Name = "cmbEgreso";
             this.cmbEgreso.Size = new System.Drawing.Size(111, 24);
@@ -1183,7 +1262,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(8, 14);
+            this.label35.Location = new System.Drawing.Point(8, 30);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(46, 16);
@@ -1193,7 +1272,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(136, 155);
+            this.label38.Location = new System.Drawing.Point(136, 171);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(99, 16);
@@ -1204,7 +1283,7 @@
             // 
             this.cmbNivelAcademico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico.FormattingEnabled = true;
-            this.cmbNivelAcademico.Location = new System.Drawing.Point(11, 33);
+            this.cmbNivelAcademico.Location = new System.Drawing.Point(11, 49);
             this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAcademico.Name = "cmbNivelAcademico";
             this.cmbNivelAcademico.Size = new System.Drawing.Size(177, 24);
@@ -1213,7 +1292,7 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(7, 60);
+            this.label65.Location = new System.Drawing.Point(7, 76);
             this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(135, 16);
@@ -1225,7 +1304,7 @@
             // 
             this.cmbIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso.FormattingEnabled = true;
-            this.cmbIngreso.Location = new System.Drawing.Point(11, 175);
+            this.cmbIngreso.Location = new System.Drawing.Point(11, 191);
             this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIngreso.Name = "cmbIngreso";
             this.cmbIngreso.Size = new System.Drawing.Size(112, 24);
@@ -1234,7 +1313,7 @@
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(7, 108);
+            this.label71.Location = new System.Drawing.Point(7, 124);
             this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(48, 16);
@@ -1245,7 +1324,7 @@
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(8, 156);
+            this.label72.Location = new System.Drawing.Point(8, 172);
             this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(106, 16);
@@ -1255,7 +1334,7 @@
             // txtTitulo
             // 
             this.txtTitulo.AccessibleDescription = "O";
-            this.txtTitulo.Location = new System.Drawing.Point(12, 128);
+            this.txtTitulo.Location = new System.Drawing.Point(12, 144);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(392, 22);
@@ -1263,142 +1342,72 @@
             this.txtTitulo.Text = "Titulo 1";
             this.txtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo_KeyPress);
             // 
-            // groupBox5
+            // grpEspaniol
             // 
-            this.groupBox5.Controls.Add(this.radioButton9);
-            this.groupBox5.Controls.Add(this.radioButton10);
-            this.groupBox5.Controls.Add(this.radioButton11);
-            this.groupBox5.Controls.Add(this.radioButton12);
-            this.groupBox5.Controls.Add(this.radioButton5);
-            this.groupBox5.Controls.Add(this.radioButton6);
-            this.groupBox5.Controls.Add(this.radioButton7);
-            this.groupBox5.Controls.Add(this.label31);
-            this.groupBox5.Controls.Add(this.radioButton8);
-            this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Location = new System.Drawing.Point(36, 47);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(423, 123);
-            this.groupBox5.TabIndex = 72;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Idiomas";
+            this.grpEspaniol.Controls.Add(this.rdbNativo);
+            this.grpEspaniol.Controls.Add(this.rdbAvanzado);
+            this.grpEspaniol.Controls.Add(this.rdbIntermedio);
+            this.grpEspaniol.Controls.Add(this.rdbBasico);
+            this.grpEspaniol.Location = new System.Drawing.Point(65, 29);
+            this.grpEspaniol.Margin = new System.Windows.Forms.Padding(4);
+            this.grpEspaniol.Name = "grpEspaniol";
+            this.grpEspaniol.Padding = new System.Windows.Forms.Padding(4);
+            this.grpEspaniol.Size = new System.Drawing.Size(200, 123);
+            this.grpEspaniol.TabIndex = 72;
+            this.grpEspaniol.TabStop = false;
+            this.grpEspaniol.Text = "Español";
             // 
-            // radioButton9
+            // rdbNativo
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(308, 82);
-            this.radioButton9.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(67, 20);
-            this.radioButton9.TabIndex = 102;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Nativo";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rdbNativo.AutoSize = true;
+            this.rdbNativo.Location = new System.Drawing.Point(12, 85);
+            this.rdbNativo.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbNativo.Name = "rdbNativo";
+            this.rdbNativo.Size = new System.Drawing.Size(67, 20);
+            this.rdbNativo.TabIndex = 98;
+            this.rdbNativo.TabStop = true;
+            this.rdbNativo.Text = "Nativo";
+            this.rdbNativo.UseVisualStyleBackColor = true;
+            this.rdbNativo.CheckedChanged += new System.EventHandler(this.Espaniol_CheckedChanged);
             // 
-            // radioButton10
+            // rdbAvanzado
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(308, 62);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(89, 20);
-            this.radioButton10.TabIndex = 101;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Avanzado";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.rdbAvanzado.AutoSize = true;
+            this.rdbAvanzado.Location = new System.Drawing.Point(12, 64);
+            this.rdbAvanzado.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbAvanzado.Name = "rdbAvanzado";
+            this.rdbAvanzado.Size = new System.Drawing.Size(89, 20);
+            this.rdbAvanzado.TabIndex = 97;
+            this.rdbAvanzado.TabStop = true;
+            this.rdbAvanzado.Text = "Avanzado";
+            this.rdbAvanzado.UseVisualStyleBackColor = true;
+            this.rdbAvanzado.CheckedChanged += new System.EventHandler(this.Espaniol_CheckedChanged);
             // 
-            // radioButton11
+            // rdbIntermedio
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(308, 41);
-            this.radioButton11.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(91, 20);
-            this.radioButton11.TabIndex = 100;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Intermedio";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.rdbIntermedio.AutoSize = true;
+            this.rdbIntermedio.Location = new System.Drawing.Point(12, 43);
+            this.rdbIntermedio.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbIntermedio.Name = "rdbIntermedio";
+            this.rdbIntermedio.Size = new System.Drawing.Size(91, 20);
+            this.rdbIntermedio.TabIndex = 96;
+            this.rdbIntermedio.TabStop = true;
+            this.rdbIntermedio.Text = "Intermedio";
+            this.rdbIntermedio.UseVisualStyleBackColor = true;
+            this.rdbIntermedio.CheckedChanged += new System.EventHandler(this.Espaniol_CheckedChanged);
             // 
-            // radioButton12
+            // rdbBasico
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(308, 20);
-            this.radioButton12.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(70, 20);
-            this.radioButton12.TabIndex = 99;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Básico";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(67, 80);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(67, 20);
-            this.radioButton5.TabIndex = 98;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Nativo";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(67, 59);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(89, 20);
-            this.radioButton6.TabIndex = 97;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Avanzado";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(67, 38);
-            this.radioButton7.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(91, 20);
-            this.radioButton7.TabIndex = 96;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Intermedio";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(236, 22);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(57, 16);
-            this.label31.TabIndex = 90;
-            this.label31.Text = "Español";
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(67, 17);
-            this.radioButton8.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(70, 20);
-            this.radioButton8.TabIndex = 95;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Básico";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(8, 20);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(43, 16);
-            this.label29.TabIndex = 88;
-            this.label29.Text = "Inglés";
+            this.rdbBasico.AutoSize = true;
+            this.rdbBasico.Location = new System.Drawing.Point(12, 22);
+            this.rdbBasico.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbBasico.Name = "rdbBasico";
+            this.rdbBasico.Size = new System.Drawing.Size(70, 20);
+            this.rdbBasico.TabIndex = 95;
+            this.rdbBasico.TabStop = true;
+            this.rdbBasico.Text = "Básico";
+            this.rdbBasico.UseVisualStyleBackColor = true;
+            this.rdbBasico.CheckedChanged += new System.EventHandler(this.Espaniol_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -1418,7 +1427,7 @@
             this.groupBox4.Controls.Add(this.label36);
             this.groupBox4.Controls.Add(this.cmbNivelAcademico1);
             this.groupBox4.Controls.Add(this.grbSuperior);
-            this.groupBox4.Location = new System.Drawing.Point(545, 8);
+            this.groupBox4.Location = new System.Drawing.Point(529, 29);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -1620,7 +1629,7 @@
             // 
             this.cmbProgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso2.FormattingEnabled = true;
-            this.cmbProgreso2.Location = new System.Drawing.Point(265, 165);
+            this.cmbProgreso2.Location = new System.Drawing.Point(265, 167);
             this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProgreso2.Name = "cmbProgreso2";
             this.cmbProgreso2.Size = new System.Drawing.Size(105, 24);
@@ -1629,7 +1638,7 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(265, 144);
+            this.label67.Location = new System.Drawing.Point(265, 146);
             this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(71, 16);
@@ -1642,7 +1651,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(373, 14);
+            this.button7.Location = new System.Drawing.Point(373, 16);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(29, 27);
@@ -1653,7 +1662,7 @@
             // txtInsitutcionSuperior2
             // 
             this.txtInsitutcionSuperior2.AccessibleDescription = "OII";
-            this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(8, 70);
+            this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(8, 72);
             this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
             this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(393, 22);
@@ -1664,7 +1673,7 @@
             // 
             this.cmbEgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso2.FormattingEnabled = true;
-            this.cmbEgreso2.Location = new System.Drawing.Point(136, 165);
+            this.cmbEgreso2.Location = new System.Drawing.Point(136, 167);
             this.cmbEgreso2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEgreso2.Name = "cmbEgreso2";
             this.cmbEgreso2.Size = new System.Drawing.Size(111, 24);
@@ -1673,7 +1682,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(5, 4);
+            this.label37.Location = new System.Drawing.Point(5, 6);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(46, 16);
@@ -1683,7 +1692,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(133, 145);
+            this.label25.Location = new System.Drawing.Point(133, 147);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(99, 16);
@@ -1694,7 +1703,7 @@
             // 
             this.cmbNivelAcademico2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico2.FormattingEnabled = true;
-            this.cmbNivelAcademico2.Location = new System.Drawing.Point(8, 23);
+            this.cmbNivelAcademico2.Location = new System.Drawing.Point(8, 25);
             this.cmbNivelAcademico2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAcademico2.Name = "cmbNivelAcademico2";
             this.cmbNivelAcademico2.Size = new System.Drawing.Size(177, 24);
@@ -1703,7 +1712,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 50);
+            this.label26.Location = new System.Drawing.Point(4, 52);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(135, 16);
@@ -1715,7 +1724,7 @@
             // 
             this.cmbIngreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso2.FormattingEnabled = true;
-            this.cmbIngreso2.Location = new System.Drawing.Point(8, 165);
+            this.cmbIngreso2.Location = new System.Drawing.Point(8, 167);
             this.cmbIngreso2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIngreso2.Name = "cmbIngreso2";
             this.cmbIngreso2.Size = new System.Drawing.Size(112, 24);
@@ -1724,7 +1733,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(4, 98);
+            this.label27.Location = new System.Drawing.Point(4, 100);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(48, 16);
@@ -1735,7 +1744,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(5, 146);
+            this.label28.Location = new System.Drawing.Point(5, 148);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(106, 16);
@@ -1745,7 +1754,7 @@
             // txtTitulo2
             // 
             this.txtTitulo2.AccessibleDescription = "OII";
-            this.txtTitulo2.Location = new System.Drawing.Point(9, 118);
+            this.txtTitulo2.Location = new System.Drawing.Point(9, 120);
             this.txtTitulo2.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo2.Name = "txtTitulo2";
             this.txtTitulo2.Size = new System.Drawing.Size(392, 22);
@@ -1755,6 +1764,7 @@
             // 
             // tabLaborales
             // 
+            this.tabLaborales.Controls.Add(this.lblFaltanCampos2);
             this.tabLaborales.Controls.Add(this.button17);
             this.tabLaborales.Controls.Add(this.label74);
             this.tabLaborales.Controls.Add(this.button9);
@@ -1764,11 +1774,23 @@
             this.tabLaborales.Margin = new System.Windows.Forms.Padding(4);
             this.tabLaborales.Name = "tabLaborales";
             this.tabLaborales.Padding = new System.Windows.Forms.Padding(4);
-            this.tabLaborales.Size = new System.Drawing.Size(992, 522);
+            this.tabLaborales.Size = new System.Drawing.Size(1059, 550);
             this.tabLaborales.TabIndex = 2;
             this.tabLaborales.Text = "Datos Laborales";
             this.tabLaborales.UseVisualStyleBackColor = true;
             this.tabLaborales.Click += new System.EventHandler(this.tabLaborales_Click);
+            // 
+            // lblFaltanCampos2
+            // 
+            this.lblFaltanCampos2.AutoSize = true;
+            this.lblFaltanCampos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaltanCampos2.ForeColor = System.Drawing.Color.Red;
+            this.lblFaltanCampos2.Location = new System.Drawing.Point(525, 513);
+            this.lblFaltanCampos2.Name = "lblFaltanCampos2";
+            this.lblFaltanCampos2.Size = new System.Drawing.Size(267, 20);
+            this.lblFaltanCampos2.TabIndex = 96;
+            this.lblFaltanCampos2.Text = "* Faltan llenar campos obligatorios";
+            this.lblFaltanCampos2.Visible = false;
             // 
             // button17
             // 
@@ -1778,7 +1800,7 @@
             this.button17.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Location = new System.Drawing.Point(242, 5);
+            this.button17.Location = new System.Drawing.Point(260, 22);
             this.button17.Margin = new System.Windows.Forms.Padding(4);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(32, 28);
@@ -1789,7 +1811,7 @@
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(35, 11);
+            this.label74.Location = new System.Drawing.Point(65, 29);
             this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(179, 16);
@@ -1802,12 +1824,12 @@
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Location = new System.Drawing.Point(813, 473);
+            this.button9.Location = new System.Drawing.Point(909, 489);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(117, 37);
+            this.button9.Size = new System.Drawing.Size(105, 44);
             this.button9.TabIndex = 71;
             this.button9.Text = "Guardar";
             this.button9.UseVisualStyleBackColor = false;
@@ -1829,11 +1851,11 @@
             this.grbExp2.Controls.Add(this.label57);
             this.grbExp2.Controls.Add(this.label58);
             this.grbExp2.Controls.Add(this.grbExp3);
-            this.grbExp2.Location = new System.Drawing.Point(513, 11);
+            this.grbExp2.Location = new System.Drawing.Point(529, 29);
             this.grbExp2.Margin = new System.Windows.Forms.Padding(4);
             this.grbExp2.Name = "grbExp2";
             this.grbExp2.Padding = new System.Windows.Forms.Padding(4);
-            this.grbExp2.Size = new System.Drawing.Size(425, 462);
+            this.grbExp2.Size = new System.Drawing.Size(425, 452);
             this.grbExp2.TabIndex = 94;
             this.grbExp2.TabStop = false;
             this.grbExp2.Text = "Experiencia Laboral";
@@ -1995,7 +2017,7 @@
             this.grbExp3.Margin = new System.Windows.Forms.Padding(4);
             this.grbExp3.Name = "grbExp3";
             this.grbExp3.Padding = new System.Windows.Forms.Padding(4);
-            this.grbExp3.Size = new System.Drawing.Size(409, 242);
+            this.grbExp3.Size = new System.Drawing.Size(409, 222);
             this.grbExp3.TabIndex = 87;
             this.grbExp3.TabStop = false;
             this.grbExp3.Visible = false;
@@ -2131,7 +2153,7 @@
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.grbExp1);
-            this.groupBox6.Location = new System.Drawing.Point(38, 12);
+            this.groupBox6.Location = new System.Drawing.Point(65, 29);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -2474,10 +2496,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupHijos)).EndInit();
             this.tabAcademicos.ResumeLayout(false);
             this.tabAcademicos.PerformLayout();
+            this.grpIngles.ResumeLayout(false);
+            this.grpIngles.PerformLayout();
             this.grbSuperior1.ResumeLayout(false);
             this.grbSuperior1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.grpEspaniol.ResumeLayout(false);
+            this.grpEspaniol.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.grbSuperior.ResumeLayout(false);
@@ -2509,7 +2533,6 @@
         private System.Windows.Forms.TabPage tabLaborales;
         private System.Windows.Forms.Button btbEliminarImagen;
         private System.Windows.Forms.Button btbEditarImagen;
-        private System.Windows.Forms.Button btbBuscarImagen;
         private System.Windows.Forms.PictureBox pctFoto;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
@@ -2585,17 +2608,15 @@
         private System.Windows.Forms.GroupBox grbSuperior;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.GroupBox grpEspaniol;
+        private System.Windows.Forms.RadioButton rdbNativoEn;
+        private System.Windows.Forms.RadioButton rdbAvanzadoEn;
+        private System.Windows.Forms.RadioButton rdbIntermedioEn;
+        private System.Windows.Forms.RadioButton rdbBasicoEn;
+        private System.Windows.Forms.RadioButton rdbNativo;
+        private System.Windows.Forms.RadioButton rdbAvanzado;
+        private System.Windows.Forms.RadioButton rdbIntermedio;
+        private System.Windows.Forms.RadioButton rdbBasico;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label51;
@@ -2641,7 +2662,6 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox cmbConvenio;
@@ -2685,9 +2705,13 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblFaltanLlenarCampos;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblFaltanCampos;
+        private System.Windows.Forms.Label lblFaltanCampos1;
+        private System.Windows.Forms.Label lblFaltanCampos2;
+        private System.Windows.Forms.DateTimePicker dttFechaAlta;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.GroupBox grpIngles;
     }
 }

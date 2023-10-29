@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgEmpleados = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUITCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCuit = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -55,45 +51,12 @@
             // dtgEmpleados
             // 
             this.dtgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Apellido,
-            this.CUITCUIL,
-            this.DNI});
             this.dtgEmpleados.Location = new System.Drawing.Point(264, 57);
             this.dtgEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.dtgEmpleados.Name = "dtgEmpleados";
             this.dtgEmpleados.RowHeadersWidth = 51;
             this.dtgEmpleados.Size = new System.Drawing.Size(833, 443);
             this.dtgEmpleados.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 125;
-            // 
-            // CUITCUIL
-            // 
-            this.CUITCUIL.HeaderText = "CUIT / CUIL";
-            this.CUITCUIL.MinimumWidth = 6;
-            this.CUITCUIL.Name = "CUITCUIL";
-            this.CUITCUIL.Width = 125;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.MinimumWidth = 6;
-            this.DNI.Name = "DNI";
-            this.DNI.Width = 125;
             // 
             // lblCuit
             // 
@@ -132,6 +95,7 @@
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(132, 22);
             this.txtCuit.TabIndex = 4;
+            this.txtCuit.TextChanged += new System.EventHandler(this.txtCuit_TextChanged);
             // 
             // txtApellido
             // 
@@ -169,6 +133,7 @@
             this.btnDetalles.TabIndex = 8;
             this.btnDetalles.Text = "Detalles";
             this.btnDetalles.UseVisualStyleBackColor = true;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // btnModificar
             // 
@@ -303,10 +268,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.GroupBox grpFiltro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUITCUIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.RadioButton rdbActivos;
