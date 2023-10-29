@@ -12,6 +12,7 @@ namespace AccesoDatos
     public class CD_Asistencias : CD_EjecutarSP
     {
 
+        public int idAsistencia;
         public int idPersona;
         public bool periodo;
         public DateTime? fecha;
@@ -22,6 +23,11 @@ namespace AccesoDatos
         public bool justificada;
         public string observaciones;
 
+        public int IdAsistencia
+        {
+            get { return idAsistencia; }
+            set { idAsistencia = value; }
+        }
         public int IdPersona
         {
             get { return idPersona; }
@@ -161,6 +167,24 @@ namespace AccesoDatos
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7, param8, param9 };
 
             DataTable resultado = EjecutarConsultas("alta_asistencias_sp", listaParametros.ToArray(), true);
+        }
+        public void ModificarAsistencia()
+        {
+            SqlParameter param0 = new SqlParameter("@id_asistencia", idAsistencia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@periodo", periodo) { SqlDbType = SqlDbType.Bit };
+            SqlParameter param3 = new SqlParameter("@fecha", fecha) { SqlDbType = SqlDbType.Date };
+            SqlParameter param4 = new SqlParameter("@fecha_desde", fecha_desde) { SqlDbType = SqlDbType.Date };
+            SqlParameter param5 = new SqlParameter("@fecha_hasta", fecha_hasta) { SqlDbType = SqlDbType.Date };
+            SqlParameter param6 = new SqlParameter("@id_motivo", idMotivo) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@otro_motivo", otro_motivo) { SqlDbType = SqlDbType.NChar};
+            SqlParameter param8 = new SqlParameter("@justificada", justificada) { SqlDbType = SqlDbType.Bit };
+            SqlParameter param9 = new SqlParameter("@observaciones", observaciones) { SqlDbType = SqlDbType.NVarChar};
+
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param0, param1, param2, param3, param4, param5, param6, param7, param8, param9 };
+
+            DataTable resultado = EjecutarConsultas("upAsistencias_SP", listaParametros.ToArray(), true);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace LogicaNegocio
     public class CN_Asistencias
     {
         CD_Asistencias asistenciasDatos = new CD_Asistencias();
+        private int idAsistencia;
         private int idPersona;
         private bool periodo;//bool
         private DateTime fecha;
@@ -22,6 +23,11 @@ namespace LogicaNegocio
         private bool justificada;//bool
         private string observaciones;
 
+        public int IdAsistencia
+        {
+            get { return idAsistencia; }
+            set { idAsistencia = value; }
+        }
         public int IdPersona
         {
             get { return idPersona; }
@@ -111,9 +117,7 @@ namespace LogicaNegocio
 
             return asistencias.ConsultaAsistenciasMod(areas, puestos, cuil, fecha, fechaDesde, fechaHasta); 
         }
-     
-
-        public void insertarAsistencias() 
+        public void cargarDatos() 
         {
             if (periodo)
             {
@@ -121,19 +125,30 @@ namespace LogicaNegocio
                 asistenciasDatos.FechaDesde = fecha_desde;
                 asistenciasDatos.FechaHasta = fecha_hasta;
             }
-            else 
+            else
             {
                 asistenciasDatos.Fecha = fecha;
                 asistenciasDatos.FechaDesde = null;
                 asistenciasDatos.FechaHasta = null;
             }
+            asistenciasDatos.IdAsistencia = idAsistencia;
             asistenciasDatos.IdPersona = idPersona;
             asistenciasDatos.Periodo = periodo;
             asistenciasDatos.IdMotivo = (int)idMotivo;
             asistenciasDatos.OtroMotivo = otro_motivo;
             asistenciasDatos.Justificada = justificada;
             asistenciasDatos.Observaciones = observaciones;
+        }
+
+        public void insertarAsistencias() 
+        {
+            cargarDatos();
             asistenciasDatos.CargarAsistencia(); 
+        }
+        public void ModificarAsistencias() 
+        {
+            cargarDatos();
+            asistenciasDatos.ModificarAsistencia(); 
         }
 
     }

@@ -39,7 +39,7 @@
             this.valorNombre = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkJustificada = new System.Windows.Forms.CheckBox();
             this.fecha = new System.Windows.Forms.Label();
             this.fechaDesde = new System.Windows.Forms.Label();
             this.fechaHasta = new System.Windows.Forms.Label();
@@ -47,12 +47,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbMotivo = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOtro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkPeriodo = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -153,16 +153,16 @@
             this.dateTimePicker2.TabIndex = 11;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // checkBox1
+            // checkJustificada
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 329);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(93, 20);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Justificada";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkJustificada.AutoSize = true;
+            this.checkJustificada.Location = new System.Drawing.Point(13, 329);
+            this.checkJustificada.Name = "checkJustificada";
+            this.checkJustificada.Size = new System.Drawing.Size(93, 20);
+            this.checkJustificada.TabIndex = 12;
+            this.checkJustificada.Text = "Justificada";
+            this.checkJustificada.UseVisualStyleBackColor = true;
+            this.checkJustificada.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // fecha
             // 
@@ -228,12 +228,12 @@
             this.cmbMotivo.TabIndex = 19;
             this.cmbMotivo.SelectedIndexChanged += new System.EventHandler(this.cmbMotivo_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtOtro
             // 
-            this.textBox1.Location = new System.Drawing.Point(311, 259);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 22);
-            this.textBox1.TabIndex = 20;
+            this.txtOtro.Location = new System.Drawing.Point(311, 259);
+            this.txtOtro.Name = "txtOtro";
+            this.txtOtro.Size = new System.Drawing.Size(189, 22);
+            this.txtOtro.TabIndex = 20;
             // 
             // label8
             // 
@@ -276,25 +276,25 @@
             this.checkPeriodo.UseVisualStyleBackColor = true;
             this.checkPeriodo.CheckedChanged += new System.EventHandler(this.checkPeriodo_CheckedChanged);
             // 
-            // textBox2
+            // txtObs
             // 
-            this.textBox2.Location = new System.Drawing.Point(310, 329);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 128);
-            this.textBox2.TabIndex = 26;
+            this.txtObs.Location = new System.Drawing.Point(310, 329);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(301, 128);
+            this.txtObs.TabIndex = 26;
             // 
             // AsistenciasPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 565);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtObs);
             this.Controls.Add(this.checkPeriodo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOtro);
             this.Controls.Add(this.cmbMotivo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -302,7 +302,7 @@
             this.Controls.Add(this.fechaHasta);
             this.Controls.Add(this.fechaDesde);
             this.Controls.Add(this.fecha);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkJustificada);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.valorNombre);
@@ -337,7 +337,7 @@
         private System.Windows.Forms.Label valorNombre;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkJustificada;
         private System.Windows.Forms.Label fecha;
         private System.Windows.Forms.Label fechaDesde;
         private System.Windows.Forms.Label fechaHasta;
@@ -345,11 +345,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbMotivo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOtro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkPeriodo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtObs;
     }
 }

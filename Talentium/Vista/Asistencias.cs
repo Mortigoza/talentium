@@ -42,12 +42,13 @@ namespace Vista
             if (filaSeleccionada != null)
             {
                 // Accede a los valores de las celdas en esa fila
-                
+
                 datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
                 datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
                 datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
                 datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
-                datos.Puesto= filaSeleccionada.Cells["Puesto"].Value.ToString();
+                datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
+                datos.Alta = true;
                 // y así sucesivamente para las otras columnas
 
                 // Ahora puedes trabajar con los valores obtenidos
@@ -220,6 +221,49 @@ namespace Vista
             {
                 buscarAlta.Enabled = true;
             }
+        }
+
+        private void dataGridModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = dataGridModificar.CurrentRow;
+
+            if (filaSeleccionada != null)
+            {
+                // Accede a los valores de las celdas en esa fila
+
+                datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencias"].Value.ToString());
+                datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
+                datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
+                datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
+
+                datos.Periodo = Convert.ToBoolean(filaSeleccionada.Cells["periodo"].Value.ToString());
+                if (datos.Periodo)
+                {
+                    datos.Fecha = DateTime.Now;
+                    datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
+                    datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
+                }
+                else 
+                {
+                    datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
+                    datos.Fecha_desde = DateTime.Now; 
+                    datos.Fecha_hasta = DateTime.Now;
+
+                }
+                datos.Justificada = Convert.ToBoolean(filaSeleccionada.Cells["justificada"].Value.ToString());
+                datos.Id_motivo = Convert.ToInt32(filaSeleccionada.Cells["id_motivo"].Value.ToString());
+                datos.Otro_motivo = filaSeleccionada.Cells["otro_motivo"].Value.ToString();
+                datos.Observaciones = filaSeleccionada.Cells["observaciones"].Value.ToString();
+                datos.Alta = false;
+                // y así sucesivamente para las otras columnas
+
+                // Ahora puedes trabajar con los valores obtenidos
+            }
+            AsistenciasPanel panel = new AsistenciasPanel(datos);
+
+            panel.Show();
         }
     }
 }

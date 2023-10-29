@@ -16,7 +16,7 @@ namespace Vista
         CN_Asistencias asistencias = new CN_Asistencias();
         C_Asistencias datos = new C_Asistencias();
         int idPer = 0;
-        int IdMotiv = 0;
+        int idAsis = 0;
         public AsistenciasPanel(C_Asistencias dato)
         {
             InitializeComponent();
@@ -30,11 +30,21 @@ namespace Vista
             valorArea.Text = listaObjetos [0].Area; 
             valorPuesto.Text = listaObjetos [0].Puesto;
             idPer = listaObjetos[0].idPersona;
+            idAsis = listaObjetos[0].idAsistencia;
+            checkPeriodo.Checked = listaObjetos[0].Periodo;
+            dateTimePicker3.Value = listaObjetos[0].Fecha;
+            dateTimePicker1.Value = listaObjetos[0].Fecha_desde;
+            dateTimePicker2.Value = listaObjetos[0].Fecha_hasta;
+            cmbMotivo.SelectedIndex = listaObjetos[0].Id_motivo;
+            txtOtro.Text = listaObjetos[0].Otro_motivo;
+            checkJustificada.Checked = listaObjetos[0].Justificada;
+            txtObs.Text = listaObjetos[0].Observaciones;
+
             fechaDesde.Visible = false;
             fechaHasta.Visible = false;
             dateTimePicker1.Visible = false;
             dateTimePicker2.Visible = false;
-            textBox1.Visible = false;
+            txtOtro.Visible = false;
             label7.Visible = false;
         }
 
@@ -82,24 +92,43 @@ namespace Vista
         {
             try
             {
-                DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
-                asistencias.IdPersona = idPer;
-                asistencias.Fecha = dateTimePicker3.Value;
-                asistencias.FechaDesde = dateTimePicker1.Value;
-                asistencias.FechaHasta = dateTimePicker2.Value;
-                asistencias.IdMotivo = selectedMotivo["id_motivo"];
-                asistencias.OtroMotivo = textBox1.Text;
-                asistencias.Justificada = checkBox1.Checked;
-                asistencias.Observaciones = textBox2.Text;
-                asistencias.Periodo = checkPeriodo.Checked;
-                asistencias.insertarAsistencias();
-                this.Hide();
-                MessageBox.Show("operación realizada con éxito");
-
+                if (datos.Alta)
+                {
+                    DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+                    asistencias.IdPersona = idPer;
+                    asistencias.Fecha = dateTimePicker3.Value;
+                    asistencias.FechaDesde = dateTimePicker1.Value;
+                    asistencias.FechaHasta = dateTimePicker2.Value;
+                    asistencias.IdMotivo = selectedMotivo["id_motivo"];
+                    asistencias.OtroMotivo = txtOtro.Text;
+                    asistencias.Justificada = checkJustificada.Checked;
+                    asistencias.Observaciones = txtObs.Text;
+                    asistencias.Periodo = checkPeriodo.Checked;
+                    asistencias.insertarAsistencias();
+                    this.Hide();
+                    MessageBox.Show("operación realizada con éxito");
+                }
+                else 
+                {
+                    DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+                    asistencias.IdPersona = idPer;
+                    asistencias.IdAsistencia = idAsis;
+                    asistencias.Fecha = dateTimePicker3.Value;
+                    asistencias.FechaDesde = dateTimePicker1.Value;
+                    asistencias.FechaHasta = dateTimePicker2.Value;
+                    asistencias.IdMotivo = selectedMotivo["id_motivo"];
+                    asistencias.OtroMotivo = txtOtro.Text;
+                    asistencias.Justificada = checkJustificada.Checked;
+                    asistencias.Observaciones = txtObs.Text;
+                    asistencias.Periodo = checkPeriodo.Checked;
+                    asistencias.ModificarAsistencias();
+                    this.Hide();
+                    MessageBox.Show("operación realizada con éxito");
+                }
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Error al insertar la asistencia: "+ ex);
+                MessageBox.Show("Error al ingresar los datos: "+ ex);
             }
         }
 
@@ -141,12 +170,12 @@ namespace Vista
             var valor = asistencias.revisarMotivo(selectedMotivo["id_motivo"]);
             if (valor == 9)
             {
-                textBox1.Visible = true;
+                txtOtro.Visible = true;
                 label7.Visible = true;
             }
             else 
             {
-                textBox1.Visible = false;
+                txtOtro.Visible = false;
                 label7.Visible = false;
             }
         }

@@ -48,6 +48,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridModificar = new System.Windows.Forms.DataGridView();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.periodo = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -294,6 +294,16 @@
             this.dataGridModificar.RowTemplate.Height = 24;
             this.dataGridModificar.Size = new System.Drawing.Size(770, 353);
             this.dataGridModificar.TabIndex = 12;
+            this.dataGridModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
+            // 
+            // Modificar
+            // 
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Text = "Abrir";
+            this.Modificar.Width = 125;
             // 
             // groupBox4
             // 
@@ -460,15 +470,6 @@
             this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "CUIL:";
-            // 
-            // Modificar
-            // 
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Text = "Abrir";
-            this.Modificar.Width = 125;
             // 
             // Asistencias
             // 
