@@ -20,9 +20,11 @@ namespace Vista
         public AsistenciasPanel(C_Asistencias dato)
         {
             InitializeComponent();
+            
             DataTable asistencia = asistencias.motivo();
             cmbMotivo.DisplayMember = "motivo";//id_motivo es el id
             cmbMotivo.DataSource = asistencia;
+
             List<C_Asistencias> listaObjetos = new List<C_Asistencias>();
             listaObjetos.Add(dato);
             valorNombre.Text = listaObjetos[0].Nombre;
@@ -35,7 +37,6 @@ namespace Vista
             dateTimePicker3.Value = listaObjetos[0].Fecha;
             dateTimePicker1.Value = listaObjetos[0].Fecha_desde;
             dateTimePicker2.Value = listaObjetos[0].Fecha_hasta;
-            cmbMotivo.SelectedIndex = listaObjetos[0].Id_motivo;
             txtOtro.Text = listaObjetos[0].Otro_motivo;
             checkJustificada.Checked = listaObjetos[0].Justificada;
             txtObs.Text = listaObjetos[0].Observaciones;

@@ -19,7 +19,6 @@ namespace Vista
         {
             InitializeComponent();
             buscarAlta.Enabled = false;
-            abrirAlta.Enabled = false;
             DataTable asistencia = asistencias.area();
             areasAltas.DisplayMember = "area";
             areasAltas.DataSource = asistencia;
@@ -69,18 +68,8 @@ namespace Vista
             dataGridAlta.Columns["Abrir"].Visible = true;
 
             // Ocultar las demás columnas
-            foreach (DataGridViewColumn column in dataGridAlta.Columns)
-            {
-                if (column.Name != "Nombre" && column.Name != "Apellido"
-                    && column.Name != "Area" && column.Name != "Puesto"
-                    && column.Name != "Abrir")
-                {
-                    column.Visible = false;
 
-                }
-
-            }
-
+            dataGridAlta.Columns["id_persona"].Visible = false;
         }
         public void cargarDtg(DataTable data) 
         {
@@ -88,30 +77,11 @@ namespace Vista
             dataGridModificar.DataSource = data;
             dataGridModificar.Columns["Modificar"].Visible = true;
 
-            // Ocultar las demás columnas
-
-            foreach (DataGridViewColumn column in dataGridAlta.Columns)
-            {
-                if (!periodo.Checked)
-                {
-                    if (column.Name != "periodo" && column.Name != "fecha_desde"
-                   && column.Name != "fecha_hasta" && column.Name != "id_persona")
-                    {
-                        column.Visible = false;
-
-                    }
-                }
-                else 
-                {
-                    if (column.Name != "fecha" && column.Name != "id_pesona")
-                    {
-                        column.Visible = false;
-
-                    }
-                }
-               
-
-            }
+            // Ocultar los id en las columnas
+                    
+                    dataGridModificar.Columns["id_persona"].Visible = false;
+                    dataGridModificar.Columns["id_asistencias"].Visible = false;
+                    dataGridModificar.Columns["id_motivo"].Visible = false;
 
         }
         private void button1_Click(object sender, EventArgs e)

@@ -100,6 +100,15 @@ namespace AccesoDatos
 
             return resultado;
         }
+        public DataTable EliminarCapacitaciones()
+        {
+            SqlParameter param1 = new SqlParameter("@id_capacitacion", idCapacitaciones) { SqlDbType = SqlDbType.Int };
+           
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1};
+            DataTable resultado = EjecutarConsultas("EliminarCapacitacion_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
 
 
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.abrirAlta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridAlta = new System.Windows.Forms.DataGridView();
             this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -45,10 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.areasAltas = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridModificar = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.periodo = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +64,7 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,7 +89,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.abrirAlta);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -101,15 +99,6 @@
             this.tabPage1.Text = "Alta";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // abrirAlta
-            // 
-            this.abrirAlta.Location = new System.Drawing.Point(998, 411);
-            this.abrirAlta.Name = "abrirAlta";
-            this.abrirAlta.Size = new System.Drawing.Size(81, 32);
-            this.abrirAlta.TabIndex = 15;
-            this.abrirAlta.Text = "Abrir";
-            this.abrirAlta.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -251,7 +240,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -261,15 +249,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modificaciòn";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(998, 400);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 32);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Abrir";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -287,6 +266,7 @@
             this.dataGridModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridModificar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Modificar});
+            this.dataGridModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridModificar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridModificar.Location = new System.Drawing.Point(2, 17);
             this.dataGridModificar.Name = "dataGridModificar";
@@ -295,15 +275,6 @@
             this.dataGridModificar.Size = new System.Drawing.Size(770, 353);
             this.dataGridModificar.TabIndex = 12;
             this.dataGridModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
-            // 
-            // Modificar
-            // 
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Text = "Abrir";
-            this.Modificar.Width = 125;
             // 
             // groupBox4
             // 
@@ -471,6 +442,22 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "CUIL:";
             // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Modificar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Modificar.Text = "Abrir";
+            this.Modificar.ToolTipText = "Abrir";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 68;
+            // 
             // Asistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -519,8 +506,6 @@
         private System.Windows.Forms.Button buscarMod;
         private System.Windows.Forms.TextBox CuilMod;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button abrirAlta;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox puestosAltas;
         private System.Windows.Forms.Label label14;

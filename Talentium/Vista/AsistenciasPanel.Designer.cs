@@ -221,6 +221,7 @@
             // 
             // cmbMotivo
             // 
+            this.cmbMotivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMotivo.FormattingEnabled = true;
             this.cmbMotivo.Location = new System.Drawing.Point(64, 259);
             this.cmbMotivo.Name = "cmbMotivo";

@@ -165,12 +165,13 @@ namespace LogicaNegocio
 
         }
 
-        //public List<string> Nivel()
-        //{
-        //    // Crea una lista de elementos.
-        //  List<string> niveles = new List<string> { "Basico", "Intermedio", "Avanzado" };
-        //    return niveles;
-        //}
+        public void EliminarCapacitaciones()
+        {
+            capacitaciones.IdCapacitaciones = Convert.ToInt32(idCapacitacionesMod);
+
+            capacitaciones.EliminarCapacitaciones();
+
+        }
     }
     
 }

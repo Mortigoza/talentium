@@ -149,5 +149,22 @@ namespace Vista.Gestion_de_Talento
         {
             cargarDTG(true);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
+                cnCapacitaciones.EliminarCapacitaciones();
+                cargarDTG(true);
+                MessageBox.Show("operación exitosa");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
+
+        }
     }
 }
