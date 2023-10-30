@@ -9,6 +9,7 @@ namespace Comun
     public class Persona 
 
     {
+        public int id_persona { get; set; }
         public string apellidos { get; set; }
         public string nombres { get; set; }
         public int id_tipo_doc { get; set; }
@@ -19,6 +20,9 @@ namespace Comun
         public string dpto { get; set; }
         public string piso { get; set; }
         public int id_localidad { get; set; }
+        public int id_partido { get; set; }
+        public int id_provincia { get; set; }
+     
         public int id_puesto { get; set; }
         public  int id_area { get; set; }
         public string email { get; set; }

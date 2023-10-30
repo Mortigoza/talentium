@@ -128,22 +128,51 @@ namespace AccesoDatos.Administracion_Personal
 
             return resultado;
         }
-        //public void EliminarPersona(InsertPersona insert)
-        //{
 
-        //}
-        //public void EliminarPersona(InsertPersona insert, string hola)
-        //{
 
-        //}
+        public DataTable ObtenerPersona(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1};
+            DataTable resultado = EjecutarConsultas("ObtenerPersonaDetalle",listaParametros.ToArray());
 
-        //public void ConsultarPersona(InsertPersona insert)
-        //{
-        //    EliminarPersona(insert);
+            return resultado;
+        }
+
+        public DataTable ObtenerDatosAcademicos(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerInformacionAcademica_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        public DataTable ObtenerDatosLaborales(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerInfomacionLabora_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        public DataTable ObtenerTelefono(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerTelefonos_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+
+
 
     }
 
 
 
- 
+
+
 }

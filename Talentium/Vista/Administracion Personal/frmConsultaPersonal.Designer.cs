@@ -54,7 +54,9 @@
             this.dtgEmpleados.Location = new System.Drawing.Point(264, 57);
             this.dtgEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.dtgEmpleados.Name = "dtgEmpleados";
+            this.dtgEmpleados.ReadOnly = true;
             this.dtgEmpleados.RowHeadersWidth = 51;
+            this.dtgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgEmpleados.Size = new System.Drawing.Size(833, 443);
             this.dtgEmpleados.TabIndex = 0;
             // 
@@ -180,9 +182,6 @@
             // 
             this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Items.AddRange(new object[] {
-            "RRHH",
-            ""});
             this.cmbArea.Location = new System.Drawing.Point(23, 194);
             this.cmbArea.Margin = new System.Windows.Forms.Padding(4);
             this.cmbArea.Name = "cmbArea";

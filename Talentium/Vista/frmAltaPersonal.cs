@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Comun;
 using LogicaNegocio.Administracion_Del_Personal;
 using LogicaNegocio;
-
+using System.IO;
 
 namespace Vista
 {
@@ -26,159 +26,20 @@ namespace Vista
         private int infoAcademicos = 1;
         private int nivelEspaniol = -1;
         private int nivelIngles = -1;
+        private int imagenBytes;
 
-
-
+        private DateTime fn;
+        private DateTime fa;
+        private bool _mod = false;
 
         public frmAltaPersonal()
         {
-            InitializeComponent();
-          
-            DeshabilitarCampos();
-           
 
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-            grbSuperior.Visible = true;
-            infoAcademicos++;
-            button1.Visible = false;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            grbSuperior.Visible = false;
-            infoAcademicos--;
-            button1.Visible = true;
+          InitializeComponent();
+          DeshabilitarCampos();
             
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            grbExp1.Visible = true;
-            button18.Visible = false;
-            infoLaborales++;
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            grbExp1.Visible = false;
-            button18.Visible = true;
-            infoLaborales--;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            grbExp2.Visible = true;
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            grbExp2.Visible = false;
-            button10.Visible = true;
-            infoLaborales--;
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            grbExp3.Visible = true;
-            button12.Visible =false;
-            infoLaborales++;
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            grbExp3.Visible = false;
-            button12.Visible =true;
-            infoLaborales--;
-        }
-
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-            grbExp2.Visible = true;
-            button10.Visible = false;
-            infoLaborales++;
-        }
-
-        private void btbValidarCuil(object sender, EventArgs e)
-        {
-
-            if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
-            {
-                MessageBox.Show("El campo no puede estar vacío.");
-            }
-            else
-            {
-                // Verificar si la entrada contiene solo números y tiene exactamente 11 dígitos
-                if (EsNumero(txtCuitCuil.Text))
-                {
-                    if (txtCuitCuil.Text.Length == 11)
-                    {
-                        bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
-                        if (valor)
-                        {
-                            DeshabilitarCampos();
-                            MessageBox.Show("El Cuit/Cuil ya esta asociado a un empleado");
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cuil Disponible");
-                            HabilitarCampos();
-                            txtCuitCuil.Enabled = false;
-                            pctFoto.Enabled = true;
-
-                        }
-                    }
-                    else
-                    {
-                        DeshabilitarCampos();
-                        MessageBox.Show("El campo debe contener 11 digitos.");
-                    }
-                }
-                else
-                {
-                    DeshabilitarCampos();
-                    MessageBox.Show("La entrada debe contener solamente numeros.");
-                }
-            }
-        }
-
-        private bool EsNumero(string input )
-        {
-            foreach (char c in input)
-            {
-                if (!char.IsDigit(c))
-                {
-                    return false; // La cadena contiene caracteres que no son números
-                }
-            }
-            return true; // La cadena contiene solo números
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmAltaPersonal_Load(object sender, EventArgs e)
-        {
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
-            
 
             DataTable provincia = logica.ObtenerProvincia();
             cmbProvincia.DataSource = provincia;
@@ -250,10 +111,12 @@ namespace Vista
             cmbPuesto.SelectedIndex = -1;
 
             DataTable area = logica.ObtenerArea();
+
             cmbArea.DataSource = area;
             cmbArea.DisplayMember = "area";
             cmbArea.ValueMember = "id_area";
             cmbArea.SelectedIndex = -1;
+
 
 
             //ComboBox Solapa Academico*************
@@ -289,11 +152,11 @@ namespace Vista
             cmbNivelAcademico1.DataSource = nivelacademico.Copy();
             cmbNivelAcademico1.DisplayMember = "nivel";
             cmbNivelAcademico1.ValueMember = "id_nivel";
-        
+
             cmbNivelAcademico2.DataSource = nivelacademico.Copy();
             cmbNivelAcademico2.DisplayMember = "nivel";
             cmbNivelAcademico2.ValueMember = "id_nivel";
-          
+
 
 
             //ComboBox Solapa Laboral
@@ -315,6 +178,154 @@ namespace Vista
             cmbLaboralIngreso3.SelectedIndex = 0;
             cmbLaboralEgreso3.SelectedIndex = 0;
 
+
+
+
+
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            grpSuperior3.Visible = true;
+            infoAcademicos++;
+            button1.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            grpSuperior3.Visible = false;
+            infoAcademicos--;
+            button1.Visible = true;
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            grpExp2.Visible = true;
+            button18.Visible = false;
+            infoLaborales++;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            grpExp2.Visible = false;
+            button18.Visible = true;
+            infoLaborales--;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            grpExp3.Visible = true;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            grpExp3.Visible = false;
+            button10.Visible = true;
+            infoLaborales--;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            grpExp4.Visible = true;
+            button12.Visible =false;
+            infoLaborales++;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            grpExp4.Visible = false;
+            button12.Visible =true;
+            infoLaborales--;
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            grpExp3.Visible = true;
+            button10.Visible = false;
+            infoLaborales++;
+        }
+
+        private void btbValidarCuil(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
+            {
+                MessageBox.Show("El campo no puede estar vacío.");
+            }
+            else
+            {
+                // Verificar si la entrada contiene solo números y tiene exactamente 11 dígitos
+                if (EsNumero(txtCuitCuil.Text))
+                {
+                    if (txtCuitCuil.Text.Length == 11)
+                    {
+                        bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
+                        if (valor)
+                        {
+                            DeshabilitarCampos();
+                            MessageBox.Show("El Cuit/Cuil ya esta asociado a un empleado");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cuil Disponible");
+                            HabilitarCampos();
+                            txtCuitCuil.Enabled = false;
+                            pctFoto.Enabled = true;
+
+                        }
+                    }
+                    else
+                    {
+                        DeshabilitarCampos();
+                        MessageBox.Show("El campo debe contener 11 digitos.");
+                    }
+                }
+                else
+                {
+                    DeshabilitarCampos();
+                    MessageBox.Show("La entrada debe contener solamente numeros.");
+                }
+            }
+        }
+
+        private bool EsNumero(string input )
+        {
+            foreach (char c in input)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false; // La cadena contiene caracteres que no son números
+                }
+            }
+            return true; // La cadena contiene solo números
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAltaPersonal_Load(object sender, EventArgs e)
+        {
+            if (_mod)
+            {
+                dtpFechaDeNacimiento.Value = fn;
+                dttFechaAlta.Value = fa;
+            }
 
         }
 
@@ -454,7 +465,7 @@ namespace Vista
 
         private void button4_Click(object sender, EventArgs e)
         {
-           
+
             if (validarVacios(tabPersonales))
             {
                 lblFaltanCampos.Visible = false;
@@ -643,6 +654,9 @@ namespace Vista
                 {
                     foreach (Control control in groupBox.Controls)
                     {
+                        //grpSuperior2.Enabled = true;
+                        //grpExp2.Enabled = true;
+                        //grpExp4.Enabled = true;
                         button4.Enabled = true;
                         btbEditarImagen.Enabled = true;
                         btbEliminarImagen.Enabled = true;
@@ -663,6 +677,9 @@ namespace Vista
                     {
                         if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker ) && control != txtCuitCuil)
                         {
+                            grpSuperior2.Enabled = false;
+                            grpExp2.Enabled = false;
+                            grpExp4.Enabled = false;
                             button4.Enabled = false;
                             btbEditarImagen.Enabled = false;
                             btbEliminarImagen.Enabled = false;
@@ -683,7 +700,7 @@ namespace Vista
 
         private void button16_Click(object sender, EventArgs e)
         {
-            groupBox4.Visible = true;
+            grpSuperior2.Visible = true;
             infoAcademicos++;
         }
 
@@ -707,7 +724,7 @@ namespace Vista
 
         private void button17_Click(object sender, EventArgs e)
         {
-            groupBox6.Visible = true;
+            grpExp1.Visible = true;
             button17.Visible = false;
             label74.Visible = false;
 
@@ -716,7 +733,7 @@ namespace Vista
 
         private void button18_Click(object sender, EventArgs e)
         {
-            groupBox6.Visible = false;
+            grpExp1.Visible = false;
             button17.Visible = true;
             label74.Visible = true;
             infoLaborales--;
@@ -724,7 +741,7 @@ namespace Vista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            groupBox4.Visible = false;
+            grpSuperior2.Visible = false;
             infoAcademicos--;
         }
 
@@ -941,6 +958,164 @@ namespace Vista
             {
                 button8.Enabled = true;
             }
+        }
+
+        private void BotonesInvisibles ()
+        {
+            Button[] botones = { button15,button4,button8,button9,btbEditarImagen,btbEliminarImagen,button16,button1,button5,button7,
+            button17,button18,button6,button10,button11,button12,button13,button14};
+
+            // Ocultar todos los botones en el arreglo
+            foreach (Button boton in botones)
+            {
+                boton.Visible = false;
+            }
+        }
+
+
+
+
+
+
+
+        public void CargarDatosPersona(int id_persona)
+        {
+            _mod = true;
+            tabControl.TabPages[1].Enabled = true;
+            tabControl.TabPages[2].Enabled = true;
+            DeshabilitarCampos();
+            BotonesInvisibles();
+            txtCuitCuil.Enabled = false;
+
+
+            Persona insert = new Persona();
+            // Llama a tu método ObtenerPersona para obtener los datos de la persona
+            logicaPersona.ObtenerPersona(insert, id_persona, ref infoAcademicos, ref infoLaborales);
+
+
+            //PERSONAL
+            //TextBox
+            txtCuitCuil.Text = insert.cuit_cuil;
+            txtApellidos.Text = insert.apellidos;
+            txtNombres.Text = insert.nombres;
+            txtDni.Text = insert.nro_doc;
+            txtEmail.Text = insert.email;
+            txtTelefono.Text = insert.telefono;
+            txtTelefonoAlternativo.Text = insert.telefono_alternativo;
+            txtContacto.Text = insert.contacto;
+            txtCalle.Text = insert.calle;
+            txtNro.Text = insert.nro.ToString();
+            txtDpto.Text = insert.dpto;
+            txtPiso.Text = insert.piso;
+            //ComboBox
+            cmbTipoDoc.SelectedValue = insert.id_tipo_doc;
+            cmbTipoTel.SelectedValue = insert.id_tipo;
+            cmbTipoTelAlternativo.SelectedValue = insert.id_tipo_alternativo;
+            cmbNacionalidad.SelectedValue = insert.id_nacionalidad;
+            cmbGenero.SelectedValue = insert.id_genero;
+            cmbEstadoCivil.SelectedValue = insert.id_estado_civil;
+            cmbArea.SelectedValue = insert.id_area;
+            cmbPuesto.SelectedValue = insert.id_puesto;
+            cmbConvenio.SelectedValue = insert.id_convenio;
+            cmbProvincia.SelectedValue = insert.id_provincia;
+            cmbPartido.SelectedValue = insert.id_partido;
+            cmbLocalidad.SelectedValue = insert.id_localidad;
+            //DateTime y Numeric
+            nupHijos.Value = insert.hijos;
+         
+            fn = insert.fecha_nacimiento;
+            fa = insert.fecha_alta;
+
+            if (insert.foto_perfil.ToString() == "0x")
+            {
+                byte[] imagenBytes = (byte[])insert.foto_perfil;
+                using (MemoryStream stream = new MemoryStream(imagenBytes))
+                {
+
+
+                    Image imagen = Image.FromStream(stream);
+
+                    pctFoto.Image = imagen;
+                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
+
+                }
+            }
+
+
+            //Academicos
+
+            txtInsitutcionSuperior.Text = insert.institucion1;
+            txtInsitutcionSuperior1.Text = insert.institucion2;
+            txtInsitutcionSuperior2.Text = insert.institucion3;
+            txtTitulo.Text = insert.titulo1;
+            txtTitulo1.Text = insert.titulo2;
+            txtTitulo2.Text = insert.titulo3;
+
+            //ComboBox
+            cmbNivelAcademico.SelectedValue = insert.id_nivel1;
+            cmbNivelAcademico1.SelectedValue = insert.id_nivel2;
+            cmbNivelAcademico2.SelectedValue = insert.id_nivel3;
+            cmbIngreso.Text = insert.año_ingreso1.ToString();
+            cmbIngreso1.Text = insert.año_ingreso2.ToString();
+            cmbIngreso2.Text = insert.año_ingreso3.ToString();
+            cmbEgreso.Text = insert.año_egreso1.ToString();
+            cmbEgreso1.Text = insert.año_egreso2.ToString();
+            cmbEgreso2.Text = insert.año_egreso3.ToString();
+            cmbProgreso.SelectedValue = insert.id_progreso1;
+            cmbProgreso1.SelectedValue = insert.id_progreso2;
+            cmbProgreso2.SelectedValue = insert.id_progreso3;
+
+            Visibilizar("grpSuperior", infoAcademicos);
+
+
+            //laborales
+            //TextBox
+            txtPuesto.Text = insert.puesto1;
+            txtPuesto1.Text = insert.puesto2;
+            txtPuesto2.Text = insert.puesto3;
+            txtPuesto3.Text = insert.puesto4;
+            txtEmpresa.Text = insert.empresa1;
+            txtEmpresa1.Text = insert.empresa2;
+            txtEmpresa2.Text = insert.empresa3;
+            txtEmpresa3.Text = insert.empresa4;
+            //ComboBox
+            cmbLaboralIngreso.Text = insert.fecha_ingreso1.ToString();
+            cmbLaboralIngreso1.Text = insert.fecha_ingreso2.ToString();
+            cmbLaboralIngreso2.Text = insert.fecha_ingreso3.ToString();
+            cmbLaboralIngreso3.Text = insert.fecha_ingreso4.ToString();
+            cmbLaboralEgreso.Text = insert.fecha_egreso1.ToString();
+            cmbLaboralEgreso1.Text = insert.fecha_egreso2.ToString();
+            cmbLaboralEgreso2.Text = insert.fecha_egreso3.ToString();
+            cmbLaboralEgreso3.Text = insert.fecha_egreso4.ToString();
+            //Numeric
+            nupPersonalACargo.Value = insert.personal_a_cargo1;
+            nupPersonalACargo1.Value = insert.personal_a_cargo2;
+            nupPersonalACargo2.Value = insert.personal_a_cargo3;
+            nupPersonalACargo3.Value = insert.personal_a_cargo4;
+
+            
+            Visibilizar("grpExp", infoLaborales);
+
+        }
+
+        public void Visibilizar(string nombreControl, int len)
+        {
+            for (int i = 1; i <= len; i++)
+            {
+                string groupName = nombreControl + i;
+                Control control = Controls.Find(groupName, true).FirstOrDefault();
+
+                if (control != null && control is GroupBox)
+                {
+                    GroupBox groupBox = (GroupBox)control;
+                    groupBox.Visible = true;
+                }
+            }
+        }
+
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

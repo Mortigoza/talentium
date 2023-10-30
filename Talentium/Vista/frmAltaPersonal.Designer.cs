@@ -106,7 +106,7 @@
             this.rdbAvanzadoEn = new System.Windows.Forms.RadioButton();
             this.lblFaltanCampos1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.grbSuperior1 = new System.Windows.Forms.GroupBox();
+            this.grpSuperior1 = new System.Windows.Forms.GroupBox();
             this.label73 = new System.Windows.Forms.Label();
             this.cmbProgreso = new System.Windows.Forms.ComboBox();
             this.button16 = new System.Windows.Forms.Button();
@@ -126,7 +126,7 @@
             this.rdbAvanzado = new System.Windows.Forms.RadioButton();
             this.rdbIntermedio = new System.Windows.Forms.RadioButton();
             this.rdbBasico = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grpSuperior2 = new System.Windows.Forms.GroupBox();
             this.cmbProgreso1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.cmbNivelAcademico1 = new System.Windows.Forms.ComboBox();
-            this.grbSuperior = new System.Windows.Forms.GroupBox();
+            this.grpSuperior3 = new System.Windows.Forms.GroupBox();
             this.cmbProgreso2 = new System.Windows.Forms.ComboBox();
             this.label67 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -161,7 +161,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.label74 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.grbExp2 = new System.Windows.Forms.GroupBox();
+            this.grpExp3 = new System.Windows.Forms.GroupBox();
             this.label54 = new System.Windows.Forms.Label();
             this.nupPersonalACargo2 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto2 = new System.Windows.Forms.TextBox();
@@ -175,7 +175,7 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
-            this.grbExp3 = new System.Windows.Forms.GroupBox();
+            this.grpExp4 = new System.Windows.Forms.GroupBox();
             this.nupPersonalACargo3 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto3 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
@@ -187,7 +187,7 @@
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.grpExp1 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.nupPersonalACargo = new System.Windows.Forms.NumericUpDown();
@@ -201,7 +201,7 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.grbExp1 = new System.Windows.Forms.GroupBox();
+            this.grpExp2 = new System.Windows.Forms.GroupBox();
             this.button11 = new System.Windows.Forms.Button();
             this.nupPersonalACargo1 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto1 = new System.Windows.Forms.TextBox();
@@ -225,18 +225,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupHijos)).BeginInit();
             this.tabAcademicos.SuspendLayout();
             this.grpIngles.SuspendLayout();
-            this.grbSuperior1.SuspendLayout();
+            this.grpSuperior1.SuspendLayout();
             this.grpEspaniol.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.grbSuperior.SuspendLayout();
+            this.grpSuperior2.SuspendLayout();
+            this.grpSuperior3.SuspendLayout();
             this.tabLaborales.SuspendLayout();
-            this.grbExp2.SuspendLayout();
+            this.grpExp3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo2)).BeginInit();
-            this.grbExp3.SuspendLayout();
+            this.grpExp4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo3)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            this.grpExp1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).BeginInit();
-            this.grbExp1.SuspendLayout();
+            this.grpExp2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -555,7 +555,6 @@
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(53, 22);
             this.txtNro.TabIndex = 34;
-            this.txtNro.Text = "500";
             this.txtNro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNro_KeyPress);
             // 
             // label10
@@ -577,7 +576,6 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(192, 22);
             this.txtCalle.TabIndex = 35;
-            this.txtCalle.Text = "Calle Falsa";
             this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
             this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
@@ -588,7 +586,6 @@
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(53, 22);
             this.txtPiso.TabIndex = 36;
-            this.txtPiso.Text = "1";
             // 
             // cmbLocalidad
             // 
@@ -609,7 +606,6 @@
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(53, 22);
             this.txtDpto.TabIndex = 37;
-            this.txtDpto.Text = "A";
             // 
             // label11
             // 
@@ -700,6 +696,7 @@
             // cmbTipoDoc
             // 
             this.cmbTipoDoc.AccessibleDescription = "O";
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Location = new System.Drawing.Point(18, 145);
             this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(4);
@@ -794,7 +791,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(215, 22);
             this.txtTelefono.TabIndex = 47;
-            this.txtTelefono.Text = "1158778869";
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label22
@@ -816,7 +812,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(373, 22);
             this.txtEmail.TabIndex = 27;
-            this.txtEmail.Text = "gomezfacundonahuel@outlook.com";
             // 
             // txtContacto
             // 
@@ -825,7 +820,6 @@
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(80, 22);
             this.txtContacto.TabIndex = 45;
-            this.txtContacto.Text = "Hermano";
             this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
@@ -859,7 +853,6 @@
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
             this.txtTelefonoAlternativo.Size = new System.Drawing.Size(171, 22);
             this.txtTelefonoAlternativo.TabIndex = 43;
-            this.txtTelefonoAlternativo.Text = "1158778859";
             this.txtTelefonoAlternativo.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             this.txtTelefonoAlternativo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlternativo_KeyPress);
             // 
@@ -902,6 +895,7 @@
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(130, 22);
             this.dtpFechaDeNacimiento.TabIndex = 25;
+            this.dtpFechaDeNacimiento.Value = new System.DateTime(2023, 10, 29, 2, 30, 9, 0);
             // 
             // txtApellidos
             // 
@@ -911,7 +905,6 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(188, 22);
             this.txtApellidos.TabIndex = 30;
-            this.txtApellidos.Text = "Gomez";
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // cmbEstadoCivil
@@ -956,7 +949,6 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(171, 22);
             this.txtNombres.TabIndex = 18;
-            this.txtNombres.Text = "Facundo";
             this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // label7
@@ -978,7 +970,6 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(293, 22);
             this.txtDni.TabIndex = 31;
-            this.txtDni.Text = "39918293";
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label6
@@ -1009,7 +1000,6 @@
             this.txtCuitCuil.Name = "txtCuitCuil";
             this.txtCuitCuil.Size = new System.Drawing.Size(188, 22);
             this.txtCuitCuil.TabIndex = 32;
-            this.txtCuitCuil.Text = "20399182930";
             // 
             // label5
             // 
@@ -1060,9 +1050,9 @@
             this.tabAcademicos.Controls.Add(this.grpIngles);
             this.tabAcademicos.Controls.Add(this.lblFaltanCampos1);
             this.tabAcademicos.Controls.Add(this.button8);
-            this.tabAcademicos.Controls.Add(this.grbSuperior1);
+            this.tabAcademicos.Controls.Add(this.grpSuperior1);
             this.tabAcademicos.Controls.Add(this.grpEspaniol);
-            this.tabAcademicos.Controls.Add(this.groupBox4);
+            this.tabAcademicos.Controls.Add(this.grpSuperior2);
             this.tabAcademicos.Location = new System.Drawing.Point(4, 25);
             this.tabAcademicos.Margin = new System.Windows.Forms.Padding(4);
             this.tabAcademicos.Name = "tabAcademicos";
@@ -1168,30 +1158,30 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // grbSuperior1
+            // grpSuperior1
             // 
-            this.grbSuperior1.Controls.Add(this.label73);
-            this.grbSuperior1.Controls.Add(this.cmbProgreso);
-            this.grbSuperior1.Controls.Add(this.button16);
-            this.grbSuperior1.Controls.Add(this.label30);
-            this.grbSuperior1.Controls.Add(this.txtInsitutcionSuperior);
-            this.grbSuperior1.Controls.Add(this.cmbEgreso);
-            this.grbSuperior1.Controls.Add(this.label35);
-            this.grbSuperior1.Controls.Add(this.label38);
-            this.grbSuperior1.Controls.Add(this.cmbNivelAcademico);
-            this.grbSuperior1.Controls.Add(this.label65);
-            this.grbSuperior1.Controls.Add(this.cmbIngreso);
-            this.grbSuperior1.Controls.Add(this.label71);
-            this.grbSuperior1.Controls.Add(this.label72);
-            this.grbSuperior1.Controls.Add(this.txtTitulo);
-            this.grbSuperior1.Location = new System.Drawing.Point(65, 194);
-            this.grbSuperior1.Margin = new System.Windows.Forms.Padding(4);
-            this.grbSuperior1.Name = "grbSuperior1";
-            this.grbSuperior1.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSuperior1.Size = new System.Drawing.Size(423, 278);
-            this.grbSuperior1.TabIndex = 88;
-            this.grbSuperior1.TabStop = false;
-            this.grbSuperior1.Text = "Formación Academica";
+            this.grpSuperior1.Controls.Add(this.label73);
+            this.grpSuperior1.Controls.Add(this.cmbProgreso);
+            this.grpSuperior1.Controls.Add(this.button16);
+            this.grpSuperior1.Controls.Add(this.label30);
+            this.grpSuperior1.Controls.Add(this.txtInsitutcionSuperior);
+            this.grpSuperior1.Controls.Add(this.cmbEgreso);
+            this.grpSuperior1.Controls.Add(this.label35);
+            this.grpSuperior1.Controls.Add(this.label38);
+            this.grpSuperior1.Controls.Add(this.cmbNivelAcademico);
+            this.grpSuperior1.Controls.Add(this.label65);
+            this.grpSuperior1.Controls.Add(this.cmbIngreso);
+            this.grpSuperior1.Controls.Add(this.label71);
+            this.grpSuperior1.Controls.Add(this.label72);
+            this.grpSuperior1.Controls.Add(this.txtTitulo);
+            this.grpSuperior1.Location = new System.Drawing.Point(65, 194);
+            this.grpSuperior1.Margin = new System.Windows.Forms.Padding(4);
+            this.grpSuperior1.Name = "grpSuperior1";
+            this.grpSuperior1.Padding = new System.Windows.Forms.Padding(4);
+            this.grpSuperior1.Size = new System.Drawing.Size(423, 278);
+            this.grpSuperior1.TabIndex = 88;
+            this.grpSuperior1.TabStop = false;
+            this.grpSuperior1.Text = "Formación Academica";
             // 
             // label73
             // 
@@ -1247,7 +1237,6 @@
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior.TabIndex = 73;
-            this.txtInsitutcionSuperior.Text = "Colegio 1";
             // 
             // cmbEgreso
             // 
@@ -1339,7 +1328,7 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo.TabIndex = 75;
-            this.txtTitulo.Text = "Titulo 1";
+            this.txtTitulo.TextChanged += new System.EventHandler(this.txtTitulo_TextChanged);
             this.txtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo_KeyPress);
             // 
             // grpEspaniol
@@ -1409,33 +1398,33 @@
             this.rdbBasico.UseVisualStyleBackColor = true;
             this.rdbBasico.CheckedChanged += new System.EventHandler(this.Espaniol_CheckedChanged);
             // 
-            // groupBox4
+            // grpSuperior2
             // 
-            this.groupBox4.Controls.Add(this.cmbProgreso1);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.label66);
-            this.groupBox4.Controls.Add(this.label42);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.cmbEgreso1);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.cmbIngreso1);
-            this.groupBox4.Controls.Add(this.label39);
-            this.groupBox4.Controls.Add(this.txtInsitutcionSuperior1);
-            this.groupBox4.Controls.Add(this.txtTitulo1);
-            this.groupBox4.Controls.Add(this.label40);
-            this.groupBox4.Controls.Add(this.label41);
-            this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.cmbNivelAcademico1);
-            this.groupBox4.Controls.Add(this.grbSuperior);
-            this.groupBox4.Location = new System.Drawing.Point(529, 29);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(439, 443);
-            this.groupBox4.TabIndex = 70;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Formación Academica";
-            this.groupBox4.Visible = false;
+            this.grpSuperior2.Controls.Add(this.cmbProgreso1);
+            this.grpSuperior2.Controls.Add(this.button5);
+            this.grpSuperior2.Controls.Add(this.label66);
+            this.grpSuperior2.Controls.Add(this.label42);
+            this.grpSuperior2.Controls.Add(this.button1);
+            this.grpSuperior2.Controls.Add(this.cmbEgreso1);
+            this.grpSuperior2.Controls.Add(this.label24);
+            this.grpSuperior2.Controls.Add(this.cmbIngreso1);
+            this.grpSuperior2.Controls.Add(this.label39);
+            this.grpSuperior2.Controls.Add(this.txtInsitutcionSuperior1);
+            this.grpSuperior2.Controls.Add(this.txtTitulo1);
+            this.grpSuperior2.Controls.Add(this.label40);
+            this.grpSuperior2.Controls.Add(this.label41);
+            this.grpSuperior2.Controls.Add(this.label36);
+            this.grpSuperior2.Controls.Add(this.cmbNivelAcademico1);
+            this.grpSuperior2.Controls.Add(this.grpSuperior3);
+            this.grpSuperior2.Location = new System.Drawing.Point(529, 29);
+            this.grpSuperior2.Margin = new System.Windows.Forms.Padding(4);
+            this.grpSuperior2.Name = "grpSuperior2";
+            this.grpSuperior2.Padding = new System.Windows.Forms.Padding(4);
+            this.grpSuperior2.Size = new System.Drawing.Size(439, 443);
+            this.grpSuperior2.TabIndex = 70;
+            this.grpSuperior2.TabStop = false;
+            this.grpSuperior2.Text = "Formación Academica";
+            this.grpSuperior2.Visible = false;
             // 
             // cmbProgreso1
             // 
@@ -1546,7 +1535,6 @@
             this.txtInsitutcionSuperior1.Name = "txtInsitutcionSuperior1";
             this.txtInsitutcionSuperior1.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior1.TabIndex = 54;
-            this.txtInsitutcionSuperior1.Text = "Insituto 172";
             // 
             // txtTitulo1
             // 
@@ -1556,7 +1544,6 @@
             this.txtTitulo1.Name = "txtTitulo1";
             this.txtTitulo1.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo1.TabIndex = 62;
-            this.txtTitulo1.Text = "Analista de Sistemas";
             this.txtTitulo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo1_KeyPress);
             // 
             // label40
@@ -1600,30 +1587,30 @@
             this.cmbNivelAcademico1.Size = new System.Drawing.Size(177, 24);
             this.cmbNivelAcademico1.TabIndex = 65;
             // 
-            // grbSuperior
+            // grpSuperior3
             // 
-            this.grbSuperior.Controls.Add(this.cmbProgreso2);
-            this.grbSuperior.Controls.Add(this.label67);
-            this.grbSuperior.Controls.Add(this.button7);
-            this.grbSuperior.Controls.Add(this.txtInsitutcionSuperior2);
-            this.grbSuperior.Controls.Add(this.cmbEgreso2);
-            this.grbSuperior.Controls.Add(this.label37);
-            this.grbSuperior.Controls.Add(this.label25);
-            this.grbSuperior.Controls.Add(this.cmbNivelAcademico2);
-            this.grbSuperior.Controls.Add(this.label26);
-            this.grbSuperior.Controls.Add(this.cmbIngreso2);
-            this.grbSuperior.Controls.Add(this.label27);
-            this.grbSuperior.Controls.Add(this.label28);
-            this.grbSuperior.Controls.Add(this.txtTitulo2);
-            this.grbSuperior.Location = new System.Drawing.Point(8, 228);
-            this.grbSuperior.Margin = new System.Windows.Forms.Padding(4);
-            this.grbSuperior.Name = "grbSuperior";
-            this.grbSuperior.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSuperior.Size = new System.Drawing.Size(423, 202);
-            this.grbSuperior.TabIndex = 87;
-            this.grbSuperior.TabStop = false;
-            this.grbSuperior.Visible = false;
-            this.grbSuperior.Enter += new System.EventHandler(this.grbSuperior_Enter);
+            this.grpSuperior3.Controls.Add(this.cmbProgreso2);
+            this.grpSuperior3.Controls.Add(this.label67);
+            this.grpSuperior3.Controls.Add(this.button7);
+            this.grpSuperior3.Controls.Add(this.txtInsitutcionSuperior2);
+            this.grpSuperior3.Controls.Add(this.cmbEgreso2);
+            this.grpSuperior3.Controls.Add(this.label37);
+            this.grpSuperior3.Controls.Add(this.label25);
+            this.grpSuperior3.Controls.Add(this.cmbNivelAcademico2);
+            this.grpSuperior3.Controls.Add(this.label26);
+            this.grpSuperior3.Controls.Add(this.cmbIngreso2);
+            this.grpSuperior3.Controls.Add(this.label27);
+            this.grpSuperior3.Controls.Add(this.label28);
+            this.grpSuperior3.Controls.Add(this.txtTitulo2);
+            this.grpSuperior3.Location = new System.Drawing.Point(8, 228);
+            this.grpSuperior3.Margin = new System.Windows.Forms.Padding(4);
+            this.grpSuperior3.Name = "grpSuperior3";
+            this.grpSuperior3.Padding = new System.Windows.Forms.Padding(4);
+            this.grpSuperior3.Size = new System.Drawing.Size(423, 202);
+            this.grpSuperior3.TabIndex = 87;
+            this.grpSuperior3.TabStop = false;
+            this.grpSuperior3.Visible = false;
+            this.grpSuperior3.Enter += new System.EventHandler(this.grbSuperior_Enter);
             // 
             // cmbProgreso2
             // 
@@ -1667,7 +1654,6 @@
             this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
             this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior2.TabIndex = 73;
-            this.txtInsitutcionSuperior2.Text = "Colegio 3";
             // 
             // cmbEgreso2
             // 
@@ -1759,7 +1745,6 @@
             this.txtTitulo2.Name = "txtTitulo2";
             this.txtTitulo2.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo2.TabIndex = 75;
-            this.txtTitulo2.Text = "Titulo 3";
             this.txtTitulo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo2_KeyPress);
             // 
             // tabLaborales
@@ -1768,8 +1753,8 @@
             this.tabLaborales.Controls.Add(this.button17);
             this.tabLaborales.Controls.Add(this.label74);
             this.tabLaborales.Controls.Add(this.button9);
-            this.tabLaborales.Controls.Add(this.grbExp2);
-            this.tabLaborales.Controls.Add(this.groupBox6);
+            this.tabLaborales.Controls.Add(this.grpExp3);
+            this.tabLaborales.Controls.Add(this.grpExp1);
             this.tabLaborales.Location = new System.Drawing.Point(4, 25);
             this.tabLaborales.Margin = new System.Windows.Forms.Padding(4);
             this.tabLaborales.Name = "tabLaborales";
@@ -1835,31 +1820,31 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // grbExp2
+            // grpExp3
             // 
-            this.grbExp2.Controls.Add(this.label54);
-            this.grbExp2.Controls.Add(this.nupPersonalACargo2);
-            this.grbExp2.Controls.Add(this.txtPuesto2);
-            this.grbExp2.Controls.Add(this.button12);
-            this.grbExp2.Controls.Add(this.txtEmpresa2);
-            this.grbExp2.Controls.Add(this.label53);
-            this.grbExp2.Controls.Add(this.button13);
-            this.grbExp2.Controls.Add(this.cmbLaboralEgreso2);
-            this.grbExp2.Controls.Add(this.label55);
-            this.grbExp2.Controls.Add(this.cmbLaboralIngreso2);
-            this.grbExp2.Controls.Add(this.label56);
-            this.grbExp2.Controls.Add(this.label57);
-            this.grbExp2.Controls.Add(this.label58);
-            this.grbExp2.Controls.Add(this.grbExp3);
-            this.grbExp2.Location = new System.Drawing.Point(529, 29);
-            this.grbExp2.Margin = new System.Windows.Forms.Padding(4);
-            this.grbExp2.Name = "grbExp2";
-            this.grbExp2.Padding = new System.Windows.Forms.Padding(4);
-            this.grbExp2.Size = new System.Drawing.Size(425, 452);
-            this.grbExp2.TabIndex = 94;
-            this.grbExp2.TabStop = false;
-            this.grbExp2.Text = "Experiencia Laboral";
-            this.grbExp2.Visible = false;
+            this.grpExp3.Controls.Add(this.label54);
+            this.grpExp3.Controls.Add(this.nupPersonalACargo2);
+            this.grpExp3.Controls.Add(this.txtPuesto2);
+            this.grpExp3.Controls.Add(this.button12);
+            this.grpExp3.Controls.Add(this.txtEmpresa2);
+            this.grpExp3.Controls.Add(this.label53);
+            this.grpExp3.Controls.Add(this.button13);
+            this.grpExp3.Controls.Add(this.cmbLaboralEgreso2);
+            this.grpExp3.Controls.Add(this.label55);
+            this.grpExp3.Controls.Add(this.cmbLaboralIngreso2);
+            this.grpExp3.Controls.Add(this.label56);
+            this.grpExp3.Controls.Add(this.label57);
+            this.grpExp3.Controls.Add(this.label58);
+            this.grpExp3.Controls.Add(this.grpExp4);
+            this.grpExp3.Location = new System.Drawing.Point(529, 29);
+            this.grpExp3.Margin = new System.Windows.Forms.Padding(4);
+            this.grpExp3.Name = "grpExp3";
+            this.grpExp3.Padding = new System.Windows.Forms.Padding(4);
+            this.grpExp3.Size = new System.Drawing.Size(425, 452);
+            this.grpExp3.TabIndex = 94;
+            this.grpExp3.TabStop = false;
+            this.grpExp3.Text = "Experiencia Laboral";
+            this.grpExp3.Visible = false;
             // 
             // label54
             // 
@@ -1886,7 +1871,6 @@
             this.txtPuesto2.Name = "txtPuesto2";
             this.txtPuesto2.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto2.TabIndex = 102;
-            this.txtPuesto2.Text = "Basurero";
             // 
             // button12
             // 
@@ -1910,7 +1894,6 @@
             this.txtEmpresa2.Name = "txtEmpresa2";
             this.txtEmpresa2.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa2.TabIndex = 90;
-            this.txtEmpresa2.Text = "Basurandia";
             // 
             // label53
             // 
@@ -2000,28 +1983,28 @@
             this.label58.Tag = "txtPuesto2";
             this.label58.Text = "Puesto *";
             // 
-            // grbExp3
+            // grpExp4
             // 
-            this.grbExp3.Controls.Add(this.nupPersonalACargo3);
-            this.grbExp3.Controls.Add(this.txtPuesto3);
-            this.grbExp3.Controls.Add(this.button14);
-            this.grbExp3.Controls.Add(this.cmbLaboralEgreso3);
-            this.grbExp3.Controls.Add(this.txtEmpresa3);
-            this.grbExp3.Controls.Add(this.label59);
-            this.grbExp3.Controls.Add(this.cmbLaboralIngreso3);
-            this.grbExp3.Controls.Add(this.label60);
-            this.grbExp3.Controls.Add(this.label61);
-            this.grbExp3.Controls.Add(this.label62);
-            this.grbExp3.Controls.Add(this.label63);
-            this.grbExp3.Location = new System.Drawing.Point(8, 212);
-            this.grbExp3.Margin = new System.Windows.Forms.Padding(4);
-            this.grbExp3.Name = "grbExp3";
-            this.grbExp3.Padding = new System.Windows.Forms.Padding(4);
-            this.grbExp3.Size = new System.Drawing.Size(409, 222);
-            this.grbExp3.TabIndex = 87;
-            this.grbExp3.TabStop = false;
-            this.grbExp3.Visible = false;
-            this.grbExp3.Enter += new System.EventHandler(this.grbExp3_Enter);
+            this.grpExp4.Controls.Add(this.nupPersonalACargo3);
+            this.grpExp4.Controls.Add(this.txtPuesto3);
+            this.grpExp4.Controls.Add(this.button14);
+            this.grpExp4.Controls.Add(this.cmbLaboralEgreso3);
+            this.grpExp4.Controls.Add(this.txtEmpresa3);
+            this.grpExp4.Controls.Add(this.label59);
+            this.grpExp4.Controls.Add(this.cmbLaboralIngreso3);
+            this.grpExp4.Controls.Add(this.label60);
+            this.grpExp4.Controls.Add(this.label61);
+            this.grpExp4.Controls.Add(this.label62);
+            this.grpExp4.Controls.Add(this.label63);
+            this.grpExp4.Location = new System.Drawing.Point(8, 212);
+            this.grpExp4.Margin = new System.Windows.Forms.Padding(4);
+            this.grpExp4.Name = "grpExp4";
+            this.grpExp4.Padding = new System.Windows.Forms.Padding(4);
+            this.grpExp4.Size = new System.Drawing.Size(409, 222);
+            this.grpExp4.TabIndex = 87;
+            this.grpExp4.TabStop = false;
+            this.grpExp4.Visible = false;
+            this.grpExp4.Enter += new System.EventHandler(this.grbExp3_Enter);
             // 
             // nupPersonalACargo3
             // 
@@ -2038,7 +2021,6 @@
             this.txtPuesto3.Name = "txtPuesto3";
             this.txtPuesto3.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto3.TabIndex = 101;
-            this.txtPuesto3.Text = "Barrendero";
             // 
             // button14
             // 
@@ -2072,7 +2054,6 @@
             this.txtEmpresa3.Name = "txtEmpresa3";
             this.txtEmpresa3.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa3.TabIndex = 100;
-            this.txtEmpresa3.Text = "Barrendaria";
             // 
             // label59
             // 
@@ -2137,32 +2118,32 @@
             this.label63.Tag = "txtPuesto3";
             this.label63.Text = "Puesto *";
             // 
-            // groupBox6
+            // grpExp1
             // 
-            this.groupBox6.Controls.Add(this.label32);
-            this.groupBox6.Controls.Add(this.button18);
-            this.groupBox6.Controls.Add(this.nupPersonalACargo);
-            this.groupBox6.Controls.Add(this.txtPuesto);
-            this.groupBox6.Controls.Add(this.txtEmpresa);
-            this.groupBox6.Controls.Add(this.label51);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.cmbLaboralEgreso);
-            this.groupBox6.Controls.Add(this.label33);
-            this.groupBox6.Controls.Add(this.cmbLaboralIngreso);
-            this.groupBox6.Controls.Add(this.label43);
-            this.groupBox6.Controls.Add(this.label44);
-            this.groupBox6.Controls.Add(this.label45);
-            this.groupBox6.Controls.Add(this.grbExp1);
-            this.groupBox6.Location = new System.Drawing.Point(65, 29);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(425, 462);
-            this.groupBox6.TabIndex = 71;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Experiencia Laboral";
-            this.groupBox6.Visible = false;
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            this.grpExp1.Controls.Add(this.label32);
+            this.grpExp1.Controls.Add(this.button18);
+            this.grpExp1.Controls.Add(this.nupPersonalACargo);
+            this.grpExp1.Controls.Add(this.txtPuesto);
+            this.grpExp1.Controls.Add(this.txtEmpresa);
+            this.grpExp1.Controls.Add(this.label51);
+            this.grpExp1.Controls.Add(this.button6);
+            this.grpExp1.Controls.Add(this.cmbLaboralEgreso);
+            this.grpExp1.Controls.Add(this.label33);
+            this.grpExp1.Controls.Add(this.cmbLaboralIngreso);
+            this.grpExp1.Controls.Add(this.label43);
+            this.grpExp1.Controls.Add(this.label44);
+            this.grpExp1.Controls.Add(this.label45);
+            this.grpExp1.Controls.Add(this.grpExp2);
+            this.grpExp1.Location = new System.Drawing.Point(65, 29);
+            this.grpExp1.Margin = new System.Windows.Forms.Padding(4);
+            this.grpExp1.Name = "grpExp1";
+            this.grpExp1.Padding = new System.Windows.Forms.Padding(4);
+            this.grpExp1.Size = new System.Drawing.Size(425, 462);
+            this.grpExp1.TabIndex = 71;
+            this.grpExp1.TabStop = false;
+            this.grpExp1.Text = "Experiencia Laboral";
+            this.grpExp1.Visible = false;
+            this.grpExp1.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // label32
             // 
@@ -2203,7 +2184,6 @@
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto.TabIndex = 92;
-            this.txtPuesto.Text = "Cadete Deposito";
             // 
             // txtEmpresa
             // 
@@ -2213,7 +2193,6 @@
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa.TabIndex = 90;
-            this.txtEmpresa.Text = "Casa Del Audio";
             // 
             // label51
             // 
@@ -2303,29 +2282,29 @@
             this.label45.Tag = "txtPuesto";
             this.label45.Text = "Puesto *";
             // 
-            // grbExp1
+            // grpExp2
             // 
-            this.grbExp1.Controls.Add(this.button11);
-            this.grbExp1.Controls.Add(this.nupPersonalACargo1);
-            this.grbExp1.Controls.Add(this.txtPuesto1);
-            this.grbExp1.Controls.Add(this.label50);
-            this.grbExp1.Controls.Add(this.button10);
-            this.grbExp1.Controls.Add(this.cmbLaboralEgreso1);
-            this.grbExp1.Controls.Add(this.txtEmpresa1);
-            this.grbExp1.Controls.Add(this.label46);
-            this.grbExp1.Controls.Add(this.cmbLaboralIngreso1);
-            this.grbExp1.Controls.Add(this.label47);
-            this.grbExp1.Controls.Add(this.label34);
-            this.grbExp1.Controls.Add(this.label48);
-            this.grbExp1.Controls.Add(this.label49);
-            this.grbExp1.Location = new System.Drawing.Point(8, 212);
-            this.grbExp1.Margin = new System.Windows.Forms.Padding(4);
-            this.grbExp1.Name = "grbExp1";
-            this.grbExp1.Padding = new System.Windows.Forms.Padding(4);
-            this.grbExp1.Size = new System.Drawing.Size(409, 242);
-            this.grbExp1.TabIndex = 87;
-            this.grbExp1.TabStop = false;
-            this.grbExp1.Visible = false;
+            this.grpExp2.Controls.Add(this.button11);
+            this.grpExp2.Controls.Add(this.nupPersonalACargo1);
+            this.grpExp2.Controls.Add(this.txtPuesto1);
+            this.grpExp2.Controls.Add(this.label50);
+            this.grpExp2.Controls.Add(this.button10);
+            this.grpExp2.Controls.Add(this.cmbLaboralEgreso1);
+            this.grpExp2.Controls.Add(this.txtEmpresa1);
+            this.grpExp2.Controls.Add(this.label46);
+            this.grpExp2.Controls.Add(this.cmbLaboralIngreso1);
+            this.grpExp2.Controls.Add(this.label47);
+            this.grpExp2.Controls.Add(this.label34);
+            this.grpExp2.Controls.Add(this.label48);
+            this.grpExp2.Controls.Add(this.label49);
+            this.grpExp2.Location = new System.Drawing.Point(8, 212);
+            this.grpExp2.Margin = new System.Windows.Forms.Padding(4);
+            this.grpExp2.Name = "grpExp2";
+            this.grpExp2.Padding = new System.Windows.Forms.Padding(4);
+            this.grpExp2.Size = new System.Drawing.Size(409, 242);
+            this.grpExp2.TabIndex = 87;
+            this.grpExp2.TabStop = false;
+            this.grpExp2.Visible = false;
             // 
             // button11
             // 
@@ -2358,7 +2337,6 @@
             this.txtPuesto1.Name = "txtPuesto1";
             this.txtPuesto1.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto1.TabIndex = 103;
-            this.txtPuesto1.Text = "Cartonero";
             // 
             // label50
             // 
@@ -2402,7 +2380,6 @@
             this.txtEmpresa1.Name = "txtEmpresa1";
             this.txtEmpresa1.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa1.TabIndex = 100;
-            this.txtEmpresa1.Text = "Cartolandia";
             // 
             // label46
             // 
@@ -2498,27 +2475,27 @@
             this.tabAcademicos.PerformLayout();
             this.grpIngles.ResumeLayout(false);
             this.grpIngles.PerformLayout();
-            this.grbSuperior1.ResumeLayout(false);
-            this.grbSuperior1.PerformLayout();
+            this.grpSuperior1.ResumeLayout(false);
+            this.grpSuperior1.PerformLayout();
             this.grpEspaniol.ResumeLayout(false);
             this.grpEspaniol.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.grbSuperior.ResumeLayout(false);
-            this.grbSuperior.PerformLayout();
+            this.grpSuperior2.ResumeLayout(false);
+            this.grpSuperior2.PerformLayout();
+            this.grpSuperior3.ResumeLayout(false);
+            this.grpSuperior3.PerformLayout();
             this.tabLaborales.ResumeLayout(false);
             this.tabLaborales.PerformLayout();
-            this.grbExp2.ResumeLayout(false);
-            this.grbExp2.PerformLayout();
+            this.grpExp3.ResumeLayout(false);
+            this.grpExp3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo2)).EndInit();
-            this.grbExp3.ResumeLayout(false);
-            this.grbExp3.PerformLayout();
+            this.grpExp4.ResumeLayout(false);
+            this.grpExp4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo3)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.grpExp1.ResumeLayout(false);
+            this.grpExp1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).EndInit();
-            this.grbExp1.ResumeLayout(false);
-            this.grbExp1.PerformLayout();
+            this.grpExp2.ResumeLayout(false);
+            this.grpExp2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -2584,7 +2561,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.ComboBox cmbNivelAcademico1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grpSuperior2;
         private System.Windows.Forms.ComboBox cmbIngreso1;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtInsitutcionSuperior1;
@@ -2605,7 +2582,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ComboBox cmbNivelAcademico2;
-        private System.Windows.Forms.GroupBox grbSuperior;
+        private System.Windows.Forms.GroupBox grpSuperior3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox grpEspaniol;
@@ -2617,7 +2594,7 @@
         private System.Windows.Forms.RadioButton rdbAvanzado;
         private System.Windows.Forms.RadioButton rdbIntermedio;
         private System.Windows.Forms.RadioButton rdbBasico;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox grpExp1;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button button6;
@@ -2627,13 +2604,13 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.GroupBox grbExp1;
+        private System.Windows.Forms.GroupBox grpExp2;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox txtEmpresa1;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.GroupBox grbExp2;
+        private System.Windows.Forms.GroupBox grpExp3;
         private System.Windows.Forms.TextBox txtEmpresa2;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Button button13;
@@ -2643,7 +2620,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.GroupBox grbExp3;
+        private System.Windows.Forms.GroupBox grpExp4;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso3;
         private System.Windows.Forms.TextBox txtEmpresa3;
@@ -2685,7 +2662,7 @@
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.ComboBox cmbArea;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.GroupBox grbSuperior1;
+        private System.Windows.Forms.GroupBox grpSuperior1;
         private System.Windows.Forms.ComboBox cmbProgreso;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtInsitutcionSuperior;
