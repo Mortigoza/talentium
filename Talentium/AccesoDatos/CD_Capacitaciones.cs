@@ -53,7 +53,7 @@ namespace AccesoDatos
         public DataTable Areas()
         {
             List<SqlParameter> listaParametros = new List<SqlParameter>() { };
-            DataTable resultado = EjecutarConsultas("consultarAreas_sp", listaParametros.ToArray());
+            DataTable resultado = EjecutarConsultas("consultar_areas_sp", listaParametros.ToArray());
 
             return resultado;
         }
