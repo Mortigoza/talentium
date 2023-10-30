@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Asistencias.cs" />
     <Compile Include="Accesibilidad\CN_BajaPerfil.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarPermisosPerfil.cs" />
     <Compile Include="Accesibilidad\CN_LogicaArea.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
     <Compile Include="CN_CambarPassword.cs" />
+    <Compile Include="CN_Capacitaciones.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
     <Compile Include="CN_LogicaEvaluacionDesempenio.cs" />
     <Compile Include="CN_LogicaLogin.cs" />
@@ -64,7 +66,39 @@
     <Compile Include="CN_PoliticaPassword.cs" />
     <Compile Include="CN_TraerPermisos.cs" />
     <Compile Include="CN_Validaciones.cs" />
+    <Compile Include="Niveles.Designer.cs">
+      <DependentUpon>Niveles.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Niveles.en-US.Designer.cs">
+      <DependentUpon>Niveles.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Niveles.es-AR.Designer.cs">
+      <DependentUpon>Niveles.es-AR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Niveles.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Niveles.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.es-AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Niveles.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Niveles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">

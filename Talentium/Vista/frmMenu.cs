@@ -118,5 +118,11 @@ namespace Vista
             frmPerfiles frm = new frmPerfiles();
             frm.ShowDialog();
         }
+
+        private void asistenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asistencias frm = new Asistencias();
+            frm.ShowDialog();
+        }
     }
 }

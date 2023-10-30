@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LogicaNegocio
 {
-    internal class CN_EnviarEmail
+    public class CN_EnviarEmail
     {
-        public (string, DateTime) obtenerCod()
+        public (string, DateTime) ObtenerCod()
         {
              int longitudCodigo = 8; // Longitud del código alfanumérico
             string caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

@@ -79,6 +79,18 @@
     <Compile Include="Analisis y reportes\frmCertificacionServicios.Designer.cs">
       <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Asistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asistencias.Designer.cs">
+      <DependentUpon>Asistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsistenciasPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsistenciasPanel.Designer.cs">
+      <DependentUpon>AsistenciasPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accesibilidad\frmAreas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +253,12 @@
     <EmbeddedResource Include="Analisis y reportes\Etapas.es-AR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Etapas.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistencias.resx">
+      <DependentUpon>Asistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsistenciasPanel.resx">
+      <DependentUpon>AsistenciasPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CambioDePassNU.resx">
       <DependentUpon>CambioDePassNU.cs</DependentUpon>
