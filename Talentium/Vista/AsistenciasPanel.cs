@@ -14,12 +14,13 @@ namespace Vista
     public partial class AsistenciasPanel : Form
     {
         CN_Asistencias asistencias = new CN_Asistencias();
-        C_Asistencias datos = new C_Asistencias();
+        C_Asistencias datos;
         int idPer = 0;
         int idAsis = 0;
         public AsistenciasPanel(C_Asistencias dato)
         {
             InitializeComponent();
+            datos = dato;
             
             DataTable asistencia = asistencias.motivo();
             cmbMotivo.DisplayMember = "motivo";//id_motivo es el id

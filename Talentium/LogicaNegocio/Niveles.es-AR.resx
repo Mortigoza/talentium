@@ -126,4 +126,10 @@
   <data name="cmbNivel2" xml:space="preserve">
     <value>Avanzado</value>
   </data>
+  <data name="cmbExternaInterna1" xml:space="preserve">
+    <value>Interna</value>
+  </data>
+  <data name="cmbExternaInterna0" xml:space="preserve">
+    <value>Externa</value>
+  </data>
 </root>

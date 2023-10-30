@@ -106,3 +106,7 @@ C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Deb
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
 C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\en-US\LogicaNegocio.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\es-AR\LogicaNegocio.resources.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources

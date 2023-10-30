@@ -14,7 +14,6 @@ namespace Vista
     public partial class Asistencias : Form
     {
         CN_Asistencias asistencias = new CN_Asistencias();
-        C_Asistencias datos = new C_Asistencias();
         public Asistencias()
         {
             InitializeComponent();
@@ -49,6 +48,7 @@ namespace Vista
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dataGridAlta.CurrentRow;
+            C_Asistencias datos = new C_Asistencias();
 
             if (filaSeleccionada != null)
             {
@@ -214,6 +214,7 @@ namespace Vista
         private void dataGridModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dataGridModificar.CurrentRow;
+            C_Asistencias datos = new C_Asistencias();
 
             if (filaSeleccionada != null)
             {
