@@ -9,7 +9,19 @@ namespace Comun
     public class Persona 
 
     {
+        //ID
+
         public int id_persona { get; set; }
+        public int id_informacion_academica1{ get; set; }
+        public int id_informacion_academica2 { get; set; }
+        public int id_informacion_academica3 { get; set; }
+        public int id_informacion_laboral1{ get; set; }
+        public int id_informacion_laboral2 { get; set; }
+        public int id_informacion_laboral3 { get; set; }
+        public int id_informacion_laboral4 { get; set; }
+
+        //PERSONALES
+
         public string apellidos { get; set; }
         public string nombres { get; set; }
         public int id_tipo_doc { get; set; }
@@ -43,6 +55,7 @@ namespace Comun
         public int id_tipo_alternativo { get; set; }
         public string contacto   { get; set; }
 
+  
 
    
 
@@ -50,8 +63,8 @@ namespace Comun
 
         public int id_idioma { get; set; }
         public int id_nivel1{ get; set; }
-        public int id_nivel2 { get; set; }
-        public int id_nivel3 { get; set; }
+        public int? id_nivel2 { get; set; }
+        public int? id_nivel3 { get; set; }
 
         public string institucion1 { get; set; }
         public string institucion2 { get; set; }
@@ -69,17 +82,21 @@ namespace Comun
         public string titulo2 { get; set; }
         public string titulo3 { get; set; }
         public int id_progreso1 { get; set; }
-        public int id_progreso2 { get; set; }
-        public int id_progreso3 { get; set; }
+        public int? id_progreso2 { get; set; }
+        public int? id_progreso3 { get; set; }
 
+
+
+        public Puesto[] puesto { get; set; } 
 
         //informacion laboral
+
         public string puesto1 { get; set; }
         public string puesto2 { get; set; }
         public string puesto3 { get; set; }
         public string puesto4 { get; set; }
         public string empresa1 { get; set; }
-        public string empresa2{ get; set; }
+        public string empresa2 { get; set; }
         public string empresa3 { get; set; }
         public string empresa4 { get; set; }
         public int fecha_ingreso1 { get; set; }
@@ -90,12 +107,19 @@ namespace Comun
         public int fecha_egreso2 { get; set; }
         public int fecha_egreso3 { get; set; }
         public int fecha_egreso4 { get; set; }
-        public int personal_a_cargo1{ get; set; }
+        public int personal_a_cargo1 { get; set; }
         public int personal_a_cargo2 { get; set; }
         public int personal_a_cargo3 { get; set; }
         public int personal_a_cargo4 { get; set; }
 
 
+        //id
 
     }
+
+    public class Puesto
+    {
+        public string nombre_puesto { get; set; }
+    }
+
 }

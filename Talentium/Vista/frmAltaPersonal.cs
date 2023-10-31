@@ -32,6 +32,16 @@ namespace Vista
         private DateTime fa;
         private bool _mod = false;
 
+        private int _id_persona;
+        private int _id_informacion_academica1;
+        private int _id_informacion_academica2;
+        private int _id_informacion_academica3;
+
+        private int _id_informacion_laboral1;
+        private int _id_informacion_laboral2;
+        private int _id_informacion_laboral3;
+        private int _id_informacion_laboral4;
+
         public frmAltaPersonal()
         {
 
@@ -660,6 +670,8 @@ namespace Vista
                         button4.Enabled = true;
                         btbEditarImagen.Enabled = true;
                         btbEliminarImagen.Enabled = true;
+                        grpSuperior2.Enabled = true;
+                        grpSuperior3.Enabled= true;
                       
                         control.Enabled = true; // Habilitar todos los controles dentro del GroupBox
                     }
@@ -972,13 +984,24 @@ namespace Vista
             }
         }
 
+        private void BotonesVisibles()
+        {
+            Button[] botones = { button15,button4,button8,button9,btbEditarImagen,btbEliminarImagen,button16,button1,button5,button7,
+            button17,button18,button6,button10,button11,button12,button13,button14};
+
+            foreach (Button boton in botones)
+            {
+                boton.Visible = true;
+            }
+        }
 
 
 
 
 
+        //Consulta
 
-        public void CargarDatosPersona(int id_persona)
+        public void CargarDatosPersona(int id_persona, Persona modify = null)
         {
             _mod = true;
             tabControl.TabPages[1].Enabled = true;
@@ -989,9 +1012,19 @@ namespace Vista
 
 
             Persona insert = new Persona();
-            // Llama a tu método ObtenerPersona para obtener los datos de la persona
+  
             logicaPersona.ObtenerPersona(insert, id_persona, ref infoAcademicos, ref infoLaborales);
 
+            if (modify != null)
+            {
+                modify.id_informacion_academica1 = insert.id_informacion_academica1;
+                modify.id_informacion_academica2 = insert.id_informacion_academica2;
+                modify.id_informacion_academica3 = insert.id_informacion_academica3;
+                modify.id_informacion_laboral1= insert.id_informacion_laboral1;
+                modify.id_informacion_laboral1 = insert.id_informacion_laboral1;
+                modify.id_informacion_laboral1 = insert.id_informacion_laboral1;
+                modify.id_informacion_laboral1 = insert.id_informacion_laboral1;
+            }
 
             //PERSONAL
             //TextBox
@@ -1026,20 +1059,17 @@ namespace Vista
             fn = insert.fecha_nacimiento;
             fa = insert.fecha_alta;
 
-            if (insert.foto_perfil.ToString() == "0x")
+            if (insert.foto_perfil != null && insert.foto_perfil.Length > 0)
             {
                 byte[] imagenBytes = (byte[])insert.foto_perfil;
                 using (MemoryStream stream = new MemoryStream(imagenBytes))
                 {
-
-
                     Image imagen = Image.FromStream(stream);
-
                     pctFoto.Image = imagen;
                     pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
-
                 }
             }
+
 
 
             //Academicos
@@ -1053,8 +1083,8 @@ namespace Vista
 
             //ComboBox
             cmbNivelAcademico.SelectedValue = insert.id_nivel1;
-            cmbNivelAcademico1.SelectedValue = insert.id_nivel2;
-            cmbNivelAcademico2.SelectedValue = insert.id_nivel3;
+            cmbNivelAcademico1.SelectedValue = (insert.id_nivel2 == null) ? 0 : insert.id_nivel2;
+            cmbNivelAcademico2.SelectedValue = (insert.id_nivel3 == null) ? 0 : insert.id_nivel3;
             cmbIngreso.Text = insert.año_ingreso1.ToString();
             cmbIngreso1.Text = insert.año_ingreso2.ToString();
             cmbIngreso2.Text = insert.año_ingreso3.ToString();
@@ -1062,8 +1092,8 @@ namespace Vista
             cmbEgreso1.Text = insert.año_egreso2.ToString();
             cmbEgreso2.Text = insert.año_egreso3.ToString();
             cmbProgreso.SelectedValue = insert.id_progreso1;
-            cmbProgreso1.SelectedValue = insert.id_progreso2;
-            cmbProgreso2.SelectedValue = insert.id_progreso3;
+            cmbProgreso1.SelectedValue = (insert.id_progreso2 == null) ? 0 : insert.id_progreso2;
+            cmbProgreso2.SelectedValue = (insert.id_progreso3 == null) ? 0 : insert.id_progreso3;
 
             Visibilizar("grpSuperior", infoAcademicos);
 
@@ -1098,6 +1128,7 @@ namespace Vista
 
         }
 
+
         public void Visibilizar(string nombreControl, int len)
         {
             for (int i = 1; i <= len; i++)
@@ -1116,6 +1147,141 @@ namespace Vista
         private void txtTitulo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        //Modificacion
+        public void CargarDatosModificacion(int id_persona)
+        {
+            Persona modify = new Persona();
+
+            _id_persona = id_persona;
+            CargarDatosPersona(id_persona, modify);
+            _id_informacion_academica1 = modify.id_informacion_academica1;
+            _id_informacion_academica2 = modify.id_informacion_academica2;
+            _id_informacion_academica3 = modify.id_informacion_academica3;
+
+            _id_informacion_laboral1 = modify.id_informacion_laboral1;
+            _id_informacion_laboral2 = modify.id_informacion_laboral2;
+            _id_informacion_laboral3 = modify.id_informacion_laboral3;
+            _id_informacion_laboral4 = modify.id_informacion_laboral4;
+            BotonesVisibles();
+            HabilitarCampos();
+            button15.Visible = false;
+            button9.Visible = false;
+            txtCuitCuil.Enabled = false;
+        }
+        private void btbModificar_Click(object sender, EventArgs e)
+        {
+
+            Persona modify = new Persona();
+
+            modify.id_informacion_academica1 = _id_informacion_academica1;
+            modify.id_informacion_academica2 = _id_informacion_academica2;
+            modify.id_informacion_academica3 = _id_informacion_academica3;
+
+            modify.id_informacion_laboral1 = _id_informacion_laboral1;
+            modify.id_informacion_laboral2 = _id_informacion_laboral2;
+            modify.id_informacion_laboral3 = _id_informacion_laboral3;
+            modify.id_informacion_laboral4 = _id_informacion_laboral4;
+
+            if (pctFoto.Image != null)
+            {
+               modify.foto_perfil = new byte[0];
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                modify.foto_perfil = ms.GetBuffer();
+            }
+            else
+            {
+                modify.foto_perfil = new byte[0];
+            }
+
+
+
+            modify.id_persona = _id_persona;
+
+            modify.nombres = txtNombres.Text;
+            modify.apellidos = txtApellidos.Text;
+            modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
+            modify.nro_doc = txtDni.Text;
+            modify.email = txtEmail.Text;
+            modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
+            modify.id_genero = (int)cmbGenero.SelectedValue;
+            modify.hijos = (int)nupHijos.Value;
+            modify.id_area = (int)cmbArea.SelectedValue;
+            modify.id_convenio = (int)cmbConvenio.SelectedValue;
+            modify.id_localidad = (int)cmbLocalidad.SelectedValue;
+            modify.calle = txtCalle.Text;
+            modify.nro = int.Parse(txtNro.Text);
+            modify.piso = txtPiso.Text;
+            modify.dpto = txtDpto.Text;
+            modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
+            modify.fecha_alta = dttFechaAlta.Value;
+
+            //List<Puesto> puesto1 = new List<Puesto>();
+            //foreach (Puesto p in puesto1)
+            //{ 
+            //    puesto1.Add(p);
+            //}
+            //modify.puesto = puesto1.ToArray();
+
+            //ACADEMICOS
+            modify.id_nivel1 = (cmbNivelAcademico.SelectedValue == null) ? 0 : (int)cmbNivelAcademico.SelectedValue;
+            modify.id_nivel2 = (cmbNivelAcademico1.SelectedValue == null) ? 0 : (int)cmbNivelAcademico1.SelectedValue;
+            modify.id_nivel2 = (cmbNivelAcademico2.SelectedValue == null) ? 0 : (int)cmbNivelAcademico2.SelectedValue;
+            modify.institucion1 = txtInsitutcionSuperior.Text;
+            modify.institucion2 = txtInsitutcionSuperior1.Text;
+            modify.institucion3 = txtInsitutcionSuperior2.Text;
+            modify.titulo1 = txtTitulo.Text;
+            modify.titulo2 = txtTitulo1.Text;
+            modify.titulo3 = txtTitulo2.Text;
+            modify.carrera2 = txtTitulo1.Text;
+            modify.carrera3 = txtTitulo2.Text;
+            modify.año_ingreso1 = int.Parse(cmbIngreso.Text);
+            modify.año_ingreso2 = int.Parse(cmbIngreso1.Text);
+            modify.año_ingreso3 = int.Parse(cmbIngreso2.Text);
+            modify.año_egreso1 = int.Parse(cmbEgreso.Text);
+            modify.año_egreso2 = int.Parse(cmbEgreso1.Text);
+            modify.año_egreso3 = int.Parse(cmbEgreso2.Text);
+            modify.id_progreso1 = (cmbProgreso.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
+            modify.id_progreso2 = (cmbProgreso1.SelectedValue == null) ? 0 : (int)cmbProgreso1.SelectedValue;
+            modify.id_progreso3 = (cmbProgreso2.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
+
+
+
+            //LABORALES
+
+            modify.puesto1 = txtPuesto.Text;
+            modify.puesto2 = txtPuesto1.Text;
+            modify.puesto3 = txtPuesto2.Text;
+            modify.puesto4 = txtPuesto3.Text;
+
+            modify.empresa1 = txtEmpresa.Text;
+            modify.empresa2 = txtEmpresa1.Text;
+            modify.empresa3 = txtEmpresa2.Text;
+            modify.empresa4 = txtEmpresa3.Text;
+
+            modify.fecha_ingreso1 = int.Parse(cmbLaboralIngreso1.Text);
+            modify.fecha_ingreso2 = int.Parse(cmbLaboralIngreso1.Text);
+            modify.fecha_ingreso3 = int.Parse(cmbLaboralIngreso2.Text);
+            modify.fecha_ingreso4 = int.Parse(cmbLaboralIngreso3.Text);
+
+            modify.fecha_egreso1 = int.Parse(cmbLaboralEgreso.Text);
+            modify.fecha_egreso2 = int.Parse(cmbLaboralEgreso1.Text);
+            modify.fecha_egreso3 = int.Parse(cmbLaboralEgreso2.Text);
+            modify.fecha_egreso4 = int.Parse(cmbLaboralEgreso3.Text);
+
+            modify.personal_a_cargo1 = (int)nupPersonalACargo.Value;
+            modify.personal_a_cargo2 = (int)nupPersonalACargo1.Value;
+            modify.personal_a_cargo3 = (int)nupPersonalACargo2.Value;
+            modify.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
+            
+        
+            logicaPersona.ActualizarDatos(modify);
+            logicaPersona.ActualizarDatosAcademicos(modify, infoAcademicos);
+            logicaPersona.ActualizarDatosLaborales(modify, infoLaborales);
+            MessageBox.Show("Los datos se han actualizado correctamente.");
         }
     }
 }

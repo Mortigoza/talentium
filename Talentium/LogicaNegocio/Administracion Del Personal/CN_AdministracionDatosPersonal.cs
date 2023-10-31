@@ -60,34 +60,30 @@ namespace LogicaNegocio.Administracion_Del_Personal
                 int _fecha_egreso = informacionLaboral[i].fecha_egreso;
                 int _personal_a_cargo = informacionLaboral[i].personal_a_cargo;
                 AccesoDatos.InsertarInformacionLaboral(id_persona,_puesto,_empresa,_fecha_ingreso,_fecha_egreso,_personal_a_cargo);
-                //Console.WriteLine($"ID: {i}, Puesto: {_puesto}, Empresa: {_empresa}, Ingreso: {_fecha_ingreso}, Egreso:" +
-                //    $" {_fecha_egreso}, Personal a cargo: {_personal_a_cargo}");
-
 
             }
-            //Console.WriteLine("----------------------------------------------------");
+          
         }
         public void InsertarInformacionAcademica (Persona insert, int id_persona, int cantidad)
         {
-            Dictionary<int, (int id_nivel, string institucion, string carrera, int año_ingreso ,int año_egreso, string titulo, int id_progreso )> informacionAcademica
-              = new Dictionary<int, (int, string, string, int, int,string,int)>
+            Dictionary<int, (int? id_nivel, string institucion, int año_ingreso ,int año_egreso, string titulo, int? id_progreso )> informacionAcademica
+              = new Dictionary<int, (int?, string, int, int,string,int?)>
           {
-                { 1, (insert.id_nivel1, insert.institucion1, insert.carrera1,  insert.año_ingreso1, insert.año_egreso1, insert.titulo1, insert.id_progreso1) },
-                { 2, (insert.id_nivel2, insert.institucion2, insert.carrera2,  insert.año_ingreso2, insert.año_egreso2, insert.titulo2, insert.id_progreso2)},
-                { 3, (insert.id_nivel3, insert.institucion3, insert.carrera3,  insert.año_ingreso3, insert.año_egreso3, insert.titulo3, insert.id_progreso3) },
+                { 1, (insert.id_nivel1, insert.institucion1,  insert.año_ingreso1, insert.año_egreso1, insert.titulo1, insert.id_progreso1) },
+                { 2, (insert.id_nivel2, insert.institucion2,  insert.año_ingreso2, insert.año_egreso2, insert.titulo2, insert.id_progreso2)},
+                { 3, (insert.id_nivel3, insert.institucion3,  insert.año_ingreso3, insert.año_egreso3, insert.titulo3, insert.id_progreso3) },
              
 
           };
             for (int i = 1; i <= cantidad; i++)
             {
-                int id_nivel = informacionAcademica[i].id_nivel;
+                int? id_nivel = informacionAcademica[i].id_nivel;
                 string institucion = informacionAcademica[i].institucion;
-                string carrera = informacionAcademica[i].carrera;
                 int año_ingreso = informacionAcademica[i].año_ingreso;
                 int año_egreso = informacionAcademica[i].año_egreso;
                 string titulo = informacionAcademica[i].titulo;
-                int id_progreso = informacionAcademica[i].id_progreso;
-                AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel,institucion,carrera,año_ingreso,año_egreso,titulo,id_progreso);
+                int? id_progreso = informacionAcademica[i].id_progreso;
+                AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel,institucion,año_ingreso,año_egreso,titulo,id_progreso);
             }
         }
 
@@ -98,10 +94,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             
         }
 
-
-
-
-
+        //CONSULTAS
 
         public DataTable ObtenerPersona()
         {
@@ -124,13 +117,8 @@ namespace LogicaNegocio.Administracion_Del_Personal
             _infoAcademicos = infoAcademicos;
             _infoLaborales = infoLaborales;
 
-
-
-
-
-
             #region Mapeo
-
+            
             insert.apellidos = persona.Rows[0]["apellidos"].ToString();
             insert.nombres = persona.Rows[0]["nombres"].ToString();
             insert.id_tipo_doc = (int)persona.Rows[0]["id_tipo_doc"];
@@ -168,9 +156,13 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
 
             //ACADEMICOS
+
+
             switch (infoAcademicos)
             {
                 case 1:
+                    insert.id_informacion_academica1 = (int)academicos.Rows[0]["id_informacion_academica"];
+
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
                     insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
@@ -180,6 +172,9 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     insert.id_progreso1 = (int)academicos.Rows[0]["id_progreso"];
                     break;
                 case 2:
+                    insert.id_informacion_academica1 = (int)academicos.Rows[0]["id_informacion_academica"];
+                    insert.id_informacion_academica2 = (int)academicos.Rows[1]["id_informacion_academica"];
+
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
                     insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
@@ -197,6 +192,11 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     insert.id_progreso2 = (int)academicos.Rows[1]["id_progreso"];
                     break;
                 case 3:
+
+                    insert.id_informacion_academica1 = (int)academicos.Rows[0]["id_informacion_academica"];
+                    insert.id_informacion_academica2 = (int)academicos.Rows[1]["id_informacion_academica"];
+                    insert.id_informacion_academica3 = (int)academicos.Rows[2]["id_informacion_academica"];
+
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
                     insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
@@ -225,9 +225,12 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
             //LABORAL
 
+        
+
             switch (infoLaborales)
             {
                 case 1:
+                    insert.id_informacion_laboral1 = (int)laborales.Rows[0]["id_informacion_laboral"];
                     insert.puesto1 = laborales.Rows[0]["puesto"].ToString();
                     insert.empresa1 = laborales.Rows[0]["empresa"].ToString();
                     insert.fecha_ingreso1 = (int)laborales.Rows[0]["fecha_ingreso"];
@@ -235,6 +238,8 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     insert.personal_a_cargo1 = (int)laborales.Rows[0]["personal_a_cargo"];
                     break;
                 case 2:
+                    insert.id_informacion_laboral1 = (int)laborales.Rows[0]["id_informacion_laboral"];
+                    insert.id_informacion_laboral2 = (int)laborales.Rows[1]["id_informacion_laboral"];
                     insert.puesto1 = laborales.Rows[0]["puesto"].ToString();
                     insert.empresa1 = laborales.Rows[0]["empresa"].ToString();
                     insert.fecha_ingreso1 = (int)laborales.Rows[0]["fecha_ingreso"];
@@ -248,6 +253,9 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     insert.personal_a_cargo2 = (int)laborales.Rows[1]["personal_a_cargo"];
                     break;
                 case 3:
+                    insert.id_informacion_laboral1 = (int)laborales.Rows[0]["id_informacion_laboral"];
+                    insert.id_informacion_laboral2 = (int)laborales.Rows[1]["id_informacion_laboral"];
+                    insert.id_informacion_laboral3 = (int)laborales.Rows[2]["id_informacion_laboral"];
                     insert.puesto1 = laborales.Rows[0]["puesto"].ToString();
                     insert.empresa1 = laborales.Rows[0]["empresa"].ToString();
                     insert.fecha_ingreso1 = (int)laborales.Rows[0]["fecha_ingreso"];
@@ -267,6 +275,10 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     insert.personal_a_cargo3 = (int)laborales.Rows[2]["personal_a_cargo"];
                     break;
                 case 4:
+                    insert.id_informacion_laboral1 = (int)laborales.Rows[0]["id_informacion_laboral"];
+                    insert.id_informacion_laboral2 = (int)laborales.Rows[1]["id_informacion_laboral"];
+                    insert.id_informacion_laboral3 = (int)laborales.Rows[2]["id_informacion_laboral"];
+                    insert.id_informacion_laboral4 = (int)laborales.Rows[3]["id_informacion_laboral"];
                     insert.puesto1 = laborales.Rows[0]["puesto"].ToString();
                     insert.empresa1 = laborales.Rows[0]["empresa"].ToString();
                     insert.fecha_ingreso1 = (int)laborales.Rows[0]["fecha_ingreso"];
@@ -298,5 +310,69 @@ namespace LogicaNegocio.Administracion_Del_Personal
         }
 
 
+
+        //Modificacion
+
+        public DataTable ActualizarDatos(Persona modify)
+        {
+            DataTable resultado = AccesoDatos.ActualizarDatos(modify);
+            return resultado;
+        }
+
+        public void ActualizarDatosAcademicos(Persona modify, int cantidad)
+        {
+            Dictionary<int, (int id_informacion_academica, int? id_nivel, string institucion, int año_ingreso, int año_egreso, string titulo, int? id_progreso)> informacionAcademica
+              = new Dictionary<int, (int, int?, string, int, int, string, int?)>
+          {
+                { 1, (modify.id_informacion_academica1, modify.id_nivel1, modify.institucion1, modify.año_ingreso1, modify.año_egreso1, modify.titulo1, modify.id_progreso1) },
+                { 2, (modify.id_informacion_academica2,modify.id_nivel2, modify.institucion2, modify.año_ingreso2, modify.año_egreso2, modify.titulo2, modify.id_progreso2)},
+                { 3, (modify.id_informacion_academica3,modify.id_nivel3, modify.institucion3, modify.año_ingreso3, modify.año_egreso3, modify.titulo3, modify.id_progreso3) },
+
+
+          };
+            for (int i = 1; i <= cantidad; i++)
+            {
+                int id_informacion_academica = informacionAcademica[i].id_informacion_academica;
+                int? id_nivel = informacionAcademica[i].id_nivel;
+                string institucion = informacionAcademica[i].institucion;
+         
+                int año_ingreso = informacionAcademica[i].año_ingreso;
+                int año_egreso = informacionAcademica[i].año_egreso;
+                string titulo = informacionAcademica[i].titulo;
+                int? id_progreso = informacionAcademica[i].id_progreso;
+                AccesoDatos.ActualizarDatosAcademicos(id_informacion_academica, id_nivel, institucion, año_ingreso, año_egreso, titulo, id_progreso);
+            }
+        }
+
+
+
+
+        public void ActualizarDatosLaborales(Persona modify, int cantidad)
+        {
+            Dictionary<int, (int id_informacion_laboral,string puesto, string empresa, int fecha_ingreso, int fecha_egreso, int personal_a_cargo)> informacionLaboral
+                  = new Dictionary<int, (int,string, string, int, int, int)>
+              {
+                { 1, (modify.id_informacion_laboral1,modify.puesto1, modify.empresa1, modify.fecha_ingreso1,  modify.fecha_egreso1, modify.personal_a_cargo1) },
+                { 2, (modify.id_informacion_laboral2,modify.puesto2, modify.empresa2, modify.fecha_ingreso2,  modify.fecha_egreso2, modify.personal_a_cargo2) },
+                { 3, (modify.id_informacion_laboral3,modify.puesto3, modify.empresa3, modify.fecha_ingreso3,  modify.fecha_egreso3, modify.personal_a_cargo3) },
+                { 4, (modify.id_informacion_laboral4,modify.puesto4, modify.empresa4, modify.fecha_ingreso4,  modify.fecha_egreso4, modify.personal_a_cargo4) }
+                                                                               
+              };
+            for (int i = 1; i <= cantidad; i++)
+            {
+                int id_informacion_laboral = informacionLaboral[i].id_informacion_laboral;
+                string _puesto = informacionLaboral[i].puesto;
+                string _empresa = informacionLaboral[i].empresa;
+                int _fecha_ingreso = informacionLaboral[i].fecha_ingreso;
+                int _fecha_egreso = informacionLaboral[i].fecha_egreso;
+                int _personal_a_cargo = informacionLaboral[i].personal_a_cargo;
+                AccesoDatos.ActualizarDatosLaborales(id_informacion_laboral, _puesto, _empresa, _fecha_ingreso, _fecha_egreso, _personal_a_cargo);
+
+            }
+        }
     }
+
+
+
+
 }

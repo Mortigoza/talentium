@@ -110,5 +110,22 @@ namespace Vista
         {
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dtgEmpleados.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
+
+                // Abre FormAltaPersonal y pasa el id_persona
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                frmAltaPersonal.CargarDatosModificacion(id);
+                frmAltaPersonal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila antes de hacer clic en 'Detalles'.");
+            }
+        }
     }
 }

@@ -216,6 +216,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btbModificar = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1749,6 +1750,7 @@
             // 
             // tabLaborales
             // 
+            this.tabLaborales.Controls.Add(this.btbModificar);
             this.tabLaborales.Controls.Add(this.lblFaltanCampos2);
             this.tabLaborales.Controls.Add(this.button17);
             this.tabLaborales.Controls.Add(this.label74);
@@ -2448,6 +2450,23 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // btbModificar
+            // 
+            this.btbModificar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btbModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btbModificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btbModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btbModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btbModificar.Location = new System.Drawing.Point(799, 489);
+            this.btbModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btbModificar.Name = "btbModificar";
+            this.btbModificar.Size = new System.Drawing.Size(105, 44);
+            this.btbModificar.TabIndex = 97;
+            this.btbModificar.Text = "Modificar";
+            this.btbModificar.UseVisualStyleBackColor = false;
+            this.btbModificar.Click += new System.EventHandler(this.btbModificar_Click);
+            // 
             // frmAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2690,5 +2709,6 @@
         private System.Windows.Forms.DateTimePicker dttFechaAlta;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.GroupBox grpIngles;
+        private System.Windows.Forms.Button btbModificar;
     }
 }

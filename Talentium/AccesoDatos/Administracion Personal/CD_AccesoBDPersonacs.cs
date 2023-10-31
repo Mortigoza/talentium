@@ -58,19 +58,19 @@ namespace AccesoDatos.Administracion_Personal
 
         
 
-        public void InsertarInformacionAcademica (int id_persona, int id_nivel,string institucion, string carrera,
-            int año_ingreso, int año_egreso, string titulo, int id_progreso)
+        public void InsertarInformacionAcademica (int id_persona, int? id_nivel,string institucion,
+            int año_ingreso, int año_egreso, string titulo, int? id_progreso)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@id_nivel", id_nivel) { SqlDbType = SqlDbType.Int };
             SqlParameter param3 = new SqlParameter("@institucion", institucion) { SqlDbType = SqlDbType.NVarChar };
-            SqlParameter param4 = new SqlParameter("@carrera", carrera) { SqlDbType = SqlDbType.NVarChar };
-            SqlParameter param5 = new SqlParameter("@año_ingreso", año_ingreso) { SqlDbType = SqlDbType.Int };
-            SqlParameter param6 = new SqlParameter("@año_egreso", año_egreso) { SqlDbType = SqlDbType.Int };
-            SqlParameter param7 = new SqlParameter("@titulo", titulo) { SqlDbType = SqlDbType.NVarChar};
-            SqlParameter param8 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7,param8 };
+            SqlParameter param4 = new SqlParameter("@año_ingreso", año_ingreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@año_egreso", año_egreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@titulo", titulo) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param7 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7 };
             DataTable resultado = EjecutarConsultas("InsertarInformacionAcademica_sp", listaParametros.ToArray(), true);
+
         }
 
 
@@ -120,7 +120,7 @@ namespace AccesoDatos.Administracion_Personal
 
 
 
-
+        //consultas
 
         public DataTable ObtenerPersona()
         {
@@ -167,8 +167,72 @@ namespace AccesoDatos.Administracion_Personal
         }
 
 
+        //Modificar
 
 
+        public DataTable ActualizarDatos (Persona modify )
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", modify.id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@apellidos", modify.apellidos) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@nombres", modify.nombres) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@id_tipo_doc", modify.id_tipo_doc) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@nro_doc", modify.nro_doc) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param6 = new SqlParameter("@calle", modify.calle) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param7 = new SqlParameter("@nro", modify.nro) { SqlDbType = SqlDbType.Int };
+            SqlParameter param8 = new SqlParameter("@dpto", modify.dpto) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param9 = new SqlParameter("@piso", modify.piso) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param10 = new SqlParameter("@id_localidad", modify.id_localidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param11 = new SqlParameter("@id_puesto", modify.id_puesto) { SqlDbType = SqlDbType.Int };
+            SqlParameter param12 = new SqlParameter("@id_area", modify.id_area) { SqlDbType = SqlDbType.Int };
+            SqlParameter param13 = new SqlParameter("@email", modify.email) { SqlDbType = SqlDbType.VarChar };
+            SqlParameter param14 = new SqlParameter("@id_nacionalidad", modify.id_nacionalidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param15 = new SqlParameter("@id_genero", modify.id_genero) { SqlDbType = SqlDbType.Int };
+            SqlParameter param16 = new SqlParameter("@fecha_nacimiento", modify.fecha_nacimiento) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param17 = new SqlParameter("@id_estado_civil", modify.id_estado_civil) { SqlDbType = SqlDbType.Int };
+            SqlParameter param18 = new SqlParameter("@hijos", modify.hijos) { SqlDbType = SqlDbType.Int };
+            SqlParameter param19 = new SqlParameter("@id_convenio", modify.id_convenio) { SqlDbType = SqlDbType.Int };
+            SqlParameter param20 = new SqlParameter("@foto_perfil", modify.foto_perfil) { SqlDbType = SqlDbType.VarBinary };
+            SqlParameter param21 = new SqlParameter("@fecha_alta", modify.fecha_alta) { SqlDbType = SqlDbType.DateTime };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4,param5,param6,
+                param7,param8,param9,param10,param11,param12,param13
+                ,param14,param15,param16,param17,param18,param19,param20,param21};
+
+            DataTable resultado = EjecutarConsultas("ActualizarDatos_sp", listaParametros.ToArray());
+            return resultado;
+        }
+
+
+
+        public void ActualizarDatosAcademicos(int id_informacion_academica, int? id_nivel, string institucion,
+            int año_ingreso, int año_egreso, string titulo, int? id_progreso)
+        {
+
+            SqlParameter param1 = new SqlParameter("@id_informacion_academica", id_informacion_academica) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_nivel", id_nivel) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@institucion", institucion) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@año_ingreso", año_ingreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@año_egreso", año_egreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@titulo", titulo) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param7 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7};
+            DataTable resultado = EjecutarConsultas("ActualizarDatosAcademicos_sp", listaParametros.ToArray(), true);
+
+
+        }
+
+        public void ActualizarDatosLaborales (int id_persona, string puesto, string empresa, int fecha_ingreso,
+            int fecha_egreso, int personal_a_cargo)
+        {
+            SqlParameter param1 = new SqlParameter("@id_informacion_laboral", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@empresa", empresa) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@fecha_ingreso", fecha_ingreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@fecha_egreso", fecha_egreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@personal_a_cargo", personal_a_cargo) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+
+            DataTable resultado = EjecutarConsultas("ActualizarDatosLaboral_sp", listaParametros.ToArray(), true);
+        }
     }
 
 
