@@ -369,4 +369,7 @@
   <data name="lblConvenio" xml:space="preserve">
     <value>Agreement</value>
   </data>
+  <data name="btnModificarCandidato" xml:space="preserve">
+    <value>Modify Applicant</value>
+  </data>
 </root>

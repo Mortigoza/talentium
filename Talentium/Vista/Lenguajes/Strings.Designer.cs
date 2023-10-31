@@ -160,6 +160,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Modificar Candidato.
+        /// </summary>
+        public static string btnModificarCandidato {
+            get {
+                return ResourceManager.GetString("btnModificarCandidato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Reactivar.
         /// </summary>
         public static string btnReactivar {
@@ -480,6 +489,15 @@ namespace Vista.Lenguajes {
         public static string lblContrasenia {
             get {
                 return ResourceManager.GetString("lblContrasenia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Convenio.
+        /// </summary>
+        public static string lblConvenio {
+            get {
+                return ResourceManager.GetString("lblConvenio", resourceCulture);
             }
         }
         

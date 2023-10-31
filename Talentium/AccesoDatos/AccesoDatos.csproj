@@ -57,6 +57,7 @@
     <Compile Include="CD_EjecutarSP.cs" />
     <Compile Include="Accesibilidad\CD_ReactivarUsuario.cs" />
     <Compile Include="Accesibilidad\CD_UpUsuario.cs" />
+    <Compile Include="CD_Seleccion.cs" />
     <Compile Include="CD_TraerPermisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

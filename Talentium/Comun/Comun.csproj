@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CargarCombobox.cs" />
     <Compile Include="ConfigCache.cs" />
+    <Compile Include="DatosCandidato.cs" />
     <Compile Include="C_Asistencias.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="PermisosCache.cs" />
