@@ -148,6 +148,7 @@
             this.tbContra2.Name = "tbContra2";
             this.tbContra2.Size = new System.Drawing.Size(241, 22);
             this.tbContra2.TabIndex = 30;
+            this.tbContra2.TextChanged += new System.EventHandler(this.tbContra2_TextChanged);
             // 
             // label3
             // 
@@ -174,7 +175,7 @@
             this.tbContra1.Name = "tbContra1";
             this.tbContra1.Size = new System.Drawing.Size(241, 22);
             this.tbContra1.TabIndex = 27;
-           // this.tbContra1.TextChanged += new System.EventHandler(this.tbContra1_TextChanged);
+            this.tbContra1.TextChanged += new System.EventHandler(this.tbContra1_TextChanged_1);
             this.tbContra1.Leave += new System.EventHandler(this.tbContra1_Leave);
             // 
             // CambioDePassNU

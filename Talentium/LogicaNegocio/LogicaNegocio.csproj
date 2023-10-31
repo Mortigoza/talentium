@@ -55,6 +55,8 @@
     <Compile Include="Accesibilidad\CN_UpPerfil.cs" />
     <Compile Include="Accesibilidad\CN_UpUsuario.cs" />
     <Compile Include="CN_Categorias.cs" />
+    <Compile Include="Administracion Del Personal\CN_AdministracionDatosPersonal.cs" />
+    <Compile Include="Administracion Del Personal\CN_AdministracionPersonalComboBox.cs" />
     <Compile Include="CN_CambarPassword.cs" />
     <Compile Include="CN_Convenio.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
