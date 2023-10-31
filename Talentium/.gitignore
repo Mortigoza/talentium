@@ -1,0 +1,28 @@
+# Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+*/bin/
+*/obj/
+*.user
+*.suo
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# NuGet
+packages/
+
+# Visual Studio for Mac
+.vscode/
+.vscode/
+.idea/
+*.userprefs
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
