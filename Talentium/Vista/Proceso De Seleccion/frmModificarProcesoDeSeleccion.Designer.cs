@@ -33,6 +33,10 @@
             this.lblCuilCuit = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grpModificar = new System.Windows.Forms.GroupBox();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cmbPartido = new System.Windows.Forms.ComboBox();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.txtDpto = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtNro = new System.Windows.Forms.TextBox();
@@ -58,10 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
-            this.cmbPartido = new System.Windows.Forms.ComboBox();
-            this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.grpModificar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,6 +138,49 @@
             this.grpModificar.TabIndex = 24;
             this.grpModificar.TabStop = false;
             this.grpModificar.Text = "Modificar candidato";
+            // 
+            // cmbLocalidad
+            // 
+            this.cmbLocalidad.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Location = new System.Drawing.Point(399, 82);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(93, 21);
+            this.cmbLocalidad.TabIndex = 52;
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.Location = new System.Drawing.Point(141, 173);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(93, 20);
+            this.dtpNacimiento.TabIndex = 46;
+            // 
+            // cmbPartido
+            // 
+            this.cmbPartido.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPartido.FormattingEnabled = true;
+            this.cmbPartido.Location = new System.Drawing.Point(399, 51);
+            this.cmbPartido.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbPartido.Name = "cmbPartido";
+            this.cmbPartido.Size = new System.Drawing.Size(93, 21);
+            this.cmbPartido.TabIndex = 51;
+            this.cmbPartido.SelectedIndexChanged += new System.EventHandler(this.cmbPartido_SelectedIndexChanged);
+            // 
+            // cmbProvincia
+            // 
+            this.cmbProvincia.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Location = new System.Drawing.Point(399, 19);
+            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(93, 21);
+            this.cmbProvincia.TabIndex = 50;
+            this.cmbProvincia.DropDown += new System.EventHandler(this.cmbProvincia_DropDown);
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // txtDpto
             // 
@@ -245,6 +288,7 @@
             // cmbPuesto
             // 
             this.cmbPuesto.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(399, 173);
             this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2);
@@ -366,46 +410,6 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(141, 173);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(93, 20);
-            this.dtpNacimiento.TabIndex = 46;
-            // 
-            // cmbLocalidad
-            // 
-            this.cmbLocalidad.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(399, 82);
-            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbLocalidad.Name = "cmbLocalidad";
-            this.cmbLocalidad.Size = new System.Drawing.Size(93, 21);
-            this.cmbLocalidad.TabIndex = 52;
-            // 
-            // cmbPartido
-            // 
-            this.cmbPartido.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbPartido.FormattingEnabled = true;
-            this.cmbPartido.Location = new System.Drawing.Point(399, 51);
-            this.cmbPartido.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbPartido.Name = "cmbPartido";
-            this.cmbPartido.Size = new System.Drawing.Size(93, 21);
-            this.cmbPartido.TabIndex = 51;
-            this.cmbPartido.SelectedIndexChanged += new System.EventHandler(this.cmbPartido_SelectedIndexChanged);
-            // 
-            // cmbProvincia
-            // 
-            this.cmbProvincia.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(399, 19);
-            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(93, 21);
-            this.cmbProvincia.TabIndex = 50;
-            this.cmbProvincia.DropDown += new System.EventHandler(this.cmbProvincia_DropDown);
-            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // frmModificarProcesoDeSeleccion
             // 

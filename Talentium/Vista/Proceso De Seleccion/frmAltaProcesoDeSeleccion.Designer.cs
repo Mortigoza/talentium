@@ -120,6 +120,7 @@
             // cmbLocalidad
             // 
             this.cmbLocalidad.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.Enabled = false;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(399, 126);
@@ -131,6 +132,7 @@
             // cmbPartido
             // 
             this.cmbPartido.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPartido.Enabled = false;
             this.cmbPartido.FormattingEnabled = true;
             this.cmbPartido.Location = new System.Drawing.Point(399, 95);
@@ -143,6 +145,7 @@
             // cmbProvincia
             // 
             this.cmbProvincia.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.Enabled = false;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(399, 63);
@@ -301,6 +304,7 @@
             // cmbPuesto
             // 
             this.cmbPuesto.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.Enabled = false;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(399, 217);
