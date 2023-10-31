@@ -11,12 +11,10 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
-<<<<<<< HEAD
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmPerfiles.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
-=======
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
@@ -142,40 +140,23 @@ C:\Users\mdiazortigoza\Desktop\Ce\Talentium\talentium\Talentium\Vista\obj\Debug\
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
->>>>>>> d6b02631baef25b864f55e444172c33e450a6293
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmCategorias.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempenio.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConvenios.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaProcesoDeSeleccion.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
-<<<<<<< HEAD
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.en-US.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.es-AR.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -225,9 +206,6 @@ C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.pdb
-=======
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
@@ -235,4 +213,3 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vist
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
->>>>>>> d6b02631baef25b864f55e444172c33e450a6293
