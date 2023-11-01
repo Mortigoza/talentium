@@ -121,6 +121,7 @@
             // txtSueldo
             // 
             this.txtSueldo.Location = new System.Drawing.Point(103, 102);
+            this.txtSueldo.MaxLength = 7;
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(135, 20);
             this.txtSueldo.TabIndex = 5;
@@ -138,6 +139,7 @@
             // txtJornada
             // 
             this.txtJornada.Location = new System.Drawing.Point(103, 66);
+            this.txtJornada.MaxLength = 5;
             this.txtJornada.Name = "txtJornada";
             this.txtJornada.Size = new System.Drawing.Size(135, 20);
             this.txtJornada.TabIndex = 3;
@@ -156,6 +158,7 @@
             // txtCategoria
             // 
             this.txtCategoria.Location = new System.Drawing.Point(103, 31);
+            this.txtCategoria.MaxLength = 30;
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(135, 20);
             this.txtCategoria.TabIndex = 1;
@@ -210,6 +213,7 @@
             // txtSueldoModif
             // 
             this.txtSueldoModif.Location = new System.Drawing.Point(103, 102);
+            this.txtSueldoModif.MaxLength = 7;
             this.txtSueldoModif.Name = "txtSueldoModif";
             this.txtSueldoModif.Size = new System.Drawing.Size(135, 20);
             this.txtSueldoModif.TabIndex = 5;
@@ -227,6 +231,7 @@
             // txtJornadaModif
             // 
             this.txtJornadaModif.Location = new System.Drawing.Point(103, 66);
+            this.txtJornadaModif.MaxLength = 5;
             this.txtJornadaModif.Name = "txtJornadaModif";
             this.txtJornadaModif.Size = new System.Drawing.Size(135, 20);
             this.txtJornadaModif.TabIndex = 3;
@@ -245,6 +250,7 @@
             // txtCategoriaModif
             // 
             this.txtCategoriaModif.Location = new System.Drawing.Point(103, 31);
+            this.txtCategoriaModif.MaxLength = 30;
             this.txtCategoriaModif.Name = "txtCategoriaModif";
             this.txtCategoriaModif.Size = new System.Drawing.Size(135, 20);
             this.txtCategoriaModif.TabIndex = 1;
@@ -261,7 +267,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(578, 399);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(56, 20);
             this.btnModificar.TabIndex = 9;

@@ -67,11 +67,11 @@ namespace Vista
             var ObtenerCateogria = _categoria.ObtenerCategoria();
             cmbCategoria.DataSource = ObtenerCateogria;
             cmbCategoria.DisplayMember = "nombre_categoria";
-            cmbCategoria.SelectedIndex = 0;
+            cmbCategoria.SelectedIndex = -1;
             cmbCategoria.ValueMember = "id_categoria";
             cmbCateModif.DataSource = ObtenerCateogria.Copy();
             cmbCateModif.DisplayMember = "nombre_categoria";
-            cmbCateModif.SelectedIndex = 0;
+            cmbCateModif.SelectedIndex = -1;
             cmbCateModif.ValueMember = "id_categoria";
             inicial = false;
 
@@ -141,7 +141,6 @@ namespace Vista
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -162,7 +161,6 @@ namespace Vista
                 MessageBox.Show("Error al eliminar el convenio: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             CargarGrid();
-         
         }
 
         private void cmbCateModif_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,10 +282,11 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            grpModificar.Enabled = true;
             id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
             txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
-            txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
-            txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+            txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
+            txtObraSocialModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
             txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
             txtJornadaModif.Text = dtgConvenio.SelectedCells[8].Value.ToString();
             cmbCateModif.SelectedValue = int.Parse(dtgConvenio.SelectedCells[4].Value.ToString());
@@ -300,8 +299,8 @@ namespace Vista
                 DataGridViewCell celda = dtgConvenio.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
                 txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
-                txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
-                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
+                txtObraSocialModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
                 txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
                 txtJornadaModif.Text = dtgConvenio.SelectedCells[8].Value.ToString();
                 cmbCateModif.SelectedValue = int.Parse(dtgConvenio.SelectedCells[4].Value.ToString());
