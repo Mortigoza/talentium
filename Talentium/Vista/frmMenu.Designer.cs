@@ -238,12 +238,14 @@
             this.conveniosToolStripMenuItem.Name = "conveniosToolStripMenuItem";
             this.conveniosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.conveniosToolStripMenuItem.Text = "Gestión de convenios";
+            this.conveniosToolStripMenuItem.Click += new System.EventHandler(this.conveniosToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.categoriasToolStripMenuItem.Text = "Gestión de categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // análisisYReportesToolStripMenuItem
             // 

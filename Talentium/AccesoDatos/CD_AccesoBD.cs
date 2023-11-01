@@ -146,6 +146,39 @@ namespace AccesoDatos
             ConfigCache.noDatosPersonales = (bool)resultado.Rows[0][6];
         }
 
+
+        //METODOS CATEGORIA
+    
+
+        //METODOS CONVENIOS
+
+
+      
+
+        //public void EliminarCategorias(int id_categoria)
+        //{
+
+        //    List<SqlParameter> parametros = new List<SqlParameter>();
+        //    parametros.Add(new SqlParameter("@id_categoria", id_categoria));
+        //    EjecutarConsultas("EliminarCategoria", parametros.ToArray(), true);
+        //}
+
+
+        //public void ModificarCategoria(CategoriaDto categoria, int id)
+        //{
+
+        //    List<SqlParameter> parametros = new List<SqlParameter>();
+        //    parametros.Add(new SqlParameter("@id_categoria", id));
+        //    parametros.Add(new SqlParameter("@nombre_categoria", categoria.categoria));
+        //    parametros.Add(new SqlParameter("@jornada", categoria.jornada));
+        //    parametros.Add(new SqlParameter("@sueldos", categoria.sueldo));
+
+
+        //    EjecutarConsultas("ModificarCategoria", parametros.ToArray(), true);
+        //}
+
+
+
         public DataTable ConsultarTodasPregSeg()
         {
             DataTable resultado = EjecutarConsultasSinParam("consultarPreguntas_sp");

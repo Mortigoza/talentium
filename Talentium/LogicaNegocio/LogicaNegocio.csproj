@@ -57,8 +57,10 @@
     <Compile Include="Accesibilidad\CN_UpUsuario.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
+    <Compile Include="CN_Categorias.cs" />
     <Compile Include="CN_CambarPassword.cs" />
     <Compile Include="CN_Capacitaciones.cs" />
+    <Compile Include="CN_Convenio.cs" />
     <Compile Include="CN_EnviarEmail.cs" />
     <Compile Include="CN_LogicaEvaluacionDesempenio.cs" />
     <Compile Include="CN_LogicaLogin.cs" />
@@ -84,9 +86,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Niveles.en-US.resx">

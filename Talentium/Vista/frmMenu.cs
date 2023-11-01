@@ -34,10 +34,34 @@ namespace Vista
 
 
             List<ToolStripMenuItem> items;
+            // AdminPersonal
             UtilidadesForms.checkPermiso(altasToolStripMenuItem, Permisos.Alta_personal);
             UtilidadesForms.checkPermiso(consultarToolStripMenuItem, Permisos.Gestion_personal);
+
+            // GestTalento
+            UtilidadesForms.checkPermiso(altaCandidatoToolStripMenuItem, Permisos.Alta_PrSeleccion);
+            UtilidadesForms.checkPermiso(gestiónCandidatoToolStripMenuItem, Permisos.Gestion_PrSeleccion);
+            UtilidadesForms.checkPermiso(altaEvaluaciónDeDesempeñoToolStripMenuItem, Permisos.Alta_Desempeño);
+            UtilidadesForms.checkPermiso(gestionDeDesempeñoToolStripMenuItem, Permisos.Gestion_Desempeño);
+            UtilidadesForms.checkPermiso(asignarToolStripMenuItem, Permisos.Gestion_Capacitaciones);
+            UtilidadesForms.checkPermiso(gestionDeCapacitacionesToolStripMenuItem, Permisos.Gestion_Capacitaciones);
+
+            // GestAsistencia
+            UtilidadesForms.checkPermiso(consultaDeAsistenciasToolStripMenuItem, Permisos.Gestion_Asistencias);
+
+            // NominaSalarial
+            items = new List<ToolStripMenuItem>{
+                conveniosToolStripMenuItem, categoriasToolStripMenuItem
+            };
+            UtilidadesForms.checkPermiso(items, Permisos.Gestion_Nomina);
+
+            // AnalisisYReportes
+            UtilidadesForms.checkPermiso(asistenciasToolStripMenuItem1, Permisos.Gestion_Informes);
+            UtilidadesForms.checkPermiso(desempeñoToolStripMenuItem, Permisos.Gestion_Informes);
+            UtilidadesForms.checkPermiso(nóminaSalarialToolStripMenuItem1, Permisos.Gestion_Informes);
             UtilidadesForms.checkPermiso(certificacionDeServiciosToolStripMenuItem, Permisos.Gestion_Certificado);
-            UtilidadesForms.checkPermiso(altasToolStripMenuItem, Permisos.Alta_personal);
+
+            // Accesibilidad
             items = new List<ToolStripMenuItem> {
                 puestosToolStripMenuItem, áreasToolStripMenuItem
             };
@@ -201,9 +225,24 @@ namespace Vista
 
         private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             CambioDePassRecupero frm = new CambioDePassRecupero();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void conveniosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConvenios frm = new frmConvenios();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCategorias frm = new frmCategorias();
             frm.ShowDialog();
             this.Show();
         }

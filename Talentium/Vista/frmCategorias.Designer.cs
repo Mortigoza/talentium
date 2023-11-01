@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             this.dtgCategoria = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaja = new System.Windows.Forms.Button();
             this.grpCrearCategoria = new System.Windows.Forms.GroupBox();
             this.btnGuardarCrear = new System.Windows.Forms.Button();
             this.btnCancelarCrear = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSueldo = new System.Windows.Forms.TextBox();
             this.lblSueldo = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtJornada = new System.Windows.Forms.TextBox();
             this.lblJornada = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.grpModificarCategoria = new System.Windows.Forms.GroupBox();
             this.btnGuardarModif = new System.Windows.Forms.Button();
@@ -51,6 +48,7 @@
             this.lblJornadaModif = new System.Windows.Forms.Label();
             this.txtCategoriaModif = new System.Windows.Forms.TextBox();
             this.lblCategoriaModif = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).BeginInit();
             this.grpCrearCategoria.SuspendLayout();
             this.grpModificarCategoria.SuspendLayout();
@@ -58,31 +56,20 @@
             // 
             // dtgCategoria
             // 
+            this.dtgCategoria.AllowUserToAddRows = false;
+            this.dtgCategoria.AllowUserToDeleteRows = false;
             this.dtgCategoria.BackgroundColor = System.Drawing.Color.White;
             this.dtgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             this.dtgCategoria.Location = new System.Drawing.Point(37, 37);
             this.dtgCategoria.Name = "dtgCategoria";
+            this.dtgCategoria.ReadOnly = true;
+            this.dtgCategoria.RowHeadersWidth = 51;
+            this.dtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCategoria.Size = new System.Drawing.Size(357, 352);
             this.dtgCategoria.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Categoria";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Jornada";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Sueldo";
-            this.Column3.Name = "Column3";
+            this.dtgCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
+            this.dtgCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellDoubleClick);
+            this.dtgCategoria.Leave += new System.EventHandler(this.dtgCategoria_Leave);
             // 
             // btnBaja
             // 
@@ -98,11 +85,11 @@
             // 
             this.grpCrearCategoria.Controls.Add(this.btnGuardarCrear);
             this.grpCrearCategoria.Controls.Add(this.btnCancelarCrear);
-            this.grpCrearCategoria.Controls.Add(this.textBox3);
+            this.grpCrearCategoria.Controls.Add(this.txtSueldo);
             this.grpCrearCategoria.Controls.Add(this.lblSueldo);
-            this.grpCrearCategoria.Controls.Add(this.textBox2);
+            this.grpCrearCategoria.Controls.Add(this.txtJornada);
             this.grpCrearCategoria.Controls.Add(this.lblJornada);
-            this.grpCrearCategoria.Controls.Add(this.textBox1);
+            this.grpCrearCategoria.Controls.Add(this.txtCategoria);
             this.grpCrearCategoria.Controls.Add(this.lblCategoria);
             this.grpCrearCategoria.Location = new System.Drawing.Point(413, 37);
             this.grpCrearCategoria.Name = "grpCrearCategoria";
@@ -119,6 +106,7 @@
             this.btnGuardarCrear.TabIndex = 7;
             this.btnGuardarCrear.Text = "Guardar";
             this.btnGuardarCrear.UseVisualStyleBackColor = true;
+            this.btnGuardarCrear.Click += new System.EventHandler(this.btnGuardarCrear_Click);
             // 
             // btnCancelarCrear
             // 
@@ -128,13 +116,15 @@
             this.btnCancelarCrear.TabIndex = 6;
             this.btnCancelarCrear.Text = "Cancelar";
             this.btnCancelarCrear.UseVisualStyleBackColor = true;
+            this.btnCancelarCrear.Click += new System.EventHandler(this.btnCancelarCrear_Click);
             // 
-            // textBox3
+            // txtSueldo
             // 
-            this.textBox3.Location = new System.Drawing.Point(86, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtSueldo.Location = new System.Drawing.Point(103, 102);
+            this.txtSueldo.Name = "txtSueldo";
+            this.txtSueldo.Size = new System.Drawing.Size(135, 20);
+            this.txtSueldo.TabIndex = 5;
+            this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // lblSueldo
             // 
@@ -145,28 +135,30 @@
             this.lblSueldo.TabIndex = 4;
             this.lblSueldo.Text = "Sueldo";
             // 
-            // textBox2
+            // txtJornada
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtJornada.Location = new System.Drawing.Point(103, 66);
+            this.txtJornada.Name = "txtJornada";
+            this.txtJornada.Size = new System.Drawing.Size(135, 20);
+            this.txtJornada.TabIndex = 3;
+            this.txtJornada.TextChanged += new System.EventHandler(this.txtJornada_TextChanged);
+            this.txtJornada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJornada_KeyPress);
             // 
             // lblJornada
             // 
             this.lblJornada.AutoSize = true;
             this.lblJornada.Location = new System.Drawing.Point(16, 68);
             this.lblJornada.Name = "lblJornada";
-            this.lblJornada.Size = new System.Drawing.Size(45, 13);
+            this.lblJornada.Size = new System.Drawing.Size(84, 13);
             this.lblJornada.TabIndex = 2;
-            this.lblJornada.Text = "Jornada";
+            this.lblJornada.Text = "Horas Laborales";
             // 
-            // textBox1
+            // txtCategoria
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtCategoria.Location = new System.Drawing.Point(103, 31);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(135, 20);
+            this.txtCategoria.TabIndex = 1;
             // 
             // lblCategoria
             // 
@@ -193,6 +185,7 @@
             this.grpModificarCategoria.TabIndex = 8;
             this.grpModificarCategoria.TabStop = false;
             this.grpModificarCategoria.Text = "Modificar Categoria";
+            this.grpModificarCategoria.Enter += new System.EventHandler(this.grpModificarCategoria_Enter);
             // 
             // btnGuardarModif
             // 
@@ -202,6 +195,7 @@
             this.btnGuardarModif.TabIndex = 7;
             this.btnGuardarModif.Text = "Guardar";
             this.btnGuardarModif.UseVisualStyleBackColor = true;
+            this.btnGuardarModif.Click += new System.EventHandler(this.btnGuardarModif_Click);
             // 
             // btnCancelarModif
             // 
@@ -211,13 +205,15 @@
             this.btnCancelarModif.TabIndex = 6;
             this.btnCancelarModif.Text = "Cancelar";
             this.btnCancelarModif.UseVisualStyleBackColor = true;
+            this.btnCancelarModif.Click += new System.EventHandler(this.btnCancelarModif_Click);
             // 
             // txtSueldoModif
             // 
-            this.txtSueldoModif.Location = new System.Drawing.Point(86, 102);
+            this.txtSueldoModif.Location = new System.Drawing.Point(103, 102);
             this.txtSueldoModif.Name = "txtSueldoModif";
             this.txtSueldoModif.Size = new System.Drawing.Size(135, 20);
             this.txtSueldoModif.TabIndex = 5;
+            this.txtSueldoModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoModif_KeyPress);
             // 
             // lblSueldoModif
             // 
@@ -230,23 +226,25 @@
             // 
             // txtJornadaModif
             // 
-            this.txtJornadaModif.Location = new System.Drawing.Point(86, 65);
+            this.txtJornadaModif.Location = new System.Drawing.Point(103, 66);
             this.txtJornadaModif.Name = "txtJornadaModif";
             this.txtJornadaModif.Size = new System.Drawing.Size(135, 20);
             this.txtJornadaModif.TabIndex = 3;
+            this.txtJornadaModif.TextChanged += new System.EventHandler(this.txtJornadaModif_TextChanged);
+            this.txtJornadaModif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJornadaModif_KeyPress);
             // 
             // lblJornadaModif
             // 
             this.lblJornadaModif.AutoSize = true;
             this.lblJornadaModif.Location = new System.Drawing.Point(16, 68);
             this.lblJornadaModif.Name = "lblJornadaModif";
-            this.lblJornadaModif.Size = new System.Drawing.Size(45, 13);
+            this.lblJornadaModif.Size = new System.Drawing.Size(84, 13);
             this.lblJornadaModif.TabIndex = 2;
-            this.lblJornadaModif.Text = "Jornada";
+            this.lblJornadaModif.Text = "Horas Laborales";
             // 
             // txtCategoriaModif
             // 
-            this.txtCategoriaModif.Location = new System.Drawing.Point(86, 30);
+            this.txtCategoriaModif.Location = new System.Drawing.Point(103, 31);
             this.txtCategoriaModif.Name = "txtCategoriaModif";
             this.txtCategoriaModif.Size = new System.Drawing.Size(135, 20);
             this.txtCategoriaModif.TabIndex = 1;
@@ -260,17 +258,31 @@
             this.lblCategoriaModif.TabIndex = 0;
             this.lblCategoriaModif.Text = "Categoria";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(578, 399);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(56, 20);
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // frmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 453);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModificarCategoria);
             this.Controls.Add(this.grpCrearCategoria);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgCategoria);
             this.Name = "frmCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.frmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategoria)).EndInit();
             this.grpCrearCategoria.ResumeLayout(false);
             this.grpCrearCategoria.PerformLayout();
@@ -283,18 +295,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.GroupBox grpCrearCategoria;
         private System.Windows.Forms.Button btnGuardarCrear;
         private System.Windows.Forms.Button btnCancelarCrear;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.Label lblSueldo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtJornada;
         private System.Windows.Forms.Label lblJornada;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.GroupBox grpModificarCategoria;
         private System.Windows.Forms.Button btnGuardarModif;
@@ -305,5 +314,6 @@
         private System.Windows.Forms.Label lblJornadaModif;
         private System.Windows.Forms.TextBox txtCategoriaModif;
         private System.Windows.Forms.Label lblCategoriaModif;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

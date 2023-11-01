@@ -47,6 +47,7 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+<<<<<<< HEAD
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.es-AR.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.en-US.resources
@@ -162,3 +163,54 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\b
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+=======
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.exe
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Vista.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\en-US\Vista.resources.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\es-AR\Vista.resources.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\AccesoDatos.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\bin\Debug\AccesoDatos.pdb
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmPerfiles.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmCategorias.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.ConfigPoliticasPass.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmAltaEvaluacionDesempenio.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Evaluacion_de_desempeño.frmConsultaEvaluacionDesempenio.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmConvenios.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Properties.UserControl1.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.en-US.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.es-AR.resources
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.exe
+C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+>>>>>>> 8f164ad15016595caa2998219c1255338614e012
