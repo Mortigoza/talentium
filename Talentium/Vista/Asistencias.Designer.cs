@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.modiicacion = new System.Windows.Forms.TabControl();
             this.tbpAlta = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -251,7 +251,7 @@
             this.tbpModificar.Padding = new System.Windows.Forms.Padding(3);
             this.tbpModificar.Size = new System.Drawing.Size(1096, 512);
             this.tbpModificar.TabIndex = 1;
-            this.tbpModificar.Text = "Modificaciòn";
+            this.tbpModificar.Text = "Modificaciòn y consulta";
             this.tbpModificar.UseVisualStyleBackColor = true;
             // 
             // btnExcel
@@ -293,9 +293,9 @@
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Modificar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Modificar.DefaultCellStyle = dataGridViewCellStyle2;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Modificar.HeaderText = "Modificar";
             this.Modificar.MinimumWidth = 6;
