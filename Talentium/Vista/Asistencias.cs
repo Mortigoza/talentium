@@ -301,21 +301,13 @@ namespace Vista
                             style.Font.Bold = true;
                             sl.SetWorksheetDefaultColumnWidth(25);
                             int numCol = 0;
-                            int numFila = 2;
-                            DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
-                            SLStyle fechaEmisionStyle = new SLStyle();
-                            fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
-                            fechaEmisionStyle.SetFontBold(true);
-                            fechaEmisionStyle.SetFontItalic(true);
-                            fechaEmisionStyle.Font.FontSize = 12;
-                            sl.SetCellStyle(1, 1, fechaEmisionStyle); // Fila 1, Columna 1
-                            sl.SetCellValue(1, 1, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
-
+                            int numFila = 9;
+                           
                             string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
 
                             SLPicture picture = new SLPicture(rutaImagen);
-                            picture.SetPosition(2, 1); // Establece la posición de la imagen (fila 2, columna 1)
-                            picture.ResizeInPixels(100, 100);  // Establece el tamaño de la imagen (ancho, alto)
+                            picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
+                            picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
                             sl.InsertPicture(picture);
 
                             try
@@ -324,11 +316,21 @@ namespace Vista
                                 {
                                     if (cl.Index != 1 && cl.Index != 4 && cl.Index != 12)
                                     {
-                                        sl.SetCellValue(1, numCol, cl.HeaderText.ToString());
-                                        sl.SetCellStyle(1, numCol, style);
+                                        sl.SetCellValue(8, numCol, cl.HeaderText.ToString());
+                                        sl.SetCellStyle(8, numCol, style);
                                         numCol++;
                                     }
                                 }
+
+                                DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
+                                SLStyle fechaEmisionStyle = new SLStyle();
+                                fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                fechaEmisionStyle.SetFontBold(true);
+                                fechaEmisionStyle.SetFontItalic(true);
+                                fechaEmisionStyle.Font.FontSize = 12;
+                                sl.SetCellStyle(1, 9, fechaEmisionStyle); // Fila 1, Columna 1
+                                sl.SetCellValue(1, 9, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+
 
                                 foreach (DataGridViewRow row in dataGridModificar.Rows)
                                 {
