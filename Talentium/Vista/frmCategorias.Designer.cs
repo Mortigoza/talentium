@@ -170,6 +170,7 @@
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(179, 22);
             this.txtCategoria.TabIndex = 1;
+            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // lblCategoria
             // 

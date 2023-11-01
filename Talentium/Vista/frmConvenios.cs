@@ -176,7 +176,7 @@ namespace Vista
                 DataTable categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
                 txtJornadaModif.Text = categoria.Rows[0]["jornada"].ToString();
                 txtSueldoModif.Text = categoria.Rows[0]["sueldos"].ToString();
-            }
+            }   
           
             
         }
@@ -283,6 +283,7 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            grpModificar.Enabled = true;
             id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
             txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
             txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
@@ -299,8 +300,8 @@ namespace Vista
                 DataGridViewCell celda = dtgConvenio.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
                 txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
-                txtObraSocialModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
-                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+                txtObraSocialModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
+                txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
                 txtSueldoModif.Text = dtgConvenio.SelectedCells[7].Value.ToString();
                 txtJornadaModif.Text = dtgConvenio.SelectedCells[8].Value.ToString();
                 cmbCateModif.SelectedValue = int.Parse(dtgConvenio.SelectedCells[4].Value.ToString());
@@ -319,6 +320,11 @@ namespace Vista
 
             grpModificar.Enabled = false;
        
+        }
+
+        private void txtConvenio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -247,6 +247,7 @@
             this.txtConvenio.Name = "txtConvenio";
             this.txtConvenio.Size = new System.Drawing.Size(249, 22);
             this.txtConvenio.TabIndex = 1;
+            this.txtConvenio.TextChanged += new System.EventHandler(this.txtConvenio_TextChanged);
             this.txtConvenio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConvenio_KeyPress);
             // 
             // lblConvenio

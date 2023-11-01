@@ -242,5 +242,10 @@ namespace Vista
         {
 
         }
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

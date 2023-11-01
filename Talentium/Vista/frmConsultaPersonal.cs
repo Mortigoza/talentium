@@ -26,5 +26,11 @@ namespace Vista
         {
 
         }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+            frmAltaPersonal.ShowDialog();
+        }
     }
 }
