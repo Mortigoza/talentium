@@ -452,6 +452,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAltaProcesoDeSeleccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Candidato";
             this.Load += new System.EventHandler(this.frmAltaProcesoDeSeleccion_Load);
             this.grpAltaCandidato.ResumeLayout(false);

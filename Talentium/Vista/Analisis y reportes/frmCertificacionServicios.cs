@@ -68,7 +68,9 @@ namespace Vista.Analisis_y_reportes
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios();
+            this.Hide();
             acs.ShowDialog();
+            this.Show();
             refreshDtg();
         }
         private void btnModificar_Click(object sender, EventArgs e)
@@ -94,8 +96,10 @@ namespace Vista.Analisis_y_reportes
                     break;
             }
             frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado, etapa);
+            this.Hide();
             acs.ShowDialog();
             refreshDtg();
+            this.Show();
         }
         #region metodos
         public int refreshDtg(bool filtro = false)

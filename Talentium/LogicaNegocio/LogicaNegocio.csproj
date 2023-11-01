@@ -67,6 +67,7 @@
     <Compile Include="CN_PoliticaPassword.cs" />
     <Compile Include="CN_TraerPermisos.cs" />
     <Compile Include="CN_Validaciones.cs" />
+    <Compile Include="CN_LogicaLogout.cs" />
     <Compile Include="Niveles.Designer.cs">
       <DependentUpon>Niveles.resx</DependentUpon>
       <AutoGen>True</AutoGen>

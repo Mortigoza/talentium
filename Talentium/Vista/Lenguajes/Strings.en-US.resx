@@ -372,4 +372,7 @@
   <data name="btnModificarCandidato" xml:space="preserve">
     <value>Modify Applicant</value>
   </data>
+  <data name="btnLogout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
 </root>

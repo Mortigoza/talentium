@@ -18,7 +18,7 @@ namespace LogicaNegocio
             DataTable dt = tp.TraerPermisos(UserCache.id);
 
             PermisosCache pc = new PermisosCache();
-            pc.clear();
+            PermisosCache.Clear();
             for (int i = 0, len = dt.Rows.Count; i < len; i++)
             {
                 pc.Id = (int)dt.Rows[i][0];

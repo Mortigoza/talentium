@@ -38,7 +38,7 @@ namespace Comun
                 permiso =permiso
             });
         }
-        public void clear()
+        public static void Clear()
         {
             permisos.Clear();
         }

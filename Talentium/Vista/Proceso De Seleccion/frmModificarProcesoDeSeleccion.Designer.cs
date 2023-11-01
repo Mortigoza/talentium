@@ -424,6 +424,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmModificarProcesoDeSeleccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Candidato en Proceso de Seleccion";
             this.Load += new System.EventHandler(this.frmModificarProcesoDeSeleccion_Load);
             this.grpModificar.ResumeLayout(false);

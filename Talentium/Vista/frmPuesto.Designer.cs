@@ -214,6 +214,7 @@
             this.Controls.Add(this.lstPuestos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPuesto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPuesto";
             this.Load += new System.EventHandler(this.frmPuesto_Load);
             this.groupBox2.ResumeLayout(false);

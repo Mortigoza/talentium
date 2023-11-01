@@ -151,6 +151,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cerrar sesion.
+        /// </summary>
+        public static string btnLogout {
+            get {
+                return ResourceManager.GetString("btnLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Modificar.
         /// </summary>
         public static string btnModificar {

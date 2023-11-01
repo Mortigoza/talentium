@@ -70,7 +70,7 @@
             this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIngresarEmpleado.Location = new System.Drawing.Point(146, 314);
-            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
             this.btnIngresarEmpleado.Size = new System.Drawing.Size(112, 33);
             this.btnIngresarEmpleado.TabIndex = 13;
@@ -85,7 +85,7 @@
             this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEtapas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEtapas.Location = new System.Drawing.Point(756, 314);
-            this.btnEtapas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEtapas.Margin = new System.Windows.Forms.Padding(2);
             this.btnEtapas.Name = "btnEtapas";
             this.btnEtapas.Size = new System.Drawing.Size(78, 33);
             this.btnEtapas.TabIndex = 12;
@@ -103,9 +103,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(216, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(416, 106);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -116,7 +116,7 @@
             this.cmbEtapa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEtapa.FormattingEnabled = true;
             this.cmbEtapa.Location = new System.Drawing.Point(131, 67);
-            this.cmbEtapa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEtapa.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEtapa.Name = "cmbEtapa";
             this.cmbEtapa.Size = new System.Drawing.Size(168, 21);
             this.cmbEtapa.TabIndex = 8;
@@ -139,7 +139,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnFiltrar.Location = new System.Drawing.Point(344, 65);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(56, 26);
             this.btnFiltrar.TabIndex = 6;
@@ -150,7 +150,7 @@
             // txtCuilCuit
             // 
             this.txtCuilCuit.Location = new System.Drawing.Point(131, 15);
-            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuilCuit.Name = "txtCuilCuit";
             this.txtCuilCuit.Size = new System.Drawing.Size(168, 20);
             this.txtCuilCuit.TabIndex = 5;
@@ -162,7 +162,7 @@
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(131, 41);
-            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(168, 21);
             this.cmbPuesto.TabIndex = 3;
@@ -212,7 +212,7 @@
             this.Partido,
             this.Provincia});
             this.dtgCandidatos.Location = new System.Drawing.Point(30, 173);
-            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgCandidatos.Name = "dtgCandidatos";
             this.dtgCandidatos.RowHeadersWidth = 51;
             this.dtgCandidatos.RowTemplate.Height = 24;
@@ -354,7 +354,7 @@
             this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);
-            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarCandidato.Name = "btnModificarCandidato";
             this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
             this.btnModificarCandidato.TabIndex = 14;
@@ -373,8 +373,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaProcesoDeSeleccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Candidatos";
             this.Load += new System.EventHandler(this.frmConsultaProcesoDeSeleccion_Load);
             this.groupBox1.ResumeLayout(false);

@@ -66,9 +66,7 @@ namespace Vista
                            // se realiza el update de la nueva pass y se hashea la misma. 
                            pass.insertarPass(UserCache.usuario, tbContra2.Text);
                             MessageBox.Show("Operación realizada con éxito");
-                            this.Hide();
-                            frmLogin login = new frmLogin();
-                            login.Show();
+                            this.Dispose();
                         }
 
                     }

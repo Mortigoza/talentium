@@ -20,5 +20,18 @@ namespace Comun
         public static string digito { get; set; }
         public static int intentos { get; set; }
         public static bool nuevo { get; set; }
+
+        public static void Clear()
+        {
+            Type tipo = typeof(UserCache);
+
+            foreach (var propiedad in tipo.GetProperties())
+            {
+                if (propiedad.CanWrite && propiedad.GetSetMethod() != null)
+                {
+                    propiedad.SetValue(null, null);
+                }
+            }
+        }
     }
 }

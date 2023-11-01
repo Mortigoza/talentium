@@ -46,13 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgEvaluacion = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Efectividad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Puntualidad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.RelSuperiores = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Disciplina = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -226,20 +226,6 @@
             this.dtgEvaluacion.Size = new System.Drawing.Size(656, 149);
             this.dtgEvaluacion.TabIndex = 18;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cmbMes);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cmbAnio);
-            this.groupBox2.Location = new System.Drawing.Point(25, 62);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(220, 99);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Periodo de evaluación";
-            // 
             // NombreApellido
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -306,6 +292,20 @@
             "4"});
             this.DesempEquipo.Name = "DesempEquipo";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.cmbMes);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.cmbAnio);
+            this.groupBox2.Location = new System.Drawing.Point(25, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(220, 99);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Periodo de evaluación";
+            // 
             // frmAltaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,6 +319,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAltaEvaluacionDesempenio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Evaluacion de Desempeño";
             this.Load += new System.EventHandler(this.frmAltaEvaluacionDesempeño_Load);
             this.groupBox1.ResumeLayout(false);

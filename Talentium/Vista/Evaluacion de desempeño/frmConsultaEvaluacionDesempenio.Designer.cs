@@ -42,8 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgConsultaEvaluacion = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.grpDatos = new System.Windows.Forms.GroupBox();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MesEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EfectTareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +49,8 @@
             this.Disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RelSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grpDatos = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -199,29 +199,6 @@
             this.dtgConsultaEvaluacion.Size = new System.Drawing.Size(707, 162);
             this.dtgConsultaEvaluacion.TabIndex = 20;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 63);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Filtro por empleado *";
-            // 
-            // grpDatos
-            // 
-            this.grpDatos.Controls.Add(this.label4);
-            this.grpDatos.Controls.Add(this.label6);
-            this.grpDatos.Controls.Add(this.lblNombreYApellido);
-            this.grpDatos.Controls.Add(this.lblCuil);
-            this.grpDatos.Location = new System.Drawing.Point(505, 52);
-            this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Size = new System.Drawing.Size(195, 63);
-            this.grpDatos.TabIndex = 35;
-            this.grpDatos.TabStop = false;
-            this.grpDatos.Text = "Datos del empleado";
-            // 
             // Anio
             // 
             this.Anio.HeaderText = "Año";
@@ -270,6 +247,29 @@
             this.DesempEquipo.Name = "DesempEquipo";
             this.DesempEquipo.Width = 95;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Filtro por empleado *";
+            // 
+            // grpDatos
+            // 
+            this.grpDatos.Controls.Add(this.label4);
+            this.grpDatos.Controls.Add(this.label6);
+            this.grpDatos.Controls.Add(this.lblNombreYApellido);
+            this.grpDatos.Controls.Add(this.lblCuil);
+            this.grpDatos.Location = new System.Drawing.Point(505, 52);
+            this.grpDatos.Name = "grpDatos";
+            this.grpDatos.Size = new System.Drawing.Size(195, 63);
+            this.grpDatos.TabIndex = 35;
+            this.grpDatos.TabStop = false;
+            this.grpDatos.Text = "Datos del empleado";
+            // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +289,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaEvaluacionDesempenio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Evaluacion de Desempeño";
             this.Load += new System.EventHandler(this.frmConsultaEvaluacionDesempenio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).EndInit();

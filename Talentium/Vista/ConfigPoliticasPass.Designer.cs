@@ -41,7 +41,7 @@
             // 
             this.chcChar.AutoSize = true;
             this.chcChar.Location = new System.Drawing.Point(196, 60);
-            this.chcChar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcChar.Margin = new System.Windows.Forms.Padding(2);
             this.chcChar.Name = "chcChar";
             this.chcChar.Size = new System.Drawing.Size(138, 17);
             this.chcChar.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.chcMay.AutoSize = true;
             this.chcMay.Location = new System.Drawing.Point(196, 101);
-            this.chcMay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcMay.Margin = new System.Windows.Forms.Padding(2);
             this.chcMay.Name = "chcMay";
             this.chcMay.Size = new System.Drawing.Size(226, 17);
             this.chcMay.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.chcNum.AutoSize = true;
             this.chcNum.Location = new System.Drawing.Point(196, 139);
-            this.chcNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcNum.Margin = new System.Windows.Forms.Padding(2);
             this.chcNum.Name = "chcNum";
             this.chcNum.Size = new System.Drawing.Size(151, 17);
             this.chcNum.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.chcEsp.AutoSize = true;
             this.chcEsp.Location = new System.Drawing.Point(196, 175);
-            this.chcEsp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcEsp.Margin = new System.Windows.Forms.Padding(2);
             this.chcEsp.Name = "chcEsp";
             this.chcEsp.Size = new System.Drawing.Size(216, 17);
             this.chcEsp.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.chcPass.AutoSize = true;
             this.chcPass.Location = new System.Drawing.Point(196, 216);
-            this.chcPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcPass.Margin = new System.Windows.Forms.Padding(2);
             this.chcPass.Name = "chcPass";
             this.chcPass.Size = new System.Drawing.Size(205, 17);
             this.chcPass.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.chcDatos.AutoSize = true;
             this.chcDatos.Location = new System.Drawing.Point(196, 257);
-            this.chcDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chcDatos.Margin = new System.Windows.Forms.Padding(2);
             this.chcDatos.Name = "chcDatos";
             this.chcDatos.Size = new System.Drawing.Size(210, 17);
             this.chcDatos.TabIndex = 5;
@@ -107,7 +107,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(440, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 23);
             this.button1.TabIndex = 6;
@@ -127,8 +127,9 @@
             this.Controls.Add(this.chcNum);
             this.Controls.Add(this.chcMay);
             this.Controls.Add(this.chcChar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConfigPoliticasPass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Politicas de contraseñas";
             this.Load += new System.EventHandler(this.ConfigPoliticasPass_Load);
             this.ResumeLayout(false);

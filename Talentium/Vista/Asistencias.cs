@@ -66,7 +66,9 @@ namespace Vista
             }
             AsistenciasPanel panel = new AsistenciasPanel(datos);
 
-            panel.Show();
+            this.Hide();
+            panel.ShowDialog();
+            this.Show();
             dataGridAlta.DataSource = null;
             cuilAltas.Clear();
             areasAltas.SelectedIndex = 0;
@@ -252,7 +254,9 @@ namespace Vista
             }
             AsistenciasPanel panel = new AsistenciasPanel(datos);
 
-            panel.Show();
+            this.Hide();
+            panel.ShowDialog();
+            this.Show();
 
             dataGridModificar.DataSource = null;
             CuilMod.Clear();

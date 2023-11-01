@@ -38,11 +38,22 @@ namespace Vista
                 }
                 else
                 {
-                CN_TraerPermisos tp = new CN_TraerPermisos();
-                tp.TraerPermisos();
-                this.Hide();
-                frmMenu menu = new frmMenu();
-                menu.Show();
+                    CN_TraerPermisos tp = new CN_TraerPermisos();
+                    tp.TraerPermisos();
+                    this.Hide();
+                    frmMenu menu = new frmMenu();
+                    menu.ShowDialog();
+                    if (menu.DialogResult == DialogResult.OK)
+                    {
+                        txtUsername.Text = "";
+                        txtPassword.Text = "";
+                        this.Show();
+                        txtUsername.Focus();
+                    }
+                    else
+                    {
+                        this.Dispose();
+                    }
                 }
             }
         }

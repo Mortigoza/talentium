@@ -417,6 +417,7 @@
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgConvenio);
             this.Name = "frmConvenios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Convenios";
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).EndInit();
             this.grpCrear.ResumeLayout(false);

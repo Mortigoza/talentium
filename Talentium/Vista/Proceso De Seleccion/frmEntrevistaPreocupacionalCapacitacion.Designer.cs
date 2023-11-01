@@ -632,6 +632,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmEntrevistaPreocupacionalCapacitacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etapas del proceso de seleccion";
             this.Load += new System.EventHandler(this.frmEntrevistaPreocupacionalCapacitacion_Load);
             this.tabPage3.ResumeLayout(false);
