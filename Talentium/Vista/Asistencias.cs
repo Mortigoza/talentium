@@ -14,6 +14,7 @@ using System.IO;
 using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
+using System.Globalization;
 
 namespace Vista
 {
@@ -298,10 +299,16 @@ namespace Vista
                             SLDocument sl = new SLDocument();
                             SLStyle style = new SLStyle();
                             style.Font.FontSize = 12;
+                            style.Fill.SetPatternType(PatternValues.Solid);
+                            style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
+                            style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
                             style.Font.Bold = true;
                             sl.SetWorksheetDefaultColumnWidth(25);
                             int numCol = 0;
-                            int numFila = 9;
+                            int numFila = 10;
                            
                             string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
 
@@ -316,8 +323,13 @@ namespace Vista
                                 {
                                     if (cl.Index != 1 && cl.Index != 4 && cl.Index != 12)
                                     {
-                                        sl.SetCellValue(8, numCol, cl.HeaderText.ToString());
-                                        sl.SetCellStyle(8, numCol, style);
+                                        string nombreColumna = cl.HeaderText;
+                                        string nombreColumnaFormateado = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreColumna.ToLower());
+
+                                        sl.SetCellValue(9, numCol, nombreColumnaFormateado);
+                                        sl.SetCellStyle(9, numCol, style);
+                                        sl.SetCellStyle(9, 9, 9, numCol, style);
+
                                         numCol++;
                                     }
                                 }
@@ -328,8 +340,20 @@ namespace Vista
                                 fechaEmisionStyle.SetFontBold(true);
                                 fechaEmisionStyle.SetFontItalic(true);
                                 fechaEmisionStyle.Font.FontSize = 12;
-                                sl.SetCellStyle(1, 9, fechaEmisionStyle); // Fila 1, Columna 1
-                                sl.SetCellValue(1, 9, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                                sl.SetCellStyle(2, 11, fechaEmisionStyle); // Fila 1, Columna 1
+                                sl.SetCellValue(2, 11, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                                SLStyle titulo = new SLStyle();
+                                titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                titulo.SetFontBold(true);
+                                titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
+                                titulo.Font.FontSize = 16;
+                                sl.SetCellStyle(6, 7, titulo);
+                                sl.SetCellValue(6, 7, "Reporte de Inasistencia");
+                                SLStyle fondo = new SLStyle();
+                                fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                fondo.Fill.SetPatternType(PatternValues.Solid);
+                                fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
+                                sl.SetCellStyle(1, 1,8,12, fondo);
 
 
                                 foreach (DataGridViewRow row in dataGridModificar.Rows)
