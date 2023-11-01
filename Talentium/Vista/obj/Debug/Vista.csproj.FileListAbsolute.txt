@@ -162,3 +162,10 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\b
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\en-US\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.Drawing.Common.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml
