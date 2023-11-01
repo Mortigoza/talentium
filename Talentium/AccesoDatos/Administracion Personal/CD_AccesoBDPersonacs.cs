@@ -56,9 +56,9 @@ namespace AccesoDatos.Administracion_Personal
             DataTable resultado = EjecutarConsultas("InsertarInformacionLaboral_sp", listaParametros.ToArray(), true);
         }
 
-        
 
-        public void InsertarInformacionAcademica (int id_persona, int? id_nivel,string institucion,
+
+        public void InsertarInformacionAcademica(int id_persona, int? id_nivel, string institucion,
             int año_ingreso, int año_egreso, string titulo, int? id_progreso)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
@@ -72,6 +72,19 @@ namespace AccesoDatos.Administracion_Personal
             DataTable resultado = EjecutarConsultas("InsertarInformacionAcademica_sp", listaParametros.ToArray(), true);
 
         }
+
+        public void InsertarIdioma(int id_persona, int id_idiomas, int nivel_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_idioma", id_idiomas) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@nivel_idioma", nivel_idioma) { SqlDbType = SqlDbType.Int };
+            
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3};
+            EjecutarConsultas("InsertarIdioma_sp", listaParametros.ToArray(), true);
+
+        }
+
+
 
 
         //Este metodo del SP devuelve un bool (true o false) por lo que va a necesitar del retorno.
@@ -166,10 +179,16 @@ namespace AccesoDatos.Administracion_Personal
             return resultado;
         }
 
+        public DataTable ObtenerIdioma(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerIdioma_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
 
         //Modificar
-
-
         public DataTable ActualizarDatos (Persona modify )
         {
             SqlParameter param1 = new SqlParameter("@id_persona", modify.id_persona) { SqlDbType = SqlDbType.Int };
@@ -232,6 +251,50 @@ namespace AccesoDatos.Administracion_Personal
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
 
             DataTable resultado = EjecutarConsultas("ActualizarDatosLaboral_sp", listaParametros.ToArray(), true);
+        }
+
+
+        public void ActualizarTelefono(int id_persona, string telefono, int id_tipo, bool tel_primario, string contacto = "")
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@telefono", telefono) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@id_tipo_telefono", id_tipo) { SqlDbType = SqlDbType.Int };
+            SqlParameter param4 = new SqlParameter("@tel_primario", tel_primario) { SqlDbType = SqlDbType.Bit };
+            SqlParameter param5 = new SqlParameter("@contacto", contacto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5 };
+
+            DataTable resultado = EjecutarConsultas("ActualizarTelefono_sp", listaParametros.ToArray(), true);
+        }
+
+        public void ActualizarIdioma(int id_persona, int id_idiomas, int nivel_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_idiomas", id_idiomas) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@nivel_idioma", nivel_idioma) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            EjecutarConsultas("ActualizarIdioma_sp", listaParametros.ToArray(), true);
+
+        }
+
+
+        //eliminacion
+
+        public DataTable BajaPersona(int id_persona)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_persona", id_persona));
+            DataTable dt = EjecutarConsultas("BajaPersona_sp", parametros.ToArray());
+            return dt;
+        }
+
+
+        public DataTable ReactivarPersona(int id_persona)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_persona", id_persona));
+            DataTable dt = EjecutarConsultas("ReactivarPersona_sp", parametros.ToArray());
+            return dt;
         }
     }
 

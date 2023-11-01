@@ -16,11 +16,12 @@ namespace Vista
 {
     public partial class frmAltaPersonal : Form
     {
+        //instancias a clases
         CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
 
-
+        //variables
         private bool inicial = true;
         private int infoLaborales = 0;
         private int infoAcademicos = 1;
@@ -127,8 +128,6 @@ namespace Vista
             cmbArea.ValueMember = "id_area";
             cmbArea.SelectedIndex = -1;
 
-
-
             //ComboBox Solapa Academico*************
 
             // Agrega los años desde 1900 hasta el año actual a la lista
@@ -188,20 +187,15 @@ namespace Vista
             cmbLaboralIngreso3.SelectedIndex = 0;
             cmbLaboralEgreso3.SelectedIndex = 0;
 
-
-
-
-
-
         }
 
-        private void label19_Click(object sender, EventArgs e)
+        private void frmAltaPersonal_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
+            if (_mod)
+            {
+                dtpFechaDeNacimiento.Value = fn;
+                dttFechaAlta.Value = fa;
+            }
 
         }
 
@@ -210,28 +204,28 @@ namespace Vista
 
             grpSuperior3.Visible = true;
             infoAcademicos++;
-            button1.Visible = false;
+            btnMenosAcademico1.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             grpSuperior3.Visible = false;
             infoAcademicos--;
-            button1.Visible = true;
+            btnMenosAcademico1.Visible = true;
             
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             grpExp2.Visible = true;
-            button18.Visible = false;
+            btnMenosLaboral1.Visible = false;
             infoLaborales++;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             grpExp2.Visible = false;
-            button18.Visible = true;
+            btnMenosLaboral1.Visible = true;
             infoLaborales--;
         }
 
@@ -243,31 +237,32 @@ namespace Vista
         private void button12_Click(object sender, EventArgs e)
         {
             grpExp3.Visible = false;
-            button10.Visible = true;
+            btnMenosLaboral2.Visible = true;
             infoLaborales--;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             grpExp4.Visible = true;
-            button12.Visible =false;
+            btnMenosLaboral3.Visible =false;
             infoLaborales++;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             grpExp4.Visible = false;
-            button12.Visible =true;
+            btnMenosLaboral3.Visible =true;
             infoLaborales--;
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
             grpExp3.Visible = true;
-            button10.Visible = false;
+            btnMenosLaboral2.Visible = false;
             infoLaborales++;
         }
 
+        //validar cuit
         private void btbValidarCuil(object sender, EventArgs e)
         {
 
@@ -311,7 +306,7 @@ namespace Vista
                 }
             }
         }
-
+   
         private bool EsNumero(string input )
         {
             foreach (char c in input)
@@ -324,31 +319,15 @@ namespace Vista
             return true; // La cadena contiene solo números
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmAltaPersonal_Load(object sender, EventArgs e)
-        {
-            if (_mod)
-            {
-                dtpFechaDeNacimiento.Value = fn;
-                dttFechaAlta.Value = fa;
-            }
-
-        }
-
-        private void grbExp3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        //BOTTON PARA MODIFICAR Y GUARDAR
         private void button9_Click(object sender, EventArgs e)
         {
+            switch (btnGuardar.Name)
+            {
+                case "btnGuardar":
 
-            Tuple<bool, string> validacion = validarTodos();
-            if (validacion.Item1)
+                    Tuple<bool, string> validacion = validarTodos();
+                     if (validacion.Item1)
             {
                 #region Mapeo
                 Persona insert = new Persona();
@@ -419,6 +398,9 @@ namespace Vista
                 insert.id_progreso2 = int.Parse(cmbProgreso1.SelectedValue.ToString());
                 insert.id_progreso3 = int.Parse(cmbProgreso2.SelectedValue.ToString());
 
+                insert.nivel_Es = nivelEspaniol;
+                insert.nivel_En = nivelIngles;
+
 
                 //LABORAL
 
@@ -446,16 +428,154 @@ namespace Vista
 
                 lblFaltanCampos2.Visible = false;
                 logicaPersona.InsertarPersona(insert, infoLaborales, infoAcademicos);
-                MessageBox.Show("Valido");
+                MessageBox.Show("Todos los datos se cargaron correctamente.");
+                this.Hide();
+                        
+           
             }
-            else
+                     else
             {
                 lblFaltanCampos2.Visible = true;
                 MessageBox.Show($"Faltan campos obligatorios de:{validacion.Item2}");
             }
-   
+                    break;
+                case "btnModificar":
+
+                    Tuple<bool, string> validacion1 = validarTodos();
+                    if (validacion1.Item1)
+                    {
+                        #region
+
+                        Persona modify = new Persona();
+
+                    modify.id_informacion_academica1 = _id_informacion_academica1;
+                    modify.id_informacion_academica2 = _id_informacion_academica2;
+                    modify.id_informacion_academica3 = _id_informacion_academica3;
+
+                    modify.id_informacion_laboral1 = _id_informacion_laboral1;
+                    modify.id_informacion_laboral2 = _id_informacion_laboral2;
+                    modify.id_informacion_laboral3 = _id_informacion_laboral3;
+                    modify.id_informacion_laboral4 = _id_informacion_laboral4;
+
+                    if (pctFoto.Image != null)
+                    {
+                        modify.foto_perfil = new byte[0];
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        modify.foto_perfil = ms.GetBuffer();
+                    }
+                    else
+                    {
+                        modify.foto_perfil = new byte[0];
+                    }
+
+                    modify.id_persona = _id_persona;
+                    modify.nombres = txtNombres.Text;
+                    modify.apellidos = txtApellidos.Text;
+                    modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
+                    modify.nro_doc = txtDni.Text;
+                    modify.email = txtEmail.Text;
+                    modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
+                    modify.id_genero = (int)cmbGenero.SelectedValue;
+                    modify.hijos = (int)nupHijos.Value;
+                    modify.id_area = (int)cmbArea.SelectedValue;
+                    modify.id_convenio = (int)cmbConvenio.SelectedValue;
+                    modify.id_localidad = (int)cmbLocalidad.SelectedValue;
+                    modify.calle = txtCalle.Text;
+                    modify.nro = int.Parse(txtNro.Text);
+                    modify.piso = txtPiso.Text;
+                    modify.dpto = txtDpto.Text;
+                    modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
+                    modify.fecha_alta = dttFechaAlta.Value;
+                    modify.id_estado_civil = (int)cmbEstadoCivil.SelectedValue;
+                    modify.telefono = txtTelefono.Text;
+                    modify.id_tipo = (int)cmbTipoTel.SelectedValue;
+                    modify.telefono_alternativo = txtTelefonoAlternativo.Text;
+                    modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
+                    modify.contacto = txtContacto.Text;
+
+                    //List<Puesto> puesto1 = new List<Puesto>();
+                    //foreach (Puesto p in puesto1)
+                    //{ 
+                    //    puesto1.Add(p);
+                    //}
+                    //modify.puesto = puesto1.ToArray();
+
+                    //ACADEMICOS
+                    modify.id_nivel1 = (cmbNivelAcademico.SelectedValue == null) ? 0 : (int)cmbNivelAcademico.SelectedValue;
+                    modify.id_nivel2 = (cmbNivelAcademico1.SelectedValue == null) ? 0 : (int)cmbNivelAcademico1.SelectedValue;
+                    modify.id_nivel2 = (cmbNivelAcademico2.SelectedValue == null) ? 0 : (int)cmbNivelAcademico2.SelectedValue;
+                    modify.institucion1 = txtInsitutcionSuperior.Text;
+                    modify.institucion2 = txtInsitutcionSuperior1.Text;
+                    modify.institucion3 = txtInsitutcionSuperior2.Text;
+                    modify.titulo1 = txtTitulo.Text;
+                    modify.titulo2 = txtTitulo1.Text;
+                    modify.titulo3 = txtTitulo2.Text;
+                    modify.carrera2 = txtTitulo1.Text;
+                    modify.carrera3 = txtTitulo2.Text;
+                    modify.año_ingreso1 = int.Parse(cmbIngreso.Text);
+                    modify.año_ingreso2 = int.Parse(cmbIngreso1.Text);
+                    modify.año_ingreso3 = int.Parse(cmbIngreso2.Text);
+                    modify.año_egreso1 = int.Parse(cmbEgreso.Text);
+                    modify.año_egreso2 = int.Parse(cmbEgreso1.Text);
+                    modify.año_egreso3 = int.Parse(cmbEgreso2.Text);
+                    modify.id_progreso1 = (cmbProgreso.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
+                    modify.id_progreso2 = (cmbProgreso1.SelectedValue == null) ? 0 : (int)cmbProgreso1.SelectedValue;
+                    modify.id_progreso3 = (cmbProgreso2.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
+                    modify.nivel_Es = nivelEspaniol;
+                    modify.nivel_En = nivelIngles;
+
+                    //LABORALES
+
+                    modify.puesto1 = txtPuesto.Text;
+                    modify.puesto2 = txtPuesto1.Text;
+                    modify.puesto3 = txtPuesto2.Text;
+                    modify.puesto4 = txtPuesto3.Text;
+
+                    modify.empresa1 = txtEmpresa.Text;
+                    modify.empresa2 = txtEmpresa1.Text;
+                    modify.empresa3 = txtEmpresa2.Text;
+                    modify.empresa4 = txtEmpresa3.Text;
+
+                    modify.fecha_ingreso1 = int.Parse(cmbLaboralIngreso1.Text);
+                    modify.fecha_ingreso2 = int.Parse(cmbLaboralIngreso1.Text);
+                    modify.fecha_ingreso3 = int.Parse(cmbLaboralIngreso2.Text);
+                    modify.fecha_ingreso4 = int.Parse(cmbLaboralIngreso3.Text);
+
+                    modify.fecha_egreso1 = int.Parse(cmbLaboralEgreso.Text);
+                    modify.fecha_egreso2 = int.Parse(cmbLaboralEgreso1.Text);
+                    modify.fecha_egreso3 = int.Parse(cmbLaboralEgreso2.Text);
+                    modify.fecha_egreso4 = int.Parse(cmbLaboralEgreso3.Text);
+
+                    modify.personal_a_cargo1 = (int)nupPersonalACargo.Value;
+                    modify.personal_a_cargo2 = (int)nupPersonalACargo1.Value;
+                    modify.personal_a_cargo3 = (int)nupPersonalACargo2.Value;
+                    modify.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
+
+
+                        lblFaltanCampos.Visible = false;
+                        lblFaltanCampos1.Visible = false;
+                        lblFaltanCampos2.Visible = false;
+                    logicaPersona.ActualizarIdioma(modify, _id_persona);
+                    logicaPersona.ActualizarTelefono(modify, _id_persona);
+                    logicaPersona.ActualizarDatos(modify);
+                    logicaPersona.ActualizarDatosAcademicos(modify, infoAcademicos);
+                    logicaPersona.ActualizarDatosLaborales(modify, infoLaborales);
+                    MessageBox.Show("Los datos se han actualizado correctamente.");
+                    this.Hide();
+                    frmMenu menu = new frmMenu();
+                    menu.ShowDialog();
+                    }
+                    else
+                    {
+                        lblFaltanCampos2.Visible = true;
+                        MessageBox.Show($"Faltan campos obligatorios de:{validacion1.Item2}");
+                    }
+                    #endregion
+                    break;
+            }
         }
-    
+        //BOTON PARA VALIDAR TAB "INFORMACION ACADEMICA"
         private void button8_Click(object sender, EventArgs e)
         {
            if( validarVacios(tabAcademicos, infoAcademicos))
@@ -463,7 +583,6 @@ namespace Vista
                 lblFaltanCampos1.Visible = false;
                 tabControl.TabPages[2].Enabled = true;
                 RestaurarColorPredeterminado(tabAcademicos);
-                MessageBox.Show("Todos los campos obligatorios estan completos");
                 tabControl.SelectedTab = tabLaborales;
             }
             else
@@ -472,7 +591,7 @@ namespace Vista
                 MessageBox.Show("Faltan campos obligatorios");
             }
         }
-
+        //BOTON PARA VALIDAR TAB "INFORMACION PERSONAL"
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -481,7 +600,6 @@ namespace Vista
                 lblFaltanCampos.Visible = false;
                 tabControl.TabPages[1].Enabled = true;
                 RestaurarColorPredeterminado(tabPersonales);
-                MessageBox.Show("Todos los campos obligatorios estan completos");
                 tabControl.SelectedTab = tabAcademicos;
             }
             else
@@ -490,7 +608,38 @@ namespace Vista
                 MessageBox.Show("Faltan campos obligatorios");
             }
         }
+        //BOTON PARA AGREGAR Y ELIMINAR FOTO
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            // Configura el cuadro de diálogo para seleccionar archivos de imagen
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.png;*.bmp;*.gif|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Lee la imagen seleccionada
+                    string rutaImagen = openFileDialog.FileName;
+                    Image imagen = Image.FromFile(rutaImagen);
+
+                    // Muestra la imagen en el PictureBox
+                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pctFoto.Image = imagen;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void btbEliminarImagen_Click(object sender, EventArgs e)
+        {
+            pctFoto.Image = null;
+        }
+
+        //METODOS
         private void RestaurarColorPredeterminado(Control control)
         {
             foreach (Control c in control.Controls)
@@ -508,7 +657,6 @@ namespace Vista
                 }
             }
         }
-
         private bool validarVacios(Control control, int count = -1)
         {
             bool todosCompletos = true;
@@ -580,34 +728,98 @@ namespace Vista
                 }
             }            
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        public void HabilitarCampos()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            // Configura el cuadro de diálogo para seleccionar archivos de imagen
-            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.png;*.bmp;*.gif|Todos los archivos|*.*";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            foreach (TabPage tabPage in tabControl.TabPages)
             {
-                try
+                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
                 {
-                    // Lee la imagen seleccionada
-                    string rutaImagen = openFileDialog.FileName;
-                    Image imagen = Image.FromFile(rutaImagen);
+                    foreach (Control control in groupBox.Controls)
+                    {
+                        //grpSuperior2.Enabled = true;
+                        //grpExp2.Enabled = true;
+                        //grpExp4.Enabled = true;
+                        grpIngles.Enabled = true;
+                        grpEspaniol.Enabled = true;
+                        btnContinuar1.Enabled = true;
+                        btnEditarImagen.Enabled = true;
+                        btnEliminarImagen.Enabled = true;
+                        grpSuperior2.Enabled = true;
+                        grpSuperior3.Enabled = true;
 
-                    // Muestra la imagen en el PictureBox
-                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
-                    pctFoto.Image = imagen;
-                }   
-                catch (Exception ex)
+                        control.Enabled = true; // Habilitar todos los controles dentro del GroupBox
+                    }
+                }
+            }
+        }
+        public void DeshabilitarCampos()
+        {
+
+            foreach (TabPage tabPage in tabControl.TabPages)
+            {
+                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
                 {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    foreach (Control control in groupBox.Controls)
+                    {
+                        if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker) && control != txtCuitCuil)
+                        {
+                            grpEspaniol.Enabled = false;
+                            grpIngles.Enabled = false;
+                            grpSuperior2.Enabled = false;
+                            grpExp2.Enabled = false;
+                            grpExp4.Enabled = false;
+                            btnContinuar1.Enabled = false;
+                            btnEditarImagen.Enabled = false;
+                            btnEliminarImagen.Enabled = false;
+                            control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
+                        }
+                    }
+                }
+            }
+
+
+
+        }
+        private void BotonesInvisibles()
+        {
+            Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen,btnMasAcademico1,btnMenosAcademico1,btnMasAcademico2,btnMenosAcademico2,
+            btnMasLaborales1,btnMenosLaboral1,btnMasLaborales2,btnMenosLaboral2,btnMasLaborales3,btnMenosLaboral3,btnMasLaborales4,btnMenosLaboral4};
+
+            // Ocultar todos los botones en el arreglo
+            foreach (Button boton in botones)
+            {
+                boton.Visible = false;
+            }
+        }
+        private void BotonesVisibles()
+        {
+            Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen,btnMasAcademico1,btnMenosAcademico1,btnMasAcademico2,btnMenosAcademico2,
+            btnMasLaborales1,btnMenosLaboral1,btnMasLaborales2,btnMenosLaboral2,btnMasLaborales3,btnMenosLaboral3,btnMasLaborales4,btnMenosLaboral4};
+
+            foreach (Button boton in botones)
+            {
+                boton.Visible = true;
+            }
+        }
+        public void Visibilizar(string nombreControl, int len)
+        {
+            for (int i = 1; i <= len; i++)
+            {
+                string groupName = nombreControl + i;
+                Control control = Controls.Find(groupName, true).FirstOrDefault();
+
+                if (control != null && control is GroupBox)
+                {
+                    GroupBox groupBox = (GroupBox)control;
+                    groupBox.Visible = true;
                 }
             }
         }
 
+
+        //LLENAR LOS COMBOBOX Localidad,Partido y Provincia + CodigoPostal.
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView provinciaSeleccionada = cmbProvincia.SelectedItem as DataRowView;
@@ -630,7 +842,6 @@ namespace Vista
             }
 
         }
-
         private void cmbPartido_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView partidoSeleccionada = cmbPartido.SelectedItem as DataRowView;
@@ -652,147 +863,6 @@ namespace Vista
                 }
             }
         }
-
-
-        public void HabilitarCampos()
-        {
-            
-
-            foreach (TabPage tabPage in tabControl.TabPages)
-            {
-                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
-                {
-                    foreach (Control control in groupBox.Controls)
-                    {
-                        //grpSuperior2.Enabled = true;
-                        //grpExp2.Enabled = true;
-                        //grpExp4.Enabled = true;
-                        button4.Enabled = true;
-                        btbEditarImagen.Enabled = true;
-                        btbEliminarImagen.Enabled = true;
-                        grpSuperior2.Enabled = true;
-                        grpSuperior3.Enabled= true;
-                      
-                        control.Enabled = true; // Habilitar todos los controles dentro del GroupBox
-                    }
-                }
-            }
-        }
-        public void DeshabilitarCampos ()
-        {
-       
-            foreach (TabPage tabPage in tabControl.TabPages)
-            {
-                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
-                {
-                    foreach (Control control in groupBox.Controls)
-                    {
-                        if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker ) && control != txtCuitCuil)
-                        {
-                            grpSuperior2.Enabled = false;
-                            grpExp2.Enabled = false;
-                            grpExp4.Enabled = false;
-                            button4.Enabled = false;
-                            btbEditarImagen.Enabled = false;
-                            btbEliminarImagen.Enabled = false;
-                            control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
-                        }
-                    }
-                }
-            }
-
-
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            grpSuperior2.Visible = true;
-            infoAcademicos++;
-        }
-
-        private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if (!e.TabPage.Enabled)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void groupBox6_Enter(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label59_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            grpExp1.Visible = true;
-            button17.Visible = false;
-            label74.Visible = false;
-
-            infoLaborales++;
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            grpExp1.Visible = false;
-            button17.Visible = true;
-            label74.Visible = true;
-            infoLaborales--;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            grpSuperior2.Visible = false;
-            infoAcademicos--;
-        }
-
-        private void cmbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbGenero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            // Configura el cuadro de diálogo para seleccionar archivos de imagen
-            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.png;*.bmp;*.gif|Todos los archivos|*.*";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // Lee la imagen seleccionada
-                    string rutaImagen = openFileDialog.FileName;
-                    Image imagen = Image.FromFile(rutaImagen);
-
-                    // Muestra la imagen en el PictureBox
-                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
-                    pctFoto.Image = imagen;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView partidoSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
@@ -800,14 +870,42 @@ namespace Vista
             txtCodigoPostal.Text = variable;
         }
 
-        private void tabLaborales_Click(object sender, EventArgs e)
-        {
 
+        //CONTROLES MODIFICADOS
+        private void button16_Click(object sender, EventArgs e)
+        {
+            grpSuperior2.Visible = true;
+            infoAcademicos++;
+        }
+        private void button17_Click(object sender, EventArgs e)
+        {
+            grpExp1.Visible = true;
+            btnMasLaborales1.Visible = false;
+            lblAgregarExperienciaLaboral.Visible = false;
+
+            infoLaborales++;
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            grpExp1.Visible = false;
+            btnMasLaborales1.Visible = true;
+            lblAgregarExperienciaLaboral.Visible = true;
+            infoLaborales--;
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            grpSuperior2.Visible = false;
+            infoAcademicos--;
         }
 
-        private void grbSuperior_Enter(object sender, EventArgs e)
-        {
 
+        //CONTROLES CON EVENTOS
+        private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!e.TabPage.Enabled)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -848,7 +946,7 @@ namespace Vista
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
                 MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -858,7 +956,7 @@ namespace Vista
 
         private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
                 MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -866,19 +964,9 @@ namespace Vista
             }
         }
 
-        private void txtContacto_TextChanged(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void txtCalle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
                 MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -896,7 +984,7 @@ namespace Vista
 
         private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
                 MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -906,7 +994,7 @@ namespace Vista
 
         private void txtTitulo1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
                 MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -916,12 +1004,12 @@ namespace Vista
 
         private void txtTitulo2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
+                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        }
-
-        private void btbEliminarImagen_Click(object sender, EventArgs e)
-        {
-            pctFoto.Image = null;
+            }
         }
 
         private void Espaniol_CheckedChanged(object sender, EventArgs e)
@@ -942,9 +1030,9 @@ namespace Vista
             {
                 nivelEspaniol = 3;
             }
-            if (button8.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
+            if (btnContinuar2.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
             {
-                button8.Enabled = true;
+                btnContinuar2.Enabled = true;
             }
         }
 
@@ -966,36 +1054,11 @@ namespace Vista
             {
                 nivelIngles = 3;
             }
-            if (button8.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
+            if (btnContinuar2.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
             {
-                button8.Enabled = true;
+                btnContinuar2.Enabled = true;
             }
         }
-
-        private void BotonesInvisibles ()
-        {
-            Button[] botones = { button15,button4,button8,button9,btbEditarImagen,btbEliminarImagen,button16,button1,button5,button7,
-            button17,button18,button6,button10,button11,button12,button13,button14};
-
-            // Ocultar todos los botones en el arreglo
-            foreach (Button boton in botones)
-            {
-                boton.Visible = false;
-            }
-        }
-
-        private void BotonesVisibles()
-        {
-            Button[] botones = { button15,button4,button8,button9,btbEditarImagen,btbEliminarImagen,button16,button1,button5,button7,
-            button17,button18,button6,button10,button11,button12,button13,button14};
-
-            foreach (Button boton in botones)
-            {
-                boton.Visible = true;
-            }
-        }
-
-
 
 
 
@@ -1009,6 +1072,7 @@ namespace Vista
             DeshabilitarCampos();
             BotonesInvisibles();
             txtCuitCuil.Enabled = false;
+            
 
 
             Persona insert = new Persona();
@@ -1081,6 +1145,40 @@ namespace Vista
             txtTitulo1.Text = insert.titulo2;
             txtTitulo2.Text = insert.titulo3;
 
+            switch (insert.nivel_Es)
+            {
+                case 0:
+                    rdbBasico.Checked = true;
+                    break;
+                case 1:
+                    rdbIntermedio.Checked = true;
+                    break;
+                case 2:
+                    rdbAvanzado.Checked = true;
+                    break;
+                case 3:
+                    rdbNativo.Checked = true;
+                    break;
+            }
+
+
+            switch (insert.nivel_En)
+            {
+                case 0:
+                    rdbBasicoEn.Checked = true;
+                    break;
+                case 1:
+                    rdbIntermedioEn.Checked = true;
+                    break;
+                case 2:
+                    rdbAvanzadoEn.Checked = true;
+                    break;
+                case 3:
+                    rdbNativoEn.Checked = true;
+                    break;
+            }
+
+
             //ComboBox
             cmbNivelAcademico.SelectedValue = insert.id_nivel1;
             cmbNivelAcademico1.SelectedValue = (insert.id_nivel2 == null) ? 0 : insert.id_nivel2;
@@ -1123,30 +1221,18 @@ namespace Vista
             nupPersonalACargo2.Value = insert.personal_a_cargo3;
             nupPersonalACargo3.Value = insert.personal_a_cargo4;
 
-            
-            Visibilizar("grpExp", infoLaborales);
-
-        }
-
-
-        public void Visibilizar(string nombreControl, int len)
-        {
-            for (int i = 1; i <= len; i++)
+            if (infoLaborales == 0)
             {
-                string groupName = nombreControl + i;
-                Control control = Controls.Find(groupName, true).FirstOrDefault();
+                lblAgregarExperienciaLaboral.Visible = true;
+                lblAgregarExperienciaLaboral.Text = "No cuenta con experiencia laboral.";
 
-                if (control != null && control is GroupBox)
-                {
-                    GroupBox groupBox = (GroupBox)control;
-                    groupBox.Visible = true;
-                }
             }
-        }
-
-        private void txtTitulo_TextChanged(object sender, EventArgs e)
-        {
-
+            else
+            {
+                grpExp1.Text = "";
+                lblAgregarExperienciaLaboral.Text = "Experiencia laboral.";
+            }
+            Visibilizar("grpExp", infoLaborales);
         }
 
 
@@ -1154,7 +1240,10 @@ namespace Vista
         public void CargarDatosModificacion(int id_persona)
         {
             Persona modify = new Persona();
-
+            
+            btnGuardar.Name = "btnModificar";
+            btnGuardar.Text = "Modificar";
+            
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
             _id_informacion_academica1 = modify.id_informacion_academica1;
@@ -1167,121 +1256,86 @@ namespace Vista
             _id_informacion_laboral4 = modify.id_informacion_laboral4;
             BotonesVisibles();
             HabilitarCampos();
-            button15.Visible = false;
-            button9.Visible = false;
+            btnValidar.Visible = false;
+            btnGuardar.Visible = true;
             txtCuitCuil.Enabled = false;
+            dttFechaAlta.Enabled = false;
         }
+
+        //Controles vacios
+        #region
+
         private void btbModificar_Click(object sender, EventArgs e)
         {
+          
+        }
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
 
-            Persona modify = new Persona();
+        }
+        private void txtContacto_TextChanged(object sender, EventArgs e)
+        {
 
-            modify.id_informacion_academica1 = _id_informacion_academica1;
-            modify.id_informacion_academica2 = _id_informacion_academica2;
-            modify.id_informacion_academica3 = _id_informacion_academica3;
+        }
 
-            modify.id_informacion_laboral1 = _id_informacion_laboral1;
-            modify.id_informacion_laboral2 = _id_informacion_laboral2;
-            modify.id_informacion_laboral3 = _id_informacion_laboral3;
-            modify.id_informacion_laboral4 = _id_informacion_laboral4;
+        private void txtCalle_TextChanged(object sender, EventArgs e)
+        {
 
-            if (pctFoto.Image != null)
-            {
-               modify.foto_perfil = new byte[0];
-                System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                modify.foto_perfil = ms.GetBuffer();
-            }
-            else
-            {
-                modify.foto_perfil = new byte[0];
-            }
+        }
+        private void tabLaborales_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void grbSuperior_Enter(object sender, EventArgs e)
+        {
 
-            modify.id_persona = _id_persona;
+        }
+        private void cmbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-            modify.nombres = txtNombres.Text;
-            modify.apellidos = txtApellidos.Text;
-            modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
-            modify.nro_doc = txtDni.Text;
-            modify.email = txtEmail.Text;
-            modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
-            modify.id_genero = (int)cmbGenero.SelectedValue;
-            modify.hijos = (int)nupHijos.Value;
-            modify.id_area = (int)cmbArea.SelectedValue;
-            modify.id_convenio = (int)cmbConvenio.SelectedValue;
-            modify.id_localidad = (int)cmbLocalidad.SelectedValue;
-            modify.calle = txtCalle.Text;
-            modify.nro = int.Parse(txtNro.Text);
-            modify.piso = txtPiso.Text;
-            modify.dpto = txtDpto.Text;
-            modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
-            modify.fecha_alta = dttFechaAlta.Value;
+        }
 
-            //List<Puesto> puesto1 = new List<Puesto>();
-            //foreach (Puesto p in puesto1)
-            //{ 
-            //    puesto1.Add(p);
-            //}
-            //modify.puesto = puesto1.ToArray();
+        private void cmbGenero_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-            //ACADEMICOS
-            modify.id_nivel1 = (cmbNivelAcademico.SelectedValue == null) ? 0 : (int)cmbNivelAcademico.SelectedValue;
-            modify.id_nivel2 = (cmbNivelAcademico1.SelectedValue == null) ? 0 : (int)cmbNivelAcademico1.SelectedValue;
-            modify.id_nivel2 = (cmbNivelAcademico2.SelectedValue == null) ? 0 : (int)cmbNivelAcademico2.SelectedValue;
-            modify.institucion1 = txtInsitutcionSuperior.Text;
-            modify.institucion2 = txtInsitutcionSuperior1.Text;
-            modify.institucion3 = txtInsitutcionSuperior2.Text;
-            modify.titulo1 = txtTitulo.Text;
-            modify.titulo2 = txtTitulo1.Text;
-            modify.titulo3 = txtTitulo2.Text;
-            modify.carrera2 = txtTitulo1.Text;
-            modify.carrera3 = txtTitulo2.Text;
-            modify.año_ingreso1 = int.Parse(cmbIngreso.Text);
-            modify.año_ingreso2 = int.Parse(cmbIngreso1.Text);
-            modify.año_ingreso3 = int.Parse(cmbIngreso2.Text);
-            modify.año_egreso1 = int.Parse(cmbEgreso.Text);
-            modify.año_egreso2 = int.Parse(cmbEgreso1.Text);
-            modify.año_egreso3 = int.Parse(cmbEgreso2.Text);
-            modify.id_progreso1 = (cmbProgreso.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
-            modify.id_progreso2 = (cmbProgreso1.SelectedValue == null) ? 0 : (int)cmbProgreso1.SelectedValue;
-            modify.id_progreso3 = (cmbProgreso2.SelectedValue == null) ? 0 : (int)cmbProgreso.SelectedValue;
+        }
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
 
+        }
 
+        private void label59_Click(object sender, EventArgs e)
+        {
 
-            //LABORALES
+        }
+        private void grbExp3_Enter(object sender, EventArgs e)
+        {
 
-            modify.puesto1 = txtPuesto.Text;
-            modify.puesto2 = txtPuesto1.Text;
-            modify.puesto3 = txtPuesto2.Text;
-            modify.puesto4 = txtPuesto3.Text;
+        }
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
 
-            modify.empresa1 = txtEmpresa.Text;
-            modify.empresa2 = txtEmpresa1.Text;
-            modify.empresa3 = txtEmpresa2.Text;
-            modify.empresa4 = txtEmpresa3.Text;
+        }
+        private void label19_Click(object sender, EventArgs e)
+        {
 
-            modify.fecha_ingreso1 = int.Parse(cmbLaboralIngreso1.Text);
-            modify.fecha_ingreso2 = int.Parse(cmbLaboralIngreso1.Text);
-            modify.fecha_ingreso3 = int.Parse(cmbLaboralIngreso2.Text);
-            modify.fecha_ingreso4 = int.Parse(cmbLaboralIngreso3.Text);
+        }
 
-            modify.fecha_egreso1 = int.Parse(cmbLaboralEgreso.Text);
-            modify.fecha_egreso2 = int.Parse(cmbLaboralEgreso1.Text);
-            modify.fecha_egreso3 = int.Parse(cmbLaboralEgreso2.Text);
-            modify.fecha_egreso4 = int.Parse(cmbLaboralEgreso3.Text);
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
 
-            modify.personal_a_cargo1 = (int)nupPersonalACargo.Value;
-            modify.personal_a_cargo2 = (int)nupPersonalACargo1.Value;
-            modify.personal_a_cargo3 = (int)nupPersonalACargo2.Value;
-            modify.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
-            
-        
-            logicaPersona.ActualizarDatos(modify);
-            logicaPersona.ActualizarDatosAcademicos(modify, infoAcademicos);
-            logicaPersona.ActualizarDatosLaborales(modify, infoLaborales);
-            MessageBox.Show("Los datos se han actualizado correctamente.");
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void tabAcademicos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

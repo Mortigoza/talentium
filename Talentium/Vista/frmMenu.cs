@@ -29,7 +29,9 @@ namespace Vista
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmConsultaPersonal alta = new frmConsultaPersonal();
+            alta.Show();
         }
 
         private void altasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +39,18 @@ namespace Vista
             this.Hide();
             frmAltaPersonal alta = new frmAltaPersonal();
             alta.Show();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaPersonal alta = new frmConsultaPersonal();
+            alta.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

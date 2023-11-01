@@ -55,13 +55,20 @@ namespace Comun
         public int id_tipo_alternativo { get; set; }
         public string contacto   { get; set; }
 
-  
 
+        public bool id_baja { get; set; }
+
+
+        //Idioma
+        public int nivel_Es { get; set; }
+        public int nivel_En { get; set; }
+       
    
 
         //informacion academica
 
-        public int id_idioma { get; set; }
+
+
         public int id_nivel1{ get; set; }
         public int? id_nivel2 { get; set; }
         public int? id_nivel3 { get; set; }
@@ -87,7 +94,7 @@ namespace Comun
 
 
 
-        public Puesto[] puesto { get; set; } 
+        //public Puesto[] puesto { get; set; } 
 
         //informacion laboral
 
@@ -113,13 +120,12 @@ namespace Comun
         public int personal_a_cargo4 { get; set; }
 
 
-        //id
 
     }
 
-    public class Puesto
-    {
-        public string nombre_puesto { get; set; }
-    }
+    //public class Puesto
+    //{
+    //    public string nombre_puesto { get; set; }
+    //}
 
 }

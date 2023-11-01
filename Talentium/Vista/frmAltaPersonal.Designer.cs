@@ -35,69 +35,69 @@
             this.lblFaltanCampos = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dttFechaAlta = new System.Windows.Forms.DateTimePicker();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
+            this.lblFechaDeIngreso = new System.Windows.Forms.Label();
+            this.lblArea = new System.Windows.Forms.Label();
             this.cmbArea = new System.Windows.Forms.ComboBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.lblConvenio = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.cmbConvenio = new System.Windows.Forms.ComboBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btbEliminarImagen = new System.Windows.Forms.Button();
-            this.btbEditarImagen = new System.Windows.Forms.Button();
+            this.btnContinuar1 = new System.Windows.Forms.Button();
+            this.btnEliminarImagen = new System.Windows.Forms.Button();
+            this.btnEditarImagen = new System.Windows.Forms.Button();
             this.pctFoto = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblCodigoPostal = new System.Windows.Forms.Label();
+            this.lblProvincia = new System.Windows.Forms.Label();
             this.cmbPartido = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblCalle = new System.Windows.Forms.Label();
             this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.txtNro = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblPartido = new System.Windows.Forms.Label();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.txtDpto = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblPiso = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.lblDpto = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
-            this.label68 = new System.Windows.Forms.Label();
+            this.lblTipoDni = new System.Windows.Forms.Label();
             this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
-            this.button15 = new System.Windows.Forms.Button();
+            this.btnValidar = new System.Windows.Forms.Button();
             this.cmbTipoTelAlternativo = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblTipoTel1 = new System.Windows.Forms.Label();
             this.cmbTipoTel = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblTipoTel = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblContacto = new System.Windows.Forms.Label();
             this.txtTelefonoAlternativo = new System.Windows.Forms.TextBox();
             this.nupHijos = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblTelAlternativo = new System.Windows.Forms.Label();
+            this.lblHijos = new System.Windows.Forms.Label();
             this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblNombres = new System.Windows.Forms.Label();
+            this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.lblApellidos = new System.Windows.Forms.Label();
             this.txtCuitCuil = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCuitCuil = new System.Windows.Forms.Label();
+            this.lblNroDoc = new System.Windows.Forms.Label();
             this.tabAcademicos = new System.Windows.Forms.TabPage();
             this.grpIngles = new System.Windows.Forms.GroupBox();
             this.rdbNativoEn = new System.Windows.Forms.RadioButton();
@@ -105,21 +105,21 @@
             this.rdbIntermedioEn = new System.Windows.Forms.RadioButton();
             this.rdbAvanzadoEn = new System.Windows.Forms.RadioButton();
             this.lblFaltanCampos1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnContinuar2 = new System.Windows.Forms.Button();
             this.grpSuperior1 = new System.Windows.Forms.GroupBox();
             this.label73 = new System.Windows.Forms.Label();
             this.cmbProgreso = new System.Windows.Forms.ComboBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
+            this.btnMasAcademico1 = new System.Windows.Forms.Button();
+            this.lblProgreso = new System.Windows.Forms.Label();
             this.txtInsitutcionSuperior = new System.Windows.Forms.TextBox();
             this.cmbEgreso = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.lblAñoEgreso = new System.Windows.Forms.Label();
             this.cmbNivelAcademico = new System.Windows.Forms.ComboBox();
-            this.label65 = new System.Windows.Forms.Label();
+            this.lblInstitucion = new System.Windows.Forms.Label();
             this.cmbIngreso = new System.Windows.Forms.ComboBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblAñoIngreso = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.grpEspaniol = new System.Windows.Forms.GroupBox();
             this.rdbNativo = new System.Windows.Forms.RadioButton();
@@ -128,95 +128,94 @@
             this.rdbBasico = new System.Windows.Forms.RadioButton();
             this.grpSuperior2 = new System.Windows.Forms.GroupBox();
             this.cmbProgreso1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label66 = new System.Windows.Forms.Label();
+            this.btnMasAcademico2 = new System.Windows.Forms.Button();
+            this.lblProgreso1 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMenosAcademico1 = new System.Windows.Forms.Button();
             this.cmbEgreso1 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblAñoEgreso1 = new System.Windows.Forms.Label();
             this.cmbIngreso1 = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
+            this.lblInstitucion1 = new System.Windows.Forms.Label();
             this.txtInsitutcionSuperior1 = new System.Windows.Forms.TextBox();
             this.txtTitulo1 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lblTitulo1 = new System.Windows.Forms.Label();
+            this.lblAñoIngreso1 = new System.Windows.Forms.Label();
+            this.lblNivel1 = new System.Windows.Forms.Label();
             this.cmbNivelAcademico1 = new System.Windows.Forms.ComboBox();
             this.grpSuperior3 = new System.Windows.Forms.GroupBox();
             this.cmbProgreso2 = new System.Windows.Forms.ComboBox();
-            this.label67 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.lblProgreso2 = new System.Windows.Forms.Label();
+            this.btnMenosAcademico2 = new System.Windows.Forms.Button();
             this.txtInsitutcionSuperior2 = new System.Windows.Forms.TextBox();
             this.cmbEgreso2 = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblNivel2 = new System.Windows.Forms.Label();
+            this.lblAñoEgreso2 = new System.Windows.Forms.Label();
             this.cmbNivelAcademico2 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblInstitucion2 = new System.Windows.Forms.Label();
             this.cmbIngreso2 = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblTitulo2 = new System.Windows.Forms.Label();
+            this.lblAñoIngreso2 = new System.Windows.Forms.Label();
             this.txtTitulo2 = new System.Windows.Forms.TextBox();
             this.tabLaborales = new System.Windows.Forms.TabPage();
             this.lblFaltanCampos2 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
-            this.label74 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnMasLaborales1 = new System.Windows.Forms.Button();
+            this.lblAgregarExperienciaLaboral = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.grpExp3 = new System.Windows.Forms.GroupBox();
             this.label54 = new System.Windows.Forms.Label();
             this.nupPersonalACargo2 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto2 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnMenosLaboral3 = new System.Windows.Forms.Button();
             this.txtEmpresa2 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
+            this.lblEmpresa3 = new System.Windows.Forms.Label();
+            this.btnMasLaborales4 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso2 = new System.Windows.Forms.ComboBox();
-            this.label55 = new System.Windows.Forms.Label();
+            this.lblEgresoLaboral3 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso2 = new System.Windows.Forms.ComboBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
+            this.lblPersonalACargo3 = new System.Windows.Forms.Label();
+            this.lblIngresoLaboral3 = new System.Windows.Forms.Label();
+            this.lblPuesto3 = new System.Windows.Forms.Label();
             this.grpExp4 = new System.Windows.Forms.GroupBox();
             this.nupPersonalACargo3 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto3 = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnMenosLaboral4 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso3 = new System.Windows.Forms.ComboBox();
             this.txtEmpresa3 = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
+            this.lblEgresoLaboral4 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso3 = new System.Windows.Forms.ComboBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
+            this.lblPersonalACargo4 = new System.Windows.Forms.Label();
+            this.lblEmpresa4 = new System.Windows.Forms.Label();
+            this.lblIngresoLaboral4 = new System.Windows.Forms.Label();
+            this.lblPuesto4 = new System.Windows.Forms.Label();
             this.grpExp1 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnMenosLaboral1 = new System.Windows.Forms.Button();
             this.nupPersonalACargo = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.lblEmpresa1 = new System.Windows.Forms.Label();
+            this.btnMasLaborales2 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lblEgresoLaboral1 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lblPersonalACargo1 = new System.Windows.Forms.Label();
+            this.lblIngresoLaboral1 = new System.Windows.Forms.Label();
+            this.lblPuesto1 = new System.Windows.Forms.Label();
             this.grpExp2 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnMasLaborales3 = new System.Windows.Forms.Button();
             this.nupPersonalACargo1 = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto1 = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnMenosLaboral2 = new System.Windows.Forms.Button();
             this.cmbLaboralEgreso1 = new System.Windows.Forms.ComboBox();
             this.txtEmpresa1 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
+            this.lblEgresoLaboral2 = new System.Windows.Forms.Label();
             this.cmbLaboralIngreso1 = new System.Windows.Forms.ComboBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
+            this.lblPersonalACargo2 = new System.Windows.Forms.Label();
+            this.lblEmpresa2 = new System.Windows.Forms.Label();
+            this.lblIngresoLaboral2 = new System.Windows.Forms.Label();
+            this.lblPuesto2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btbModificar = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -260,9 +259,9 @@
             // 
             this.tabPersonales.Controls.Add(this.lblFaltanCampos);
             this.tabPersonales.Controls.Add(this.groupBox7);
-            this.tabPersonales.Controls.Add(this.button4);
-            this.tabPersonales.Controls.Add(this.btbEliminarImagen);
-            this.tabPersonales.Controls.Add(this.btbEditarImagen);
+            this.tabPersonales.Controls.Add(this.btnContinuar1);
+            this.tabPersonales.Controls.Add(this.btnEliminarImagen);
+            this.tabPersonales.Controls.Add(this.btnEditarImagen);
             this.tabPersonales.Controls.Add(this.pctFoto);
             this.tabPersonales.Controls.Add(this.groupBox3);
             this.tabPersonales.Controls.Add(this.groupBox2);
@@ -291,11 +290,11 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dttFechaAlta);
-            this.groupBox7.Controls.Add(this.label75);
-            this.groupBox7.Controls.Add(this.label70);
+            this.groupBox7.Controls.Add(this.lblFechaDeIngreso);
+            this.groupBox7.Controls.Add(this.lblArea);
             this.groupBox7.Controls.Add(this.cmbArea);
-            this.groupBox7.Controls.Add(this.label69);
-            this.groupBox7.Controls.Add(this.label64);
+            this.groupBox7.Controls.Add(this.lblPuesto);
+            this.groupBox7.Controls.Add(this.lblConvenio);
             this.groupBox7.Controls.Add(this.label52);
             this.groupBox7.Controls.Add(this.cmbConvenio);
             this.groupBox7.Controls.Add(this.cmbPuesto);
@@ -316,27 +315,27 @@
             this.dttFechaAlta.Size = new System.Drawing.Size(147, 22);
             this.dttFechaAlta.TabIndex = 58;
             // 
-            // label75
+            // lblFechaDeIngreso
             // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(25, 173);
-            this.label75.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(120, 16);
-            this.label75.TabIndex = 48;
-            this.label75.Tag = "cmbConvenio";
-            this.label75.Text = "Fecha de Ingreso *";
+            this.lblFechaDeIngreso.AutoSize = true;
+            this.lblFechaDeIngreso.Location = new System.Drawing.Point(25, 173);
+            this.lblFechaDeIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaDeIngreso.Name = "lblFechaDeIngreso";
+            this.lblFechaDeIngreso.Size = new System.Drawing.Size(120, 16);
+            this.lblFechaDeIngreso.TabIndex = 48;
+            this.lblFechaDeIngreso.Tag = "cmbConvenio";
+            this.lblFechaDeIngreso.Text = "Fecha de Ingreso *";
             // 
-            // label70
+            // lblArea
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(22, 19);
-            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(44, 16);
-            this.label70.TabIndex = 47;
-            this.label70.Tag = "cmbArea";
-            this.label70.Text = "Area *";
+            this.lblArea.AutoSize = true;
+            this.lblArea.Location = new System.Drawing.Point(22, 19);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(44, 16);
+            this.lblArea.TabIndex = 47;
+            this.lblArea.Tag = "cmbArea";
+            this.lblArea.Text = "Area *";
             // 
             // cmbArea
             // 
@@ -348,27 +347,27 @@
             this.cmbArea.Size = new System.Drawing.Size(148, 24);
             this.cmbArea.TabIndex = 46;
             // 
-            // label69
+            // lblPuesto
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(23, 68);
-            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(57, 16);
-            this.label69.TabIndex = 45;
-            this.label69.Tag = "cmbPuesto";
-            this.label69.Text = "Puesto *";
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Location = new System.Drawing.Point(23, 68);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(57, 16);
+            this.lblPuesto.TabIndex = 45;
+            this.lblPuesto.Tag = "cmbPuesto";
+            this.lblPuesto.Text = "Puesto *";
             // 
-            // label64
+            // lblConvenio
             // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(25, 123);
-            this.label64.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(72, 16);
-            this.label64.TabIndex = 43;
-            this.label64.Tag = "cmbConvenio";
-            this.label64.Text = "Convenio *";
+            this.lblConvenio.AutoSize = true;
+            this.lblConvenio.Location = new System.Drawing.Point(25, 123);
+            this.lblConvenio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConvenio.Name = "lblConvenio";
+            this.lblConvenio.Size = new System.Drawing.Size(72, 16);
+            this.lblConvenio.TabIndex = 43;
+            this.lblConvenio.Tag = "cmbConvenio";
+            this.lblConvenio.Text = "Convenio *";
             // 
             // label52
             // 
@@ -400,46 +399,46 @@
             this.cmbPuesto.Size = new System.Drawing.Size(148, 24);
             this.cmbPuesto.TabIndex = 0;
             // 
-            // button4
+            // btnContinuar1
             // 
-            this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(909, 489);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 44);
-            this.button4.TabIndex = 42;
-            this.button4.Text = "Continuar";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnContinuar1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnContinuar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnContinuar1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnContinuar1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnContinuar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnContinuar1.Location = new System.Drawing.Point(909, 489);
+            this.btnContinuar1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnContinuar1.Name = "btnContinuar1";
+            this.btnContinuar1.Size = new System.Drawing.Size(105, 44);
+            this.btnContinuar1.TabIndex = 42;
+            this.btnContinuar1.Text = "Continuar";
+            this.btnContinuar1.UseVisualStyleBackColor = false;
+            this.btnContinuar1.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btbEliminarImagen
+            // btnEliminarImagen
             // 
-            this.btbEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEliminarImagen.BackgroundImage")));
-            this.btbEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btbEliminarImagen.Location = new System.Drawing.Point(917, 223);
-            this.btbEliminarImagen.Margin = new System.Windows.Forms.Padding(4);
-            this.btbEliminarImagen.Name = "btbEliminarImagen";
-            this.btbEliminarImagen.Size = new System.Drawing.Size(47, 39);
-            this.btbEliminarImagen.TabIndex = 5;
-            this.btbEliminarImagen.UseVisualStyleBackColor = true;
-            this.btbEliminarImagen.Click += new System.EventHandler(this.btbEliminarImagen_Click);
+            this.btnEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarImagen.BackgroundImage")));
+            this.btnEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarImagen.Location = new System.Drawing.Point(917, 223);
+            this.btnEliminarImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarImagen.Name = "btnEliminarImagen";
+            this.btnEliminarImagen.Size = new System.Drawing.Size(47, 39);
+            this.btnEliminarImagen.TabIndex = 5;
+            this.btnEliminarImagen.UseVisualStyleBackColor = true;
+            this.btnEliminarImagen.Click += new System.EventHandler(this.btbEliminarImagen_Click);
             // 
-            // btbEditarImagen
+            // btnEditarImagen
             // 
-            this.btbEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btbEditarImagen.BackgroundImage")));
-            this.btbEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btbEditarImagen.Location = new System.Drawing.Point(781, 223);
-            this.btbEditarImagen.Margin = new System.Windows.Forms.Padding(4);
-            this.btbEditarImagen.Name = "btbEditarImagen";
-            this.btbEditarImagen.Size = new System.Drawing.Size(47, 39);
-            this.btbEditarImagen.TabIndex = 4;
-            this.btbEditarImagen.UseVisualStyleBackColor = true;
-            this.btbEditarImagen.Click += new System.EventHandler(this.button2_Click);
+            this.btnEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditarImagen.BackgroundImage")));
+            this.btnEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarImagen.Location = new System.Drawing.Point(781, 223);
+            this.btnEditarImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarImagen.Name = "btnEditarImagen";
+            this.btnEditarImagen.Size = new System.Drawing.Size(47, 39);
+            this.btnEditarImagen.TabIndex = 4;
+            this.btnEditarImagen.UseVisualStyleBackColor = true;
+            this.btnEditarImagen.Click += new System.EventHandler(this.button2_Click);
             // 
             // pctFoto
             // 
@@ -457,22 +456,22 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.lblCodigoPostal);
+            this.groupBox3.Controls.Add(this.lblProvincia);
             this.groupBox3.Controls.Add(this.cmbPartido);
-            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.lblCalle);
             this.groupBox3.Controls.Add(this.txtCodigoPostal);
             this.groupBox3.Controls.Add(this.cmbProvincia);
             this.groupBox3.Controls.Add(this.txtNro);
-            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.lblPartido);
             this.groupBox3.Controls.Add(this.txtCalle);
             this.groupBox3.Controls.Add(this.txtPiso);
             this.groupBox3.Controls.Add(this.cmbLocalidad);
             this.groupBox3.Controls.Add(this.txtDpto);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.lblLocalidad);
+            this.groupBox3.Controls.Add(this.lblPiso);
+            this.groupBox3.Controls.Add(this.lblAltura);
+            this.groupBox3.Controls.Add(this.lblDpto);
             this.groupBox3.Location = new System.Drawing.Point(529, 282);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -483,26 +482,26 @@
             this.groupBox3.Text = "Domicilio";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // label12
+            // lblCodigoPostal
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(306, 76);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 16);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Código postal";
+            this.lblCodigoPostal.AutoSize = true;
+            this.lblCodigoPostal.Location = new System.Drawing.Point(306, 76);
+            this.lblCodigoPostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigoPostal.Name = "lblCodigoPostal";
+            this.lblCodigoPostal.Size = new System.Drawing.Size(91, 16);
+            this.lblCodigoPostal.TabIndex = 36;
+            this.lblCodigoPostal.Text = "Código postal";
             // 
-            // label9
+            // lblProvincia
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 21);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 16);
-            this.label9.TabIndex = 33;
-            this.label9.Tag = "cmbProvincia";
-            this.label9.Text = "Provincia *";
+            this.lblProvincia.AutoSize = true;
+            this.lblProvincia.Location = new System.Drawing.Point(25, 21);
+            this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(71, 16);
+            this.lblProvincia.TabIndex = 33;
+            this.lblProvincia.Tag = "cmbProvincia";
+            this.lblProvincia.Text = "Provincia *";
             // 
             // cmbPartido
             // 
@@ -516,16 +515,16 @@
             this.cmbPartido.TabIndex = 29;
             this.cmbPartido.SelectedIndexChanged += new System.EventHandler(this.cmbPartido_SelectedIndexChanged);
             // 
-            // label14
+            // lblCalle
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(24, 130);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 16);
-            this.label14.TabIndex = 38;
-            this.label14.Tag = "txtCalle";
-            this.label14.Text = "Calle *";
+            this.lblCalle.AutoSize = true;
+            this.lblCalle.Location = new System.Drawing.Point(24, 130);
+            this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCalle.Name = "lblCalle";
+            this.lblCalle.Size = new System.Drawing.Size(46, 16);
+            this.lblCalle.TabIndex = 38;
+            this.lblCalle.Tag = "txtCalle";
+            this.lblCalle.Text = "Calle *";
             // 
             // txtCodigoPostal
             // 
@@ -558,22 +557,23 @@
             this.txtNro.TabIndex = 34;
             this.txtNro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNro_KeyPress);
             // 
-            // label10
+            // lblPartido
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(234, 21);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 16);
-            this.label10.TabIndex = 34;
-            this.label10.Tag = "cmbPartido";
-            this.label10.Text = "Partido *";
+            this.lblPartido.AutoSize = true;
+            this.lblPartido.Location = new System.Drawing.Point(234, 21);
+            this.lblPartido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPartido.Name = "lblPartido";
+            this.lblPartido.Size = new System.Drawing.Size(58, 16);
+            this.lblPartido.TabIndex = 34;
+            this.lblPartido.Tag = "cmbPartido";
+            this.lblPartido.Text = "Partido *";
             // 
             // txtCalle
             // 
             this.txtCalle.AccessibleDescription = "O";
             this.txtCalle.Location = new System.Drawing.Point(28, 150);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCalle.MaxLength = 30;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(192, 22);
             this.txtCalle.TabIndex = 35;
@@ -584,6 +584,7 @@
             // 
             this.txtPiso.Location = new System.Drawing.Point(309, 150);
             this.txtPiso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPiso.MaxLength = 30;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(53, 22);
             this.txtPiso.TabIndex = 36;
@@ -604,87 +605,88 @@
             // 
             this.txtDpto.Location = new System.Drawing.Point(381, 150);
             this.txtDpto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDpto.MaxLength = 30;
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(53, 22);
             this.txtDpto.TabIndex = 37;
             // 
-            // label11
+            // lblLocalidad
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 75);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 16);
-            this.label11.TabIndex = 35;
-            this.label11.Tag = "cmbLocalidad";
-            this.label11.Text = "Localidad *";
+            this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Location = new System.Drawing.Point(25, 75);
+            this.lblLocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLocalidad.Name = "lblLocalidad";
+            this.lblLocalidad.Size = new System.Drawing.Size(75, 16);
+            this.lblLocalidad.TabIndex = 35;
+            this.lblLocalidad.Tag = "cmbLocalidad";
+            this.lblLocalidad.Text = "Localidad *";
             // 
-            // label16
+            // lblPiso
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(305, 130);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 16);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Piso";
+            this.lblPiso.AutoSize = true;
+            this.lblPiso.Location = new System.Drawing.Point(305, 130);
+            this.lblPiso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPiso.Name = "lblPiso";
+            this.lblPiso.Size = new System.Drawing.Size(34, 16);
+            this.lblPiso.TabIndex = 40;
+            this.lblPiso.Text = "Piso";
             // 
-            // label15
+            // lblAltura
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(232, 130);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 16);
-            this.label15.TabIndex = 39;
-            this.label15.Tag = "txtNro";
-            this.label15.Text = "Altura *";
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(232, 130);
+            this.lblAltura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(49, 16);
+            this.lblAltura.TabIndex = 39;
+            this.lblAltura.Tag = "txtNro";
+            this.lblAltura.Text = "Altura *";
             // 
-            // label17
+            // lblDpto
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(377, 130);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 16);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "Dpto.";
+            this.lblDpto.AutoSize = true;
+            this.lblDpto.Location = new System.Drawing.Point(377, 130);
+            this.lblDpto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDpto.Name = "lblDpto";
+            this.lblDpto.Size = new System.Drawing.Size(39, 16);
+            this.lblDpto.TabIndex = 41;
+            this.lblDpto.Text = "Dpto.";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cmbTipoDoc);
-            this.groupBox2.Controls.Add(this.label68);
+            this.groupBox2.Controls.Add(this.lblTipoDni);
             this.groupBox2.Controls.Add(this.cmbNacionalidad);
-            this.groupBox2.Controls.Add(this.button15);
+            this.groupBox2.Controls.Add(this.btnValidar);
             this.groupBox2.Controls.Add(this.cmbTipoTelAlternativo);
-            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.lblTipoTel1);
             this.groupBox2.Controls.Add(this.cmbTipoTel);
-            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.lblTipoTel);
             this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.lblTelefono);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.txtContacto);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.lblEmail);
+            this.groupBox2.Controls.Add(this.lblContacto);
             this.groupBox2.Controls.Add(this.txtTelefonoAlternativo);
             this.groupBox2.Controls.Add(this.nupHijos);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.lblTelAlternativo);
+            this.groupBox2.Controls.Add(this.lblHijos);
             this.groupBox2.Controls.Add(this.dtpFechaDeNacimiento);
             this.groupBox2.Controls.Add(this.txtApellidos);
             this.groupBox2.Controls.Add(this.cmbEstadoCivil);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.lblNombres);
+            this.groupBox2.Controls.Add(this.lblNacionalidad);
             this.groupBox2.Controls.Add(this.txtNombres);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblEstadoCivil);
             this.groupBox2.Controls.Add(this.txtDni);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.lblFechaNacimiento);
+            this.groupBox2.Controls.Add(this.lblApellidos);
             this.groupBox2.Controls.Add(this.txtCuitCuil);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.lblGenero);
             this.groupBox2.Controls.Add(this.cmbGenero);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lblCuitCuil);
+            this.groupBox2.Controls.Add(this.lblNroDoc);
             this.groupBox2.Location = new System.Drawing.Point(65, 29);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -705,16 +707,16 @@
             this.cmbTipoDoc.Size = new System.Drawing.Size(75, 24);
             this.cmbTipoDoc.TabIndex = 57;
             // 
-            // label68
+            // lblTipoDni
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(17, 125);
-            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(43, 16);
-            this.label68.TabIndex = 56;
-            this.label68.Tag = "cmbTipoDoc";
-            this.label68.Text = "Tipo *";
+            this.lblTipoDni.AutoSize = true;
+            this.lblTipoDni.Location = new System.Drawing.Point(17, 125);
+            this.lblTipoDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoDni.Name = "lblTipoDni";
+            this.lblTipoDni.Size = new System.Drawing.Size(43, 16);
+            this.lblTipoDni.TabIndex = 56;
+            this.lblTipoDni.Tag = "cmbTipoDoc";
+            this.lblTipoDni.Text = "Tipo *";
             // 
             // cmbNacionalidad
             // 
@@ -727,18 +729,18 @@
             this.cmbNacionalidad.TabIndex = 55;
             this.cmbNacionalidad.SelectedIndexChanged += new System.EventHandler(this.cmbNacionalidad_SelectedIndexChanged);
             // 
-            // button15
+            // btnValidar
             // 
-            this.button15.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Location = new System.Drawing.Point(224, 51);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 54;
-            this.button15.Text = "Validar";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.btbValidarCuil);
+            this.btnValidar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnValidar.FlatAppearance.BorderSize = 0;
+            this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValidar.Location = new System.Drawing.Point(224, 51);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(75, 23);
+            this.btnValidar.TabIndex = 54;
+            this.btnValidar.Text = "Validar";
+            this.btnValidar.UseVisualStyleBackColor = false;
+            this.btnValidar.Click += new System.EventHandler(this.btbValidarCuil);
             // 
             // cmbTipoTelAlternativo
             // 
@@ -751,16 +753,16 @@
             this.cmbTipoTelAlternativo.Size = new System.Drawing.Size(104, 24);
             this.cmbTipoTelAlternativo.TabIndex = 53;
             // 
-            // label23
+            // lblTipoTel1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(195, 269);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(43, 16);
-            this.label23.TabIndex = 52;
-            this.label23.Tag = "cmbTipoTelAlternativo";
-            this.label23.Text = "Tipo *";
+            this.lblTipoTel1.AutoSize = true;
+            this.lblTipoTel1.Location = new System.Drawing.Point(195, 269);
+            this.lblTipoTel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoTel1.Name = "lblTipoTel1";
+            this.lblTipoTel1.Size = new System.Drawing.Size(43, 16);
+            this.lblTipoTel1.TabIndex = 52;
+            this.lblTipoTel1.Tag = "cmbTipoTelAlternativo";
+            this.lblTipoTel1.Text = "Tipo *";
             // 
             // cmbTipoTel
             // 
@@ -773,43 +775,45 @@
             this.cmbTipoTel.Size = new System.Drawing.Size(149, 24);
             this.cmbTipoTel.TabIndex = 51;
             // 
-            // label21
+            // lblTipoTel
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(238, 221);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 16);
-            this.label21.TabIndex = 50;
-            this.label21.Tag = "cmbTipoTel";
-            this.label21.Text = "Tipo *";
+            this.lblTipoTel.AutoSize = true;
+            this.lblTipoTel.Location = new System.Drawing.Point(238, 221);
+            this.lblTipoTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoTel.Name = "lblTipoTel";
+            this.lblTipoTel.Size = new System.Drawing.Size(43, 16);
+            this.lblTipoTel.TabIndex = 50;
+            this.lblTipoTel.Tag = "cmbTipoTel";
+            this.lblTipoTel.Text = "Tipo *";
             // 
             // txtTelefono
             // 
             this.txtTelefono.AccessibleDescription = "O";
             this.txtTelefono.Location = new System.Drawing.Point(18, 241);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(215, 22);
             this.txtTelefono.TabIndex = 47;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
-            // label22
+            // lblTelefono
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(14, 221);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 16);
-            this.label22.TabIndex = 48;
-            this.label22.Tag = "txtTelefono";
-            this.label22.Text = "Teléfono *";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(14, 221);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(69, 16);
+            this.lblTelefono.TabIndex = 48;
+            this.lblTelefono.Tag = "txtTelefono";
+            this.lblTelefono.Text = "Teléfono *";
             // 
             // txtEmail
             // 
             this.txtEmail.AccessibleDescription = "O";
             this.txtEmail.Location = new System.Drawing.Point(22, 192);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(373, 22);
             this.txtEmail.TabIndex = 27;
@@ -818,39 +822,41 @@
             // 
             this.txtContacto.Location = new System.Drawing.Point(312, 288);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContacto.MaxLength = 30;
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(80, 22);
             this.txtContacto.TabIndex = 45;
             this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
-            // label8
+            // lblEmail
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 172);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 16);
-            this.label8.TabIndex = 30;
-            this.label8.Tag = "txtEmail";
-            this.label8.Text = "Correo electronico *";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(18, 172);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(125, 16);
+            this.lblEmail.TabIndex = 30;
+            this.lblEmail.Tag = "txtEmail";
+            this.lblEmail.Text = "Correo electronico *";
             // 
-            // label20
+            // lblContacto
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(308, 269);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 16);
-            this.label20.TabIndex = 46;
-            this.label20.Tag = "";
-            this.label20.Text = "Contacto";
+            this.lblContacto.AutoSize = true;
+            this.lblContacto.Location = new System.Drawing.Point(308, 269);
+            this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContacto.Name = "lblContacto";
+            this.lblContacto.Size = new System.Drawing.Size(60, 16);
+            this.lblContacto.TabIndex = 46;
+            this.lblContacto.Tag = "";
+            this.lblContacto.Text = "Contacto";
             // 
             // txtTelefonoAlternativo
             // 
             this.txtTelefonoAlternativo.AccessibleDescription = "O";
             this.txtTelefonoAlternativo.Location = new System.Drawing.Point(19, 288);
             this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefonoAlternativo.MaxLength = 30;
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
             this.txtTelefonoAlternativo.Size = new System.Drawing.Size(171, 22);
             this.txtTelefonoAlternativo.TabIndex = 43;
@@ -865,27 +871,27 @@
             this.nupHijos.Size = new System.Drawing.Size(116, 22);
             this.nupHijos.TabIndex = 42;
             // 
-            // label19
+            // lblTelAlternativo
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 269);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(135, 16);
-            this.label19.TabIndex = 44;
-            this.label19.Tag = "txtTelefonoAlternativo";
-            this.label19.Text = "Teléfono Alternativo *";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
+            this.lblTelAlternativo.AutoSize = true;
+            this.lblTelAlternativo.Location = new System.Drawing.Point(15, 269);
+            this.lblTelAlternativo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelAlternativo.Name = "lblTelAlternativo";
+            this.lblTelAlternativo.Size = new System.Drawing.Size(135, 16);
+            this.lblTelAlternativo.TabIndex = 44;
+            this.lblTelAlternativo.Tag = "txtTelefonoAlternativo";
+            this.lblTelAlternativo.Text = "Teléfono Alternativo *";
+            this.lblTelAlternativo.Click += new System.EventHandler(this.label19_Click);
             // 
-            // label18
+            // lblHijos
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(275, 370);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 16);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Hijos *";
+            this.lblHijos.AutoSize = true;
+            this.lblHijos.Location = new System.Drawing.Point(275, 370);
+            this.lblHijos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHijos.Name = "lblHijos";
+            this.lblHijos.Size = new System.Drawing.Size(46, 16);
+            this.lblHijos.TabIndex = 41;
+            this.lblHijos.Text = "Hijos *";
             // 
             // dtpFechaDeNacimiento
             // 
@@ -903,6 +909,7 @@
             this.txtApellidos.AccessibleDescription = "O";
             this.txtApellidos.Location = new System.Drawing.Point(204, 102);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(188, 22);
             this.txtApellidos.TabIndex = 30;
@@ -919,27 +926,27 @@
             this.cmbEstadoCivil.Size = new System.Drawing.Size(92, 24);
             this.cmbEstadoCivil.TabIndex = 26;
             // 
-            // label1
+            // lblNombres
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 84);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Tag = "txtNombres";
-            this.label1.Text = "Nombres *";
+            this.lblNombres.AutoSize = true;
+            this.lblNombres.Location = new System.Drawing.Point(18, 84);
+            this.lblNombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombres.Name = "lblNombres";
+            this.lblNombres.Size = new System.Drawing.Size(71, 16);
+            this.lblNombres.TabIndex = 19;
+            this.lblNombres.Tag = "txtNombres";
+            this.lblNombres.Text = "Nombres *";
             // 
-            // label13
+            // lblNacionalidad
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 316);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 16);
-            this.label13.TabIndex = 39;
-            this.label13.Tag = "cmbNacionalidad";
-            this.label13.Text = "Nacionalidad *";
+            this.lblNacionalidad.AutoSize = true;
+            this.lblNacionalidad.Location = new System.Drawing.Point(16, 316);
+            this.lblNacionalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNacionalidad.Name = "lblNacionalidad";
+            this.lblNacionalidad.Size = new System.Drawing.Size(96, 16);
+            this.lblNacionalidad.TabIndex = 39;
+            this.lblNacionalidad.Tag = "cmbNacionalidad";
+            this.lblNacionalidad.Text = "Nacionalidad *";
             // 
             // txtNombres
             // 
@@ -947,71 +954,74 @@
             this.txtNombres.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNombres.Location = new System.Drawing.Point(19, 102);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(171, 22);
             this.txtNombres.TabIndex = 18;
             this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
-            // label7
+            // lblEstadoCivil
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(167, 369);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
-            this.label7.TabIndex = 29;
-            this.label7.Tag = "cmbEstadoCivil";
-            this.label7.Text = "Estado civil *";
+            this.lblEstadoCivil.AutoSize = true;
+            this.lblEstadoCivil.Location = new System.Drawing.Point(167, 369);
+            this.lblEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstadoCivil.Name = "lblEstadoCivil";
+            this.lblEstadoCivil.Size = new System.Drawing.Size(84, 16);
+            this.lblEstadoCivil.TabIndex = 29;
+            this.lblEstadoCivil.Tag = "cmbEstadoCivil";
+            this.lblEstadoCivil.Text = "Estado civil *";
             // 
             // txtDni
             // 
             this.txtDni.AccessibleDescription = "O";
             this.txtDni.Location = new System.Drawing.Point(98, 146);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDni.MaxLength = 30;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(293, 22);
             this.txtDni.TabIndex = 31;
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
-            // label6
+            // lblFechaNacimiento
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 370);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 16);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Fecha de nacimiento *";
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(17, 370);
+            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(140, 16);
+            this.lblFechaNacimiento.TabIndex = 28;
+            this.lblFechaNacimiento.Text = "Fecha de nacimiento *";
             // 
-            // label2
+            // lblApellidos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 35;
-            this.label2.Tag = "txtApellidos";
-            this.label2.Text = "Apellidos *";
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Location = new System.Drawing.Point(200, 82);
+            this.lblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(72, 16);
+            this.lblApellidos.TabIndex = 35;
+            this.lblApellidos.Tag = "txtApellidos";
+            this.lblApellidos.Text = "Apellidos *";
             // 
             // txtCuitCuil
             // 
             this.txtCuitCuil.Location = new System.Drawing.Point(20, 51);
             this.txtCuitCuil.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCuitCuil.MaxLength = 11;
             this.txtCuitCuil.Name = "txtCuitCuil";
             this.txtCuitCuil.Size = new System.Drawing.Size(188, 22);
             this.txtCuitCuil.TabIndex = 32;
             // 
-            // label5
+            // lblGenero
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 317);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
-            this.label5.TabIndex = 38;
-            this.label5.Tag = "cmbGenero";
-            this.label5.Text = "Género *";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(201, 317);
+            this.lblGenero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(60, 16);
+            this.lblGenero.TabIndex = 38;
+            this.lblGenero.Tag = "cmbGenero";
+            this.lblGenero.Text = "Género *";
             // 
             // cmbGenero
             // 
@@ -1025,32 +1035,32 @@
             this.cmbGenero.TabIndex = 33;
             this.cmbGenero.SelectedIndexChanged += new System.EventHandler(this.cmbGenero_SelectedIndexChanged);
             // 
-            // label4
+            // lblCuitCuil
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 31);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 16);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "CUIL / CUIT *";
+            this.lblCuitCuil.AutoSize = true;
+            this.lblCuitCuil.Location = new System.Drawing.Point(18, 31);
+            this.lblCuitCuil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuitCuil.Name = "lblCuitCuil";
+            this.lblCuitCuil.Size = new System.Drawing.Size(85, 16);
+            this.lblCuitCuil.TabIndex = 37;
+            this.lblCuitCuil.Text = "CUIL / CUIT *";
             // 
-            // label3
+            // lblNroDoc
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 127);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 16);
-            this.label3.TabIndex = 36;
-            this.label3.Tag = "txtDni";
-            this.label3.Text = "Nro Documento *";
+            this.lblNroDoc.AutoSize = true;
+            this.lblNroDoc.Location = new System.Drawing.Point(94, 127);
+            this.lblNroDoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNroDoc.Name = "lblNroDoc";
+            this.lblNroDoc.Size = new System.Drawing.Size(109, 16);
+            this.lblNroDoc.TabIndex = 36;
+            this.lblNroDoc.Tag = "txtDni";
+            this.lblNroDoc.Text = "Nro Documento *";
             // 
             // tabAcademicos
             // 
             this.tabAcademicos.Controls.Add(this.grpIngles);
             this.tabAcademicos.Controls.Add(this.lblFaltanCampos1);
-            this.tabAcademicos.Controls.Add(this.button8);
+            this.tabAcademicos.Controls.Add(this.btnContinuar2);
             this.tabAcademicos.Controls.Add(this.grpSuperior1);
             this.tabAcademicos.Controls.Add(this.grpEspaniol);
             this.tabAcademicos.Controls.Add(this.grpSuperior2);
@@ -1062,6 +1072,7 @@
             this.tabAcademicos.TabIndex = 1;
             this.tabAcademicos.Text = "Datos Académicos";
             this.tabAcademicos.UseVisualStyleBackColor = true;
+            this.tabAcademicos.Click += new System.EventHandler(this.tabAcademicos_Click);
             // 
             // grpIngles
             // 
@@ -1140,40 +1151,40 @@
             this.lblFaltanCampos1.Text = "* Faltan llenar campos obligatorios";
             this.lblFaltanCampos1.Visible = false;
             // 
-            // button8
+            // btnContinuar2
             // 
-            this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.Enabled = false;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(909, 489);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 44);
-            this.button8.TabIndex = 73;
-            this.button8.Text = "Continuar";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnContinuar2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnContinuar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnContinuar2.Enabled = false;
+            this.btnContinuar2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnContinuar2.FlatAppearance.BorderSize = 0;
+            this.btnContinuar2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnContinuar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnContinuar2.Location = new System.Drawing.Point(909, 489);
+            this.btnContinuar2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnContinuar2.Name = "btnContinuar2";
+            this.btnContinuar2.Size = new System.Drawing.Size(105, 44);
+            this.btnContinuar2.TabIndex = 73;
+            this.btnContinuar2.Text = "Continuar";
+            this.btnContinuar2.UseVisualStyleBackColor = false;
+            this.btnContinuar2.Click += new System.EventHandler(this.button8_Click);
             // 
             // grpSuperior1
             // 
             this.grpSuperior1.Controls.Add(this.label73);
             this.grpSuperior1.Controls.Add(this.cmbProgreso);
-            this.grpSuperior1.Controls.Add(this.button16);
-            this.grpSuperior1.Controls.Add(this.label30);
+            this.grpSuperior1.Controls.Add(this.btnMasAcademico1);
+            this.grpSuperior1.Controls.Add(this.lblProgreso);
             this.grpSuperior1.Controls.Add(this.txtInsitutcionSuperior);
             this.grpSuperior1.Controls.Add(this.cmbEgreso);
-            this.grpSuperior1.Controls.Add(this.label35);
-            this.grpSuperior1.Controls.Add(this.label38);
+            this.grpSuperior1.Controls.Add(this.lblNivel);
+            this.grpSuperior1.Controls.Add(this.lblAñoEgreso);
             this.grpSuperior1.Controls.Add(this.cmbNivelAcademico);
-            this.grpSuperior1.Controls.Add(this.label65);
+            this.grpSuperior1.Controls.Add(this.lblInstitucion);
             this.grpSuperior1.Controls.Add(this.cmbIngreso);
-            this.grpSuperior1.Controls.Add(this.label71);
-            this.grpSuperior1.Controls.Add(this.label72);
+            this.grpSuperior1.Controls.Add(this.lblTitulo);
+            this.grpSuperior1.Controls.Add(this.lblAñoIngreso);
             this.grpSuperior1.Controls.Add(this.txtTitulo);
             this.grpSuperior1.Location = new System.Drawing.Point(65, 194);
             this.grpSuperior1.Margin = new System.Windows.Forms.Padding(4);
@@ -1204,37 +1215,38 @@
             this.cmbProgreso.Size = new System.Drawing.Size(105, 24);
             this.cmbProgreso.TabIndex = 87;
             // 
-            // button16
+            // btnMasAcademico1
             // 
-            this.button16.BackColor = System.Drawing.Color.Transparent;
-            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(374, 222);
-            this.button16.Margin = new System.Windows.Forms.Padding(4);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(32, 28);
-            this.button16.TabIndex = 88;
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.btnMasAcademico1.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasAcademico1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasAcademico1.BackgroundImage")));
+            this.btnMasAcademico1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasAcademico1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasAcademico1.FlatAppearance.BorderSize = 0;
+            this.btnMasAcademico1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasAcademico1.Location = new System.Drawing.Point(374, 222);
+            this.btnMasAcademico1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasAcademico1.Name = "btnMasAcademico1";
+            this.btnMasAcademico1.Size = new System.Drawing.Size(32, 28);
+            this.btnMasAcademico1.TabIndex = 88;
+            this.btnMasAcademico1.UseVisualStyleBackColor = false;
+            this.btnMasAcademico1.Click += new System.EventHandler(this.button16_Click);
             // 
-            // label30
+            // lblProgreso
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(275, 171);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(71, 16);
-            this.label30.TabIndex = 86;
-            this.label30.Text = "Progreso *";
+            this.lblProgreso.AutoSize = true;
+            this.lblProgreso.Location = new System.Drawing.Point(275, 171);
+            this.lblProgreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProgreso.Name = "lblProgreso";
+            this.lblProgreso.Size = new System.Drawing.Size(71, 16);
+            this.lblProgreso.TabIndex = 86;
+            this.lblProgreso.Text = "Progreso *";
             // 
             // txtInsitutcionSuperior
             // 
             this.txtInsitutcionSuperior.AccessibleDescription = "O";
             this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 96);
             this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior.MaxLength = 30;
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior.TabIndex = 73;
@@ -1249,25 +1261,25 @@
             this.cmbEgreso.Size = new System.Drawing.Size(111, 24);
             this.cmbEgreso.TabIndex = 84;
             // 
-            // label35
+            // lblNivel
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(8, 30);
-            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(46, 16);
-            this.label35.TabIndex = 80;
-            this.label35.Text = "Nivel *";
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.Location = new System.Drawing.Point(8, 30);
+            this.lblNivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(46, 16);
+            this.lblNivel.TabIndex = 80;
+            this.lblNivel.Text = "Nivel *";
             // 
-            // label38
+            // lblAñoEgreso
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(136, 171);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(99, 16);
-            this.label38.TabIndex = 83;
-            this.label38.Text = "Año de egreso ";
+            this.lblAñoEgreso.AutoSize = true;
+            this.lblAñoEgreso.Location = new System.Drawing.Point(136, 171);
+            this.lblAñoEgreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoEgreso.Name = "lblAñoEgreso";
+            this.lblAñoEgreso.Size = new System.Drawing.Size(99, 16);
+            this.lblAñoEgreso.TabIndex = 83;
+            this.lblAñoEgreso.Text = "Año de egreso ";
             // 
             // cmbNivelAcademico
             // 
@@ -1279,16 +1291,16 @@
             this.cmbNivelAcademico.Size = new System.Drawing.Size(177, 24);
             this.cmbNivelAcademico.TabIndex = 76;
             // 
-            // label65
+            // lblInstitucion
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(7, 76);
-            this.label65.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(135, 16);
-            this.label65.TabIndex = 74;
-            this.label65.Tag = "txtInsitutcionSuperior";
-            this.label65.Text = "Institución educativa *";
+            this.lblInstitucion.AutoSize = true;
+            this.lblInstitucion.Location = new System.Drawing.Point(7, 76);
+            this.lblInstitucion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstitucion.Name = "lblInstitucion";
+            this.lblInstitucion.Size = new System.Drawing.Size(135, 16);
+            this.lblInstitucion.TabIndex = 74;
+            this.lblInstitucion.Tag = "txtInsitutcionSuperior";
+            this.lblInstitucion.Text = "Institución educativa *";
             // 
             // cmbIngreso
             // 
@@ -1300,32 +1312,33 @@
             this.cmbIngreso.Size = new System.Drawing.Size(112, 24);
             this.cmbIngreso.TabIndex = 82;
             // 
-            // label71
+            // lblTitulo
             // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(7, 124);
-            this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(48, 16);
-            this.label71.TabIndex = 77;
-            this.label71.Tag = "txtTitulo";
-            this.label71.Text = "Titulo *";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(7, 124);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(48, 16);
+            this.lblTitulo.TabIndex = 77;
+            this.lblTitulo.Tag = "txtTitulo";
+            this.lblTitulo.Text = "Titulo *";
             // 
-            // label72
+            // lblAñoIngreso
             // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(8, 172);
-            this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(106, 16);
-            this.label72.TabIndex = 81;
-            this.label72.Text = "Año de ingreso *";
+            this.lblAñoIngreso.AutoSize = true;
+            this.lblAñoIngreso.Location = new System.Drawing.Point(8, 172);
+            this.lblAñoIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoIngreso.Name = "lblAñoIngreso";
+            this.lblAñoIngreso.Size = new System.Drawing.Size(106, 16);
+            this.lblAñoIngreso.TabIndex = 81;
+            this.lblAñoIngreso.Text = "Año de ingreso *";
             // 
             // txtTitulo
             // 
             this.txtTitulo.AccessibleDescription = "O";
             this.txtTitulo.Location = new System.Drawing.Point(12, 144);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo.MaxLength = 30;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo.TabIndex = 75;
@@ -1402,19 +1415,19 @@
             // grpSuperior2
             // 
             this.grpSuperior2.Controls.Add(this.cmbProgreso1);
-            this.grpSuperior2.Controls.Add(this.button5);
-            this.grpSuperior2.Controls.Add(this.label66);
+            this.grpSuperior2.Controls.Add(this.btnMasAcademico2);
+            this.grpSuperior2.Controls.Add(this.lblProgreso1);
             this.grpSuperior2.Controls.Add(this.label42);
-            this.grpSuperior2.Controls.Add(this.button1);
+            this.grpSuperior2.Controls.Add(this.btnMenosAcademico1);
             this.grpSuperior2.Controls.Add(this.cmbEgreso1);
-            this.grpSuperior2.Controls.Add(this.label24);
+            this.grpSuperior2.Controls.Add(this.lblAñoEgreso1);
             this.grpSuperior2.Controls.Add(this.cmbIngreso1);
-            this.grpSuperior2.Controls.Add(this.label39);
+            this.grpSuperior2.Controls.Add(this.lblInstitucion1);
             this.grpSuperior2.Controls.Add(this.txtInsitutcionSuperior1);
             this.grpSuperior2.Controls.Add(this.txtTitulo1);
-            this.grpSuperior2.Controls.Add(this.label40);
-            this.grpSuperior2.Controls.Add(this.label41);
-            this.grpSuperior2.Controls.Add(this.label36);
+            this.grpSuperior2.Controls.Add(this.lblTitulo1);
+            this.grpSuperior2.Controls.Add(this.lblAñoIngreso1);
+            this.grpSuperior2.Controls.Add(this.lblNivel1);
             this.grpSuperior2.Controls.Add(this.cmbNivelAcademico1);
             this.grpSuperior2.Controls.Add(this.grpSuperior3);
             this.grpSuperior2.Location = new System.Drawing.Point(529, 29);
@@ -1437,31 +1450,31 @@
             this.cmbProgreso1.Size = new System.Drawing.Size(105, 24);
             this.cmbProgreso1.TabIndex = 73;
             // 
-            // button5
+            // btnMasAcademico2
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(380, 208);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 28);
-            this.button5.TabIndex = 86;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnMasAcademico2.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasAcademico2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasAcademico2.BackgroundImage")));
+            this.btnMasAcademico2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasAcademico2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasAcademico2.FlatAppearance.BorderSize = 0;
+            this.btnMasAcademico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasAcademico2.Location = new System.Drawing.Point(380, 208);
+            this.btnMasAcademico2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasAcademico2.Name = "btnMasAcademico2";
+            this.btnMasAcademico2.Size = new System.Drawing.Size(32, 28);
+            this.btnMasAcademico2.TabIndex = 86;
+            this.btnMasAcademico2.UseVisualStyleBackColor = false;
+            this.btnMasAcademico2.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label66
+            // lblProgreso1
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(272, 162);
-            this.label66.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(71, 16);
-            this.label66.TabIndex = 72;
-            this.label66.Text = "Progreso *";
+            this.lblProgreso1.AutoSize = true;
+            this.lblProgreso1.Location = new System.Drawing.Point(272, 162);
+            this.lblProgreso1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProgreso1.Name = "lblProgreso1";
+            this.lblProgreso1.Size = new System.Drawing.Size(71, 16);
+            this.lblProgreso1.TabIndex = 72;
+            this.lblProgreso1.Text = "Progreso *";
             // 
             // label42
             // 
@@ -1473,19 +1486,19 @@
             this.label42.TabIndex = 85;
             this.label42.Text = "____________________________________________";
             // 
-            // button1
+            // btnMenosAcademico1
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(379, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 27);
-            this.button1.TabIndex = 85;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnMenosAcademico1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosAcademico1.BackgroundImage")));
+            this.btnMenosAcademico1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosAcademico1.FlatAppearance.BorderSize = 0;
+            this.btnMenosAcademico1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosAcademico1.Location = new System.Drawing.Point(379, 23);
+            this.btnMenosAcademico1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosAcademico1.Name = "btnMenosAcademico1";
+            this.btnMenosAcademico1.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosAcademico1.TabIndex = 85;
+            this.btnMenosAcademico1.UseVisualStyleBackColor = true;
+            this.btnMenosAcademico1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // cmbEgreso1
             // 
@@ -1497,15 +1510,15 @@
             this.cmbEgreso1.Size = new System.Drawing.Size(111, 24);
             this.cmbEgreso1.TabIndex = 72;
             // 
-            // label24
+            // lblAñoEgreso1
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(141, 161);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(99, 16);
-            this.label24.TabIndex = 71;
-            this.label24.Text = "Año de egreso ";
+            this.lblAñoEgreso1.AutoSize = true;
+            this.lblAñoEgreso1.Location = new System.Drawing.Point(141, 161);
+            this.lblAñoEgreso1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoEgreso1.Name = "lblAñoEgreso1";
+            this.lblAñoEgreso1.Size = new System.Drawing.Size(99, 16);
+            this.lblAñoEgreso1.TabIndex = 71;
+            this.lblAñoEgreso1.Text = "Año de egreso ";
             // 
             // cmbIngreso1
             // 
@@ -1517,22 +1530,23 @@
             this.cmbIngreso1.Size = new System.Drawing.Size(112, 24);
             this.cmbIngreso1.TabIndex = 69;
             // 
-            // label39
+            // lblInstitucion1
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(11, 69);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(135, 16);
-            this.label39.TabIndex = 55;
-            this.label39.Tag = "txtInsitutcionSuperior1";
-            this.label39.Text = "Institución educativa *";
+            this.lblInstitucion1.AutoSize = true;
+            this.lblInstitucion1.Location = new System.Drawing.Point(11, 69);
+            this.lblInstitucion1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstitucion1.Name = "lblInstitucion1";
+            this.lblInstitucion1.Size = new System.Drawing.Size(135, 16);
+            this.lblInstitucion1.TabIndex = 55;
+            this.lblInstitucion1.Tag = "txtInsitutcionSuperior1";
+            this.lblInstitucion1.Text = "Institución educativa *";
             // 
             // txtInsitutcionSuperior1
             // 
             this.txtInsitutcionSuperior1.AccessibleDescription = "OI";
             this.txtInsitutcionSuperior1.Location = new System.Drawing.Point(15, 89);
             this.txtInsitutcionSuperior1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior1.MaxLength = 30;
             this.txtInsitutcionSuperior1.Name = "txtInsitutcionSuperior1";
             this.txtInsitutcionSuperior1.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior1.TabIndex = 54;
@@ -1542,41 +1556,42 @@
             this.txtTitulo1.AccessibleDescription = "OI";
             this.txtTitulo1.Location = new System.Drawing.Point(16, 135);
             this.txtTitulo1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo1.MaxLength = 30;
             this.txtTitulo1.Name = "txtTitulo1";
             this.txtTitulo1.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo1.TabIndex = 62;
             this.txtTitulo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo1_KeyPress);
             // 
-            // label40
+            // lblTitulo1
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(11, 116);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(48, 16);
-            this.label40.TabIndex = 67;
-            this.label40.Tag = "txtTitulo1";
-            this.label40.Text = "Titulo *";
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.Location = new System.Drawing.Point(11, 116);
+            this.lblTitulo1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.Size = new System.Drawing.Size(48, 16);
+            this.lblTitulo1.TabIndex = 67;
+            this.lblTitulo1.Tag = "txtTitulo1";
+            this.lblTitulo1.Text = "Titulo *";
             // 
-            // label41
+            // lblAñoIngreso1
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(13, 162);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(106, 16);
-            this.label41.TabIndex = 68;
-            this.label41.Text = "Año de ingreso *";
+            this.lblAñoIngreso1.AutoSize = true;
+            this.lblAñoIngreso1.Location = new System.Drawing.Point(13, 162);
+            this.lblAñoIngreso1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoIngreso1.Name = "lblAñoIngreso1";
+            this.lblAñoIngreso1.Size = new System.Drawing.Size(106, 16);
+            this.lblAñoIngreso1.TabIndex = 68;
+            this.lblAñoIngreso1.Text = "Año de ingreso *";
             // 
-            // label36
+            // lblNivel1
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(12, 20);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(46, 16);
-            this.label36.TabIndex = 70;
-            this.label36.Text = "Nivel *";
+            this.lblNivel1.AutoSize = true;
+            this.lblNivel1.Location = new System.Drawing.Point(12, 20);
+            this.lblNivel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNivel1.Name = "lblNivel1";
+            this.lblNivel1.Size = new System.Drawing.Size(46, 16);
+            this.lblNivel1.TabIndex = 70;
+            this.lblNivel1.Text = "Nivel *";
             // 
             // cmbNivelAcademico1
             // 
@@ -1591,17 +1606,17 @@
             // grpSuperior3
             // 
             this.grpSuperior3.Controls.Add(this.cmbProgreso2);
-            this.grpSuperior3.Controls.Add(this.label67);
-            this.grpSuperior3.Controls.Add(this.button7);
+            this.grpSuperior3.Controls.Add(this.lblProgreso2);
+            this.grpSuperior3.Controls.Add(this.btnMenosAcademico2);
             this.grpSuperior3.Controls.Add(this.txtInsitutcionSuperior2);
             this.grpSuperior3.Controls.Add(this.cmbEgreso2);
-            this.grpSuperior3.Controls.Add(this.label37);
-            this.grpSuperior3.Controls.Add(this.label25);
+            this.grpSuperior3.Controls.Add(this.lblNivel2);
+            this.grpSuperior3.Controls.Add(this.lblAñoEgreso2);
             this.grpSuperior3.Controls.Add(this.cmbNivelAcademico2);
-            this.grpSuperior3.Controls.Add(this.label26);
+            this.grpSuperior3.Controls.Add(this.lblInstitucion2);
             this.grpSuperior3.Controls.Add(this.cmbIngreso2);
-            this.grpSuperior3.Controls.Add(this.label27);
-            this.grpSuperior3.Controls.Add(this.label28);
+            this.grpSuperior3.Controls.Add(this.lblTitulo2);
+            this.grpSuperior3.Controls.Add(this.lblAñoIngreso2);
             this.grpSuperior3.Controls.Add(this.txtTitulo2);
             this.grpSuperior3.Location = new System.Drawing.Point(8, 228);
             this.grpSuperior3.Margin = new System.Windows.Forms.Padding(4);
@@ -1623,35 +1638,36 @@
             this.cmbProgreso2.Size = new System.Drawing.Size(105, 24);
             this.cmbProgreso2.TabIndex = 87;
             // 
-            // label67
+            // lblProgreso2
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(265, 146);
-            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(71, 16);
-            this.label67.TabIndex = 86;
-            this.label67.Text = "Progreso *";
+            this.lblProgreso2.AutoSize = true;
+            this.lblProgreso2.Location = new System.Drawing.Point(265, 146);
+            this.lblProgreso2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProgreso2.Name = "lblProgreso2";
+            this.lblProgreso2.Size = new System.Drawing.Size(71, 16);
+            this.lblProgreso2.TabIndex = 86;
+            this.lblProgreso2.Text = "Progreso *";
             // 
-            // button7
+            // btnMenosAcademico2
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(373, 16);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(29, 27);
-            this.button7.TabIndex = 85;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnMenosAcademico2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosAcademico2.BackgroundImage")));
+            this.btnMenosAcademico2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosAcademico2.FlatAppearance.BorderSize = 0;
+            this.btnMenosAcademico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosAcademico2.Location = new System.Drawing.Point(373, 16);
+            this.btnMenosAcademico2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosAcademico2.Name = "btnMenosAcademico2";
+            this.btnMenosAcademico2.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosAcademico2.TabIndex = 85;
+            this.btnMenosAcademico2.UseVisualStyleBackColor = true;
+            this.btnMenosAcademico2.Click += new System.EventHandler(this.button7_Click);
             // 
             // txtInsitutcionSuperior2
             // 
             this.txtInsitutcionSuperior2.AccessibleDescription = "OII";
             this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(8, 72);
             this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInsitutcionSuperior2.MaxLength = 30;
             this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
             this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(393, 22);
             this.txtInsitutcionSuperior2.TabIndex = 73;
@@ -1666,25 +1682,25 @@
             this.cmbEgreso2.Size = new System.Drawing.Size(111, 24);
             this.cmbEgreso2.TabIndex = 84;
             // 
-            // label37
+            // lblNivel2
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(5, 6);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(46, 16);
-            this.label37.TabIndex = 80;
-            this.label37.Text = "Nivel *";
+            this.lblNivel2.AutoSize = true;
+            this.lblNivel2.Location = new System.Drawing.Point(5, 6);
+            this.lblNivel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNivel2.Name = "lblNivel2";
+            this.lblNivel2.Size = new System.Drawing.Size(46, 16);
+            this.lblNivel2.TabIndex = 80;
+            this.lblNivel2.Text = "Nivel *";
             // 
-            // label25
+            // lblAñoEgreso2
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(133, 147);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(99, 16);
-            this.label25.TabIndex = 83;
-            this.label25.Text = "Año de egreso ";
+            this.lblAñoEgreso2.AutoSize = true;
+            this.lblAñoEgreso2.Location = new System.Drawing.Point(133, 147);
+            this.lblAñoEgreso2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoEgreso2.Name = "lblAñoEgreso2";
+            this.lblAñoEgreso2.Size = new System.Drawing.Size(99, 16);
+            this.lblAñoEgreso2.TabIndex = 83;
+            this.lblAñoEgreso2.Text = "Año de egreso ";
             // 
             // cmbNivelAcademico2
             // 
@@ -1696,16 +1712,16 @@
             this.cmbNivelAcademico2.Size = new System.Drawing.Size(177, 24);
             this.cmbNivelAcademico2.TabIndex = 76;
             // 
-            // label26
+            // lblInstitucion2
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 52);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(135, 16);
-            this.label26.TabIndex = 74;
-            this.label26.Tag = "txtInsitutcionSuperior2";
-            this.label26.Text = "Institución educativa *";
+            this.lblInstitucion2.AutoSize = true;
+            this.lblInstitucion2.Location = new System.Drawing.Point(4, 52);
+            this.lblInstitucion2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstitucion2.Name = "lblInstitucion2";
+            this.lblInstitucion2.Size = new System.Drawing.Size(135, 16);
+            this.lblInstitucion2.TabIndex = 74;
+            this.lblInstitucion2.Tag = "txtInsitutcionSuperior2";
+            this.lblInstitucion2.Text = "Institución educativa *";
             // 
             // cmbIngreso2
             // 
@@ -1717,32 +1733,33 @@
             this.cmbIngreso2.Size = new System.Drawing.Size(112, 24);
             this.cmbIngreso2.TabIndex = 82;
             // 
-            // label27
+            // lblTitulo2
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(4, 100);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(48, 16);
-            this.label27.TabIndex = 77;
-            this.label27.Tag = "txtTitulo2";
-            this.label27.Text = "Titulo *";
+            this.lblTitulo2.AutoSize = true;
+            this.lblTitulo2.Location = new System.Drawing.Point(4, 100);
+            this.lblTitulo2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo2.Name = "lblTitulo2";
+            this.lblTitulo2.Size = new System.Drawing.Size(48, 16);
+            this.lblTitulo2.TabIndex = 77;
+            this.lblTitulo2.Tag = "txtTitulo2";
+            this.lblTitulo2.Text = "Titulo *";
             // 
-            // label28
+            // lblAñoIngreso2
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(5, 148);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(106, 16);
-            this.label28.TabIndex = 81;
-            this.label28.Text = "Año de ingreso *";
+            this.lblAñoIngreso2.AutoSize = true;
+            this.lblAñoIngreso2.Location = new System.Drawing.Point(5, 148);
+            this.lblAñoIngreso2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAñoIngreso2.Name = "lblAñoIngreso2";
+            this.lblAñoIngreso2.Size = new System.Drawing.Size(106, 16);
+            this.lblAñoIngreso2.TabIndex = 81;
+            this.lblAñoIngreso2.Text = "Año de ingreso *";
             // 
             // txtTitulo2
             // 
             this.txtTitulo2.AccessibleDescription = "OII";
             this.txtTitulo2.Location = new System.Drawing.Point(9, 120);
             this.txtTitulo2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTitulo2.MaxLength = 30;
             this.txtTitulo2.Name = "txtTitulo2";
             this.txtTitulo2.Size = new System.Drawing.Size(392, 22);
             this.txtTitulo2.TabIndex = 75;
@@ -1750,11 +1767,10 @@
             // 
             // tabLaborales
             // 
-            this.tabLaborales.Controls.Add(this.btbModificar);
             this.tabLaborales.Controls.Add(this.lblFaltanCampos2);
-            this.tabLaborales.Controls.Add(this.button17);
-            this.tabLaborales.Controls.Add(this.label74);
-            this.tabLaborales.Controls.Add(this.button9);
+            this.tabLaborales.Controls.Add(this.btnMasLaborales1);
+            this.tabLaborales.Controls.Add(this.lblAgregarExperienciaLaboral);
+            this.tabLaborales.Controls.Add(this.btnGuardar);
             this.tabLaborales.Controls.Add(this.grpExp3);
             this.tabLaborales.Controls.Add(this.grpExp1);
             this.tabLaborales.Location = new System.Drawing.Point(4, 25);
@@ -1779,64 +1795,64 @@
             this.lblFaltanCampos2.Text = "* Faltan llenar campos obligatorios";
             this.lblFaltanCampos2.Visible = false;
             // 
-            // button17
+            // btnMasLaborales1
             // 
-            this.button17.BackColor = System.Drawing.Color.Transparent;
-            this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button17.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Location = new System.Drawing.Point(260, 22);
-            this.button17.Margin = new System.Windows.Forms.Padding(4);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(32, 28);
-            this.button17.TabIndex = 95;
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.btnMasLaborales1.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasLaborales1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasLaborales1.BackgroundImage")));
+            this.btnMasLaborales1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasLaborales1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasLaborales1.FlatAppearance.BorderSize = 0;
+            this.btnMasLaborales1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasLaborales1.Location = new System.Drawing.Point(260, 22);
+            this.btnMasLaborales1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasLaborales1.Name = "btnMasLaborales1";
+            this.btnMasLaborales1.Size = new System.Drawing.Size(32, 28);
+            this.btnMasLaborales1.TabIndex = 95;
+            this.btnMasLaborales1.UseVisualStyleBackColor = false;
+            this.btnMasLaborales1.Click += new System.EventHandler(this.button17_Click);
             // 
-            // label74
+            // lblAgregarExperienciaLaboral
             // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(65, 29);
-            this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(179, 16);
-            this.label74.TabIndex = 94;
-            this.label74.Text = "Agregar Experiencia Laboral";
+            this.lblAgregarExperienciaLaboral.AutoSize = true;
+            this.lblAgregarExperienciaLaboral.Location = new System.Drawing.Point(65, 29);
+            this.lblAgregarExperienciaLaboral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgregarExperienciaLaboral.Name = "lblAgregarExperienciaLaboral";
+            this.lblAgregarExperienciaLaboral.Size = new System.Drawing.Size(179, 16);
+            this.lblAgregarExperienciaLaboral.TabIndex = 94;
+            this.lblAgregarExperienciaLaboral.Text = "Agregar Experiencia Laboral";
             // 
-            // button9
+            // btnGuardar
             // 
-            this.button9.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Location = new System.Drawing.Point(909, 489);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(105, 44);
-            this.button9.TabIndex = 71;
-            this.button9.Text = "Guardar";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardar.Location = new System.Drawing.Point(909, 489);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(105, 44);
+            this.btnGuardar.TabIndex = 71;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.button9_Click);
             // 
             // grpExp3
             // 
             this.grpExp3.Controls.Add(this.label54);
             this.grpExp3.Controls.Add(this.nupPersonalACargo2);
             this.grpExp3.Controls.Add(this.txtPuesto2);
-            this.grpExp3.Controls.Add(this.button12);
+            this.grpExp3.Controls.Add(this.btnMenosLaboral3);
             this.grpExp3.Controls.Add(this.txtEmpresa2);
-            this.grpExp3.Controls.Add(this.label53);
-            this.grpExp3.Controls.Add(this.button13);
+            this.grpExp3.Controls.Add(this.lblEmpresa3);
+            this.grpExp3.Controls.Add(this.btnMasLaborales4);
             this.grpExp3.Controls.Add(this.cmbLaboralEgreso2);
-            this.grpExp3.Controls.Add(this.label55);
+            this.grpExp3.Controls.Add(this.lblEgresoLaboral3);
             this.grpExp3.Controls.Add(this.cmbLaboralIngreso2);
-            this.grpExp3.Controls.Add(this.label56);
-            this.grpExp3.Controls.Add(this.label57);
-            this.grpExp3.Controls.Add(this.label58);
+            this.grpExp3.Controls.Add(this.lblPersonalACargo3);
+            this.grpExp3.Controls.Add(this.lblIngresoLaboral3);
+            this.grpExp3.Controls.Add(this.lblPuesto3);
             this.grpExp3.Controls.Add(this.grpExp4);
             this.grpExp3.Location = new System.Drawing.Point(529, 29);
             this.grpExp3.Margin = new System.Windows.Forms.Padding(4);
@@ -1870,59 +1886,61 @@
             this.txtPuesto2.AccessibleDescription = "OII";
             this.txtPuesto2.Location = new System.Drawing.Point(15, 51);
             this.txtPuesto2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto2.MaxLength = 30;
             this.txtPuesto2.Name = "txtPuesto2";
             this.txtPuesto2.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto2.TabIndex = 102;
             // 
-            // button12
+            // btnMenosLaboral3
             // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(379, 16);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(29, 27);
-            this.button12.TabIndex = 101;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btnMenosLaboral3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosLaboral3.BackgroundImage")));
+            this.btnMenosLaboral3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosLaboral3.FlatAppearance.BorderSize = 0;
+            this.btnMenosLaboral3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosLaboral3.Location = new System.Drawing.Point(379, 16);
+            this.btnMenosLaboral3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosLaboral3.Name = "btnMenosLaboral3";
+            this.btnMenosLaboral3.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosLaboral3.TabIndex = 101;
+            this.btnMenosLaboral3.UseVisualStyleBackColor = true;
+            this.btnMenosLaboral3.Click += new System.EventHandler(this.button12_Click);
             // 
             // txtEmpresa2
             // 
             this.txtEmpresa2.AccessibleDescription = "OII";
             this.txtEmpresa2.Location = new System.Drawing.Point(15, 98);
             this.txtEmpresa2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa2.MaxLength = 30;
             this.txtEmpresa2.Name = "txtEmpresa2";
             this.txtEmpresa2.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa2.TabIndex = 90;
             // 
-            // label53
+            // lblEmpresa3
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(11, 79);
-            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(70, 16);
-            this.label53.TabIndex = 89;
-            this.label53.Tag = "txtEmpresa2";
-            this.label53.Text = "Empresa *";
+            this.lblEmpresa3.AutoSize = true;
+            this.lblEmpresa3.Location = new System.Drawing.Point(11, 79);
+            this.lblEmpresa3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpresa3.Name = "lblEmpresa3";
+            this.lblEmpresa3.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpresa3.TabIndex = 89;
+            this.lblEmpresa3.Tag = "txtEmpresa2";
+            this.lblEmpresa3.Text = "Empresa *";
             // 
-            // button13
+            // btnMasLaborales4
             // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(380, 187);
-            this.button13.Margin = new System.Windows.Forms.Padding(4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(32, 28);
-            this.button13.TabIndex = 86;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.btnMasLaborales4.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasLaborales4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasLaborales4.BackgroundImage")));
+            this.btnMasLaborales4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasLaborales4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasLaborales4.FlatAppearance.BorderSize = 0;
+            this.btnMasLaborales4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasLaborales4.Location = new System.Drawing.Point(380, 187);
+            this.btnMasLaborales4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasLaborales4.Name = "btnMasLaborales4";
+            this.btnMasLaborales4.Size = new System.Drawing.Size(32, 28);
+            this.btnMasLaborales4.TabIndex = 86;
+            this.btnMasLaborales4.UseVisualStyleBackColor = false;
+            this.btnMasLaborales4.Click += new System.EventHandler(this.button13_Click);
             // 
             // cmbLaboralEgreso2
             // 
@@ -1934,15 +1952,15 @@
             this.cmbLaboralEgreso2.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralEgreso2.TabIndex = 72;
             // 
-            // label55
+            // lblEgresoLaboral3
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(145, 127);
-            this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(91, 16);
-            this.label55.TabIndex = 71;
-            this.label55.Text = "Hasta el año *";
+            this.lblEgresoLaboral3.AutoSize = true;
+            this.lblEgresoLaboral3.Location = new System.Drawing.Point(145, 127);
+            this.lblEgresoLaboral3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEgresoLaboral3.Name = "lblEgresoLaboral3";
+            this.lblEgresoLaboral3.Size = new System.Drawing.Size(91, 16);
+            this.lblEgresoLaboral3.TabIndex = 71;
+            this.lblEgresoLaboral3.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso2
             // 
@@ -1954,50 +1972,50 @@
             this.cmbLaboralIngreso2.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralIngreso2.TabIndex = 69;
             // 
-            // label56
+            // lblPersonalACargo3
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(279, 127);
-            this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(110, 16);
-            this.label56.TabIndex = 67;
-            this.label56.Text = "Personal a cargo";
+            this.lblPersonalACargo3.AutoSize = true;
+            this.lblPersonalACargo3.Location = new System.Drawing.Point(279, 127);
+            this.lblPersonalACargo3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPersonalACargo3.Name = "lblPersonalACargo3";
+            this.lblPersonalACargo3.Size = new System.Drawing.Size(110, 16);
+            this.lblPersonalACargo3.TabIndex = 67;
+            this.lblPersonalACargo3.Text = "Personal a cargo";
             // 
-            // label57
+            // lblIngresoLaboral3
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(12, 127);
-            this.label57.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(96, 16);
-            this.label57.TabIndex = 68;
-            this.label57.Text = "Desde el año *";
+            this.lblIngresoLaboral3.AutoSize = true;
+            this.lblIngresoLaboral3.Location = new System.Drawing.Point(12, 127);
+            this.lblIngresoLaboral3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresoLaboral3.Name = "lblIngresoLaboral3";
+            this.lblIngresoLaboral3.Size = new System.Drawing.Size(96, 16);
+            this.lblIngresoLaboral3.TabIndex = 68;
+            this.lblIngresoLaboral3.Text = "Desde el año *";
             // 
-            // label58
+            // lblPuesto3
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(12, 31);
-            this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(57, 16);
-            this.label58.TabIndex = 70;
-            this.label58.Tag = "txtPuesto2";
-            this.label58.Text = "Puesto *";
+            this.lblPuesto3.AutoSize = true;
+            this.lblPuesto3.Location = new System.Drawing.Point(12, 31);
+            this.lblPuesto3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto3.Name = "lblPuesto3";
+            this.lblPuesto3.Size = new System.Drawing.Size(57, 16);
+            this.lblPuesto3.TabIndex = 70;
+            this.lblPuesto3.Tag = "txtPuesto2";
+            this.lblPuesto3.Text = "Puesto *";
             // 
             // grpExp4
             // 
             this.grpExp4.Controls.Add(this.nupPersonalACargo3);
             this.grpExp4.Controls.Add(this.txtPuesto3);
-            this.grpExp4.Controls.Add(this.button14);
+            this.grpExp4.Controls.Add(this.btnMenosLaboral4);
             this.grpExp4.Controls.Add(this.cmbLaboralEgreso3);
             this.grpExp4.Controls.Add(this.txtEmpresa3);
-            this.grpExp4.Controls.Add(this.label59);
+            this.grpExp4.Controls.Add(this.lblEgresoLaboral4);
             this.grpExp4.Controls.Add(this.cmbLaboralIngreso3);
-            this.grpExp4.Controls.Add(this.label60);
-            this.grpExp4.Controls.Add(this.label61);
-            this.grpExp4.Controls.Add(this.label62);
-            this.grpExp4.Controls.Add(this.label63);
+            this.grpExp4.Controls.Add(this.lblPersonalACargo4);
+            this.grpExp4.Controls.Add(this.lblEmpresa4);
+            this.grpExp4.Controls.Add(this.lblIngresoLaboral4);
+            this.grpExp4.Controls.Add(this.lblPuesto4);
             this.grpExp4.Location = new System.Drawing.Point(8, 212);
             this.grpExp4.Margin = new System.Windows.Forms.Padding(4);
             this.grpExp4.Name = "grpExp4";
@@ -2020,23 +2038,24 @@
             this.txtPuesto3.AccessibleDescription = "OIII";
             this.txtPuesto3.Location = new System.Drawing.Point(6, 63);
             this.txtPuesto3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto3.MaxLength = 30;
             this.txtPuesto3.Name = "txtPuesto3";
             this.txtPuesto3.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto3.TabIndex = 101;
             // 
-            // button14
+            // btnMenosLaboral4
             // 
-            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(373, 17);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(29, 27);
-            this.button14.TabIndex = 85;
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnMenosLaboral4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosLaboral4.BackgroundImage")));
+            this.btnMenosLaboral4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosLaboral4.FlatAppearance.BorderSize = 0;
+            this.btnMenosLaboral4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosLaboral4.Location = new System.Drawing.Point(373, 17);
+            this.btnMenosLaboral4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosLaboral4.Name = "btnMenosLaboral4";
+            this.btnMenosLaboral4.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosLaboral4.TabIndex = 85;
+            this.btnMenosLaboral4.UseVisualStyleBackColor = true;
+            this.btnMenosLaboral4.Click += new System.EventHandler(this.button14_Click);
             // 
             // cmbLaboralEgreso3
             // 
@@ -2053,20 +2072,21 @@
             this.txtEmpresa3.AccessibleDescription = "OIII";
             this.txtEmpresa3.Location = new System.Drawing.Point(7, 114);
             this.txtEmpresa3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa3.MaxLength = 30;
             this.txtEmpresa3.Name = "txtEmpresa3";
             this.txtEmpresa3.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa3.TabIndex = 100;
             // 
-            // label59
+            // lblEgresoLaboral4
             // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(137, 143);
-            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(91, 16);
-            this.label59.TabIndex = 97;
-            this.label59.Text = "Hasta el año *";
-            this.label59.Click += new System.EventHandler(this.label59_Click);
+            this.lblEgresoLaboral4.AutoSize = true;
+            this.lblEgresoLaboral4.Location = new System.Drawing.Point(137, 143);
+            this.lblEgresoLaboral4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEgresoLaboral4.Name = "lblEgresoLaboral4";
+            this.lblEgresoLaboral4.Size = new System.Drawing.Size(91, 16);
+            this.lblEgresoLaboral4.TabIndex = 97;
+            this.lblEgresoLaboral4.Text = "Hasta el año *";
+            this.lblEgresoLaboral4.Click += new System.EventHandler(this.label59_Click);
             // 
             // cmbLaboralIngreso3
             // 
@@ -2078,63 +2098,63 @@
             this.cmbLaboralIngreso3.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralIngreso3.TabIndex = 96;
             // 
-            // label60
+            // lblPersonalACargo4
             // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(271, 143);
-            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(110, 16);
-            this.label60.TabIndex = 94;
-            this.label60.Text = "Personal a cargo";
+            this.lblPersonalACargo4.AutoSize = true;
+            this.lblPersonalACargo4.Location = new System.Drawing.Point(271, 143);
+            this.lblPersonalACargo4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPersonalACargo4.Name = "lblPersonalACargo4";
+            this.lblPersonalACargo4.Size = new System.Drawing.Size(110, 16);
+            this.lblPersonalACargo4.TabIndex = 94;
+            this.lblPersonalACargo4.Text = "Personal a cargo";
             // 
-            // label61
+            // lblEmpresa4
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(3, 95);
-            this.label61.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(70, 16);
-            this.label61.TabIndex = 99;
-            this.label61.Tag = "txtEmpresa3";
-            this.label61.Text = "Empresa *";
+            this.lblEmpresa4.AutoSize = true;
+            this.lblEmpresa4.Location = new System.Drawing.Point(3, 95);
+            this.lblEmpresa4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpresa4.Name = "lblEmpresa4";
+            this.lblEmpresa4.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpresa4.TabIndex = 99;
+            this.lblEmpresa4.Tag = "txtEmpresa3";
+            this.lblEmpresa4.Text = "Empresa *";
             // 
-            // label62
+            // lblIngresoLaboral4
             // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(4, 143);
-            this.label62.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(96, 16);
-            this.label62.TabIndex = 95;
-            this.label62.Text = "Desde el año *";
+            this.lblIngresoLaboral4.AutoSize = true;
+            this.lblIngresoLaboral4.Location = new System.Drawing.Point(4, 143);
+            this.lblIngresoLaboral4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresoLaboral4.Name = "lblIngresoLaboral4";
+            this.lblIngresoLaboral4.Size = new System.Drawing.Size(96, 16);
+            this.lblIngresoLaboral4.TabIndex = 95;
+            this.lblIngresoLaboral4.Text = "Desde el año *";
             // 
-            // label63
+            // lblPuesto4
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(4, 47);
-            this.label63.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(57, 16);
-            this.label63.TabIndex = 96;
-            this.label63.Tag = "txtPuesto3";
-            this.label63.Text = "Puesto *";
+            this.lblPuesto4.AutoSize = true;
+            this.lblPuesto4.Location = new System.Drawing.Point(4, 47);
+            this.lblPuesto4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto4.Name = "lblPuesto4";
+            this.lblPuesto4.Size = new System.Drawing.Size(57, 16);
+            this.lblPuesto4.TabIndex = 96;
+            this.lblPuesto4.Tag = "txtPuesto3";
+            this.lblPuesto4.Text = "Puesto *";
             // 
             // grpExp1
             // 
             this.grpExp1.Controls.Add(this.label32);
-            this.grpExp1.Controls.Add(this.button18);
+            this.grpExp1.Controls.Add(this.btnMenosLaboral1);
             this.grpExp1.Controls.Add(this.nupPersonalACargo);
             this.grpExp1.Controls.Add(this.txtPuesto);
             this.grpExp1.Controls.Add(this.txtEmpresa);
-            this.grpExp1.Controls.Add(this.label51);
-            this.grpExp1.Controls.Add(this.button6);
+            this.grpExp1.Controls.Add(this.lblEmpresa1);
+            this.grpExp1.Controls.Add(this.btnMasLaborales2);
             this.grpExp1.Controls.Add(this.cmbLaboralEgreso);
-            this.grpExp1.Controls.Add(this.label33);
+            this.grpExp1.Controls.Add(this.lblEgresoLaboral1);
             this.grpExp1.Controls.Add(this.cmbLaboralIngreso);
-            this.grpExp1.Controls.Add(this.label43);
-            this.grpExp1.Controls.Add(this.label44);
-            this.grpExp1.Controls.Add(this.label45);
+            this.grpExp1.Controls.Add(this.lblPersonalACargo1);
+            this.grpExp1.Controls.Add(this.lblIngresoLaboral1);
+            this.grpExp1.Controls.Add(this.lblPuesto1);
             this.grpExp1.Controls.Add(this.grpExp2);
             this.grpExp1.Location = new System.Drawing.Point(65, 29);
             this.grpExp1.Margin = new System.Windows.Forms.Padding(4);
@@ -2157,19 +2177,19 @@
             this.label32.TabIndex = 104;
             this.label32.Text = "____________________________________________";
             // 
-            // button18
+            // btnMenosLaboral1
             // 
-            this.button18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button18.BackgroundImage")));
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Location = new System.Drawing.Point(380, 15);
-            this.button18.Margin = new System.Windows.Forms.Padding(4);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(29, 27);
-            this.button18.TabIndex = 104;
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.btnMenosLaboral1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosLaboral1.BackgroundImage")));
+            this.btnMenosLaboral1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosLaboral1.FlatAppearance.BorderSize = 0;
+            this.btnMenosLaboral1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosLaboral1.Location = new System.Drawing.Point(380, 15);
+            this.btnMenosLaboral1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosLaboral1.Name = "btnMenosLaboral1";
+            this.btnMenosLaboral1.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosLaboral1.TabIndex = 104;
+            this.btnMenosLaboral1.UseVisualStyleBackColor = true;
+            this.btnMenosLaboral1.Click += new System.EventHandler(this.button18_Click);
             // 
             // nupPersonalACargo
             // 
@@ -2183,6 +2203,7 @@
             this.txtPuesto.AccessibleDescription = "O";
             this.txtPuesto.Location = new System.Drawing.Point(14, 51);
             this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto.MaxLength = 30;
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto.TabIndex = 92;
@@ -2192,36 +2213,37 @@
             this.txtEmpresa.AccessibleDescription = "O";
             this.txtEmpresa.Location = new System.Drawing.Point(15, 98);
             this.txtEmpresa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa.MaxLength = 30;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa.TabIndex = 90;
             // 
-            // label51
+            // lblEmpresa1
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(11, 79);
-            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(70, 16);
-            this.label51.TabIndex = 89;
-            this.label51.Tag = "txtEmpresa";
-            this.label51.Text = "Empresa *";
+            this.lblEmpresa1.AutoSize = true;
+            this.lblEmpresa1.Location = new System.Drawing.Point(11, 79);
+            this.lblEmpresa1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpresa1.Name = "lblEmpresa1";
+            this.lblEmpresa1.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpresa1.TabIndex = 89;
+            this.lblEmpresa1.Tag = "txtEmpresa";
+            this.lblEmpresa1.Text = "Empresa *";
             // 
-            // button6
+            // btnMasLaborales2
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(380, 187);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 28);
-            this.button6.TabIndex = 86;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnMasLaborales2.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasLaborales2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasLaborales2.BackgroundImage")));
+            this.btnMasLaborales2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasLaborales2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasLaborales2.FlatAppearance.BorderSize = 0;
+            this.btnMasLaborales2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasLaborales2.Location = new System.Drawing.Point(380, 187);
+            this.btnMasLaborales2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasLaborales2.Name = "btnMasLaborales2";
+            this.btnMasLaborales2.Size = new System.Drawing.Size(32, 28);
+            this.btnMasLaborales2.TabIndex = 86;
+            this.btnMasLaborales2.UseVisualStyleBackColor = false;
+            this.btnMasLaborales2.Click += new System.EventHandler(this.button6_Click);
             // 
             // cmbLaboralEgreso
             // 
@@ -2233,15 +2255,15 @@
             this.cmbLaboralEgreso.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralEgreso.TabIndex = 72;
             // 
-            // label33
+            // lblEgresoLaboral1
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(145, 127);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(91, 16);
-            this.label33.TabIndex = 71;
-            this.label33.Text = "Hasta el año *";
+            this.lblEgresoLaboral1.AutoSize = true;
+            this.lblEgresoLaboral1.Location = new System.Drawing.Point(145, 127);
+            this.lblEgresoLaboral1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEgresoLaboral1.Name = "lblEgresoLaboral1";
+            this.lblEgresoLaboral1.Size = new System.Drawing.Size(91, 16);
+            this.lblEgresoLaboral1.TabIndex = 71;
+            this.lblEgresoLaboral1.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso
             // 
@@ -2253,52 +2275,52 @@
             this.cmbLaboralIngreso.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralIngreso.TabIndex = 69;
             // 
-            // label43
+            // lblPersonalACargo1
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(279, 127);
-            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(110, 16);
-            this.label43.TabIndex = 67;
-            this.label43.Text = "Personal a cargo";
+            this.lblPersonalACargo1.AutoSize = true;
+            this.lblPersonalACargo1.Location = new System.Drawing.Point(279, 127);
+            this.lblPersonalACargo1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPersonalACargo1.Name = "lblPersonalACargo1";
+            this.lblPersonalACargo1.Size = new System.Drawing.Size(110, 16);
+            this.lblPersonalACargo1.TabIndex = 67;
+            this.lblPersonalACargo1.Text = "Personal a cargo";
             // 
-            // label44
+            // lblIngresoLaboral1
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(12, 127);
-            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(96, 16);
-            this.label44.TabIndex = 68;
-            this.label44.Text = "Desde el año *";
+            this.lblIngresoLaboral1.AutoSize = true;
+            this.lblIngresoLaboral1.Location = new System.Drawing.Point(12, 127);
+            this.lblIngresoLaboral1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresoLaboral1.Name = "lblIngresoLaboral1";
+            this.lblIngresoLaboral1.Size = new System.Drawing.Size(96, 16);
+            this.lblIngresoLaboral1.TabIndex = 68;
+            this.lblIngresoLaboral1.Text = "Desde el año *";
             // 
-            // label45
+            // lblPuesto1
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(12, 31);
-            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(57, 16);
-            this.label45.TabIndex = 70;
-            this.label45.Tag = "txtPuesto";
-            this.label45.Text = "Puesto *";
+            this.lblPuesto1.AutoSize = true;
+            this.lblPuesto1.Location = new System.Drawing.Point(12, 31);
+            this.lblPuesto1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto1.Name = "lblPuesto1";
+            this.lblPuesto1.Size = new System.Drawing.Size(57, 16);
+            this.lblPuesto1.TabIndex = 70;
+            this.lblPuesto1.Tag = "txtPuesto";
+            this.lblPuesto1.Text = "Puesto *";
             // 
             // grpExp2
             // 
-            this.grpExp2.Controls.Add(this.button11);
+            this.grpExp2.Controls.Add(this.btnMasLaborales3);
             this.grpExp2.Controls.Add(this.nupPersonalACargo1);
             this.grpExp2.Controls.Add(this.txtPuesto1);
             this.grpExp2.Controls.Add(this.label50);
-            this.grpExp2.Controls.Add(this.button10);
+            this.grpExp2.Controls.Add(this.btnMenosLaboral2);
             this.grpExp2.Controls.Add(this.cmbLaboralEgreso1);
             this.grpExp2.Controls.Add(this.txtEmpresa1);
-            this.grpExp2.Controls.Add(this.label46);
+            this.grpExp2.Controls.Add(this.lblEgresoLaboral2);
             this.grpExp2.Controls.Add(this.cmbLaboralIngreso1);
-            this.grpExp2.Controls.Add(this.label47);
-            this.grpExp2.Controls.Add(this.label34);
-            this.grpExp2.Controls.Add(this.label48);
-            this.grpExp2.Controls.Add(this.label49);
+            this.grpExp2.Controls.Add(this.lblPersonalACargo2);
+            this.grpExp2.Controls.Add(this.lblEmpresa2);
+            this.grpExp2.Controls.Add(this.lblIngresoLaboral2);
+            this.grpExp2.Controls.Add(this.lblPuesto2);
             this.grpExp2.Location = new System.Drawing.Point(8, 212);
             this.grpExp2.Margin = new System.Windows.Forms.Padding(4);
             this.grpExp2.Name = "grpExp2";
@@ -2308,21 +2330,21 @@
             this.grpExp2.TabStop = false;
             this.grpExp2.Visible = false;
             // 
-            // button11
+            // btnMasLaborales3
             // 
-            this.button11.BackColor = System.Drawing.Color.Transparent;
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(369, 206);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 28);
-            this.button11.TabIndex = 101;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            this.btnMasLaborales3.BackColor = System.Drawing.Color.Transparent;
+            this.btnMasLaborales3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasLaborales3.BackgroundImage")));
+            this.btnMasLaborales3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasLaborales3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMasLaborales3.FlatAppearance.BorderSize = 0;
+            this.btnMasLaborales3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasLaborales3.Location = new System.Drawing.Point(369, 206);
+            this.btnMasLaborales3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMasLaborales3.Name = "btnMasLaborales3";
+            this.btnMasLaborales3.Size = new System.Drawing.Size(32, 28);
+            this.btnMasLaborales3.TabIndex = 101;
+            this.btnMasLaborales3.UseVisualStyleBackColor = false;
+            this.btnMasLaborales3.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // nupPersonalACargo1
             // 
@@ -2336,6 +2358,7 @@
             this.txtPuesto1.AccessibleDescription = "OI";
             this.txtPuesto1.Location = new System.Drawing.Point(6, 67);
             this.txtPuesto1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto1.MaxLength = 30;
             this.txtPuesto1.Name = "txtPuesto1";
             this.txtPuesto1.Size = new System.Drawing.Size(393, 22);
             this.txtPuesto1.TabIndex = 103;
@@ -2350,19 +2373,19 @@
             this.label50.TabIndex = 102;
             this.label50.Text = "____________________________________________";
             // 
-            // button10
+            // btnMenosLaboral2
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(373, 17);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(29, 27);
-            this.button10.TabIndex = 85;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.btnMenosLaboral2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenosLaboral2.BackgroundImage")));
+            this.btnMenosLaboral2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenosLaboral2.FlatAppearance.BorderSize = 0;
+            this.btnMenosLaboral2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenosLaboral2.Location = new System.Drawing.Point(373, 17);
+            this.btnMenosLaboral2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenosLaboral2.Name = "btnMenosLaboral2";
+            this.btnMenosLaboral2.Size = new System.Drawing.Size(29, 27);
+            this.btnMenosLaboral2.TabIndex = 85;
+            this.btnMenosLaboral2.UseVisualStyleBackColor = true;
+            this.btnMenosLaboral2.Click += new System.EventHandler(this.button10_Click);
             // 
             // cmbLaboralEgreso1
             // 
@@ -2379,19 +2402,20 @@
             this.txtEmpresa1.AccessibleDescription = "OI";
             this.txtEmpresa1.Location = new System.Drawing.Point(7, 114);
             this.txtEmpresa1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpresa1.MaxLength = 30;
             this.txtEmpresa1.Name = "txtEmpresa1";
             this.txtEmpresa1.Size = new System.Drawing.Size(393, 22);
             this.txtEmpresa1.TabIndex = 100;
             // 
-            // label46
+            // lblEgresoLaboral2
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(137, 143);
-            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(91, 16);
-            this.label46.TabIndex = 97;
-            this.label46.Text = "Hasta el año *";
+            this.lblEgresoLaboral2.AutoSize = true;
+            this.lblEgresoLaboral2.Location = new System.Drawing.Point(137, 143);
+            this.lblEgresoLaboral2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEgresoLaboral2.Name = "lblEgresoLaboral2";
+            this.lblEgresoLaboral2.Size = new System.Drawing.Size(91, 16);
+            this.lblEgresoLaboral2.TabIndex = 97;
+            this.lblEgresoLaboral2.Text = "Hasta el año *";
             // 
             // cmbLaboralIngreso1
             // 
@@ -2403,69 +2427,52 @@
             this.cmbLaboralIngreso1.Size = new System.Drawing.Size(119, 24);
             this.cmbLaboralIngreso1.TabIndex = 96;
             // 
-            // label47
+            // lblPersonalACargo2
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(271, 143);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(110, 16);
-            this.label47.TabIndex = 94;
-            this.label47.Text = "Personal a cargo";
+            this.lblPersonalACargo2.AutoSize = true;
+            this.lblPersonalACargo2.Location = new System.Drawing.Point(271, 143);
+            this.lblPersonalACargo2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPersonalACargo2.Name = "lblPersonalACargo2";
+            this.lblPersonalACargo2.Size = new System.Drawing.Size(110, 16);
+            this.lblPersonalACargo2.TabIndex = 94;
+            this.lblPersonalACargo2.Text = "Personal a cargo";
             // 
-            // label34
+            // lblEmpresa2
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(3, 95);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(70, 16);
-            this.label34.TabIndex = 99;
-            this.label34.Tag = "txtEmpresa1";
-            this.label34.Text = "Empresa *";
+            this.lblEmpresa2.AutoSize = true;
+            this.lblEmpresa2.Location = new System.Drawing.Point(3, 95);
+            this.lblEmpresa2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpresa2.Name = "lblEmpresa2";
+            this.lblEmpresa2.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpresa2.TabIndex = 99;
+            this.lblEmpresa2.Tag = "txtEmpresa1";
+            this.lblEmpresa2.Text = "Empresa *";
             // 
-            // label48
+            // lblIngresoLaboral2
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(4, 143);
-            this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(96, 16);
-            this.label48.TabIndex = 95;
-            this.label48.Text = "Desde el año *";
+            this.lblIngresoLaboral2.AutoSize = true;
+            this.lblIngresoLaboral2.Location = new System.Drawing.Point(4, 143);
+            this.lblIngresoLaboral2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresoLaboral2.Name = "lblIngresoLaboral2";
+            this.lblIngresoLaboral2.Size = new System.Drawing.Size(96, 16);
+            this.lblIngresoLaboral2.TabIndex = 95;
+            this.lblIngresoLaboral2.Text = "Desde el año *";
             // 
-            // label49
+            // lblPuesto2
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(4, 47);
-            this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(57, 16);
-            this.label49.TabIndex = 96;
-            this.label49.Tag = "txtPuesto1";
-            this.label49.Text = "Puesto *";
+            this.lblPuesto2.AutoSize = true;
+            this.lblPuesto2.Location = new System.Drawing.Point(4, 47);
+            this.lblPuesto2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto2.Name = "lblPuesto2";
+            this.lblPuesto2.Size = new System.Drawing.Size(57, 16);
+            this.lblPuesto2.TabIndex = 96;
+            this.lblPuesto2.Tag = "txtPuesto1";
+            this.lblPuesto2.Text = "Puesto *";
             // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btbModificar
-            // 
-            this.btbModificar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btbModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btbModificar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btbModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btbModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btbModificar.Location = new System.Drawing.Point(799, 489);
-            this.btbModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.btbModificar.Name = "btbModificar";
-            this.btbModificar.Size = new System.Drawing.Size(105, 44);
-            this.btbModificar.TabIndex = 97;
-            this.btbModificar.Text = "Modificar";
-            this.btbModificar.UseVisualStyleBackColor = false;
-            this.btbModificar.Click += new System.EventHandler(this.btbModificar_Click);
             // 
             // frmAltaPersonal
             // 
@@ -2527,83 +2534,83 @@
         private System.Windows.Forms.TabPage tabPersonales;
         private System.Windows.Forms.TabPage tabAcademicos;
         private System.Windows.Forms.TabPage tabLaborales;
-        private System.Windows.Forms.Button btbEliminarImagen;
-        private System.Windows.Forms.Button btbEditarImagen;
+        private System.Windows.Forms.Button btnEliminarImagen;
+        private System.Windows.Forms.Button btnEditarImagen;
         private System.Windows.Forms.PictureBox pctFoto;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCodigoPostal;
+        private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.ComboBox cmbPartido;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.TextBox txtNro;
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.TextBox txtDpto;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblDpto;
+        private System.Windows.Forms.Label lblAltura;
+        private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.TextBox txtCalle;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPartido;
         private System.Windows.Forms.TextBox txtPiso;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblPiso;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtpFechaDeNacimiento;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.ComboBox cmbEstadoCivil;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombres;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNacionalidad;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblEstadoCivil;
         private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.TextBox txtCuitCuil;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.ComboBox cmbGenero;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCuitCuil;
+        private System.Windows.Forms.Label lblNroDoc;
         private System.Windows.Forms.NumericUpDown nupHijos;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblHijos;
+        private System.Windows.Forms.Button btnContinuar1;
         private System.Windows.Forms.TextBox txtTelefonoAlternativo;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblTelAlternativo;
         private System.Windows.Forms.TextBox txtContacto;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblContacto;
         private System.Windows.Forms.ComboBox cmbTipoTelAlternativo;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblTipoTel1;
         private System.Windows.Forms.ComboBox cmbTipoTel;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblTipoTel;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblNivel1;
         private System.Windows.Forms.ComboBox cmbNivelAcademico1;
         private System.Windows.Forms.GroupBox grpSuperior2;
         private System.Windows.Forms.ComboBox cmbIngreso1;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label lblInstitucion1;
         private System.Windows.Forms.TextBox txtInsitutcionSuperior1;
         private System.Windows.Forms.TextBox txtTitulo1;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label lblTitulo1;
+        private System.Windows.Forms.Label lblAñoIngreso1;
         private System.Windows.Forms.ComboBox cmbEgreso1;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label lblAñoEgreso1;
+        private System.Windows.Forms.Button btnMasAcademico2;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.ComboBox cmbEgreso2;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblAñoEgreso2;
         private System.Windows.Forms.ComboBox cmbIngreso2;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblAñoIngreso2;
+        private System.Windows.Forms.Label lblInstitucion2;
         private System.Windows.Forms.TextBox txtInsitutcionSuperior2;
         private System.Windows.Forms.TextBox txtTitulo2;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lblTitulo2;
+        private System.Windows.Forms.Label lblNivel2;
         private System.Windows.Forms.ComboBox cmbNivelAcademico2;
         private System.Windows.Forms.GroupBox grpSuperior3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnMenosAcademico2;
+        private System.Windows.Forms.Button btnContinuar2;
         private System.Windows.Forms.GroupBox grpEspaniol;
         private System.Windows.Forms.RadioButton rdbNativoEn;
         private System.Windows.Forms.RadioButton rdbAvanzadoEn;
@@ -2615,100 +2622,99 @@
         private System.Windows.Forms.RadioButton rdbBasico;
         private System.Windows.Forms.GroupBox grpExp1;
         private System.Windows.Forms.TextBox txtEmpresa;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label lblEmpresa1;
+        private System.Windows.Forms.Button btnMasLaborales2;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblEgresoLaboral1;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lblPersonalACargo1;
+        private System.Windows.Forms.Label lblIngresoLaboral1;
+        private System.Windows.Forms.Label lblPuesto1;
         private System.Windows.Forms.GroupBox grpExp2;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnMenosLaboral2;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtEmpresa1;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label lblEmpresa2;
+        private System.Windows.Forms.Label lblPuesto2;
         private System.Windows.Forms.GroupBox grpExp3;
         private System.Windows.Forms.TextBox txtEmpresa2;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label lblEmpresa3;
+        private System.Windows.Forms.Button btnMasLaborales4;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso2;
-        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label lblEgresoLaboral3;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso2;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label lblPersonalACargo3;
+        private System.Windows.Forms.Label lblIngresoLaboral3;
+        private System.Windows.Forms.Label lblPuesto3;
         private System.Windows.Forms.GroupBox grpExp4;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnMenosLaboral4;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso3;
         private System.Windows.Forms.TextBox txtEmpresa3;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label lblEgresoLaboral4;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso3;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label lblPersonalACargo4;
+        private System.Windows.Forms.Label lblEmpresa4;
+        private System.Windows.Forms.Label lblIngresoLaboral4;
+        private System.Windows.Forms.Label lblPuesto4;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso1;
-        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label lblEgresoLaboral2;
         private System.Windows.Forms.ComboBox cmbLaboralIngreso1;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label lblPersonalACargo2;
+        private System.Windows.Forms.Label lblIngresoLaboral2;
+        private System.Windows.Forms.Button btnMenosLaboral3;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button btnMasLaborales3;
+        private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox cmbConvenio;
         private System.Windows.Forms.ComboBox cmbPuesto;
-        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label lblConvenio;
         private System.Windows.Forms.TextBox txtPuesto2;
         private System.Windows.Forms.TextBox txtPuesto3;
         private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.TextBox txtPuesto1;
         private System.Windows.Forms.ComboBox cmbProgreso1;
-        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label lblProgreso1;
         private System.Windows.Forms.ComboBox cmbProgreso2;
-        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label lblProgreso2;
         private System.Windows.Forms.ComboBox cmbNacionalidad;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
-        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label lblTipoDni;
         private System.Windows.Forms.NumericUpDown nupPersonalACargo2;
         private System.Windows.Forms.NumericUpDown nupPersonalACargo3;
         private System.Windows.Forms.NumericUpDown nupPersonalACargo;
         private System.Windows.Forms.NumericUpDown nupPersonalACargo1;
-        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbArea;
-        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.GroupBox grpSuperior1;
         private System.Windows.Forms.ComboBox cmbProgreso;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblProgreso;
         private System.Windows.Forms.TextBox txtInsitutcionSuperior;
         private System.Windows.Forms.ComboBox cmbEgreso;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.Label lblAñoEgreso;
         private System.Windows.Forms.ComboBox cmbNivelAcademico;
-        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label lblInstitucion;
         private System.Windows.Forms.ComboBox cmbIngreso;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblAñoIngreso;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnMasAcademico1;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnMasLaborales1;
+        private System.Windows.Forms.Label lblAgregarExperienciaLaboral;
+        private System.Windows.Forms.Button btnMenosLaboral1;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMenosAcademico1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblFaltanCampos;
         private System.Windows.Forms.Label lblFaltanCampos1;
         private System.Windows.Forms.Label lblFaltanCampos2;
         private System.Windows.Forms.DateTimePicker dttFechaAlta;
-        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label lblFechaDeIngreso;
         private System.Windows.Forms.GroupBox grpIngles;
-        private System.Windows.Forms.Button btbModificar;
     }
 }

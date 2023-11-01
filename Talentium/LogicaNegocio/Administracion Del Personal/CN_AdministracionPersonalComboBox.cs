@@ -91,9 +91,17 @@ namespace LogicaNegocio.Administracion_Del_Personal
         }
         public DataTable ObtenerArea()
         {
-
-            DataTable area = accesoDatos.ListarArea();
-            return area;
+            try
+            {
+                DataTable dt = accesoDatos.ListarArea();
+                DataRow dr = dt.NewRow();
+                dt.Rows.Add(new Object[] { -1, "Todas" });
+                return dt;
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
         }
 
         public DataTable ObtenerCodigoPostal(int id_localidad)

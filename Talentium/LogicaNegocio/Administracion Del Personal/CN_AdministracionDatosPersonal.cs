@@ -20,6 +20,11 @@ namespace LogicaNegocio.Administracion_Del_Personal
             AccesoDatos.InsertarTelefono(id_persona, insert.telefono_alternativo, insert.id_tipo_alternativo, false ,insert.contacto);
         }
 
+        public void InsertIdioma(Persona insert, int id_persona)
+        {
+            AccesoDatos.InsertarIdioma(id_persona, 2, insert.nivel_Es);
+            AccesoDatos.InsertarIdioma(id_persona, 1,insert.nivel_En );
+        }
 
         public void InsertarPersona(Persona insert, int infoLaborales, int infoAcademicos)
         {
@@ -28,6 +33,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
                 DataTable dt = AccesoDatos.InsertarPersona(insert);
                 int id_persona = Convert.ToInt32(dt.Rows[0][0]);
                 InsertarTelefono(insert, id_persona);
+                InsertIdioma(insert,id_persona);
                 InsertarInformacionLaboral(insert,id_persona,infoLaborales);
                 InsertarInformacionAcademica(insert,id_persona,infoAcademicos);
 
@@ -98,7 +104,12 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
         public DataTable ObtenerPersona()
         {
+
             return AccesoDatos.ObtenerPersona();
+        }
+        public DataTable ObtenerIdioma(int id_persona)
+        {
+            return AccesoDatos.ObtenerIdioma(id_persona);
         }
 
 
@@ -110,6 +121,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             DataTable academicos = AccesoDatos.ObtenerDatosAcademicos(id_persona);
             DataTable laborales  =AccesoDatos.ObtenerDatosLaborales(id_persona);
             DataTable telefono = AccesoDatos.ObtenerTelefono(id_persona);
+            DataTable idioma = AccesoDatos.ObtenerIdioma(id_persona);
 
 
             int infoAcademicos = academicos.Rows.Count;
@@ -155,7 +167,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             insert.contacto = telefono.Rows[1]["contacto"].ToString();
 
 
-            //ACADEMICOS
+            // CONSULTA DE ACADEMICOS
 
 
             switch (infoAcademicos)
@@ -223,9 +235,12 @@ namespace LogicaNegocio.Administracion_Del_Personal
                     break;
             }
 
-            //LABORAL
+            insert.nivel_Es = (int)idioma.Rows[0]["nivel_idioma"];
+            insert.nivel_En = (int)idioma.Rows[1]["nivel_idioma"];
 
-        
+            //CONSULTA DE LABORAL
+
+
 
             switch (infoLaborales)
             {
@@ -370,9 +385,33 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
             }
         }
+
+        public void ActualizarTelefono(Persona modify, int id_persona)
+        {
+            AccesoDatos.ActualizarTelefono(id_persona, modify.telefono, modify.id_tipo, true);
+            AccesoDatos.ActualizarTelefono(id_persona, modify.telefono_alternativo, modify.id_tipo_alternativo, false, modify.contacto);
+        }
+
+
+        public void ActualizarIdioma(Persona modify ,int id_persona )
+        {
+            AccesoDatos.ActualizarIdioma(id_persona,2,modify.nivel_Es);
+            AccesoDatos.ActualizarIdioma(id_persona,1,modify.nivel_En);
+        }
+
+
+        //eliminacion
+
+
+        public void BajaPersona (int id_persona)
+        {
+            AccesoDatos.BajaPersona(id_persona);
+        }
+        public void ReactivarPersona(int id_persona)
+        {
+            AccesoDatos.ReactivarPersona(id_persona);
+        }
+
     }
-
-
-
 
 }

@@ -157,6 +157,7 @@
             this.btnBaja.TabIndex = 10;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // grpFiltro
             // 
@@ -212,6 +213,7 @@
             this.rdbActivos.TabStop = true;
             this.rdbActivos.Text = "Activos";
             this.rdbActivos.UseVisualStyleBackColor = false;
+            this.rdbActivos.CheckedChanged += new System.EventHandler(this.Filtro_CheckedChanged);
             // 
             // rdbInactivos
             // 
@@ -224,6 +226,7 @@
             this.rdbInactivos.TabIndex = 13;
             this.rdbInactivos.Text = "Inactivos";
             this.rdbInactivos.UseVisualStyleBackColor = false;
+            this.rdbInactivos.CheckedChanged += new System.EventHandler(this.Filtro_CheckedChanged);
             // 
             // frmConsultaPersonal
             // 
