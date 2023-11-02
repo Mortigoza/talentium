@@ -137,7 +137,7 @@ namespace Vista
                     break;
                 }
             }
-            if (!algunCampoSinCompletar)
+            if (algunCampoSinCompletar)
             {
                 MessageBox.Show("Por favor, debes completar todos los campos antes de guardar.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

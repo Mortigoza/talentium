@@ -48,7 +48,7 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblError.Location = new System.Drawing.Point(218, 67);
+            this.lblError.Location = new System.Drawing.Point(231, 84);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(29, 13);
             this.lblError.TabIndex = 38;
@@ -58,8 +58,8 @@
             // 
             // respuesta
             // 
-            this.respuesta.Location = new System.Drawing.Point(223, 223);
-            this.respuesta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.respuesta.Location = new System.Drawing.Point(234, 242);
+            this.respuesta.Margin = new System.Windows.Forms.Padding(2);
             this.respuesta.Name = "respuesta";
             this.respuesta.Size = new System.Drawing.Size(182, 20);
             this.respuesta.TabIndex = 37;
@@ -68,7 +68,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(92, 224);
+            this.label5.Location = new System.Drawing.Point(57, 242);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
@@ -79,18 +79,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 180);
+            this.label4.Location = new System.Drawing.Point(53, 199);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 17);
+            this.label4.Size = new System.Drawing.Size(157, 17);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Seleccionar pregunta de seguridad:";
+            this.label4.Text = "Pregunta de seguridad:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(234, 180);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(234, 199);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(283, 21);
             this.comboBox1.TabIndex = 34;
@@ -100,7 +100,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 47);
             this.panel1.TabIndex = 33;
@@ -136,7 +136,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 136);
+            this.label6.Location = new System.Drawing.Point(53, 156);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 17);
@@ -145,8 +145,8 @@
             // 
             // tbContra2
             // 
-            this.tbContra2.Location = new System.Drawing.Point(223, 134);
-            this.tbContra2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbContra2.Location = new System.Drawing.Point(234, 153);
+            this.tbContra2.Margin = new System.Windows.Forms.Padding(2);
             this.tbContra2.Name = "tbContra2";
             this.tbContra2.Size = new System.Drawing.Size(182, 20);
             this.tbContra2.TabIndex = 30;
@@ -155,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 159);
+            this.label3.Location = new System.Drawing.Point(137, 178);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
@@ -165,7 +165,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 89);
+            this.label1.Location = new System.Drawing.Point(53, 108);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
@@ -174,8 +174,8 @@
             // 
             // tbContra1
             // 
-            this.tbContra1.Location = new System.Drawing.Point(220, 89);
-            this.tbContra1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbContra1.Location = new System.Drawing.Point(234, 108);
+            this.tbContra1.Margin = new System.Windows.Forms.Padding(2);
             this.tbContra1.Name = "tbContra1";
             this.tbContra1.Size = new System.Drawing.Size(182, 20);
             this.tbContra1.TabIndex = 27;
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(586, 366);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.respuesta);
             this.Controls.Add(this.label5);
@@ -198,7 +198,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbContra1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CambioDePassNU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CambioDePassGral";
