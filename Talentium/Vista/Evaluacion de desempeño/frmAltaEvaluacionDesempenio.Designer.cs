@@ -64,7 +64,7 @@
             this.cmbMes.Location = new System.Drawing.Point(73, 70);
             this.cmbMes.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMes.Name = "cmbMes";
-            this.cmbMes.Size = new System.Drawing.Size(72, 21);
+            this.cmbMes.Size = new System.Drawing.Size(92, 21);
             this.cmbMes.TabIndex = 3;
             // 
             // cmbAnio
@@ -73,7 +73,7 @@
             this.cmbAnio.Location = new System.Drawing.Point(73, 34);
             this.cmbAnio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAnio.Name = "cmbAnio";
-            this.cmbAnio.Size = new System.Drawing.Size(72, 21);
+            this.cmbAnio.Size = new System.Drawing.Size(92, 21);
             this.cmbAnio.TabIndex = 2;
             // 
             // label4
@@ -104,11 +104,11 @@
             this.groupBox1.Controls.Add(this.cmbAreas);
             this.groupBox1.Controls.Add(this.cmbPersonal);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(338, 11);
+            this.groupBox1.Location = new System.Drawing.Point(25, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(343, 123);
+            this.groupBox1.Size = new System.Drawing.Size(307, 139);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de búsqueda *";
@@ -119,7 +119,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSeleccionar.Location = new System.Drawing.Point(205, 86);
+            this.btnSeleccionar.Location = new System.Drawing.Point(175, 101);
             this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(84, 25);
@@ -131,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 25);
+            this.label1.Location = new System.Drawing.Point(20, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
@@ -141,7 +141,7 @@
             // cmbAreas
             // 
             this.cmbAreas.FormattingEnabled = true;
-            this.cmbAreas.Location = new System.Drawing.Point(121, 23);
+            this.cmbAreas.Location = new System.Drawing.Point(91, 28);
             this.cmbAreas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAreas.Name = "cmbAreas";
             this.cmbAreas.Size = new System.Drawing.Size(168, 21);
@@ -151,7 +151,7 @@
             // cmbPersonal
             // 
             this.cmbPersonal.FormattingEnabled = true;
-            this.cmbPersonal.Location = new System.Drawing.Point(121, 57);
+            this.cmbPersonal.Location = new System.Drawing.Point(91, 62);
             this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPersonal.Name = "cmbPersonal";
             this.cmbPersonal.Size = new System.Drawing.Size(168, 21);
@@ -160,7 +160,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 61);
+            this.label2.Location = new System.Drawing.Point(20, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
@@ -299,9 +299,9 @@
             this.groupBox2.Controls.Add(this.cmbMes);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cmbAnio);
-            this.groupBox2.Location = new System.Drawing.Point(25, 62);
+            this.groupBox2.Location = new System.Drawing.Point(360, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(220, 99);
+            this.groupBox2.Size = new System.Drawing.Size(216, 139);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Periodo de evaluación";

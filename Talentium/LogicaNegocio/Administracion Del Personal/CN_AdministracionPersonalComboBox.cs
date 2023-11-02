@@ -89,13 +89,16 @@ namespace LogicaNegocio.Administracion_Del_Personal
             DataTable puesto = accesoDatos.ListarPuesto();
             return puesto;
         }
-        public DataTable ObtenerArea()
+        public DataTable ObtenerArea(bool todas = false)
         {
             try
             {
                 DataTable dt = accesoDatos.ListarArea();
-                DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Todas" });
+                if (todas)
+                {
+                    DataRow dr = dt.NewRow();
+                    dt.Rows.Add(new Object[] { -1, "Todas" });
+                }
                 return dt;
             }
             catch (Exception ex)

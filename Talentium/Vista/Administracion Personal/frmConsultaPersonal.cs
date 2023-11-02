@@ -23,7 +23,7 @@ namespace Vista
         {
             InitializeComponent();
 
-            DataTable area = logica.ObtenerArea();
+            DataTable area = logica.ObtenerArea(true);
             cmbArea.DataSource = area;
             cmbArea.DisplayMember = "area";
             cmbArea.ValueMember = "id_area";
@@ -32,10 +32,10 @@ namespace Vista
 
         private void frmConsultaPersonal_Load(object sender, EventArgs e)
         {
-           
+
 
         }
-        private void Filtros (bool inactivo)
+        private void Filtros(bool inactivo)
         {
             var persona = logicaPersona.ObtenerPersona();
             List<Persona> personList = persona.AsEnumerable()
@@ -47,7 +47,7 @@ namespace Vista
                     cuit_cuil = row.Field<string>("cuit_cuil"),
                     nro_doc = row.Field<string>("nro_doc"),
                     id_area = row.Field<int>("id_area"), // Asegúrate de agregar esta línea para obtener el área
-                    id_baja = row.Field <bool>("id_baja")
+                    id_baja = row.Field<bool>("id_baja")
                 })
                 .ToList();
 
@@ -55,7 +55,7 @@ namespace Vista
             string filtroApellidos = txtApellido.Text;
             string filtroCuil = txtCuit.Text;
             int? filtroIdArea = (int?)cmbArea.SelectedValue; // Obtén el área seleccionada desde el ComboBox
-            
+
 
             // Realizar el filtrado en base a los valores de los campos de texto y el área seleccionada
             var resultadosFiltrados = personList.Where(persona1 =>
@@ -70,7 +70,7 @@ namespace Vista
             // Oculta las columnas que no necesitas
             foreach (DataGridViewColumn columna in dtgEmpleados.Columns)
             {
-                if (columna.Name != "nombres" && columna.Name != "apellidos" && columna.Name != "cuit_cuil" && columna.Name != "nro_doc" )
+                if (columna.Name != "nombres" && columna.Name != "apellidos" && columna.Name != "cuit_cuil" && columna.Name != "nro_doc")
                 {
                     columna.Visible = false;
                 }
@@ -99,7 +99,7 @@ namespace Vista
         {
             if (dtgEmpleados.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value); 
+                int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
 
                 // Abre FormAltaPersonal y pasa el id_persona
                 frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
@@ -108,9 +108,9 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una fila antes de hacer clic en 'Detalles'.");
+                MessageBox.Show("Por favor, selecciona un empleado.");
             }
-           
+
         }
 
         private void txtCuit_TextChanged(object sender, EventArgs e)
@@ -131,48 +131,67 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una fila antes de hacer clic en 'Detalles'.");
+                MessageBox.Show("Por favor, selecciona un empleado.");
             }
         }
 
         private void Filtro_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             if (rdbActivos.Checked)
             {
                 btnBaja.Name = "btnBaja";
                 btnBaja.Text = "Dar de Baja";
                 inactivo = false;
+                btnModificar.Enabled = true;
             }
             if (rdbInactivos.Checked)
             {
                 btnBaja.Name = "btnReactivar";
                 btnBaja.Text = "Reactivar";
                 inactivo = true;
-                
+                btnModificar.Enabled = false;
+
             }
             Filtros(inactivo);
-            
+
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
-            switch (btnBaja.Name )
+            switch (dtgEmpleados.Rows.Count)
             {
-                case "btnBaja":
+                default:
+                    int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
+                    DialogResult result;
+                    switch (btnBaja.Name)
+                    {
+                        case "btnBaja":
+                            result = MessageBox.Show("¿Desea dar de baja al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                logicaPersona.BajaPersona(id);
+                                Filtros(inactivo);
+                            }
+                            break;
+                        case "btnReactivar":
+                            result = MessageBox.Show("¿Desea reactivar al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                logicaPersona.ReactivarPersona(id);
+                                Filtros(inactivo);
+                            }
+                            break;
+                    }
+                    break;
+                case 0:
+                    MessageBox.Show("Por favor, selecciona un empleado.");
+                    break;
 
-                    logicaPersona.BajaPersona(id);
-                    break;
-                case "btnReactivar":
-                    logicaPersona.ReactivarPersona(id);
-                    break;
-            
             }
-            Filtros(inactivo);
+        }
+    }
+
            
 
-        }
-        
-    }
 }
