@@ -43,6 +43,7 @@ namespace Vista
         private int _id_informacion_laboral3;
         private int _id_informacion_laboral4;
 
+        byte[] foto;
         public frmAltaPersonal()
         {
 
@@ -429,10 +430,12 @@ namespace Vista
                 lblFaltanCampos2.Visible = false;
                 logicaPersona.InsertarPersona(insert, infoLaborales, infoAcademicos);
                 MessageBox.Show("Todos los datos se cargaron correctamente.");
-                this.Hide();
-                        
-           
-            }
+                        this.Hide();
+                        frmMenu menu = new frmMenu();
+                        menu.ShowDialog();
+
+
+                    }
                      else
             {
                 lblFaltanCampos2.Visible = true;
@@ -457,19 +460,11 @@ namespace Vista
                     modify.id_informacion_laboral3 = _id_informacion_laboral3;
                     modify.id_informacion_laboral4 = _id_informacion_laboral4;
 
-                    if (pctFoto.Image != null)
-                    {
-                        modify.foto_perfil = new byte[0];
-                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                        pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        modify.foto_perfil = ms.GetBuffer();
-                    }
-                    else
-                    {
-                        modify.foto_perfil = new byte[0];
-                    }
 
-                    modify.id_persona = _id_persona;
+
+                    
+
+                        modify.id_persona = _id_persona;
                     modify.nombres = txtNombres.Text;
                     modify.apellidos = txtApellidos.Text;
                     modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
@@ -553,6 +548,35 @@ namespace Vista
                     modify.personal_a_cargo4 = (int)nupPersonalACargo3.Value;
 
 
+                        if (pctFoto.Image != null)
+                        {
+
+                            try
+                            {
+                                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                                pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                modify.foto_perfil = ms.GetBuffer();
+                            }
+                            catch
+                            {
+                                modify.foto_perfil = foto;
+                            }
+
+
+
+                        }
+                        else
+                        {
+
+                            modify.foto_perfil = new byte[0];
+                        }
+
+
+
+
+
+
+
                         lblFaltanCampos.Visible = false;
                         lblFaltanCampos1.Visible = false;
                         lblFaltanCampos2.Visible = false;
@@ -575,6 +599,9 @@ namespace Vista
                     break;
             }
         }
+
+       
+
         //BOTON PARA VALIDAR TAB "INFORMACION ACADEMICA"
         private void button8_Click(object sender, EventArgs e)
         {
@@ -591,6 +618,7 @@ namespace Vista
                 MessageBox.Show("Faltan campos obligatorios");
             }
         }
+
         //BOTON PARA VALIDAR TAB "INFORMACION PERSONAL"
         private void button4_Click(object sender, EventArgs e)
         {
@@ -625,7 +653,7 @@ namespace Vista
                     Image imagen = Image.FromFile(rutaImagen);
 
                     // Muestra la imagen en el PictureBox
-                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pctFoto.SizeMode = PictureBoxSizeMode.Zoom;
                     pctFoto.Image = imagen;
                 }
                 catch (Exception ex)
@@ -640,6 +668,7 @@ namespace Vista
         }
 
         //METODOS
+        #region Metodos
         private void RestaurarColorPredeterminado(Control control)
         {
             foreach (Control c in control.Controls)
@@ -793,6 +822,16 @@ namespace Vista
                 boton.Visible = false;
             }
         }
+        private void BotonesInvisiblesModificacion()
+        {
+
+            Button[] botonesOcultar = {btnValidar,btnMasAcademico1,btnMasAcademico2,btnMenosAcademico1,btnMenosAcademico2,
+            btnMasLaborales1,btnMasLaborales2,btnMasLaborales3,btnMasLaborales4,btnMenosLaboral1,btnMenosLaboral2,btnMenosLaboral3,btnMenosLaboral4};
+            foreach (Button botonOcultar in botonesOcultar)
+            {
+                botonOcultar.Visible = false;
+            }
+        }
         private void BotonesVisibles()
         {
             Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen,btnMasAcademico1,btnMenosAcademico1,btnMasAcademico2,btnMenosAcademico2,
@@ -817,7 +856,7 @@ namespace Vista
                 }
             }
         }
-
+        #endregion
 
         //LLENAR LOS COMBOBOX Localidad,Partido y Provincia + CodigoPostal.
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -1130,7 +1169,7 @@ namespace Vista
                 {
                     Image imagen = Image.FromStream(stream);
                     pctFoto.Image = imagen;
-                    pctFoto.SizeMode = PictureBoxSizeMode.CenterImage;
+                    pctFoto.SizeMode = PictureBoxSizeMode.Zoom;
                 }
             }
 
@@ -1239,6 +1278,8 @@ namespace Vista
         //Modificacion
         public void CargarDatosModificacion(int id_persona)
         {
+
+
             Persona modify = new Persona();
             
             btnGuardar.Name = "btnModificar";
@@ -1254,8 +1295,12 @@ namespace Vista
             _id_informacion_laboral2 = modify.id_informacion_laboral2;
             _id_informacion_laboral3 = modify.id_informacion_laboral3;
             _id_informacion_laboral4 = modify.id_informacion_laboral4;
-            BotonesVisibles();
+
+            foto = modify.foto_perfil;
+            BotonesInvisiblesModificacion();
             HabilitarCampos();
+            btnEditarImagen.Visible = true;
+            btnEliminarImagen.Visible = true;
             btnValidar.Visible = false;
             btnGuardar.Visible = true;
             txtCuitCuil.Enabled = false;
@@ -1265,14 +1310,7 @@ namespace Vista
         //Controles vacios
         #region
 
-        private void btbModificar_Click(object sender, EventArgs e)
-        {
-          
-        }
-        private void txtTitulo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
         private void txtContacto_TextChanged(object sender, EventArgs e)
         {
 
