@@ -30,18 +30,18 @@ namespace Vista.Gestion_de_Talento
             cmbNivelMod.Items.AddRange(new string[] { Niveles.cmbNivel0, Niveles.cmbNivel1, Niveles.cmbNivel2 });
             cmbExternaInternaAlta.Items.AddRange(new string[] { Niveles.cmbExternaInterna0, Niveles.cmbExternaInterna1 });
             cmbExternaInternaMod.Items.AddRange(new string[] { Niveles.cmbExternaInterna0, Niveles.cmbExternaInterna1 });
-
-
+            cmbNivelAlta.SelectedIndex = 0;
+            cmbNivelMod.SelectedIndex = 0;
+            cmbExternaInternaAlta.SelectedIndex = 0; 
+            cmbExternaInternaMod.SelectedIndex = 0;
             //cmbArea
             DataTable cnCapa = cnCapacitaciones.area();
             cmbAreaAlta.ValueMember = "id_area";
             cmbAreaAlta.DisplayMember = "area";
             cmbAreaAlta.DataSource = cnCapa;
-            cmbAreaAlta.SelectedIndex = -1;
             cmbAreaMod.ValueMember = "id_area";
             cmbAreaMod.DisplayMember = "area";
             cmbAreaMod.DataSource = cnCapa;
-            cmbAreaMod.SelectedIndex = -1;
             //dtg
             dtgCapacitacion.Columns.Clear();
         }
@@ -94,6 +94,12 @@ namespace Vista.Gestion_de_Talento
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text)) 
+            {
+                MessageBox.Show("Todos los campos deben estar completos");
+                return;
+            }
+
             cnCapacitaciones.IdArea = cmbAreaAlta.SelectedValue;
             cnCapacitaciones.Capacitacion = txtNombreAlta.Text;
             cnCapacitaciones.IdNivel = cmbNivelAlta.SelectedIndex;
@@ -122,6 +128,12 @@ namespace Vista.Gestion_de_Talento
         }
         private void btnDtgMod_Click(object sender, EventArgs e)
         {
+
+            if (dtgCapacitacion.SelectedRows == null || dtgCapacitacion.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar la fila que desea modificar");
+                return;
+            }
             cargaCtrMod();   
 
         }
@@ -133,6 +145,12 @@ namespace Vista.Gestion_de_Talento
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNombreMod.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoMod.Text))
+            {
+                MessageBox.Show("Todos los campos deben estar completos");
+                return;
+            }
+
             cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
             cnCapacitaciones.IdArea = cmbAreaMod.SelectedValue;
             cnCapacitaciones.Capacitacion = txtNombreMod.Text;
@@ -153,24 +171,52 @@ namespace Vista.Gestion_de_Talento
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            if (dtgCapacitacion.SelectedRows == null || dtgCapacitacion.SelectedRows.Count == 0)
             {
-                cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
-                cnCapacitaciones.EliminarCapacitaciones();
-                cargarDTG(true);
-                MessageBox.Show("operación exitosa");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);    
+                MessageBox.Show("Debe seleccionar la fila que desea eliminar");
+                return;
             }
 
+            DialogResult result = MessageBox.Show("¿Desea eliminar la fila seleccionada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                try
+                {
+                    cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
+                    cnCapacitaciones.EliminarCapacitaciones();
+                    cargarDTG(true);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelarAlta_Click(object sender, EventArgs e)
+        {
+            txtNombreAlta.Clear();
+            txtTiempoEstimadoAlta.Clear();
+            cmbNivelAlta.SelectedIndex = 0;
+            cmbAreaAlta.SelectedIndex = 0;
+            cmbExternaInternaAlta.SelectedIndex = 0;
+        }
+
+        private void btnCancelarMod_Click(object sender, EventArgs e)
+        {
+            txtNombreMod.Clear();
+            txtTiempoEstimadoMod.Clear();
+            cmbAreaMod.SelectedIndex = 0;
+            cmbNivelMod.SelectedIndex = 0;
+            cmbExternaInternaMod.SelectedIndex = 0;
         }
     }
 }

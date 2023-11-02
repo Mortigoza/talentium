@@ -28,91 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.modiicacion = new System.Windows.Forms.TabControl();
             this.tbpAlta = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbPersonalAlta = new System.Windows.Forms.GroupBox();
             this.dataGridAlta = new System.Windows.Forms.DataGridView();
             this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.grbFiltrosAlta = new System.Windows.Forms.GroupBox();
+            this.lblErrorPuesto = new System.Windows.Forms.Label();
+            this.lblErrorArea = new System.Windows.Forms.Label();
+            this.lblPuestoAlta = new System.Windows.Forms.Label();
             this.puestosAltas = new System.Windows.Forms.ComboBox();
             this.buscarAlta = new System.Windows.Forms.Button();
             this.cuilAltas = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCuilAlta = new System.Windows.Forms.Label();
+            this.lblAreaAlta = new System.Windows.Forms.Label();
             this.areasAltas = new System.Windows.Forms.ComboBox();
             this.tbpModificar = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.dataGridModificar = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grbFiltroMod = new System.Windows.Forms.GroupBox();
             this.periodo = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblErrorPuestoMod = new System.Windows.Forms.Label();
+            this.lblErrorAreaMod = new System.Windows.Forms.Label();
+            this.lblPuestoMod = new System.Windows.Forms.Label();
             this.PuestoMod = new System.Windows.Forms.ComboBox();
             this.AreaMod = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblAreaMod = new System.Windows.Forms.Label();
+            this.lblFechaMod = new System.Windows.Forms.Label();
+            this.lblFechaDesdeMod = new System.Windows.Forms.Label();
+            this.lblFechaHastaMod = new System.Windows.Forms.Label();
             this.FechaHastaMod = new System.Windows.Forms.DateTimePicker();
             this.fechaDesdeMod = new System.Windows.Forms.DateTimePicker();
             this.FechaMod = new System.Windows.Forms.DateTimePicker();
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.lblCuilMod = new System.Windows.Forms.Label();
+            this.modiicacion.SuspendLayout();
             this.tbpAlta.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbPersonalAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grbFiltrosAlta.SuspendLayout();
             this.tbpModificar.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grbInasistenciasMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModificar)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.grbFiltroMod.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // modiicacion
             // 
-            this.tabControl1.AccessibleName = "";
-            this.tabControl1.Controls.Add(this.tbpAlta);
-            this.tabControl1.Controls.Add(this.tbpModificar);
-            this.tabControl1.Location = new System.Drawing.Point(1, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(828, 440);
-            this.tabControl1.TabIndex = 7;
+            this.modiicacion.AccessibleName = "";
+            this.modiicacion.Controls.Add(this.tbpAlta);
+            this.modiicacion.Controls.Add(this.tbpModificar);
+            this.modiicacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modiicacion.Location = new System.Drawing.Point(0, 0);
+            this.modiicacion.Name = "modiicacion";
+            this.modiicacion.SelectedIndex = 0;
+            this.modiicacion.Size = new System.Drawing.Size(1102, 540);
+            this.modiicacion.TabIndex = 7;
             // 
             // tbpAlta
             // 
-            this.tbpAlta.Controls.Add(this.groupBox2);
-            this.tbpAlta.Controls.Add(this.groupBox1);
+            this.tbpAlta.Controls.Add(this.grbPersonalAlta);
+            this.tbpAlta.Controls.Add(this.grbFiltrosAlta);
             this.tbpAlta.Location = new System.Drawing.Point(4, 22);
-            this.tbpAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpAlta.Name = "tbpAlta";
-            this.tbpAlta.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpAlta.Size = new System.Drawing.Size(820, 414);
+            this.tbpAlta.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpAlta.Size = new System.Drawing.Size(1094, 514);
             this.tbpAlta.TabIndex = 0;
             this.tbpAlta.Text = "Alta";
             this.tbpAlta.UseVisualStyleBackColor = true;
             this.tbpAlta.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // groupBox2
+            // grbPersonalAlta
             // 
-            this.groupBox2.Controls.Add(this.dataGridAlta);
-            this.groupBox2.Location = new System.Drawing.Point(227, 20);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(586, 309);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal";
+            this.grbPersonalAlta.Controls.Add(this.dataGridAlta);
+            this.grbPersonalAlta.Location = new System.Drawing.Point(303, 25);
+            this.grbPersonalAlta.Name = "grbPersonalAlta";
+            this.grbPersonalAlta.Size = new System.Drawing.Size(782, 380);
+            this.grbPersonalAlta.TabIndex = 11;
+            this.grbPersonalAlta.TabStop = false;
+            this.grbPersonalAlta.Text = "Personal";
             // 
             // dataGridAlta
             // 
@@ -122,7 +119,7 @@
             this.Abrir});
             this.dataGridAlta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridAlta.Location = new System.Drawing.Point(4, 17);
-            this.dataGridAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridAlta.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridAlta.Name = "dataGridAlta";
             this.dataGridAlta.RowHeadersWidth = 51;
             this.dataGridAlta.RowTemplate.Height = 24;
@@ -143,73 +140,68 @@
             this.Abrir.UseColumnTextForButtonValue = true;
             this.Abrir.Width = 80;
             // 
-            // groupBox1
+            // grbFiltrosAlta
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.puestosAltas);
-            this.groupBox1.Controls.Add(this.buscarAlta);
-            this.groupBox1.Controls.Add(this.cuilAltas);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.areasAltas);
-            this.groupBox1.Location = new System.Drawing.Point(5, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(218, 309);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.grbFiltrosAlta.Controls.Add(this.lblErrorPuesto);
+            this.grbFiltrosAlta.Controls.Add(this.lblErrorArea);
+            this.grbFiltrosAlta.Controls.Add(this.lblPuestoAlta);
+            this.grbFiltrosAlta.Controls.Add(this.puestosAltas);
+            this.grbFiltrosAlta.Controls.Add(this.buscarAlta);
+            this.grbFiltrosAlta.Controls.Add(this.cuilAltas);
+            this.grbFiltrosAlta.Controls.Add(this.lblCuilAlta);
+            this.grbFiltrosAlta.Controls.Add(this.lblAreaAlta);
+            this.grbFiltrosAlta.Controls.Add(this.areasAltas);
+            this.grbFiltrosAlta.Location = new System.Drawing.Point(7, 25);
+            this.grbFiltrosAlta.Name = "grbFiltrosAlta";
+            this.grbFiltrosAlta.Size = new System.Drawing.Size(290, 380);
+            this.grbFiltrosAlta.TabIndex = 10;
+            this.grbFiltrosAlta.TabStop = false;
+            this.grbFiltrosAlta.Text = "Filtros";
+            this.grbFiltrosAlta.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label6
+            // lblErrorPuesto
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(36, 59);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(11, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "*";
+            this.lblErrorPuesto.AutoSize = true;
+            this.lblErrorPuesto.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorPuesto.Location = new System.Drawing.Point(44, 65);
+            this.lblErrorPuesto.Name = "lblErrorPuesto";
+            this.lblErrorPuesto.Size = new System.Drawing.Size(11, 13);
+            this.lblErrorPuesto.TabIndex = 19;
+            this.lblErrorPuesto.Text = "*";
             // 
-            // label2
+            // lblErrorArea
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(30, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "*";
+            this.lblErrorArea.AutoSize = true;
+            this.lblErrorArea.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorArea.Location = new System.Drawing.Point(35, 32);
+            this.lblErrorArea.Name = "lblErrorArea";
+            this.lblErrorArea.Size = new System.Drawing.Size(11, 13);
+            this.lblErrorArea.TabIndex = 17;
+            this.lblErrorArea.Text = "*";
             // 
-            // label13
+            // lblPuestoAlta
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(0, 59);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Puesto:";
+            this.lblPuestoAlta.AutoSize = true;
+            this.lblPuestoAlta.Location = new System.Drawing.Point(6, 70);
+            this.lblPuestoAlta.Name = "lblPuestoAlta";
+            this.lblPuestoAlta.Size = new System.Drawing.Size(43, 13);
+            this.lblPuestoAlta.TabIndex = 16;
+            this.lblPuestoAlta.Text = "Puesto:";
             // 
             // puestosAltas
             // 
             this.puestosAltas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puestosAltas.FormattingEnabled = true;
-            this.puestosAltas.Location = new System.Drawing.Point(50, 57);
-            this.puestosAltas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.puestosAltas.Location = new System.Drawing.Point(76, 62);
+            this.puestosAltas.Margin = new System.Windows.Forms.Padding(2);
             this.puestosAltas.Name = "puestosAltas";
             this.puestosAltas.Size = new System.Drawing.Size(157, 21);
             this.puestosAltas.TabIndex = 15;
             // 
             // buscarAlta
             // 
-            this.buscarAlta.Location = new System.Drawing.Point(145, 249);
-            this.buscarAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buscarAlta.Location = new System.Drawing.Point(172, 156);
+            this.buscarAlta.Margin = new System.Windows.Forms.Padding(2);
             this.buscarAlta.Name = "buscarAlta";
             this.buscarAlta.Size = new System.Drawing.Size(61, 26);
             this.buscarAlta.TabIndex = 13;
@@ -219,38 +211,36 @@
             // 
             // cuilAltas
             // 
-            this.cuilAltas.Location = new System.Drawing.Point(38, 107);
-            this.cuilAltas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cuilAltas.Location = new System.Drawing.Point(76, 108);
+            this.cuilAltas.Margin = new System.Windows.Forms.Padding(2);
             this.cuilAltas.Name = "cuilAltas";
-            this.cuilAltas.Size = new System.Drawing.Size(168, 20);
+            this.cuilAltas.Size = new System.Drawing.Size(157, 20);
             this.cuilAltas.TabIndex = 14;
             // 
-            // label4
+            // lblCuilAlta
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 112);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "CUIL:";
+            this.lblCuilAlta.AutoSize = true;
+            this.lblCuilAlta.Location = new System.Drawing.Point(6, 115);
+            this.lblCuilAlta.Name = "lblCuilAlta";
+            this.lblCuilAlta.Size = new System.Drawing.Size(34, 13);
+            this.lblCuilAlta.TabIndex = 13;
+            this.lblCuilAlta.Text = "CUIL:";
             // 
-            // label1
+            // lblAreaAlta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Àrea:";
+            this.lblAreaAlta.AutoSize = true;
+            this.lblAreaAlta.Location = new System.Drawing.Point(6, 35);
+            this.lblAreaAlta.Name = "lblAreaAlta";
+            this.lblAreaAlta.Size = new System.Drawing.Size(32, 13);
+            this.lblAreaAlta.TabIndex = 7;
+            this.lblAreaAlta.Text = "Àrea:";
             // 
             // areasAltas
             // 
             this.areasAltas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.areasAltas.FormattingEnabled = true;
-            this.areasAltas.Location = new System.Drawing.Point(50, 32);
-            this.areasAltas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.areasAltas.Location = new System.Drawing.Point(76, 32);
+            this.areasAltas.Margin = new System.Windows.Forms.Padding(2);
             this.areasAltas.Name = "areasAltas";
             this.areasAltas.Size = new System.Drawing.Size(157, 21);
             this.areasAltas.TabIndex = 9;
@@ -258,28 +248,36 @@
             // 
             // tbpModificar
             // 
-            this.tbpModificar.Controls.Add(this.groupBox3);
-            this.tbpModificar.Controls.Add(this.groupBox4);
+            this.tbpModificar.Controls.Add(this.grbInasistenciasMod);
+            this.tbpModificar.Controls.Add(this.grbFiltroMod);
             this.tbpModificar.Location = new System.Drawing.Point(4, 22);
-            this.tbpModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbpModificar.Name = "tbpModificar";
-            this.tbpModificar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbpModificar.Size = new System.Drawing.Size(820, 414);
+            this.tbpModificar.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpModificar.Size = new System.Drawing.Size(1094, 514);
             this.tbpModificar.TabIndex = 1;
-            this.tbpModificar.Text = "Modificaciòn";
+            this.tbpModificar.Text = "Modificaciòn y consulta";
             this.tbpModificar.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // btnExcel
             // 
-            this.groupBox3.Controls.Add(this.dataGridModificar);
-            this.groupBox3.Location = new System.Drawing.Point(227, 12);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(586, 308);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Personal";
+            this.btnExcel.Location = new System.Drawing.Point(484, 321);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(96, 52);
+            this.btnExcel.TabIndex = 14;
+            this.btnExcel.Text = "Descargar Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // grbInasistenciasMod
+            // 
+            this.grbInasistenciasMod.Controls.Add(this.btnExcel);
+            this.grbInasistenciasMod.Controls.Add(this.dataGridModificar);
+            this.grbInasistenciasMod.Location = new System.Drawing.Point(303, 15);
+            this.grbInasistenciasMod.Name = "grbInasistenciasMod";
+            this.grbInasistenciasMod.Size = new System.Drawing.Size(782, 379);
+            this.grbInasistenciasMod.TabIndex = 13;
+            this.grbInasistenciasMod.TabStop = false;
+            this.grbInasistenciasMod.Text = "Inasistencias";
             // 
             // dataGridModificar
             // 
@@ -290,7 +288,7 @@
             this.dataGridModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridModificar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridModificar.Location = new System.Drawing.Point(2, 14);
-            this.dataGridModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridModificar.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridModificar.Name = "dataGridModificar";
             this.dataGridModificar.RowHeadersWidth = 51;
             this.dataGridModificar.RowTemplate.Height = 24;
@@ -301,9 +299,6 @@
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Modificar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Modificar.HeaderText = "Modificar";
             this.Modificar.MinimumWidth = 6;
@@ -314,39 +309,37 @@
             this.Modificar.UseColumnTextForButtonValue = true;
             this.Modificar.Width = 56;
             // 
-            // groupBox4
+            // grbFiltroMod
             // 
-            this.groupBox4.Controls.Add(this.periodo);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.PuestoMod);
-            this.groupBox4.Controls.Add(this.AreaMod);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.FechaHastaMod);
-            this.groupBox4.Controls.Add(this.fechaDesdeMod);
-            this.groupBox4.Controls.Add(this.FechaMod);
-            this.groupBox4.Controls.Add(this.buscarMod);
-            this.groupBox4.Controls.Add(this.CuilMod);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(5, 12);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(218, 308);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Filtros";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.grbFiltroMod.Controls.Add(this.periodo);
+            this.grbFiltroMod.Controls.Add(this.lblErrorPuestoMod);
+            this.grbFiltroMod.Controls.Add(this.lblErrorAreaMod);
+            this.grbFiltroMod.Controls.Add(this.lblPuestoMod);
+            this.grbFiltroMod.Controls.Add(this.PuestoMod);
+            this.grbFiltroMod.Controls.Add(this.AreaMod);
+            this.grbFiltroMod.Controls.Add(this.lblAreaMod);
+            this.grbFiltroMod.Controls.Add(this.lblFechaMod);
+            this.grbFiltroMod.Controls.Add(this.lblFechaDesdeMod);
+            this.grbFiltroMod.Controls.Add(this.lblFechaHastaMod);
+            this.grbFiltroMod.Controls.Add(this.FechaHastaMod);
+            this.grbFiltroMod.Controls.Add(this.fechaDesdeMod);
+            this.grbFiltroMod.Controls.Add(this.FechaMod);
+            this.grbFiltroMod.Controls.Add(this.buscarMod);
+            this.grbFiltroMod.Controls.Add(this.CuilMod);
+            this.grbFiltroMod.Controls.Add(this.lblCuilMod);
+            this.grbFiltroMod.Location = new System.Drawing.Point(7, 15);
+            this.grbFiltroMod.Name = "grbFiltroMod";
+            this.grbFiltroMod.Size = new System.Drawing.Size(290, 379);
+            this.grbFiltroMod.TabIndex = 12;
+            this.grbFiltroMod.TabStop = false;
+            this.grbFiltroMod.Text = "Filtros";
+            this.grbFiltroMod.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // periodo
             // 
             this.periodo.AutoSize = true;
-            this.periodo.Location = new System.Drawing.Point(0, 120);
-            this.periodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.periodo.Location = new System.Drawing.Point(9, 128);
+            this.periodo.Margin = new System.Windows.Forms.Padding(2);
             this.periodo.Name = "periodo";
             this.periodo.Size = new System.Drawing.Size(62, 17);
             this.periodo.TabIndex = 32;
@@ -354,44 +347,41 @@
             this.periodo.UseVisualStyleBackColor = true;
             this.periodo.CheckedChanged += new System.EventHandler(this.periodo_CheckedChanged_1);
             // 
-            // label7
+            // lblErrorPuestoMod
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(36, 52);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 13);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "*";
+            this.lblErrorPuestoMod.AutoSize = true;
+            this.lblErrorPuestoMod.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorPuestoMod.Location = new System.Drawing.Point(45, 51);
+            this.lblErrorPuestoMod.Name = "lblErrorPuestoMod";
+            this.lblErrorPuestoMod.Size = new System.Drawing.Size(11, 13);
+            this.lblErrorPuestoMod.TabIndex = 31;
+            this.lblErrorPuestoMod.Text = "*";
             // 
-            // label3
+            // lblErrorAreaMod
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(30, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "*";
+            this.lblErrorAreaMod.AutoSize = true;
+            this.lblErrorAreaMod.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorAreaMod.Location = new System.Drawing.Point(32, 28);
+            this.lblErrorAreaMod.Name = "lblErrorAreaMod";
+            this.lblErrorAreaMod.Size = new System.Drawing.Size(11, 13);
+            this.lblErrorAreaMod.TabIndex = 30;
+            this.lblErrorAreaMod.Text = "*";
             // 
-            // label14
+            // lblPuestoMod
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(0, 52);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Puesto:";
+            this.lblPuestoMod.AutoSize = true;
+            this.lblPuestoMod.Location = new System.Drawing.Point(6, 58);
+            this.lblPuestoMod.Name = "lblPuestoMod";
+            this.lblPuestoMod.Size = new System.Drawing.Size(43, 13);
+            this.lblPuestoMod.TabIndex = 28;
+            this.lblPuestoMod.Text = "Puesto:";
             // 
             // PuestoMod
             // 
             this.PuestoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PuestoMod.FormattingEnabled = true;
-            this.PuestoMod.Location = new System.Drawing.Point(50, 50);
-            this.PuestoMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PuestoMod.Location = new System.Drawing.Point(68, 59);
+            this.PuestoMod.Margin = new System.Windows.Forms.Padding(2);
             this.PuestoMod.Name = "PuestoMod";
             this.PuestoMod.Size = new System.Drawing.Size(157, 21);
             this.PuestoMod.TabIndex = 27;
@@ -400,81 +390,77 @@
             // 
             this.AreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreaMod.FormattingEnabled = true;
-            this.AreaMod.Location = new System.Drawing.Point(50, 25);
-            this.AreaMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AreaMod.Location = new System.Drawing.Point(68, 20);
+            this.AreaMod.Margin = new System.Windows.Forms.Padding(2);
             this.AreaMod.Name = "AreaMod";
             this.AreaMod.Size = new System.Drawing.Size(157, 21);
             this.AreaMod.TabIndex = 26;
             this.AreaMod.SelectedIndexChanged += new System.EventHandler(this.AreaMod_SelectedIndexChanged);
             // 
-            // label8
+            // lblAreaMod
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 28);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Àrea:";
+            this.lblAreaMod.AutoSize = true;
+            this.lblAreaMod.Location = new System.Drawing.Point(6, 34);
+            this.lblAreaMod.Name = "lblAreaMod";
+            this.lblAreaMod.Size = new System.Drawing.Size(32, 13);
+            this.lblAreaMod.TabIndex = 25;
+            this.lblAreaMod.Text = "Àrea:";
             // 
-            // label12
+            // lblFechaMod
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(0, 149);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Fecha:";
+            this.lblFechaMod.AutoSize = true;
+            this.lblFechaMod.Location = new System.Drawing.Point(6, 156);
+            this.lblFechaMod.Name = "lblFechaMod";
+            this.lblFechaMod.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaMod.TabIndex = 22;
+            this.lblFechaMod.Text = "Fecha:";
             // 
-            // label11
+            // lblFechaDesdeMod
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(-1, 179);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Fecha desde:";
+            this.lblFechaDesdeMod.AutoSize = true;
+            this.lblFechaDesdeMod.Location = new System.Drawing.Point(6, 193);
+            this.lblFechaDesdeMod.Name = "lblFechaDesdeMod";
+            this.lblFechaDesdeMod.Size = new System.Drawing.Size(72, 13);
+            this.lblFechaDesdeMod.TabIndex = 21;
+            this.lblFechaDesdeMod.Text = "Fecha desde:";
             // 
-            // label10
+            // lblFechaHastaMod
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(0, 214);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Fecha hasta:";
+            this.lblFechaHastaMod.AutoSize = true;
+            this.lblFechaHastaMod.Location = new System.Drawing.Point(6, 234);
+            this.lblFechaHastaMod.Name = "lblFechaHastaMod";
+            this.lblFechaHastaMod.Size = new System.Drawing.Size(69, 13);
+            this.lblFechaHastaMod.TabIndex = 20;
+            this.lblFechaHastaMod.Text = "Fecha hasta:";
             // 
             // FechaHastaMod
             // 
-            this.FechaHastaMod.Location = new System.Drawing.Point(68, 210);
-            this.FechaHastaMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FechaHastaMod.Location = new System.Drawing.Point(83, 227);
+            this.FechaHastaMod.Margin = new System.Windows.Forms.Padding(2);
             this.FechaHastaMod.Name = "FechaHastaMod";
-            this.FechaHastaMod.Size = new System.Drawing.Size(139, 20);
+            this.FechaHastaMod.Size = new System.Drawing.Size(157, 20);
             this.FechaHastaMod.TabIndex = 19;
             // 
             // fechaDesdeMod
             // 
-            this.fechaDesdeMod.Location = new System.Drawing.Point(68, 179);
-            this.fechaDesdeMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaDesdeMod.Location = new System.Drawing.Point(83, 187);
+            this.fechaDesdeMod.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDesdeMod.Name = "fechaDesdeMod";
-            this.fechaDesdeMod.Size = new System.Drawing.Size(139, 20);
+            this.fechaDesdeMod.Size = new System.Drawing.Size(157, 20);
             this.fechaDesdeMod.TabIndex = 18;
             // 
             // FechaMod
             // 
-            this.FechaMod.Location = new System.Drawing.Point(56, 149);
-            this.FechaMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FechaMod.Location = new System.Drawing.Point(83, 150);
+            this.FechaMod.Margin = new System.Windows.Forms.Padding(2);
             this.FechaMod.Name = "FechaMod";
-            this.FechaMod.Size = new System.Drawing.Size(151, 20);
+            this.FechaMod.Size = new System.Drawing.Size(157, 20);
             this.FechaMod.TabIndex = 17;
             // 
             // buscarMod
             // 
-            this.buscarMod.Location = new System.Drawing.Point(152, 277);
-            this.buscarMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buscarMod.Location = new System.Drawing.Point(179, 275);
+            this.buscarMod.Margin = new System.Windows.Forms.Padding(2);
             this.buscarMod.Name = "buscarMod";
             this.buscarMod.Size = new System.Drawing.Size(61, 26);
             this.buscarMod.TabIndex = 13;
@@ -484,84 +470,83 @@
             // 
             // CuilMod
             // 
-            this.CuilMod.Location = new System.Drawing.Point(38, 84);
-            this.CuilMod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CuilMod.Location = new System.Drawing.Point(68, 96);
+            this.CuilMod.Margin = new System.Windows.Forms.Padding(2);
             this.CuilMod.Name = "CuilMod";
-            this.CuilMod.Size = new System.Drawing.Size(168, 20);
+            this.CuilMod.Size = new System.Drawing.Size(157, 20);
             this.CuilMod.TabIndex = 14;
             // 
-            // label5
+            // lblCuilMod
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 89);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "CUIL:";
+            this.lblCuilMod.AutoSize = true;
+            this.lblCuilMod.Location = new System.Drawing.Point(6, 99);
+            this.lblCuilMod.Name = "lblCuilMod";
+            this.lblCuilMod.Size = new System.Drawing.Size(34, 13);
+            this.lblCuilMod.TabIndex = 13;
+            this.lblCuilMod.Text = "CUIL:";
             // 
             // Asistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 439);
-            this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(1102, 540);
+            this.Controls.Add(this.modiicacion);
             this.Name = "Asistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asistencias";
-            this.tabControl1.ResumeLayout(false);
+            this.modiicacion.ResumeLayout(false);
             this.tbpAlta.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.grbPersonalAlta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbFiltrosAlta.ResumeLayout(false);
+            this.grbFiltrosAlta.PerformLayout();
             this.tbpModificar.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.grbInasistenciasMod.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridModificar)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.grbFiltroMod.ResumeLayout(false);
+            this.grbFiltroMod.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl modiicacion;
         private System.Windows.Forms.TabPage tbpAlta;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbPersonalAlta;
         private System.Windows.Forms.DataGridView dataGridAlta;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbFiltrosAlta;
         private System.Windows.Forms.Button buscarAlta;
         private System.Windows.Forms.TextBox cuilAltas;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCuilAlta;
+        private System.Windows.Forms.Label lblAreaAlta;
         private System.Windows.Forms.ComboBox areasAltas;
         private System.Windows.Forms.TabPage tbpModificar;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grbInasistenciasMod;
         private System.Windows.Forms.DataGridView dataGridModificar;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox grbFiltroMod;
+        private System.Windows.Forms.Label lblFechaMod;
+        private System.Windows.Forms.Label lblFechaDesdeMod;
+        private System.Windows.Forms.Label lblFechaHastaMod;
         private System.Windows.Forms.DateTimePicker FechaHastaMod;
         private System.Windows.Forms.DateTimePicker fechaDesdeMod;
         private System.Windows.Forms.DateTimePicker FechaMod;
         private System.Windows.Forms.Button buscarMod;
         private System.Windows.Forms.TextBox CuilMod;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCuilMod;
+        private System.Windows.Forms.Label lblPuestoAlta;
         private System.Windows.Forms.ComboBox puestosAltas;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblPuestoMod;
         private System.Windows.Forms.ComboBox PuestoMod;
         private System.Windows.Forms.ComboBox AreaMod;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAreaMod;
         private System.Windows.Forms.DataGridViewButtonColumn Abrir;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblErrorPuesto;
+        private System.Windows.Forms.Label lblErrorArea;
+        private System.Windows.Forms.Label lblErrorPuestoMod;
+        private System.Windows.Forms.Label lblErrorAreaMod;
         private System.Windows.Forms.CheckBox periodo;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

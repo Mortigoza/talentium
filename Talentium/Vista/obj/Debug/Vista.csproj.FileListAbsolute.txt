@@ -296,3 +296,17 @@ C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vist
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaPersonal.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaUsuario.resources
 C:\Users\Facundo\OneDrive\Escritorio\TalentiumProjectV2\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.Drawing.Common.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.dll
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
+C:\Users\maira\OneDrive\Escritorio\P-Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\System.Drawing.Common.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.dll
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml

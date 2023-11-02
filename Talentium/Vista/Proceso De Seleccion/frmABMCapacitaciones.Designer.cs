@@ -71,11 +71,12 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button5.Location = new System.Drawing.Point(482, 39);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(546, 74);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 22);
+            this.button5.Size = new System.Drawing.Size(56, 20);
             this.button5.TabIndex = 13;
             this.button5.Text = "Buscar";
             this.button5.UseVisualStyleBackColor = false;
@@ -83,7 +84,8 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(193, 43);
+            this.txtFiltro.Location = new System.Drawing.Point(253, 74);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(274, 20);
             this.txtFiltro.TabIndex = 12;
@@ -91,7 +93,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(29, 43);
+            this.label9.Location = new System.Drawing.Point(61, 74);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(167, 13);
@@ -101,11 +103,12 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(585, 536);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.BackColor = System.Drawing.Color.Navy;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(575, 547);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 25);
+            this.button3.Size = new System.Drawing.Size(110, 31);
             this.button3.TabIndex = 10;
             this.button3.Text = "Dar de Baja";
             this.button3.UseVisualStyleBackColor = false;
@@ -119,7 +122,8 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dtgCapacitacion.Location = new System.Drawing.Point(31, 103);
+            this.dtgCapacitacion.Location = new System.Drawing.Point(41, 127);
+            this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCapacitacion.Name = "dtgCapacitacion";
             this.dtgCapacitacion.RowHeadersWidth = 51;
             this.dtgCapacitacion.RowTemplate.Height = 24;
@@ -171,9 +175,11 @@
             this.grpModificacion.Controls.Add(this.btnModificar);
             this.grpModificacion.Controls.Add(this.label5);
             this.grpModificacion.Controls.Add(this.txtNombreMod);
-            this.grpModificacion.Location = new System.Drawing.Point(681, 314);
+            this.grpModificacion.Location = new System.Drawing.Point(738, 349);
+            this.grpModificacion.Margin = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Name = "grpModificacion";
-            this.grpModificacion.Size = new System.Drawing.Size(425, 248);
+            this.grpModificacion.Padding = new System.Windows.Forms.Padding(4);
+            this.grpModificacion.Size = new System.Drawing.Size(567, 295);
             this.grpModificacion.TabIndex = 8;
             this.grpModificacion.TabStop = false;
             this.grpModificacion.Text = "Modificacion";
@@ -182,15 +188,17 @@
             // 
             this.cmbExternaInternaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaMod.FormattingEnabled = true;
-            this.cmbExternaInternaMod.Location = new System.Drawing.Point(6, 153);
+            this.cmbExternaInternaMod.Location = new System.Drawing.Point(30, 173);
+            this.cmbExternaInternaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaMod.Name = "cmbExternaInternaMod";
-            this.cmbExternaInternaMod.Size = new System.Drawing.Size(126, 21);
+            this.cmbExternaInternaMod.Size = new System.Drawing.Size(120, 21);
             this.cmbExternaInternaMod.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(208, 30);
+            this.label6.Location = new System.Drawing.Point(314, 59);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 16;
@@ -200,16 +208,18 @@
             // 
             this.cmbNivelMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelMod.FormattingEnabled = true;
-            this.cmbNivelMod.Location = new System.Drawing.Point(211, 60);
+            this.cmbNivelMod.Location = new System.Drawing.Point(317, 76);
+            this.cmbNivelMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelMod.Name = "cmbNivelMod";
-            this.cmbNivelMod.Size = new System.Drawing.Size(191, 21);
+            this.cmbNivelMod.Size = new System.Drawing.Size(147, 21);
             this.cmbNivelMod.TabIndex = 16;
             // 
             // cmbAreaMod
             // 
             this.cmbAreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaMod.FormattingEnabled = true;
-            this.cmbAreaMod.Location = new System.Drawing.Point(272, 155);
+            this.cmbAreaMod.Location = new System.Drawing.Point(317, 174);
+            this.cmbAreaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaMod.Name = "cmbAreaMod";
             this.cmbAreaMod.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaMod.TabIndex = 21;
@@ -217,7 +227,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(267, 125);
+            this.label7.Location = new System.Drawing.Point(314, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 20;
@@ -226,7 +236,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 125);
+            this.label8.Location = new System.Drawing.Point(27, 157);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 19;
@@ -235,7 +245,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(132, 125);
+            this.label11.Location = new System.Drawing.Point(182, 157);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 18;
@@ -243,24 +253,29 @@
             // 
             // txtTiempoEstimadoMod
             // 
-            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(139, 155);
+            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 174);
+            this.txtTiempoEstimadoMod.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
             this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 20);
             this.txtTiempoEstimadoMod.TabIndex = 16;
             // 
             // btnCancelarMod
             // 
-            this.btnCancelarMod.Location = new System.Drawing.Point(263, 194);
+            this.btnCancelarMod.Location = new System.Drawing.Point(351, 239);
+            this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarMod.Name = "btnCancelarMod";
             this.btnCancelarMod.Size = new System.Drawing.Size(75, 29);
             this.btnCancelarMod.TabIndex = 11;
             this.btnCancelarMod.Text = "Cancelar";
             this.btnCancelarMod.UseVisualStyleBackColor = true;
+            this.btnCancelarMod.Click += new System.EventHandler(this.btnCancelarMod_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(344, 194);
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificar.Location = new System.Drawing.Point(459, 239);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 29);
             this.btnModificar.TabIndex = 10;
@@ -271,8 +286,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(27, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 13);
             this.label5.TabIndex = 5;
@@ -280,9 +294,10 @@
             // 
             // txtNombreMod
             // 
-            this.txtNombreMod.Location = new System.Drawing.Point(9, 62);
+            this.txtNombreMod.Location = new System.Drawing.Point(30, 76);
+            this.txtNombreMod.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreMod.Name = "txtNombreMod";
-            this.txtNombreMod.Size = new System.Drawing.Size(172, 20);
+            this.txtNombreMod.Size = new System.Drawing.Size(261, 20);
             this.txtNombreMod.TabIndex = 1;
             // 
             // grpAlta
@@ -300,9 +315,11 @@
             this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
             this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
-            this.grpAlta.Location = new System.Drawing.Point(681, 62);
+            this.grpAlta.Location = new System.Drawing.Point(738, 74);
+            this.grpAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grpAlta.Name = "grpAlta";
-            this.grpAlta.Size = new System.Drawing.Size(425, 245);
+            this.grpAlta.Padding = new System.Windows.Forms.Padding(4);
+            this.grpAlta.Size = new System.Drawing.Size(567, 257);
             this.grpAlta.TabIndex = 7;
             this.grpAlta.TabStop = false;
             this.grpAlta.Text = "Alta";
@@ -311,7 +328,8 @@
             // 
             this.cmbExternaInternaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaAlta.FormattingEnabled = true;
-            this.cmbExternaInternaAlta.Location = new System.Drawing.Point(6, 159);
+            this.cmbExternaInternaAlta.Location = new System.Drawing.Point(30, 130);
+            this.cmbExternaInternaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaAlta.Name = "cmbExternaInternaAlta";
             this.cmbExternaInternaAlta.Size = new System.Drawing.Size(120, 21);
             this.cmbExternaInternaAlta.TabIndex = 16;
@@ -320,7 +338,8 @@
             // 
             this.cmbAreaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaAlta.FormattingEnabled = true;
-            this.cmbAreaAlta.Location = new System.Drawing.Point(272, 159);
+            this.cmbAreaAlta.Location = new System.Drawing.Point(317, 131);
+            this.cmbAreaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaAlta.Name = "cmbAreaAlta";
             this.cmbAreaAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaAlta.TabIndex = 15;
@@ -328,7 +347,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(267, 129);
+            this.label10.Location = new System.Drawing.Point(314, 114);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 14;
@@ -338,24 +357,29 @@
             // 
             this.cmbNivelAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAlta.FormattingEnabled = true;
-            this.cmbNivelAlta.Location = new System.Drawing.Point(228, 66);
+            this.cmbNivelAlta.Location = new System.Drawing.Point(317, 58);
+            this.cmbNivelAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAlta.Name = "cmbNivelAlta";
-            this.cmbNivelAlta.Size = new System.Drawing.Size(191, 21);
+            this.cmbNivelAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbNivelAlta.TabIndex = 13;
             // 
             // btnCancelarAlta
             // 
-            this.btnCancelarAlta.Location = new System.Drawing.Point(263, 205);
+            this.btnCancelarAlta.Location = new System.Drawing.Point(351, 204);
+            this.btnCancelarAlta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
             this.btnCancelarAlta.Size = new System.Drawing.Size(75, 29);
             this.btnCancelarAlta.TabIndex = 10;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = true;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
             // btnAlta
             // 
-            this.btnAlta.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAlta.Location = new System.Drawing.Point(344, 205);
+            this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAlta.Location = new System.Drawing.Point(459, 204);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 29);
             this.btnAlta.TabIndex = 9;
@@ -366,7 +390,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(169, 26);
+            this.label4.Location = new System.Drawing.Point(314, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
@@ -376,8 +400,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 105);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(27, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 6;
@@ -386,8 +409,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(182, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 5;
@@ -396,7 +418,7 @@
             // lblAltaCapacitacion
             // 
             this.lblAltaCapacitacion.AutoSize = true;
-            this.lblAltaCapacitacion.Location = new System.Drawing.Point(6, 32);
+            this.lblAltaCapacitacion.Location = new System.Drawing.Point(27, 42);
             this.lblAltaCapacitacion.Name = "lblAltaCapacitacion";
             this.lblAltaCapacitacion.Size = new System.Drawing.Size(123, 13);
             this.lblAltaCapacitacion.TabIndex = 4;
@@ -404,24 +426,28 @@
             // 
             // txtTiempoEstimadoAlta
             // 
-            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(139, 159);
+            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 131);
+            this.txtTiempoEstimadoAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
             this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 20);
             this.txtTiempoEstimadoAlta.TabIndex = 1;
             // 
             // txtNombreAlta
             // 
-            this.txtNombreAlta.Location = new System.Drawing.Point(9, 68);
+            this.txtNombreAlta.Location = new System.Drawing.Point(30, 59);
+            this.txtNombreAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreAlta.Name = "txtNombreAlta";
-            this.txtNombreAlta.Size = new System.Drawing.Size(172, 20);
+            this.txtNombreAlta.Size = new System.Drawing.Size(261, 20);
             this.txtNombreAlta.TabIndex = 0;
             // 
             // btnDtgMod
             // 
-            this.btnDtgMod.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnDtgMod.Location = new System.Drawing.Point(451, 536);
+            this.btnDtgMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnDtgMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDtgMod.Location = new System.Drawing.Point(458, 547);
+            this.btnDtgMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnDtgMod.Name = "btnDtgMod";
-            this.btnDtgMod.Size = new System.Drawing.Size(88, 25);
+            this.btnDtgMod.Size = new System.Drawing.Size(110, 31);
             this.btnDtgMod.TabIndex = 14;
             this.btnDtgMod.Text = "Modificar";
             this.btnDtgMod.UseVisualStyleBackColor = false;
@@ -431,7 +457,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 607);
+            this.ClientSize = new System.Drawing.Size(1334, 682);
             this.Controls.Add(this.btnDtgMod);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtFiltro);
@@ -440,6 +466,7 @@
             this.Controls.Add(this.dtgCapacitacion);
             this.Controls.Add(this.grpModificacion);
             this.Controls.Add(this.grpAlta);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmABMCapacitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMCapacitaciones";

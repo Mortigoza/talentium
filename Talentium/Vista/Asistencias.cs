@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
 using Comun;
+using SpreadsheetLight;
+using System.IO;
+using SpreadsheetLight.Drawing;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Reflection;
+using System.Globalization;
+
 namespace Vista
 {
     public partial class Asistencias : Form
@@ -27,14 +34,14 @@ namespace Vista
             dataGridModificar.Columns["Modificar"].Visible = false;
             fechaDesdeMod.Visible = false;
             FechaHastaMod.Visible = false;
-            label10.Visible = false;
-            label11.Visible = false;
+            lblFechaHastaMod.Visible = false;
+            lblFechaDesdeMod.Visible = false;
             Refrescar(dataGridAlta);
             Refrescar(dataGridModificar);
 
         }
 
-        public void Refrescar(DataGridView dtg) 
+        public void Refrescar(DataGridView dtg)
         {
             dtg.DataSource = null;
             dtg.AllowUserToAddRows = false;
@@ -81,7 +88,7 @@ namespace Vista
         {
 
         }
-        public void cargar(DataTable data) 
+        public void cargar(DataTable data)
         {
             dataGridAlta.AllowUserToAddRows = false;
             dataGridAlta.DataSource = data;
@@ -91,17 +98,17 @@ namespace Vista
 
             dataGridAlta.Columns["id_persona"].Visible = false;
         }
-        public void cargarDtg(DataTable data) 
+        public void cargarDtg(DataTable data)
         {
             dataGridModificar.AllowUserToAddRows = false;
             dataGridModificar.DataSource = data;
             dataGridModificar.Columns["Modificar"].Visible = true;
 
             // Ocultar los id en las columnas
-                    
-                    dataGridModificar.Columns["id_persona"].Visible = false;
-                    dataGridModificar.Columns["id_asistencias"].Visible = false;
-                    dataGridModificar.Columns["id_motivo"].Visible = false;
+
+            dataGridModificar.Columns["id_persona"].Visible = false;
+            dataGridModificar.Columns["id_asistencias"].Visible = false;
+            dataGridModificar.Columns["id_motivo"].Visible = false;
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -114,7 +121,8 @@ namespace Vista
             if (string.IsNullOrEmpty(cuilAltas.Text))
             {
                 DataTable asis = asistencias.filtroAlta(idA, idP, null);
-                cargar(asis);            }
+                cargar(asis);
+            }
             else
             {
                 DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
@@ -125,7 +133,7 @@ namespace Vista
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -144,7 +152,7 @@ namespace Vista
 
             if (areasAltas.SelectedItem != null && puestosAltas.Text != null)
             {
-                buscarAlta.Enabled = true; 
+                buscarAlta.Enabled = true;
             }
         }
 
@@ -155,7 +163,7 @@ namespace Vista
 
         private void periodo_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void periodo_CheckedChanged_1(object sender, EventArgs e)
@@ -165,18 +173,18 @@ namespace Vista
                 FechaMod.Visible = false;
                 fechaDesdeMod.Visible = true;
                 FechaHastaMod.Visible = true;
-                label10.Visible = true;
-                label11.Visible = true;
-                label12.Visible = false;
+                lblFechaHastaMod.Visible = true;
+                lblFechaDesdeMod.Visible = true;
+                lblFechaMod.Visible = false;
             }
             else
             {
                 FechaMod.Visible = true;
                 fechaDesdeMod.Visible = false;
                 FechaHastaMod.Visible = false;
-                label10.Visible = false;
-                label11.Visible = false;
-                label12.Visible = true;
+                lblFechaHastaMod.Visible = false;
+                lblFechaDesdeMod.Visible = false;
+                lblFechaMod.Visible = true;
             }
 
         }
@@ -188,12 +196,12 @@ namespace Vista
             DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
             object idA = selectedArea["id_area"];
             object idP = selectedPuesto["id_puesto"];
-            
-                DataTable asis = asistencias.filtroModificacion(periodo.Checked ,idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value );
+
+            DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
             //corroborar las cargas del dtg aplicar la busqueda del motivo para traerlo.
             //tengo que traer nombre y apellido de persona, dejando el id_persona y el id_motivo
             cargarDtg(asis);
-           
+
 
 
         }
@@ -236,10 +244,10 @@ namespace Vista
                     datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
                     datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
                 }
-                else 
+                else
                 {
                     datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
-                    datos.Fecha_desde = DateTime.Now; 
+                    datos.Fecha_desde = DateTime.Now;
                     datos.Fecha_hasta = DateTime.Now;
 
                 }
@@ -261,13 +269,125 @@ namespace Vista
             dataGridModificar.DataSource = null;
             CuilMod.Clear();
             AreaMod.SelectedIndex = 0;
-            PuestoMod.SelectedIndex =0;
+            PuestoMod.SelectedIndex = 0;
             periodo.Checked = false;
             FechaMod.Value = DateTime.Now;
             fechaDesdeMod.Value = DateTime.Now;
             FechaHastaMod.Value = DateTime.Now;
             dataGridModificar.Columns["Modificar"].Visible = false;
 
+        }
+
+        private void btnBuscarReporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                folderDialog.Description = "Selecciona la carpeta de destino";
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (SaveFileDialog saveDialog = new SaveFileDialog())
+                    {
+                        saveDialog.InitialDirectory = folderDialog.SelectedPath;
+                        saveDialog.Filter = "Archivos Excel (*.xlsx)|*.xlsx";
+                        saveDialog.Title = "Elije el nombre del archivo Excel";
+
+                        if (saveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string rutaCompleta = saveDialog.FileName;
+
+                            SLDocument sl = new SLDocument();
+                            SLStyle style = new SLStyle();
+                            style.Font.FontSize = 12;
+                            style.Fill.SetPatternType(PatternValues.Solid);
+                            style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
+                            style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
+                            style.Font.Bold = true;
+                            sl.SetWorksheetDefaultColumnWidth(25);
+                            int numCol = 0;
+                            int numFila = 10;
+                           
+                            string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
+
+                            SLPicture picture = new SLPicture(rutaImagen);
+                            picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
+                            picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
+                            sl.InsertPicture(picture);
+
+                            try
+                            {
+                                foreach (DataGridViewColumn cl in dataGridModificar.Columns)
+                                {
+                                    if (cl.Index != 1 && cl.Index != 4 && cl.Index != 12)
+                                    {
+                                        string nombreColumna = cl.HeaderText;
+                                        string nombreColumnaFormateado = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreColumna.ToLower());
+
+                                        sl.SetCellValue(9, numCol, nombreColumnaFormateado);
+                                        sl.SetCellStyle(9, numCol, style);
+                                        sl.SetCellStyle(9, 9, 9, numCol, style);
+
+                                        numCol++;
+                                    }
+                                }
+
+                                DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
+                                SLStyle fechaEmisionStyle = new SLStyle();
+                                fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                fechaEmisionStyle.SetFontBold(true);
+                                fechaEmisionStyle.SetFontItalic(true);
+                                fechaEmisionStyle.Font.FontSize = 12;
+                                sl.SetCellStyle(2, 11, fechaEmisionStyle); // Fila 1, Columna 1
+                                sl.SetCellValue(2, 11, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                                SLStyle titulo = new SLStyle();
+                                titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                titulo.SetFontBold(true);
+                                titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
+                                titulo.Font.FontSize = 16;
+                                sl.SetCellStyle(6, 7, titulo);
+                                sl.SetCellValue(6, 7, "Reporte de Inasistencia");
+                                SLStyle fondo = new SLStyle();
+                                fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                                fondo.Fill.SetPatternType(PatternValues.Solid);
+                                fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
+                                sl.SetCellStyle(1, 1,8,12, fondo);
+
+
+                                foreach (DataGridViewRow row in dataGridModificar.Rows)
+                                {
+                                    sl.SetCellValue(numFila, 1, row.Cells[2].Value.ToString());
+                                    sl.SetCellValue(numFila, 2, row.Cells[3].Value.ToString());
+                                    sl.SetCellValue(numFila, 3, row.Cells[5].Value.ToString());
+                                    sl.SetCellValue(numFila, 4, row.Cells[6].Value.ToString());
+                                    sl.SetCellValue(numFila, 5, row.Cells[7].Value.ToString());
+                                    sl.SetCellValue(numFila, 6, row.Cells[8].Value.ToString());
+                                    sl.SetCellValue(numFila, 7, row.Cells[9].Value.ToString());
+                                    sl.SetCellValue(numFila, 8, row.Cells[10].Value.ToString());
+                                    sl.SetCellValue(numFila, 9, row.Cells[11].Value.ToString());
+                                    sl.SetCellValue(numFila, 10, row.Cells[13].Value.ToString());
+                                    sl.SetCellValue(numFila, 11, row.Cells[14].Value.ToString());
+                                    sl.SetCellValue(numFila, 12, row.Cells[15].Value.ToString());
+                                    numFila++;
+                                }
+                                sl.SaveAs(rutaCompleta);
+                                MessageBox.Show("Operación exitosa. Archivo guardado en: " + rutaCompleta);
+                            }
+                            catch (Exception msj)
+                            {
+                                MessageBox.Show(msj.Message);
+
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

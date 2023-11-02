@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +109,8 @@ namespace LogicaNegocio
         public DataTable filtroModificacion(bool periodos,object area, object puesto, string cuil, DateTime? fecha, DateTime? fechaDesde, DateTime? fechaHasta) {
             var areas = Convert.ToInt32(area);
             var puestos = Convert.ToInt32(puesto);
+            if (string.IsNullOrWhiteSpace(cuil)) { cuil = null; }
+
             if (periodos)
             {
                 fecha = null;
