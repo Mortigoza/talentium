@@ -150,6 +150,7 @@
             this.tbContra2.Name = "tbContra2";
             this.tbContra2.Size = new System.Drawing.Size(182, 20);
             this.tbContra2.TabIndex = 30;
+            this.tbContra2.TextChanged += new System.EventHandler(this.tbContra2_TextChanged);
             // 
             // label3
             // 

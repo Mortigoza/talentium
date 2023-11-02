@@ -103,10 +103,10 @@
     <Compile Include="frmCategorias.Designer.cs">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaPersonal.cs">
+    <Compile Include="Administracion Personal\frmConsultaPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaPersonal.Designer.cs">
+    <Compile Include="Administracion Personal\frmConsultaPersonal.Designer.cs">
       <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="Accesibilidad\frmConsultaUsuario.cs">
@@ -276,7 +276,7 @@
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaPersonal.resx">
+    <EmbeddedResource Include="Administracion Personal\frmConsultaPersonal.resx">
       <DependentUpon>frmConsultaPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accesibilidad\frmConsultaUsuario.resx">
