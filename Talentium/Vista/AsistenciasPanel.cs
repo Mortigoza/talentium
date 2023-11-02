@@ -36,20 +36,20 @@ namespace Vista
             idAsis = listaObjetos[0].idAsistencia;
             checkPeriodo.Checked = listaObjetos[0].Periodo;
             if (!dato.Alta) {
-                dateTimePicker3.Value = listaObjetos[0].Fecha;
-                dateTimePicker1.Value = listaObjetos[0].Fecha_desde;
-                dateTimePicker2.Value = listaObjetos[0].Fecha_hasta;
+                dttFecha.Value = listaObjetos[0].Fecha;
+                dttFechaDesde.Value = listaObjetos[0].Fecha_desde;
+                dttFechaHasta.Value = listaObjetos[0].Fecha_hasta;
             }
             txtOtro.Text = listaObjetos[0].Otro_motivo;
             checkJustificada.Checked = listaObjetos[0].Justificada;
-            txtObs.Text = listaObjetos[0].Observaciones;
+            txtObservaciones.Text = listaObjetos[0].Observaciones;
 
             fechaDesde.Visible = false;
             fechaHasta.Visible = false;
-            dateTimePicker1.Visible = false;
-            dateTimePicker2.Visible = false;
+            dttFechaDesde.Visible = false;
+            dttFechaHasta.Visible = false;
             txtOtro.Visible = false;
-            label7.Visible = false;
+            lblOtro.Visible = false;
         }
 
         private void AsistenciasPanel_Load(object sender, EventArgs e)
@@ -100,13 +100,13 @@ namespace Vista
                 {
                     DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
                     asistencias.IdPersona = idPer;
-                    asistencias.Fecha = dateTimePicker3.Value;
-                    asistencias.FechaDesde = dateTimePicker1.Value;
-                    asistencias.FechaHasta = dateTimePicker2.Value;
+                    asistencias.Fecha = dttFecha.Value;
+                    asistencias.FechaDesde = dttFechaDesde.Value;
+                    asistencias.FechaHasta = dttFechaHasta.Value;
                     asistencias.IdMotivo = selectedMotivo["id_motivo"];
                     asistencias.OtroMotivo = txtOtro.Text;
                     asistencias.Justificada = checkJustificada.Checked;
-                    asistencias.Observaciones = txtObs.Text;
+                    asistencias.Observaciones = txtObservaciones.Text;
                     asistencias.Periodo = checkPeriodo.Checked;
                     asistencias.insertarAsistencias();
                     this.Hide();
@@ -117,13 +117,13 @@ namespace Vista
                     DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
                     asistencias.IdPersona = idPer;
                     asistencias.IdAsistencia = idAsis;
-                    asistencias.Fecha = dateTimePicker3.Value;
-                    asistencias.FechaDesde = dateTimePicker1.Value;
-                    asistencias.FechaHasta = dateTimePicker2.Value;
+                    asistencias.Fecha = dttFecha.Value;
+                    asistencias.FechaDesde = dttFechaDesde.Value;
+                    asistencias.FechaHasta = dttFechaHasta.Value;
                     asistencias.IdMotivo = selectedMotivo["id_motivo"];
                     asistencias.OtroMotivo = txtOtro.Text;
                     asistencias.Justificada = checkJustificada.Checked;
-                    asistencias.Observaciones = txtObs.Text;
+                    asistencias.Observaciones = txtObservaciones.Text;
                     asistencias.Periodo = checkPeriodo.Checked;
                     asistencias.ModificarAsistencias();
                     this.Hide();
@@ -142,19 +142,19 @@ namespace Vista
             {
                 fechaDesde.Visible = true;
                 fechaHasta.Visible = true;
-                dateTimePicker1.Visible = true;
-                dateTimePicker2.Visible = true;
+                dttFechaDesde.Visible = true;
+                dttFechaHasta.Visible = true;
                 fecha.Visible = false;
-                dateTimePicker3.Visible = false;
+                dttFecha.Visible = false;
             }
             else 
             {
                 fechaDesde.Visible = false;
                 fechaHasta.Visible = false;
-                dateTimePicker1.Visible = false;
-                dateTimePicker2.Visible = false;
+                dttFechaDesde.Visible = false;
+                dttFechaHasta.Visible = false;
                 fecha.Visible = true;
-                dateTimePicker3.Visible = true;
+                dttFecha.Visible = true;
             }
         }
 
@@ -175,12 +175,12 @@ namespace Vista
             if (valor == 9)
             {
                 txtOtro.Visible = true;
-                label7.Visible = true;
+                lblOtro.Visible = true;
             }
             else 
             {
                 txtOtro.Visible = false;
-                label7.Visible = false;
+                lblOtro.Visible = false;
             }
         }
     }

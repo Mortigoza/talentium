@@ -34,8 +34,8 @@ namespace Vista
             dataGridModificar.Columns["Modificar"].Visible = false;
             fechaDesdeMod.Visible = false;
             FechaHastaMod.Visible = false;
-            label10.Visible = false;
-            label11.Visible = false;
+            lblFechaHastaMod.Visible = false;
+            lblFechaDesdeMod.Visible = false;
             Refrescar(dataGridAlta);
             Refrescar(dataGridModificar);
 
@@ -171,18 +171,18 @@ namespace Vista
                 FechaMod.Visible = false;
                 fechaDesdeMod.Visible = true;
                 FechaHastaMod.Visible = true;
-                label10.Visible = true;
-                label11.Visible = true;
-                label12.Visible = false;
+                lblFechaHastaMod.Visible = true;
+                lblFechaDesdeMod.Visible = true;
+                lblFechaMod.Visible = false;
             }
             else
             {
                 FechaMod.Visible = true;
                 fechaDesdeMod.Visible = false;
                 FechaHastaMod.Visible = false;
-                label10.Visible = false;
-                label11.Visible = false;
-                label12.Visible = true;
+                lblFechaHastaMod.Visible = false;
+                lblFechaDesdeMod.Visible = false;
+                lblFechaMod.Visible = true;
             }
 
         }

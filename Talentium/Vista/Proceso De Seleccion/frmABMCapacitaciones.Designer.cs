@@ -71,7 +71,8 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Location = new System.Drawing.Point(642, 48);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
@@ -84,7 +85,7 @@
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(257, 53);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(364, 22);
             this.txtFiltro.TabIndex = 12;
@@ -101,11 +102,12 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(780, 660);
+            this.button3.BackColor = System.Drawing.Color.Navy;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(774, 660);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 31);
+            this.button3.Size = new System.Drawing.Size(110, 31);
             this.button3.TabIndex = 10;
             this.button3.Text = "Dar de Baja";
             this.button3.UseVisualStyleBackColor = false;
@@ -120,7 +122,7 @@
             this.Column3,
             this.Column4});
             this.dtgCapacitacion.Location = new System.Drawing.Point(41, 127);
-            this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCapacitacion.Name = "dtgCapacitacion";
             this.dtgCapacitacion.RowHeadersWidth = 51;
             this.dtgCapacitacion.RowTemplate.Height = 24;
@@ -173,9 +175,9 @@
             this.grpModificacion.Controls.Add(this.label5);
             this.grpModificacion.Controls.Add(this.txtNombreMod);
             this.grpModificacion.Location = new System.Drawing.Point(908, 386);
-            this.grpModificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificacion.Margin = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Name = "grpModificacion";
-            this.grpModificacion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificacion.Padding = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Size = new System.Drawing.Size(567, 305);
             this.grpModificacion.TabIndex = 8;
             this.grpModificacion.TabStop = false;
@@ -186,7 +188,7 @@
             this.cmbExternaInternaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaMod.FormattingEnabled = true;
             this.cmbExternaInternaMod.Location = new System.Drawing.Point(8, 188);
-            this.cmbExternaInternaMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbExternaInternaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaMod.Name = "cmbExternaInternaMod";
             this.cmbExternaInternaMod.Size = new System.Drawing.Size(167, 24);
             this.cmbExternaInternaMod.TabIndex = 17;
@@ -194,7 +196,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(277, 37);
+            this.label6.Location = new System.Drawing.Point(278, 46);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 16);
@@ -206,7 +208,7 @@
             this.cmbNivelMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelMod.FormattingEnabled = true;
             this.cmbNivelMod.Location = new System.Drawing.Point(281, 74);
-            this.cmbNivelMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelMod.Name = "cmbNivelMod";
             this.cmbNivelMod.Size = new System.Drawing.Size(253, 24);
             this.cmbNivelMod.TabIndex = 16;
@@ -216,7 +218,7 @@
             this.cmbAreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaMod.FormattingEnabled = true;
             this.cmbAreaMod.Location = new System.Drawing.Point(363, 191);
-            this.cmbAreaMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAreaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaMod.Name = "cmbAreaMod";
             this.cmbAreaMod.Size = new System.Drawing.Size(195, 24);
             this.cmbAreaMod.TabIndex = 21;
@@ -254,7 +256,7 @@
             // txtTiempoEstimadoMod
             // 
             this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 191);
-            this.txtTiempoEstimadoMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTiempoEstimadoMod.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
             this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(140, 22);
             this.txtTiempoEstimadoMod.TabIndex = 16;
@@ -262,18 +264,20 @@
             // btnCancelarMod
             // 
             this.btnCancelarMod.Location = new System.Drawing.Point(351, 239);
-            this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarMod.Name = "btnCancelarMod";
             this.btnCancelarMod.Size = new System.Drawing.Size(100, 36);
             this.btnCancelarMod.TabIndex = 11;
             this.btnCancelarMod.Text = "Cancelar";
             this.btnCancelarMod.UseVisualStyleBackColor = true;
+            this.btnCancelarMod.Click += new System.EventHandler(this.btnCancelarMod_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificar.Location = new System.Drawing.Point(459, 239);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 36);
             this.btnModificar.TabIndex = 10;
@@ -284,7 +288,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 30);
+            this.label5.Location = new System.Drawing.Point(12, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 16);
             this.label5.TabIndex = 5;
@@ -293,7 +297,7 @@
             // txtNombreMod
             // 
             this.txtNombreMod.Location = new System.Drawing.Point(12, 76);
-            this.txtNombreMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreMod.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreMod.Name = "txtNombreMod";
             this.txtNombreMod.Size = new System.Drawing.Size(228, 22);
             this.txtNombreMod.TabIndex = 1;
@@ -314,9 +318,9 @@
             this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
             this.grpAlta.Location = new System.Drawing.Point(908, 76);
-            this.grpAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grpAlta.Name = "grpAlta";
-            this.grpAlta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAlta.Padding = new System.Windows.Forms.Padding(4);
             this.grpAlta.Size = new System.Drawing.Size(567, 302);
             this.grpAlta.TabIndex = 7;
             this.grpAlta.TabStop = false;
@@ -327,7 +331,7 @@
             this.cmbExternaInternaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaAlta.FormattingEnabled = true;
             this.cmbExternaInternaAlta.Location = new System.Drawing.Point(8, 196);
-            this.cmbExternaInternaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbExternaInternaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaAlta.Name = "cmbExternaInternaAlta";
             this.cmbExternaInternaAlta.Size = new System.Drawing.Size(159, 24);
             this.cmbExternaInternaAlta.TabIndex = 16;
@@ -337,7 +341,7 @@
             this.cmbAreaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaAlta.FormattingEnabled = true;
             this.cmbAreaAlta.Location = new System.Drawing.Point(363, 196);
-            this.cmbAreaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAreaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaAlta.Name = "cmbAreaAlta";
             this.cmbAreaAlta.Size = new System.Drawing.Size(195, 24);
             this.cmbAreaAlta.TabIndex = 15;
@@ -357,7 +361,7 @@
             this.cmbNivelAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAlta.FormattingEnabled = true;
             this.cmbNivelAlta.Location = new System.Drawing.Point(304, 81);
-            this.cmbNivelAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAlta.Name = "cmbNivelAlta";
             this.cmbNivelAlta.Size = new System.Drawing.Size(253, 24);
             this.cmbNivelAlta.TabIndex = 13;
@@ -365,18 +369,20 @@
             // btnCancelarAlta
             // 
             this.btnCancelarAlta.Location = new System.Drawing.Point(351, 252);
-            this.btnCancelarAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarAlta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
             this.btnCancelarAlta.Size = new System.Drawing.Size(100, 36);
             this.btnCancelarAlta.TabIndex = 10;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = true;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
             // btnAlta
             // 
-            this.btnAlta.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlta.Location = new System.Drawing.Point(459, 252);
-            this.btnAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(100, 36);
             this.btnAlta.TabIndex = 9;
@@ -396,7 +402,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 129);
+            this.label3.Location = new System.Drawing.Point(9, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 16);
             this.label3.TabIndex = 6;
@@ -405,7 +411,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 129);
+            this.label2.Location = new System.Drawing.Point(182, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 5;
@@ -424,7 +430,7 @@
             // txtTiempoEstimadoAlta
             // 
             this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 196);
-            this.txtTiempoEstimadoAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTiempoEstimadoAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
             this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(140, 22);
             this.txtTiempoEstimadoAlta.TabIndex = 1;
@@ -432,16 +438,17 @@
             // txtNombreAlta
             // 
             this.txtNombreAlta.Location = new System.Drawing.Point(12, 84);
-            this.txtNombreAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreAlta.Name = "txtNombreAlta";
             this.txtNombreAlta.Size = new System.Drawing.Size(228, 22);
             this.txtNombreAlta.TabIndex = 0;
             // 
             // btnDtgMod
             // 
-            this.btnDtgMod.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDtgMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnDtgMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDtgMod.Location = new System.Drawing.Point(601, 660);
-            this.btnDtgMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDtgMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnDtgMod.Name = "btnDtgMod";
             this.btnDtgMod.Size = new System.Drawing.Size(118, 31);
             this.btnDtgMod.TabIndex = 14;
@@ -462,7 +469,7 @@
             this.Controls.Add(this.dtgCapacitacion);
             this.Controls.Add(this.grpModificacion);
             this.Controls.Add(this.grpAlta);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmABMCapacitaciones";
             this.Text = "frmABMCapacitaciones";
             this.Load += new System.EventHandler(this.frmABMCapacitaciones_Load);
