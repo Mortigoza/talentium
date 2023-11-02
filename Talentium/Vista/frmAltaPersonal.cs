@@ -383,9 +383,6 @@ namespace Vista
                 insert.institucion1 = txtInsitutcionSuperior.Text;
                 insert.institucion2 = txtInsitutcionSuperior1.Text;
                 insert.institucion3 = txtInsitutcionSuperior2.Text;
-                insert.carrera1 = txtTitulo.Text;
-                insert.carrera2 = txtTitulo1.Text;
-                insert.carrera3 = txtTitulo2.Text;
                 insert.año_ingreso1 = int.Parse(cmbIngreso.SelectedItem.ToString());
                 insert.año_ingreso2 = int.Parse(cmbIngreso1.SelectedItem.ToString());
                 insert.año_ingreso3 = int.Parse(cmbIngreso2.SelectedItem.ToString());
@@ -506,8 +503,6 @@ namespace Vista
                     modify.titulo1 = txtTitulo.Text;
                     modify.titulo2 = txtTitulo1.Text;
                     modify.titulo3 = txtTitulo2.Text;
-                    modify.carrera2 = txtTitulo1.Text;
-                    modify.carrera3 = txtTitulo2.Text;
                     modify.año_ingreso1 = int.Parse(cmbIngreso.Text);
                     modify.año_ingreso2 = int.Parse(cmbIngreso1.Text);
                     modify.año_ingreso3 = int.Parse(cmbIngreso2.Text);

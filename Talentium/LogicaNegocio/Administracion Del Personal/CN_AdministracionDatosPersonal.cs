@@ -177,7 +177,6 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
-                    insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
                     insert.año_ingreso1 = (int)academicos.Rows[0]["año_ingreso"];
                     insert.titulo1 = academicos.Rows[0]["titulo"].ToString();
                     insert.año_egreso1 = (int)academicos.Rows[0]["año_egreso"];
@@ -189,14 +188,12 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
-                    insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
                     insert.año_ingreso1 = (int)academicos.Rows[0]["año_ingreso"];
                     insert.titulo1 = academicos.Rows[0]["titulo"].ToString();
                     insert.año_egreso1 = (int)academicos.Rows[0]["año_egreso"];
                     insert.id_progreso1 = (int)academicos.Rows[0]["id_progreso"];
 
                     insert.id_nivel2 = (int)academicos.Rows[1]["id_nivel"];
-                    insert.carrera2 = academicos.Rows[1]["carrera"].ToString();
                     insert.institucion2 = academicos.Rows[1]["institucion"].ToString();
                     insert.año_ingreso2 = (int)academicos.Rows[1]["año_ingreso"];
                     insert.año_egreso2 = (int)academicos.Rows[1]["año_egreso"];
@@ -211,14 +208,12 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
                     insert.id_nivel1 = (int)academicos.Rows[0]["id_nivel"];
                     insert.institucion1 = academicos.Rows[0]["institucion"].ToString();
-                    insert.carrera1 = academicos.Rows[0]["carrera"].ToString();
                     insert.año_ingreso1 = (int)academicos.Rows[0]["año_ingreso"];
                     insert.titulo1 = academicos.Rows[0]["titulo"].ToString();
                     insert.año_egreso1 = (int)academicos.Rows[0]["año_egreso"];
                     insert.id_progreso1 = (int)academicos.Rows[0]["id_progreso"];
 
                     insert.id_nivel2 = (int)academicos.Rows[1]["id_nivel"];
-                    insert.carrera2 = academicos.Rows[1]["carrera"].ToString();
                     insert.institucion2 = academicos.Rows[1]["institucion"].ToString();
                     insert.año_ingreso2 = (int)academicos.Rows[1]["año_ingreso"];
                     insert.año_egreso2 = (int)academicos.Rows[1]["año_egreso"];
@@ -227,7 +222,6 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
                     insert.id_nivel3 = (int)academicos.Rows[2]["id_nivel"];
                     insert.institucion3 = academicos.Rows[2]["institucion"].ToString();
-                    insert.carrera3 = academicos.Rows[2]["carrera"].ToString();
                     insert.año_ingreso3 = (int)academicos.Rows[2]["año_ingreso"];
                     insert.año_egreso3 = (int)academicos.Rows[2]["año_egreso"];
                     insert.titulo3 = academicos.Rows[2]["titulo"].ToString();

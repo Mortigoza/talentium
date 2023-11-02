@@ -76,9 +76,6 @@ namespace Comun
         public string institucion1 { get; set; }
         public string institucion2 { get; set; }
         public string institucion3 { get; set; }
-        public string carrera1 { get; set; }
-        public string carrera2 { get; set; }
-        public string carrera3 { get; set; }
         public int  año_ingreso1 { get; set; }
         public int año_ingreso2 { get; set; }
         public int año_ingreso3 { get; set; }
