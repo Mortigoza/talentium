@@ -161,3 +161,7 @@ C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\ob
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\Facundo\OneDrive\Documentos\GitHub\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.en-US.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.es-AR.resources

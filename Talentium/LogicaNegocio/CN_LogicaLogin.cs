@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos.Login;
 using Comun;
+using LogicaNegocio.Lenguajes;
 
 namespace LogicaNegocio
 {
@@ -39,12 +40,12 @@ namespace LogicaNegocio
                 }
                 else if (DateTime.Now < GetHoraDesbloqueo())
                 {
-                    MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"{Errores.LiminteIntentos} {GetHoraDesbloqueo().ToLongTimeString()}.", Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 else
                 {
-                    MessageBox.Show(MensajeError, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MensajeError, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
@@ -93,19 +94,23 @@ namespace LogicaNegocio
                 try
                 {
                     if (login.LoginUser(usuario, password))
+                    {
                         return true;
-
-                    else return false;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 catch
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Errores.UsrPswIncorrecto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("Hay campos incompletos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -157,12 +162,12 @@ namespace LogicaNegocio
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error al intentar enviar el email: " + e);
+                    MessageBox.Show($"{Errores.ErrorMail}: " + e, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Usuario invalido. Porfavor verifique que el usuario sea correcto");
+                MessageBox.Show(Errores.UsrInvalido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         public bool ValidCode(string codEmail)
@@ -182,7 +187,7 @@ namespace LogicaNegocio
                 else
                 {
                     //codigo erroneo, porfavor intente
-                    MessageBox.Show("El codigo ingresado es incorrecto.");
+                    MessageBox.Show(Errores.CodigoIncorrecto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
 
                 }
@@ -190,7 +195,7 @@ namespace LogicaNegocio
             else
             {
                 //el codigo caducó
-                MessageBox.Show("El codigo ingresado ya expiró, porfavor repita el procedimiento para obtener un nuevo codigo");
+                MessageBox.Show(Errores.CodigoExpirado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
@@ -245,7 +250,7 @@ namespace LogicaNegocio
                 }
                 else
                 {
-                    MensajeError = "Usuario reactivado";
+                    MensajeError = Errores.UsrReactivado;
                     reactivar(); // Chekea si ya paso el lapso de bloqueo.
                 }
             }
@@ -277,19 +282,10 @@ namespace LogicaNegocio
             string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
             string digitoBd = UserCache.digito;
 
-            MensajeError = "Sin errores de validacion";
-            if (UserCache.baja != ConfigCache.FechaDefecto || UserCache.baja == ConfigCache.FechaDefecto)
+            MensajeError = "";
+            if (UserCache.baja == ConfigCache.FechaDefecto)
             {
                 bajaVal = true;
-                if (string.Equals(digitoBd.Trim(), digitoForm))
-                {
-                    pswDigVal = true;
-                }
-                // El mensaje de error es provisorio porque hay que bloquear el usuario
-                else
-                {
-                    MensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
-                }
 
                 if (string.Equals(usrForm, usrBd))
                 {
@@ -297,10 +293,23 @@ namespace LogicaNegocio
                     if (string.Equals(pswBd.Trim(), pswForm))
                     {
                         pswVal = true;
+
+                        if (string.Equals(digitoBd.Trim(), digitoForm))
+                        {
+                            pswDigVal = true;
+                        }
+                        // El mensaje de error es provisorio porque hay que bloquear el usuario
+                        else
+                        {
+                            Properties.Terminal.Default.Estado_terminal = false;
+                            Properties.Terminal.Default.Save();
+                            MessageBox.Show(Errores.ModNoAutorizada, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Application.Exit();
+                        }
                     }
                     else
                     {
-                        MensajeError = "Usuario o contraseña incorrectos.";
+                        MensajeError = Errores.UsrPswIncorrecto;
                         valIntentos();
                     }
                 }
@@ -311,11 +320,11 @@ namespace LogicaNegocio
                 }
                 else
                 {
-                    MensajeError = "Usuario bloqueado.";
+                    MensajeError = Errores.UsrBloqueado;
                     valIntentos();
                 }
             }
-            else MensajeError = "El usuario se encuentra dado de baja.";
+            else MensajeError = Errores.UsrDadoDeBaja;
 
             return pswVal && pswDigVal && bloqVal && bajaVal;
         }
@@ -324,6 +333,20 @@ namespace LogicaNegocio
         {
             if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw)) return false;
             else return true;
+        }
+        public static void Terminal()
+        {
+            //RestoreTerminal();
+            if (Properties.Terminal.Default.Estado_terminal == false)
+            {
+                MessageBox.Show(Errores.TerminalBloqueada, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+        public static void RestoreTerminal()
+        {
+            Properties.Terminal.Default.Reset();
+            Properties.Terminal.Default.Save();
         }
     }
 }
