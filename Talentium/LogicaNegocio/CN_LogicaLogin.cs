@@ -7,77 +7,79 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AccesoDatos;
+using AccesoDatos.Login;
 using Comun;
 
 namespace LogicaNegocio
 {
     public class CN_LogicaLogin
     {
-        CD_AccesoBD accesoDatos = new CD_AccesoBD();
-        public string message { get; set; }
-        public DateTime fechaHoy { get; set; }
+        public string Message { get; set; }
+        public string MensajeError { get; set; }
+        private DateTime horaBloqueo;
 
-       
-        public bool LoginUser(string usuario, string pass)
+        CD_Login login = new CD_Login();
+        private bool LoginUser(string usuario, string pass)
         {
             string usr = Seguridad.Encriptar(usuario);
             string psw = Seguridad.Hash(usuario + pass);
             string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
-            Console.WriteLine(usr);
-            Console.WriteLine(psw);
-            Console.WriteLine(dig);
+            //Console.WriteLine(usr);
+            //Console.WriteLine(psw);
+            //Console.WriteLine(dig);
             try
             {
-                accesoDatos.Buscar(usr);
-                
+                CargarCache(usr);
+
+                if (ValUsr(usuario, pass))
+                {
+                    CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+                    logicaLogin.RestaurarIntentosUser();
+                    return true;
+                }
+                else if (DateTime.Now < GetHoraDesbloqueo())
+                {
+                    MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                else
+                {
+                    MessageBox.Show(MensajeError, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            if (CN_Validaciones.ValUsr(usuario, pass))
-            {
-                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
-                logicaLogin.RestaurarIntentosUser(UserCache.id);
-                return true;
-            }
-            else if (DateTime.Now < CN_Validaciones.GetHoraDesbloqueo())
-            {
-                MessageBox.Show($"Limite de intentos alcanzado, intente nuevamente a las {CN_Validaciones.GetHoraDesbloqueo().ToLongTimeString()}", "USUARIO BLOQUEADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else
-            {
-                MessageBox.Show(CN_Validaciones.GetMensajeError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
         }
-        public void BloqueoUser(int id, DateTime? hBloqueo)
+        private void BloqueoUser(int id, DateTime? hBloqueo)
         {
             try
             {
-                accesoDatos.Bloquear(id, hBloqueo);
+                login.Bloquear(id, hBloqueo);
             }
             catch
             {
             }
         }
-        public void IntentosUser(int id, int intento)
+        private void RestarIntento()
         {
             try
             {
-                accesoDatos.Intentos(id, intento);
+                login.RestarIntento(UserCache.id);
+                CargarCache(UserCache.usuario);
             }
             catch
             {
             }
         }
-        public void RestaurarIntentosUser(int id)
+        private void RestaurarIntentosUser()
         {
             try
             {
-                accesoDatos.RestaurarIntentos(id, ConfigCache.intentos);
+                login.RestaurarIntentos(UserCache.id, ConfigCache.Intentos);
+                CargarCache(UserCache.usuario);
             }
             catch
             {
@@ -85,14 +87,14 @@ namespace LogicaNegocio
         }
         public static bool LogIn(string usuario, string password)
         {
-            if (CN_Validaciones.camposVacios(usuario, password))
+            if (camposVacios(usuario, password))
             {
                 CN_LogicaLogin login = new CN_LogicaLogin();
                 try
                 {
                     if (login.LoginUser(usuario, password))
-                         return true; 
-                    
+                        return true;
+
                     else return false;
                 }
                 catch
@@ -107,10 +109,12 @@ namespace LogicaNegocio
                 return false;
             }
         }
-        public  void usuarioEmail(string usuario) 
+        public void UsuarioEmail(string usuario)
         {
             string user = Seguridad.Encriptar(usuario);
-            DataTable tabla = accesoDatos.EmailDeRecupero(user);
+            DataTable tabla = login.EmailDeRecupero(user);
+            UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
+            UserCache.usuario = (string)tabla.Rows[0][4];
 
             //se valida que el usuario sea ingresado correctamente
             if (tabla != null && tabla.Rows.Count > 0)
@@ -127,8 +131,8 @@ namespace LogicaNegocio
                     string cod = tup.Item1;
                     DateTime fhCaducidad = tup.Item2;
 
-                    message = email.Enviar(UserCache.id, correo, cod,fhCaducidad );
-                       
+                    Message = email.Enviar(UserCache.id, correo, cod, fhCaducidad);
+
 
                     //string feHoy = Convert.ToString(DateTime.Now);
                     //string fechaHoy = feHoy.Substring(0, 8);
@@ -153,23 +157,21 @@ namespace LogicaNegocio
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Error al intentar enviar el email: "+e);
+                    MessageBox.Show("Error al intentar enviar el email: " + e);
                 }
             }
-            else 
+            else
             {
                 MessageBox.Show("Usuario invalido. Porfavor verifique que el usuario sea correcto");
             }
-            
-            }
-
-        public bool validCode( string codEmail)
+        }
+        public bool ValidCode(string codEmail)
         {
             //se realiza el metodo para traer los campos de cod y fecha y validar ambos:
-            DataTable tabla = accesoDatos.ValidCode(UserCache.id);
+            DataTable tabla = login.ValidCode(UserCache.id);
             DateTime feHoy = DateTime.Now;
             DateTime fechaCaducidad = Convert.ToDateTime(tabla.Rows[0][0]);
-            string cod = Convert.ToString(tabla.Rows[0][1]);    
+            string cod = Convert.ToString(tabla.Rows[0][1]);
             DateTime feCad = Convert.ToDateTime(tabla.Rows[0][0]).AddHours(-1);
             if (feHoy >= feCad && feHoy <= fechaCaducidad)
             {
@@ -182,7 +184,7 @@ namespace LogicaNegocio
                     //codigo erroneo, porfavor intente
                     MessageBox.Show("El codigo ingresado es incorrecto.");
                     return false;
-                    
+
                 }
             }
             else
@@ -191,12 +193,137 @@ namespace LogicaNegocio
                 MessageBox.Show("El codigo ingresado ya expiró, porfavor repita el procedimiento para obtener un nuevo codigo");
                 return false;
             }
-
-            
         }
-        public void cargarCatche(string usuario)
+        private void CargarCache(string usuario)
         {
-            accesoDatos.Buscar(usuario);
+            DataTable dt = login.Buscar(usuario);
+            UserCache.Clear();
+
+            UserCache.id = (int)dt.Rows[0][0];
+            UserCache.usuario = (string)dt.Rows[0][1];
+            UserCache.password = (string)dt.Rows[0][2];
+            UserCache.alta = (DateTime)dt.Rows[0][3];
+            UserCache.baja = (DateTime)dt.Rows[0][4];
+            UserCache.cambiaCada = (int)dt.Rows[0][5];
+            UserCache.ultimoCambio = (DateTime)dt.Rows[0][6];
+            UserCache.bloqueo = (DateTime)dt.Rows[0][7];
+            UserCache.digito = (string)dt.Rows[0][9];
+            UserCache.intentos = (int)dt.Rows[0][10];
+            UserCache.nuevo = (bool)dt.Rows[0][13];
+        }
+
+        public DateTime GetHoraDesbloqueo()
+        {
+            try
+            {
+                horaBloqueo = Convert.ToDateTime(UserCache.bloqueo);
+                return horaBloqueo.AddMinutes(ConfigCache.LapsoBloqueo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void valIntentos()
+        {
+            if (UserCache.baja == ConfigCache.FechaDefecto)
+            {
+                CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+
+                if (UserCache.intentos > 0 && UserCache.bloqueo == ConfigCache.FechaDefecto)
+                {
+                    try
+                    {
+                        logicaLogin.RestarIntento();
+                    }
+                    catch { }
+                }
+                else if (UserCache.intentos <= 0 && UserCache.bloqueo == ConfigCache.FechaDefecto)
+                {
+                    logicaLogin.BloqueoUser(UserCache.id, System.DateTime.Now);
+                    logicaLogin.CargarCache(UserCache.usuario);
+                }
+                else
+                {
+                    MensajeError = "Usuario reactivado";
+                    reactivar(); // Chekea si ya paso el lapso de bloqueo.
+                }
+            }
+        }
+        // CHEKEA SI SE DEBE O NO DESBLOQUEAR EL USUARIO.
+        private void reactivar()
+        {
+            CN_LogicaLogin logicaLogin = new CN_LogicaLogin();
+            horaBloqueo = Convert.ToDateTime(UserCache.bloqueo);
+
+            if (DateTime.Now > horaBloqueo.AddMinutes(ConfigCache.LapsoBloqueo) && UserCache.bloqueo != ConfigCache.FechaDefecto) // Si ya paso el tiempo de bloqueo;
+            {
+                logicaLogin.BloqueoUser(UserCache.id, ConfigCache.FechaDefecto);
+                logicaLogin.RestaurarIntentosUser();
+            }
+        }
+        // VALIDACION FINAL DE USUARIO Y CONTRASEÑA
+        private bool ValUsr(string usuario, string password)
+        {
+            bool pswVal = false, pswDigVal = false, bloqVal = false, bajaVal = false;
+
+            string usrForm = usuario;
+            string usrBd = Seguridad.DesEncriptar(UserCache.usuario);
+
+            string pswForm = Seguridad.Hash(Convert.ToString(usrBd + password));
+            string pswBd = UserCache.password;
+
+            // Se hashea el digito con solo la password (reveer)
+            string digitoForm = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
+            string digitoBd = UserCache.digito;
+
+            MensajeError = "Sin errores de validacion";
+            if (UserCache.baja != ConfigCache.FechaDefecto || UserCache.baja == ConfigCache.FechaDefecto)
+            {
+                bajaVal = true;
+                if (string.Equals(digitoBd.Trim(), digitoForm))
+                {
+                    pswDigVal = true;
+                }
+                // El mensaje de error es provisorio porque hay que bloquear el usuario
+                else
+                {
+                    MensajeError = "MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.";
+                }
+
+                if (string.Equals(usrForm, usrBd))
+                {
+
+                    if (string.Equals(pswBd.Trim(), pswForm))
+                    {
+                        pswVal = true;
+                    }
+                    else
+                    {
+                        MensajeError = "Usuario o contraseña incorrectos.";
+                        valIntentos();
+                    }
+                }
+
+                if (UserCache.bloqueo == ConfigCache.FechaDefecto)
+                {
+                    bloqVal = true;
+                }
+                else
+                {
+                    MensajeError = "Usuario bloqueado.";
+                    valIntentos();
+                }
+            }
+            else MensajeError = "El usuario se encuentra dado de baja.";
+
+            return pswVal && pswDigVal && bloqVal && bajaVal;
+        }
+        // VALIDA SI HAY DATOS INGRESADOS
+        private static bool camposVacios(string usr, string psw)
+        {
+            if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw)) return false;
+            else return true;
         }
     }
 }

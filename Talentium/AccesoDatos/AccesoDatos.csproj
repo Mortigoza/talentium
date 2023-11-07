@@ -64,6 +64,7 @@
     <Compile Include="CD_Seleccion.cs" />
     <Compile Include="CD_TraerPermisos.cs" />
     <Compile Include="CD_PoliticasPass.cs" />
+    <Compile Include="Login\CD_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
