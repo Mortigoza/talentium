@@ -159,4 +159,7 @@
   <data name="UsrReactivado" xml:space="preserve">
     <value>Usuario reactivado.</value>
   </data>
+  <data name="QuiereContinuar" xml:space="preserve">
+    <value>¿Quieres continuar?</value>
+  </data>
 </root>

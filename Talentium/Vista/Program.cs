@@ -20,14 +20,9 @@ namespace Vista
         [STAThread]
         static void Main()
         {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.Idioma);
-            CN_LogicaLogin.Terminal(); // Checkeo del estado de la terminal
-            if (LogicaNegocio.Properties.Terminal.Default.Estado_terminal == true)
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmLogin());
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmLogin());
         }
     }
 }

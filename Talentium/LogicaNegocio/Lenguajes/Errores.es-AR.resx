@@ -141,9 +141,6 @@
   <data name="ModNoAutorizada" xml:space="preserve">
     <value>MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="TerminalBloqueada" xml:space="preserve">
     <value>ESTA TERMINAL SE ENCUENTRA INHABILITADA POR MANIPULACION EXTERNA DE LA BASE DE DATOS. COMUNIQUESE CON EL SOPORTE TECNICO PARA REACTICAR LA TERMINAL.</value>
   </data>
@@ -161,5 +158,8 @@
   </data>
   <data name="UsrReactivado" xml:space="preserve">
     <value>Usuario reactivado.</value>
+  </data>
+  <data name="QuiereContinuar" xml:space="preserve">
+    <value>¿Quieres continuar?</value>
   </data>
 </root>

@@ -133,6 +133,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¿Quieres continuar?.
+        /// </summary>
+        public static string QuiereContinuar {
+            get {
+                return ResourceManager.GetString("QuiereContinuar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ESTA TERMINAL SE ENCUENTRA INHABILITADA POR MANIPULACION EXTERNA DE LA BASE DE DATOS. COMUNIQUESE CON EL SOPORTE TECNICO PARA REACTICAR LA TERMINAL..
         /// </summary>
         public static string TerminalBloqueada {

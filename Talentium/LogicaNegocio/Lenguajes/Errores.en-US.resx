@@ -133,7 +133,7 @@
     <value>Error</value>
   </data>
   <data name="ErrorMail" xml:space="preserve">
-    <value>Error while trying to send the email.</value>
+    <value>Error while trying to send the email</value>
   </data>
   <data name="LiminteIntentos" xml:space="preserve">
     <value>Attempts limit reached, please try again at</value>
@@ -158,5 +158,8 @@
   </data>
   <data name="UsrReactivado" xml:space="preserve">
     <value>User reactivated.</value>
+  </data>
+  <data name="QuiereContinuar" xml:space="preserve">
+    <value>Do you want to continue?</value>
   </data>
 </root>

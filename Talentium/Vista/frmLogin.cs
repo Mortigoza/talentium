@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace Vista
         public frmLogin()
         {
             InitializeComponent();
+            KeyPreview = true;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             UtilidadesForms.CargarComboLenguajes(cmbLenguaje);//Llamo al metodo que cargara el ComboBox
             txtPassword.PasswordChar = '*';
@@ -27,7 +29,9 @@ namespace Vista
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text))
+            CN_LogicaLogin.Terminal();
+            if (LogicaNegocio.Properties.Terminal.Default.Estado_terminal == true &&
+                CN_LogicaLogin.LogIn(txtUsername.Text, txtPassword.Text))
             {
                 if (UserCache.nuevo)
                 {
@@ -85,6 +89,21 @@ namespace Vista
             Settings.Default.Idioma = cmbLenguaje.SelectedValue.ToString();//Cargo el idioma seleccionado por el combo
             Settings.Default.Save(); //Guardo el idioma seleccionado para que quede grabado
             Idioma.CargarIdioma(this.Controls, this);//Llamo al metodo que cambiara el idioma en los formularios
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (LogicaNegocio.Properties.Terminal.Default.Estado_terminal == false &&
+                e.Control && e.Alt && e.KeyCode == Keys.OemMinus)
+            {
+                DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                switch (resultado)
+                {
+                    case DialogResult.Yes:
+                        CN_LogicaLogin.RestoreTerminal();
+                        break;
+                }
+            }
         }
     }
 }

@@ -303,6 +303,7 @@ namespace LogicaNegocio
                         {
                             Properties.Terminal.Default.Estado_terminal = false;
                             Properties.Terminal.Default.Save();
+                            Console.WriteLine($"Se bloqueo el usuario {UserCache.id}: {Seguridad.DesEncriptar(UserCache.usuario)}, fecha: {DateTime.Now}, porque se detecto que su usuario fue manipulado externamente"); // esto va en bitacora
                             MessageBox.Show(Errores.ModNoAutorizada, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             Application.Exit();
                         }
@@ -336,11 +337,9 @@ namespace LogicaNegocio
         }
         public static void Terminal()
         {
-            //RestoreTerminal();
             if (Properties.Terminal.Default.Estado_terminal == false)
             {
                 MessageBox.Show(Errores.TerminalBloqueada, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
             }
         }
         public static void RestoreTerminal()
