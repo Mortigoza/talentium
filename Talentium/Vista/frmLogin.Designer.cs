@@ -54,7 +54,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(252, 157);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // titulo
             // 
@@ -127,7 +126,7 @@
             this.lnkRecupero.TabStop = true;
             this.lnkRecupero.Text = "Recuperar contraseña";
             this.lnkRecupero.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lnkRecupero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lnkRecupero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecupero_LinkClicked);
             // 
             // btnMostrar
             // 
@@ -141,7 +140,7 @@
             this.btnMostrar.Size = new System.Drawing.Size(30, 30);
             this.btnMostrar.TabIndex = 7;
             this.btnMostrar.UseVisualStyleBackColor = false;
-            this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseDown);
             this.btnMostrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseUp);
             // 
             // lblUsuario

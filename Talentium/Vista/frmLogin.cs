@@ -62,7 +62,7 @@ namespace Vista
             }
         }
 
-        private void button1_MouseDown(object sender, MouseEventArgs e)
+        private void btnMostrar_MouseDown(object sender, MouseEventArgs e)
         {
             txtPassword.PasswordChar = '\0';
         }
@@ -72,16 +72,11 @@ namespace Vista
             txtPassword.PasswordChar = '*';
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkRecupero_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             frmRecupero recupero = new frmRecupero();
             recupero.Show();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cmbLenguaje_SelectionChangeCommitted(object sender, EventArgs e)
