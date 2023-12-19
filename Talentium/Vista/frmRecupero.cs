@@ -33,15 +33,15 @@ namespace Vista
                 CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
                 try
                 {
-                    cnRecupero.usuarioEmail(textBoxUsuarioRec.Text);
-                    string msj = cnRecupero.message.Substring(5);
+                    cnRecupero.UsuarioEmail(textBoxUsuarioRec.Text);
+                    string msj = cnRecupero.Message.Substring(5);
                     if (msj == "Error" || msj == "error")
                     {
-                        MessageBox.Show(cnRecupero.message);
+                        MessageBox.Show(cnRecupero.Message);
                     }
                     else 
                     {
-                        label3.Text = cnRecupero.message;
+                        label3.Text = cnRecupero.Message;
                         label3.Visible = true;
                         label6.Visible = true;
                         codigo.Visible = true;
@@ -63,7 +63,7 @@ namespace Vista
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkRecupero_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             frmLogin menu = new frmLogin();
@@ -74,7 +74,7 @@ namespace Vista
         {
             CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
 
-            bool valor = cnRecupero.validCode(codigo.Text);
+            bool valor = cnRecupero.ValidCode(codigo.Text);
 
             if (valor) 
             {

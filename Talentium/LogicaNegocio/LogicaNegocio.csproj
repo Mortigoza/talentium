@@ -72,6 +72,21 @@
     <Compile Include="CN_TraerPermisos.cs" />
     <Compile Include="CN_Validaciones.cs" />
     <Compile Include="CN_LogicaLogout.cs" />
+    <Compile Include="Lenguajes\Errores.en-US.Designer.cs">
+      <DependentUpon>Errores.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Lenguajes\Errores.es-AR.Designer.cs">
+      <DependentUpon>Errores.es-AR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Lenguajes\Errores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errores.resx</DependentUpon>
+    </Compile>
     <Compile Include="Niveles.Designer.cs">
       <DependentUpon>Niveles.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -88,8 +103,25 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Terminal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Terminal.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Lenguajes\Errores.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errores.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Errores.es-AR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errores.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Errores.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errores.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Niveles.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Niveles.en-US.Designer.cs</LastGenOutput>
@@ -112,6 +144,13 @@
       <Project>{5015f051-4dea-4706-b591-03e53c16f613}</Project>
       <Name>Comun</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Terminal.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Terminal.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

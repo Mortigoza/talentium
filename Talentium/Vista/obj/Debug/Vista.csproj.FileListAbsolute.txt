@@ -310,6 +310,7 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml
+<<<<<<< HEAD
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\Vista.exe
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\Vista.pdb
@@ -373,3 +374,6 @@ C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\ob
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+=======
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
+>>>>>>> 8149ac24fc5f54da5277c1ff385f040f61c0427b

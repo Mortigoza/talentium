@@ -59,7 +59,7 @@ namespace Vista
             txtPassword.PasswordChar = '*';
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkRecupero_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             frmRecupero recupero = new frmRecupero();

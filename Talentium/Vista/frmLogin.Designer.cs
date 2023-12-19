@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.titulo = new System.Windows.Forms.Label();
+            this.pctFoto = new System.Windows.Forms.PictureBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -41,31 +41,30 @@
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.cmbLenguaje = new System.Windows.Forms.ComboBox();
             this.lblLenguaje = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pctFoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(83, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 157);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pctFoto.BackColor = System.Drawing.Color.Transparent;
+            this.pctFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctFoto.BackgroundImage")));
+            this.pctFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctFoto.Location = new System.Drawing.Point(83, 128);
+            this.pctFoto.Name = "pctFoto";
+            this.pctFoto.Size = new System.Drawing.Size(252, 157);
+            this.pctFoto.TabIndex = 0;
+            this.pctFoto.TabStop = false;
             // 
-            // titulo
+            // lblTitulo
             // 
-            this.titulo.AutoSize = true;
-            this.titulo.BackColor = System.Drawing.Color.Transparent;
-            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(72, 272);
-            this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(314, 73);
-            this.titulo.TabIndex = 1;
-            this.titulo.Text = "Talentium";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(56, 274);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(314, 73);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Talentium";
             // 
             // txtUsername
             // 
@@ -127,7 +126,7 @@
             this.lnkRecupero.TabStop = true;
             this.lnkRecupero.Text = "Recuperar contraseña";
             this.lnkRecupero.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lnkRecupero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lnkRecupero.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecupero_LinkClicked);
             // 
             // btnMostrar
             // 
@@ -141,7 +140,7 @@
             this.btnMostrar.Size = new System.Drawing.Size(30, 30);
             this.btnMostrar.TabIndex = 7;
             this.btnMostrar.UseVisualStyleBackColor = false;
-            this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseDown);
             this.btnMostrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseUp);
             // 
             // lblUsuario
@@ -199,21 +198,23 @@
             this.Controls.Add(this.cmbLenguaje);
             this.Controls.Add(this.lblContrasenia);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctFoto);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.lnkRecupero);
             this.Controls.Add(this.lblSesion);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.titulo);
+            this.Controls.Add(this.lblTitulo);
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Talentium - Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +222,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label titulo;
+        private System.Windows.Forms.PictureBox pctFoto;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
