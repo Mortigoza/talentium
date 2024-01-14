@@ -17,10 +17,12 @@ namespace LogicaNegocio
 {
     public class CN_LogicaUsuarios
     {
+        public int IdUsuario { get; set; }
         public string UsrName { get; set; }
         public string Contrasenia { get; set; }
         public string Mail { get; set; }
         public decimal CambiaCada { get; set; }
+        public object IdPerfil { get; set; }
         public int IdPersona { get; set; }
         public int RowIndex { get; set; }
 
@@ -41,10 +43,10 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, int[] permisos, string mail, object idPerfil)
+        private void InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, int[] permisos, string mail)
         {
             string digito = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(password)).ToString());
-            int _idPerfil = (int)idPerfil;
+            int _idPerfil = (int)IdPerfil;
             password = Seguridad.Hash(usuario + password);
             usuario = Seguridad.Encriptar(usuario);
 
@@ -106,23 +108,24 @@ namespace LogicaNegocio
             }
             return null;
         }
-        public DataTable ConsultarPermisosPerfil(int id_perfil)
+        public DataTable ConsultarPermisosPerfil()
         {
             try
             {
-                return cd_usuario.ConsultarPermisosPerfil(id_perfil);
+                cd_usuario.IdPerfil = IdPerfil;
+                return cd_usuario.ConsultarPermisosPerfil();
             }
             catch (Exception ex)
             {
             }
             return null;
         }
-        public string MandarMail(int id_persona, string psw, string mail)
+        private string MandarMail(int id_persona, string psw, string mail)
         {
             CN_EnviarEmail email = new CN_EnviarEmail();
             return email.EnviarContraseña(mail, psw);
         }
-        public (bool, string) ValidarAltaUsuario(string usr, string psw, DataGridView dtg, int rowIndex)
+        private (bool, string) ValidarAltaUsuario(string usr, string psw, DataGridView dtg, int rowIndex)
         {
             if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
             {
@@ -147,7 +150,7 @@ namespace LogicaNegocio
 
             return (true, "");
         }
-        public bool AltaUsuario(DataTable dtListaMem, object idPerfil, DataGridView dtg)
+        public bool AltaUsuario(DataTable dtListaMem, DataGridView dtg)
         {
             int len;
             string msg;
@@ -159,7 +162,7 @@ namespace LogicaNegocio
                 // lista de permisos
                 len = dtListaMem.Rows.Count;
 
-                if ((int)idPerfil == -1)
+                if ((int)IdPerfil == -1)
                 {
                     for (int i = 0; i < len; i++)
                     {
@@ -171,7 +174,7 @@ namespace LogicaNegocio
                 msg = MandarMail(IdPersona, Contrasenia, Mail);
                 if (string.IsNullOrEmpty(msg))
                 {
-                    InsertarNuevoUsuario(IdPersona, UsrName, Contrasenia, (int)CambiaCada, permisos.ToArray(), Mail, idPerfil);
+                    InsertarNuevoUsuario(IdPersona, UsrName, Contrasenia, (int)CambiaCada, permisos.ToArray(), Mail);
                     return true;
                 }
                 else
@@ -184,6 +187,59 @@ namespace LogicaNegocio
                 MessageBox.Show(verif.Item2);
             }
             return false;
+        }
+        public void ModificarUsuario(DataTable dtListaMem)
+        {
+            List<int> permisos = new List<int>();
+            int len = dtListaMem.Rows.Count;
+
+            if ((int)IdPerfil == -1)
+            {
+                for (int i = 0; i < len; i++)
+                {
+                    // carga todos los permisos del dtListaMem en la lista permisos
+                    permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                }
+            }
+            // Hace la modificacion
+            UpUsuario(permisos.ToArray());
+        }
+        private void UpUsuario(int[] permisos)
+        {
+            try
+            {
+                cd_usuario.IdUsuario = IdUsuario;
+                cd_usuario.CambiaCada = (int)CambiaCada;
+                cd_usuario.Mail = Mail;
+
+                if (cd_usuario.UpUsuario() && (int)IdPerfil == -1 && permisos.Length > 0)
+                {
+                    foreach (int id_permiso in permisos)
+                    {
+                        cd_usuario.InsertarNuevoPermisoUsuario(IdUsuario, id_permiso);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable ConsultarPersonaMod()
+        {
+            cd_usuario.IdUsuario = IdUsuario;
+            return cd_usuario.ConsultarPersonaMod();
+        }
+        public DataTable ConsultarPermisosUsuario()
+        {
+            cd_usuario.IdUsuario = IdUsuario;
+
+            if ((int)IdPerfil != -1)
+            {
+                cd_usuario.IdPerfil = IdPerfil;
+                return cd_usuario.ConsultarPermisosPerfilUsuario();
+            }
+            return cd_usuario.ConsultarPermisosUsuario();
         }
     }
 }

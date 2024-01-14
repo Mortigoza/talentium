@@ -105,17 +105,20 @@ namespace Vista
             dtgPersonas.AllowUserToAddRows = false;
             dtgPersonas.AllowUserToResizeRows = false;
             dtgPersonas.ReadOnly = true;
-            CN_ConsultarPersonaMod cpm = new CN_ConsultarPersonaMod();
-            DataTable dt = cpm.ConsultarPersonaMod(id_usuario);
+
+            usuario.IdUsuario = id_usuario;
+            DataTable dt = usuario.ConsultarPersonaMod();
+
             dtgPersonas.DataSource = dt;
             dtgPersonas.Columns[0].Visible = false;
             dtgPersonas.Columns[6].Visible = false;
             dtgPersonas.Columns[7].Visible = false;
             dtgPersonas.Columns[8].Visible = false;
-
+            dtgPersonas.Columns[9].Visible = false;
             //Cargar datos
             txtUsuario.Text = Seguridad.DesEncriptar(dt.Rows[0][7].ToString());
             nmrCambiaCada.Value = (int)(dt.Rows[0][8]);
+
             //Bloqueos de controles
             grpFiltro.Enabled = false;
             dtgPersonas.Enabled = false;
@@ -127,7 +130,14 @@ namespace Vista
             cmbRol.DataSource = usuario.ConsultarPerfiles();
             cmbRol.ValueMember = "id_grupo";
             cmbRol.DisplayMember = "Perfil";
-            cmbRol.SelectedValue = -1;
+            try
+            {
+                cmbRol.SelectedValue = (int)(dt.Rows[0][9]);
+            }
+            catch
+            {
+                cmbRol.SelectedValue = -1;
+            }
             //dt, crea las columnas para el dtListaMem
             DataColumn idColumn = new DataColumn();
             idColumn.DataType = System.Type.GetType("System.Int32");
@@ -150,10 +160,12 @@ namespace Vista
             lstPermisosAsignados.ValueMember = "id_permiso";
             lstPermisosAsignados.DisplayMember = "funcionalidad";
 
-            CN_ConsultarPermisosUsuario cpu = new CN_ConsultarPermisosUsuario();
-            DataTable dtPermisosUsuario = cpu.ConsultarPermisosUsuario(id_usuario);
+            usuario.IdUsuario = id_usuario;
+            usuario.IdPerfil = (int)(dt.Rows[0][9]);
+            DataTable dtPermisosUsuario = usuario.ConsultarPermisosUsuario();
             if (dtPermisosUsuario.Rows.Count > 0)
                 configListbox(usuario.ConsultarPermisosLst(), true, dtPermisosUsuario);
+
 
             #endregion
 
@@ -187,10 +199,11 @@ namespace Vista
                     usuario.Contrasenia = txtContrasenia.Text;
                     usuario.CambiaCada = nmrCambiaCada.Value;
                     usuario.Mail = txtEmail.Text;
+                    usuario.IdPerfil = cmbRol.SelectedValue;
                     usuario.IdPersona = _idPersona;
                     usuario.RowIndex = _rowIndex;
 
-                    if (usuario.AltaUsuario(dtListaMem, cmbRol.SelectedValue, dtgPersonas))
+                    if (usuario.AltaUsuario(dtListaMem, dtgPersonas))
                     {
                         MessageBox.Show("Alta exitosa");
                         this.Dispose();
@@ -199,25 +212,18 @@ namespace Vista
 
                 case true: // Si esta en modo modificacion 
 
-                    len = dtListaMem.Rows.Count;
+                    usuario.IdUsuario = _idUsuario;
+                    usuario.UsrName = txtUsuario.Text;
+                    usuario.Contrasenia = txtContrasenia.Text;
+                    usuario.CambiaCada = nmrCambiaCada.Value;
+                    usuario.Mail = txtEmail.Text;
+                    usuario.IdPerfil = cmbRol.SelectedValue;
+                    usuario.IdPersona = _idPersona;
+                    usuario.RowIndex = _rowIndex;
 
-                    for (int i = 0; i < len; i++)
-                    {
-                        // carga todos los permisos del dtListaMem en la lista permisos
-                        permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
-                    }
-                    try
-                    {
-                        // Hace la modificacion
-                        CN_UpUsuario uu = new CN_UpUsuario();
-                        uu.UpUsuario(_idUsuario, (int)nmrCambiaCada.Value, permisos.ToArray(), txtEmail.Text);
-                        MessageBox.Show("Modificación exitosa");
-                        this.Dispose();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    usuario.ModificarUsuario(dtListaMem);
+                    MessageBox.Show("Modificación exitosa");
+                    this.Dispose();
                     break;
             }
         }
@@ -329,7 +335,8 @@ namespace Vista
                 }
                 catch { }
 
-                DataTable dtPermisosPerfil = usuario.ConsultarPermisosPerfil(id_perfil);
+                usuario.IdPerfil = id_perfil;
+                DataTable dtPermisosPerfil = usuario.ConsultarPermisosPerfil();
                 DataTable dtPermisosDef = usuario.ConsultarPermisosLst();
 
                 if (id_perfil != -1)

@@ -11,6 +11,14 @@ namespace AccesoDatos.Accesibilidad
 {
     public class CD_Usuario: CD_EjecutarSP
     {
+        public int IdUsuario { get; set; }
+        public string UsrName { get; set; }
+        public string Contrasenia { get; set; }
+        public string Mail { get; set; }
+        public int CambiaCada { get; set; }
+        public object IdPerfil { get; set; }
+        public int IdPersona { get; set; }
+
         public int InsertarNuevoUsuario(int id_persona, string usuario, string password, int cambia_cada, string digito, string mail, int idPerfil)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
@@ -57,9 +65,9 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultado = EjecutarConsultas("consultar_permisos_lst_sp", listaParametros.ToArray());
             return resultado;
         }
-        public DataTable ConsultarPermisosPerfil(int id_perfil)
+        public DataTable ConsultarPermisosPerfil()
         {
-            SqlParameter param1 = new SqlParameter("@id_perfil", id_perfil) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@id_perfil", IdPerfil) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
 
             DataTable resultado = EjecutarConsultas("consultar_permisos_perfil_sp", listaParametros.ToArray());
@@ -82,15 +90,44 @@ namespace AccesoDatos.Accesibilidad
             DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
             return email.Rows[0][0].ToString();
         }
-        public void UpUsuario(int id_usuario, int cambia_cada, string mail)
+        public bool UpUsuario()
         {
-            SqlParameter param1 = new SqlParameter("@id_usuario", id_usuario) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@cambia_cada", cambia_cada) { SqlDbType = SqlDbType.Int };
-            SqlParameter param3 = new SqlParameter("@email", mail) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@cambia_cada", CambiaCada) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@email", Mail) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@id_perfil", IdPerfil) { SqlDbType = SqlDbType.Int };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4 };
 
             EjecutarConsultas("up_usuario_sp", listaParametros.ToArray());
+            return true;
+        }
+        public DataTable ConsultarPersonaMod()
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("consultar_personal_mod_usuario_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public DataTable ConsultarPermisosUsuario()
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("consultar_permisos_usuario_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public DataTable ConsultarPermisosPerfilUsuario()
+        {
+            SqlParameter param1 = new SqlParameter("@id_perfil", IdPerfil) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("consultar_permisos_usuario_perfil_sp", listaParametros.ToArray());
+            return resultado;
         }
     }
 }
