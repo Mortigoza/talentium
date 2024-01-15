@@ -24,6 +24,8 @@ namespace Vista
         private string _ape = "";
         private int _area = -1;
         private bool _estado = true; // si estan puestos los registros activos o los inactivos
+
+        CN_LogicaUsuarios cn_usuario = new CN_LogicaUsuarios();
         public frmConsultaUsuario()
         {
             InitializeComponent();
@@ -71,7 +73,6 @@ namespace Vista
             else
             //Entra si se usa al menos uno de los filtros
             {
-                CN_ConsultarUsuario cu = new CN_ConsultarUsuario();
                 if (_void == false)
                 // Si el dtg es ejecutado directamente por el usuario carga las variables con los campos de filtrado
                 {
@@ -80,7 +81,7 @@ namespace Vista
                     _ape = txtApellido.Text;
                     _area = (int)cmbArea.SelectedValue;
                 }
-                DataTable dt = cu.ConsultarUsuario(_usr, _nom, _ape, _area,_estado);
+                DataTable dt = cn_usuario.ConsultarUsuario(_usr, _nom, _ape, _area,_estado);
 
                 if (dt.Rows.Count == 0 && _void == false)
                 // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
@@ -119,8 +120,9 @@ namespace Vista
                 if (msgBox == DialogResult.Yes)
                 {
                     // Si el boton esta en modo baja: elimina de forma logica al usuario seleccionado
-                    CN_BajaUsuario bu = new CN_BajaUsuario();
-                    bu.BajaUsuario(_idUsuario);
+
+                    cn_usuario.IdUsuario = _idUsuario;
+                    cn_usuario.BajaUsuario();
                     dtgRefresh(sender, e);
                     MessageBox.Show("Usuario dado de baja exitosamente");
                 }
@@ -131,8 +133,8 @@ namespace Vista
                 if (msgBox == DialogResult.Yes)
                 {
                     // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
-                    CN_ReactivarUsuario ru = new CN_ReactivarUsuario();
-                    ru.ReactivarUsuario(_idUsuario);
+                    cn_usuario.IdUsuario = _idUsuario;
+                    cn_usuario.ReactivarUsuario();
                     dtgRefresh(sender, e);
                     MessageBox.Show("Usuario reactivado exitosamente");
                 }

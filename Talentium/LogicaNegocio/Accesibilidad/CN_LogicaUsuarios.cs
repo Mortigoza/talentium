@@ -241,5 +241,31 @@ namespace LogicaNegocio
             }
             return cd_usuario.ConsultarPermisosUsuario();
         }
+        public DataTable ConsultarUsuario(string usuario, string nombre, string apellido, int area, bool estado)
+        {
+            if (string.IsNullOrEmpty(usuario)) usuario = "\0";
+            else usuario = Seguridad.Encriptar(usuario);
+            if (string.IsNullOrEmpty(nombre)) nombre = "\0";
+            if (string.IsNullOrEmpty(apellido)) apellido = "\0";
+
+            DataTable dt = cd_usuario.ConsultarUsuario(usuario, nombre, apellido, area, estado);
+
+            for (int i = 0, len = dt.Rows.Count; i < len; i++)
+            {
+                dt.Rows[i][1] = Seguridad.DesEncriptar(dt.Rows[i][1].ToString());
+            }
+
+            return dt;
+        }
+        public void BajaUsuario()
+        {
+            cd_usuario.IdUsuario = IdUsuario;
+            cd_usuario.BajaUsuario();
+        }
+        public void ReactivarUsuario()
+        {
+            cd_usuario.IdUsuario = IdUsuario;
+            cd_usuario.ReactivarUsuario();
+        }
     }
 }

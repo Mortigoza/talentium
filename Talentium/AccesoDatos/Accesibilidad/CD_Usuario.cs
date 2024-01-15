@@ -81,15 +81,6 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultado = EjecutarConsultas("consultar_usuario_repetido_sp", listaParametros.ToArray());
             return resultado;
         }
-        public string ConsultarMailPersona(int id_persona)
-        {
-            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
-
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-
-            DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
-            return email.Rows[0][0].ToString();
-        }
         public bool UpUsuario()
         {
             SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
@@ -128,6 +119,35 @@ namespace AccesoDatos.Accesibilidad
 
             DataTable resultado = EjecutarConsultas("consultar_permisos_usuario_perfil_sp", listaParametros.ToArray());
             return resultado;
+        }
+        public void ReactivarUsuario()
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("reactivar_usuario_sp", listaParametros.ToArray(), true);
+        }
+        public DataTable ConsultarUsuario(string usuario, string nombre, string apellido, int area, bool estado)
+        {
+            SqlParameter param1 = new SqlParameter("@usuario", usuario) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param2 = new SqlParameter("@nombre", nombre) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@apellido", apellido) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param4 = new SqlParameter("@id_area", area) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param5 = new SqlParameter("@activo", estado) { SqlDbType = SqlDbType.Bit };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5 };
+
+            DataTable resultado = EjecutarConsultas("consultar_usuarios_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public void BajaUsuario()
+        {
+            SqlParameter param1 = new SqlParameter("@id_usuario", IdUsuario) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            EjecutarConsultas("baja_usuario_sp", listaParametros.ToArray(), true);
         }
     }
 }

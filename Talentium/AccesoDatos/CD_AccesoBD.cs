@@ -241,6 +241,15 @@ namespace AccesoDatos
             DataTable resultado = EjecutarConsultas("InsRespuesta_sp", listaParametros.ToArray(), true);
 
         }
+        public string ConsultarMailPersona(int id_persona) //Este metodo no tiene referencias hay que ver que onda
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable email = EjecutarConsultas("consultar_mail_persona_sp", listaParametros.ToArray());
+            return email.Rows[0][0].ToString();
+        }
 
         /****************************** FORM AREA *****************************/
 

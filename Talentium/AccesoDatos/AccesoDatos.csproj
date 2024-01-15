@@ -54,11 +54,8 @@
     <Compile Include="CD_Capacitaciones.cs" />
     <Compile Include="CD_Categorias.cs" />
     <Compile Include="CD_Conexion.cs" />
-    <Compile Include="Accesibilidad\CD_BajaUsuario.cs" />
-    <Compile Include="Accesibilidad\CD_ConsultarUsuario.cs" />
     <Compile Include="CD_Convenios.cs" />
     <Compile Include="CD_EjecutarSP.cs" />
-    <Compile Include="Accesibilidad\CD_ReactivarUsuario.cs" />
     <Compile Include="CD_Seleccion.cs" />
     <Compile Include="CD_TraerPermisos.cs" />
     <Compile Include="CD_PoliticasPass.cs" />
