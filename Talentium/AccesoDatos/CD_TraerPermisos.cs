@@ -20,5 +20,14 @@ namespace AccesoDatos
             return dt;
 
         }
+        public DataTable TraerPermisos()
+        {
+            SqlParameter param1 = new SqlParameter("@id_perfil", UserCache.idPerfil) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable dt = EjecutarConsultas("consultar_permisos_usuario_perfil_sp", listaParametros.ToArray());
+            return dt;
+
+        }
     }
 }

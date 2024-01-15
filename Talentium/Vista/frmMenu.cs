@@ -30,7 +30,7 @@ namespace Vista
             {
                 permisos += $"{listaPermisos[i].Id}: {listaPermisos[i].Permiso}\n";
             }
-            //MessageBox.Show(permisos);
+            MessageBox.Show(permisos);
 
 
             List<ToolStripMenuItem> items;
