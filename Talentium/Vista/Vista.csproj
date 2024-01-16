@@ -115,6 +115,12 @@
     <Compile Include="Accesibilidad\frmAreas.Designer.cs">
       <DependentUpon>frmAreas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignarCapacitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarCapacitaciones.Designer.cs">
+      <DependentUpon>frmAsignarCapacitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Analisis y reportes\frmCertificacionServicios.resx">
       <DependentUpon>frmCertificacionServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarCapacitaciones.resx">
+      <DependentUpon>frmAsignarCapacitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
