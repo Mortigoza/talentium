@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_AsignarCapacitaciones.cs" />
     <Compile Include="CN_Asistencias.cs" />
     <Compile Include="Accesibilidad\CN_BajaPerfil.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarPermisosPerfil.cs" />

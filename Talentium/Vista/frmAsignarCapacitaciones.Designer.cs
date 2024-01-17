@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgPersonas = new System.Windows.Forms.DataGridView();
-            this.grpFiltro = new System.Windows.Forms.GroupBox();
-            this.cmbArea = new System.Windows.Forms.ComboBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.lblArea = new System.Windows.Forms.Label();
-            this.lblCuit = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblPersona = new System.Windows.Forms.Label();
             this.lstCapacitaciones = new System.Windows.Forms.ListBox();
             this.lstCapacitacionesAsignadas = new System.Windows.Forms.ListBox();
@@ -45,6 +37,16 @@
             this.lblCapacitacionesAsignadas = new System.Windows.Forms.Label();
             this.btnDesasignarCapacitacion = new System.Windows.Forms.Button();
             this.btnAsignarCapacitacion = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblCuit = new System.Windows.Forms.Label();
+            this.lblArea = new System.Windows.Forms.Label();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cmbArea = new System.Windows.Forms.ComboBox();
+            this.grpFiltro = new System.Windows.Forms.GroupBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -61,90 +63,7 @@
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(650, 235);
             this.dtgPersonas.TabIndex = 0;
-            // 
-            // grpFiltro
-            // 
-            this.grpFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.grpFiltro.Controls.Add(this.cmbArea);
-            this.grpFiltro.Controls.Add(this.btnFiltrar);
-            this.grpFiltro.Controls.Add(this.lblArea);
-            this.grpFiltro.Controls.Add(this.lblCuit);
-            this.grpFiltro.Controls.Add(this.txtNombre);
-            this.grpFiltro.Controls.Add(this.txtUsuario);
-            this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(37, 39);
-            this.grpFiltro.Name = "grpFiltro";
-            this.grpFiltro.Size = new System.Drawing.Size(137, 204);
-            this.grpFiltro.TabIndex = 13;
-            this.grpFiltro.TabStop = false;
-            this.grpFiltro.Text = "Filtro";
-            // 
-            // cmbArea
-            // 
-            this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Items.AddRange(new object[] {
-            "RRHH",
-            ""});
-            this.cmbArea.Location = new System.Drawing.Point(17, 119);
-            this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(100, 21);
-            this.cmbArea.TabIndex = 9;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(17, 166);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
-            this.btnFiltrar.TabIndex = 7;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            // 
-            // lblArea
-            // 
-            this.lblArea.AutoSize = true;
-            this.lblArea.BackColor = System.Drawing.Color.Transparent;
-            this.lblArea.Location = new System.Drawing.Point(14, 103);
-            this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(29, 13);
-            this.lblArea.TabIndex = 8;
-            this.lblArea.Text = "Area";
-            // 
-            // lblCuit
-            // 
-            this.lblCuit.AutoSize = true;
-            this.lblCuit.BackColor = System.Drawing.Color.Transparent;
-            this.lblCuit.Location = new System.Drawing.Point(14, 25);
-            this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(67, 13);
-            this.lblCuit.TabIndex = 1;
-            this.lblCuit.Text = "CUIT / CUIL";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(17, 41);
-            this.txtUsuario.MaxLength = 30;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 4;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Location = new System.Drawing.Point(14, 64);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(17, 80);
-            this.txtNombre.MaxLength = 50;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 6;
+            this.dtgPersonas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonas_RowEnter);
             // 
             // lblPersona
             // 
@@ -210,12 +129,117 @@
             // 
             // btnAsignarCapacitacion
             // 
-            this.btnAsignarCapacitacion.Location = new System.Drawing.Point(430, 435);
+            this.btnAsignarCapacitacion.Location = new System.Drawing.Point(430, 428);
             this.btnAsignarCapacitacion.Name = "btnAsignarCapacitacion";
             this.btnAsignarCapacitacion.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarCapacitacion.TabIndex = 25;
             this.btnAsignarCapacitacion.Text = ">";
             this.btnAsignarCapacitacion.UseVisualStyleBackColor = true;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Location = new System.Drawing.Point(14, 64);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(17, 41);
+            this.txtCuit.MaxLength = 30;
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.TabIndex = 4;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(17, 80);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 6;
+            // 
+            // lblCuit
+            // 
+            this.lblCuit.AutoSize = true;
+            this.lblCuit.BackColor = System.Drawing.Color.Transparent;
+            this.lblCuit.Location = new System.Drawing.Point(14, 25);
+            this.lblCuit.Name = "lblCuit";
+            this.lblCuit.Size = new System.Drawing.Size(67, 13);
+            this.lblCuit.TabIndex = 1;
+            this.lblCuit.Text = "CUIT / CUIL";
+            // 
+            // lblArea
+            // 
+            this.lblArea.AutoSize = true;
+            this.lblArea.BackColor = System.Drawing.Color.Transparent;
+            this.lblArea.Location = new System.Drawing.Point(14, 142);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(29, 13);
+            this.lblArea.TabIndex = 8;
+            this.lblArea.Text = "Area";
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(17, 200);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
+            this.btnFiltrar.TabIndex = 7;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // cmbArea
+            // 
+            this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArea.FormattingEnabled = true;
+            this.cmbArea.Items.AddRange(new object[] {
+            "RRHH",
+            ""});
+            this.cmbArea.Location = new System.Drawing.Point(17, 158);
+            this.cmbArea.Name = "cmbArea";
+            this.cmbArea.Size = new System.Drawing.Size(100, 21);
+            this.cmbArea.TabIndex = 9;
+            // 
+            // grpFiltro
+            // 
+            this.grpFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.grpFiltro.Controls.Add(this.txtApellido);
+            this.grpFiltro.Controls.Add(this.lblApellido);
+            this.grpFiltro.Controls.Add(this.cmbArea);
+            this.grpFiltro.Controls.Add(this.btnFiltrar);
+            this.grpFiltro.Controls.Add(this.lblArea);
+            this.grpFiltro.Controls.Add(this.lblCuit);
+            this.grpFiltro.Controls.Add(this.txtNombre);
+            this.grpFiltro.Controls.Add(this.txtCuit);
+            this.grpFiltro.Controls.Add(this.lblNombre);
+            this.grpFiltro.Location = new System.Drawing.Point(37, 34);
+            this.grpFiltro.Name = "grpFiltro";
+            this.grpFiltro.Size = new System.Drawing.Size(137, 240);
+            this.grpFiltro.TabIndex = 13;
+            this.grpFiltro.TabStop = false;
+            this.grpFiltro.Text = "Filtro";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(17, 119);
+            this.txtApellido.MaxLength = 50;
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 11;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblApellido.Location = new System.Drawing.Point(17, 103);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.TabIndex = 10;
+            this.lblApellido.Text = "Apellido";
             // 
             // frmAsignarCapacitaciones
             // 
@@ -232,7 +256,10 @@
             this.Controls.Add(this.lblPersona);
             this.Controls.Add(this.grpFiltro);
             this.Controls.Add(this.dtgPersonas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAsignarCapacitaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar Capacitaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).EndInit();
             this.grpFiltro.ResumeLayout(false);
@@ -245,14 +272,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgPersonas;
-        private System.Windows.Forms.GroupBox grpFiltro;
-        private System.Windows.Forms.ComboBox cmbArea;
-        private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Label lblArea;
-        private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblPersona;
         private System.Windows.Forms.ListBox lstCapacitaciones;
         private System.Windows.Forms.ListBox lstCapacitacionesAsignadas;
@@ -261,5 +280,15 @@
         private System.Windows.Forms.Label lblCapacitacionesAsignadas;
         private System.Windows.Forms.Button btnDesasignarCapacitacion;
         private System.Windows.Forms.Button btnAsignarCapacitacion;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblCuit;
+        private System.Windows.Forms.Label lblArea;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.ComboBox cmbArea;
+        private System.Windows.Forms.GroupBox grpFiltro;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label lblApellido;
     }
 }
