@@ -11,13 +11,26 @@ namespace AccesoDatos
 {
     public class CD_AsignarCapacitaciones: CD_EjecutarSP
     {
+        public int IdPersona { get; set; }
+        public int IdCapacitacion { get; set; }
+        public int IdArea { get; set; }
+
         public DataTable ConsultarCapacitacionesLst()
         {
-            //SqlParameter param1 = new SqlParameter("@id_capacitacion", id_capacitacion) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@id_area", IdArea) { SqlDbType = SqlDbType.Int };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
 
             DataTable resultado = EjecutarConsultas("consultar_capacitaciones_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public DataTable ConsultarCapacitacionesPersona()
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("consultar_capacitaciones_persona_sp", listaParametros.ToArray());
             return resultado;
         }
         public DataTable ConsultarPersonal(string cuit, string nombre, string apellido, int area)
@@ -31,6 +44,23 @@ namespace AccesoDatos
 
             DataTable resultado = EjecutarConsultas("consultar_personal_asignar_capacitaciones_sp", listaParametros.ToArray());
             return resultado;
+        }
+        public void AsignarCapacitaciones()
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_capacitacion", IdCapacitacion) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+
+            DataTable resultado = EjecutarConsultas("alta_capacitacion_persona_sp", listaParametros.ToArray());
+        }
+        public void LimpiarCapacitaciones()
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+
+            DataTable resultado = EjecutarConsultas("borrar_capacitaciones_persona_sp", listaParametros.ToArray());
         }
     }
 }

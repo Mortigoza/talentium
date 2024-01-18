@@ -99,6 +99,7 @@
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblCapacitaciones
             // 
@@ -126,6 +127,7 @@
             this.btnDesasignarCapacitacion.TabIndex = 26;
             this.btnDesasignarCapacitacion.Text = "<";
             this.btnDesasignarCapacitacion.UseVisualStyleBackColor = true;
+            this.btnDesasignarCapacitacion.Click += new System.EventHandler(this.btnDesasignarCapacitacion_Click);
             // 
             // btnAsignarCapacitacion
             // 
@@ -135,6 +137,7 @@
             this.btnAsignarCapacitacion.TabIndex = 25;
             this.btnAsignarCapacitacion.Text = ">";
             this.btnAsignarCapacitacion.UseVisualStyleBackColor = true;
+            this.btnAsignarCapacitacion.Click += new System.EventHandler(this.btnAsignarCapacitacion_Click);
             // 
             // lblNombre
             // 

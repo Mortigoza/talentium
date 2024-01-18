@@ -51,15 +51,21 @@ namespace Comun
 
         public static void moverListboxRow(ListBox ls1, ListBox ls2, DataTable dt1, DataTable dt2, int selectIndex)
         {
-            if (ls1.Items.Count > 0)
+            if (ls1.Items.Count > 0 && selectIndex >= 0 && selectIndex < dt1.Rows.Count)
             {
-                DataRow row = dt2.NewRow();
-                row[0] = ls1.SelectedValue;
-                row[1] = ls1.Text;
-                dt2.Rows.Add(row);
+                DataRowView selectedRowView = (DataRowView)ls1.Items[selectIndex];
+
+                // Obtén la fila completa de la DataRowView
+                DataRow selectedRow = selectedRowView.Row;
+
+                // Copia la fila a la nueva DataTable
+                DataRow newRow = dt2.NewRow();
+                newRow.ItemArray = selectedRow.ItemArray;
+                dt2.Rows.Add(newRow);
 
                 dt1.Rows.RemoveAt(selectIndex);
-                ls2.Update();
+                ls1.Refresh();
+                ls2.Refresh();
             }
         }
         public static void LimpiarDataGrid(DataGridView dataGridView)
@@ -119,6 +125,34 @@ namespace Comun
             {
                 checkPermiso(control, permiso);
             }
+        }
+        public static void ConfigListbox(DataTable dtLeft, ref DataTable dtListaBd, ref DataTable dtListaMem, ref ListBox lst1, ref ListBox lst2, bool def = false, DataTable dtRight = null)
+        {
+            dtListaBd.Clear();
+            if (def)
+            {
+                for (int i = 0; i < dtLeft.Rows.Count; i++)
+                {
+                    int nLeft = (int)dtLeft.Rows[i][0];
+                    for (int j = 0; j < dtRight.Rows.Count; j++)
+                    {
+                        if (nLeft == (int)dtRight.Rows[j][0])
+                        {
+                            dtLeft.Rows.RemoveAt(i);
+                            i--;
+                        }
+                    }
+                }
+            }
+            dtListaBd.Clear();
+            dtListaBd = dtLeft;
+            lst1.DataSource = dtListaBd;
+            lst1.Update();
+
+            dtListaMem.Clear();
+            if (def) dtListaMem = dtRight;
+            lst2.DataSource = dtListaMem;
+            lst2.Update();
         }
 
     }

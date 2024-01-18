@@ -18,6 +18,7 @@ namespace Vista
     {
         DataTable dtListaBd; // Almacena las capacitaciones existentes en la bd
         DataTable dtListaMem = new DataTable("Capacitaciones"); // Almacena las capacitaciones asignadas al empleado
+        private int _idPersona = -1;
 
         CN_AsignarCapacitaciones cn_asignar = new CN_AsignarCapacitaciones();
         public frmAsignarCapacitaciones()
@@ -56,7 +57,8 @@ namespace Vista
             dtListaMem.Columns.Add(fNameColumn);
             //lst, carga los dt en las listBox de capacitaciones
             lstCapacitaciones.DataSource = null;
-            dtListaBd = cn_asignar.ConsultarCapacitacionesLst();
+            cn_asignar.IdArea = -1;
+            dtListaBd = cn_asignar.ConsultarCapacitaciones();
             lstCapacitaciones.DataSource = dtListaBd;
             lstCapacitaciones.ValueMember = "id_capacitaciones";
             lstCapacitaciones.DisplayMember = "capacitacion";
@@ -64,7 +66,7 @@ namespace Vista
             lstCapacitacionesAsignadas.DataSource = null;
             lstCapacitacionesAsignadas.DataSource = dtListaMem;
             lstCapacitacionesAsignadas.ValueMember = "id_capacitaciones";
-            lstCapacitaciones.DisplayMember = "capacitacion";
+            lstCapacitacionesAsignadas.DisplayMember = "capacitacion";
             #endregion
         }
 
@@ -101,9 +103,42 @@ namespace Vista
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+
             lblPersona.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value.ToString()} " +
                 $"{dtgPersonas.Rows[e.RowIndex].Cells[2].Value.ToString()} " +
                 $"          Puesto:  {dtgPersonas.Rows[e.RowIndex].Cells[5].Value.ToString()}";
+
+            cn_asignar.IdArea = dtgPersonas.Rows[e.RowIndex].Cells[6].Value;
+            DataTable dtLeft = cn_asignar.ConsultarCapacitaciones();
+            cn_asignar.IdPersona = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
+            DataTable dtRight = cn_asignar.ConsultarCapacitaciones(true);
+            UtilidadesForms.ConfigListbox(dtLeft, ref dtListaBd, ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, dtRight);
+
+        }
+
+        private void btnAsignarCapacitacion_Click(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+        }
+
+        private void btnDesasignarCapacitacion_Click(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            cn_asignar.Capacitaciones = null;
+            cn_asignar.Capacitaciones = new List<int>();
+            cn_asignar.Capacitaciones.Clear();
+            
+            for (int i = 0, len = lstCapacitacionesAsignadas.Items.Count; i < len; i++)
+            {
+                cn_asignar.Capacitaciones.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+            }
+            dtgPersonas.Refresh();
+            cn_asignar.IdPersona = dtgPersonas.CurrentRow.Cells[0].Value;
+            cn_asignar.AsignarCapacitaciones();
         }
     }
 }
