@@ -40,10 +40,20 @@ namespace LogicaNegocio
 
             for (int i = 0, len = dt.Rows.Count; i < len; i++)
             {
+                if (dt.Rows[i][1].ToString().Contains("))0(("))
+                {
+                    dt.Columns[1].ReadOnly = false;
+                    dt.Rows[i][1] = dt.Rows[i]["capacitacion"].ToString().Replace("))0((", $"({Niveles.cmbNivel0})");
+                }
                 if (dt.Rows[i][1].ToString().Contains("))1(("))
                 {
                     dt.Columns[1].ReadOnly = false;
                     dt.Rows[i][1] = dt.Rows[i]["capacitacion"].ToString().Replace("))1((", $"({Niveles.cmbNivel1})");
+                }
+                if (dt.Rows[i][1].ToString().Contains("))2(("))
+                {
+                    dt.Columns[1].ReadOnly = false;
+                    dt.Rows[i][1] = dt.Rows[i]["capacitacion"].ToString().Replace("))2((", $"({Niveles.cmbNivel2})");
                 }
             }
             return dt;

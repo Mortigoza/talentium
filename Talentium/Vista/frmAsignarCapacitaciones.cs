@@ -18,7 +18,7 @@ namespace Vista
     {
         DataTable dtListaBd; // Almacena las capacitaciones existentes en la bd
         DataTable dtListaMem = new DataTable("Capacitaciones"); // Almacena las capacitaciones asignadas al empleado
-        private int _idPersona = -1;
+        private object _idPersona;
 
         CN_AsignarCapacitaciones cn_asignar = new CN_AsignarCapacitaciones();
         public frmAsignarCapacitaciones()
@@ -103,6 +103,7 @@ namespace Vista
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            _idPersona = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
 
             lblPersona.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value.ToString()} " +
                 $"{dtgPersonas.Rows[e.RowIndex].Cells[2].Value.ToString()} " +
@@ -110,10 +111,9 @@ namespace Vista
 
             cn_asignar.IdArea = dtgPersonas.Rows[e.RowIndex].Cells[6].Value;
             DataTable dtLeft = cn_asignar.ConsultarCapacitaciones();
-            cn_asignar.IdPersona = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
+            cn_asignar.IdPersona = _idPersona;
             DataTable dtRight = cn_asignar.ConsultarCapacitaciones(true);
             UtilidadesForms.ConfigListbox(dtLeft, ref dtListaBd, ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, dtRight);
-
         }
 
         private void btnAsignarCapacitacion_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace Vista
                 cn_asignar.Capacitaciones.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
             }
             dtgPersonas.Refresh();
-            cn_asignar.IdPersona = dtgPersonas.CurrentRow.Cells[0].Value;
+            cn_asignar.IdPersona = _idPersona;
             cn_asignar.AsignarCapacitaciones();
         }
     }
