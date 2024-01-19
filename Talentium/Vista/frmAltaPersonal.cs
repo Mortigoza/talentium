@@ -20,6 +20,7 @@ namespace Vista
         CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
+        private bool esCandidato;
 
         //variables
         private bool inicial = true;
@@ -44,12 +45,13 @@ namespace Vista
         private int _id_informacion_laboral4;
 
         byte[] foto;
-        public frmAltaPersonal()
+        public frmAltaPersonal(bool esCandidato)
         {
 
-          InitializeComponent();
-          DeshabilitarCampos();
-            
+            InitializeComponent();
+            DeshabilitarCampos();
+            this.esCandidato = esCandidato;
+
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
 
@@ -374,6 +376,7 @@ namespace Vista
                 insert.telefono_alternativo = txtTelefonoAlternativo.Text;
                 insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                 insert.contacto = txtContacto.Text;
+                insert.candidato = esCandidato;
 
 
                 //ACADEMICOS

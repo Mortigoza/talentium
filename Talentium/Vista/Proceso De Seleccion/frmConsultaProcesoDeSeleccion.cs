@@ -192,8 +192,8 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 DatosCandidato();
-                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-                frmAltaPersonal.ShowDialog();
+                //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                //frmAltaPersonal.ShowDialog();
             }
         }
 

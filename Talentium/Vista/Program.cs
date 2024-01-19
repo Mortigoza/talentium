@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Vista.Evaluacion_de_desempeño;
 using Vista.Accesibilidad;
 using Vista.Analisis_y_reportes;
+using Vista.Gestion_de_Talento;
 
 namespace Vista
 {
