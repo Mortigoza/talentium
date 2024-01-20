@@ -120,25 +120,35 @@ namespace Vista
         {
             UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
         }
+        private void lstCapacitaciones_DoubleClick(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+        }
 
         private void btnDesasignarCapacitacion_Click(object sender, EventArgs e)
+        {
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+        }
+        private void lstCapacitacionesAsignadas_DoubleClick(object sender, EventArgs e)
         {
             UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cn_asignar.Capacitaciones = null;
-            cn_asignar.Capacitaciones = new List<int>();
-            cn_asignar.Capacitaciones.Clear();
-            
-            for (int i = 0, len = lstCapacitacionesAsignadas.Items.Count; i < len; i++)
+            if (dtgPersonas.Rows.Count > 0)
             {
-                cn_asignar.Capacitaciones.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                cn_asignar.Capacitaciones = null;
+                cn_asignar.Capacitaciones = dtListaMem;
+
+                dtgPersonas.Refresh();
+                cn_asignar.IdPersona = _idPersona;
+                cn_asignar.AsignarCapacitaciones();
             }
-            dtgPersonas.Refresh();
-            cn_asignar.IdPersona = _idPersona;
-            cn_asignar.AsignarCapacitaciones();
+            else
+            {
+                MessageBox.Show("Seleccione un usuario");
+            }
         }
     }
 }

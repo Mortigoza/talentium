@@ -22,7 +22,7 @@ namespace Vista
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigCache.intentos = 5; //INTENTOS POR DEFECTO PARA QUE SE BLOQUEE
             //Properties.Settings.Default.Idioma = "es-AR";
-            Application.Run(new frmAsignarCapacitaciones());
+            Application.Run(new frmLogin());
         }
     }
 }

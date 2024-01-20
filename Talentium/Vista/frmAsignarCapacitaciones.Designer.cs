@@ -82,6 +82,7 @@
             this.lstCapacitaciones.Name = "lstCapacitaciones";
             this.lstCapacitaciones.Size = new System.Drawing.Size(238, 238);
             this.lstCapacitaciones.TabIndex = 20;
+            this.lstCapacitaciones.DoubleClick += new System.EventHandler(this.lstCapacitaciones_DoubleClick);
             // 
             // lstCapacitacionesAsignadas
             // 
@@ -90,6 +91,7 @@
             this.lstCapacitacionesAsignadas.Name = "lstCapacitacionesAsignadas";
             this.lstCapacitacionesAsignadas.Size = new System.Drawing.Size(238, 238);
             this.lstCapacitacionesAsignadas.TabIndex = 21;
+            this.lstCapacitacionesAsignadas.DoubleClick += new System.EventHandler(this.lstCapacitacionesAsignadas_DoubleClick);
             // 
             // btnGuardar
             // 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LogicaNegocio
@@ -12,7 +13,7 @@ namespace LogicaNegocio
     {
         public object IdPersona { get; set; }
         public object IdArea { get; set; }
-        public List<int> Capacitaciones { get; set; }
+        public DataTable Capacitaciones { get; set; }
 
         CD_AccesoBD acceso = new CD_AccesoBD();
         CD_AsignarCapacitaciones cd_asignar = new CD_AsignarCapacitaciones();
@@ -65,11 +66,33 @@ namespace LogicaNegocio
         public void AsignarCapacitaciones()
         {
             cd_asignar.IdPersona = (int)IdPersona;
-            cd_asignar.LimpiarCapacitaciones();
-            foreach (int id in Capacitaciones)
+            LimpiarCapacitaciones();
+            for (int i = 0; i < Capacitaciones.Rows.Count; i++)
             {
-                cd_asignar.IdCapacitacion = id;
+                cd_asignar.IdCapacitacion = (int)Capacitaciones.Rows[i][0];
                 cd_asignar.AsignarCapacitaciones();
+            }
+        }
+        private void LimpiarCapacitaciones()
+        {
+            DataTable _capsBD = cd_asignar.ConsultarCapacitacionesPersona();
+            List<int> capsBD = new List<int>();
+            List<int> capsMem = new List<int>();
+
+            for (int i = 0, len = _capsBD.Rows.Count; i < len; i++)
+            {
+                capsBD.Add((int)_capsBD.Rows[i][0]);
+            }
+            for (int i = 0, len = Capacitaciones.Rows.Count; i < len; i++)
+            {
+                capsMem.Add((int)Capacitaciones.Rows[i][0]);
+            }
+
+            int[] caps = capsBD.Except(capsMem).ToArray();
+            foreach (int idCap in caps)
+            {
+                cd_asignar.IdCapacitacion = idCap;
+                cd_asignar.BorrarCapacitacionPersona();
             }
         }
     }

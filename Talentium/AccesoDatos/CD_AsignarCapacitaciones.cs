@@ -54,11 +54,12 @@ namespace AccesoDatos
 
             DataTable resultado = EjecutarConsultas("alta_capacitacion_persona_sp", listaParametros.ToArray());
         }
-        public void LimpiarCapacitaciones()
+        public void BorrarCapacitacionPersona()
         {
             SqlParameter param1 = new SqlParameter("@id_persona", IdPersona) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_capacitacion", IdCapacitacion) { SqlDbType = SqlDbType.Int };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
 
             DataTable resultado = EjecutarConsultas("borrar_capacitaciones_persona_sp", listaParametros.ToArray());
         }
