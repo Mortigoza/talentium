@@ -321,3 +321,4 @@ C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\b
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\es-AR\LogicaNegocio.resources.dll
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
 C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmConfigEntrevistas.resources

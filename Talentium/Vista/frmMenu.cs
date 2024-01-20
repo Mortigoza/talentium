@@ -249,5 +249,13 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConfigEntrevistas frm = new frmConfigEntrevistas();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
