@@ -139,7 +139,7 @@ namespace Vista.Accesibilidad
                             ap.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
-                            configListbox(dtPermisosDef);
+                            UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
                             MessageBox.Show("Alta exitosa");
                         }
@@ -171,7 +171,7 @@ namespace Vista.Accesibilidad
                             up.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
-                            configListbox(dtPermisosDef);
+                            UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
                             MessageBox.Show("Modificación exitosa");
                         }
@@ -226,8 +226,8 @@ namespace Vista.Accesibilidad
                         btnAgregar.Text = Strings.btnAgregar;
                         btnBaja.Enabled = true;
                         UtilidadesForms.LimpiarControles(this);
-                        configListbox(dtPermisosDef);
-                        break;
+                        UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
+                    break;
                 }
         }
         private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
@@ -260,37 +260,6 @@ namespace Vista.Accesibilidad
             refreshDtg();
         }
         #region Metodos
-        public void configListbox(DataTable dtLeft, bool def = false, DataTable dtRight = null)
-        {
-            // dtLeft trae todos los permisos
-            // dtRight trae los permisos asociados al perfil
-
-            dtListaBd.Clear();
-            if (def)
-            {
-                for (int i = 0; i < dtLeft.Rows.Count; i++)
-                {
-                    int nLeft = (int)dtLeft.Rows[i][0];
-                    for (int j = 0; j < dtRight.Rows.Count; j++)
-                    {
-                        if (nLeft == (int)dtRight.Rows[j][0])
-                        {
-                            dtLeft.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                }
-            }
-            dtListaBd.Clear();
-            dtListaBd = dtLeft;
-            lstPermisos.DataSource = dtListaBd;
-            lstPermisos.Update();
-
-            dtListaMem.Clear();
-            if (def) dtListaMem = dtRight;
-            lstPermisosAsignados.DataSource = dtListaMem;
-            lstPermisosAsignados.Update();
-        }
 
         private void txtDescripcion_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
@@ -306,7 +275,7 @@ namespace Vista.Accesibilidad
             txtNombrePermiso.Text = dtgPerfiles.Rows[_rowIndex].Cells[1].Value.ToString();
             txtDescripcion.Text = dtgPerfiles.Rows[_rowIndex].Cells[2].Value.ToString();
             DataTable permisosPerfil = traerPermisos();
-            configListbox(dtPermisosDef, true, permisosPerfil);
+            UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados, true, permisosPerfil);
         }
         public void refreshDtg()
         {

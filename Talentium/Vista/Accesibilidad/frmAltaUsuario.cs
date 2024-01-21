@@ -164,7 +164,9 @@ namespace Vista
             usuario.IdPerfil = (int)(dt.Rows[0][9]);
             DataTable dtPermisosUsuario = usuario.ConsultarPermisosUsuario();
             if (dtPermisosUsuario.Rows.Count > 0)
-                configListbox(usuario.ConsultarPermisosLst(), true, dtPermisosUsuario);
+            {
+                UtilidadesForms.ConfigListbox(usuario.ConsultarPermisosLst(), ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados, true, dtPermisosUsuario);
+            }
 
 
             #endregion
@@ -342,12 +344,12 @@ namespace Vista
                 if (id_perfil != -1)
                 {
                     // Si se selecciona un perfil especifico se cargan los permisos
-                    configListbox(dtPermisosDef, true, dtPermisosPerfil);
+                    UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados, true, dtPermisosPerfil);
                 }
                 else
                 {
                     // Si se selecciona un perfil personalizado se establecen por defecto (todos los permisos a la izquierda)
-                    configListbox(dtPermisosDef);
+                    UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                 }
             }
         }
@@ -399,37 +401,6 @@ namespace Vista
         }
         // Funciones
         // Configura el los listbox en base a una lista de permisos
-        public void configListbox(DataTable dtLeft, bool def = false, DataTable dtRight = null)
-        {
-            // dtLeft trae todos los permisos
-            // dtRight trae los permisos asociados al perfil
-
-            dtListaBd.Clear();
-            if (def)
-            {
-                for (int i = 0; i < dtLeft.Rows.Count; i++)
-                {
-                    int nLeft = (int)dtLeft.Rows[i][0];
-                    for (int j = 0; j < dtRight.Rows.Count; j++)
-                    {
-                        if (nLeft == (int)dtRight.Rows[j][0])
-                        {
-                            dtLeft.Rows.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                }
-            }
-            dtListaBd.Clear();
-            dtListaBd = dtLeft;
-            lstPermisos.DataSource = dtListaBd;
-            lstPermisos.Update();
-
-            dtListaMem.Clear();
-            if (def) dtListaMem = dtRight;
-            lstPermisosAsignados.DataSource = dtListaMem;
-            lstPermisosAsignados.Update();
-        }
 
         // Pone el Perfil personalizado sin alterar el estado de los listbox ni los datatables de permisos
         public void PerfilCustom()
