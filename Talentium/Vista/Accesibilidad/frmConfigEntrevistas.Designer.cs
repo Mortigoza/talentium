@@ -32,7 +32,8 @@
             this.lblNombreEntrevista = new System.Windows.Forms.Label();
             this.dtgEntrevistas = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.id_entrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntrevistas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +56,9 @@
             // dtgEntrevistas
             // 
             this.dtgEntrevistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgEntrevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_entrevista,
+            this.entrevista});
             this.dtgEntrevistas.Location = new System.Drawing.Point(104, 176);
             this.dtgEntrevistas.Name = "dtgEntrevistas";
             this.dtgEntrevistas.Size = new System.Drawing.Size(240, 150);
@@ -68,22 +72,25 @@
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button2
+            // id_entrevista
             // 
-            this.button2.Location = new System.Drawing.Point(656, 388);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.id_entrevista.DataPropertyName = "id_entrevista";
+            this.id_entrevista.HeaderText = "ID";
+            this.id_entrevista.Name = "id_entrevista";
+            // 
+            // entrevista
+            // 
+            this.entrevista.DataPropertyName = "entrevista";
+            this.entrevista.HeaderText = "Entrevista";
+            this.entrevista.Name = "entrevista";
             // 
             // frmConfigEntrevistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgEntrevistas);
             this.Controls.Add(this.lblNombreEntrevista);
@@ -102,6 +109,7 @@
         private System.Windows.Forms.Label lblNombreEntrevista;
         private System.Windows.Forms.DataGridView dtgEntrevistas;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_entrevista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn entrevista;
     }
 }

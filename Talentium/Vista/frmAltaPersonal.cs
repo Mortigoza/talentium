@@ -21,7 +21,7 @@ namespace Vista
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
         private bool esCandidato;
-        private DateTime? fechaNull = null;
+        private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
         //variables
         private bool inicial = true;
@@ -727,7 +727,7 @@ namespace Vista
                 }
                 if (c is ComboBox cmb &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
-                    (count == -1 | c.AccessibleDescription.Length - 1 < count))
+                    (count == -1 | c.AccessibleDescription.Length - 1 < count) && cmb.Enabled == true)
                 {
                     if (cmb.SelectedIndex == -1)
                     {
