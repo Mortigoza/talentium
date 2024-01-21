@@ -30,7 +30,7 @@ namespace Vista
             {
                 permisos += $"{listaPermisos[i].Id}: {listaPermisos[i].Permiso}\n";
             }
-            //MessageBox.Show(permisos);
+            MessageBox.Show(permisos);
 
 
             List<ToolStripMenuItem> items;
@@ -205,6 +205,10 @@ namespace Vista
 
         private void asignarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmAsignarCapacitaciones frm = new frmAsignarCapacitaciones();
+            frm.ShowDialog();
+            this.Show();
         }
 
         private void gestionDeCapacitacionesToolStripMenuItem_Click(object sender, EventArgs e)

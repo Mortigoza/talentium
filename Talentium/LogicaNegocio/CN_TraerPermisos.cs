@@ -15,7 +15,16 @@ namespace LogicaNegocio
         {
             CD_TraerPermisos tp = new CD_TraerPermisos();
 
-            DataTable dt = tp.TraerPermisos(UserCache.id);
+            DataTable dt;
+
+            if (UserCache.idPerfil != -1)
+            {
+                dt = tp.TraerPermisos();
+            }
+            else
+            {
+                dt = tp.TraerPermisos(UserCache.id);
+            }
 
             PermisosCache pc = new PermisosCache();
             PermisosCache.Clear();
