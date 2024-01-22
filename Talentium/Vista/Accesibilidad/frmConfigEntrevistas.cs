@@ -19,6 +19,8 @@ namespace Vista.Accesibilidad
             InitializeComponent();
             CargarDataGrid();
             dtgEntrevistas.AllowUserToAddRows = false;
+            dtgEntrevistas.ReadOnly = true;
+            grpModEntrevista.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -52,6 +54,107 @@ namespace Vista.Accesibilidad
             dtgEntrevistas.DataSource = logicaEntrevista.ConsultarEntrevistas();
             dtgEntrevistas.Columns["id_entrevista"].DataPropertyName = "id_entrevista";
             dtgEntrevistas.Columns["entrevista"].DataPropertyName = "entrevista";
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dtgEntrevistas.SelectedRows == null || dtgEntrevistas.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar la fila que desea modificar");
+                return;
+            } else
+            {
+                grpModEntrevista.Enabled = true;
+                grpAltaEntrevista.Enabled = false;
+                txtModNombre.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+            }
+            
+        }
+
+        private void btnModCancelar_Click(object sender, EventArgs e)
+        {
+            txtModNombre.Clear();
+            grpModEntrevista.Enabled = false;
+            grpAltaEntrevista.Enabled = true;
+        }
+
+        private void dtgEntrevistas_DoubleClick(object sender, EventArgs e)
+        {
+            grpModEntrevista.Enabled = true;
+            grpAltaEntrevista.Enabled = false;
+            txtModNombre.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+        }
+
+        private void btnModGuardar_Click(object sender, EventArgs e)
+        {
+            if (dtgEntrevistas.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
+
+                if (filaSeleccionada.DataBoundItem is DataRowView registroSeleccionado)
+                {
+                    int idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_entrevista"]);
+                    string nuevaEntrevista = txtModNombre.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(nuevaEntrevista))
+                    {
+                        MessageBox.Show("Debe completar el campo.");
+                    }
+                    else
+                    {
+                        bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, nuevaEntrevista);
+
+                        if (modificacionExitosa)
+                        {
+                            MessageBox.Show("Modificación de área exitosa");
+                            txtModNombre.Clear();
+                            CargarDataGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ese nombre de área ya está en uso.");
+                            txtModNombre.Clear();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNombreEntrevista.Clear();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
+            int idRegistroSeleccionado = Convert.ToInt32(filaSeleccionada.Cells["id_entrevista"].Value);
+
+            if (dtgEntrevistas.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("¿Queres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                if (resultado == DialogResult.OK)
+                {
+                    if (logicaEntrevista.EliminarEntrevista(idRegistroSeleccionado) == false)
+                    {
+                        MessageBox.Show("El área ha sido eliminada con éxito.");
+                        CargarDataGrid();
+                    } else
+                    {
+                        MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
+                    }
+                    
+                    
+                }
+                else if (resultado == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Se ha cancelado la operación.");
+                }
+            } else
+            {
+                MessageBox.Show("Debe seleccionar un registro.");
+            }
         }
     }
 }

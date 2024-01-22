@@ -33,5 +33,21 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultado = EjecutarConsultas("consultar_entrevistas_sp", listaParametros.ToArray());
             return resultado;
         }
+        public bool ModificarEntrevista(int idRegistroSeleccionado, string nuevaEntrevista)
+        {
+            SqlParameter param1 = new SqlParameter("@id_entrevista", idRegistroSeleccionado) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@entrevista", nuevaEntrevista) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifEntrevista = EjecutarConsultas("modificar_entrevista_sp", listaParametros.ToArray());
+            return resultadoModifEntrevista.Rows.Count != 0;
+        }
+        public bool EliminarEntrevista(int id_entrevista)
+        {
+            SqlParameter param1 = new SqlParameter("@id_entrevista", id_entrevista) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarEntrevista = EjecutarConsultas("eliminar_entrevista_sp", listaParametros.ToArray());
+            return resultadoEliminarEntrevista.Rows.Count != 0;
+        }
     }
 }
