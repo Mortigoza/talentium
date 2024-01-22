@@ -11,11 +11,11 @@ namespace LogicaNegocio.Accesibilidad
     public class CN_LogicaEntrevista
     {
         CD_Entrevista entrevistaDatos = new CD_Entrevista();
-        public bool ValidarEntrevista(string entrevista)
+        public bool ValidarEntrevista(int instancia, string entrevista)
         {
             if (!entrevistaDatos.ConsultarEntrevistaRepetida(entrevista))
             {
-                entrevistaDatos.InsertarEntrevista(entrevista);
+                entrevistaDatos.InsertarEntrevista(instancia, entrevista);
                 return false;
             }
 
@@ -26,11 +26,11 @@ namespace LogicaNegocio.Accesibilidad
         {
             return entrevistaDatos.ConsultarEntrevistas();
         }
-        public bool ModificarEntrevista(int idRegistroSeleccionado, string nuevaEntrevista)
+        public bool ModificarEntrevista(int idRegistroSeleccionado, int instancia, string nuevaEntrevista)
         {
             if (!entrevistaDatos.ConsultarEntrevistaRepetida(nuevaEntrevista))
             {
-                entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, nuevaEntrevista);
+                entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, instancia, nuevaEntrevista);
                 
             }
             return true;

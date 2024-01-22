@@ -21,19 +21,21 @@ namespace Vista.Accesibilidad
             dtgEntrevistas.AllowUserToAddRows = false;
             dtgEntrevistas.ReadOnly = true;
             grpModEntrevista.Enabled = false;
+            dtgEntrevistas.Columns["id_entrevista"].Visible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string entrevista = txtNombreEntrevista.Text.Trim();
+            int instancia = Convert.ToInt32(txtInstancia.Text.Trim());
 
-            if (string.IsNullOrWhiteSpace(entrevista))
+            if (string.IsNullOrWhiteSpace(entrevista) && string.IsNullOrWhiteSpace(instancia.ToString()))
             {
-                MessageBox.Show("Debe completar el campo.");
+                MessageBox.Show("Debe completar todos los campos.");
             }
             else
             {
-                bool esEntrevistaValida = logicaEntrevista.ValidarEntrevista(entrevista);
+                bool esEntrevistaValida = logicaEntrevista.ValidarEntrevista(instancia, entrevista);
 
                 if (!esEntrevistaValida)
                 {
@@ -52,7 +54,7 @@ namespace Vista.Accesibilidad
         private void CargarDataGrid()
         {
             dtgEntrevistas.DataSource = logicaEntrevista.ConsultarEntrevistas();
-            dtgEntrevistas.Columns["id_entrevista"].DataPropertyName = "id_entrevista";
+            dtgEntrevistas.Columns["instancia"].DataPropertyName = "instancia";
             dtgEntrevistas.Columns["entrevista"].DataPropertyName = "entrevista";
         }
 
@@ -66,7 +68,8 @@ namespace Vista.Accesibilidad
             {
                 grpModEntrevista.Enabled = true;
                 grpAltaEntrevista.Enabled = false;
-                txtModNombre.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+                txtInstanciaMod.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+                txtModNombre.Text = dtgEntrevistas.SelectedCells[2].Value.ToString();
             }
             
         }
@@ -82,7 +85,8 @@ namespace Vista.Accesibilidad
         {
             grpModEntrevista.Enabled = true;
             grpAltaEntrevista.Enabled = false;
-            txtModNombre.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+            txtInstanciaMod.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+            txtModNombre.Text = dtgEntrevistas.SelectedCells[2].Value.ToString();
         }
 
         private void btnModGuardar_Click(object sender, EventArgs e)
@@ -94,26 +98,29 @@ namespace Vista.Accesibilidad
                 if (filaSeleccionada.DataBoundItem is DataRowView registroSeleccionado)
                 {
                     int idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_entrevista"]);
+                    int instancia = Convert.ToInt32(txtInstanciaMod.Text.Trim());
                     string nuevaEntrevista = txtModNombre.Text.Trim();
 
-                    if (string.IsNullOrWhiteSpace(nuevaEntrevista))
+                    if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(instancia.ToString()))
                     {
-                        MessageBox.Show("Debe completar el campo.");
+                        MessageBox.Show("Debe completar los campos.");
                     }
                     else
                     {
-                        bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, nuevaEntrevista);
+                        bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, instancia, nuevaEntrevista);
 
                         if (modificacionExitosa)
                         {
-                            MessageBox.Show("Modificación de área exitosa");
+                            MessageBox.Show("Modificación de entrevista exitosa");
                             txtModNombre.Clear();
+                            txtInstanciaMod.Clear();
                             CargarDataGrid();
                         }
                         else
                         {
-                            MessageBox.Show("Ese nombre de área ya está en uso.");
+                            MessageBox.Show("Ese nombre de entrevista ya está en uso.");
                             txtModNombre.Clear();
+                            txtInstanciaMod.Clear();
                         }
                     }
                 }
