@@ -34,10 +34,10 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultado = EjecutarConsultas("consultar_entrevistas_sp", listaParametros.ToArray());
             return resultado;
         }
-        public bool ModificarEntrevista(int idRegistroSeleccionado, int instancia, string nuevaEntrevista)
+        public bool ModificarEntrevista(int idRegistroSeleccionado, int etapa, string nuevaEntrevista)
         {
             SqlParameter param1 = new SqlParameter("@id_entrevista", idRegistroSeleccionado) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@instancia", instancia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@etapa", etapa) { SqlDbType = SqlDbType.Int };
             SqlParameter param3 = new SqlParameter("@entrevista", nuevaEntrevista) { SqlDbType = SqlDbType.NVarChar };
 
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };

@@ -45,7 +45,7 @@
             this.txtInstancia = new System.Windows.Forms.TextBox();
             this.lblInstanciaMod = new System.Windows.Forms.Label();
             this.txtInstanciaMod = new System.Windows.Forms.TextBox();
-            this.instancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.etapa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntrevistas)).BeginInit();
             this.grpAltaEntrevista.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             this.dtgEntrevistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEntrevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.instancia,
+            this.etapa,
             this.entrevista});
             this.dtgEntrevistas.Location = new System.Drawing.Point(33, 50);
             this.dtgEntrevistas.Name = "dtgEntrevistas";
@@ -218,12 +218,12 @@
             this.txtInstanciaMod.Size = new System.Drawing.Size(51, 20);
             this.txtInstanciaMod.TabIndex = 7;
             // 
-            // instancia
+            // etapa
             // 
-            this.instancia.DataPropertyName = "instancia";
-            this.instancia.HeaderText = "ID";
-            this.instancia.Name = "instancia";
-            this.instancia.Width = 80;
+            this.etapa.DataPropertyName = "etapa";
+            this.etapa.HeaderText = "ID";
+            this.etapa.Name = "etapa";
+            this.etapa.Width = 80;
             // 
             // entrevista
             // 
@@ -271,7 +271,7 @@
         private System.Windows.Forms.TextBox txtInstancia;
         private System.Windows.Forms.Label lblInstanciaMod;
         private System.Windows.Forms.TextBox txtInstanciaMod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn instancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn etapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn entrevista;
     }
 }

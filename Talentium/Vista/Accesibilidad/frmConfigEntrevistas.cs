@@ -54,7 +54,7 @@ namespace Vista.Accesibilidad
         private void CargarDataGrid()
         {
             dtgEntrevistas.DataSource = logicaEntrevista.ConsultarEntrevistas();
-            dtgEntrevistas.Columns["instancia"].DataPropertyName = "instancia";
+            dtgEntrevistas.Columns["etapa"].DataPropertyName = "etapa";
             dtgEntrevistas.Columns["entrevista"].DataPropertyName = "entrevista";
         }
 
@@ -98,33 +98,76 @@ namespace Vista.Accesibilidad
                 if (filaSeleccionada.DataBoundItem is DataRowView registroSeleccionado)
                 {
                     int idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_entrevista"]);
-                    int instancia = Convert.ToInt32(txtInstanciaMod.Text.Trim());
-                    string nuevaEntrevista = txtModNombre.Text.Trim();
-
-                    if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(instancia.ToString()))
+                    if (int.TryParse(txtInstanciaMod.Text.Trim(), out int etapa))
                     {
-                        MessageBox.Show("Debe completar los campos.");
-                    }
-                    else
-                    {
-                        bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, instancia, nuevaEntrevista);
+                        string nuevaEntrevista = txtModNombre.Text.Trim();
 
-                        if (modificacionExitosa)
+                        if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(etapa.ToString()))
                         {
-                            MessageBox.Show("Modificación de entrevista exitosa");
-                            txtModNombre.Clear();
-                            txtInstanciaMod.Clear();
-                            CargarDataGrid();
+                            MessageBox.Show("Debe completar los campos.");
                         }
                         else
                         {
-                            MessageBox.Show("Ese nombre de entrevista ya está en uso.");
-                            txtModNombre.Clear();
-                            txtInstanciaMod.Clear();
+                            bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
+
+                            if (modificacionExitosa)
+                            {
+                                MessageBox.Show("Modificación de entrevista exitosa");
+                                txtModNombre.Clear();
+                                txtInstanciaMod.Clear();
+                                CargarDataGrid();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+                                txtModNombre.Clear();
+                                txtInstanciaMod.Clear();
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El valor de etapa no es un número válido.");
                     }
                 }
             }
+
+
+
+            //if (dtgEntrevistas.SelectedRows.Count > 0)
+            //{
+            //    DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
+
+            //    if (filaSeleccionada.DataBoundItem is DataRowView registroSeleccionado)
+            //    {
+            //        int idRegistroSeleccionado = Convert.ToInt32(registroSeleccionado["id_entrevista"]);
+            //        int etapa = Convert.ToInt32(txtInstanciaMod.Text.Trim());
+            //        string nuevaEntrevista = txtModNombre.Text.Trim();
+
+            //        if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(etapa.ToString()))
+            //        {
+            //            MessageBox.Show("Debe completar los campos.");
+            //        }
+            //        else
+            //        {
+            //            bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
+
+            //            if (modificacionExitosa)
+            //            {
+            //                MessageBox.Show("Modificación de entrevista exitosa");
+            //                txtModNombre.Clear();
+            //                txtInstanciaMod.Clear();
+            //                CargarDataGrid();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+            //                txtModNombre.Clear();
+            //                txtInstanciaMod.Clear();
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
