@@ -51,5 +51,10 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoEliminarEntrevista = EjecutarConsultas("eliminar_entrevista_sp", listaParametros.ToArray());
             return resultadoEliminarEntrevista.Rows.Count != 0;
         }
+        public int ConsultarCantidadEntrevistas()
+        {
+            DataTable resultadoEntrevista = EjecutarConsultasSinParam("obtener_cantidad_entrevistas_sp");
+            return Convert.ToInt32(resultadoEntrevista.Rows[0]["CantidadRegistros"]);
+        }
     }
 }

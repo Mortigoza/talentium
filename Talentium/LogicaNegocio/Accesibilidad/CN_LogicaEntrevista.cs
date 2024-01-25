@@ -35,6 +35,10 @@ namespace LogicaNegocio.Accesibilidad
         {
             return entrevistaDatos.EliminarEntrevista(id_entrevista);
         }
+        public int CantidadEntrevista()
+        {
+            return entrevistaDatos.ConsultarCantidadEntrevistas();
+        }
 
     }
 }
