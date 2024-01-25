@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
+using LogicaNegocio.Accesibilidad;
 using Vista.Lenguajes;
 
 namespace Vista.Gestion_de_Talento
@@ -15,6 +16,7 @@ namespace Vista.Gestion_de_Talento
     public partial class frmEntrevistaPreocupacionalCapacitacion : Form
     {
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
+        CN_LogicaEntrevista logicaEntrevista = new CN_LogicaEntrevista();
         private int idCandidato;
         List<string> estados = new List<string>() { "APTO", "NO APTO" };
         private bool seleccionarTab = true;
@@ -26,12 +28,18 @@ namespace Vista.Gestion_de_Talento
         }
         public frmEntrevistaPreocupacionalCapacitacion(string nombre, string apellido, string puesto, int idCandidatoSeleccionado)
         {
+            int cantidadRegistros = logicaEntrevista.CantidadEntrevista();
+            for (int i = 1; i <= cantidadRegistros; i++)
+            {
+                TabPage tabPage = new TabPage($"Etapa {i}");
+                tabEtapas.TabPages.Add(tabPage);
+            }
             InitializeComponent();
-            lblNombreApellido.Text = $"{nombre} {apellido}";
-            lblPuesto.Text = puesto;
-            this.idCandidato = idCandidatoSeleccionado;
-            lblNombreApellidoP.Text = $"{nombre} {apellido}";
-            lblPuestoP.Text = puesto;
+            //lblNombreApellido.Text = $"{nombre} {apellido}";
+            //lblPuesto.Text = puesto;
+            //this.idCandidato = idCandidatoSeleccionado;
+            //lblNombreApellidoP.Text = $"{nombre} {apellido}";
+            //lblPuestoP.Text = puesto;
             //dtpEntrevista.MinDate = DateTime.Today;
         }
 

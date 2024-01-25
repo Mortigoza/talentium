@@ -66,13 +66,20 @@ namespace Vista
                 int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
                 string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedItem as string;
                 DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
-                dtgCandidatos.DataSource = DTCandidatos;
-                for (int i = 0; i < dtgCandidatos.Rows.Count-1; i++)
+                if(DTCandidatos != null && DTCandidatos.Rows.Count>0)
                 {
-                    int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
-                    dtgCandidatos.Rows[i].Tag = id;
+                    dtgCandidatos.DataSource = DTCandidatos;
+                    for (int i = 0; i < dtgCandidatos.Rows.Count - 1; i++)
+                    {
+                        int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
+                        dtgCandidatos.Rows[i].Tag = id;
+                    }
+                    CargarColumnasDataGrid();
+                } else
+                {
+                    MessageBox.Show("No hay resultados que coincidan con la búsqueda.");
                 }
-                CargarColumnasDataGrid();
+                
             }
         }
 
@@ -142,19 +149,20 @@ namespace Vista
             string apellido = seleccionado.Cells["Apellido"].Value.ToString();
             string puesto = seleccionado.Cells["Puesto"].Value.ToString();
             frmEntrevistaPreocupacionalCapacitacion etapas = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, idCandidatoSeleccionado);
-            if (dtgCandidatos.SelectedRows.Count > 0)
-            {
-                string etapa = dtgCandidatos.SelectedRows[0].Cells["Etapa"].Value.ToString();
+            
+            //if (dtgCandidatos.SelectedRows.Count > 0)
+            //{
+            //    string etapa = dtgCandidatos.SelectedRows[0].Cells["Etapa"].Value.ToString();
 
-                if (etapa.Equals("Preocupacional", StringComparison.OrdinalIgnoreCase))
-                {
-                    etapas.SeleccionarTab(1);
-                }
-                else if (etapa.Equals("Segunda Entrevista", StringComparison.OrdinalIgnoreCase))
-                {
-                    etapas.SeleccionarTab(0);
-                }
-            }
+            //    if (etapa.Equals("Preocupacional", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        etapas.SeleccionarTab(1);
+            //    }
+            //    else if (etapa.Equals("Segunda Entrevista", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        etapas.SeleccionarTab(0);
+            //    }
+            //}
             etapas.Show();
         }
 
@@ -192,8 +200,8 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 DatosCandidato();
-                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-                frmAltaPersonal.ShowDialog();
+                //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                //frmAltaPersonal.ShowDialog();
             }
         }
 

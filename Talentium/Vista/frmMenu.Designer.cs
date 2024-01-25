@@ -62,6 +62,7 @@
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.configuraciónDeEntrevistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -290,7 +291,8 @@
             this.puestosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.perfilesToolStripMenuItem,
-            this.cambioDeContraseñaToolStripMenuItem});
+            this.cambioDeContraseñaToolStripMenuItem,
+            this.configuraciónDeEntrevistasToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
@@ -298,35 +300,35 @@
             // áreasToolStripMenuItem
             // 
             this.áreasToolStripMenuItem.Name = "áreasToolStripMenuItem";
-            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.áreasToolStripMenuItem.Text = "Áreas";
             this.áreasToolStripMenuItem.Click += new System.EventHandler(this.áreasToolStripMenuItem_Click);
             // 
             // puestosToolStripMenuItem
             // 
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
             // cambioDeContraseñaToolStripMenuItem
             // 
             this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
-            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
             this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
@@ -336,13 +338,20 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Location = new System.Drawing.Point(937, 505);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(107, 36);
             this.btnLogout.TabIndex = 21;
             this.btnLogout.Text = "Cerrar Sesion";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // configuraciónDeEntrevistasToolStripMenuItem
+            // 
+            this.configuraciónDeEntrevistasToolStripMenuItem.Name = "configuraciónDeEntrevistasToolStripMenuItem";
+            this.configuraciónDeEntrevistasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.configuraciónDeEntrevistasToolStripMenuItem.Text = "Configuración de entrevistas";
+            this.configuraciónDeEntrevistasToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeEntrevistasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -404,5 +413,6 @@
         private System.Windows.Forms.ToolStripMenuItem asignarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeCapacitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraciónDeEntrevistasToolStripMenuItem;
     }
 }

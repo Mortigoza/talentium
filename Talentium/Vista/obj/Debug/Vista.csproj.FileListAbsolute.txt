@@ -373,3 +373,17 @@ C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\ob
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\System.Drawing.Common.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\en-US\LogicaNegocio.resources.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\bin\Debug\es-AR\LogicaNegocio.resources.dll
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
+C:\Users\cecilia\Desktop\Talentium 20230917\20230922\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmConfigEntrevistas.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmConfigEntrevistas.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config

@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\frmConfigEntrevistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesibilidad\frmConfigEntrevistas.Designer.cs">
+      <DependentUpon>frmConfigEntrevistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accesibilidad\frmPerfiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <Compile Include="UtilidadesForm.cs" />
     <EmbeddedResource Include="Accesibilidad\frmAreas.resx">
       <DependentUpon>frmAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesibilidad\frmConfigEntrevistas.resx">
+      <DependentUpon>frmConfigEntrevistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accesibilidad\frmPerfiles.resx">
       <DependentUpon>frmPerfiles.cs</DependentUpon>

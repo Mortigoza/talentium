@@ -20,6 +20,8 @@ namespace Vista
         CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
+        private bool esCandidato;
+        private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
         //variables
         private bool inicial = true;
@@ -44,15 +46,20 @@ namespace Vista
         private int _id_informacion_laboral4;
 
         byte[] foto;
-        public frmAltaPersonal()
+        public frmAltaPersonal(bool esCandidato)
         {
 
-          InitializeComponent();
+          //InitializeComponent();
 
-            dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
+
   
-            DeshabilitarCampos();
             
+            InitializeComponent();
+            DeshabilitarCampos();
+            this.esCandidato = esCandidato;
+            dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
+
+
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
 
@@ -309,6 +316,11 @@ namespace Vista
                     MessageBox.Show("La entrada debe contener solamente numeros.");
                 }
             }
+            if (esCandidato)
+            {
+                cmbConvenio.Enabled = false;
+                dttFechaAlta.Enabled = false;
+            }
         }
    
         private bool EsNumero(string input )
@@ -369,14 +381,25 @@ namespace Vista
                 insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
                 insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
                 insert.hijos = (int)nupHijos.Value;
-                insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
-                insert.fecha_alta = dttFechaAlta.Value;
+                insert.candidato = esCandidato;
+                        if (esCandidato)
+                        {
+                            insert.id_convenio = 0;
+                            insert.fecha_alta = (DateTime) fechaNull;
+                        } else
+                        {
+                            insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                            insert.fecha_alta = dttFechaAlta.Value;
+                        }
+                //insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                //insert.fecha_alta = dttFechaAlta.Value;
                 
                 insert.telefono = txtTelefono.Text;
                 insert.id_tipo = (int)cmbTipoTel.SelectedValue;
                 insert.telefono_alternativo = txtTelefonoAlternativo.Text;
                 insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                 insert.contacto = txtContacto.Text;
+                
 
 
                 //ACADEMICOS
@@ -710,7 +733,7 @@ namespace Vista
                 }
                 if (c is ComboBox cmb &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
-                    (count == -1 | c.AccessibleDescription.Length - 1 < count))
+                    (count == -1 | c.AccessibleDescription.Length - 1 < count) && cmb.Enabled == true)
                 {
                     if (cmb.SelectedIndex == -1)
                     {

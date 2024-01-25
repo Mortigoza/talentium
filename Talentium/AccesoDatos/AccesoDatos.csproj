@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\CD_Entrevista.cs" />
     <Compile Include="Administracion Personal\CD_AccesoBDComboBox.cs" />
     <Compile Include="Administracion Personal\CD_AccesoBDPersonacs.cs" />
     <Compile Include="Accesibilidad\CD_AltaPerfil.cs" />

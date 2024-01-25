@@ -194,7 +194,6 @@
             // 
             // cmbEstadoPreocupacional
             // 
-            this.cmbEstadoPreocupacional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoPreocupacional.FormattingEnabled = true;
             this.cmbEstadoPreocupacional.Location = new System.Drawing.Point(285, 158);
             this.cmbEstadoPreocupacional.Margin = new System.Windows.Forms.Padding(2);
@@ -398,7 +397,6 @@
             // 
             // cmbEstadoEntrevista
             // 
-            this.cmbEstadoEntrevista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoEntrevista.FormattingEnabled = true;
             this.cmbEstadoEntrevista.Location = new System.Drawing.Point(292, 263);
             this.cmbEstadoEntrevista.Margin = new System.Windows.Forms.Padding(2);

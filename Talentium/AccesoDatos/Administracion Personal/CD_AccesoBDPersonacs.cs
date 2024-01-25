@@ -34,9 +34,10 @@ namespace AccesoDatos.Administracion_Personal
             SqlParameter param19 = new SqlParameter("@id_convenio", insert.id_convenio) { SqlDbType = SqlDbType.Int };
             SqlParameter param20 = new SqlParameter("@foto_perfil", insert.foto_perfil) { SqlDbType = SqlDbType.VarBinary };
             SqlParameter param21 = new SqlParameter("@fecha_alta", insert.fecha_alta) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param22 = new SqlParameter("@es_candidato", insert.candidato) { SqlDbType = SqlDbType.Bit };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4,param5,param6,
                 param7,param8,param9,param10,param11,param12,param13
-                ,param14,param15,param16,param17,param18,param19,param20,param21};
+                ,param14,param15,param16,param17,param18,param19,param20,param21, param22};
          
             DataTable resultado = EjecutarConsultas("InsertarPersonas_sp", listaParametros.ToArray());
             return resultado;

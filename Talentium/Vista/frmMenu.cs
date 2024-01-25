@@ -14,14 +14,17 @@ using Vista.Analisis_y_reportes;
 using Vista.Evaluacion_de_desempeño;
 using Vista.Gestion_de_Talento;
 using Vista.Lenguajes;
+using LogicaNegocio.Administracion_Del_Personal;
 
 namespace Vista
 {
     public partial class frmMenu : Form
     {
+        private CN_AdministracionDatosPersonal datosPersonales;
         public frmMenu()
         {
             InitializeComponent();
+            datosPersonales = new CN_AdministracionDatosPersonal();
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
 
             string permisos = "";
@@ -91,7 +94,7 @@ namespace Vista
         private void altasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmAltaPersonal alta = new frmAltaPersonal();
+            frmAltaPersonal alta = new frmAltaPersonal(false);
             alta.ShowDialog();
             this.Show();
         }
@@ -174,7 +177,7 @@ namespace Vista
         private void altaCandidatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmAltaProcesoDeSeleccion frm = new frmAltaProcesoDeSeleccion();
+            frmAltaPersonal frm = new frmAltaPersonal(true);
             frm.ShowDialog();
             this.Show();
         }
@@ -243,6 +246,14 @@ namespace Vista
         {
             this.Hide();
             frmCategorias frm = new frmCategorias();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConfigEntrevistas frm = new frmConfigEntrevistas();
             frm.ShowDialog();
             this.Show();
         }
