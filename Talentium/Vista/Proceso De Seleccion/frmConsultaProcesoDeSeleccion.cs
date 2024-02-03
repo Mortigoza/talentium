@@ -11,19 +11,21 @@ using LogicaNegocio;
 using Vista.Gestion_de_Talento;
 using Comun;
 using Vista.Lenguajes;
+using LogicaNegocio.Accesibilidad;
 
 namespace Vista
 {
     public partial class frmConsultaProcesoDeSeleccion : Form
     {
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
+        CN_LogicaEntrevista entrevista = new CN_LogicaEntrevista();
         public DatosCandidato DatosSeleccionados { get; set; }
+        private bool filtroUtilizado = false;
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
-
         private void txtCuilCuit_Leave(object sender, EventArgs e)
         {
             string cuil = txtCuilCuit.Text.Trim();
@@ -34,9 +36,6 @@ namespace Vista
                 txtCuilCuit.Focus();
             }
         }
-
-        private bool filtroUtilizado = false;
-
         private void cmbPuesto_TextChanged(object sender, EventArgs e)
         {
             filtroUtilizado = true;
@@ -62,18 +61,14 @@ namespace Vista
             } else
             {
                 dtgCandidatos.AutoGenerateColumns = false;
+                dtgCandidatos.AllowUserToAddRows = false;
                 string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
                 int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
-                string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedItem as string;
+                string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedValue as string) ? null : cmbEtapa.SelectedValue as string;
                 DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
-                if(DTCandidatos != null && DTCandidatos.Rows.Count>0)
+                if (DTCandidatos != null && DTCandidatos.Rows.Count>0)
                 {
                     dtgCandidatos.DataSource = DTCandidatos;
-                    for (int i = 0; i < dtgCandidatos.Rows.Count - 1; i++)
-                    {
-                        int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
-                        dtgCandidatos.Rows[i].Tag = id;
-                    }
                     CargarColumnasDataGrid();
                 } else
                 {
@@ -92,30 +87,21 @@ namespace Vista
 
         private void cmbEtapa_DropDown(object sender, EventArgs e)
         {
-            List<string> lista = new List<string>{"Primera entrevista", "Segunda entrevista", "Preocupacional"};
+            DataTable lista = entrevista.ConsultarEntrevistas();
+            lista.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
             cmbEtapa.DataSource = lista;
+            cmbEtapa.DisplayMember = "Etapas";
+            cmbEtapa.ValueMember = "Etapas";
         }
 
         public void CargarColumnasDataGrid()
         {
-            dtgCandidatos.Columns["Etapa"].DataPropertyName = "etapa";
-            dtgCandidatos.Columns["Estado"].DataPropertyName = "estado";
-            dtgCandidatos.Columns["Puesto"].DataPropertyName = "nombre_puesto";
-            dtgCandidatos.Columns["Cuil"].DataPropertyName = "cuit_cuil";
-            dtgCandidatos.Columns["Nombre"].DataPropertyName = "nombres";
-            dtgCandidatos.Columns["Apellido"].DataPropertyName = "apellidos";
-            dtgCandidatos.Columns["Celular"].DataPropertyName = "tel_celular";
-            dtgCandidatos.Columns["Alternativo"].DataPropertyName = "tel_alternativo";
-            dtgCandidatos.Columns["Correo"].DataPropertyName = "correo";
-            dtgCandidatos.Columns["Nacimiento"].DataPropertyName = "fecha_nacimiento";
-            dtgCandidatos.Columns["Calle"].DataPropertyName = "calle";
-            dtgCandidatos.Columns["Nro"].DataPropertyName = "nro";
-            dtgCandidatos.Columns["Piso"].DataPropertyName = "piso";
-            dtgCandidatos.Columns["Dpto"].DataPropertyName = "dpto";
-            dtgCandidatos.Columns["Localidad"].DataPropertyName = "localidad";
-            dtgCandidatos.Columns["CP"].DataPropertyName = "codPos";
-            dtgCandidatos.Columns["Partido"].DataPropertyName = "partido";
-            dtgCandidatos.Columns["Provincia"].DataPropertyName = "provincia";
+            dtgCandidatos.Columns["Etapa"].DataPropertyName = "Etapa";
+            dtgCandidatos.Columns["Estado"].DataPropertyName = "Estado";
+            dtgCandidatos.Columns["Puesto"].DataPropertyName = "Puesto";
+            dtgCandidatos.Columns["Cuil"].DataPropertyName = "Cuit";
+            dtgCandidatos.Columns["Nombre"].DataPropertyName = "Nombre";
+            dtgCandidatos.Columns["Apellido"].DataPropertyName = "Apellido";
         }
 
         private void dtgCandidatos_SelectionChanged(object sender, EventArgs e)

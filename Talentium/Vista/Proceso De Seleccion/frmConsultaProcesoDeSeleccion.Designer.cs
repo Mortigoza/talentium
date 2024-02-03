@@ -40,25 +40,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgCandidatos = new System.Windows.Forms.DataGridView();
+            this.btnModificarCandidato = new System.Windows.Forms.Button();
             this.Etapa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alternativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnModificarCandidato = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
@@ -198,19 +186,7 @@
             this.Puesto,
             this.Cuil,
             this.Nombre,
-            this.Apellido,
-            this.Celular,
-            this.Alternativo,
-            this.Correo,
-            this.Nacimiento,
-            this.Calle,
-            this.Nro,
-            this.Piso,
-            this.Dpto,
-            this.Localidad,
-            this.CP,
-            this.Partido,
-            this.Provincia});
+            this.Apellido});
             this.dtgCandidatos.Location = new System.Drawing.Point(30, 173);
             this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgCandidatos.Name = "dtgCandidatos";
@@ -219,6 +195,21 @@
             this.dtgCandidatos.Size = new System.Drawing.Size(804, 122);
             this.dtgCandidatos.TabIndex = 8;
             this.dtgCandidatos.SelectionChanged += new System.EventHandler(this.dtgCandidatos_SelectionChanged);
+            // 
+            // btnModificarCandidato
+            // 
+            this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificarCandidato.Enabled = false;
+            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);
+            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarCandidato.Name = "btnModificarCandidato";
+            this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
+            this.btnModificarCandidato.TabIndex = 14;
+            this.btnModificarCandidato.Text = "Modificar Candidato";
+            this.btnModificarCandidato.UseVisualStyleBackColor = false;
+            this.btnModificarCandidato.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Etapa
             // 
@@ -262,106 +253,6 @@
             this.Apellido.Name = "Apellido";
             this.Apellido.Width = 125;
             // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Telefono celular";
-            this.Celular.MinimumWidth = 6;
-            this.Celular.Name = "Celular";
-            this.Celular.Width = 105;
-            // 
-            // Alternativo
-            // 
-            this.Alternativo.DataPropertyName = "Segunda entrevista";
-            this.Alternativo.HeaderText = "Telefono alternativo";
-            this.Alternativo.MinimumWidth = 6;
-            this.Alternativo.Name = "Alternativo";
-            this.Alternativo.Width = 105;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo Electronico";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 125;
-            // 
-            // Nacimiento
-            // 
-            this.Nacimiento.HeaderText = "Fecha de nacimiento";
-            this.Nacimiento.MinimumWidth = 6;
-            this.Nacimiento.Name = "Nacimiento";
-            this.Nacimiento.Width = 95;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle ";
-            this.Calle.MinimumWidth = 6;
-            this.Calle.Name = "Calle";
-            this.Calle.Width = 105;
-            // 
-            // Nro
-            // 
-            this.Nro.HeaderText = "N°";
-            this.Nro.MinimumWidth = 6;
-            this.Nro.Name = "Nro";
-            this.Nro.Width = 80;
-            // 
-            // Piso
-            // 
-            this.Piso.HeaderText = "Piso";
-            this.Piso.MinimumWidth = 6;
-            this.Piso.Name = "Piso";
-            this.Piso.Width = 80;
-            // 
-            // Dpto
-            // 
-            this.Dpto.HeaderText = "Dpto";
-            this.Dpto.MinimumWidth = 6;
-            this.Dpto.Name = "Dpto";
-            this.Dpto.Width = 80;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.MinimumWidth = 6;
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 105;
-            // 
-            // CP
-            // 
-            this.CP.HeaderText = "CP";
-            this.CP.MinimumWidth = 6;
-            this.CP.Name = "CP";
-            this.CP.Width = 80;
-            // 
-            // Partido
-            // 
-            this.Partido.HeaderText = "Partido";
-            this.Partido.MinimumWidth = 6;
-            this.Partido.Name = "Partido";
-            this.Partido.Width = 125;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.MinimumWidth = 6;
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 125;
-            // 
-            // btnModificarCandidato
-            // 
-            this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnModificarCandidato.Enabled = false;
-            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);
-            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarCandidato.Name = "btnModificarCandidato";
-            this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
-            this.btnModificarCandidato.TabIndex = 14;
-            this.btnModificarCandidato.Text = "Modificar Candidato";
-            this.btnModificarCandidato.UseVisualStyleBackColor = false;
-            this.btnModificarCandidato.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // frmConsultaProcesoDeSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,24 +289,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgCandidatos;
+        private System.Windows.Forms.Button btnModificarCandidato;
         private System.Windows.Forms.DataGridViewTextBoxColumn Etapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alternativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Piso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dpto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
-        private System.Windows.Forms.Button btnModificarCandidato;
     }
 }
