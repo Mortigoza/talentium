@@ -129,9 +129,9 @@ namespace AccesoDatos
 
             return modifEtapa.Rows.Count != 0;
         }
-        public DataTable ConsultarDatosEtapas(int id_candidato)
+        public DataTable ConsultarDatosEtapas(int id)
         {
-            SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@id_persona", id) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable datosEtapas = EjecutarConsultas("obtener_datos_etapas_sp", listaParametros.ToArray());
 

@@ -69,9 +69,9 @@ namespace LogicaNegocio
         {
             return seleccionDatos.InsertarEtapa(id_candidato, fecha_etapa, area, entrevistador);
         }
-        public DataTable ObtenerDatosEtapas(int id_candidato)
+        public DataTable ObtenerDatosEtapas(int id)
         {
-            return seleccionDatos.ConsultarDatosEtapas(id_candidato);
+            return seleccionDatos.ConsultarDatosEtapas(id);
         }
         public bool ModificarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
             string correo, DateTime fecha_nacimiento, int id_localidad, string calle, int nro, string dpto, string piso,

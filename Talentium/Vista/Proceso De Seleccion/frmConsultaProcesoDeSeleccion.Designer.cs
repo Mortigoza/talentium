@@ -47,6 +47,7 @@
             this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
@@ -186,7 +187,8 @@
             this.Puesto,
             this.Cuil,
             this.Nombre,
-            this.Apellido});
+            this.Apellido,
+            this.ID});
             this.dtgCandidatos.Location = new System.Drawing.Point(30, 173);
             this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgCandidatos.Name = "dtgCandidatos";
@@ -253,6 +255,11 @@
             this.Apellido.Name = "Apellido";
             this.Apellido.Width = 125;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
             // frmConsultaProcesoDeSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +303,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

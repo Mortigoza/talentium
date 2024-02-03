@@ -24,6 +24,7 @@ namespace Vista
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
+            dtgCandidatos.Columns["ID"].Visible = false;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
         private void txtCuilCuit_Leave(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace Vista
                 if (DTCandidatos != null && DTCandidatos.Rows.Count>0)
                 {
                     dtgCandidatos.DataSource = DTCandidatos;
+                    for (int i = 0; i < dtgCandidatos.Rows.Count; i++)
+                    {
+                        int idUnico = Convert.ToInt32(dtgCandidatos.Rows[i].Cells["ID"].Value);
+                        dtgCandidatos.Rows[i].Tag = idUnico;
+                    }
                     CargarColumnasDataGrid();
                 } else
                 {
@@ -102,6 +108,7 @@ namespace Vista
             dtgCandidatos.Columns["Cuil"].DataPropertyName = "Cuit";
             dtgCandidatos.Columns["Nombre"].DataPropertyName = "Nombre";
             dtgCandidatos.Columns["Apellido"].DataPropertyName = "Apellido";
+            dtgCandidatos.Columns["ID"].DataPropertyName = "ID";
         }
 
         private void dtgCandidatos_SelectionChanged(object sender, EventArgs e)
@@ -112,29 +119,29 @@ namespace Vista
                 btnModificarCandidato.Enabled = true;
                 DataGridViewRow seleccionada = dtgCandidatos.SelectedRows[0];
 
-                if (seleccionada.Cells["Etapa"].Value.ToString() == "Preocupacional")
-                {
-                    if (seleccionada.Cells["Estado"].Value.ToString() == "APTO")
-                    {
-                        btnIngresarEmpleado.Enabled = true;
-                        return;
-                    } else
-                    {
-                        btnIngresarEmpleado.Enabled = false;
-                    }
+                //if (seleccionada.Cells["Etapa"].Value.ToString() == "Preocupacional")
+                //{
+                //    if (seleccionada.Cells["Estado"].Value.ToString() == "APTO")
+                //    {
+                //        btnIngresarEmpleado.Enabled = true;
+                //        return;
+                //    } else
+                //    {
+                //        btnIngresarEmpleado.Enabled = false;
+                //    }
                     
-                }
+                //}
             }
         }
 
         private void btnEtapas_Click(object sender, EventArgs e)
         {
             DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-            int idCandidatoSeleccionado = (int)dtgCandidatos.SelectedRows[0].Tag;
+            int id = (int)dtgCandidatos.SelectedRows[0].Tag;
             string nombre = seleccionado.Cells["Nombre"].Value.ToString();
             string apellido = seleccionado.Cells["Apellido"].Value.ToString();
             string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-            frmEntrevistaPreocupacionalCapacitacion etapas = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, idCandidatoSeleccionado);
+            frmEntrevistaPreocupacionalCapacitacion etapas = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, id);
             
             //if (dtgCandidatos.SelectedRows.Count > 0)
             //{
@@ -175,7 +182,7 @@ namespace Vista
             dtgCandidatos.DataSource = DTCandidatos;
             for (int i = 0; i < dtgCandidatos.Rows.Count - 1; i++)
             {
-                int id = Convert.ToInt32(DTCandidatos.Rows[i]["id_candidato"]);
+                int id = Convert.ToInt32(DTCandidatos.Rows[i]["ID"]);
                 dtgCandidatos.Rows[i].Tag = id;
             }
             CargarColumnasDataGrid();
