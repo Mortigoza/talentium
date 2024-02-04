@@ -32,15 +32,20 @@ namespace Vista.Gestion_de_Talento
             //int cantidadRegistros = logicaEntrevista.CantidadEntrevista();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
             TabPage plantillaTab = tabEtapas.TabPages[0];
+            DataTable datosArea = proceso.ObtenerAreas();
+            cmbAreas.DataSource = datosArea;
+            cmbAreas.DisplayMember = "area";
+            cmbAreas.ValueMember = "id_area";
             for (int i = 0; i < DTEntrevistas.Rows.Count; i++)
             {
-                TabPage tabPage = CloneTabPage(plantillaTab, nombre, apellido, puesto);
+                TabPage tabPage = CloneTabPage(plantillaTab, nombre, apellido, puesto, id);
                 string nombreEtapa = $"{DTEntrevistas.Rows[i]["etapa"]}-{DTEntrevistas.Rows[i]["entrevista"]}";
                 tabPage.Text = nombreEtapa;
                 tabEtapas.TabPages.Add(tabPage);
                 tabEtapas.TabPages.Remove(plantillaTab);
                 tabEtapas.TabPages.Remove(tabPreocupacional);
                 tabEtapas.TabPages.Add(tabPreocupacional);
+                
             }
             //plantillaTab.Visible = false;
             //tabEtapas.Enabled = true;
@@ -50,9 +55,10 @@ namespace Vista.Gestion_de_Talento
             lblNombreApellidoP.Text = $"{nombre} {apellido}";
             lblPuestoP.Text = puesto;
             dtpEntrevista.MinDate = DateTime.Today;
-            DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
+            
+
         }
-        private TabPage CloneTabPage(TabPage sourceTabPage, string nombre, string apellido, string puesto)
+        private TabPage CloneTabPage(TabPage sourceTabPage, string nombre, string apellido, string puesto, int id)
         {
             TabPage newTabPage = new TabPage();
             foreach (Control control in sourceTabPage.Controls)
@@ -61,6 +67,31 @@ namespace Vista.Gestion_de_Talento
                 newTabPage.Controls.Add(newControl);
                 lblNombreApellido.Text = $"{nombre} {apellido}";
                 lblPuesto.Text = puesto;
+                
+
+                //DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
+                //DataTable datosArea = proceso.ObtenerAreas();
+                //cmbAreas.DataSource = datosArea;
+                //cmbAreas.DisplayMember = "area";
+                //cmbAreas.ValueMember = "id_area";
+                //if (datosEtapa.Rows.Count > 0)
+                //{
+                //    DataRow row = datosEtapa.Rows[0];
+                //    dtpEntrevista.Value = Convert.ToDateTime(row["fecha_entrevista"]);
+                //    cmbAreas.Text = row["area"].ToString();
+                //    cmbEmpleados.Text = row["entrevistador"].ToString();
+                //    cmbEstadoEntrevista.Text = row["estado_entrevista"].ToString();
+                //}
+            }
+            
+            DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
+            if (datosEtapa.Rows.Count > 0)
+            {
+                DataRow row = datosEtapa.Rows[0];
+                dtpEntrevista.Value = Convert.ToDateTime(row["fecha_entrevista"]);
+                cmbAreas.Text = row["area"].ToString();
+                cmbEmpleados.Text = row["entrevistador"].ToString();
+                cmbEstadoEntrevista.Text = row["estado_entrevista"].ToString();
             }
             newTabPage.Enabled = true;
             newTabPage.BackColor = Color.White;
@@ -76,7 +107,16 @@ namespace Vista.Gestion_de_Talento
             }
             else if (control is ComboBox)
             {
-                ((ComboBox)newControl).SelectedIndex = ((ComboBox)control).SelectedIndex;
+                ComboBox originalComboBox = (ComboBox)control;
+                ComboBox newComboBox = (ComboBox)newControl;
+
+                // Asigna los mismos elementos del DataSource
+                newComboBox.DataSource = originalComboBox.DataSource;
+                newComboBox.DisplayMember = originalComboBox.DisplayMember;
+                newComboBox.ValueMember = originalComboBox.ValueMember;
+
+                // Asigna el valor seleccionado en lugar del índice
+                newComboBox.SelectedItem = originalComboBox.SelectedItem;
             }
             else if (control is Label)
             {
