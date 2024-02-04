@@ -36,6 +36,7 @@ namespace Vista.Gestion_de_Talento
             cmbAreas.DataSource = datosArea;
             cmbAreas.DisplayMember = "area";
             cmbAreas.ValueMember = "id_area";
+            cmbEstadoEntrevista.DataSource = estados;
             for (int i = 0; i < DTEntrevistas.Rows.Count; i++)
             {
                 TabPage tabPage = CloneTabPage(plantillaTab, nombre, apellido, puesto, id);
@@ -63,10 +64,11 @@ namespace Vista.Gestion_de_Talento
             TabPage newTabPage = new TabPage();
             foreach (Control control in sourceTabPage.Controls)
             {
-                Control newControl = CloneControl(control);
+                Control newControl = CloneControl(control, control.Name == "cmbEstadoEntrevista");
                 newTabPage.Controls.Add(newControl);
                 lblNombreApellido.Text = $"{nombre} {apellido}";
                 lblPuesto.Text = puesto;
+
                 
 
                 //DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
@@ -83,52 +85,93 @@ namespace Vista.Gestion_de_Talento
                 //    cmbEstadoEntrevista.Text = row["estado_entrevista"].ToString();
                 //}
             }
-            
+
+            newTabPage.Enabled = true;
+            newTabPage.BackColor = Color.White;
+
+            // Asegurémonos de que los datos del área sean únicos para cada ComboBox
+            foreach (Control control in newTabPage.Controls)
+            {
+                if (control is ComboBox cmb && cmb.Name == "cmbAreas")
+                {
+                    cmb.DataSource = proceso.ObtenerAreas().Copy();
+                }
+            }
+
+            // Asegurémonos de que los datos de la etapa se carguen correctamente
             DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
             if (datosEtapa.Rows.Count > 0)
             {
                 DataRow row = datosEtapa.Rows[0];
+                DateTimePicker dtpEntrevista = newTabPage.Controls["dtpEntrevista"] as DateTimePicker;
                 dtpEntrevista.Value = Convert.ToDateTime(row["fecha_entrevista"]);
+                ComboBox cmbAreas = newTabPage.Controls["cmbAreas"] as ComboBox;
                 cmbAreas.Text = row["area"].ToString();
+                ComboBox cmbEmpleados = newTabPage.Controls["cmbEmpleados"] as ComboBox;
                 cmbEmpleados.Text = row["entrevistador"].ToString();
+                ComboBox cmbEstadoEntrevista = newTabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
                 cmbEstadoEntrevista.Text = row["estado_entrevista"].ToString();
             }
-            newTabPage.Enabled = true;
-            newTabPage.BackColor = Color.White;
-            
+
             return newTabPage;
         }
-        private Control CloneControl(Control control)
+        private Control CloneControl(Control control,bool isEstadoComboBox = false)
         {
             Control newControl = (Control)Activator.CreateInstance(control.GetType());
-            if (control is TextBox)
-            {
-                ((TextBox)newControl).Text = ((TextBox)control).Text;
-            }
-            else if (control is ComboBox)
+
+            if (control is ComboBox)
             {
                 ComboBox originalComboBox = (ComboBox)control;
                 ComboBox newComboBox = (ComboBox)newControl;
 
-                // Asigna los mismos elementos del DataSource
-                newComboBox.DataSource = originalComboBox.DataSource;
+                // Clonar el objeto DataSource si es DataTable
+                if (originalComboBox.DataSource is DataTable)
+                {
+                    DataTable originalDataSource = (DataTable)originalComboBox.DataSource;
+                    DataTable clonedDataSource = originalDataSource.Copy();
+                    newComboBox.DataSource = clonedDataSource;
+                }
+                else
+                {
+                    newComboBox.DataSource = originalComboBox.DataSource;
+                }
+
                 newComboBox.DisplayMember = originalComboBox.DisplayMember;
                 newComboBox.ValueMember = originalComboBox.ValueMember;
-
-                // Asigna el valor seleccionado en lugar del índice
                 newComboBox.SelectedItem = originalComboBox.SelectedItem;
+
+                // Manejar ComboBox de estado
+                if (isEstadoComboBox)
+                {
+                    newComboBox.SelectedValueChanged += (sender, e) =>
+                    {
+                        // Evitar propagar cambios a otros ComboBox de estado
+                        if (newComboBox.Focused)
+                        {
+                            foreach (Control tabPageControl in newComboBox.Parent.Controls)
+                            {
+                                if (tabPageControl is ComboBox otherComboBox && otherComboBox.Name == "cmbEstadoEntrevista" && !otherComboBox.Equals(newComboBox))
+                                {
+                                    otherComboBox.Text = newComboBox.Text;
+                                }
+                            }
+                        }
+                    };
+                }
             }
-            else if (control is Label)
+            else
             {
-                ((Label)newControl).Text = ((Label)control).Text;
+                // Resto del código para otros tipos de controles
+                newControl.Text = control.Text;
             }
+
             newControl.Location = control.Location;
             newControl.Size = control.Size;
             newControl.Enabled = true;
 
             foreach (Control childControl in control.Controls)
             {
-                Control newChildControl = CloneControl(childControl);
+                Control newChildControl = CloneControl(childControl, isEstadoComboBox);
                 newControl.Controls.Add(newChildControl);
                 newControl.Enabled = true;
             }
@@ -178,6 +221,36 @@ namespace Vista.Gestion_de_Talento
         }
         private void cmbEstadoEntrevista_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ActualizarHabilitacionPestanas();
+        }
+        private void ActualizarHabilitacionPestanas()
+        {
+            // Recorre las pestañas y actualiza la habilitación según la selección en el ComboBox de estado
+            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+            {
+                TabPage tabPage = tabEtapas.TabPages[i];
+
+                if (i == tabEtapas.SelectedIndex)
+                {
+                    // Si es la pestaña actual, actualiza según el ComboBox de estado
+                    ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
+
+                    if (cmbEstado != null && cmbEstado.SelectedItem != null)
+                    {
+                        string estado = cmbEstado.Text;
+
+                        if (estado == "APTO")
+                        {
+                            // Habilitar la siguiente pestaña
+                            int nextIndex = i + 1;
+                            if (nextIndex < tabEtapas.TabPages.Count)
+                            {
+                                tabEtapas.TabPages[nextIndex].Enabled = true;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -230,17 +303,42 @@ namespace Vista.Gestion_de_Talento
             //    }
             //}
         }
+        private void HabilitarPestanaInicial()
+        {
+            // Determina cuál es la pestaña inicial a habilitar según tus criterios
+            // Puedes personalizar esta lógica según tus necesidades
+
+            int indexToEnable = 0;
+
+            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+            {
+                TabPage tabPage = tabEtapas.TabPages[i];
+                ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
+
+                if (cmbEstado != null && cmbEstado.SelectedItem != null)
+                {
+                    string estado = cmbEstado.Text;
+
+                    if (estado != "APTO")
+                    {
+                        // La pestaña no tiene estado "APTO", así que es la inicial
+                        indexToEnable = i;
+                        break;
+                    }
+                }
+            }
+
+            tabEtapas.TabPages[indexToEnable].Enabled = true;
+        }
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
-            //{
-            //    tabPreocupacional.Enabled = true;
-            //} else
-            //{
-            //    tabPreocupacional.Enabled = false;
-            //}
-            
+            foreach (TabPage tabPage in tabEtapas.TabPages)
+            {
+                tabPage.Enabled = false;
+            }
+            HabilitarPestanaInicial();
+
         }
 
         public void FechaSeleccionadaSegundaEntrevista()
