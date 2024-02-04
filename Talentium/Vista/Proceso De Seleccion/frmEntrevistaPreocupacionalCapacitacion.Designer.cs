@@ -418,7 +418,7 @@
             // 
             // tabEtapas
             // 
-            this.tabEtapas.AccessibleName = "dsadas";
+            this.tabEtapas.AccessibleName = "";
             this.tabEtapas.Controls.Add(this.tabSegundaEntrevista);
             this.tabEtapas.Controls.Add(this.tabPreocupacional);
             this.tabEtapas.Location = new System.Drawing.Point(20, 10);

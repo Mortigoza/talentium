@@ -34,31 +34,37 @@ namespace Vista.Gestion_de_Talento
             TabPage plantillaTab = tabEtapas.TabPages[0];
             for (int i = 0; i < DTEntrevistas.Rows.Count; i++)
             {
-                TabPage tabPage = CloneTabPage(plantillaTab);
+                TabPage tabPage = CloneTabPage(plantillaTab, nombre, apellido, puesto);
                 string nombreEtapa = $"{DTEntrevistas.Rows[i]["etapa"]}-{DTEntrevistas.Rows[i]["entrevista"]}";
                 tabPage.Text = nombreEtapa;
                 tabEtapas.TabPages.Add(tabPage);
-                tabPage.Enabled = true;
+                tabEtapas.TabPages.Remove(plantillaTab);
+                tabEtapas.TabPages.Remove(tabPreocupacional);
+                tabEtapas.TabPages.Add(tabPreocupacional);
             }
-            plantillaTab.Visible = false;
-
-            lblNombreApellido.Text = $"{nombre} {apellido}";
-            lblPuesto.Text = puesto;
+            //plantillaTab.Visible = false;
+            //tabEtapas.Enabled = true;
+            //lblNombreApellido.Text = $"{nombre} {apellido}";
+            //lblPuesto.Text = puesto;
             ////this.idCandidato = idCandidatoSeleccionado;
-            //lblNombreApellidoP.Text = $"{nombre} {apellido}";
-            //lblPuestoP.Text = puesto;
+            lblNombreApellidoP.Text = $"{nombre} {apellido}";
+            lblPuestoP.Text = puesto;
             dtpEntrevista.MinDate = DateTime.Today;
             DataTable datosEtapa = proceso.ObtenerDatosEtapas(id);
         }
-        private TabPage CloneTabPage(TabPage sourceTabPage)
+        private TabPage CloneTabPage(TabPage sourceTabPage, string nombre, string apellido, string puesto)
         {
             TabPage newTabPage = new TabPage();
             foreach (Control control in sourceTabPage.Controls)
             {
                 Control newControl = CloneControl(control);
                 newTabPage.Controls.Add(newControl);
+                lblNombreApellido.Text = $"{nombre} {apellido}";
+                lblPuesto.Text = puesto;
             }
             newTabPage.Enabled = true;
+            newTabPage.BackColor = Color.White;
+            
             return newTabPage;
         }
         private Control CloneControl(Control control)
@@ -78,12 +84,13 @@ namespace Vista.Gestion_de_Talento
             }
             newControl.Location = control.Location;
             newControl.Size = control.Size;
-            newControl.Enabled = control.Enabled;
+            newControl.Enabled = true;
 
             foreach (Control childControl in control.Controls)
             {
                 Control newChildControl = CloneControl(childControl);
                 newControl.Controls.Add(newChildControl);
+                newControl.Enabled = true;
             }
 
             return newControl;
@@ -169,30 +176,30 @@ namespace Vista.Gestion_de_Talento
 
         private void tabEtapas_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if ((e.TabPageIndex == 1 && !tabPreocupacional.Enabled))
-            {
-                e.Cancel = true;
-            }
+            //if ((e.TabPageIndex == 1 && !tabPreocupacional.Enabled))
+            //{
+            //    e.Cancel = true;
+            //}
 
-            if (e.TabPage == tabSegundaEntrevista)
-            {
-                if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
-                {
-                    e.Cancel = true;
-                    tabPreocupacional.Enabled = true;
-                }
-            }
+            //if (e.TabPage == tabSegundaEntrevista)
+            //{
+            //    if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
+            //    {
+            //        e.Cancel = true;
+            //        tabPreocupacional.Enabled = true;
+            //    }
+            //}
         }
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
-            {
-                tabPreocupacional.Enabled = true;
-            } else
-            {
-                tabPreocupacional.Enabled = false;
-            }
+            //if (!string.IsNullOrEmpty(cmbEstadoPreocupacional.Text))
+            //{
+            //    tabPreocupacional.Enabled = true;
+            //} else
+            //{
+            //    tabPreocupacional.Enabled = false;
+            //}
             
         }
 
