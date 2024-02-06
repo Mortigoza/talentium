@@ -215,6 +215,7 @@ namespace LogicaNegocio
             UserCache.digito = (string)dt.Rows[0][9];
             UserCache.intentos = (int)dt.Rows[0][10];
             UserCache.nuevo = (bool)dt.Rows[0][13];
+            UserCache.idPerfil = (int)dt.Rows[0][14];
         }
 
         public DateTime GetHoraDesbloqueo()

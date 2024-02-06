@@ -20,6 +20,7 @@ namespace Comun
         public static string digito { get; set; }
         public static int intentos { get; set; }
         public static bool nuevo { get; set; }
+        public static int idPerfil { get; set; }
 
         public static void Clear()
         {

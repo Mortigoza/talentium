@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesibilidad\CD_Usuario.cs" />
     <Compile Include="Administracion Personal\CD_AccesoBDComboBox.cs" />
     <Compile Include="Administracion Personal\CD_AccesoBDPersonacs.cs" />
     <Compile Include="Accesibilidad\CD_AltaPerfil.cs" />
@@ -49,18 +50,13 @@
     <Compile Include="Accesibilidad\CD_UpPerfil.cs" />
     <Compile Include="Analisis y reportes\CD_CertificacionServicios.cs" />
     <Compile Include="CD_AccesoBD.cs" />
+    <Compile Include="CD_AsignarCapacitaciones.cs" />
     <Compile Include="CD_Asistencias.cs" />
     <Compile Include="CD_Capacitaciones.cs" />
     <Compile Include="CD_Categorias.cs" />
     <Compile Include="CD_Conexion.cs" />
-    <Compile Include="Accesibilidad\CD_BajaUsuario.cs" />
-    <Compile Include="Accesibilidad\CD_ConsultarPermisosUsuario.cs" />
-    <Compile Include="Accesibilidad\CD_ConsultarPersonaMod.cs" />
-    <Compile Include="Accesibilidad\CD_ConsultarUsuario.cs" />
     <Compile Include="CD_Convenios.cs" />
     <Compile Include="CD_EjecutarSP.cs" />
-    <Compile Include="Accesibilidad\CD_ReactivarUsuario.cs" />
-    <Compile Include="Accesibilidad\CD_UpUsuario.cs" />
     <Compile Include="CD_Seleccion.cs" />
     <Compile Include="CD_TraerPermisos.cs" />
     <Compile Include="CD_PoliticasPass.cs" />

@@ -42,19 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_AsignarCapacitaciones.cs" />
     <Compile Include="CN_Asistencias.cs" />
     <Compile Include="Accesibilidad\CN_BajaPerfil.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarPermisosPerfil.cs" />
     <Compile Include="Accesibilidad\CN_LogicaArea.cs" />
     <Compile Include="Accesibilidad\CN_LogicaPuestos.cs" />
     <Compile Include="Accesibilidad\CN_AltaPerfil.cs" />
-    <Compile Include="Accesibilidad\CN_BajaUsuario.cs" />
-    <Compile Include="Accesibilidad\CN_ConsultarPermisosUsuario.cs" />
-    <Compile Include="Accesibilidad\CN_ConsultarPersonaMod.cs" />
-    <Compile Include="Accesibilidad\CN_ConsultarUsuario.cs" />
-    <Compile Include="Accesibilidad\CN_ReactivarUsuario.cs" />
     <Compile Include="Accesibilidad\CN_UpPerfil.cs" />
-    <Compile Include="Accesibilidad\CN_UpUsuario.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
     <Compile Include="CN_Categorias.cs" />

@@ -22,6 +22,7 @@ namespace Vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Properties.Settings.Default.Idioma = "es-AR";
             Application.Run(new frmLogin());
         }
     }
