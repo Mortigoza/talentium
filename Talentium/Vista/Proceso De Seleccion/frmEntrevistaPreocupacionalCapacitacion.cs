@@ -31,45 +31,25 @@ namespace Vista.Gestion_de_Talento
         public frmEntrevistaPreocupacionalCapacitacion(string nombre, string apellido, string puesto, int id)
         {
             InitializeComponent();
-            //int cantidadRegistros = logicaEntrevista.CantidadEntrevista();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
 
-            //cmbEstadoEntrevista.DataSource = estados;
             foreach (DataRow fila in DTEntrevistas.Rows)
             {
                 TabPage nuevaTab = new TabPage();
                 string nombreEtapa = $"{fila["etapa"]}-{fila["entrevista"]}";
                 nuevaTab.Text = nombreEtapa;
 
-                // Agregar la pestaña al control TabControl
                 tabEtapas.TabPages.Add(nuevaTab);
-
-                // Agregar los controles dentro de la pestaña
                 AgregarControlesEnTab(nuevaTab, nombre, apellido, puesto);
             }
-            //for (int i = 0; i < DTEntrevistas.Rows.Count; i++)
-            //{
-
-            //    string nombreEtapa = $"{DTEntrevistas.Rows[i]["etapa"]}-{DTEntrevistas.Rows[i]["entrevista"]}";
-            //    tabPage.Text = nombreEtapa;
-            //    tabEtapas.TabPages.Add(tabPage);
-
-
-
-            //}
+            
             this.idCandidato = id;
-            //tabEtapas.TabPages.Remove(plantillaTab);
             tabEtapas.TabPages.Remove(tabPreocupacional);
             tabEtapas.TabPages.Add(tabPreocupacional);
-            //plantillaTab.Visible = false;
             //tabEtapas.Enabled = true;
-            //lblNombreApellido.Text = $"{nombre} {apellido}";
-            //lblPuesto.Text = puesto;
             ////this.idCandidato = idCandidatoSeleccionado;
             lblNombreApellidoP.Text = $"{nombre} {apellido}";
             lblPuestoP.Text = puesto;
-            //dtpEntrevista.MinDate = DateTime.Today;
-
 
         }
         private void AgregarControlesEnTab(TabPage tab, string nombre, string apellido, string puesto)
@@ -93,29 +73,26 @@ namespace Vista.Gestion_de_Talento
             lblPuesto.Location = new Point(400, 30);
             lblPuesto.Text = puesto;
 
-
-            // Agregar los controles al GroupBox
             groupBox.Controls.Add(lblNombre);
             groupBox.Controls.Add(lblNombreApellido);
             groupBox.Controls.Add(lblPuestoT);
             groupBox.Controls.Add(lblPuesto);
 
-            // Agregar el GroupBox a la pestaña
             tab.Controls.Add(groupBox);
 
             GroupBox groupBox2 = new GroupBox();
             groupBox2.Text = "Entrevista";
-            groupBox2.Size = new Size(400, 200); // Ajusta el tamaño según tus necesidades
-            groupBox2.Location = new Point(70,95); // Ajusta la posición según tus necesidades
+            groupBox2.Size = new Size(400, 200);
+            groupBox2.Location = new Point(70,95); 
 
-            // Crear y configurar los controles dentro del segundo GroupBox
             Label lblFecha = new Label();
             lblFecha.Text = "Fecha:";
-            lblFecha.Location = new Point(20, 30); // Ajusta la posición según tus necesidades
+            lblFecha.Location = new Point(20, 30);
 
             DateTimePicker dtpFecha = new DateTimePicker();
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(150, 30); // Ajusta la posición según tus necesidades
+            dtpFecha.MinDate = DateTime.Today;
+            dtpFecha.Location = new Point(150, 30);
 
             Label lblArea = new Label();
             lblArea.Text = "Área:";
@@ -133,20 +110,20 @@ namespace Vista.Gestion_de_Talento
 
             Label lblEntrevistador = new Label();
             lblEntrevistador.Text = "Entrevistador:";
-            lblEntrevistador.Location = new Point(20, 110); // Ajusta la posición según tus necesidades
+            lblEntrevistador.Location = new Point(20, 110);
 
             ComboBox cmbEntrevistador = new ComboBox();
-            cmbEntrevistador.Location = new Point(150, 110); // Ajusta la posición según tus necesidades
+            cmbEntrevistador.Location = new Point(150, 110);
             cmbEntrevistador.Size = new Size(200, 20);
 
             Label lblEstado = new Label();
             lblEstado.Text = "Estado:";
-            lblEstado.Location = new Point(20, 150); // Ajusta la posición según tus necesidades
+            lblEstado.Location = new Point(20, 150);
 
             ComboBox cmbEstado = new ComboBox();
             cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" }); // Agrega los estados disponibles
-            cmbEstado.Location = new Point(150, 150); // Ajusta la posición según tus necesidades
+            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" }); 
+            cmbEstado.Location = new Point(150, 150); 
             cmbEstado.Size = new Size(200, 20);
 
             // Agregar los controles al segundo GroupBox
@@ -159,21 +136,15 @@ namespace Vista.Gestion_de_Talento
             groupBox2.Controls.Add(cmbArea); 
             groupBox2.Controls.Add(lblArea);
 
-            // Agregar el segundo GroupBox a la pestaña
             tab.Controls.Add(groupBox2);
 
+            Button btnGuardar = new Button();
+            btnGuardar.Text = "Guardar";
+            btnGuardar.Location = new Point(390, 300); 
+            btnGuardar.Size = new Size(80, 30); 
+            btnGuardar.Click += btnGuardar_Click;
 
-
-            ////TextBox txtNombre = new TextBox();
-            ////txtNombre.Text = nombre; // Ajusta el nombre según la columna de tu DataTable
-            ////txtNombre.Location = new Point(120, 20); // Ajusta la posición según tus necesidades
-
-            //// Agregar los controles a la pestaña
-            //tab.Controls.Add(lblNombre);
-            //tab.Controls.Add(lblNombreApellido);
-            //tab.Controls.Add(lblPuesto);
-
-            // Agrega más controles según tus necesidades
+            tab.Controls.Add(btnGuardar);
         }
         //private TabPage CloneTabPage(TabPage sourceTabPage, string nombre, string apellido, string puesto, int id)
         //{
@@ -373,40 +344,40 @@ namespace Vista.Gestion_de_Talento
             }
         }
 
-        //private void btnGuardar_Click(object sender, EventArgs e)
-        //{
-        //    int id_entrevista = proceso.ObtenerIDEntrevistas(tabEtapas.SelectedTab.ToString().Split('-')[1].TrimEnd('}'));
-        //    string estado = cmbEstadoEntrevista.Text;
-        //    int idCandidato = this.idCandidato;
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int id_entrevista = proceso.ObtenerIDEntrevistas(tabEtapas.SelectedTab.ToString().Split('-')[1].TrimEnd('}'));
+            //string estado = cmbEstadoEntrevista.Text;
+            //int idCandidato = this.idCandidato;
 
-        //    if (cmbEstadoEntrevista.Text == "APTO")
-        //    {
+            //if (cmbEstadoEntrevista.Text == "APTO")
+            //{
 
-        //        if (cmbEstadoEntrevista.SelectedItem == null)
-        //        {
-        //            MessageBox.Show("Por favor, seleccione un estado.");
-        //            return;
-        //        }
+            //    if (cmbEstadoEntrevista.SelectedItem == null)
+            //    {
+            //        MessageBox.Show("Por favor, seleccione un estado.");
+            //        return;
+            //    }
 
-        //        //string estado = cmbEstadoEntrevista.Text;
-        //        proceso.ModificarEstado(idCandidato, estado, null);
-        //        MessageBox.Show("Los datos han sido guardados correctamente.");
-        //        if (estado == "APTO")
-        //        {
-        //            tabPreocupacional.Enabled = true;
-        //        }
-        //        else
-        //        {
-        //            tabPreocupacional.Enabled = false;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        proceso.InsertarEtapa(idCandidato, id_entrevista, fecha, entrevistador, estado, null);
-        //        MessageBox.Show("Los datos han sido guardados correctamente.");
-        //        tabPreocupacional.Enabled = false;
-        //    }
-        //}
+            //    //string estado = cmbEstadoEntrevista.Text;
+            //    proceso.ModificarEstado(idCandidato, estado, null);
+            //    MessageBox.Show("Los datos han sido guardados correctamente.");
+            //    if (estado == "APTO")
+            //    {
+            //        tabPreocupacional.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        tabPreocupacional.Enabled = false;
+            //    }
+            //}
+            //else
+            //{
+            //    proceso.InsertarEtapa(idCandidato, id_entrevista, fecha, entrevistador, estado, null);
+            //    MessageBox.Show("Los datos han sido guardados correctamente.");
+            //    tabPreocupacional.Enabled = false;
+            //}
+        }
 
         private void tabEtapas_Selecting(object sender, TabControlCancelEventArgs e)
         {
