@@ -137,7 +137,7 @@ namespace Vista
         private void btnEtapas_Click(object sender, EventArgs e)
         {
             DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-            int id = (int)dtgCandidatos.SelectedRows[0].Tag;
+            int id = Convert.ToInt32(seleccionado.Cells["Id"].Value);
             string nombre = seleccionado.Cells["Nombre"].Value.ToString();
             string apellido = seleccionado.Cells["Apellido"].Value.ToString();
             string puesto = seleccionado.Cells["Puesto"].Value.ToString();

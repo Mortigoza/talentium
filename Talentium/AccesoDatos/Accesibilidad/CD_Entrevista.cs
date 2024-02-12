@@ -56,5 +56,12 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoEntrevista = EjecutarConsultasSinParam("obtener_cantidad_entrevistas_sp");
             return Convert.ToInt32(resultadoEntrevista.Rows[0]["CantidadRegistros"]);
         }
+        public int ObtenerIDEntrevistas(string entrevista)
+        {
+            SqlParameter param1 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable id_entrevista = EjecutarConsultas("obtener_id_entrevista_sp", listaParametros.ToArray());
+            return Convert.ToInt32(id_entrevista.Rows[0]["id_entrevista"]);
+        }
     }
 }

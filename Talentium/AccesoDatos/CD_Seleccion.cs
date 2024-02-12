@@ -7,6 +7,7 @@ using Comun;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using AccesoDatos.Accesibilidad;
 
 namespace AccesoDatos
 {
@@ -118,13 +119,16 @@ namespace AccesoDatos
             return modifEstado.Rows.Count != 0;
         }
 
-        public bool InsertarEtapa(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
+        public bool InsertarEtapa(int id_candidato, int id_entrevista, DateTime fecha_etapa, string entrevistador,
+            string estado, string patologias)
         {
             SqlParameter param1 = new SqlParameter("@id_candidato", id_candidato) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("@fecha_etapa", fecha_etapa) { SqlDbType = SqlDbType.DateTime };
-            SqlParameter param3 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
-            SqlParameter param4 = new SqlParameter("@nombre_apellido", entrevistador) { SqlDbType = SqlDbType.NVarChar };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4 };
+            SqlParameter param2 = new SqlParameter("@id_entrevista", id_entrevista) { SqlDbType = SqlDbType.Int };
+            SqlParameter param3 = new SqlParameter("@fecha_etapa", fecha_etapa) { SqlDbType = SqlDbType.DateTime };
+            SqlParameter param4 = new SqlParameter("@entrevistador", entrevistador) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param5 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param6 = new SqlParameter("@patologias", patologias) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
             DataTable modifEtapa = EjecutarConsultas("insertar_etapa_sp", listaParametros.ToArray());
 
             return modifEtapa.Rows.Count != 0;
@@ -137,5 +141,6 @@ namespace AccesoDatos
 
             return datosEtapas;
         }
+
     }
 }

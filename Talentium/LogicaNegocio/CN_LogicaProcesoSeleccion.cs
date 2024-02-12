@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
+using AccesoDatos.Accesibilidad;
 using System.Data;
 
 namespace LogicaNegocio
@@ -12,6 +13,7 @@ namespace LogicaNegocio
     {
         CD_Seleccion seleccionDatos = new CD_Seleccion();
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
+        CD_Entrevista entrevistaDatos = new CD_Entrevista();
 
         public bool ExisteCandidato(string cuil)
         {
@@ -65,9 +67,10 @@ namespace LogicaNegocio
         {
             return seleccionDatos.ModificarEstado(id_candidato, estado, patologias);
         }
-        public bool InsertarEtapa(int id_candidato, DateTime fecha_etapa, string area, string entrevistador)
+        public bool InsertarEtapa(int id_candidato, int id_entrevista, DateTime fecha_etapa, string entrevistador,
+            string estado, string patologias)
         {
-            return seleccionDatos.InsertarEtapa(id_candidato, fecha_etapa, area, entrevistador);
+            return seleccionDatos.InsertarEtapa(id_candidato, id_entrevista, fecha_etapa, entrevistador, estado, patologias);
         }
         public DataTable ObtenerDatosEtapas(int id)
         {
@@ -79,6 +82,10 @@ namespace LogicaNegocio
         {
             return seleccionDatos.ModificarCandidato(cuil, nombres, apellidos, tel_celular, tel_alternativo, correo, fecha_nacimiento,
                 id_localidad, calle, nro, dpto, piso, id_puesto);
+        }
+        public int ObtenerIDEntrevistas(string entrevista)
+        {
+            return entrevistaDatos.ObtenerIDEntrevistas(entrevista);
         }
     }
 }
