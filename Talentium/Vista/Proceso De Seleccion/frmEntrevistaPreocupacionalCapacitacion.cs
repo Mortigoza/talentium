@@ -54,6 +54,7 @@ namespace Vista.Gestion_de_Talento
         }
         private void AgregarControlesEnTab(TabPage tab, string nombre, string apellido, string puesto)
         {
+            tab.BackColor = Color.White;
             GroupBox groupBox = new GroupBox();
             groupBox.Text = "Datos del candidato";
             groupBox.Size = new Size(500, 60);
@@ -145,110 +146,17 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.Click += btnGuardar_Click;
 
             tab.Controls.Add(btnGuardar);
+            cmbArea.SelectedIndexChanged += (sender, e) =>
+            {
+                DataRowView selectedArea = cmbArea.SelectedItem as DataRowView;
+                int idAreaSeleccionada = Convert.ToInt32(selectedArea["id_area"]);
+                DataTable DTEmpleados = proceso.ObtenerEmpleados(idAreaSeleccionada);
+                DTEmpleados.Columns.Add("NombreCompleto", typeof(string), "APELLIDOS + ', ' + NOMBRES");
+                cmbEntrevistador.DataSource = DTEmpleados;
+                cmbEntrevistador.DisplayMember = "NombreCompleto";
+                //        cmbEntrevistador.ValueMember = "ID";
+            };
         }
-        //private TabPage CloneTabPage(TabPage sourceTabPage, string nombre, string apellido, string puesto, int id)
-        //{
-        //    TabPage newTabPage = new TabPage();
-        //    foreach (Control control in sourceTabPage.Controls)
-        //    {
-        //        Console.WriteLine(control.Name);
-        //        Control newControl = CloneControl(control, control.Name == "cmbEstadoEntrevista" || control.Name =="btnGuardar");
-        //        newTabPage.Controls.Add(newControl);
-        //        if (newControl is Button btn)
-        //        {
-        //            btn.Text = "Guardar";
-        //            btn.Click += btnGuardar_Click;
-        //        }
-
-        //        lblNombreApellido.Text = $"{nombre} {apellido}";
-        //        lblPuesto.Text = puesto;
-        //    }
-
-        //    newTabPage.Enabled = true;
-        //    newTabPage.BackColor = Color.White;
-
-        //    foreach (Control control in newTabPage.Controls)
-        //    {
-        //        if (control is ComboBox cmb)
-        //        {
-        //            if (cmb.Name == "cmbAreas")
-        //            {
-        //                cmb.DataSource = proceso.ObtenerAreas().Copy();
-        //            } 
-
-        //        }
-        //        //if(control is Button btn && btn.Name == "btnGuardar")
-        //        //{
-        //        //    btn.Click += btnGuardar_Click;
-        //        //}
-        //    }
-
-        //    return newTabPage;
-        //}
-        private Control CloneControl(Control control,bool isEstadoComboBox = false)
-        {
-            Control newControl = (Control)Activator.CreateInstance(control.GetType());
-
-            if (control is ComboBox)
-            {
-                ComboBox originalComboBox = (ComboBox)control;
-                ComboBox newComboBox = (ComboBox)newControl;
-
-                // Clonar el objeto DataSource si es DataTable
-                if (originalComboBox.DataSource is DataTable)
-                {
-                    DataTable originalDataSource = (DataTable)originalComboBox.DataSource;
-                    DataTable clonedDataSource = originalDataSource.Copy();
-                    newComboBox.DataSource = clonedDataSource;
-                }
-                else
-                {
-                    newComboBox.DataSource = originalComboBox.DataSource;
-                }
-
-                newComboBox.DisplayMember = originalComboBox.DisplayMember;
-                newComboBox.ValueMember = originalComboBox.ValueMember;
-                newComboBox.SelectedItem = originalComboBox.SelectedItem;
-
-                // Manejar ComboBox de estado
-                if (isEstadoComboBox)
-                {
-                    newComboBox.SelectedValueChanged += (sender, e) =>
-                    {
-                        // Evitar propagar cambios a otros ComboBox de estado
-                        if (newComboBox.Focused)
-                        {
-                            foreach (Control tabPageControl in newComboBox.Parent.Controls)
-                            {
-                                if (tabPageControl is ComboBox otherComboBox && otherComboBox.Name == "cmbEstadoEntrevista" && !otherComboBox.Equals(newComboBox))
-                                {
-                                    otherComboBox.Text = newComboBox.Text;
-                                }
-                            }
-                        }
-                    };
-                }
-            } 
-            else
-            {
-                // Resto del código para otros tipos de controles
-                newControl.Text = control.Text;
-            }
-
-            newControl.Location = control.Location;
-            newControl.Size = control.Size;
-            newControl.Enabled = true;
-
-            foreach (Control childControl in control.Controls)
-            {
-                Control newChildControl = CloneControl(childControl, isEstadoComboBox);
-                newControl.Controls.Add(newChildControl);
-                newControl.Enabled = true;
-            }
-
-            return newControl;
-        }
-
         //private void cmbEstadoEntrevista_DropDown(object sender, EventArgs e)
         //{
         //    cmbEstadoEntrevista.DataSource = estados;
@@ -266,6 +174,27 @@ namespace Vista.Gestion_de_Talento
         //    cmbAreas.ValueMember = "id_area";
         //}
 
+        //private void cmbArea_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // Obtener el ID del área seleccionada
+        //    int idAreaSeleccionada = Convert.ToInt32(cmbArea.SelectedValue);
+
+        //    // Obtener los datos de los entrevistadores según el área seleccionada
+        //    DataTable datosEntrevistadores = proceso.ObtenerEntrevistadoresPorArea(idAreaSeleccionada);
+
+        //    // Limpiar el ComboBox de entrevistadores
+        //    cmbEntrevistador.DataSource = null;
+        //    cmbEntrevistador.Items.Clear();
+
+        //    // Verificar si se obtuvieron datos de entrevistadores
+        //    if (datosEntrevistadores != null && datosEntrevistadores.Rows.Count > 0)
+        //    {
+        //        // Establecer los datos obtenidos como fuente de datos para el ComboBox de entrevistadores
+        //        cmbEntrevistador.DataSource = datosEntrevistadores;
+        //        cmbEntrevistador.DisplayMember = "NombreCompleto"; // Ajusta el nombre de la columna que contiene los nombres de los entrevistadores
+        //        cmbEntrevistador.ValueMember = "ID"; // Ajusta el nombre de la columna que contiene los ID de los entrevistadores
+        //    }
+        //}
         //private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    DataRowView selectedArea = cmbAreas.SelectedItem as DataRowView;
