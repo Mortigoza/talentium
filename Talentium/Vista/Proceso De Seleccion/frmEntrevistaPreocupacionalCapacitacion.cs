@@ -23,10 +23,12 @@ namespace Vista.Gestion_de_Talento
         {
             InitializeComponent();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
+            tabEtapas.TabPages.Add(tabPreocupacional);
         }
-        public void AgregarControlesEnTab(string nombreEtapa, string nombre, string apellido, string puesto,
-            string estado, DateTime fecha, string entrevistador, TabPage nuevaPestana)
+        public int AgregarControlesEnTab(string nombreEtapa, string nombre, string apellido, string puesto,
+            string estado, DateTime fecha, string entrevistador, TabPage nuevaPestana, int id_persona)
         {
+            this.idCandidato= id_persona;
             nuevaPestana.Text = nombreEtapa;
 
             nuevaPestana.BackColor = Color.White;
@@ -68,6 +70,7 @@ namespace Vista.Gestion_de_Talento
             DateTimePicker dtpFecha = new DateTimePicker();
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(150, 30);
+            dtpFecha.Tag = "FechaEntrevista";
             dtpFecha.Value = fecha; // Establecer el valor de la fecha
 
             Label lblArea = new Label();
@@ -92,6 +95,7 @@ namespace Vista.Gestion_de_Talento
             cmbEntrevistador.Location = new Point(150, 110);
             cmbEntrevistador.Size = new Size(200, 20);
             cmbEntrevistador.Enabled = false;
+            cmbEntrevistador.Tag = "Entrevistador";
             cmbEntrevistador.Text = entrevistador; // Establecer el valor del entrevistador
 
             Label lblEstado = new Label();
@@ -104,6 +108,7 @@ namespace Vista.Gestion_de_Talento
             cmbEstado.Location = new Point(150, 150);
             cmbEstado.Size = new Size(200, 20);
             cmbEstado.SelectedIndex = 0;
+            cmbEstado.Tag = "Estado";
             cmbEstado.Text = estado; // Establecer el valor del estado
 
             groupBox2.Controls.Add(lblFecha);
@@ -134,40 +139,41 @@ namespace Vista.Gestion_de_Talento
                 cmbEntrevistador.DisplayMember = "NombreCompleto";
                 cmbEntrevistador.Enabled = true;
             };
+            return id_persona;
         }
-        private void CargarDatosEnControles(TabPage tab, DateTime fecha, string entrevistador, string estado)
-        {
-            foreach (Control control in tab.Controls)
-            {
-                if (control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).Value = fecha;
-                }
-                else if (control is ComboBox)
-                {
-                    ComboBox cmb = (ComboBox)control;
-                    if (cmb.Name == "cmbEntrevistador")
-                    {
-                        cmb.SelectedItem = entrevistador;
-                    }
-                    else if (cmb.Name == "cmbEstado")
-                    {
-                        cmb.SelectedItem = estado;
-                    }
-                }
-            }
-        }
-        public void SeleccionarPestana(string nombrePestana)
-        {
-            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
-            {
-                if (tabEtapas.TabPages[i].Text == nombrePestana)
-                {
-                    tabEtapas.SelectedIndex = i;
-                    break;
-                }
-            }
-        }
+        //private void CargarDatosEnControles(TabPage tab, DateTime fecha, string entrevistador, string estado)
+        //{
+        //    foreach (Control control in tab.Controls)
+        //    {
+        //        if (control is DateTimePicker)
+        //        {
+        //            ((DateTimePicker)control).Value = fecha;
+        //        }
+        //        else if (control is ComboBox)
+        //        {
+        //            ComboBox cmb = (ComboBox)control;
+        //            if (cmb.Name == "cmbEntrevistador")
+        //            {
+        //                cmb.SelectedItem = entrevistador;
+        //            }
+        //            else if (cmb.Name == "cmbEstado")
+        //            {
+        //                cmb.SelectedItem = estado;
+        //            }
+        //        }
+        //    }
+        //}
+        //public void SeleccionarPestana(string nombrePestana)
+        //{
+        //    for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+        //    {
+        //        if (tabEtapas.TabPages[i].Text == nombrePestana)
+        //        {
+        //            tabEtapas.SelectedIndex = i;
+        //            break;
+        //        }
+        //    }
+        //}
         //public void ActualizarDatos(string nombre, string apellido, string puesto, DateTime fecha)
         //{
         //    lblNombreApellido.Text = $"{nombre} {apellido}";
@@ -180,43 +186,97 @@ namespace Vista.Gestion_de_Talento
         }
         private void cmbEstadoEntrevista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizarHabilitacionPestanas();
         }
-        private void ActualizarHabilitacionPestanas()
-        {
-            // Recorre las pestañas y actualiza la habilitación según la selección en el ComboBox de estado
-            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
-            {
-                TabPage tabPage = tabEtapas.TabPages[i];
+        //private void ActualizarHabilitacionPestanas()
+        //{
+        //    // Recorre las pestañas y actualiza la habilitación según la selección en el ComboBox de estado
+        //    for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+        //    {
+        //        TabPage tabPage = tabEtapas.TabPages[i];
 
-                if (i == tabEtapas.SelectedIndex)
-                {
-                    // Si es la pestaña actual, actualiza según el ComboBox de estado
-                    ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
+        //        if (i == tabEtapas.SelectedIndex)
+        //        {
+        //            // Si es la pestaña actual, actualiza según el ComboBox de estado
+        //            ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
 
-                    if (cmbEstado != null && cmbEstado.SelectedItem != null)
-                    {
-                        string estado = cmbEstado.Text;
+        //            if (cmbEstado != null && cmbEstado.SelectedItem != null)
+        //            {
+        //                string estado = cmbEstado.Text;
 
-                        if (estado == "APTO")
-                        {
-                            // Habilitar la siguiente pestaña
-                            int nextIndex = i + 1;
-                            if (nextIndex < tabEtapas.TabPages.Count)
-                            {
-                                tabEtapas.TabPages[nextIndex].Enabled = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+        //                if (estado == "APTO")
+        //                {
+        //                    // Habilitar la siguiente pestaña
+        //                    int nextIndex = i + 1;
+        //                    if (nextIndex < tabEtapas.TabPages.Count)
+        //                    {
+        //                        tabEtapas.TabPages[nextIndex].Enabled = true;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             int id_entrevista = proceso.ObtenerIDEntrevistas(tabEtapas.SelectedTab.ToString().Split('-')[1].TrimEnd('}'));
+            int id_persona = this.idCandidato;
+            TabPage pestañaActual = tabEtapas.SelectedTab;
+            DateTime fechaEntrevista = DateTime.MinValue;
+            string entrevistador = "";
+            string estado = "";
+
+            // Buscar el GroupBox que contiene los ComboBoxes
+            GroupBox groupBoxEntrevista = null;
+
+            foreach (Control control in pestañaActual.Controls)
+            {
+                if (control is GroupBox groupBox && groupBox.Text == "Entrevista")
+                {
+                    groupBoxEntrevista = groupBox;
+                    break;
+                }
+            }
+
+            // Si se encuentra el GroupBox de entrevista, buscar los ComboBoxes dentro de él
+            if (groupBoxEntrevista != null)
+            {
+                foreach (Control groupBoxControl in groupBoxEntrevista.Controls)
+                {
+                    // Buscar el DateTimePicker para la fecha de la entrevista
+                    if (groupBoxControl is DateTimePicker dateTimePickerFechaEntrevista)
+                    {
+                        fechaEntrevista = dateTimePickerFechaEntrevista.Value;
+                    }
+                    // Buscar el ComboBox para el entrevistador
+                    else if (groupBoxControl is ComboBox cmbEntrevistador && cmbEntrevistador.Tag != null && cmbEntrevistador.Tag.ToString() == "Entrevistador")
+                    {
+                        //entrevistador = cmbEntrevistador.SelectedItem?.ToString() ?? "";
+                        if (cmbEntrevistador.SelectedItem is DataRowView)
+                        {
+                            DataRowView selectedRow = (DataRowView)cmbEntrevistador.SelectedItem;
+                            entrevistador = selectedRow["NombreCompleto"].ToString();
+                        }
+                        else
+                        {
+                            entrevistador = cmbEntrevistador.SelectedItem.ToString();
+                        }
+                    }
+                    // Buscar el ComboBox para el estado
+                    else if (groupBoxControl is ComboBox cmbEstado && cmbEstado.Tag != null && cmbEstado.Tag.ToString() == "Estado")
+                    {
+                        estado = cmbEstado.SelectedItem?.ToString() ?? "";
+                    }
+                }
+            }
+
+            proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+
+
+            //string entrevistador = cmbEntrevistador.Text;
+            //DateTime fechaEtapa = dtpFecha.Value;
+            //string estado = cmbEstado.SelectedItem.ToString();
             //string estado = cmbEstadoEntrevista.Text;
-            //int idCandidato = this.idCandidato;
 
             //if (cmbEstadoEntrevista.Text == "APTO")
             //{
@@ -250,30 +310,30 @@ namespace Vista.Gestion_de_Talento
         private void tabEtapas_Selecting(object sender, TabControlCancelEventArgs e)
         {
         }
-        private void HabilitarPestanaInicial()
-        {
-            int indexToEnable = 0;
+        //private void HabilitarPestanaInicial()
+        //{
+        //    int indexToEnable = 0;
 
-            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
-            {
-                TabPage tabPage = tabEtapas.TabPages[i];
-                ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
+        //    for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+        //    {
+        //        TabPage tabPage = tabEtapas.TabPages[i];
+        //        ComboBox cmbEstado = tabPage.Controls["cmbEstadoEntrevista"] as ComboBox;
 
-                if (cmbEstado != null && cmbEstado.SelectedItem != null)
-                {
-                    string estado = cmbEstado.Text;
+        //        if (cmbEstado != null && cmbEstado.SelectedItem != null)
+        //        {
+        //            string estado = cmbEstado.Text;
 
-                    if (estado != "APTO")
-                    {
-                        // La pestaña no tiene estado "APTO", así que es la inicial
-                        indexToEnable = i;
-                        break;
-                    }
-                }
-            }
+        //            if (estado != "APTO")
+        //            {
+        //                // La pestaña no tiene estado "APTO", así que es la inicial
+        //                indexToEnable = i;
+        //                break;
+        //            }
+        //        }
+        //    }
 
-            tabEtapas.TabPages[indexToEnable].Enabled = true;
-        }
+        //    tabEtapas.TabPages[indexToEnable].Enabled = true;
+        //}
 
         private void frmEntrevistaPreocupacionalCapacitacion_Load(object sender, EventArgs e)
         {

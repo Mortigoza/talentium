@@ -198,31 +198,26 @@ namespace Vista
                 MostrarFormularioPestañas(formularioPestañas, id);
             }
 
-            
+
         }
         private void MostrarFormularioPestañas(frmEntrevistaPreocupacionalCapacitacion formulario, int idPersona)
         {
             DataTable entrevistasPersona = proceso.ObtenerDatosEtapas(idPersona);
 
-            // Obtener todas las etapas disponibles
             DataTable todasLasEtapas = entrevista.ConsultarEntrevistas();
             todasLasEtapas.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
 
             formulario.tabEtapas.TabPages.Clear();
 
-            // Iterar sobre todas las etapas y crear una pestaña para cada una
             foreach (DataRow etapa in todasLasEtapas.Rows)
             {
                 string nombreEtapa = $"{etapa["Etapas"]}";
 
-                // Crear una pestaña para la etapa actual
                 TabPage nuevaPestana = new TabPage();
                 nuevaPestana.Text = nombreEtapa;
 
-                // Buscar la información de la etapa actual en los datos de la persona
                 DataRow[] datosEtapa = entrevistasPersona.Select($"Etapa = '{nombreEtapa}'");
 
-                // Si hay datos para la etapa actual, mostrarlos en la pestaña
                 if (datosEtapa.Length > 0)
                 {
                     string nombre = datosEtapa[0]["Nombre"].ToString();
@@ -231,36 +226,30 @@ namespace Vista
                     DateTime fecha = (DateTime)datosEtapa[0]["Fecha_Entrevista"];
                     string entrevistador = datosEtapa[0]["Entrevistador"].ToString();
                     string estado = datosEtapa[0]["Estado"].ToString();
+                    if (estado == "APTO" || estado == "NO APTO")
+                    {
+                        nuevaPestana.Enabled = false;
+                    }
 
-                    formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador, nuevaPestana);
+                    formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador, nuevaPestana, idPersona);
                 }
                 else
                 {
-
                     DataTable datos = proceso.ConsultarCandidato(idPersona);
 
                     if (datos.Rows.Count > 0)
                     {
-                        // Acceder a la primera fila de datos
                         DataRow row = datos.Rows[0];
 
-                        // Obtener los valores de las columnas por nombre
                         string nombre = row["nombres"].ToString();
                         string apellido = row["apellidos"].ToString();
                         string puesto = row["puesto"].ToString();
-                        formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, "", DateTime.Now, "", nuevaPestana);
-
-                        // Usar los valores como desees
+                        formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, "", DateTime.Now, "", nuevaPestana, idPersona);
                     }
-                    //string nombre = datos.[0]["nombres"].ToString();
-                    //string apellido = datos.Columns["apellidos"].ToString();
-                    //string puesto = datos.Columns["puesto"].ToString();
-                    // Si no hay datos para la etapa actual, agregar controles vacíos
-                    //formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, "", DateTime.Now, "", nuevaPestana);
                 }
-
-                // Agregar la pestaña al formulario
                 formulario.tabEtapas.TabPages.Add(nuevaPestana);
+                
+                
             }
 
             formulario.Show();
