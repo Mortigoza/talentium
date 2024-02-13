@@ -49,9 +49,9 @@ namespace LogicaNegocio
             return accesoDatos.ConsultaPuestos();
         }
 
-        public DataTable ObtenerCandidatosFiltros(string cuil, int id_puesto, string etapa)
+        public DataTable ObtenerCandidatosFiltros(string cuil)
         {
-            return seleccionDatos.ConsultarCandidatoFiltros(cuil, id_puesto, etapa);
+            return seleccionDatos.ConsultarCandidatoFiltros(cuil);
         }
 
         public DataTable ObtenerEmpleados(int id_area)

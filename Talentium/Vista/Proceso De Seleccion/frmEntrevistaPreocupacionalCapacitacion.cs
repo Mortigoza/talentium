@@ -20,8 +20,9 @@ namespace Vista.Gestion_de_Talento
         private int idCandidato;
         private bool seleccionarTab = true;
         private string entrevistador;
-        private DateTime fecha = new DateTime(1900, 1, 1);
-        public frmEntrevistaPreocupacionalCapacitacion(string nombre, string apellido, string puesto, int id)
+        private DateTime fecha;
+        public frmEntrevistaPreocupacionalCapacitacion(string nombre, string apellido, string puesto, 
+            DateTime fecha, string entrevistador, string estado, int id)
         {
             InitializeComponent();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
@@ -33,9 +34,10 @@ namespace Vista.Gestion_de_Talento
                 nuevaTab.Text = nombreEtapa;
 
                 tabEtapas.TabPages.Add(nuevaTab);
-                AgregarControlesEnTab(nuevaTab, nombre, apellido, puesto);
+                AgregarControlesEnTab(nuevaTab, nombre, apellido, puesto, estado);
+                
             }
-            
+
             this.idCandidato = id;
             tabEtapas.TabPages.Remove(tabPreocupacional);
             tabEtapas.TabPages.Add(tabPreocupacional);
@@ -43,8 +45,9 @@ namespace Vista.Gestion_de_Talento
             lblPuestoP.Text = puesto;
 
         }
-        private void AgregarControlesEnTab(TabPage tab, string nombre, string apellido, string puesto)
+        private void AgregarControlesEnTab(TabPage tab, string nombre, string apellido, string puesto, string estado)
         {
+            
             tab.BackColor = Color.White;
             GroupBox groupBox = new GroupBox();
             groupBox.Text = "Datos del candidato";
@@ -150,6 +153,17 @@ namespace Vista.Gestion_de_Talento
                 cmbEntrevistador.Enabled = true;
             };
         }
+        public void SeleccionarPestana(string nombrePestana)
+        {
+            for (int i = 0; i < tabEtapas.TabPages.Count; i++)
+            {
+                if (tabEtapas.TabPages[i].Text == nombrePestana)
+                {
+                    tabEtapas.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
         private void cmbEmpleados_DropDown(object sender, EventArgs e)
         {
         }
@@ -227,9 +241,6 @@ namespace Vista.Gestion_de_Talento
         }
         private void HabilitarPestanaInicial()
         {
-            // Determina cuál es la pestaña inicial a habilitar según tus criterios
-            // Puedes personalizar esta lógica según tus necesidades
-
             int indexToEnable = 0;
 
             for (int i = 0; i < tabEtapas.TabPages.Count; i++)
