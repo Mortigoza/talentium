@@ -19,36 +19,34 @@ namespace Vista.Gestion_de_Talento
         CN_LogicaEntrevista logicaEntrevista = new CN_LogicaEntrevista();
         private int idCandidato;
         private bool seleccionarTab = true;
-        private string entrevistador;
-        private DateTime fecha;
-        public frmEntrevistaPreocupacionalCapacitacion(string nombre, string apellido, string puesto, 
-            DateTime fecha, string entrevistador, string estado, int id)
+        public frmEntrevistaPreocupacionalCapacitacion()
         {
             InitializeComponent();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
 
-            foreach (DataRow fila in DTEntrevistas.Rows)
-            {
-                TabPage nuevaTab = new TabPage();
-                string nombreEtapa = $"{fila["etapa"]}-{fila["entrevista"]}";
-                nuevaTab.Text = nombreEtapa;
-
-                tabEtapas.TabPages.Add(nuevaTab);
-                AgregarControlesEnTab(nuevaTab, nombre, apellido, puesto, estado);
+            //foreach (DataRow fila in DTEntrevistas.Rows)
+            //{
                 
-            }
-
-            this.idCandidato = id;
-            tabEtapas.TabPages.Remove(tabPreocupacional);
-            tabEtapas.TabPages.Add(tabPreocupacional);
-            lblNombreApellidoP.Text = $"{nombre} {apellido}";
-            lblPuestoP.Text = puesto;
-
-        }
-        private void AgregarControlesEnTab(TabPage tab, string nombre, string apellido, string puesto, string estado)
-        {
+            //    string nombreEtapa = $"{fila["etapa"]}-{fila["entrevista"]}";
+            //    TabPage nuevaTab = AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado);
+            //    tabEtapas.TabPages.Add(nuevaTab);
+                    
+            //}
             
-            tab.BackColor = Color.White;
+            //this.idCandidato = id;
+            //tabEtapas.TabPages.Remove(tabPreocupacional);
+            //tabEtapas.TabPages.Add(tabPreocupacional);
+            //lblNombreApellidoP.Text = $"{nombre} {apellido}";
+            //lblPuestoP.Text = puesto;
+            //CargarDatosEnControles(tabEtapas.TabPages[0], fecha, entrevistador, estado);
+        }
+        public TabPage AgregarControlesEnTab(string nombreEtapa, string nombre, string apellido, string puesto,
+            string estado, DateTime fecha, string entrevistador)
+        {
+            TabPage nuevaTab = new TabPage();
+            nuevaTab.Text = nombreEtapa;
+
+            nuevaTab.BackColor = Color.White;
             GroupBox groupBox = new GroupBox();
             groupBox.Text = "Datos del candidato";
             groupBox.Size = new Size(500, 60);
@@ -73,7 +71,7 @@ namespace Vista.Gestion_de_Talento
             groupBox.Controls.Add(lblPuestoT);
             groupBox.Controls.Add(lblPuesto);
 
-            tab.Controls.Add(groupBox);
+            nuevaTab.Controls.Add(groupBox);
 
             GroupBox groupBox2 = new GroupBox();
             groupBox2.Text = "Entrevista";
@@ -86,7 +84,6 @@ namespace Vista.Gestion_de_Talento
 
             DateTimePicker dtpFecha = new DateTimePicker();
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.MinDate = DateTime.Today;
             dtpFecha.Location = new Point(150, 30);
 
             Label lblArea = new Label();
@@ -123,6 +120,10 @@ namespace Vista.Gestion_de_Talento
             cmbEstado.Size = new Size(200, 20);
             cmbEstado.SelectedIndex = 0;
 
+            dtpFecha.Value = fecha;
+            cmbEntrevistador.Text = entrevistador;
+            cmbEstado.Text = estado;
+
             // Agregar los controles al segundo GroupBox
             groupBox2.Controls.Add(lblFecha);
             groupBox2.Controls.Add(dtpFecha);
@@ -130,10 +131,10 @@ namespace Vista.Gestion_de_Talento
             groupBox2.Controls.Add(cmbEntrevistador);
             groupBox2.Controls.Add(lblEstado);
             groupBox2.Controls.Add(cmbEstado);
-            groupBox2.Controls.Add(cmbArea); 
+            groupBox2.Controls.Add(cmbArea);
             groupBox2.Controls.Add(lblArea);
 
-            tab.Controls.Add(groupBox2);
+            nuevaTab.Controls.Add(groupBox2);
 
             Button btnGuardar = new Button();
             btnGuardar.Text = "Guardar";
@@ -141,7 +142,7 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.Size = new Size(80, 30); 
             btnGuardar.Click += btnGuardar_Click;
 
-            tab.Controls.Add(btnGuardar);
+            nuevaTab.Controls.Add(btnGuardar);
             cmbArea.SelectedIndexChanged += (sender, e) =>
             {
                 DataRowView selectedArea = cmbArea.SelectedItem as DataRowView;
@@ -152,6 +153,30 @@ namespace Vista.Gestion_de_Talento
                 cmbEntrevistador.DisplayMember = "NombreCompleto";
                 cmbEntrevistador.Enabled = true;
             };
+
+            return nuevaTab;
+        }
+        private void CargarDatosEnControles(TabPage tab, DateTime fecha, string entrevistador, string estado)
+        {
+            foreach (Control control in tab.Controls)
+            {
+                if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).Value = fecha;
+                }
+                else if (control is ComboBox)
+                {
+                    ComboBox cmb = (ComboBox)control;
+                    if (cmb.Name == "cmbEntrevistador")
+                    {
+                        cmb.SelectedItem = entrevistador;
+                    }
+                    else if (cmb.Name == "cmbEstado")
+                    {
+                        cmb.SelectedItem = estado;
+                    }
+                }
+            }
         }
         public void SeleccionarPestana(string nombrePestana)
         {
@@ -164,6 +189,13 @@ namespace Vista.Gestion_de_Talento
                 }
             }
         }
+        //public void ActualizarDatos(string nombre, string apellido, string puesto, DateTime fecha)
+        //{
+        //    lblNombreApellido.Text = $"{nombre} {apellido}";
+        //    lblPuesto.Text = puesto;
+        //    dtpFecha.Value = fecha;
+        //    // Otros controles y datos que necesites actualizar
+        //}
         private void cmbEmpleados_DropDown(object sender, EventArgs e)
         {
         }

@@ -193,23 +193,26 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-                string etapa = seleccionado.Cells["Etapa"].Value.ToString();
+                //string etapa = seleccionado.Cells["Etapa"].Value.ToString();
 
-                string nombre = lblNombreLlenar.Text;
-                string apellido = lblApellidoLlenar.Text;
-                string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-                DateTime fechaEntrevista = (DateTime)seleccionado.Cells["Fecha_Entrevista"].Value;
-                string entrevistador = seleccionado.Cells["Entrevistador"].Value.ToString();
-                string estado = seleccionado.Cells["Estado"].Value.ToString();
+                //string nombre = lblNombreLlenar.Text;
+                //string apellido = lblApellidoLlenar.Text;
+                //string puesto = seleccionado.Cells["Puesto"].Value.ToString();
+                //DateTime fechaEntrevista = (DateTime)seleccionado.Cells["Fecha_Entrevista"].Value;
+                //string entrevistador = seleccionado.Cells["Entrevistador"].Value.ToString();
+                //string estado = seleccionado.Cells["Estado"].Value.ToString();
                 int id = Convert.ToInt32(seleccionado.Cells["ID"].Value);
+                frmEntrevistaPreocupacionalCapacitacion formularioPestañas = new frmEntrevistaPreocupacionalCapacitacion();
+                MostrarFormularioPestañas(formularioPestañas, id);
 
-                frmEntrevistaPreocupacionalCapacitacion etapas = 
-                    new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, fechaEntrevista, 
-                    entrevistador, estado, id);
+                //frmEntrevistaPreocupacionalCapacitacion etapas = 
+                //    new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, fechaEntrevista, 
+                //    entrevistador, estado, id);
 
-                etapas.SeleccionarPestana(etapa);
-                etapas.Show();
+                //etapas.SeleccionarPestana(etapa);
+                //etapas.Show();
             }
+
             //////DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
             //////int id = Convert.ToInt32(seleccionado.Cells["Id"].Value);
             //////string nombre = lblNombreLlenar.Text;
@@ -235,7 +238,34 @@ namespace Vista
             //}
             ////////etapas.Show();
         }
+        private void MostrarFormularioPestañas(frmEntrevistaPreocupacionalCapacitacion formulario, int idPersona)
+        {
+            // Consultar las entrevistas de la persona seleccionada
+            DataTable entrevistasPersona = proceso.ObtenerDatosEtapas(idPersona);
 
+            // Limpiar las pestañas existentes
+            formulario.tabEtapas.TabPages.Clear();
+
+            // Agregar pestañas según las entrevistas de la persona
+            foreach (DataRow entrevista in entrevistasPersona.Rows)
+            {
+                // Obtener los datos necesarios para la pestaña
+                string nombreEtapa = $"{entrevista["Etapa"]}";
+                string nombre = entrevista["Nombre"].ToString();
+                string apellido = entrevista["Apellido"].ToString();
+                string puesto = entrevista["Puesto"].ToString();
+                DateTime fecha = (DateTime)entrevista["Fecha_Entrevista"];
+                string entrevistador = entrevista["Entrevistador"].ToString();
+                string estado = entrevista["Estado"].ToString();
+
+                // Agregar la pestaña con los datos correspondientes
+                TabPage nuevaPestana = formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador);
+                formulario.tabEtapas.TabPages.Add(nuevaPestana);
+            }
+
+            // Mostrar el formulario de las pestañas
+            formulario.Show();
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (dtgCandidatos.SelectedRows.Count > 0)
