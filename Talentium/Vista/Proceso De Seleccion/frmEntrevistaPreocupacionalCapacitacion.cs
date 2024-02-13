@@ -94,7 +94,7 @@ namespace Vista.Gestion_de_Talento
             ComboBox cmbEntrevistador = new ComboBox();
             cmbEntrevistador.Location = new Point(150, 110);
             cmbEntrevistador.Size = new Size(200, 20);
-            cmbEntrevistador.Enabled = false;
+            //cmbEntrevistador.Enabled = false;
             cmbEntrevistador.Tag = "Entrevistador";
             cmbEntrevistador.Text = entrevistador; // Establecer el valor del entrevistador
 
@@ -137,7 +137,7 @@ namespace Vista.Gestion_de_Talento
                 DTEmpleados.Columns.Add("NombreCompleto", typeof(string), "APELLIDOS + ', ' + NOMBRES");
                 cmbEntrevistador.DataSource = DTEmpleados;
                 cmbEntrevistador.DisplayMember = "NombreCompleto";
-                cmbEntrevistador.Enabled = true;
+                //cmbEntrevistador.Enabled = true;
             };
             return id_persona;
         }
@@ -216,9 +216,11 @@ namespace Vista.Gestion_de_Talento
         //        }
         //    }
         //}
-        
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Obtener el ID de la entrevista
             int id_entrevista = proceso.ObtenerIDEntrevistas(tabEtapas.SelectedTab.ToString().Split('-')[1].TrimEnd('}'));
             int id_persona = this.idCandidato;
             TabPage pestañaActual = tabEtapas.SelectedTab;
@@ -251,16 +253,33 @@ namespace Vista.Gestion_de_Talento
                     // Buscar el ComboBox para el entrevistador
                     else if (groupBoxControl is ComboBox cmbEntrevistador && cmbEntrevistador.Tag != null && cmbEntrevistador.Tag.ToString() == "Entrevistador")
                     {
-                        //entrevistador = cmbEntrevistador.SelectedItem?.ToString() ?? "";
-                        if (cmbEntrevistador.SelectedItem is DataRowView)
+                        if (cmbEntrevistador.SelectedItem is DataRowView selectedRow)
                         {
-                            DataRowView selectedRow = (DataRowView)cmbEntrevistador.SelectedItem;
                             entrevistador = selectedRow["NombreCompleto"].ToString();
                         }
                         else
                         {
-                            entrevistador = cmbEntrevistador.SelectedItem.ToString();
+                            // Si no hay ningún elemento seleccionado, asignar el valor del ComboBox directamente
+                            entrevistador = cmbEntrevistador.Text;
                         }
+                        //if (cmbEntrevistador.SelectedItem != null)
+                        //{
+                        //    Console.WriteLine("Tipo de objeto seleccionado: " + cmbEntrevistador.SelectedItem.GetType().ToString());
+                        //    entrevistador = cmbEntrevistador.SelectedItem.ToString();
+                        //}
+                        //else
+                        //{
+                        //    entrevistador = "";
+                        //}
+                        //if (cmbEntrevistador.SelectedItem is DataRowView)
+                        //{
+                        //    DataRowView selectedRow = (DataRowView)cmbEntrevistador.SelectedItem;
+                        //    entrevistador = selectedRow["NombreCompleto"].ToString();
+                        //}
+                        //else
+                        //{
+                        //    entrevistador = cmbEntrevistador.SelectedItem?.ToString() ?? "";
+                        //}
                     }
                     // Buscar el ComboBox para el estado
                     else if (groupBoxControl is ComboBox cmbEstado && cmbEstado.Tag != null && cmbEstado.Tag.ToString() == "Estado")
@@ -270,42 +289,22 @@ namespace Vista.Gestion_de_Talento
                 }
             }
 
-            proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+            // Determinar si se va a realizar una inserción o una actualización
+            bool esInsercion = string.IsNullOrEmpty(fechaEntrevista.ToString()) && string.IsNullOrEmpty(entrevistador) && string.IsNullOrEmpty(estado);
 
-
-            //string entrevistador = cmbEntrevistador.Text;
-            //DateTime fechaEtapa = dtpFecha.Value;
-            //string estado = cmbEstado.SelectedItem.ToString();
-            //string estado = cmbEstadoEntrevista.Text;
-
-            //if (cmbEstadoEntrevista.Text == "APTO")
-            //{
-
-            //    if (cmbEstadoEntrevista.SelectedItem == null)
-            //    {
-            //        MessageBox.Show("Por favor, seleccione un estado.");
-            //        return;
-            //    }
-
-            //    //string estado = cmbEstadoEntrevista.Text;
-            //    proceso.ModificarEstado(idCandidato, estado, null);
-            //    MessageBox.Show("Los datos han sido guardados correctamente.");
-            //    if (estado == "APTO")
-            //    {
-            //        tabPreocupacional.Enabled = true;
-            //    }
-            //    else
-            //    {
-            //        tabPreocupacional.Enabled = false;
-            //    }
-            //}
-            //else
-            //{
-            //    proceso.InsertarEtapa(idCandidato, id_entrevista, fecha, entrevistador, estado, null);
-            //    MessageBox.Show("Los datos han sido guardados correctamente.");
-            //    tabPreocupacional.Enabled = false;
-            //}
+            // Realizar la acción correspondiente
+            if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
+            {
+                // Insertar una nueva entrevista
+                proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+            }
+            else
+            {
+                // Actualizar la entrevista existente
+                proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+            }
         }
+
 
         private void tabEtapas_Selecting(object sender, TabControlCancelEventArgs e)
         {

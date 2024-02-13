@@ -67,6 +67,10 @@ namespace LogicaNegocio
         {
             return seleccionDatos.ModificarEstado(id_candidato, estado, patologias);
         }
+        public bool ModificarEtapa(int id_persona, int id_entrevista, DateTime fechaEntrevista, string entrevistador, string estado, string patologias)
+        {
+            return entrevistaDatos.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+        }
         public bool InsertarEtapa(int id_candidato, int id_entrevista, DateTime fecha_etapa, string entrevistador,
             string estado, string patologias)
         {

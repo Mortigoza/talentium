@@ -127,9 +127,9 @@ namespace AccesoDatos
             SqlParameter param5 = new SqlParameter("@estado", estado) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param6 = new SqlParameter("@patologias", patologias) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
-            DataTable modifEtapa = EjecutarConsultas("insertar_etapa_sp", listaParametros.ToArray());
+            DataTable insertfEtapa = EjecutarConsultas("insertar_etapa_sp", listaParametros.ToArray(), true);
 
-            return modifEtapa.Rows.Count != 0;
+            return insertfEtapa.Rows.Count != 0;
         }
         public DataTable ConsultarDatosEtapas(int id)
         {

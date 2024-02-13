@@ -26,6 +26,10 @@ namespace LogicaNegocio.Accesibilidad
         {
             return entrevistaDatos.ConsultarEntrevistas();
         }
+        public bool VerificarExistenciaEntrevista(int id_persona, int id_entrevista)
+        {
+            return entrevistaDatos.VerificarExistenciaEntrevista(id_persona, id_entrevista);
+        }
         public bool ModificarEntrevista(int idRegistroSeleccionado, int etapa, string nuevaEntrevista)
         {
             entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
