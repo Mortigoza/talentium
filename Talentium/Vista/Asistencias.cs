@@ -31,6 +31,7 @@ namespace Vista
             AreaMod.DisplayMember = "area";
             AreaMod.DataSource = asistencia;
             dataGridAlta.Columns["Abrir"].Visible = false;
+            dataGridModificar.Columns["Eliminar"].Visible = false;
             dataGridModificar.Columns["Modificar"].Visible = false;
             fechaDesdeMod.Visible = false;
             FechaHastaMod.Visible = false;
@@ -51,37 +52,42 @@ namespace Vista
             dtg.AllowUserToAddRows = false;
             dtg.AllowUserToResizeRows = false;
             dtg.ReadOnly = true;
+
+            dataGridModificar.Columns["Modificar"].Visible = false;
+            dataGridModificar.Columns["Eliminar"].Visible = false;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dataGridAlta.CurrentRow;
             C_Asistencias datos = new C_Asistencias();
-
-            if (filaSeleccionada != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Accede a los valores de las celdas en esa fila
+                if (e.ColumnIndex == 0) // Índice de la primera columna de botón
+                {
+                    if (filaSeleccionada != null)
+                    {
+                        // Accede a los valores de las celdas en esa fila
 
-                datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
-                datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
-                datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
-                datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
-                datos.Alta = true;
-                // y así sucesivamente para las otras columnas
+                        datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
+                        datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                        datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                        datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
+                        datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
+                        datos.Alta = true;
+                        // y así sucesivamente para las otras columnas
+                    }
+                    AsistenciasPanel panel = new AsistenciasPanel(datos);
 
-                // Ahora puedes trabajar con los valores obtenidos
+                    this.Hide();
+                    panel.ShowDialog();
+                    this.Show();
+                    dataGridAlta.DataSource = null;
+                    cuilAltas.Clear();
+                    areasAltas.SelectedIndex = 0;
+                    puestosAltas.SelectedIndex = 0;
+                    dataGridAlta.Columns["Abrir"].Visible = false;
+                }
             }
-            AsistenciasPanel panel = new AsistenciasPanel(datos);
-
-            this.Hide();
-            panel.ShowDialog();
-            this.Show();
-            dataGridAlta.DataSource = null;
-            cuilAltas.Clear();
-            areasAltas.SelectedIndex = 0;
-            puestosAltas.SelectedIndex = 0;
-            dataGridAlta.Columns["Abrir"].Visible = false;
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -103,11 +109,13 @@ namespace Vista
             dataGridModificar.AllowUserToAddRows = false;
             dataGridModificar.DataSource = data;
             dataGridModificar.Columns["Modificar"].Visible = true;
+            dataGridModificar.Columns["Eliminar"].Visible = true;
+
 
             // Ocultar los id en las columnas
 
             dataGridModificar.Columns["id_persona"].Visible = false;
-            dataGridModificar.Columns["id_asistencias"].Visible = false;
+            dataGridModificar.Columns["id_asistencia"].Visible = false;
             dataGridModificar.Columns["id_motivo"].Visible = false;
 
         }
@@ -225,57 +233,74 @@ namespace Vista
         {
             DataGridViewRow filaSeleccionada = dataGridModificar.CurrentRow;
             C_Asistencias datos = new C_Asistencias();
-
-            if (filaSeleccionada != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Accede a los valores de las celdas en esa fila
-
-                datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencias"].Value.ToString());
-                datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
-                datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
-                datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
-                datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
-
-                datos.Periodo = Convert.ToBoolean(filaSeleccionada.Cells["periodo"].Value.ToString());
-                if (datos.Periodo)
+                if (e.ColumnIndex == 0) // Índice de la primera columna de botón
                 {
-                    datos.Fecha = DateTime.Now;
-                    datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
-                    datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
-                }
-                else
-                {
-                    datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
-                    datos.Fecha_desde = DateTime.Now;
-                    datos.Fecha_hasta = DateTime.Now;
+                    if (filaSeleccionada != null)
+                    {
+                        // Accede a los valores de las celdas en esa fila
 
-                }
-                datos.Justificada = Convert.ToBoolean(filaSeleccionada.Cells["justificada"].Value.ToString());
-                datos.Id_motivo = Convert.ToInt32(filaSeleccionada.Cells["id_motivo"].Value.ToString());
-                datos.Otro_motivo = filaSeleccionada.Cells["otro_motivo"].Value.ToString();
-                datos.Observaciones = filaSeleccionada.Cells["observaciones"].Value.ToString();
-                datos.Alta = false;
-                // y así sucesivamente para las otras columnas
+                        datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
+                        datos.idPersona = Convert.ToInt32(filaSeleccionada.Cells["id_persona"].Value.ToString());
+                        datos.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                        datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                        datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
+                        datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
 
-                // Ahora puedes trabajar con los valores obtenidos
+                        datos.Periodo = Convert.ToBoolean(filaSeleccionada.Cells["periodo"].Value.ToString());
+                        /* if (datos.Periodo)
+                         {
+                             datos.Fecha = DateTime.Now;
+                             datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
+                             datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
+                         }
+                         else
+                         {*/
+                        datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
+                        /*     datos.Fecha_desde = DateTime.Now;
+                             datos.Fecha_hasta = DateTime.Now;
+
+                         }*/
+                        datos.Justificada = Convert.ToBoolean(filaSeleccionada.Cells["justificada"].Value.ToString());
+                        datos.Id_motivo = Convert.ToInt32(filaSeleccionada.Cells["id_motivo"].Value.ToString());
+                        datos.Otro_motivo = filaSeleccionada.Cells["otro_motivo"].Value.ToString();
+                        datos.Observaciones = filaSeleccionada.Cells["observaciones"].Value.ToString();
+                        datos.Alta = false;
+                        // y así sucesivamente para las otras columnas
+
+                        // Ahora puedes trabajar con los valores obtenidos
+                    }
+                    AsistenciasPanel panel = new AsistenciasPanel(datos);
+
+                    this.Hide();
+                    panel.ShowDialog();
+                    this.Show();
+
+                    dataGridModificar.DataSource = null;
+                    CuilMod.Clear();
+                    AreaMod.SelectedIndex = 0;
+                    PuestoMod.SelectedIndex = 0;
+                    periodo.Checked = false;
+                    FechaMod.Value = DateTime.Now;
+                    fechaDesdeMod.Value = DateTime.Now;
+                    FechaHastaMod.Value = DateTime.Now;
+                    dataGridModificar.Columns["Modificar"].Visible = false;
+                    dataGridModificar.Columns["Eliminar"].Visible = false;
+                }
+                else if(e.ColumnIndex == 1) {
+                    DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // Verificar la respuesta del usuario
+                    if (result == DialogResult.Yes)
+                    {
+                        datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
+
+                        //asistencias.EliminarAsistencias(datos.idAsistencia);
+                        Refrescar(dataGridModificar);
+                    }
+                    }
             }
-            AsistenciasPanel panel = new AsistenciasPanel(datos);
-
-            this.Hide();
-            panel.ShowDialog();
-            this.Show();
-
-            dataGridModificar.DataSource = null;
-            CuilMod.Clear();
-            AreaMod.SelectedIndex = 0;
-            PuestoMod.SelectedIndex = 0;
-            periodo.Checked = false;
-            FechaMod.Value = DateTime.Now;
-            fechaDesdeMod.Value = DateTime.Now;
-            FechaHastaMod.Value = DateTime.Now;
-            dataGridModificar.Columns["Modificar"].Visible = false;
-
         }
 
         private void btnBuscarReporte_Click(object sender, EventArgs e)

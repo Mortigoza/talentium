@@ -30,4 +30,16 @@ namespace Comun
 
 
     }
+    public class Asistencia {
+
+        public int idPersona { get; set; }
+        public bool Periodo { get; set; }
+        public DateTime Fecha { get; set; }/*
+        public DateTime FechaDesde { get; set; }
+        public DateTime FechaHasta { get; set; }*/
+        public bool Justificada { get; set; }
+        public int idMotivo { get; set; }
+        public string OtroMotivo { get; set; }
+        public string Observaciones { get; set; }
+    }
 }
