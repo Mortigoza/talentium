@@ -193,78 +193,107 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-                //string etapa = seleccionado.Cells["Etapa"].Value.ToString();
-
-                //string nombre = lblNombreLlenar.Text;
-                //string apellido = lblApellidoLlenar.Text;
-                //string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-                //DateTime fechaEntrevista = (DateTime)seleccionado.Cells["Fecha_Entrevista"].Value;
-                //string entrevistador = seleccionado.Cells["Entrevistador"].Value.ToString();
-                //string estado = seleccionado.Cells["Estado"].Value.ToString();
                 int id = Convert.ToInt32(seleccionado.Cells["ID"].Value);
                 frmEntrevistaPreocupacionalCapacitacion formularioPestañas = new frmEntrevistaPreocupacionalCapacitacion();
                 MostrarFormularioPestañas(formularioPestañas, id);
-
-                //frmEntrevistaPreocupacionalCapacitacion etapas = 
-                //    new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, fechaEntrevista, 
-                //    entrevistador, estado, id);
-
-                //etapas.SeleccionarPestana(etapa);
-                //etapas.Show();
             }
 
-            //////DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-            //////int id = Convert.ToInt32(seleccionado.Cells["Id"].Value);
-            //////string nombre = lblNombreLlenar.Text;
-            //////string apellido = lblApellidoLlenar.Text;
-            //////string puesto = seleccionado.Cells["Puesto"].Value.ToString();
-            //////DateTime fecha = (DateTime)seleccionado.Cells["Fecha_Entrevista"].Value;
-            //////string entrevistador = seleccionado.Cells["Entrevistador"].Value.ToString();
-            //////string estado = seleccionado.Cells["Estado"].Value.ToString();
-            //////frmEntrevistaPreocupacionalCapacitacion etapas = new frmEntrevistaPreocupacionalCapacitacion(nombre, apellido, puesto, fecha, entrevistador, estado, id);
-
-            //if (dtgCandidatos.SelectedRows.Count > 0)
-            //{
-            //    string etapa = dtgCandidatos.SelectedRows[0].Cells["Etapa"].Value.ToString();
-
-            //    if (etapa.Equals("Preocupacional", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        etapas.SeleccionarTab(1);
-            //    }
-            //    else if (etapa.Equals("Segunda Entrevista", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        etapas.SeleccionarTab(0);
-            //    }
-            //}
-            ////////etapas.Show();
+            
         }
         private void MostrarFormularioPestañas(frmEntrevistaPreocupacionalCapacitacion formulario, int idPersona)
         {
-            // Consultar las entrevistas de la persona seleccionada
             DataTable entrevistasPersona = proceso.ObtenerDatosEtapas(idPersona);
 
-            // Limpiar las pestañas existentes
+            // Obtener todas las etapas disponibles
+            DataTable todasLasEtapas = entrevista.ConsultarEntrevistas();
+            todasLasEtapas.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
+
             formulario.tabEtapas.TabPages.Clear();
 
-            // Agregar pestañas según las entrevistas de la persona
-            foreach (DataRow entrevista in entrevistasPersona.Rows)
+            // Iterar sobre todas las etapas y crear una pestaña para cada una
+            foreach (DataRow etapa in todasLasEtapas.Rows)
             {
-                // Obtener los datos necesarios para la pestaña
-                string nombreEtapa = $"{entrevista["Etapa"]}";
-                string nombre = entrevista["Nombre"].ToString();
-                string apellido = entrevista["Apellido"].ToString();
-                string puesto = entrevista["Puesto"].ToString();
-                DateTime fecha = (DateTime)entrevista["Fecha_Entrevista"];
-                string entrevistador = entrevista["Entrevistador"].ToString();
-                string estado = entrevista["Estado"].ToString();
+                string nombreEtapa = $"{etapa["Etapas"]}";
 
-                // Agregar la pestaña con los datos correspondientes
-                TabPage nuevaPestana = formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador);
+                // Crear una pestaña para la etapa actual
+                TabPage nuevaPestana = new TabPage();
+                nuevaPestana.Text = nombreEtapa;
+
+                // Buscar la información de la etapa actual en los datos de la persona
+                DataRow[] datosEtapa = entrevistasPersona.Select($"Etapa = '{nombreEtapa}'");
+
+                // Si hay datos para la etapa actual, mostrarlos en la pestaña
+                if (datosEtapa.Length > 0)
+                {
+                    string nombre = datosEtapa[0]["Nombre"].ToString();
+                    string apellido = datosEtapa[0]["Apellido"].ToString();
+                    string puesto = datosEtapa[0]["Puesto"].ToString();
+                    DateTime fecha = (DateTime)datosEtapa[0]["Fecha_Entrevista"];
+                    string entrevistador = datosEtapa[0]["Entrevistador"].ToString();
+                    string estado = datosEtapa[0]["Estado"].ToString();
+
+                    formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador, nuevaPestana);
+                }
+                else
+                {
+
+                    DataTable datos = proceso.ConsultarCandidato(idPersona);
+
+                    if (datos.Rows.Count > 0)
+                    {
+                        // Acceder a la primera fila de datos
+                        DataRow row = datos.Rows[0];
+
+                        // Obtener los valores de las columnas por nombre
+                        string nombre = row["nombres"].ToString();
+                        string apellido = row["apellidos"].ToString();
+                        string puesto = row["puesto"].ToString();
+                        formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, "", DateTime.Now, "", nuevaPestana);
+
+                        // Usar los valores como desees
+                    }
+                    //string nombre = datos.[0]["nombres"].ToString();
+                    //string apellido = datos.Columns["apellidos"].ToString();
+                    //string puesto = datos.Columns["puesto"].ToString();
+                    // Si no hay datos para la etapa actual, agregar controles vacíos
+                    //formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, "", DateTime.Now, "", nuevaPestana);
+                }
+
+                // Agregar la pestaña al formulario
                 formulario.tabEtapas.TabPages.Add(nuevaPestana);
             }
 
-            // Mostrar el formulario de las pestañas
             formulario.Show();
+
+
+
+
+
+
+
+
+            /* ******************************************** */
+
+
+            //DataTable entrevistasPersona = proceso.ObtenerDatosEtapas(idPersona);
+
+            //formulario.tabEtapas.TabPages.Clear();
+
+            //foreach (DataRow entrevista in entrevistasPersona.Rows)
+            //{
+            //    string nombreEtapa = $"{entrevista["Etapa"]}";
+            //    string nombre = entrevista["Nombre"].ToString();
+            //    string apellido = entrevista["Apellido"].ToString();
+            //    string puesto = entrevista["Puesto"].ToString();
+            //    DateTime fecha = (DateTime)entrevista["Fecha_Entrevista"];
+            //    string entrevistador = entrevista["Entrevistador"].ToString();
+            //    string estado = entrevista["Estado"].ToString();
+
+            //    TabPage nuevaPestana = formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador);
+            //    formulario.tabEtapas.TabPages.Add(nuevaPestana);
+            //}
+
+            //formulario.Show();
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {

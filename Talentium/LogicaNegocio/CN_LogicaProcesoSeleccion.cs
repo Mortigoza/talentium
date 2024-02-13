@@ -15,9 +15,9 @@ namespace LogicaNegocio
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
         CD_Entrevista entrevistaDatos = new CD_Entrevista();
 
-        public bool ExisteCandidato(string cuil)
+        public DataTable ConsultarCandidato(int id_persona)
         {
-            return seleccionDatos.ConsultarCandidato(cuil);
+            return seleccionDatos.ConsultarCandidato(id_persona);
         }
 
         public DataTable ObtenerProvincia()

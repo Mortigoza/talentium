@@ -23,37 +23,20 @@ namespace Vista.Gestion_de_Talento
         {
             InitializeComponent();
             DataTable DTEntrevistas = logicaEntrevista.ConsultarEntrevistas();
-
-            //foreach (DataRow fila in DTEntrevistas.Rows)
-            //{
-                
-            //    string nombreEtapa = $"{fila["etapa"]}-{fila["entrevista"]}";
-            //    TabPage nuevaTab = AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado);
-            //    tabEtapas.TabPages.Add(nuevaTab);
-                    
-            //}
-            
-            //this.idCandidato = id;
-            //tabEtapas.TabPages.Remove(tabPreocupacional);
-            //tabEtapas.TabPages.Add(tabPreocupacional);
-            //lblNombreApellidoP.Text = $"{nombre} {apellido}";
-            //lblPuestoP.Text = puesto;
-            //CargarDatosEnControles(tabEtapas.TabPages[0], fecha, entrevistador, estado);
         }
-        public TabPage AgregarControlesEnTab(string nombreEtapa, string nombre, string apellido, string puesto,
-            string estado, DateTime fecha, string entrevistador)
+        public void AgregarControlesEnTab(string nombreEtapa, string nombre, string apellido, string puesto,
+            string estado, DateTime fecha, string entrevistador, TabPage nuevaPestana)
         {
-            TabPage nuevaTab = new TabPage();
-            nuevaTab.Text = nombreEtapa;
+            nuevaPestana.Text = nombreEtapa;
 
-            nuevaTab.BackColor = Color.White;
+            nuevaPestana.BackColor = Color.White;
             GroupBox groupBox = new GroupBox();
             groupBox.Text = "Datos del candidato";
             groupBox.Size = new Size(500, 60);
             groupBox.Location = new Point(20, 15);
 
             Label lblNombre = new Label();
-            lblNombre.Location = new Point(40, 30); 
+            lblNombre.Location = new Point(40, 30);
             lblNombre.Text = "Nombre y Apellido: ";
             Label lblNombreApellido = new Label();
             lblNombreApellido.Location = new Point(150, 30);
@@ -71,12 +54,12 @@ namespace Vista.Gestion_de_Talento
             groupBox.Controls.Add(lblPuestoT);
             groupBox.Controls.Add(lblPuesto);
 
-            nuevaTab.Controls.Add(groupBox);
+            nuevaPestana.Controls.Add(groupBox);
 
             GroupBox groupBox2 = new GroupBox();
             groupBox2.Text = "Entrevista";
             groupBox2.Size = new Size(400, 200);
-            groupBox2.Location = new Point(70,95); 
+            groupBox2.Location = new Point(70, 95);
 
             Label lblFecha = new Label();
             lblFecha.Text = "Fecha:";
@@ -85,6 +68,7 @@ namespace Vista.Gestion_de_Talento
             DateTimePicker dtpFecha = new DateTimePicker();
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(150, 30);
+            dtpFecha.Value = fecha; // Establecer el valor de la fecha
 
             Label lblArea = new Label();
             lblArea.Text = "Área:";
@@ -97,7 +81,7 @@ namespace Vista.Gestion_de_Talento
             cmbArea.DisplayMember = "area";
             cmbArea.ValueMember = "id_area";
             cmbArea.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbArea.Location = new Point(150,70);
+            cmbArea.Location = new Point(150, 70);
             cmbArea.Size = new Size(200, 20);
 
             Label lblEntrevistador = new Label();
@@ -108,6 +92,7 @@ namespace Vista.Gestion_de_Talento
             cmbEntrevistador.Location = new Point(150, 110);
             cmbEntrevistador.Size = new Size(200, 20);
             cmbEntrevistador.Enabled = false;
+            cmbEntrevistador.Text = entrevistador; // Establecer el valor del entrevistador
 
             Label lblEstado = new Label();
             lblEstado.Text = "Estado:";
@@ -115,16 +100,12 @@ namespace Vista.Gestion_de_Talento
 
             ComboBox cmbEstado = new ComboBox();
             cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" }); 
-            cmbEstado.Location = new Point(150, 150); 
+            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" });
+            cmbEstado.Location = new Point(150, 150);
             cmbEstado.Size = new Size(200, 20);
             cmbEstado.SelectedIndex = 0;
+            cmbEstado.Text = estado; // Establecer el valor del estado
 
-            dtpFecha.Value = fecha;
-            cmbEntrevistador.Text = entrevistador;
-            cmbEstado.Text = estado;
-
-            // Agregar los controles al segundo GroupBox
             groupBox2.Controls.Add(lblFecha);
             groupBox2.Controls.Add(dtpFecha);
             groupBox2.Controls.Add(lblEntrevistador);
@@ -134,15 +115,15 @@ namespace Vista.Gestion_de_Talento
             groupBox2.Controls.Add(cmbArea);
             groupBox2.Controls.Add(lblArea);
 
-            nuevaTab.Controls.Add(groupBox2);
+            nuevaPestana.Controls.Add(groupBox2);
 
             Button btnGuardar = new Button();
             btnGuardar.Text = "Guardar";
-            btnGuardar.Location = new Point(390, 300); 
-            btnGuardar.Size = new Size(80, 30); 
+            btnGuardar.Location = new Point(390, 300);
+            btnGuardar.Size = new Size(80, 30);
             btnGuardar.Click += btnGuardar_Click;
 
-            nuevaTab.Controls.Add(btnGuardar);
+            nuevaPestana.Controls.Add(btnGuardar);
             cmbArea.SelectedIndexChanged += (sender, e) =>
             {
                 DataRowView selectedArea = cmbArea.SelectedItem as DataRowView;
@@ -153,8 +134,6 @@ namespace Vista.Gestion_de_Talento
                 cmbEntrevistador.DisplayMember = "NombreCompleto";
                 cmbEntrevistador.Enabled = true;
             };
-
-            return nuevaTab;
         }
         private void CargarDatosEnControles(TabPage tab, DateTime fecha, string entrevistador, string estado)
         {

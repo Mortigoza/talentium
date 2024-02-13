@@ -13,13 +13,13 @@ namespace AccesoDatos
 {
     public class CD_Seleccion : CD_EjecutarSP
     {
-        public bool ConsultarCandidato(string cuil)
+        public DataTable ConsultarCandidato(int id_persona)
         {
-            SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-            DataTable resultadoCandidatoRepetido = EjecutarConsultas("consultar_candidato_cuil_sp", listaParametros.ToArray());
+            DataTable resultadoCandidatoRepetido = EjecutarConsultas("consultar_candidato_id_sp", listaParametros.ToArray());
 
-            return resultadoCandidatoRepetido.Rows.Count != 0;
+            return resultadoCandidatoRepetido;
         }
 
         public void IngresarCandidato(string cuil, string nombres, string apellidos, string tel_celular, string tel_alternativo,
