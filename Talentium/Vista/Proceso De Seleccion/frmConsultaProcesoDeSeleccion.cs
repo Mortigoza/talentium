@@ -32,7 +32,6 @@ namespace Vista
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             int filas = entrevista.CantidadEntrevista();
             dtgCandidatos.Rows.Add(filas);
-            dtgCandidatos.Rows.Add("Preocupacional");
             DataTable lista = entrevista.ConsultarEntrevistas();
             lista.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
             for (int i = 0; i < filas; i++)
@@ -249,40 +248,8 @@ namespace Vista
                 }
                 formulario.tabEtapas.TabPages.Add(nuevaPestana);
                 
-                
             }
-
             formulario.Show();
-
-
-
-
-
-
-
-
-            /* ******************************************** */
-
-
-            //DataTable entrevistasPersona = proceso.ObtenerDatosEtapas(idPersona);
-
-            //formulario.tabEtapas.TabPages.Clear();
-
-            //foreach (DataRow entrevista in entrevistasPersona.Rows)
-            //{
-            //    string nombreEtapa = $"{entrevista["Etapa"]}";
-            //    string nombre = entrevista["Nombre"].ToString();
-            //    string apellido = entrevista["Apellido"].ToString();
-            //    string puesto = entrevista["Puesto"].ToString();
-            //    DateTime fecha = (DateTime)entrevista["Fecha_Entrevista"];
-            //    string entrevistador = entrevista["Entrevistador"].ToString();
-            //    string estado = entrevista["Estado"].ToString();
-
-            //    TabPage nuevaPestana = formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador);
-            //    formulario.tabEtapas.TabPages.Add(nuevaPestana);
-            //}
-
-            //formulario.Show();
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
