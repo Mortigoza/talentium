@@ -67,6 +67,7 @@
             // 
             // dtgPersonas
             // 
+            this.dtgPersonas.BackgroundColor = System.Drawing.Color.White;
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPersonas.Location = new System.Drawing.Point(184, 36);
             this.dtgPersonas.Name = "dtgPersonas";
@@ -77,7 +78,6 @@
             // 
             // grpFiltro
             // 
-            this.grpFiltro.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.grpFiltro.Controls.Add(this.cmbArea);
             this.grpFiltro.Controls.Add(this.btnFiltrar);
             this.grpFiltro.Controls.Add(this.txtApellido);
@@ -105,12 +105,15 @@
             // 
             // btnFiltrar
             // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(17, 193);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // txtApellido
@@ -205,12 +208,15 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Location = new System.Drawing.Point(757, 520);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtContrasenia
@@ -283,46 +289,59 @@
             // 
             // btnCrearContrasenia
             // 
+            this.btnCrearContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCrearContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCrearContrasenia.ForeColor = System.Drawing.Color.White;
             this.btnCrearContrasenia.Location = new System.Drawing.Point(220, 371);
             this.btnCrearContrasenia.Name = "btnCrearContrasenia";
             this.btnCrearContrasenia.Size = new System.Drawing.Size(30, 30);
             this.btnCrearContrasenia.TabIndex = 18;
             this.btnCrearContrasenia.Text = "R";
-            this.btnCrearContrasenia.UseVisualStyleBackColor = true;
+            this.btnCrearContrasenia.UseVisualStyleBackColor = false;
             this.btnCrearContrasenia.Click += new System.EventHandler(this.btnCrearContrasenia_Click);
             // 
             // btnAsignarPermisos
             // 
+            this.btnAsignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAsignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisos.ForeColor = System.Drawing.Color.White;
             this.btnAsignarPermisos.Location = new System.Drawing.Point(529, 368);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 19;
             this.btnAsignarPermisos.Text = ">";
-            this.btnAsignarPermisos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisos.UseVisualStyleBackColor = false;
             this.btnAsignarPermisos.Click += new System.EventHandler(this.btnAsignarPermisos_Click);
             // 
             // btnDesasignarPermisos
             // 
+            this.btnDesasignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDesasignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisos.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarPermisos.Location = new System.Drawing.Point(529, 409);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 20;
             this.btnDesasignarPermisos.Text = "<";
-            this.btnDesasignarPermisos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisos.Click += new System.EventHandler(this.btnDesasignarPermisos_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(676, 520);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lstPermisos
             // 
+            this.lstPermisos.BackColor = System.Drawing.Color.White;
             this.lstPermisos.FormattingEnabled = true;
             this.lstPermisos.Location = new System.Drawing.Point(307, 322);
             this.lstPermisos.Name = "lstPermisos";
@@ -332,6 +351,7 @@
             // 
             // lstPermisosAsignados
             // 
+            this.lstPermisosAsignados.BackColor = System.Drawing.Color.White;
             this.lstPermisosAsignados.FormattingEnabled = true;
             this.lstPermisosAsignados.Location = new System.Drawing.Point(575, 322);
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
@@ -372,29 +392,35 @@
             // 
             // btnAsignarPermisosTodos
             // 
+            this.btnAsignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAsignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisosTodos.ForeColor = System.Drawing.Color.White;
             this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(529, 322);
             this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
             this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisosTodos.TabIndex = 28;
             this.btnAsignarPermisosTodos.Text = ">>";
-            this.btnAsignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisosTodos.UseVisualStyleBackColor = false;
             this.btnAsignarPermisosTodos.Click += new System.EventHandler(this.btnAsignarPermisosTodos_Click);
             // 
             // btnDesasignarPermisosTodos
             // 
+            this.btnDesasignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDesasignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisosTodos.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(529, 455);
             this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
             this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisosTodos.TabIndex = 29;
             this.btnDesasignarPermisosTodos.Text = "<<";
-            this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisosTodos.Click += new System.EventHandler(this.btnDesasignarPermisosTodos_Click);
             // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(857, 566);
             this.Controls.Add(this.btnDesasignarPermisosTodos);
             this.Controls.Add(this.btnAsignarPermisosTodos);

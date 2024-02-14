@@ -95,12 +95,15 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(828, 596);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblCapacitaciones
@@ -123,22 +126,28 @@
             // 
             // btnDesasignarCapacitacion
             // 
+            this.btnDesasignarCapacitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDesasignarCapacitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarCapacitacion.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarCapacitacion.Location = new System.Drawing.Point(430, 494);
             this.btnDesasignarCapacitacion.Name = "btnDesasignarCapacitacion";
             this.btnDesasignarCapacitacion.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarCapacitacion.TabIndex = 26;
             this.btnDesasignarCapacitacion.Text = "<";
-            this.btnDesasignarCapacitacion.UseVisualStyleBackColor = true;
+            this.btnDesasignarCapacitacion.UseVisualStyleBackColor = false;
             this.btnDesasignarCapacitacion.Click += new System.EventHandler(this.btnDesasignarCapacitacion_Click);
             // 
             // btnAsignarCapacitacion
             // 
+            this.btnAsignarCapacitacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAsignarCapacitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarCapacitacion.ForeColor = System.Drawing.Color.White;
             this.btnAsignarCapacitacion.Location = new System.Drawing.Point(430, 428);
             this.btnAsignarCapacitacion.Name = "btnAsignarCapacitacion";
             this.btnAsignarCapacitacion.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarCapacitacion.TabIndex = 25;
             this.btnAsignarCapacitacion.Text = ">";
-            this.btnAsignarCapacitacion.UseVisualStyleBackColor = true;
+            this.btnAsignarCapacitacion.UseVisualStyleBackColor = false;
             this.btnAsignarCapacitacion.Click += new System.EventHandler(this.btnAsignarCapacitacion_Click);
             // 
             // lblNombre
@@ -189,12 +198,15 @@
             // 
             // btnFiltrar
             // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(17, 200);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // cmbArea
@@ -250,6 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(927, 645);
             this.Controls.Add(this.btnDesasignarCapacitacion);
             this.Controls.Add(this.btnAsignarCapacitacion);

@@ -50,27 +50,34 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(80, 205);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(114, 36);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBaja
             // 
+            this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.ForeColor = System.Drawing.Color.White;
             this.btnBaja.Location = new System.Drawing.Point(80, 263);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(114, 25);
             this.btnBaja.TabIndex = 4;
             this.btnBaja.Text = "Dar de baja";
-            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.UseVisualStyleBackColor = false;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // dtgPerfiles
             // 
+            this.dtgPerfiles.BackgroundColor = System.Drawing.Color.White;
             this.dtgPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPerfiles.Location = new System.Drawing.Point(276, 42);
             this.dtgPerfiles.Name = "dtgPerfiles";
@@ -119,32 +126,41 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Location = new System.Drawing.Point(588, 550);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(83, 26);
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnDesasignarPermisosTodos
             // 
+            this.btnDesasignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDesasignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisosTodos.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(272, 519);
             this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
             this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisosTodos.TabIndex = 35;
             this.btnDesasignarPermisosTodos.Text = "<<";
-            this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisosTodos.Click += new System.EventHandler(this.btnDesasignarPermisosTodos_Click);
             // 
             // btnAsignarPermisosTodos
             // 
+            this.btnAsignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAsignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisosTodos.ForeColor = System.Drawing.Color.White;
             this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(272, 386);
             this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
             this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisosTodos.TabIndex = 34;
             this.btnAsignarPermisosTodos.Text = ">>";
-            this.btnAsignarPermisosTodos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisosTodos.UseVisualStyleBackColor = false;
             this.btnAsignarPermisosTodos.Click += new System.EventHandler(this.btnAsignarPermisosTodos_Click);
             // 
             // lstPermisosAsignados
@@ -167,22 +183,28 @@
             // 
             // btnDesasignarPermisos
             // 
+            this.btnDesasignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDesasignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisos.ForeColor = System.Drawing.Color.White;
             this.btnDesasignarPermisos.Location = new System.Drawing.Point(272, 473);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 31;
             this.btnDesasignarPermisos.Text = "<";
-            this.btnDesasignarPermisos.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermisos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisos.Click += new System.EventHandler(this.btnDesasignarPermisos_Click);
             // 
             // btnAsignarPermisos
             // 
+            this.btnAsignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAsignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisos.ForeColor = System.Drawing.Color.White;
             this.btnAsignarPermisos.Location = new System.Drawing.Point(272, 432);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 30;
             this.btnAsignarPermisos.Text = ">";
-            this.btnAsignarPermisos.UseVisualStyleBackColor = true;
+            this.btnAsignarPermisos.UseVisualStyleBackColor = false;
             this.btnAsignarPermisos.Click += new System.EventHandler(this.btnAsignarPermisos_Click);
             // 
             // chcModificar
@@ -221,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(683, 588);
             this.Controls.Add(this.lblPermisosAsignados);
             this.Controls.Add(this.lblPermisos);
