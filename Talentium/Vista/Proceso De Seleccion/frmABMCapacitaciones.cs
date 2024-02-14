@@ -50,6 +50,7 @@ namespace Vista.Gestion_de_Talento
             foreach (Control item in control.Controls)
             {
                 if (item is TextBox txt) txt.Text = null;
+                if (item is MaskedTextBox mtxt) mtxt.Text = null;
                 if (item is ComboBox cmb) cmb.SelectedIndex = -1;
                 if (item is GroupBox | item is Panel) limpiarControles(item);
             }

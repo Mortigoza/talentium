@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos;
@@ -69,7 +70,7 @@ namespace LogicaNegocio
             capacitaciones.Capacitacion = capacitacion;
             capacitaciones.IdNivel = idNivel;
             capacitaciones.ExternaInterna = externaInterna;
-            capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado);
+            capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado.Replace(" ",""));
             capacitaciones.AltaCapacitaciones();
         }
         public DataTable ConsultaCapacitaciones()
@@ -159,7 +160,7 @@ namespace LogicaNegocio
             capacitaciones.IdNivel = idNivel;
             capacitaciones.Capacitacion = capacitacion.ToString();
             capacitaciones.ExternaInterna = Convert.ToInt32(externaInterna);
-            capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado);
+            capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado.Replace(" ", ""));
 
             capacitaciones.ModificarCapacitaciones();
 

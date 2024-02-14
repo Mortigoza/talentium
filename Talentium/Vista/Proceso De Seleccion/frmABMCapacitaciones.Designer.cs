@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.dtgCapacitacion = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,8 +44,7 @@
             this.cmbAreaMod = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtTiempoEstimadoMod = new System.Windows.Forms.TextBox();
+            this.lblDuracion2 = new System.Windows.Forms.Label();
             this.btnCancelarMod = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,28 +58,30 @@
             this.btnAlta = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDuracion = new System.Windows.Forms.Label();
             this.lblAltaCapacitacion = new System.Windows.Forms.Label();
-            this.txtTiempoEstimadoAlta = new System.Windows.Forms.TextBox();
             this.txtNombreAlta = new System.Windows.Forms.TextBox();
             this.btnDtgMod = new System.Windows.Forms.Button();
+            this.txtTiempoEstimadoAlta = new System.Windows.Forms.MaskedTextBox();
+            this.txtTiempoEstimadoMod = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button5
+            // btnFiltrar
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(546, 74);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 20);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Buscar";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFiltrar.Location = new System.Drawing.Point(534, 68);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(64, 30);
+            this.btnFiltrar.TabIndex = 13;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.button5_Click);
             // 
             // txtFiltro
             // 
@@ -101,21 +102,23 @@
             this.label9.Text = "Filtrar por nombre de capacitacion";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // button3
+            // btnBaja
             // 
-            this.button3.BackColor = System.Drawing.Color.Navy;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(575, 547);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 31);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Dar de Baja";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBaja.Location = new System.Drawing.Point(575, 547);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(110, 31);
+            this.btnBaja.TabIndex = 10;
+            this.btnBaja.Text = "Dar de Baja";
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.button3_Click);
             // 
             // dtgCapacitacion
             // 
+            this.dtgCapacitacion.BackgroundColor = System.Drawing.Color.White;
             this.dtgCapacitacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCapacitacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -163,14 +166,14 @@
             // grpModificacion
             // 
             this.grpModificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpModificacion.Controls.Add(this.txtTiempoEstimadoMod);
             this.grpModificacion.Controls.Add(this.cmbExternaInternaMod);
             this.grpModificacion.Controls.Add(this.label6);
             this.grpModificacion.Controls.Add(this.cmbNivelMod);
             this.grpModificacion.Controls.Add(this.cmbAreaMod);
             this.grpModificacion.Controls.Add(this.label7);
             this.grpModificacion.Controls.Add(this.label8);
-            this.grpModificacion.Controls.Add(this.label11);
-            this.grpModificacion.Controls.Add(this.txtTiempoEstimadoMod);
+            this.grpModificacion.Controls.Add(this.lblDuracion2);
             this.grpModificacion.Controls.Add(this.btnCancelarMod);
             this.grpModificacion.Controls.Add(this.btnModificar);
             this.grpModificacion.Controls.Add(this.label5);
@@ -242,37 +245,33 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Externa/Interna";
             // 
-            // label11
+            // lblDuracion2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(182, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Tiempo estimado";
-            // 
-            // txtTiempoEstimadoMod
-            // 
-            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 174);
-            this.txtTiempoEstimadoMod.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
-            this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 20);
-            this.txtTiempoEstimadoMod.TabIndex = 16;
+            this.lblDuracion2.AutoSize = true;
+            this.lblDuracion2.Location = new System.Drawing.Point(182, 157);
+            this.lblDuracion2.Name = "lblDuracion2";
+            this.lblDuracion2.Size = new System.Drawing.Size(50, 13);
+            this.lblDuracion2.TabIndex = 18;
+            this.lblDuracion2.Text = "Duración";
             // 
             // btnCancelarMod
             // 
+            this.btnCancelarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelarMod.Location = new System.Drawing.Point(351, 239);
             this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarMod.Name = "btnCancelarMod";
             this.btnCancelarMod.Size = new System.Drawing.Size(75, 29);
             this.btnCancelarMod.TabIndex = 11;
             this.btnCancelarMod.Text = "Cancelar";
-            this.btnCancelarMod.UseVisualStyleBackColor = true;
+            this.btnCancelarMod.UseVisualStyleBackColor = false;
             this.btnCancelarMod.Click += new System.EventHandler(this.btnCancelarMod_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificar.Location = new System.Drawing.Point(459, 239);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
@@ -303,6 +302,7 @@
             // grpAlta
             // 
             this.grpAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.cmbExternaInternaAlta);
             this.grpAlta.Controls.Add(this.cmbAreaAlta);
             this.grpAlta.Controls.Add(this.label10);
@@ -311,9 +311,8 @@
             this.grpAlta.Controls.Add(this.btnAlta);
             this.grpAlta.Controls.Add(this.label4);
             this.grpAlta.Controls.Add(this.label3);
-            this.grpAlta.Controls.Add(this.label2);
+            this.grpAlta.Controls.Add(this.lblDuracion);
             this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
-            this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
             this.grpAlta.Location = new System.Drawing.Point(738, 74);
             this.grpAlta.Margin = new System.Windows.Forms.Padding(4);
@@ -365,18 +364,22 @@
             // 
             // btnCancelarAlta
             // 
+            this.btnCancelarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelarAlta.Location = new System.Drawing.Point(351, 204);
             this.btnCancelarAlta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
             this.btnCancelarAlta.Size = new System.Drawing.Size(75, 29);
             this.btnCancelarAlta.TabIndex = 10;
             this.btnCancelarAlta.Text = "Cancelar";
-            this.btnCancelarAlta.UseVisualStyleBackColor = true;
+            this.btnCancelarAlta.UseVisualStyleBackColor = false;
             this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
             // btnAlta
             // 
-            this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAlta.Location = new System.Drawing.Point(459, 204);
             this.btnAlta.Margin = new System.Windows.Forms.Padding(4);
@@ -406,14 +409,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Externa/Interna";
             // 
-            // label2
+            // lblDuracion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tiempo estimado";
+            this.lblDuracion.AutoSize = true;
+            this.lblDuracion.Location = new System.Drawing.Point(182, 114);
+            this.lblDuracion.Name = "lblDuracion";
+            this.lblDuracion.Size = new System.Drawing.Size(50, 13);
+            this.lblDuracion.TabIndex = 5;
+            this.lblDuracion.Text = "Duración";
             // 
             // lblAltaCapacitacion
             // 
@@ -423,14 +426,6 @@
             this.lblAltaCapacitacion.Size = new System.Drawing.Size(123, 13);
             this.lblAltaCapacitacion.TabIndex = 4;
             this.lblAltaCapacitacion.Text = "Nombre de capacitacion";
-            // 
-            // txtTiempoEstimadoAlta
-            // 
-            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 131);
-            this.txtTiempoEstimadoAlta.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
-            this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 20);
-            this.txtTiempoEstimadoAlta.TabIndex = 1;
             // 
             // txtNombreAlta
             // 
@@ -442,7 +437,8 @@
             // 
             // btnDtgMod
             // 
-            this.btnDtgMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnDtgMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnDtgMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDtgMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDtgMod.Location = new System.Drawing.Point(458, 547);
             this.btnDtgMod.Margin = new System.Windows.Forms.Padding(4);
@@ -453,16 +449,43 @@
             this.btnDtgMod.UseVisualStyleBackColor = false;
             this.btnDtgMod.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
+            // txtTiempoEstimadoAlta
+            // 
+            this.txtTiempoEstimadoAlta.AllowPromptAsInput = false;
+            this.txtTiempoEstimadoAlta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTiempoEstimadoAlta.HidePromptOnLeave = true;
+            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 132);
+            this.txtTiempoEstimadoAlta.Mask = "99999 hs";
+            this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
+            this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 20);
+            this.txtTiempoEstimadoAlta.TabIndex = 17;
+            this.txtTiempoEstimadoAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTiempoEstimadoAlta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // txtTiempoEstimadoMod
+            // 
+            this.txtTiempoEstimadoMod.AllowPromptAsInput = false;
+            this.txtTiempoEstimadoMod.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTiempoEstimadoMod.HidePromptOnLeave = true;
+            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 175);
+            this.txtTiempoEstimadoMod.Mask = "99999 hs";
+            this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
+            this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 20);
+            this.txtTiempoEstimadoMod.TabIndex = 18;
+            this.txtTiempoEstimadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTiempoEstimadoMod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // frmABMCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 682);
             this.Controls.Add(this.btnDtgMod);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgCapacitacion);
             this.Controls.Add(this.grpModificacion);
             this.Controls.Add(this.grpAlta);
@@ -483,10 +506,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.DataGridView dtgCapacitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -496,8 +519,7 @@
         private System.Windows.Forms.ComboBox cmbAreaMod;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTiempoEstimadoMod;
+        private System.Windows.Forms.Label lblDuracion2;
         private System.Windows.Forms.Button btnCancelarMod;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
@@ -510,14 +532,15 @@
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.Label lblAltaCapacitacion;
-        private System.Windows.Forms.TextBox txtTiempoEstimadoAlta;
         private System.Windows.Forms.TextBox txtNombreAlta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbNivelMod;
         private System.Windows.Forms.ComboBox cmbExternaInternaMod;
         private System.Windows.Forms.ComboBox cmbExternaInternaAlta;
         private System.Windows.Forms.Button btnDtgMod;
+        private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoAlta;
+        private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
     }
 }
