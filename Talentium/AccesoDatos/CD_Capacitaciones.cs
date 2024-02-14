@@ -101,8 +101,9 @@ namespace AccesoDatos
             SqlParameter param4 = new SqlParameter("@nivel", idNivel) { SqlDbType = SqlDbType.Int };
             SqlParameter param5 = new SqlParameter("@externa_interna", externaInterna) { SqlDbType = SqlDbType.Int };
             SqlParameter param6 = new SqlParameter("@tiempo_estimado", tiempoEstimado) { SqlDbType = SqlDbType.Int };
+            SqlParameter param7 = new SqlParameter("@obligatorio", Obligatorio) { SqlDbType = SqlDbType.Bit };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7 };
             DataTable resultado = EjecutarConsultas("upCapacitaciones_SP", listaParametros.ToArray(), true);
 
             return resultado;

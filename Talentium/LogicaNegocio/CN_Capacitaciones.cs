@@ -137,22 +137,22 @@ namespace LogicaNegocio
                     switch ((int)dr.ItemArray[2])
                     {
                         case 0:
-                            dr[7] = Niveles.cmbNivel0;
+                            dr["Nivel2"] = Niveles.cmbNivel0;
                             break;
                         case 1:
-                            dr[7] = Niveles.cmbNivel1;
+                            dr["Nivel2"] = Niveles.cmbNivel1;
                             break;
                         case 2:
-                            dr[7] = Niveles.cmbNivel2;
+                            dr["Nivel2"] = Niveles.cmbNivel2;
                             break;
                     }
                     switch ((int)dr.ItemArray[5])
                     {
                         case 0:
-                            dr[8] = Niveles.cmbExternaInterna0;
+                            dr["Externo/Interno2"] = Niveles.cmbExternaInterna0;
                             break;
                         case 1:
-                            dr[8] = Niveles.cmbExternaInterna1;
+                            dr["Externo/Interno2"] = Niveles.cmbExternaInterna1;
                             break;
                     }
                 }
@@ -173,6 +173,7 @@ namespace LogicaNegocio
             capacitaciones.Capacitacion = capacitacion.ToString();
             capacitaciones.ExternaInterna = Convert.ToInt32(externaInterna);
             capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado.Replace(" ", ""));
+            capacitaciones.Obligatorio = obligatorio;
 
             capacitaciones.ModificarCapacitaciones();
 

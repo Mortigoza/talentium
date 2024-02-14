@@ -107,11 +107,12 @@ namespace Vista.Gestion_de_Talento
             cnCapacitaciones.IdNivel = cmbNivelAlta.SelectedIndex;
             cnCapacitaciones.ExternaInterna = cmbExternaInternaAlta.SelectedIndex;
             cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoAlta.Text;
-            cnCapacitaciones.Obligatorio = chcObligatorio.Checked;
+            cnCapacitaciones.Obligatorio = chcObligatorioAlta.Checked;
             cnCapacitaciones.AltaCapacitaciones();
             cargarDTG(false);
-            limpiarControles(this);
-            chcObligatorio.Checked = false;
+            limpiarControles(grpAlta);
+            chcObligatorioAlta.Checked = false;
+            chcObligatorioMod.Checked = false;
         }
 
         private void dtgCapacitacion_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +135,7 @@ namespace Vista.Gestion_de_Talento
             }
             cmbExternaInternaMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[5].Value;
             txtTiempoEstimadoMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[6].Value.ToString();
+            chcObligatorioMod.Checked = (bool)dtgCapacitacion.Rows[_rowIndex].Cells[7].Value;
 
 
         }
@@ -170,10 +172,11 @@ namespace Vista.Gestion_de_Talento
             cnCapacitaciones.IdNivel = cmbNivelMod.SelectedIndex;
             cnCapacitaciones.ExternaInterna = cmbExternaInternaMod.SelectedIndex;
             cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoMod.Text;
+            cnCapacitaciones.Obligatorio = chcObligatorioMod.Checked;
             cnCapacitaciones.ModificarCapacitaciones();
 
             cargarDTG(false);
-            limpiarControles(this);
+            limpiarControles(grpModificacion);
             bloquearGroupBox(grpModificacion, grpAlta);
         }
 
@@ -221,7 +224,7 @@ namespace Vista.Gestion_de_Talento
             cmbNivelAlta.SelectedIndex = 0;
             cmbAreaAlta.SelectedIndex = 0;
             cmbExternaInternaAlta.SelectedIndex = 0;
-            chcObligatorio.Checked = false;
+            chcObligatorioAlta.Checked = false;
         }
 
         private void btnCancelarMod_Click(object sender, EventArgs e)
@@ -231,6 +234,7 @@ namespace Vista.Gestion_de_Talento
             cmbAreaMod.SelectedIndex = 0;
             cmbNivelMod.SelectedIndex = 0;
             cmbExternaInternaMod.SelectedIndex = 0;
+            chcObligatorioMod.Checked = false;
             bloquearGroupBox(grpModificacion, grpAlta);
         }
         private void bloquearGroupBox(GroupBox grpActual, GroupBox grpBloqueado)

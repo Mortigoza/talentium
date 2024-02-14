@@ -38,6 +38,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpModificacion = new System.Windows.Forms.GroupBox();
+            this.txtTiempoEstimadoMod = new System.Windows.Forms.MaskedTextBox();
             this.cmbExternaInternaMod = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbNivelMod = new System.Windows.Forms.ComboBox();
@@ -50,6 +51,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.grpAlta = new System.Windows.Forms.GroupBox();
+            this.chcObligatorioAlta = new System.Windows.Forms.CheckBox();
+            this.txtTiempoEstimadoAlta = new System.Windows.Forms.MaskedTextBox();
             this.cmbExternaInternaAlta = new System.Windows.Forms.ComboBox();
             this.cmbAreaAlta = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,9 +65,7 @@
             this.lblAltaCapacitacion = new System.Windows.Forms.Label();
             this.txtNombreAlta = new System.Windows.Forms.TextBox();
             this.btnDtgMod = new System.Windows.Forms.Button();
-            this.txtTiempoEstimadoAlta = new System.Windows.Forms.MaskedTextBox();
-            this.txtTiempoEstimadoMod = new System.Windows.Forms.MaskedTextBox();
-            this.chcObligatorio = new System.Windows.Forms.CheckBox();
+            this.chcObligatorioMod = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
@@ -167,6 +168,7 @@
             // grpModificacion
             // 
             this.grpModificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpModificacion.Controls.Add(this.chcObligatorioMod);
             this.grpModificacion.Controls.Add(this.txtTiempoEstimadoMod);
             this.grpModificacion.Controls.Add(this.cmbExternaInternaMod);
             this.grpModificacion.Controls.Add(this.label6);
@@ -187,6 +189,19 @@
             this.grpModificacion.TabIndex = 8;
             this.grpModificacion.TabStop = false;
             this.grpModificacion.Text = "Modificacion";
+            // 
+            // txtTiempoEstimadoMod
+            // 
+            this.txtTiempoEstimadoMod.AllowPromptAsInput = false;
+            this.txtTiempoEstimadoMod.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTiempoEstimadoMod.HidePromptOnLeave = true;
+            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 175);
+            this.txtTiempoEstimadoMod.Mask = "99999 hs";
+            this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
+            this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 20);
+            this.txtTiempoEstimadoMod.TabIndex = 18;
+            this.txtTiempoEstimadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTiempoEstimadoMod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cmbExternaInternaMod
             // 
@@ -303,7 +318,7 @@
             // grpAlta
             // 
             this.grpAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.grpAlta.Controls.Add(this.chcObligatorio);
+            this.grpAlta.Controls.Add(this.chcObligatorioAlta);
             this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.cmbExternaInternaAlta);
             this.grpAlta.Controls.Add(this.cmbAreaAlta);
@@ -324,6 +339,29 @@
             this.grpAlta.TabIndex = 7;
             this.grpAlta.TabStop = false;
             this.grpAlta.Text = "Alta";
+            // 
+            // chcObligatorioAlta
+            // 
+            this.chcObligatorioAlta.AutoSize = true;
+            this.chcObligatorioAlta.Location = new System.Drawing.Point(317, 159);
+            this.chcObligatorioAlta.Name = "chcObligatorioAlta";
+            this.chcObligatorioAlta.Size = new System.Drawing.Size(95, 17);
+            this.chcObligatorioAlta.TabIndex = 18;
+            this.chcObligatorioAlta.Text = "Es obligatoria?";
+            this.chcObligatorioAlta.UseVisualStyleBackColor = true;
+            // 
+            // txtTiempoEstimadoAlta
+            // 
+            this.txtTiempoEstimadoAlta.AllowPromptAsInput = false;
+            this.txtTiempoEstimadoAlta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTiempoEstimadoAlta.HidePromptOnLeave = true;
+            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 132);
+            this.txtTiempoEstimadoAlta.Mask = "99999 hs";
+            this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
+            this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 20);
+            this.txtTiempoEstimadoAlta.TabIndex = 17;
+            this.txtTiempoEstimadoAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTiempoEstimadoAlta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cmbExternaInternaAlta
             // 
@@ -451,41 +489,15 @@
             this.btnDtgMod.UseVisualStyleBackColor = false;
             this.btnDtgMod.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
-            // txtTiempoEstimadoAlta
+            // chcObligatorioMod
             // 
-            this.txtTiempoEstimadoAlta.AllowPromptAsInput = false;
-            this.txtTiempoEstimadoAlta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txtTiempoEstimadoAlta.HidePromptOnLeave = true;
-            this.txtTiempoEstimadoAlta.Location = new System.Drawing.Point(185, 132);
-            this.txtTiempoEstimadoAlta.Mask = "99999 hs";
-            this.txtTiempoEstimadoAlta.Name = "txtTiempoEstimadoAlta";
-            this.txtTiempoEstimadoAlta.Size = new System.Drawing.Size(106, 20);
-            this.txtTiempoEstimadoAlta.TabIndex = 17;
-            this.txtTiempoEstimadoAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTiempoEstimadoAlta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // txtTiempoEstimadoMod
-            // 
-            this.txtTiempoEstimadoMod.AllowPromptAsInput = false;
-            this.txtTiempoEstimadoMod.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.txtTiempoEstimadoMod.HidePromptOnLeave = true;
-            this.txtTiempoEstimadoMod.Location = new System.Drawing.Point(185, 175);
-            this.txtTiempoEstimadoMod.Mask = "99999 hs";
-            this.txtTiempoEstimadoMod.Name = "txtTiempoEstimadoMod";
-            this.txtTiempoEstimadoMod.Size = new System.Drawing.Size(106, 20);
-            this.txtTiempoEstimadoMod.TabIndex = 18;
-            this.txtTiempoEstimadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTiempoEstimadoMod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // chcObligatorio
-            // 
-            this.chcObligatorio.AutoSize = true;
-            this.chcObligatorio.Location = new System.Drawing.Point(317, 159);
-            this.chcObligatorio.Name = "chcObligatorio";
-            this.chcObligatorio.Size = new System.Drawing.Size(95, 17);
-            this.chcObligatorio.TabIndex = 18;
-            this.chcObligatorio.Text = "Es obligatoria?";
-            this.chcObligatorio.UseVisualStyleBackColor = true;
+            this.chcObligatorioMod.AutoSize = true;
+            this.chcObligatorioMod.Location = new System.Drawing.Point(317, 202);
+            this.chcObligatorioMod.Name = "chcObligatorioMod";
+            this.chcObligatorioMod.Size = new System.Drawing.Size(95, 17);
+            this.chcObligatorioMod.TabIndex = 19;
+            this.chcObligatorioMod.Text = "Es obligatoria?";
+            this.chcObligatorioMod.UseVisualStyleBackColor = true;
             // 
             // frmABMCapacitaciones
             // 
@@ -554,6 +566,7 @@
         private System.Windows.Forms.Button btnDtgMod;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoAlta;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
-        private System.Windows.Forms.CheckBox chcObligatorio;
+        private System.Windows.Forms.CheckBox chcObligatorioAlta;
+        private System.Windows.Forms.CheckBox chcObligatorioMod;
     }
 }
