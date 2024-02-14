@@ -106,9 +106,11 @@ namespace Vista.Gestion_de_Talento
             cnCapacitaciones.IdNivel = cmbNivelAlta.SelectedIndex;
             cnCapacitaciones.ExternaInterna = cmbExternaInternaAlta.SelectedIndex;
             cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoAlta.Text;
+            cnCapacitaciones.Obligatorio = chcObligatorio.Checked;
             cnCapacitaciones.AltaCapacitaciones();
             cargarDTG(false);
             limpiarControles(this);
+            chcObligatorio.Checked = false;
         }
 
         private void dtgCapacitacion_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -216,6 +218,7 @@ namespace Vista.Gestion_de_Talento
             cmbNivelAlta.SelectedIndex = 0;
             cmbAreaAlta.SelectedIndex = 0;
             cmbExternaInternaAlta.SelectedIndex = 0;
+            chcObligatorio.Checked = false;
         }
 
         private void btnCancelarMod_Click(object sender, EventArgs e)

@@ -64,6 +64,7 @@
             this.btnDtgMod = new System.Windows.Forms.Button();
             this.txtTiempoEstimadoAlta = new System.Windows.Forms.MaskedTextBox();
             this.txtTiempoEstimadoMod = new System.Windows.Forms.MaskedTextBox();
+            this.chcObligatorio = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
@@ -302,6 +303,7 @@
             // grpAlta
             // 
             this.grpAlta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpAlta.Controls.Add(this.chcObligatorio);
             this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.cmbExternaInternaAlta);
             this.grpAlta.Controls.Add(this.cmbAreaAlta);
@@ -475,6 +477,16 @@
             this.txtTiempoEstimadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTiempoEstimadoMod.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
+            // chcObligatorio
+            // 
+            this.chcObligatorio.AutoSize = true;
+            this.chcObligatorio.Location = new System.Drawing.Point(317, 159);
+            this.chcObligatorio.Name = "chcObligatorio";
+            this.chcObligatorio.Size = new System.Drawing.Size(95, 17);
+            this.chcObligatorio.TabIndex = 18;
+            this.chcObligatorio.Text = "Es obligatoria?";
+            this.chcObligatorio.UseVisualStyleBackColor = true;
+            // 
             // frmABMCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,5 +554,6 @@
         private System.Windows.Forms.Button btnDtgMod;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoAlta;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
+        private System.Windows.Forms.CheckBox chcObligatorio;
     }
 }

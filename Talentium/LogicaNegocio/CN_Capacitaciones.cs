@@ -19,8 +19,9 @@ namespace LogicaNegocio
         private int idNivel;
         private int externaInterna;
         private string tiempoEstimado;
+        private bool obligatorio;
 
-      
+
         public object IdArea
         {
             get { return idArea; }
@@ -52,7 +53,12 @@ namespace LogicaNegocio
             get { return idCapacitacionesMod; }
             set { idCapacitacionesMod = value; }
         }
-       
+        public bool Obligatorio
+        {
+            get { return obligatorio; }
+            set { obligatorio = value; }
+        }
+
 
 
         public int revisarMotivo(object idMotivo)
@@ -73,8 +79,10 @@ namespace LogicaNegocio
         {
             capacitaciones.IdArea = (int)idArea;
             capacitaciones.Capacitacion = capacitacion;
+            capacitaciones.IdNivel = IdNivel;
             capacitaciones.ExternaInterna = externaInterna;
             capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado.Replace(" ",""));
+            capacitaciones.Obligatorio = obligatorio;
             capacitaciones.AltaCapacitaciones();
         }
         public DataTable ConsultaCapacitaciones()
@@ -89,22 +97,22 @@ namespace LogicaNegocio
                     switch ((int)dr.ItemArray[2])
                     {
                         case 0:
-                            dr[7] = Niveles.cmbNivel0;
+                            dr["Nivel"] = Niveles.cmbNivel0;
                             break;
                         case 1:
-                            dr[7] = Niveles.cmbNivel1;
+                            dr["Nivel"] = Niveles.cmbNivel1;
                             break;
                         case 2:
-                            dr[7] = Niveles.cmbNivel2;
+                            dr["Nivel"] = Niveles.cmbNivel2;
                             break;
                     }
                     switch ((int)dr.ItemArray[5])
                     {
                         case 0:
-                            dr[8] = Niveles.cmbExternaInterna0;
+                            dr["Externo/Interno"] = Niveles.cmbExternaInterna0;
                             break;
                         case 1:
-                            dr[8] = Niveles.cmbExternaInterna1;
+                            dr["Externo/Interno"] = Niveles.cmbExternaInterna1;
                             break;
                     }
                 }

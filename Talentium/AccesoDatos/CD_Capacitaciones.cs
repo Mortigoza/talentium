@@ -17,6 +17,7 @@ namespace AccesoDatos
         private int idNivel;
         private int externaInterna;
         private int tiempoEstimado;
+        private bool obligatorio;
 
         public int IdCapacitaciones
         {
@@ -48,6 +49,11 @@ namespace AccesoDatos
             get { return tiempoEstimado; }
             set { tiempoEstimado = value; }
         }
+        public bool Obligatorio
+        {
+            get { return obligatorio; }
+            set { obligatorio = value; }
+        }
 
         //traer area
         public DataTable Areas()
@@ -65,8 +71,9 @@ namespace AccesoDatos
             SqlParameter param3 = new SqlParameter("@nivel", idNivel) { SqlDbType = SqlDbType.Int};
             SqlParameter param4 = new SqlParameter("@externa_interna", externaInterna) { SqlDbType = SqlDbType.Int};
             SqlParameter param5 = new SqlParameter("@tiempo_estimado", tiempoEstimado) { SqlDbType = SqlDbType.Int };
+            SqlParameter param6 = new SqlParameter("@obligatorio", Obligatorio) { SqlDbType = SqlDbType.Bit };
 
-            List<SqlParameter> listaParametros = new List<SqlParameter>() {param1, param2, param3, param4, param5 };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() {param1, param2, param3, param4, param5, param6 };
             DataTable resultado = EjecutarConsultas("alta_capacitaciones_SP", listaParametros.ToArray(), true);
 
             return resultado;
