@@ -61,7 +61,7 @@ namespace LogicaNegocio {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Indefinida.
+        ///   Busca una cadena traducida similar a Todas.
         /// </summary>
         public static string cmbAreaCap {
             get {

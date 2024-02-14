@@ -90,6 +90,7 @@ namespace Vista.Gestion_de_Talento
         {
 
             cargarDTG(false);
+            bloquearGroupBox(grpModificacion, grpAlta);
         }
 
 
@@ -144,13 +145,15 @@ namespace Vista.Gestion_de_Talento
                 MessageBox.Show("Debe seleccionar la fila que desea modificar");
                 return;
             }
-            cargaCtrMod();   
+            cargaCtrMod();
+            bloquearGroupBox(grpAlta, grpModificacion);
 
         }
 
         private void dtgCapacitacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             cargaCtrMod();
+            bloquearGroupBox(grpAlta, grpModificacion);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -171,7 +174,7 @@ namespace Vista.Gestion_de_Talento
 
             cargarDTG(false);
             limpiarControles(this);
-
+            bloquearGroupBox(grpModificacion, grpAlta);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -228,6 +231,12 @@ namespace Vista.Gestion_de_Talento
             cmbAreaMod.SelectedIndex = 0;
             cmbNivelMod.SelectedIndex = 0;
             cmbExternaInternaMod.SelectedIndex = 0;
+            bloquearGroupBox(grpModificacion, grpAlta);
+        }
+        private void bloquearGroupBox(GroupBox grpActual, GroupBox grpBloqueado)
+        {
+            grpActual.Enabled = false;
+            grpBloqueado.Enabled = true;
         }
     }
 }
