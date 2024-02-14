@@ -73,6 +73,7 @@ namespace Vista
             else
             {
                 dtgCandidatos.Enabled = true;
+                dtgCandidatos.ReadOnly = true;
                 string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
                 DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
                 if (DTCandidatos != null && DTCandidatos.Rows.Count > 0)

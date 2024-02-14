@@ -197,11 +197,25 @@ namespace Vista.Gestion_de_Talento
 
             if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
             {
-                proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+                if(!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
+                {
+                    MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido ingresar la etapa. Revise los datos y vuelva a intentarlo.");
+                }
             }
             else
             {
-                proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null);
+                if(!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
+                {
+                    MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido actualizar la etapa. Revise los datos y vuelva a intentarlo.");
+                }
             }
         }
 
