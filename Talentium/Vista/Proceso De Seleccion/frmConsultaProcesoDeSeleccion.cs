@@ -65,6 +65,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            btnModificarCandidato.Enabled = true;
             if (!filtroUtilizado)
             {
                 MessageBox.Show("Por favor, introduzca el Cuil para la búsqueda.", "Aviso",
@@ -254,16 +255,12 @@ namespace Vista
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dtgCandidatos.SelectedRows.Count > 0)
-            {
-                frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
-                formModificar.ShowDialog();
-                FrmModificarProcesoDeSeleccion_DataGridUpdated();
-            }
-            else
-            {
-                MessageBox.Show("Selecciona una fila antes de abrir el formulario.");
-            }
+            
+             frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
+             formModificar.ShowDialog();
+             FrmModificarProcesoDeSeleccion_DataGridUpdated();
+            
+           
         }
         public void FrmModificarProcesoDeSeleccion_DataGridUpdated()
         {
@@ -325,6 +322,14 @@ namespace Vista
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCuilCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) 
+            {
+                e.Handled = true;
+            }
         }
     }
 }
