@@ -203,9 +203,9 @@
             this.label6.Location = new System.Drawing.Point(314, 59);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Nivel de capacitacion";
+            this.label6.Text = "Nivel";
             // 
             // cmbNivelMod
             // 
@@ -241,9 +241,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(27, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.Size = new System.Drawing.Size(28, 13);
             this.label8.TabIndex = 19;
-            this.label8.Text = "Externa/Interna";
+            this.label8.Text = "Tipo";
             // 
             // lblDuracion2
             // 
@@ -287,9 +287,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(27, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 13);
+            this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Nombre de capacitacion";
+            this.label5.Text = "Nombre";
             // 
             // txtNombreMod
             // 
@@ -396,18 +396,18 @@
             this.label4.Location = new System.Drawing.Point(314, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Nivel de capacitacion";
+            this.label4.Text = "Nivel";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Externa/Interna";
+            this.label3.Text = "Tipo";
             // 
             // lblDuracion
             // 
@@ -423,9 +423,9 @@
             this.lblAltaCapacitacion.AutoSize = true;
             this.lblAltaCapacitacion.Location = new System.Drawing.Point(27, 42);
             this.lblAltaCapacitacion.Name = "lblAltaCapacitacion";
-            this.lblAltaCapacitacion.Size = new System.Drawing.Size(123, 13);
+            this.lblAltaCapacitacion.Size = new System.Drawing.Size(44, 13);
             this.lblAltaCapacitacion.TabIndex = 4;
-            this.lblAltaCapacitacion.Text = "Nombre de capacitacion";
+            this.lblAltaCapacitacion.Text = "Nombre";
             // 
             // txtNombreAlta
             // 
