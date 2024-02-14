@@ -34,7 +34,7 @@ namespace Vista.Gestion_de_Talento
             GroupBox groupBox = new GroupBox();
             groupBox.Text = "Datos del candidato";
             groupBox.Size = new Size(500, 60);
-            groupBox.Location = new Point(20, 15);
+            groupBox.Location = new Point(20, 35);
 
             Label lblNombre = new Label();
             lblNombre.Location = new Point(40, 30);
@@ -127,10 +127,24 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.Size = new Size(80, 30);
             btnGuardar.Click += btnGuardar_Click;
             btnGuardar.BackColor = Color.FromArgb(72, 113, 141);
-            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.FlatStyle = FlatStyle.Popup;
             btnGuardar.ForeColor = Color.WhiteSmoke;
 
+            //Button btnAnterior = new Button();
+            //btnAnterior.Text = "<-";
+            //btnAnterior.Size = new Size(40, 20);
+            //btnAnterior.Location = new Point(18, 10);
+            //btnAnterior.Click += (sender, e) => { NavigateTabs(-1); };
+
+            //Button btnSiguiente = new Button();
+            //btnSiguiente.Text = "->";
+            //btnSiguiente.Size = new Size(40, 20);
+            //btnSiguiente.Location = new Point(480, 10);
+            //btnSiguiente.Click += (sender, e) => { NavigateTabs(1); };
+
             nuevaPestana.Controls.Add(btnGuardar);
+            //nuevaPestana.Controls.Add(btnSiguiente);
+            //nuevaPestana.Controls.Add(btnAnterior);
             cmbArea.SelectedIndexChanged += (sender, e) =>
             {
                 DataRowView selectedArea = cmbArea.SelectedItem as DataRowView;
@@ -142,6 +156,18 @@ namespace Vista.Gestion_de_Talento
                 //cmbEntrevistador.Enabled = true;
             };
             return id_persona;
+        }
+
+        private void NavigateTabs(int offset)
+        {
+            int currentIndex = tabEtapas.SelectedIndex;
+            int newIndex = currentIndex + offset;
+
+            // Verificar límites de las pestañas
+            if (newIndex >= 0 && newIndex < tabEtapas.TabCount)
+            {
+                tabEtapas.SelectedIndex = newIndex;
+            }
         }
         private void cmbEmpleados_DropDown(object sender, EventArgs e)
         {
@@ -249,6 +275,14 @@ namespace Vista.Gestion_de_Talento
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
-        
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            NavigateTabs(-1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NavigateTabs(1);
+        }
     }
 }

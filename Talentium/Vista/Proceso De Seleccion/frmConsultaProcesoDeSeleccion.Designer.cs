@@ -57,7 +57,7 @@
             // 
             this.btnIngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnIngresarEmpleado.Enabled = false;
-            this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnIngresarEmpleado.Location = new System.Drawing.Point(195, 377);
             this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -72,7 +72,7 @@
             // 
             this.btnEtapas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnEtapas.Enabled = false;
-            this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEtapas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEtapas.Location = new System.Drawing.Point(715, 377);
             this.btnEtapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -100,7 +100,7 @@
             // btnFiltrar
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnFiltrar.Location = new System.Drawing.Point(448, 15);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -200,7 +200,7 @@
             // 
             this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModificarCandidato.Enabled = false;
-            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnModificarCandidato.Location = new System.Drawing.Point(40, 377);
             this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
