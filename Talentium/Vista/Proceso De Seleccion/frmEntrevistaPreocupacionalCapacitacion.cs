@@ -126,6 +126,9 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.Location = new Point(390, 300);
             btnGuardar.Size = new Size(80, 30);
             btnGuardar.Click += btnGuardar_Click;
+            btnGuardar.BackColor = Color.FromArgb(72, 113, 141);
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.WhiteSmoke;
 
             nuevaPestana.Controls.Add(btnGuardar);
             cmbArea.SelectedIndexChanged += (sender, e) =>
