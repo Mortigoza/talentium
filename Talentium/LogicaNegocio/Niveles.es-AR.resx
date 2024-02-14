@@ -132,4 +132,7 @@
   <data name="cmbExternaInterna0" xml:space="preserve">
     <value>Externa</value>
   </data>
+  <data name="cmbAreaCap" xml:space="preserve">
+    <value>Indefinida</value>
+  </data>
 </root>

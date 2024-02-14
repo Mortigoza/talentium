@@ -61,6 +61,15 @@ namespace LogicaNegocio {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Indefinida.
+        /// </summary>
+        public static string cmbAreaCap {
+            get {
+                return ResourceManager.GetString("cmbAreaCap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Externa.
         /// </summary>
         public static string cmbExternaInterna0 {

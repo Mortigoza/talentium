@@ -61,14 +61,18 @@ namespace LogicaNegocio
         }
         public DataTable area()
         {
-            return capacitaciones.Areas();
+            DataTable dt = capacitaciones.Areas();
+            DataRow dr = dt.NewRow();
+            dr[0] = -1;
+            dr[1] = Niveles.cmbAreaCap;
+            dt.Rows.Add(dr);
+            return dt;
         }
 
         public void AltaCapacitaciones()
         {
             capacitaciones.IdArea = (int)idArea;
             capacitaciones.Capacitacion = capacitacion;
-            capacitaciones.IdNivel = idNivel;
             capacitaciones.ExternaInterna = externaInterna;
             capacitaciones.TiempoEstimado = Convert.ToInt32(tiempoEstimado.Replace(" ",""));
             capacitaciones.AltaCapacitaciones();

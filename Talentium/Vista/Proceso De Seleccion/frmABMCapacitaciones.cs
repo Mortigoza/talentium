@@ -38,10 +38,10 @@ namespace Vista.Gestion_de_Talento
             DataTable cnCapa = cnCapacitaciones.area();
             cmbAreaAlta.ValueMember = "id_area";
             cmbAreaAlta.DisplayMember = "area";
-            cmbAreaAlta.DataSource = cnCapa;
+            cmbAreaAlta.DataSource = cnCapa.Copy();
             cmbAreaMod.ValueMember = "id_area";
             cmbAreaMod.DisplayMember = "area";
-            cmbAreaMod.DataSource = cnCapa;
+            cmbAreaMod.DataSource = cnCapa.Copy();
             //dtg
             dtgCapacitacion.Columns.Clear();
         }
@@ -121,7 +121,14 @@ namespace Vista.Gestion_de_Talento
         {
             txtNombreMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[1].Value.ToString();
             cmbNivelMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[2].Value;
-            cmbAreaMod.SelectedValue = (int)dtgCapacitacion.Rows[_rowIndex].Cells[4].Value;
+            if (dtgCapacitacion.Rows[_rowIndex].Cells[4].Value.ToString() == "")
+            {
+                cmbAreaMod.SelectedValue = -1;
+            }
+            else
+            {
+                cmbAreaMod.SelectedValue = (int)dtgCapacitacion.Rows[_rowIndex].Cells[4].Value;
+            }
             cmbExternaInternaMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[5].Value;
             txtTiempoEstimadoMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[6].Value.ToString();
 
