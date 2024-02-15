@@ -130,18 +130,6 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.FlatStyle = FlatStyle.Popup;
             btnGuardar.ForeColor = Color.WhiteSmoke;
 
-            //Button btnAnterior = new Button();
-            //btnAnterior.Text = "<-";
-            //btnAnterior.Size = new Size(40, 20);
-            //btnAnterior.Location = new Point(18, 10);
-            //btnAnterior.Click += (sender, e) => { NavigateTabs(-1); };
-
-            //Button btnSiguiente = new Button();
-            //btnSiguiente.Text = "->";
-            //btnSiguiente.Size = new Size(40, 20);
-            //btnSiguiente.Location = new Point(480, 10);
-            //btnSiguiente.Click += (sender, e) => { NavigateTabs(1); };
-
             nuevaPestana.Controls.Add(btnGuardar);
             //nuevaPestana.Controls.Add(btnSiguiente);
             //nuevaPestana.Controls.Add(btnAnterior);
@@ -283,6 +271,17 @@ namespace Vista.Gestion_de_Talento
         private void button1_Click(object sender, EventArgs e)
         {
             NavigateTabs(1);
+        }
+
+        private void frmEntrevistaPreocupacionalCapacitacion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmConsultaProcesoDeSeleccion formDataGridView = Application.OpenForms["frmConsultaProcesoDeSeleccion"] as frmConsultaProcesoDeSeleccion;
+
+            // Verificar si el formulario se encontró y llamar al método para cargar los datos en el DataGridView
+            if (formDataGridView != null)
+            {
+                formDataGridView.CargarDatos();
+            }
         }
     }
 }

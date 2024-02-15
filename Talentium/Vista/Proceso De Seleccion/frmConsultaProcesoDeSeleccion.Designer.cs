@@ -305,9 +305,7 @@
         private System.Windows.Forms.Button btnEtapas;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.TextBox txtCuilCuit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dtgCandidatos;
         private System.Windows.Forms.Button btnModificarCandidato;
         private System.Windows.Forms.Label lblCuil;
         private System.Windows.Forms.Label lblCuilLlenar;
@@ -321,5 +319,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Entrevistador;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Label lblApellidoLlenar;
+        public System.Windows.Forms.TextBox txtCuilCuit;
+        public System.Windows.Forms.DataGridView dtgCandidatos;
     }
 }

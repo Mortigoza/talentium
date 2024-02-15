@@ -65,6 +65,123 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            CargarDatos();
+            //btnModificarCandidato.Enabled = true;
+            //if (!filtroUtilizado)
+            //{
+            //    MessageBox.Show("Por favor, introduzca el Cuil para la búsqueda.", "Aviso",
+            //                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    dtgCandidatos.Enabled = true;
+            //    dtgCandidatos.ReadOnly = true;
+            //    string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
+            //    DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
+            //    if (DTCandidatos != null && DTCandidatos.Rows.Count > 0)
+            //    {
+            //        bool todasCoinciden = true;
+            //        int numFilasDataGridView = dtgCandidatos.Rows.Count;
+
+            //        for (int i = 0; i < DTCandidatos.Rows.Count; i++)
+            //        {
+            //            if (i < numFilasDataGridView)
+            //            {
+            //                string etapaDataTable = DTCandidatos.Rows[i]["Etapa"].ToString();
+            //                string etapaDataGridView = dtgCandidatos.Rows[i].Cells["Etapa"].Value.ToString();
+
+            //                if (etapaDataTable != etapaDataGridView)
+            //                {
+            //                    todasCoinciden = false;
+            //                    break;
+            //                }
+
+            //                for (int j = 0; j < dtgCandidatos.Columns.Count; j++)
+            //                {
+            //                    string nombreColumna = dtgCandidatos.Columns[j].Name;
+            //                    if (nombreColumna != "Etapa")
+            //                    {
+            //                        if (nombreColumna == "Fecha_Entrevista")
+            //                        {
+            //                            string valorFecha = DTCandidatos.Rows[i][nombreColumna].ToString();
+            //                            DateTime fechaEntrevista;
+            //                            if (DateTime.TryParse(valorFecha, out fechaEntrevista))
+            //                            {
+            //                                dtgCandidatos.Rows[i].Cells[nombreColumna].Value = fechaEntrevista;
+            //                            }
+            //                            else
+            //                            {
+            //                                dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DateTime.MinValue;
+            //                            }
+            //                        }
+            //                        else
+            //                        {
+            //                            dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DTCandidatos.Rows[i][nombreColumna].ToString();
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //            else
+            //            {
+            //                DataGridViewRow nuevaFila = new DataGridViewRow();
+            //                nuevaFila.CreateCells(dtgCandidatos);
+            //                dtgCandidatos.Rows.Add(nuevaFila);
+
+            //                for (int j = 0; j < dtgCandidatos.Columns.Count; j++)
+            //                {
+            //                    string nombreColumna = dtgCandidatos.Columns[j].Name;
+            //                    if (nombreColumna != "Etapa")
+            //                    {
+            //                        dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DTCandidatos.Rows[i][nombreColumna].ToString();
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        lblNombreLlenar.Text = DTCandidatos.Rows[0]["Nombre"].ToString();
+            //        lblApellidoLlenar.Text = DTCandidatos.Rows[0]["Apellido"].ToString();
+            //        lblCuilLlenar.Text = DTCandidatos.Rows[0]["Cuit"].ToString();
+
+            //        if (!todasCoinciden)
+            //        {
+            //            MessageBox.Show("Las etapas no coinciden. No se puede completar el DataGridView.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No hay resultados que coincidan con la búsqueda.");
+            //    }
+            //}
+            //if (dtgCandidatos.Rows.Count > 0)
+            //{
+            //    int ultimaFilaIndex = dtgCandidatos.Rows.Count - 1;
+
+            //    // Verifica si la celda "Estado" de la última fila no es nula antes de intentar acceder a su valor
+            //    if (dtgCandidatos.Rows[ultimaFilaIndex].Cells["Estado"].Value != null)
+            //    {
+            //        string estado = dtgCandidatos.Rows[ultimaFilaIndex].Cells["Estado"].Value.ToString();
+
+            //        if (estado == "APTO")
+            //        {
+            //            btnIngresarEmpleado.Enabled = true;
+            //        }
+            //        else
+            //        {
+            //            btnIngresarEmpleado.Enabled = false;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        // Si la celda es nula, deshabilita el botón
+            //        btnIngresarEmpleado.Enabled = false;
+            //    }
+            //}
+            //else
+            //{
+            //    btnIngresarEmpleado.Enabled = false;
+            //}
+        }
+        public void CargarDatos()
+        {
             btnModificarCandidato.Enabled = true;
             if (!filtroUtilizado)
             {
@@ -179,7 +296,6 @@ namespace Vista
                 btnIngresarEmpleado.Enabled = false;
             }
         }
-
         private void cmbPuesto_DropDown(object sender, EventArgs e)
         {
         }
@@ -188,7 +304,7 @@ namespace Vista
         {
         }
 
-        public void CargarColumnasDataGrid()
+        public void ActualizarDataGrid()
         {
             dtgCandidatos.Columns["Estado"].DataPropertyName = "Estado";
             dtgCandidatos.Columns["Puesto"].DataPropertyName = "Puesto";

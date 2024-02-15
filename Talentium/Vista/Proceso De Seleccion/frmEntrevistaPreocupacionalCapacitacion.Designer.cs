@@ -81,6 +81,7 @@
             this.Name = "frmEntrevistaPreocupacionalCapacitacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etapas del proceso de seleccion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEntrevistaPreocupacionalCapacitacion_FormClosed);
             this.Load += new System.EventHandler(this.frmEntrevistaPreocupacionalCapacitacion_Load);
             this.ResumeLayout(false);
 
