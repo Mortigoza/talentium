@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
+using Comun;
 
 namespace LogicaNegocio
 {
@@ -122,18 +123,9 @@ namespace LogicaNegocio
         }
         public void cargarDatos() 
         {
-            if (periodo)
-            {
-                asistenciasDatos.Fecha = null;
-                asistenciasDatos.FechaDesde = fecha_desde;
-                asistenciasDatos.FechaHasta = fecha_hasta;
-            }
-            else
-            {
-                asistenciasDatos.Fecha = fecha;
-                asistenciasDatos.FechaDesde = null;
-                asistenciasDatos.FechaHasta = null;
-            }
+            asistenciasDatos.Fecha = fecha;
+            asistenciasDatos.fecha_desde = DateTime.Now;
+            asistenciasDatos.fecha_hasta = DateTime.Now;
             asistenciasDatos.IdAsistencia = idAsistencia;
             asistenciasDatos.IdPersona = idPersona;
             asistenciasDatos.Periodo = periodo;
@@ -143,15 +135,26 @@ namespace LogicaNegocio
             asistenciasDatos.Observaciones = observaciones;
         }
 
-        public void insertarAsistencias() 
+        /*  public void insertarAsistencias() 
+          {
+              cargarDatos();
+              asistenciasDatos.CargarAsistencia(); 
+          }*/
+        public void insertarAsistencias(List<Asistencia> asistencias)
         {
-            cargarDatos();
-            asistenciasDatos.CargarAsistencia(); 
+            
+                asistenciasDatos.CargarAsistencias(asistencias);
+
         }
+
         public void ModificarAsistencias() 
         {
             cargarDatos();
             asistenciasDatos.ModificarAsistencia(); 
+        }
+        public void EliminarAsistencias(int idA)
+        {
+            asistenciasDatos.EliminarAsistencia(idA);
         }
 
     }
