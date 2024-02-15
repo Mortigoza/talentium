@@ -296,7 +296,7 @@ namespace Vista
                     {
                         datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
 
-                        //asistencias.EliminarAsistencias(datos.idAsistencia);
+                        asistencias.EliminarAsistencias(datos.idAsistencia);
                         Refrescar(dataGridModificar);
                     }
                     }
