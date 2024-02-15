@@ -99,6 +99,7 @@
             this.lblCuitCuil = new System.Windows.Forms.Label();
             this.lblNroDoc = new System.Windows.Forms.Label();
             this.tabAcademicos = new System.Windows.Forms.TabPage();
+            this.btnAtrasAcademico = new System.Windows.Forms.Button();
             this.grpIngles = new System.Windows.Forms.GroupBox();
             this.rdbNativoEn = new System.Windows.Forms.RadioButton();
             this.rdbBasicoEn = new System.Windows.Forms.RadioButton();
@@ -157,6 +158,7 @@
             this.lblAñoIngreso2 = new System.Windows.Forms.Label();
             this.txtTitulo2 = new System.Windows.Forms.TextBox();
             this.tabLaborales = new System.Windows.Forms.TabPage();
+            this.btnAtrasLaboral = new System.Windows.Forms.Button();
             this.lblFaltanCampos2 = new System.Windows.Forms.Label();
             this.btnMasLaborales1 = new System.Windows.Forms.Button();
             this.lblAgregarExperienciaLaboral = new System.Windows.Forms.Label();
@@ -216,8 +218,6 @@
             this.lblIngresoLaboral2 = new System.Windows.Forms.Label();
             this.lblPuesto2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAtrasAcademico = new System.Windows.Forms.Button();
-            this.btnAtrasLaboral = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -250,7 +250,7 @@
             this.tabControl.Controls.Add(this.tabLaborales);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1423, 713);
@@ -268,9 +268,9 @@
             this.tabPersonales.Controls.Add(this.groupBox3);
             this.tabPersonales.Controls.Add(this.groupBox2);
             this.tabPersonales.Location = new System.Drawing.Point(4, 25);
-            this.tabPersonales.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPersonales.Margin = new System.Windows.Forms.Padding(5);
             this.tabPersonales.Name = "tabPersonales";
-            this.tabPersonales.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPersonales.Padding = new System.Windows.Forms.Padding(5);
             this.tabPersonales.Size = new System.Drawing.Size(1415, 684);
             this.tabPersonales.TabIndex = 0;
             this.tabPersonales.Text = "Datos Personales";
@@ -302,9 +302,9 @@
             this.groupBox7.Controls.Add(this.cmbConvenio);
             this.groupBox7.Controls.Add(this.cmbPuesto);
             this.groupBox7.Location = new System.Drawing.Point(705, 36);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(263, 303);
             this.groupBox7.TabIndex = 44;
             this.groupBox7.TabStop = false;
@@ -315,12 +315,11 @@
             this.dttFechaAlta.Checked = false;
             this.dttFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttFechaAlta.Location = new System.Drawing.Point(35, 236);
-            this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.dttFechaAlta.MaxDate = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
+            this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(5);
             this.dttFechaAlta.Name = "dttFechaAlta";
             this.dttFechaAlta.Size = new System.Drawing.Size(195, 22);
             this.dttFechaAlta.TabIndex = 58;
-            this.dttFechaAlta.Value = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
+            this.dttFechaAlta.Value = new System.DateTime(2024, 2, 15, 0, 0, 0, 0);
             // 
             // lblFechaDeIngreso
             // 
@@ -350,7 +349,7 @@
             this.cmbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbArea.FormattingEnabled = true;
             this.cmbArea.Location = new System.Drawing.Point(33, 47);
-            this.cmbArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbArea.Margin = new System.Windows.Forms.Padding(4);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(196, 24);
             this.cmbArea.TabIndex = 46;
@@ -393,7 +392,7 @@
             this.cmbConvenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConvenio.FormattingEnabled = true;
             this.cmbConvenio.Location = new System.Drawing.Point(35, 174);
-            this.cmbConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbConvenio.Margin = new System.Windows.Forms.Padding(4);
             this.cmbConvenio.Name = "cmbConvenio";
             this.cmbConvenio.Size = new System.Drawing.Size(196, 24);
             this.cmbConvenio.TabIndex = 1;
@@ -404,7 +403,7 @@
             this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuesto.FormattingEnabled = true;
             this.cmbPuesto.Location = new System.Drawing.Point(33, 111);
-            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(196, 24);
             this.cmbPuesto.TabIndex = 0;
@@ -418,7 +417,7 @@
             this.btnContinuar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContinuar1.Location = new System.Drawing.Point(1212, 602);
-            this.btnContinuar1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnContinuar1.Margin = new System.Windows.Forms.Padding(5);
             this.btnContinuar1.Name = "btnContinuar1";
             this.btnContinuar1.Size = new System.Drawing.Size(140, 54);
             this.btnContinuar1.TabIndex = 42;
@@ -431,7 +430,7 @@
             this.btnEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarImagen.BackgroundImage")));
             this.btnEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminarImagen.Location = new System.Drawing.Point(1223, 274);
-            this.btnEliminarImagen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEliminarImagen.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
             this.btnEliminarImagen.Size = new System.Drawing.Size(63, 48);
             this.btnEliminarImagen.TabIndex = 5;
@@ -443,7 +442,7 @@
             this.btnEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditarImagen.BackgroundImage")));
             this.btnEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditarImagen.Location = new System.Drawing.Point(1041, 274);
-            this.btnEditarImagen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEditarImagen.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditarImagen.Name = "btnEditarImagen";
             this.btnEditarImagen.Size = new System.Drawing.Size(63, 48);
             this.btnEditarImagen.TabIndex = 4;
@@ -457,7 +456,7 @@
             this.pctFoto.Enabled = false;
             this.pctFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctFoto.InitialImage")));
             this.pctFoto.Location = new System.Drawing.Point(1041, 48);
-            this.pctFoto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pctFoto.Margin = new System.Windows.Forms.Padding(5);
             this.pctFoto.Name = "pctFoto";
             this.pctFoto.Size = new System.Drawing.Size(244, 219);
             this.pctFoto.TabIndex = 2;
@@ -483,9 +482,9 @@
             this.groupBox3.Controls.Add(this.lblAltura);
             this.groupBox3.Controls.Add(this.lblDpto);
             this.groupBox3.Location = new System.Drawing.Point(705, 347);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox3.Size = new System.Drawing.Size(619, 231);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -519,7 +518,7 @@
             this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPartido.FormattingEnabled = true;
             this.cmbPartido.Location = new System.Drawing.Point(316, 50);
-            this.cmbPartido.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbPartido.Margin = new System.Windows.Forms.Padding(5);
             this.cmbPartido.Name = "cmbPartido";
             this.cmbPartido.Size = new System.Drawing.Size(261, 24);
             this.cmbPartido.TabIndex = 29;
@@ -539,7 +538,7 @@
             // txtCodigoPostal
             // 
             this.txtCodigoPostal.Location = new System.Drawing.Point(413, 118);
-            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(5);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.ReadOnly = true;
             this.txtCodigoPostal.Size = new System.Drawing.Size(165, 22);
@@ -551,7 +550,7 @@
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(37, 50);
-            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(5);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(255, 24);
             this.cmbProvincia.TabIndex = 30;
@@ -561,7 +560,7 @@
             // 
             this.txtNro.AccessibleDescription = "O";
             this.txtNro.Location = new System.Drawing.Point(316, 185);
-            this.txtNro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNro.Margin = new System.Windows.Forms.Padding(5);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(69, 22);
             this.txtNro.TabIndex = 34;
@@ -582,7 +581,7 @@
             // 
             this.txtCalle.AccessibleDescription = "O";
             this.txtCalle.Location = new System.Drawing.Point(37, 185);
-            this.txtCalle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCalle.Margin = new System.Windows.Forms.Padding(5);
             this.txtCalle.MaxLength = 30;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(255, 22);
@@ -593,7 +592,7 @@
             // txtPiso
             // 
             this.txtPiso.Location = new System.Drawing.Point(412, 185);
-            this.txtPiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPiso.Margin = new System.Windows.Forms.Padding(5);
             this.txtPiso.MaxLength = 30;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(69, 22);
@@ -605,7 +604,7 @@
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(39, 117);
-            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(352, 24);
             this.cmbLocalidad.TabIndex = 31;
@@ -614,7 +613,7 @@
             // txtDpto
             // 
             this.txtDpto.Location = new System.Drawing.Point(508, 185);
-            this.txtDpto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDpto.Margin = new System.Windows.Forms.Padding(5);
             this.txtDpto.MaxLength = 30;
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(69, 22);
@@ -698,9 +697,9 @@
             this.groupBox2.Controls.Add(this.lblCuitCuil);
             this.groupBox2.Controls.Add(this.lblNroDoc);
             this.groupBox2.Location = new System.Drawing.Point(87, 36);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox2.Size = new System.Drawing.Size(553, 543);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
@@ -712,7 +711,7 @@
             this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Location = new System.Drawing.Point(24, 178);
-            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(99, 24);
             this.cmbTipoDoc.TabIndex = 57;
@@ -734,7 +733,7 @@
             this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidad.FormattingEnabled = true;
             this.cmbNacionalidad.Location = new System.Drawing.Point(28, 414);
-            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNacionalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNacionalidad.Name = "cmbNacionalidad";
             this.cmbNacionalidad.Size = new System.Drawing.Size(225, 24);
             this.cmbNacionalidad.TabIndex = 55;
@@ -746,7 +745,7 @@
             this.btnValidar.FlatAppearance.BorderSize = 0;
             this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValidar.Location = new System.Drawing.Point(299, 63);
-            this.btnValidar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(4);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(100, 28);
             this.btnValidar.TabIndex = 54;
@@ -760,7 +759,7 @@
             this.cmbTipoTelAlternativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelAlternativo.FormattingEnabled = true;
             this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(265, 353);
-            this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTipoTelAlternativo.Name = "cmbTipoTelAlternativo";
             this.cmbTipoTelAlternativo.Size = new System.Drawing.Size(137, 24);
             this.cmbTipoTelAlternativo.TabIndex = 53;
@@ -782,7 +781,7 @@
             this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTel.FormattingEnabled = true;
             this.cmbTipoTel.Location = new System.Drawing.Point(323, 295);
-            this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTipoTel.Name = "cmbTipoTel";
             this.cmbTipoTel.Size = new System.Drawing.Size(197, 24);
             this.cmbTipoTel.TabIndex = 51;
@@ -802,7 +801,7 @@
             // 
             this.txtTelefono.AccessibleDescription = "O";
             this.txtTelefono.Location = new System.Drawing.Point(24, 297);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(5);
             this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(285, 22);
@@ -824,7 +823,7 @@
             // 
             this.txtEmail.AccessibleDescription = "O";
             this.txtEmail.Location = new System.Drawing.Point(29, 236);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(496, 22);
@@ -833,7 +832,7 @@
             // txtContacto
             // 
             this.txtContacto.Location = new System.Drawing.Point(416, 354);
-            this.txtContacto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(5);
             this.txtContacto.MaxLength = 30;
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(105, 22);
@@ -867,7 +866,7 @@
             // 
             this.txtTelefonoAlternativo.AccessibleDescription = "O";
             this.txtTelefonoAlternativo.Location = new System.Drawing.Point(25, 354);
-            this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(5);
             this.txtTelefonoAlternativo.MaxLength = 30;
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
             this.txtTelefonoAlternativo.Size = new System.Drawing.Size(227, 22);
@@ -878,7 +877,7 @@
             // nupHijos
             // 
             this.nupHijos.Location = new System.Drawing.Point(372, 480);
-            this.nupHijos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.nupHijos.Margin = new System.Windows.Forms.Padding(5);
             this.nupHijos.Name = "nupHijos";
             this.nupHijos.Size = new System.Drawing.Size(155, 22);
             this.nupHijos.TabIndex = 42;
@@ -910,7 +909,7 @@
             this.dtpFechaDeNacimiento.Checked = false;
             this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(28, 480);
-            this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(5);
             this.dtpFechaDeNacimiento.MaxDate = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(172, 22);
@@ -922,7 +921,7 @@
             // 
             this.txtApellidos.AccessibleDescription = "O";
             this.txtApellidos.Location = new System.Drawing.Point(272, 126);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(5);
             this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(249, 22);
@@ -935,7 +934,7 @@
             this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(225, 479);
-            this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(5);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(121, 24);
             this.cmbEstadoCivil.TabIndex = 26;
@@ -967,7 +966,7 @@
             this.txtNombres.AccessibleDescription = "O";
             this.txtNombres.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNombres.Location = new System.Drawing.Point(25, 126);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(5);
             this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(227, 22);
@@ -989,7 +988,7 @@
             // 
             this.txtDni.AccessibleDescription = "O";
             this.txtDni.Location = new System.Drawing.Point(131, 180);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(5);
             this.txtDni.MaxLength = 30;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(389, 22);
@@ -1020,7 +1019,7 @@
             // txtCuitCuil
             // 
             this.txtCuitCuil.Location = new System.Drawing.Point(27, 63);
-            this.txtCuitCuil.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCuitCuil.Margin = new System.Windows.Forms.Padding(5);
             this.txtCuitCuil.MaxLength = 11;
             this.txtCuitCuil.Name = "txtCuitCuil";
             this.txtCuitCuil.Size = new System.Drawing.Size(249, 22);
@@ -1043,7 +1042,7 @@
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Location = new System.Drawing.Point(268, 415);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(5);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(255, 24);
             this.cmbGenero.TabIndex = 33;
@@ -1080,14 +1079,33 @@
             this.tabAcademicos.Controls.Add(this.grpEspaniol);
             this.tabAcademicos.Controls.Add(this.grpSuperior2);
             this.tabAcademicos.Location = new System.Drawing.Point(4, 25);
-            this.tabAcademicos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabAcademicos.Margin = new System.Windows.Forms.Padding(5);
             this.tabAcademicos.Name = "tabAcademicos";
-            this.tabAcademicos.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabAcademicos.Padding = new System.Windows.Forms.Padding(5);
             this.tabAcademicos.Size = new System.Drawing.Size(1415, 684);
             this.tabAcademicos.TabIndex = 1;
             this.tabAcademicos.Text = "Datos Académicos";
             this.tabAcademicos.UseVisualStyleBackColor = true;
             this.tabAcademicos.Click += new System.EventHandler(this.tabAcademicos_Click);
+            // 
+            // btnAtrasAcademico
+            // 
+            this.btnAtrasAcademico.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAtrasAcademico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtrasAcademico.Enabled = false;
+            this.btnAtrasAcademico.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAtrasAcademico.FlatAppearance.BorderSize = 0;
+            this.btnAtrasAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtrasAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasAcademico.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAtrasAcademico.Location = new System.Drawing.Point(1062, 602);
+            this.btnAtrasAcademico.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAtrasAcademico.Name = "btnAtrasAcademico";
+            this.btnAtrasAcademico.Size = new System.Drawing.Size(140, 54);
+            this.btnAtrasAcademico.TabIndex = 92;
+            this.btnAtrasAcademico.Text = "Atras";
+            this.btnAtrasAcademico.UseVisualStyleBackColor = false;
+            this.btnAtrasAcademico.Click += new System.EventHandler(this.btnAtrasAcademico_Click);
             // 
             // grpIngles
             // 
@@ -1096,9 +1114,9 @@
             this.grpIngles.Controls.Add(this.rdbIntermedioEn);
             this.grpIngles.Controls.Add(this.rdbAvanzadoEn);
             this.grpIngles.Location = new System.Drawing.Point(384, 36);
-            this.grpIngles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpIngles.Margin = new System.Windows.Forms.Padding(4);
             this.grpIngles.Name = "grpIngles";
-            this.grpIngles.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpIngles.Padding = new System.Windows.Forms.Padding(4);
             this.grpIngles.Size = new System.Drawing.Size(267, 151);
             this.grpIngles.TabIndex = 91;
             this.grpIngles.TabStop = false;
@@ -1108,7 +1126,7 @@
             // 
             this.rdbNativoEn.AutoSize = true;
             this.rdbNativoEn.Location = new System.Drawing.Point(9, 103);
-            this.rdbNativoEn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbNativoEn.Margin = new System.Windows.Forms.Padding(5);
             this.rdbNativoEn.Name = "rdbNativoEn";
             this.rdbNativoEn.Size = new System.Drawing.Size(67, 20);
             this.rdbNativoEn.TabIndex = 102;
@@ -1121,7 +1139,7 @@
             // 
             this.rdbBasicoEn.AutoSize = true;
             this.rdbBasicoEn.Location = new System.Drawing.Point(9, 27);
-            this.rdbBasicoEn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbBasicoEn.Margin = new System.Windows.Forms.Padding(5);
             this.rdbBasicoEn.Name = "rdbBasicoEn";
             this.rdbBasicoEn.Size = new System.Drawing.Size(70, 20);
             this.rdbBasicoEn.TabIndex = 99;
@@ -1134,7 +1152,7 @@
             // 
             this.rdbIntermedioEn.AutoSize = true;
             this.rdbIntermedioEn.Location = new System.Drawing.Point(9, 53);
-            this.rdbIntermedioEn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbIntermedioEn.Margin = new System.Windows.Forms.Padding(5);
             this.rdbIntermedioEn.Name = "rdbIntermedioEn";
             this.rdbIntermedioEn.Size = new System.Drawing.Size(91, 20);
             this.rdbIntermedioEn.TabIndex = 100;
@@ -1147,7 +1165,7 @@
             // 
             this.rdbAvanzadoEn.AutoSize = true;
             this.rdbAvanzadoEn.Location = new System.Drawing.Point(9, 79);
-            this.rdbAvanzadoEn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbAvanzadoEn.Margin = new System.Windows.Forms.Padding(5);
             this.rdbAvanzadoEn.Name = "rdbAvanzadoEn";
             this.rdbAvanzadoEn.Size = new System.Drawing.Size(89, 20);
             this.rdbAvanzadoEn.TabIndex = 101;
@@ -1180,7 +1198,7 @@
             this.btnContinuar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContinuar2.Location = new System.Drawing.Point(1212, 602);
-            this.btnContinuar2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnContinuar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnContinuar2.Name = "btnContinuar2";
             this.btnContinuar2.Size = new System.Drawing.Size(140, 54);
             this.btnContinuar2.TabIndex = 73;
@@ -1205,9 +1223,9 @@
             this.grpSuperior1.Controls.Add(this.lblAñoIngreso);
             this.grpSuperior1.Controls.Add(this.txtTitulo);
             this.grpSuperior1.Location = new System.Drawing.Point(87, 239);
-            this.grpSuperior1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior1.Margin = new System.Windows.Forms.Padding(5);
             this.grpSuperior1.Name = "grpSuperior1";
-            this.grpSuperior1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior1.Padding = new System.Windows.Forms.Padding(5);
             this.grpSuperior1.Size = new System.Drawing.Size(564, 342);
             this.grpSuperior1.TabIndex = 88;
             this.grpSuperior1.TabStop = false;
@@ -1228,7 +1246,7 @@
             this.cmbProgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso.FormattingEnabled = true;
             this.cmbProgreso.Location = new System.Drawing.Point(367, 235);
-            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbProgreso.Name = "cmbProgreso";
             this.cmbProgreso.Size = new System.Drawing.Size(139, 24);
             this.cmbProgreso.TabIndex = 87;
@@ -1242,7 +1260,7 @@
             this.btnMasAcademico1.FlatAppearance.BorderSize = 0;
             this.btnMasAcademico1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasAcademico1.Location = new System.Drawing.Point(499, 273);
-            this.btnMasAcademico1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasAcademico1.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasAcademico1.Name = "btnMasAcademico1";
             this.btnMasAcademico1.Size = new System.Drawing.Size(43, 34);
             this.btnMasAcademico1.TabIndex = 88;
@@ -1263,7 +1281,7 @@
             // 
             this.txtInsitutcionSuperior.AccessibleDescription = "O";
             this.txtInsitutcionSuperior.Location = new System.Drawing.Point(15, 118);
-            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(5);
             this.txtInsitutcionSuperior.MaxLength = 30;
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(523, 22);
@@ -1274,7 +1292,7 @@
             this.cmbEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso.FormattingEnabled = true;
             this.cmbEgreso.Location = new System.Drawing.Point(185, 235);
-            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbEgreso.Name = "cmbEgreso";
             this.cmbEgreso.Size = new System.Drawing.Size(147, 24);
             this.cmbEgreso.TabIndex = 84;
@@ -1304,7 +1322,7 @@
             this.cmbNivelAcademico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico.FormattingEnabled = true;
             this.cmbNivelAcademico.Location = new System.Drawing.Point(15, 60);
-            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(5);
             this.cmbNivelAcademico.Name = "cmbNivelAcademico";
             this.cmbNivelAcademico.Size = new System.Drawing.Size(235, 24);
             this.cmbNivelAcademico.TabIndex = 76;
@@ -1325,7 +1343,7 @@
             this.cmbIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso.FormattingEnabled = true;
             this.cmbIngreso.Location = new System.Drawing.Point(15, 235);
-            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbIngreso.Name = "cmbIngreso";
             this.cmbIngreso.Size = new System.Drawing.Size(148, 24);
             this.cmbIngreso.TabIndex = 82;
@@ -1355,7 +1373,7 @@
             // 
             this.txtTitulo.AccessibleDescription = "O";
             this.txtTitulo.Location = new System.Drawing.Point(16, 177);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(5);
             this.txtTitulo.MaxLength = 30;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(521, 22);
@@ -1369,9 +1387,9 @@
             this.grpEspaniol.Controls.Add(this.rdbIntermedio);
             this.grpEspaniol.Controls.Add(this.rdbBasico);
             this.grpEspaniol.Location = new System.Drawing.Point(87, 36);
-            this.grpEspaniol.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpEspaniol.Margin = new System.Windows.Forms.Padding(5);
             this.grpEspaniol.Name = "grpEspaniol";
-            this.grpEspaniol.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpEspaniol.Padding = new System.Windows.Forms.Padding(5);
             this.grpEspaniol.Size = new System.Drawing.Size(267, 151);
             this.grpEspaniol.TabIndex = 72;
             this.grpEspaniol.TabStop = false;
@@ -1381,7 +1399,7 @@
             // 
             this.rdbNativo.AutoSize = true;
             this.rdbNativo.Location = new System.Drawing.Point(16, 105);
-            this.rdbNativo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbNativo.Margin = new System.Windows.Forms.Padding(5);
             this.rdbNativo.Name = "rdbNativo";
             this.rdbNativo.Size = new System.Drawing.Size(67, 20);
             this.rdbNativo.TabIndex = 98;
@@ -1394,7 +1412,7 @@
             // 
             this.rdbAvanzado.AutoSize = true;
             this.rdbAvanzado.Location = new System.Drawing.Point(16, 79);
-            this.rdbAvanzado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbAvanzado.Margin = new System.Windows.Forms.Padding(5);
             this.rdbAvanzado.Name = "rdbAvanzado";
             this.rdbAvanzado.Size = new System.Drawing.Size(89, 20);
             this.rdbAvanzado.TabIndex = 97;
@@ -1407,7 +1425,7 @@
             // 
             this.rdbIntermedio.AutoSize = true;
             this.rdbIntermedio.Location = new System.Drawing.Point(16, 53);
-            this.rdbIntermedio.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbIntermedio.Margin = new System.Windows.Forms.Padding(5);
             this.rdbIntermedio.Name = "rdbIntermedio";
             this.rdbIntermedio.Size = new System.Drawing.Size(91, 20);
             this.rdbIntermedio.TabIndex = 96;
@@ -1420,7 +1438,7 @@
             // 
             this.rdbBasico.AutoSize = true;
             this.rdbBasico.Location = new System.Drawing.Point(16, 27);
-            this.rdbBasico.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbBasico.Margin = new System.Windows.Forms.Padding(5);
             this.rdbBasico.Name = "rdbBasico";
             this.rdbBasico.Size = new System.Drawing.Size(70, 20);
             this.rdbBasico.TabIndex = 95;
@@ -1448,9 +1466,9 @@
             this.grpSuperior2.Controls.Add(this.cmbNivelAcademico1);
             this.grpSuperior2.Controls.Add(this.grpSuperior3);
             this.grpSuperior2.Location = new System.Drawing.Point(705, 36);
-            this.grpSuperior2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior2.Margin = new System.Windows.Forms.Padding(5);
             this.grpSuperior2.Name = "grpSuperior2";
-            this.grpSuperior2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior2.Padding = new System.Windows.Forms.Padding(5);
             this.grpSuperior2.Size = new System.Drawing.Size(585, 545);
             this.grpSuperior2.TabIndex = 70;
             this.grpSuperior2.TabStop = false;
@@ -1462,7 +1480,7 @@
             this.cmbProgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso1.FormattingEnabled = true;
             this.cmbProgreso1.Location = new System.Drawing.Point(363, 224);
-            this.cmbProgreso1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbProgreso1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbProgreso1.Name = "cmbProgreso1";
             this.cmbProgreso1.Size = new System.Drawing.Size(139, 24);
             this.cmbProgreso1.TabIndex = 73;
@@ -1476,7 +1494,7 @@
             this.btnMasAcademico2.FlatAppearance.BorderSize = 0;
             this.btnMasAcademico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasAcademico2.Location = new System.Drawing.Point(507, 256);
-            this.btnMasAcademico2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasAcademico2.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasAcademico2.Name = "btnMasAcademico2";
             this.btnMasAcademico2.Size = new System.Drawing.Size(43, 34);
             this.btnMasAcademico2.TabIndex = 86;
@@ -1510,7 +1528,7 @@
             this.btnMenosAcademico1.FlatAppearance.BorderSize = 0;
             this.btnMenosAcademico1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosAcademico1.Location = new System.Drawing.Point(505, 28);
-            this.btnMenosAcademico1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosAcademico1.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosAcademico1.Name = "btnMenosAcademico1";
             this.btnMenosAcademico1.Size = new System.Drawing.Size(39, 33);
             this.btnMenosAcademico1.TabIndex = 85;
@@ -1522,7 +1540,7 @@
             this.cmbEgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso1.FormattingEnabled = true;
             this.cmbEgreso1.Location = new System.Drawing.Point(192, 223);
-            this.cmbEgreso1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbEgreso1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbEgreso1.Name = "cmbEgreso1";
             this.cmbEgreso1.Size = new System.Drawing.Size(147, 24);
             this.cmbEgreso1.TabIndex = 72;
@@ -1542,7 +1560,7 @@
             this.cmbIngreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso1.FormattingEnabled = true;
             this.cmbIngreso1.Location = new System.Drawing.Point(21, 223);
-            this.cmbIngreso1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbIngreso1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbIngreso1.Name = "cmbIngreso1";
             this.cmbIngreso1.Size = new System.Drawing.Size(148, 24);
             this.cmbIngreso1.TabIndex = 69;
@@ -1562,7 +1580,7 @@
             // 
             this.txtInsitutcionSuperior1.AccessibleDescription = "OI";
             this.txtInsitutcionSuperior1.Location = new System.Drawing.Point(20, 110);
-            this.txtInsitutcionSuperior1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtInsitutcionSuperior1.Margin = new System.Windows.Forms.Padding(5);
             this.txtInsitutcionSuperior1.MaxLength = 30;
             this.txtInsitutcionSuperior1.Name = "txtInsitutcionSuperior1";
             this.txtInsitutcionSuperior1.Size = new System.Drawing.Size(523, 22);
@@ -1572,7 +1590,7 @@
             // 
             this.txtTitulo1.AccessibleDescription = "OI";
             this.txtTitulo1.Location = new System.Drawing.Point(21, 166);
-            this.txtTitulo1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTitulo1.Margin = new System.Windows.Forms.Padding(5);
             this.txtTitulo1.MaxLength = 30;
             this.txtTitulo1.Name = "txtTitulo1";
             this.txtTitulo1.Size = new System.Drawing.Size(521, 22);
@@ -1615,7 +1633,7 @@
             this.cmbNivelAcademico1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico1.FormattingEnabled = true;
             this.cmbNivelAcademico1.Location = new System.Drawing.Point(20, 48);
-            this.cmbNivelAcademico1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbNivelAcademico1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbNivelAcademico1.Name = "cmbNivelAcademico1";
             this.cmbNivelAcademico1.Size = new System.Drawing.Size(235, 24);
             this.cmbNivelAcademico1.TabIndex = 65;
@@ -1636,9 +1654,9 @@
             this.grpSuperior3.Controls.Add(this.lblAñoIngreso2);
             this.grpSuperior3.Controls.Add(this.txtTitulo2);
             this.grpSuperior3.Location = new System.Drawing.Point(11, 281);
-            this.grpSuperior3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior3.Margin = new System.Windows.Forms.Padding(5);
             this.grpSuperior3.Name = "grpSuperior3";
-            this.grpSuperior3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpSuperior3.Padding = new System.Windows.Forms.Padding(5);
             this.grpSuperior3.Size = new System.Drawing.Size(564, 249);
             this.grpSuperior3.TabIndex = 87;
             this.grpSuperior3.TabStop = false;
@@ -1650,7 +1668,7 @@
             this.cmbProgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso2.FormattingEnabled = true;
             this.cmbProgreso2.Location = new System.Drawing.Point(353, 206);
-            this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbProgreso2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbProgreso2.Name = "cmbProgreso2";
             this.cmbProgreso2.Size = new System.Drawing.Size(139, 24);
             this.cmbProgreso2.TabIndex = 87;
@@ -1672,7 +1690,7 @@
             this.btnMenosAcademico2.FlatAppearance.BorderSize = 0;
             this.btnMenosAcademico2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosAcademico2.Location = new System.Drawing.Point(497, 20);
-            this.btnMenosAcademico2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosAcademico2.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosAcademico2.Name = "btnMenosAcademico2";
             this.btnMenosAcademico2.Size = new System.Drawing.Size(39, 33);
             this.btnMenosAcademico2.TabIndex = 85;
@@ -1683,7 +1701,7 @@
             // 
             this.txtInsitutcionSuperior2.AccessibleDescription = "OII";
             this.txtInsitutcionSuperior2.Location = new System.Drawing.Point(11, 89);
-            this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtInsitutcionSuperior2.Margin = new System.Windows.Forms.Padding(5);
             this.txtInsitutcionSuperior2.MaxLength = 30;
             this.txtInsitutcionSuperior2.Name = "txtInsitutcionSuperior2";
             this.txtInsitutcionSuperior2.Size = new System.Drawing.Size(523, 22);
@@ -1694,7 +1712,7 @@
             this.cmbEgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso2.FormattingEnabled = true;
             this.cmbEgreso2.Location = new System.Drawing.Point(181, 206);
-            this.cmbEgreso2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbEgreso2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbEgreso2.Name = "cmbEgreso2";
             this.cmbEgreso2.Size = new System.Drawing.Size(147, 24);
             this.cmbEgreso2.TabIndex = 84;
@@ -1724,7 +1742,7 @@
             this.cmbNivelAcademico2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico2.FormattingEnabled = true;
             this.cmbNivelAcademico2.Location = new System.Drawing.Point(11, 31);
-            this.cmbNivelAcademico2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbNivelAcademico2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbNivelAcademico2.Name = "cmbNivelAcademico2";
             this.cmbNivelAcademico2.Size = new System.Drawing.Size(235, 24);
             this.cmbNivelAcademico2.TabIndex = 76;
@@ -1745,7 +1763,7 @@
             this.cmbIngreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso2.FormattingEnabled = true;
             this.cmbIngreso2.Location = new System.Drawing.Point(11, 206);
-            this.cmbIngreso2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbIngreso2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbIngreso2.Name = "cmbIngreso2";
             this.cmbIngreso2.Size = new System.Drawing.Size(148, 24);
             this.cmbIngreso2.TabIndex = 82;
@@ -1775,7 +1793,7 @@
             // 
             this.txtTitulo2.AccessibleDescription = "OII";
             this.txtTitulo2.Location = new System.Drawing.Point(12, 148);
-            this.txtTitulo2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtTitulo2.Margin = new System.Windows.Forms.Padding(5);
             this.txtTitulo2.MaxLength = 30;
             this.txtTitulo2.Name = "txtTitulo2";
             this.txtTitulo2.Size = new System.Drawing.Size(521, 22);
@@ -1792,14 +1810,31 @@
             this.tabLaborales.Controls.Add(this.grpExp3);
             this.tabLaborales.Controls.Add(this.grpExp1);
             this.tabLaborales.Location = new System.Drawing.Point(4, 25);
-            this.tabLaborales.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabLaborales.Margin = new System.Windows.Forms.Padding(5);
             this.tabLaborales.Name = "tabLaborales";
-            this.tabLaborales.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabLaborales.Padding = new System.Windows.Forms.Padding(5);
             this.tabLaborales.Size = new System.Drawing.Size(1415, 684);
             this.tabLaborales.TabIndex = 2;
             this.tabLaborales.Text = "Datos Laborales";
             this.tabLaborales.UseVisualStyleBackColor = true;
             this.tabLaborales.Click += new System.EventHandler(this.tabLaborales_Click);
+            // 
+            // btnAtrasLaboral
+            // 
+            this.btnAtrasLaboral.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAtrasLaboral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtrasLaboral.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAtrasLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtrasLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAtrasLaboral.Location = new System.Drawing.Point(1062, 602);
+            this.btnAtrasLaboral.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAtrasLaboral.Name = "btnAtrasLaboral";
+            this.btnAtrasLaboral.Size = new System.Drawing.Size(140, 54);
+            this.btnAtrasLaboral.TabIndex = 97;
+            this.btnAtrasLaboral.Text = "Atras";
+            this.btnAtrasLaboral.UseVisualStyleBackColor = false;
+            this.btnAtrasLaboral.Click += new System.EventHandler(this.btnAtrasLaboral_Click);
             // 
             // lblFaltanCampos2
             // 
@@ -1823,7 +1858,7 @@
             this.btnMasLaborales1.FlatAppearance.BorderSize = 0;
             this.btnMasLaborales1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasLaborales1.Location = new System.Drawing.Point(347, 27);
-            this.btnMasLaborales1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasLaborales1.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasLaborales1.Name = "btnMasLaborales1";
             this.btnMasLaborales1.Size = new System.Drawing.Size(43, 34);
             this.btnMasLaborales1.TabIndex = 95;
@@ -1849,7 +1884,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Location = new System.Drawing.Point(1212, 602);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 54);
             this.btnGuardar.TabIndex = 71;
@@ -1874,9 +1909,9 @@
             this.grpExp3.Controls.Add(this.lblPuesto3);
             this.grpExp3.Controls.Add(this.grpExp4);
             this.grpExp3.Location = new System.Drawing.Point(705, 36);
-            this.grpExp3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp3.Margin = new System.Windows.Forms.Padding(5);
             this.grpExp3.Name = "grpExp3";
-            this.grpExp3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp3.Padding = new System.Windows.Forms.Padding(5);
             this.grpExp3.Size = new System.Drawing.Size(567, 556);
             this.grpExp3.TabIndex = 94;
             this.grpExp3.TabStop = false;
@@ -1896,7 +1931,7 @@
             // nupPersonalACargo2
             // 
             this.nupPersonalACargo2.Location = new System.Drawing.Point(376, 180);
-            this.nupPersonalACargo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupPersonalACargo2.Margin = new System.Windows.Forms.Padding(4);
             this.nupPersonalACargo2.Name = "nupPersonalACargo2";
             this.nupPersonalACargo2.Size = new System.Drawing.Size(160, 22);
             this.nupPersonalACargo2.TabIndex = 104;
@@ -1905,7 +1940,7 @@
             // 
             this.txtPuesto2.AccessibleDescription = "OII";
             this.txtPuesto2.Location = new System.Drawing.Point(20, 63);
-            this.txtPuesto2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPuesto2.Margin = new System.Windows.Forms.Padding(5);
             this.txtPuesto2.MaxLength = 30;
             this.txtPuesto2.Name = "txtPuesto2";
             this.txtPuesto2.Size = new System.Drawing.Size(523, 22);
@@ -1918,7 +1953,7 @@
             this.btnMenosLaboral3.FlatAppearance.BorderSize = 0;
             this.btnMenosLaboral3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosLaboral3.Location = new System.Drawing.Point(505, 20);
-            this.btnMenosLaboral3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosLaboral3.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosLaboral3.Name = "btnMenosLaboral3";
             this.btnMenosLaboral3.Size = new System.Drawing.Size(39, 33);
             this.btnMenosLaboral3.TabIndex = 101;
@@ -1929,7 +1964,7 @@
             // 
             this.txtEmpresa2.AccessibleDescription = "OII";
             this.txtEmpresa2.Location = new System.Drawing.Point(20, 121);
-            this.txtEmpresa2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmpresa2.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmpresa2.MaxLength = 30;
             this.txtEmpresa2.Name = "txtEmpresa2";
             this.txtEmpresa2.Size = new System.Drawing.Size(523, 22);
@@ -1955,7 +1990,7 @@
             this.btnMasLaborales4.FlatAppearance.BorderSize = 0;
             this.btnMasLaborales4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasLaborales4.Location = new System.Drawing.Point(507, 230);
-            this.btnMasLaborales4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasLaborales4.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasLaborales4.Name = "btnMasLaborales4";
             this.btnMasLaborales4.Size = new System.Drawing.Size(43, 34);
             this.btnMasLaborales4.TabIndex = 86;
@@ -1967,7 +2002,7 @@
             this.cmbLaboralEgreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso2.FormattingEnabled = true;
             this.cmbLaboralEgreso2.Location = new System.Drawing.Point(199, 180);
-            this.cmbLaboralEgreso2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralEgreso2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralEgreso2.Name = "cmbLaboralEgreso2";
             this.cmbLaboralEgreso2.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralEgreso2.TabIndex = 72;
@@ -1987,7 +2022,7 @@
             this.cmbLaboralIngreso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso2.FormattingEnabled = true;
             this.cmbLaboralIngreso2.Location = new System.Drawing.Point(20, 178);
-            this.cmbLaboralIngreso2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralIngreso2.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralIngreso2.Name = "cmbLaboralIngreso2";
             this.cmbLaboralIngreso2.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralIngreso2.TabIndex = 69;
@@ -2037,9 +2072,9 @@
             this.grpExp4.Controls.Add(this.lblIngresoLaboral4);
             this.grpExp4.Controls.Add(this.lblPuesto4);
             this.grpExp4.Location = new System.Drawing.Point(11, 261);
-            this.grpExp4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp4.Margin = new System.Windows.Forms.Padding(5);
             this.grpExp4.Name = "grpExp4";
-            this.grpExp4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp4.Padding = new System.Windows.Forms.Padding(5);
             this.grpExp4.Size = new System.Drawing.Size(545, 273);
             this.grpExp4.TabIndex = 87;
             this.grpExp4.TabStop = false;
@@ -2049,7 +2084,7 @@
             // nupPersonalACargo3
             // 
             this.nupPersonalACargo3.Location = new System.Drawing.Point(365, 202);
-            this.nupPersonalACargo3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupPersonalACargo3.Margin = new System.Windows.Forms.Padding(4);
             this.nupPersonalACargo3.Name = "nupPersonalACargo3";
             this.nupPersonalACargo3.Size = new System.Drawing.Size(160, 22);
             this.nupPersonalACargo3.TabIndex = 105;
@@ -2058,7 +2093,7 @@
             // 
             this.txtPuesto3.AccessibleDescription = "OIII";
             this.txtPuesto3.Location = new System.Drawing.Point(8, 78);
-            this.txtPuesto3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPuesto3.Margin = new System.Windows.Forms.Padding(5);
             this.txtPuesto3.MaxLength = 30;
             this.txtPuesto3.Name = "txtPuesto3";
             this.txtPuesto3.Size = new System.Drawing.Size(523, 22);
@@ -2071,7 +2106,7 @@
             this.btnMenosLaboral4.FlatAppearance.BorderSize = 0;
             this.btnMenosLaboral4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosLaboral4.Location = new System.Drawing.Point(497, 21);
-            this.btnMenosLaboral4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosLaboral4.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosLaboral4.Name = "btnMenosLaboral4";
             this.btnMenosLaboral4.Size = new System.Drawing.Size(39, 33);
             this.btnMenosLaboral4.TabIndex = 85;
@@ -2083,7 +2118,7 @@
             this.cmbLaboralEgreso3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso3.FormattingEnabled = true;
             this.cmbLaboralEgreso3.Location = new System.Drawing.Point(188, 199);
-            this.cmbLaboralEgreso3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralEgreso3.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralEgreso3.Name = "cmbLaboralEgreso3";
             this.cmbLaboralEgreso3.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralEgreso3.TabIndex = 98;
@@ -2092,7 +2127,7 @@
             // 
             this.txtEmpresa3.AccessibleDescription = "OIII";
             this.txtEmpresa3.Location = new System.Drawing.Point(9, 140);
-            this.txtEmpresa3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmpresa3.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmpresa3.MaxLength = 30;
             this.txtEmpresa3.Name = "txtEmpresa3";
             this.txtEmpresa3.Size = new System.Drawing.Size(523, 22);
@@ -2114,7 +2149,7 @@
             this.cmbLaboralIngreso3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso3.FormattingEnabled = true;
             this.cmbLaboralIngreso3.Location = new System.Drawing.Point(9, 198);
-            this.cmbLaboralIngreso3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralIngreso3.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralIngreso3.Name = "cmbLaboralIngreso3";
             this.cmbLaboralIngreso3.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralIngreso3.TabIndex = 96;
@@ -2178,9 +2213,9 @@
             this.grpExp1.Controls.Add(this.lblPuesto1);
             this.grpExp1.Controls.Add(this.grpExp2);
             this.grpExp1.Location = new System.Drawing.Point(87, 36);
-            this.grpExp1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp1.Margin = new System.Windows.Forms.Padding(5);
             this.grpExp1.Name = "grpExp1";
-            this.grpExp1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp1.Padding = new System.Windows.Forms.Padding(5);
             this.grpExp1.Size = new System.Drawing.Size(567, 569);
             this.grpExp1.TabIndex = 71;
             this.grpExp1.TabStop = false;
@@ -2205,7 +2240,7 @@
             this.btnMenosLaboral1.FlatAppearance.BorderSize = 0;
             this.btnMenosLaboral1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosLaboral1.Location = new System.Drawing.Point(507, 18);
-            this.btnMenosLaboral1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosLaboral1.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosLaboral1.Name = "btnMenosLaboral1";
             this.btnMenosLaboral1.Size = new System.Drawing.Size(39, 33);
             this.btnMenosLaboral1.TabIndex = 104;
@@ -2215,7 +2250,7 @@
             // nupPersonalACargo
             // 
             this.nupPersonalACargo.Location = new System.Drawing.Point(376, 183);
-            this.nupPersonalACargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupPersonalACargo.Margin = new System.Windows.Forms.Padding(4);
             this.nupPersonalACargo.Name = "nupPersonalACargo";
             this.nupPersonalACargo.Size = new System.Drawing.Size(160, 22);
             this.nupPersonalACargo.TabIndex = 93;
@@ -2224,7 +2259,7 @@
             // 
             this.txtPuesto.AccessibleDescription = "O";
             this.txtPuesto.Location = new System.Drawing.Point(19, 63);
-            this.txtPuesto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPuesto.Margin = new System.Windows.Forms.Padding(5);
             this.txtPuesto.MaxLength = 30;
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(523, 22);
@@ -2234,7 +2269,7 @@
             // 
             this.txtEmpresa.AccessibleDescription = "O";
             this.txtEmpresa.Location = new System.Drawing.Point(20, 121);
-            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmpresa.MaxLength = 30;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(523, 22);
@@ -2260,7 +2295,7 @@
             this.btnMasLaborales2.FlatAppearance.BorderSize = 0;
             this.btnMasLaborales2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasLaborales2.Location = new System.Drawing.Point(507, 230);
-            this.btnMasLaborales2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasLaborales2.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasLaborales2.Name = "btnMasLaborales2";
             this.btnMasLaborales2.Size = new System.Drawing.Size(43, 34);
             this.btnMasLaborales2.TabIndex = 86;
@@ -2272,7 +2307,7 @@
             this.cmbLaboralEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso.FormattingEnabled = true;
             this.cmbLaboralEgreso.Location = new System.Drawing.Point(199, 180);
-            this.cmbLaboralEgreso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralEgreso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralEgreso.Name = "cmbLaboralEgreso";
             this.cmbLaboralEgreso.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralEgreso.TabIndex = 72;
@@ -2292,7 +2327,7 @@
             this.cmbLaboralIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso.FormattingEnabled = true;
             this.cmbLaboralIngreso.Location = new System.Drawing.Point(20, 178);
-            this.cmbLaboralIngreso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralIngreso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralIngreso.Name = "cmbLaboralIngreso";
             this.cmbLaboralIngreso.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralIngreso.TabIndex = 69;
@@ -2344,9 +2379,9 @@
             this.grpExp2.Controls.Add(this.lblIngresoLaboral2);
             this.grpExp2.Controls.Add(this.lblPuesto2);
             this.grpExp2.Location = new System.Drawing.Point(11, 261);
-            this.grpExp2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp2.Margin = new System.Windows.Forms.Padding(5);
             this.grpExp2.Name = "grpExp2";
-            this.grpExp2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.grpExp2.Padding = new System.Windows.Forms.Padding(5);
             this.grpExp2.Size = new System.Drawing.Size(545, 298);
             this.grpExp2.TabIndex = 87;
             this.grpExp2.TabStop = false;
@@ -2361,7 +2396,7 @@
             this.btnMasLaborales3.FlatAppearance.BorderSize = 0;
             this.btnMasLaborales3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasLaborales3.Location = new System.Drawing.Point(492, 254);
-            this.btnMasLaborales3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMasLaborales3.Margin = new System.Windows.Forms.Padding(5);
             this.btnMasLaborales3.Name = "btnMasLaborales3";
             this.btnMasLaborales3.Size = new System.Drawing.Size(43, 34);
             this.btnMasLaborales3.TabIndex = 101;
@@ -2371,7 +2406,7 @@
             // nupPersonalACargo1
             // 
             this.nupPersonalACargo1.Location = new System.Drawing.Point(365, 206);
-            this.nupPersonalACargo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupPersonalACargo1.Margin = new System.Windows.Forms.Padding(4);
             this.nupPersonalACargo1.Name = "nupPersonalACargo1";
             this.nupPersonalACargo1.Size = new System.Drawing.Size(160, 22);
             this.nupPersonalACargo1.TabIndex = 94;
@@ -2380,7 +2415,7 @@
             // 
             this.txtPuesto1.AccessibleDescription = "OI";
             this.txtPuesto1.Location = new System.Drawing.Point(8, 82);
-            this.txtPuesto1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPuesto1.Margin = new System.Windows.Forms.Padding(5);
             this.txtPuesto1.MaxLength = 30;
             this.txtPuesto1.Name = "txtPuesto1";
             this.txtPuesto1.Size = new System.Drawing.Size(523, 22);
@@ -2403,7 +2438,7 @@
             this.btnMenosLaboral2.FlatAppearance.BorderSize = 0;
             this.btnMenosLaboral2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenosLaboral2.Location = new System.Drawing.Point(497, 21);
-            this.btnMenosLaboral2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMenosLaboral2.Margin = new System.Windows.Forms.Padding(5);
             this.btnMenosLaboral2.Name = "btnMenosLaboral2";
             this.btnMenosLaboral2.Size = new System.Drawing.Size(39, 33);
             this.btnMenosLaboral2.TabIndex = 85;
@@ -2415,7 +2450,7 @@
             this.cmbLaboralEgreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso1.FormattingEnabled = true;
             this.cmbLaboralEgreso1.Location = new System.Drawing.Point(188, 199);
-            this.cmbLaboralEgreso1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralEgreso1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralEgreso1.Name = "cmbLaboralEgreso1";
             this.cmbLaboralEgreso1.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralEgreso1.TabIndex = 98;
@@ -2424,7 +2459,7 @@
             // 
             this.txtEmpresa1.AccessibleDescription = "OI";
             this.txtEmpresa1.Location = new System.Drawing.Point(9, 140);
-            this.txtEmpresa1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmpresa1.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmpresa1.MaxLength = 30;
             this.txtEmpresa1.Name = "txtEmpresa1";
             this.txtEmpresa1.Size = new System.Drawing.Size(523, 22);
@@ -2445,7 +2480,7 @@
             this.cmbLaboralIngreso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso1.FormattingEnabled = true;
             this.cmbLaboralIngreso1.Location = new System.Drawing.Point(9, 198);
-            this.cmbLaboralIngreso1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbLaboralIngreso1.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLaboralIngreso1.Name = "cmbLaboralIngreso1";
             this.cmbLaboralIngreso1.Size = new System.Drawing.Size(157, 24);
             this.cmbLaboralIngreso1.TabIndex = 96;
@@ -2497,42 +2532,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnAtrasAcademico
-            // 
-            this.btnAtrasAcademico.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAtrasAcademico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAtrasAcademico.Enabled = false;
-            this.btnAtrasAcademico.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAtrasAcademico.FlatAppearance.BorderSize = 0;
-            this.btnAtrasAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtrasAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasAcademico.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAtrasAcademico.Location = new System.Drawing.Point(1062, 602);
-            this.btnAtrasAcademico.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAtrasAcademico.Name = "btnAtrasAcademico";
-            this.btnAtrasAcademico.Size = new System.Drawing.Size(140, 54);
-            this.btnAtrasAcademico.TabIndex = 92;
-            this.btnAtrasAcademico.Text = "Atras";
-            this.btnAtrasAcademico.UseVisualStyleBackColor = false;
-            this.btnAtrasAcademico.Click += new System.EventHandler(this.btnAtrasAcademico_Click);
-            // 
-            // btnAtrasLaboral
-            // 
-            this.btnAtrasLaboral.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAtrasLaboral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAtrasLaboral.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAtrasLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtrasLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAtrasLaboral.Location = new System.Drawing.Point(1062, 602);
-            this.btnAtrasLaboral.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAtrasLaboral.Name = "btnAtrasLaboral";
-            this.btnAtrasLaboral.Size = new System.Drawing.Size(140, 54);
-            this.btnAtrasLaboral.TabIndex = 97;
-            this.btnAtrasLaboral.Text = "Atras";
-            this.btnAtrasLaboral.UseVisualStyleBackColor = false;
-            this.btnAtrasLaboral.Click += new System.EventHandler(this.btnAtrasLaboral_Click);
-            // 
             // frmAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2541,7 +2540,7 @@
             this.ClientSize = new System.Drawing.Size(1423, 713);
             this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAltaPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración del Personal - Altas";
@@ -2773,10 +2772,10 @@
         private System.Windows.Forms.Label lblFaltanCampos;
         private System.Windows.Forms.Label lblFaltanCampos1;
         private System.Windows.Forms.Label lblFaltanCampos2;
-        private System.Windows.Forms.DateTimePicker dttFechaAlta;
         private System.Windows.Forms.Label lblFechaDeIngreso;
         private System.Windows.Forms.GroupBox grpIngles;
         private System.Windows.Forms.Button btnAtrasAcademico;
         private System.Windows.Forms.Button btnAtrasLaboral;
+        public System.Windows.Forms.DateTimePicker dttFechaAlta;
     }
 }

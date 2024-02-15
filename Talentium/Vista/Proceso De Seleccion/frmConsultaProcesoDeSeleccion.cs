@@ -283,10 +283,16 @@ namespace Vista
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
-             frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
-             formModificar.ShowDialog();
-             FrmModificarProcesoDeSeleccion_DataGridUpdated();
+            bool esCandidato = true;
+            frmAltaPersonal altaEmpleado = new frmAltaPersonal(esCandidato);
+            string cuil = txtCuilCuit.Text;
+            DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
+            int id_persona = (int)DTCandidatos.Rows[0]["ID"];
+            altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.Show();
+            //frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
+            // formModificar.ShowDialog();
+            // FrmModificarProcesoDeSeleccion_DataGridUpdated();
             
            
         }
@@ -313,7 +319,10 @@ namespace Vista
             string cuil = txtCuilCuit.Text;
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
             int id_persona = (int)DTCandidatos.Rows[0]["ID"];
+            
             altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.dttFechaAlta.Enabled = true;
+            altaEmpleado.dttFechaAlta.Value = DateTime.Today;
             altaEmpleado.Show();
             //if (dtgCandidatos.SelectedRows.Count > 0)
             //{
