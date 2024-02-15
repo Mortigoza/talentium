@@ -2726,7 +2726,6 @@
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.ComboBox cmbConvenio;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label lblConvenio;
         private System.Windows.Forms.TextBox txtPuesto2;
@@ -2777,5 +2776,6 @@
         private System.Windows.Forms.Button btnAtrasAcademico;
         private System.Windows.Forms.Button btnAtrasLaboral;
         public System.Windows.Forms.DateTimePicker dttFechaAlta;
+        public System.Windows.Forms.ComboBox cmbConvenio;
     }
 }

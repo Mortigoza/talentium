@@ -289,32 +289,15 @@ namespace Vista
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
             int id_persona = (int)DTCandidatos.Rows[0]["ID"];
             altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.cmbConvenio.Enabled = false;
             altaEmpleado.Show();
-            //frmModificarProcesoDeSeleccion formModificar = new frmModificarProcesoDeSeleccion(DatosCandidato());
-            // formModificar.ShowDialog();
-            // FrmModificarProcesoDeSeleccion_DataGridUpdated();
-            
-           
         }
         public void FrmModificarProcesoDeSeleccion_DataGridUpdated()
         {
-            //// Actualiza el DataGridView, por ejemplo, volviendo a cargar los datos.
-            //string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
-            //int id_puesto = cmbPuesto.SelectedValue != null ? (int)cmbPuesto.SelectedValue : -1;
-            //string etapa = string.IsNullOrEmpty(cmbEtapa.SelectedItem as string) ? null : cmbEtapa.SelectedValue as string;
-            //DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil, id_puesto, etapa);
-            //dtgCandidatos.DataSource = DTCandidatos;
-            //for (int i = 0; i < dtgCandidatos.Rows.Count - 1; i++)
-            //{
-            //    int id = Convert.ToInt32(DTCandidatos.Rows[i]["ID"]);
-            //    dtgCandidatos.Rows[i].Tag = id;
-            //}
-            //CargarColumnasDataGrid();
         }
-
         private void btnIngresarEmpleado_Click(object sender, EventArgs e)
         {
-            bool esCandidato = true;
+            bool esCandidato = false;
             frmAltaPersonal altaEmpleado = new frmAltaPersonal(esCandidato);
             string cuil = txtCuilCuit.Text;
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
@@ -324,50 +307,13 @@ namespace Vista
             altaEmpleado.dttFechaAlta.Enabled = true;
             altaEmpleado.dttFechaAlta.Value = DateTime.Today;
             altaEmpleado.Show();
-            //if (dtgCandidatos.SelectedRows.Count > 0)
-            //{
-            //    DatosCandidato();
-            //    //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-            //    //frmAltaPersonal.ShowDialog();
-            //}
         }
-
-        private DatosCandidato DatosCandidato()
-        {
-            DataGridViewRow filaSeleccionada = dtgCandidatos.SelectedRows[0];
-
-            DatosCandidato datosSeleccionados = new DatosCandidato
-            {
-                CuilCuit = filaSeleccionada.Cells["Cuil"].Value.ToString(),
-                Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString(),
-                Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString(),
-                Celular = filaSeleccionada.Cells["Celular"].Value.ToString(),
-                Alternativo = filaSeleccionada.Cells["Alternativo"].Value.ToString(),
-                Correo = filaSeleccionada.Cells["Correo"].Value.ToString(),
-                Nacimiento = Convert.ToDateTime(filaSeleccionada.Cells["Nacimiento"].Value),
-                Provincia = filaSeleccionada.Cells["Provincia"].Value.ToString(),
-                Partido = filaSeleccionada.Cells["Partido"].Value.ToString(),
-                Localidad = filaSeleccionada.Cells["Localidad"].Value.ToString(),
-                Calle = filaSeleccionada.Cells["Calle"].Value.ToString(),
-                Nro = Convert.ToInt32(filaSeleccionada.Cells["Nro"].Value),
-                Piso = filaSeleccionada.Cells["Piso"].Value.ToString(),
-                Dpto = filaSeleccionada.Cells["Dpto"].Value.ToString(),
-                Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString()
-            };
-
-            return datosSeleccionados;
-        }
-
         private void frmConsultaProcesoDeSeleccion_Load(object sender, EventArgs e)
         {
-
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
-
         private void txtCuilCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) 
