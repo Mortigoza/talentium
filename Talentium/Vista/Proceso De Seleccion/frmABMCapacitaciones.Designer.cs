@@ -30,7 +30,7 @@
         {
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.btnBaja = new System.Windows.Forms.Button();
             this.dtgCapacitacion = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,34 +38,34 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpModificacion = new System.Windows.Forms.GroupBox();
+            this.chcObligatorioMod = new System.Windows.Forms.CheckBox();
             this.txtTiempoEstimadoMod = new System.Windows.Forms.MaskedTextBox();
             this.cmbExternaInternaMod = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblNivelMod = new System.Windows.Forms.Label();
             this.cmbNivelMod = new System.Windows.Forms.ComboBox();
             this.cmbAreaMod = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblDuracion2 = new System.Windows.Forms.Label();
+            this.lblAreaMod = new System.Windows.Forms.Label();
+            this.lblTipoMod = new System.Windows.Forms.Label();
+            this.lblDuracionMod = new System.Windows.Forms.Label();
             this.btnCancelarMod = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnGuardarMod = new System.Windows.Forms.Button();
+            this.lblNombreMod = new System.Windows.Forms.Label();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.grpAlta = new System.Windows.Forms.GroupBox();
             this.chcObligatorioAlta = new System.Windows.Forms.CheckBox();
             this.txtTiempoEstimadoAlta = new System.Windows.Forms.MaskedTextBox();
             this.cmbExternaInternaAlta = new System.Windows.Forms.ComboBox();
             this.cmbAreaAlta = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblArea = new System.Windows.Forms.Label();
             this.cmbNivelAlta = new System.Windows.Forms.ComboBox();
-            this.btnCancelarAlta = new System.Windows.Forms.Button();
-            this.btnAlta = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.lblDuracion = new System.Windows.Forms.Label();
             this.lblAltaCapacitacion = new System.Windows.Forms.Label();
             this.txtNombreAlta = new System.Windows.Forms.TextBox();
-            this.btnDtgMod = new System.Windows.Forms.Button();
-            this.chcObligatorioMod = new System.Windows.Forms.CheckBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
@@ -93,16 +93,16 @@
             this.txtFiltro.Size = new System.Drawing.Size(274, 20);
             this.txtFiltro.TabIndex = 12;
             // 
-            // label9
+            // lblFiltro
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 74);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Filtrar por nombre de capacitacion";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(61, 74);
+            this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(167, 13);
+            this.lblFiltro.TabIndex = 11;
+            this.lblFiltro.Text = "Filtrar por nombre de capacitacion";
+            this.lblFiltro.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnBaja
             // 
@@ -171,15 +171,15 @@
             this.grpModificacion.Controls.Add(this.chcObligatorioMod);
             this.grpModificacion.Controls.Add(this.txtTiempoEstimadoMod);
             this.grpModificacion.Controls.Add(this.cmbExternaInternaMod);
-            this.grpModificacion.Controls.Add(this.label6);
+            this.grpModificacion.Controls.Add(this.lblNivelMod);
             this.grpModificacion.Controls.Add(this.cmbNivelMod);
             this.grpModificacion.Controls.Add(this.cmbAreaMod);
-            this.grpModificacion.Controls.Add(this.label7);
-            this.grpModificacion.Controls.Add(this.label8);
-            this.grpModificacion.Controls.Add(this.lblDuracion2);
+            this.grpModificacion.Controls.Add(this.lblAreaMod);
+            this.grpModificacion.Controls.Add(this.lblTipoMod);
+            this.grpModificacion.Controls.Add(this.lblDuracionMod);
             this.grpModificacion.Controls.Add(this.btnCancelarMod);
-            this.grpModificacion.Controls.Add(this.btnModificar);
-            this.grpModificacion.Controls.Add(this.label5);
+            this.grpModificacion.Controls.Add(this.btnGuardarMod);
+            this.grpModificacion.Controls.Add(this.lblNombreMod);
             this.grpModificacion.Controls.Add(this.txtNombreMod);
             this.grpModificacion.Location = new System.Drawing.Point(738, 349);
             this.grpModificacion.Margin = new System.Windows.Forms.Padding(4);
@@ -189,6 +189,16 @@
             this.grpModificacion.TabIndex = 8;
             this.grpModificacion.TabStop = false;
             this.grpModificacion.Text = "Modificacion";
+            // 
+            // chcObligatorioMod
+            // 
+            this.chcObligatorioMod.AutoSize = true;
+            this.chcObligatorioMod.Location = new System.Drawing.Point(317, 202);
+            this.chcObligatorioMod.Name = "chcObligatorioMod";
+            this.chcObligatorioMod.Size = new System.Drawing.Size(95, 17);
+            this.chcObligatorioMod.TabIndex = 19;
+            this.chcObligatorioMod.Text = "Es obligatoria?";
+            this.chcObligatorioMod.UseVisualStyleBackColor = true;
             // 
             // txtTiempoEstimadoMod
             // 
@@ -213,15 +223,15 @@
             this.cmbExternaInternaMod.Size = new System.Drawing.Size(120, 21);
             this.cmbExternaInternaMod.TabIndex = 17;
             // 
-            // label6
+            // lblNivelMod
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(314, 59);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Nivel";
+            this.lblNivelMod.AutoSize = true;
+            this.lblNivelMod.Location = new System.Drawing.Point(314, 59);
+            this.lblNivelMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNivelMod.Name = "lblNivelMod";
+            this.lblNivelMod.Size = new System.Drawing.Size(31, 13);
+            this.lblNivelMod.TabIndex = 16;
+            this.lblNivelMod.Text = "Nivel";
             // 
             // cmbNivelMod
             // 
@@ -243,32 +253,32 @@
             this.cmbAreaMod.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaMod.TabIndex = 21;
             // 
-            // label7
+            // lblAreaMod
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Área";
+            this.lblAreaMod.AutoSize = true;
+            this.lblAreaMod.Location = new System.Drawing.Point(314, 157);
+            this.lblAreaMod.Name = "lblAreaMod";
+            this.lblAreaMod.Size = new System.Drawing.Size(29, 13);
+            this.lblAreaMod.TabIndex = 20;
+            this.lblAreaMod.Text = "Área";
             // 
-            // label8
+            // lblTipoMod
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Tipo";
+            this.lblTipoMod.AutoSize = true;
+            this.lblTipoMod.Location = new System.Drawing.Point(27, 157);
+            this.lblTipoMod.Name = "lblTipoMod";
+            this.lblTipoMod.Size = new System.Drawing.Size(28, 13);
+            this.lblTipoMod.TabIndex = 19;
+            this.lblTipoMod.Text = "Tipo";
             // 
-            // lblDuracion2
+            // lblDuracionMod
             // 
-            this.lblDuracion2.AutoSize = true;
-            this.lblDuracion2.Location = new System.Drawing.Point(182, 157);
-            this.lblDuracion2.Name = "lblDuracion2";
-            this.lblDuracion2.Size = new System.Drawing.Size(50, 13);
-            this.lblDuracion2.TabIndex = 18;
-            this.lblDuracion2.Text = "Duración";
+            this.lblDuracionMod.AutoSize = true;
+            this.lblDuracionMod.Location = new System.Drawing.Point(182, 157);
+            this.lblDuracionMod.Name = "lblDuracionMod";
+            this.lblDuracionMod.Size = new System.Drawing.Size(50, 13);
+            this.lblDuracionMod.TabIndex = 18;
+            this.lblDuracionMod.Text = "Duración";
             // 
             // btnCancelarMod
             // 
@@ -284,28 +294,28 @@
             this.btnCancelarMod.UseVisualStyleBackColor = false;
             this.btnCancelarMod.Click += new System.EventHandler(this.btnCancelarMod_Click);
             // 
-            // btnModificar
+            // btnGuardarMod
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(459, 239);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 29);
-            this.btnModificar.TabIndex = 10;
-            this.btnModificar.Text = "Guardar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardarMod.Location = new System.Drawing.Point(459, 239);
+            this.btnGuardarMod.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarMod.Name = "btnGuardarMod";
+            this.btnGuardarMod.Size = new System.Drawing.Size(75, 29);
+            this.btnGuardarMod.TabIndex = 10;
+            this.btnGuardarMod.Text = "Guardar";
+            this.btnGuardarMod.UseVisualStyleBackColor = false;
+            this.btnGuardarMod.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // label5
+            // lblNombreMod
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nombre";
+            this.lblNombreMod.AutoSize = true;
+            this.lblNombreMod.Location = new System.Drawing.Point(27, 59);
+            this.lblNombreMod.Name = "lblNombreMod";
+            this.lblNombreMod.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreMod.TabIndex = 5;
+            this.lblNombreMod.Text = "Nombre";
             // 
             // txtNombreMod
             // 
@@ -322,12 +332,12 @@
             this.grpAlta.Controls.Add(this.txtTiempoEstimadoAlta);
             this.grpAlta.Controls.Add(this.cmbExternaInternaAlta);
             this.grpAlta.Controls.Add(this.cmbAreaAlta);
-            this.grpAlta.Controls.Add(this.label10);
+            this.grpAlta.Controls.Add(this.lblArea);
             this.grpAlta.Controls.Add(this.cmbNivelAlta);
-            this.grpAlta.Controls.Add(this.btnCancelarAlta);
-            this.grpAlta.Controls.Add(this.btnAlta);
-            this.grpAlta.Controls.Add(this.label4);
-            this.grpAlta.Controls.Add(this.label3);
+            this.grpAlta.Controls.Add(this.btnCancelar);
+            this.grpAlta.Controls.Add(this.btnGuardar);
+            this.grpAlta.Controls.Add(this.lblNivel);
+            this.grpAlta.Controls.Add(this.lblTipo);
             this.grpAlta.Controls.Add(this.lblDuracion);
             this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
@@ -383,14 +393,14 @@
             this.cmbAreaAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaAlta.TabIndex = 15;
             // 
-            // label10
+            // lblArea
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(314, 114);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Área";
+            this.lblArea.AutoSize = true;
+            this.lblArea.Location = new System.Drawing.Point(314, 114);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(29, 13);
+            this.lblArea.TabIndex = 14;
+            this.lblArea.Text = "Área";
             // 
             // cmbNivelAlta
             // 
@@ -402,52 +412,52 @@
             this.cmbNivelAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbNivelAlta.TabIndex = 13;
             // 
-            // btnCancelarAlta
+            // btnCancelar
             // 
-            this.btnCancelarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnCancelarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelarAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelarAlta.Location = new System.Drawing.Point(351, 204);
-            this.btnCancelarAlta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelarAlta.Name = "btnCancelarAlta";
-            this.btnCancelarAlta.Size = new System.Drawing.Size(75, 29);
-            this.btnCancelarAlta.TabIndex = 10;
-            this.btnCancelarAlta.Text = "Cancelar";
-            this.btnCancelarAlta.UseVisualStyleBackColor = false;
-            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.Location = new System.Drawing.Point(351, 204);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 29);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
-            // btnAlta
+            // btnGuardar
             // 
-            this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlta.Location = new System.Drawing.Point(459, 204);
-            this.btnAlta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 29);
-            this.btnAlta.TabIndex = 9;
-            this.btnAlta.Text = "Guardar";
-            this.btnAlta.UseVisualStyleBackColor = false;
-            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardar.Location = new System.Drawing.Point(459, 204);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 29);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnAlta_Click);
             // 
-            // label4
+            // lblNivel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Nivel";
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.Location = new System.Drawing.Point(314, 41);
+            this.lblNivel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(31, 13);
+            this.lblNivel.TabIndex = 7;
+            this.lblNivel.Text = "Nivel";
             // 
-            // label3
+            // lblTipo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Tipo";
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(27, 113);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(28, 13);
+            this.lblTipo.TabIndex = 6;
+            this.lblTipo.Text = "Tipo";
             // 
             // lblDuracion
             // 
@@ -475,29 +485,19 @@
             this.txtNombreAlta.Size = new System.Drawing.Size(261, 20);
             this.txtNombreAlta.TabIndex = 0;
             // 
-            // btnDtgMod
+            // btnModificar
             // 
-            this.btnDtgMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnDtgMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDtgMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDtgMod.Location = new System.Drawing.Point(458, 547);
-            this.btnDtgMod.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDtgMod.Name = "btnDtgMod";
-            this.btnDtgMod.Size = new System.Drawing.Size(110, 31);
-            this.btnDtgMod.TabIndex = 14;
-            this.btnDtgMod.Text = "Modificar";
-            this.btnDtgMod.UseVisualStyleBackColor = false;
-            this.btnDtgMod.Click += new System.EventHandler(this.btnDtgMod_Click);
-            // 
-            // chcObligatorioMod
-            // 
-            this.chcObligatorioMod.AutoSize = true;
-            this.chcObligatorioMod.Location = new System.Drawing.Point(317, 202);
-            this.chcObligatorioMod.Name = "chcObligatorioMod";
-            this.chcObligatorioMod.Size = new System.Drawing.Size(95, 17);
-            this.chcObligatorioMod.TabIndex = 19;
-            this.chcObligatorioMod.Text = "Es obligatoria?";
-            this.chcObligatorioMod.UseVisualStyleBackColor = true;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificar.Location = new System.Drawing.Point(458, 547);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(110, 31);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
             // frmABMCapacitaciones
             // 
@@ -505,10 +505,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 682);
-            this.Controls.Add(this.btnDtgMod);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgCapacitacion);
             this.Controls.Add(this.grpModificacion);
@@ -532,7 +532,7 @@
 
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.DataGridView dtgCapacitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -541,29 +541,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.GroupBox grpModificacion;
         private System.Windows.Forms.ComboBox cmbAreaMod;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblDuracion2;
+        private System.Windows.Forms.Label lblAreaMod;
+        private System.Windows.Forms.Label lblTipoMod;
+        private System.Windows.Forms.Label lblDuracionMod;
         private System.Windows.Forms.Button btnCancelarMod;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnGuardarMod;
+        private System.Windows.Forms.Label lblNombreMod;
         private System.Windows.Forms.TextBox txtNombreMod;
         private System.Windows.Forms.GroupBox grpAlta;
         private System.Windows.Forms.ComboBox cmbAreaAlta;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbNivelAlta;
-        private System.Windows.Forms.Button btnCancelarAlta;
-        private System.Windows.Forms.Button btnAlta;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.Label lblAltaCapacitacion;
         private System.Windows.Forms.TextBox txtNombreAlta;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNivelMod;
         private System.Windows.Forms.ComboBox cmbNivelMod;
         private System.Windows.Forms.ComboBox cmbExternaInternaMod;
         private System.Windows.Forms.ComboBox cmbExternaInternaAlta;
-        private System.Windows.Forms.Button btnDtgMod;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoAlta;
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
         private System.Windows.Forms.CheckBox chcObligatorioAlta;
