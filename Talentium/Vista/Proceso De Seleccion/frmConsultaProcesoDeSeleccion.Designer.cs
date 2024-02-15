@@ -224,7 +224,7 @@
             // lblCuilLlenar
             // 
             this.lblCuilLlenar.AutoSize = true;
-            this.lblCuilLlenar.Location = new System.Drawing.Point(129, 151);
+            this.lblCuilLlenar.Location = new System.Drawing.Point(128, 151);
             this.lblCuilLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuilLlenar.Name = "lblCuilLlenar";
             this.lblCuilLlenar.Size = new System.Drawing.Size(0, 16);
@@ -244,7 +244,7 @@
             // lblNombreLlenar
             // 
             this.lblNombreLlenar.AutoSize = true;
-            this.lblNombreLlenar.Location = new System.Drawing.Point(371, 151);
+            this.lblNombreLlenar.Location = new System.Drawing.Point(359, 151);
             this.lblNombreLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreLlenar.Name = "lblNombreLlenar";
             this.lblNombreLlenar.Size = new System.Drawing.Size(0, 16);
@@ -263,7 +263,7 @@
             // lblApellidoLlenar
             // 
             this.lblApellidoLlenar.AutoSize = true;
-            this.lblApellidoLlenar.Location = new System.Drawing.Point(660, 150);
+            this.lblApellidoLlenar.Location = new System.Drawing.Point(648, 150);
             this.lblApellidoLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidoLlenar.Name = "lblApellidoLlenar";
             this.lblApellidoLlenar.Size = new System.Drawing.Size(0, 16);
@@ -274,10 +274,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 466);
-            this.Controls.Add(this.lblApellidoLlenar);
             this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.lblNombreLlenar);
             this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblApellidoLlenar);
+            this.Controls.Add(this.lblNombreLlenar);
             this.Controls.Add(this.lblCuilLlenar);
             this.Controls.Add(this.lblCuil);
             this.Controls.Add(this.btnModificarCandidato);

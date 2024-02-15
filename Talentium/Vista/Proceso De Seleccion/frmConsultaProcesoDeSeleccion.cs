@@ -38,7 +38,7 @@ namespace Vista
             {
                 dtgCandidatos.Rows[i].Cells["Etapa"].Value = lista.Rows[i]["Etapas"];
             }
-
+            
         }
         private void txtCuilCuit_Leave(object sender, EventArgs e)
         {
@@ -149,6 +149,34 @@ namespace Vista
                 {
                     MessageBox.Show("No hay resultados que coincidan con la búsqueda.");
                 }
+            }
+            if (dtgCandidatos.Rows.Count > 0)
+            {
+                int ultimaFilaIndex = dtgCandidatos.Rows.Count - 1;
+
+                // Verifica si la celda "Estado" de la última fila no es nula antes de intentar acceder a su valor
+                if (dtgCandidatos.Rows[ultimaFilaIndex].Cells["Estado"].Value != null)
+                {
+                    string estado = dtgCandidatos.Rows[ultimaFilaIndex].Cells["Estado"].Value.ToString();
+
+                    if (estado == "APTO")
+                    {
+                        btnIngresarEmpleado.Enabled = true;
+                    }
+                    else
+                    {
+                        btnIngresarEmpleado.Enabled = false;
+                    }
+                }
+                else
+                {
+                    // Si la celda es nula, deshabilita el botón
+                    btnIngresarEmpleado.Enabled = false;
+                }
+            }
+            else
+            {
+                btnIngresarEmpleado.Enabled = false;
             }
         }
 
@@ -280,12 +308,19 @@ namespace Vista
 
         private void btnIngresarEmpleado_Click(object sender, EventArgs e)
         {
-            if (dtgCandidatos.SelectedRows.Count > 0)
-            {
-                DatosCandidato();
-                //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-                //frmAltaPersonal.ShowDialog();
-            }
+            bool esCandidato = true;
+            frmAltaPersonal altaEmpleado = new frmAltaPersonal(esCandidato);
+            string cuil = txtCuilCuit.Text;
+            DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
+            int id_persona = (int)DTCandidatos.Rows[0]["ID"];
+            altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.Show();
+            //if (dtgCandidatos.SelectedRows.Count > 0)
+            //{
+            //    DatosCandidato();
+            //    //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+            //    //frmAltaPersonal.ShowDialog();
+            //}
         }
 
         private DatosCandidato DatosCandidato()
