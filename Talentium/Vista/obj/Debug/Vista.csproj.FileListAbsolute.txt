@@ -310,10 +310,6 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\SpreadsheetLight.xml
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\System.IO.Packaging.xml
-<<<<<<< HEAD
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
-=======
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
@@ -377,4 +373,5 @@ C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\D
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.pdb
->>>>>>> 8cc66cc3a2cf7aca89a50e0492edf2c39ba4337e
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources

@@ -98,23 +98,43 @@ namespace Vista
                     List<Asistencia> asistencia = new List<Asistencia>();
                     DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
 
-                    for (DateTime fecha = dttFechaDesde.Value; fecha <= dttFechaHasta.Value; )
+                    if (checkPeriodo.Checked)
+                    {
+                        for (DateTime fecha = dttFechaDesde.Value; fecha <= dttFechaHasta.Value;)
+                        {
+                            Asistencia nuevaAsistencia = new Asistencia
+                            {
+                                idPersona = idPer,
+                                Fecha = fecha,
+                                //FechaDesde = dttFechaDesde.Value,
+                                //FechaHasta = dttFechaHasta.Value,
+                                idMotivo = (int)selectedMotivo["id_motivo"],
+                                OtroMotivo = txtOtro.Text,
+                                Justificada = checkJustificada.Checked,
+                                Observaciones = txtObservaciones.Text,
+                                Periodo = checkPeriodo.Checked
+                            };
+
+                            asistencia.Add(nuevaAsistencia);
+                            fecha = fecha.AddDays(1);
+                        }
+                    }
+                    else
                     {
                         Asistencia nuevaAsistencia = new Asistencia
                         {
-                        idPersona = idPer,
-                        Fecha = fecha,
-                        //FechaDesde = dttFechaDesde.Value,
-                        //FechaHasta = dttFechaHasta.Value,
-                        idMotivo = (int)selectedMotivo["id_motivo"],
-                        OtroMotivo = txtOtro.Text,
-                        Justificada = checkJustificada.Checked,
-                        Observaciones = txtObservaciones.Text,
-                        Periodo = checkPeriodo.Checked
-                    };
+                            idPersona = idPer,
+                            Fecha = dttFecha.Value,
+                            //FechaDesde = dttFechaDesde.Value,
+                            //FechaHasta = dttFechaHasta.Value,
+                            idMotivo = (int)selectedMotivo["id_motivo"],
+                            OtroMotivo = txtOtro.Text,
+                            Justificada = checkJustificada.Checked,
+                            Observaciones = txtObservaciones.Text,
+                            Periodo = checkPeriodo.Checked
+                        };
 
                         asistencia.Add(nuevaAsistencia);
-                        fecha = fecha.AddDays(1);
                     }
                     /* asistencias.IdPersona = idPer;
                      asistencias.Fecha = dttFecha.Value;

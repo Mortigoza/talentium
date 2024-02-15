@@ -26,3 +26,6 @@ packages/
 *.suo
 *.user
 *.sln.docstates
+
+# Prueba de solucion errores HEAD
+*.FileListAbsolute.txt
