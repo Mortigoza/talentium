@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,7 @@ namespace Vista
                     CN_TraerPermisos tp = new CN_TraerPermisos();
                     tp.TraerPermisos();
                     this.Hide();
+                    CN_Bitacora.AltaBitacora("Login exitoso", "LogIn", this.Name);
                     frmMenu menu = new frmMenu();
                     menu.ShowDialog();
                     if (menu.DialogResult == DialogResult.OK)
