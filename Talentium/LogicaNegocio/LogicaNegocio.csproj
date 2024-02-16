@@ -52,6 +52,7 @@
     <Compile Include="Accesibilidad\CN_UpPerfil.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
+    <Compile Include="CN_Bakup.cs" />
     <Compile Include="CN_Categorias.cs" />
     <Compile Include="Administracion Del Personal\CN_AdministracionDatosPersonal.cs" />
     <Compile Include="Administracion Del Personal\CN_AdministracionPersonalComboBox.cs" />

@@ -250,5 +250,13 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void configuraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConfigPoliticasPass frm = new ConfigPoliticasPass();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

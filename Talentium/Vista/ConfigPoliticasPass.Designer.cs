@@ -34,7 +34,10 @@
             this.chcEsp = new System.Windows.Forms.CheckBox();
             this.chcPass = new System.Windows.Forms.CheckBox();
             this.chcDatos = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCrearBakup = new System.Windows.Forms.Button();
+            this.btnCargarBakup = new System.Windows.Forms.Button();
+            this.opnBakup = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // chcChar
@@ -104,23 +107,58 @@
             this.chcDatos.Text = "Verificar no contener datos personales.";
             this.chcDatos.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(440, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(496, 316);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(76, 31);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCrearBakup
+            // 
+            this.btnCrearBakup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCrearBakup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCrearBakup.ForeColor = System.Drawing.Color.White;
+            this.btnCrearBakup.Location = new System.Drawing.Point(23, 268);
+            this.btnCrearBakup.Name = "btnCrearBakup";
+            this.btnCrearBakup.Size = new System.Drawing.Size(115, 31);
+            this.btnCrearBakup.TabIndex = 7;
+            this.btnCrearBakup.Text = "Crear Bakup";
+            this.btnCrearBakup.UseVisualStyleBackColor = false;
+            this.btnCrearBakup.Click += new System.EventHandler(this.btnCrearBakup_Click);
+            // 
+            // btnCargarBakup
+            // 
+            this.btnCargarBakup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCargarBakup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCargarBakup.ForeColor = System.Drawing.Color.White;
+            this.btnCargarBakup.Location = new System.Drawing.Point(23, 316);
+            this.btnCargarBakup.Name = "btnCargarBakup";
+            this.btnCargarBakup.Size = new System.Drawing.Size(115, 31);
+            this.btnCargarBakup.TabIndex = 8;
+            this.btnCargarBakup.Text = "Cargar Bakup";
+            this.btnCargarBakup.UseVisualStyleBackColor = false;
+            this.btnCargarBakup.Click += new System.EventHandler(this.btnCargarBakup_Click);
+            // 
+            // opnBakup
+            // 
+            this.opnBakup.Filter = "*.bak|";
             // 
             // ConfigPoliticasPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCargarBakup);
+            this.Controls.Add(this.btnCrearBakup);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.chcDatos);
             this.Controls.Add(this.chcPass);
             this.Controls.Add(this.chcEsp);
@@ -145,6 +183,9 @@
         private System.Windows.Forms.CheckBox chcEsp;
         private System.Windows.Forms.CheckBox chcPass;
         private System.Windows.Forms.CheckBox chcDatos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCrearBakup;
+        private System.Windows.Forms.Button btnCargarBakup;
+        private System.Windows.Forms.OpenFileDialog opnBakup;
     }
 }

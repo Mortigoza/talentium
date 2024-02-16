@@ -126,6 +126,27 @@ namespace Comun
                 checkPermiso(control, permiso);
             }
         }
+        public static void checkPermiso(ToolStripMenuItem control, List<string> permisos)
+        {
+            PermisosCache[] permisosCache = PermisosCache.GetPermisos();
+            for (int i = 0, len = permisosCache.Length; i < len; i++)
+            {
+                if (permisos.Contains(permisosCache[i].Permiso))
+                {
+                    return;
+                }
+            }
+            control.Enabled = false;
+            control.BackColor = SystemColors.MenuBar;
+        }
+        public static void checkPermiso(List<ToolStripMenuItem> controles, List<string> permisos)
+        {
+            foreach (ToolStripMenuItem control in controles)
+            {
+                checkPermiso(control, permisos);
+            }
+        }
+
         public static void ConfigListbox(DataTable dtLeft, ref DataTable dtListaBd, ref DataTable dtListaMem, ref ListBox lst1, ref ListBox lst2, bool def = false, DataTable dtRight = null)
         {
             dtListaBd.Clear();
