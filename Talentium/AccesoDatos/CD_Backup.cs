@@ -9,10 +9,10 @@ using System.IO;
 
 namespace AccesoDatos
 {
-    public class CD_Bakup : CD_Conexion
+    public class CD_Backup : CD_Conexion
     {
         public string Path { get; set; }
-        public void HacerBakup()
+        public void HacerBackup()
         {
             string fecha = DateTime.Now.ToFileTime().ToString();
             try
@@ -31,7 +31,7 @@ namespace AccesoDatos
                 Console.WriteLine("Error al realizar el respaldo: " + ex.Message); //Bitacora
             }
         }
-        public void CargarBakup(string filePath)
+        public void CargarBackup(string filePath)
         {
             try
             {

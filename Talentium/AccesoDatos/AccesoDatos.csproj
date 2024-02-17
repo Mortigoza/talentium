@@ -53,7 +53,7 @@
     <Compile Include="CD_AccesoBD.cs" />
     <Compile Include="CD_AsignarCapacitaciones.cs" />
     <Compile Include="CD_Asistencias.cs" />
-    <Compile Include="CD_Bakup.cs" />
+    <Compile Include="CD_Backup.cs" />
     <Compile Include="CD_Capacitaciones.cs" />
     <Compile Include="CD_Categorias.cs" />
     <Compile Include="CD_Conexion.cs" />

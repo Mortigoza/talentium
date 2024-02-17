@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace LogicaNegocio
 {
-    public class CN_Bakup
+    public class CN_Backup
     {
-        CD_Bakup bk = new CD_Bakup();
+        CD_Backup bk = new CD_Backup();
         private string path = @"c:\TalentiumBaks\";
         public string Path
         {
             get => path;
         }
-        public CN_Bakup()
+        public CN_Backup()
         {
             bk.Path = Path;
             // Verificar si el directorio existe
@@ -26,13 +26,13 @@ namespace LogicaNegocio
                 Console.WriteLine("Directorio creado exitosamente.");
             }
         }
-        public void HacerBakup()
+        public void HacerBackup()
         {
-            bk.HacerBakup();
+            bk.HacerBackup();
         }
-        public void CargarBakup(string filePath)
+        public void CargarBackup(string filePath)
         {
-            bk.CargarBakup(filePath);
+            bk.CargarBackup(filePath);
         }
     }
 }

@@ -35,9 +35,9 @@
             this.chcPass = new System.Windows.Forms.CheckBox();
             this.chcDatos = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCrearBakup = new System.Windows.Forms.Button();
-            this.btnCargarBakup = new System.Windows.Forms.Button();
-            this.opnBakup = new System.Windows.Forms.OpenFileDialog();
+            this.btnCrearBackup = new System.Windows.Forms.Button();
+            this.btnCargarBackup = new System.Windows.Forms.Button();
+            this.opnBackup = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // chcChar
@@ -121,43 +121,43 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCrearBakup
+            // btnCrearBackup
             // 
-            this.btnCrearBakup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnCrearBakup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCrearBakup.ForeColor = System.Drawing.Color.White;
-            this.btnCrearBakup.Location = new System.Drawing.Point(23, 268);
-            this.btnCrearBakup.Name = "btnCrearBakup";
-            this.btnCrearBakup.Size = new System.Drawing.Size(115, 31);
-            this.btnCrearBakup.TabIndex = 7;
-            this.btnCrearBakup.Text = "Crear Bakup";
-            this.btnCrearBakup.UseVisualStyleBackColor = false;
-            this.btnCrearBakup.Click += new System.EventHandler(this.btnCrearBakup_Click);
+            this.btnCrearBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCrearBackup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCrearBackup.ForeColor = System.Drawing.Color.White;
+            this.btnCrearBackup.Location = new System.Drawing.Point(23, 268);
+            this.btnCrearBackup.Name = "btnCrearBackup";
+            this.btnCrearBackup.Size = new System.Drawing.Size(115, 31);
+            this.btnCrearBackup.TabIndex = 7;
+            this.btnCrearBackup.Text = "Crear Backup";
+            this.btnCrearBackup.UseVisualStyleBackColor = false;
+            this.btnCrearBackup.Click += new System.EventHandler(this.btnCrearBakup_Click);
             // 
-            // btnCargarBakup
+            // btnCargarBackup
             // 
-            this.btnCargarBakup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnCargarBakup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCargarBakup.ForeColor = System.Drawing.Color.White;
-            this.btnCargarBakup.Location = new System.Drawing.Point(23, 316);
-            this.btnCargarBakup.Name = "btnCargarBakup";
-            this.btnCargarBakup.Size = new System.Drawing.Size(115, 31);
-            this.btnCargarBakup.TabIndex = 8;
-            this.btnCargarBakup.Text = "Cargar Bakup";
-            this.btnCargarBakup.UseVisualStyleBackColor = false;
-            this.btnCargarBakup.Click += new System.EventHandler(this.btnCargarBakup_Click);
+            this.btnCargarBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCargarBackup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCargarBackup.ForeColor = System.Drawing.Color.White;
+            this.btnCargarBackup.Location = new System.Drawing.Point(23, 316);
+            this.btnCargarBackup.Name = "btnCargarBackup";
+            this.btnCargarBackup.Size = new System.Drawing.Size(115, 31);
+            this.btnCargarBackup.TabIndex = 8;
+            this.btnCargarBackup.Text = "Cargar Backup";
+            this.btnCargarBackup.UseVisualStyleBackColor = false;
+            this.btnCargarBackup.Click += new System.EventHandler(this.btnCargarBakup_Click);
             // 
-            // opnBakup
+            // opnBackup
             // 
-            this.opnBakup.Filter = "*.bak|";
+            this.opnBackup.Filter = "*.bak|";
             // 
             // ConfigPoliticasPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.btnCargarBakup);
-            this.Controls.Add(this.btnCrearBakup);
+            this.Controls.Add(this.btnCargarBackup);
+            this.Controls.Add(this.btnCrearBackup);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.chcDatos);
             this.Controls.Add(this.chcPass);
@@ -184,8 +184,8 @@
         private System.Windows.Forms.CheckBox chcPass;
         private System.Windows.Forms.CheckBox chcDatos;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCrearBakup;
-        private System.Windows.Forms.Button btnCargarBakup;
-        private System.Windows.Forms.OpenFileDialog opnBakup;
+        private System.Windows.Forms.Button btnCrearBackup;
+        private System.Windows.Forms.Button btnCargarBackup;
+        private System.Windows.Forms.OpenFileDialog opnBackup;
     }
 }

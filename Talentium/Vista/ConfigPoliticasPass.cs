@@ -16,7 +16,7 @@ namespace Vista
     public partial class ConfigPoliticasPass : Form
     {
         CN_PoliticaPassword config = new CN_PoliticaPassword();
-        CN_Bakup bk = new CN_Bakup();
+        CN_Backup bk = new CN_Backup();
         public ConfigPoliticasPass()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Vista
             DialogResult ms = MessageBox.Show("¿Seguro que quiere realizar un backup?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (ms == DialogResult.Yes)
             {
-                bk.HacerBakup();
+                bk.HacerBackup();
             }
         }
 
@@ -60,11 +60,11 @@ namespace Vista
             DialogResult ms = MessageBox.Show("¿Seguro que quiere cargar una base de datos anterior?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ms == DialogResult.Yes)
             {
-                opnBakup.InitialDirectory = bk.Path;
-                DialogResult resultado = opnBakup.ShowDialog();
+                opnBackup.InitialDirectory = bk.Path;
+                DialogResult resultado = opnBackup.ShowDialog();
                 if (resultado == DialogResult.OK)
                 {
-                    bk.CargarBakup(opnBakup.FileName);
+                    bk.CargarBackup(opnBackup.FileName);
                 }
             }
         }
