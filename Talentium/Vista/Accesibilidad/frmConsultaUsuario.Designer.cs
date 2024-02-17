@@ -44,6 +44,7 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.rdbActivos = new System.Windows.Forms.RadioButton();
             this.rdbInactivos = new System.Windows.Forms.RadioButton();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.dtgPersonas.BackgroundColor = System.Drawing.Color.White;
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonas.Location = new System.Drawing.Point(184, 36);
+            this.dtgPersonas.Location = new System.Drawing.Point(184, 91);
             this.dtgPersonas.Name = "dtgPersonas";
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(648, 366);
@@ -71,9 +72,9 @@
             this.grpFiltro.Controls.Add(this.lblApellido);
             this.grpFiltro.Controls.Add(this.txtUsuario);
             this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(24, 36);
+            this.grpFiltro.Location = new System.Drawing.Point(24, 91);
             this.grpFiltro.Name = "grpFiltro";
-            this.grpFiltro.Size = new System.Drawing.Size(137, 231);
+            this.grpFiltro.Size = new System.Drawing.Size(137, 233);
             this.grpFiltro.TabIndex = 12;
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtro";
@@ -94,10 +95,11 @@
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(17, 193);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 27);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -171,10 +173,11 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(41, 289);
+            this.btnAgregar.Location = new System.Drawing.Point(41, 351);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 27);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -184,10 +187,11 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(41, 318);
+            this.btnModificar.Location = new System.Drawing.Point(41, 384);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 27);
             this.btnModificar.TabIndex = 14;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -197,10 +201,11 @@
             // 
             this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.Color.White;
-            this.btnBaja.Location = new System.Drawing.Point(41, 365);
+            this.btnBaja.Location = new System.Drawing.Point(41, 430);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(100, 23);
+            this.btnBaja.Size = new System.Drawing.Size(100, 27);
             this.btnBaja.TabIndex = 15;
             this.btnBaja.Text = "Dar de baja";
             this.btnBaja.UseVisualStyleBackColor = false;
@@ -211,7 +216,7 @@
             this.rdbActivos.AutoSize = true;
             this.rdbActivos.BackColor = System.Drawing.Color.Transparent;
             this.rdbActivos.Checked = true;
-            this.rdbActivos.Location = new System.Drawing.Point(698, 408);
+            this.rdbActivos.Location = new System.Drawing.Point(698, 463);
             this.rdbActivos.Name = "rdbActivos";
             this.rdbActivos.Size = new System.Drawing.Size(60, 17);
             this.rdbActivos.TabIndex = 16;
@@ -224,7 +229,7 @@
             // 
             this.rdbInactivos.AutoSize = true;
             this.rdbInactivos.BackColor = System.Drawing.Color.Transparent;
-            this.rdbInactivos.Location = new System.Drawing.Point(764, 408);
+            this.rdbInactivos.Location = new System.Drawing.Point(764, 463);
             this.rdbInactivos.Name = "rdbInactivos";
             this.rdbInactivos.Size = new System.Drawing.Size(68, 17);
             this.rdbInactivos.TabIndex = 17;
@@ -232,13 +237,28 @@
             this.rdbInactivos.UseVisualStyleBackColor = false;
             this.rdbInactivos.CheckedChanged += new System.EventHandler(this.rdbInactivos_CheckedChanged);
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(40, 40);
+            this.btnAtras.TabIndex = 23;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // frmConsultaUsuario
             // 
             this.AcceptButton = this.btnFiltrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(865, 440);
+            this.ClientSize = new System.Drawing.Size(865, 505);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.rdbInactivos);
             this.Controls.Add(this.rdbActivos);
             this.Controls.Add(this.btnBaja);
@@ -277,5 +297,6 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.RadioButton rdbActivos;
         private System.Windows.Forms.RadioButton rdbInactivos;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

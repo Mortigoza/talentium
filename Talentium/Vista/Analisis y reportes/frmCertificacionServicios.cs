@@ -119,5 +119,10 @@ namespace Vista.Analisis_y_reportes
             return dt.Rows.Count;
         }
         #endregion
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

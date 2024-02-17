@@ -66,6 +66,7 @@
             this.lblAltaCapacitacion = new System.Windows.Forms.Label();
             this.txtNombreAlta = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnFiltrar.Location = new System.Drawing.Point(534, 68);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -108,6 +110,7 @@
             // 
             this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBaja.Location = new System.Drawing.Point(575, 547);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -284,6 +287,7 @@
             // 
             this.btnCancelarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCancelarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelarMod.Location = new System.Drawing.Point(351, 239);
             this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4);
@@ -298,6 +302,7 @@
             // 
             this.btnGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardarMod.Location = new System.Drawing.Point(459, 239);
             this.btnGuardarMod.Margin = new System.Windows.Forms.Padding(4);
@@ -416,6 +421,7 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Location = new System.Drawing.Point(351, 204);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
@@ -430,6 +436,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Location = new System.Drawing.Point(459, 204);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
@@ -489,6 +496,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificar.Location = new System.Drawing.Point(458, 547);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
@@ -499,12 +507,27 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(40, 40);
+            this.btnAtras.TabIndex = 24;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // frmABMCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 682);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
@@ -568,5 +591,6 @@
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
         private System.Windows.Forms.CheckBox chcObligatorioAlta;
         private System.Windows.Forms.CheckBox chcObligatorioMod;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

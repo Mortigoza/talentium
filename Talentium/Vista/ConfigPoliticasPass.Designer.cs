@@ -38,6 +38,7 @@
             this.btnCrearBackup = new System.Windows.Forms.Button();
             this.btnCargarBackup = new System.Windows.Forms.Button();
             this.opnBackup = new System.Windows.Forms.OpenFileDialog();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chcChar
@@ -111,6 +112,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(496, 316);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
@@ -125,6 +127,7 @@
             // 
             this.btnCrearBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCrearBackup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCrearBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearBackup.ForeColor = System.Drawing.Color.White;
             this.btnCrearBackup.Location = new System.Drawing.Point(23, 268);
             this.btnCrearBackup.Name = "btnCrearBackup";
@@ -138,6 +141,7 @@
             // 
             this.btnCargarBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCargarBackup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCargarBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarBackup.ForeColor = System.Drawing.Color.White;
             this.btnCargarBackup.Location = new System.Drawing.Point(23, 316);
             this.btnCargarBackup.Name = "btnCargarBackup";
@@ -151,11 +155,26 @@
             // 
             this.opnBackup.Filter = "*.bak|";
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(40, 40);
+            this.btnAtras.TabIndex = 24;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // ConfigPoliticasPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCargarBackup);
             this.Controls.Add(this.btnCrearBackup);
             this.Controls.Add(this.btnGuardar);
@@ -187,5 +206,6 @@
         private System.Windows.Forms.Button btnCrearBackup;
         private System.Windows.Forms.Button btnCargarBackup;
         private System.Windows.Forms.OpenFileDialog opnBackup;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

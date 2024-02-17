@@ -242,5 +242,10 @@ namespace Vista.Gestion_de_Talento
             grpActual.Enabled = false;
             grpBloqueado.Enabled = true;
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

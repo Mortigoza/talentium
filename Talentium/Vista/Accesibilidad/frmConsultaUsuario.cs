@@ -210,5 +210,10 @@ namespace Vista
             btnFiltrar_Click(sender, e);
             _void = false;
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

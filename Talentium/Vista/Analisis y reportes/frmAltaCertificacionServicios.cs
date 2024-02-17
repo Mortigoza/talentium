@@ -289,5 +289,9 @@ namespace Vista.Analisis_y_reportes
         }
         #endregion
 
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

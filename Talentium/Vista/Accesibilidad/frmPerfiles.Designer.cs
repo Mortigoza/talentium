@@ -35,7 +35,6 @@
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.lblNombrePerfil = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnDesasignarPermisosTodos = new System.Windows.Forms.Button();
             this.btnAsignarPermisosTodos = new System.Windows.Forms.Button();
             this.lstPermisosAsignados = new System.Windows.Forms.ListBox();
@@ -45,6 +44,7 @@
             this.chcModificar = new System.Windows.Forms.CheckBox();
             this.lblPermisos = new System.Windows.Forms.Label();
             this.lblPermisosAsignados = new System.Windows.Forms.Label();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,8 +53,9 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(80, 205);
+            this.btnAgregar.Location = new System.Drawing.Point(83, 237);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(114, 36);
             this.btnAgregar.TabIndex = 3;
@@ -66,8 +67,9 @@
             // 
             this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.Color.White;
-            this.btnBaja.Location = new System.Drawing.Point(80, 263);
+            this.btnBaja.Location = new System.Drawing.Point(83, 295);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(114, 25);
             this.btnBaja.TabIndex = 4;
@@ -79,7 +81,7 @@
             // 
             this.dtgPerfiles.BackgroundColor = System.Drawing.Color.White;
             this.dtgPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPerfiles.Location = new System.Drawing.Point(276, 42);
+            this.dtgPerfiles.Location = new System.Drawing.Point(279, 74);
             this.dtgPerfiles.Name = "dtgPerfiles";
             this.dtgPerfiles.Size = new System.Drawing.Size(378, 278);
             this.dtgPerfiles.TabIndex = 4;
@@ -87,7 +89,7 @@
             // 
             // txtNombrePermiso
             // 
-            this.txtNombrePermiso.Location = new System.Drawing.Point(36, 74);
+            this.txtNombrePermiso.Location = new System.Drawing.Point(39, 106);
             this.txtNombrePermiso.MaxLength = 30;
             this.txtNombrePermiso.Name = "txtNombrePermiso";
             this.txtNombrePermiso.Size = new System.Drawing.Size(199, 20);
@@ -96,7 +98,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BulletIndent = 1;
-            this.txtDescripcion.Location = new System.Drawing.Point(36, 113);
+            this.txtDescripcion.Location = new System.Drawing.Point(39, 145);
             this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(199, 86);
@@ -108,7 +110,7 @@
             // 
             this.lblNombrePerfil.AutoSize = true;
             this.lblNombrePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombrePerfil.Location = new System.Drawing.Point(33, 58);
+            this.lblNombrePerfil.Location = new System.Drawing.Point(36, 90);
             this.lblNombrePerfil.Name = "lblNombrePerfil";
             this.lblNombrePerfil.Size = new System.Drawing.Size(86, 13);
             this.lblNombrePerfil.TabIndex = 7;
@@ -118,31 +120,19 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescripcion.Location = new System.Drawing.Point(33, 97);
+            this.lblDescripcion.Location = new System.Drawing.Point(36, 129);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 8;
             this.lblDescripcion.Text = "Descripción";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(588, 550);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(83, 26);
-            this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // btnDesasignarPermisosTodos
             // 
             this.btnDesasignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnDesasignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(272, 519);
+            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(317, 551);
             this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
             this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisosTodos.TabIndex = 35;
@@ -154,8 +144,9 @@
             // 
             this.btnAsignarPermisosTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAsignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(272, 386);
+            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(317, 418);
             this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
             this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisosTodos.TabIndex = 34;
@@ -166,7 +157,7 @@
             // lstPermisosAsignados
             // 
             this.lstPermisosAsignados.FormattingEnabled = true;
-            this.lstPermisosAsignados.Location = new System.Drawing.Point(318, 386);
+            this.lstPermisosAsignados.Location = new System.Drawing.Point(363, 418);
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
             this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 173);
             this.lstPermisosAsignados.TabIndex = 33;
@@ -175,7 +166,7 @@
             // lstPermisos
             // 
             this.lstPermisos.FormattingEnabled = true;
-            this.lstPermisos.Location = new System.Drawing.Point(50, 386);
+            this.lstPermisos.Location = new System.Drawing.Point(95, 418);
             this.lstPermisos.Name = "lstPermisos";
             this.lstPermisos.Size = new System.Drawing.Size(216, 173);
             this.lstPermisos.TabIndex = 32;
@@ -185,8 +176,9 @@
             // 
             this.btnDesasignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnDesasignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDesasignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisos.Location = new System.Drawing.Point(272, 473);
+            this.btnDesasignarPermisos.Location = new System.Drawing.Point(317, 505);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 31;
@@ -198,8 +190,9 @@
             // 
             this.btnAsignarPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAsignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisos.Location = new System.Drawing.Point(272, 432);
+            this.btnAsignarPermisos.Location = new System.Drawing.Point(317, 464);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 30;
@@ -211,7 +204,7 @@
             // 
             this.chcModificar.AutoSize = true;
             this.chcModificar.BackColor = System.Drawing.Color.Transparent;
-            this.chcModificar.Location = new System.Drawing.Point(276, 326);
+            this.chcModificar.Location = new System.Drawing.Point(279, 358);
             this.chcModificar.Name = "chcModificar";
             this.chcModificar.Size = new System.Drawing.Size(69, 17);
             this.chcModificar.TabIndex = 36;
@@ -223,7 +216,7 @@
             // 
             this.lblPermisos.AutoSize = true;
             this.lblPermisos.BackColor = System.Drawing.Color.Transparent;
-            this.lblPermisos.Location = new System.Drawing.Point(47, 370);
+            this.lblPermisos.Location = new System.Drawing.Point(92, 402);
             this.lblPermisos.Name = "lblPermisos";
             this.lblPermisos.Size = new System.Drawing.Size(49, 13);
             this.lblPermisos.TabIndex = 37;
@@ -233,18 +226,33 @@
             // 
             this.lblPermisosAsignados.AutoSize = true;
             this.lblPermisosAsignados.BackColor = System.Drawing.Color.Transparent;
-            this.lblPermisosAsignados.Location = new System.Drawing.Point(315, 370);
+            this.lblPermisosAsignados.Location = new System.Drawing.Point(360, 402);
             this.lblPermisosAsignados.Name = "lblPermisosAsignados";
             this.lblPermisosAsignados.Size = new System.Drawing.Size(100, 13);
             this.lblPermisosAsignados.TabIndex = 38;
             this.lblPermisosAsignados.Text = "Permisos asignados";
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(40, 40);
+            this.btnAtras.TabIndex = 39;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // frmPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(683, 588);
+            this.ClientSize = new System.Drawing.Size(683, 623);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblPermisosAsignados);
             this.Controls.Add(this.lblPermisos);
             this.Controls.Add(this.chcModificar);
@@ -254,7 +262,6 @@
             this.Controls.Add(this.lstPermisos);
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
-            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombrePerfil);
             this.Controls.Add(this.txtDescripcion);
@@ -282,7 +289,6 @@
         private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label lblNombrePerfil;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnDesasignarPermisosTodos;
         private System.Windows.Forms.Button btnAsignarPermisosTodos;
         private System.Windows.Forms.ListBox lstPermisosAsignados;
@@ -292,5 +298,6 @@
         private System.Windows.Forms.CheckBox chcModificar;
         private System.Windows.Forms.Label lblPermisos;
         private System.Windows.Forms.Label lblPermisosAsignados;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

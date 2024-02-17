@@ -49,6 +49,7 @@
             this.lblPersona = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dtgCertificados.Location = new System.Drawing.Point(187, 38);
+            this.dtgCertificados.Location = new System.Drawing.Point(187, 73);
             this.dtgCertificados.Name = "dtgCertificados";
             this.dtgCertificados.ReadOnly = true;
             this.dtgCertificados.RowHeadersVisible = false;
@@ -93,7 +94,7 @@
             this.rdbActivos.AutoSize = true;
             this.rdbActivos.BackColor = System.Drawing.Color.Transparent;
             this.rdbActivos.Checked = true;
-            this.rdbActivos.Location = new System.Drawing.Point(562, 275);
+            this.rdbActivos.Location = new System.Drawing.Point(562, 310);
             this.rdbActivos.Name = "rdbActivos";
             this.rdbActivos.Size = new System.Drawing.Size(60, 17);
             this.rdbActivos.TabIndex = 1;
@@ -106,7 +107,7 @@
             // 
             this.rdbInactivos.AutoSize = true;
             this.rdbInactivos.BackColor = System.Drawing.Color.Transparent;
-            this.rdbInactivos.Location = new System.Drawing.Point(628, 275);
+            this.rdbInactivos.Location = new System.Drawing.Point(628, 310);
             this.rdbInactivos.Name = "rdbInactivos";
             this.rdbInactivos.Size = new System.Drawing.Size(68, 17);
             this.rdbInactivos.TabIndex = 2;
@@ -124,7 +125,7 @@
             this.grpFiltro.Controls.Add(this.lblApellido);
             this.grpFiltro.Controls.Add(this.txtCuit);
             this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(21, 38);
+            this.grpFiltro.Location = new System.Drawing.Point(21, 73);
             this.grpFiltro.Name = "grpFiltro";
             this.grpFiltro.Size = new System.Drawing.Size(137, 201);
             this.grpFiltro.TabIndex = 13;
@@ -135,10 +136,11 @@
             // 
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(17, 161);
+            this.btnFiltrar.Location = new System.Drawing.Point(17, 157);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(100, 27);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -201,7 +203,7 @@
             // dttFecha
             // 
             this.dttFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dttFecha.Location = new System.Drawing.Point(38, 335);
+            this.dttFecha.Location = new System.Drawing.Point(38, 370);
             this.dttFecha.Name = "dttFecha";
             this.dttFecha.Size = new System.Drawing.Size(100, 20);
             this.dttFecha.TabIndex = 14;
@@ -210,7 +212,7 @@
             // 
             this.cmbEtapa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEtapa.FormattingEnabled = true;
-            this.cmbEtapa.Location = new System.Drawing.Point(38, 295);
+            this.cmbEtapa.Location = new System.Drawing.Point(38, 330);
             this.cmbEtapa.Name = "cmbEtapa";
             this.cmbEtapa.Size = new System.Drawing.Size(100, 21);
             this.cmbEtapa.TabIndex = 15;
@@ -220,7 +222,7 @@
             // 
             this.lblFechaSolicitud.AutoSize = true;
             this.lblFechaSolicitud.BackColor = System.Drawing.Color.Transparent;
-            this.lblFechaSolicitud.Location = new System.Drawing.Point(35, 319);
+            this.lblFechaSolicitud.Location = new System.Drawing.Point(35, 354);
             this.lblFechaSolicitud.Name = "lblFechaSolicitud";
             this.lblFechaSolicitud.Size = new System.Drawing.Size(46, 13);
             this.lblFechaSolicitud.TabIndex = 16;
@@ -230,7 +232,7 @@
             // 
             this.lblEtapa.AutoSize = true;
             this.lblEtapa.BackColor = System.Drawing.Color.Transparent;
-            this.lblEtapa.Location = new System.Drawing.Point(35, 279);
+            this.lblEtapa.Location = new System.Drawing.Point(35, 314);
             this.lblEtapa.Name = "lblEtapa";
             this.lblEtapa.Size = new System.Drawing.Size(35, 13);
             this.lblEtapa.TabIndex = 17;
@@ -240,7 +242,7 @@
             // 
             this.lblPersona.AutoSize = true;
             this.lblPersona.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersona.Location = new System.Drawing.Point(184, 277);
+            this.lblPersona.Location = new System.Drawing.Point(184, 312);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(141, 13);
             this.lblPersona.TabIndex = 18;
@@ -250,8 +252,9 @@
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(635, 352);
+            this.btnAceptar.Location = new System.Drawing.Point(635, 387);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 19;
@@ -263,8 +266,9 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(536, 352);
+            this.btnCancelar.Location = new System.Drawing.Point(536, 387);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -272,12 +276,27 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(40, 40);
+            this.btnAtras.TabIndex = 24;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // frmAltaCertificacionServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(722, 387);
+            this.ClientSize = new System.Drawing.Size(722, 428);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblPersona);
@@ -325,5 +344,6 @@
         private System.Windows.Forms.Label lblPersona;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAtras;
     }
 }
