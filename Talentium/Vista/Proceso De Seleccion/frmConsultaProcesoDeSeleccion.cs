@@ -371,9 +371,14 @@ namespace Vista
                     DateTime fecha = (DateTime)datosEtapa[0]["Fecha_Entrevista"];
                     string entrevistador = datosEtapa[0]["Entrevistador"].ToString();
                     string estado = datosEtapa[0]["Estado"].ToString();
-                    if (estado == "APTO" || estado == "NO APTO")
+
+                    if (estado == "APTO")
                     {
                         nuevaPestana.Enabled = false;
+                    }
+                    if (estado == "NO APTO")
+                    {
+                        formulario.tabEtapas.Enabled = false;
                     }
 
                     formulario.AgregarControlesEnTab(nombreEtapa, nombre, apellido, puesto, estado, fecha, entrevistador, nuevaPestana, idPersona);

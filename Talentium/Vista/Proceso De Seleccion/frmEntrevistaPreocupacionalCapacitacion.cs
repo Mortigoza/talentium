@@ -216,7 +216,11 @@ namespace Vista.Gestion_de_Talento
             {
                 if(!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                 {
-                    MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
+                    DialogResult result = MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -227,7 +231,11 @@ namespace Vista.Gestion_de_Talento
             {
                 if(!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                 {
-                    MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
+                    DialogResult result = MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
