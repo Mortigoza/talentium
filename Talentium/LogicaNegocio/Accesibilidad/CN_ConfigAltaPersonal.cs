@@ -34,5 +34,13 @@ namespace LogicaNegocio.Accesibilidad
             }
             return true;
         }
+        public bool TipoDocAsociadoAPersona(int id_tipo_doc)
+        {
+            return configAltaPersonal.ConsultarTipoDocConPersona(id_tipo_doc);
+        }
+        public bool EliminarTipoDoc(int id_tipo_doc)
+        {
+            return configAltaPersonal.EliminarTipoDoc(id_tipo_doc);
+        }
     }
 }

@@ -30,8 +30,6 @@ namespace Vista.Accesibilidad
         {
             int currentIndex = tabConfigAltaPersonal.SelectedIndex;
             int newIndex = currentIndex + offset;
-
-            // Verificar límites de las pestañas
             if (newIndex >= 0 && newIndex < tabConfigAltaPersonal.TabCount)
             {
                 tabConfigAltaPersonal.SelectedIndex = newIndex;
@@ -102,7 +100,6 @@ namespace Vista.Accesibilidad
             btnModificar.Enabled = dtgDocumento.SelectedRows.Count > 0;
             btnBaja.Enabled = dtgDocumento.SelectedRows.Count > 0;
         }
-
         private void dtgDocumento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             grpModificar.Enabled = true;
@@ -128,6 +125,38 @@ namespace Vista.Accesibilidad
                     string valorCelda = filaSeleccionada.Cells["Nombre"].Value.ToString();
                     txtDocumentoMod.Text = valorCelda;
                 }
+            }
+        }
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            //if (dtgDocumento.SelectedRows.Count > 0)
+            //{
+            //    int idTipoDoc = Convert.ToInt32(dtgDocumento.SelectedRows[0].Cells["ID"].Value);
+            //    config.EliminarTipoDoc(idTipoDoc);
+            //}
+            if (dtgDocumento.SelectedRows.Count > 0)
+            {
+                int id_tipo_doc = Convert.ToInt32(dtgDocumento.SelectedCells[0].Value);
+                if (config.TipoDocAsociadoAPersona(id_tipo_doc) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el tipo de documento porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el tipo de documento?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarTipoDoc(id_tipo_doc);
+                        MessageBox.Show("El tipo de documento ha sido eliminado con éxito.");
+                        CargarDataGrid();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+
             }
         }
     }

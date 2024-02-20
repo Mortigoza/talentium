@@ -341,6 +341,7 @@
             this.btnBaja.TabIndex = 5;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnModificar
             // 

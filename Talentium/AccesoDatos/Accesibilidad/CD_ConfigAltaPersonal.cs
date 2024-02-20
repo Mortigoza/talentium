@@ -42,5 +42,19 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoModifTipoDoc = EjecutarConsultas("modificar_tipoDoc_sp", listaParametros.ToArray());
             return resultadoModifTipoDoc.Rows.Count != 0;
         }
+        public bool EliminarTipoDoc(int id_tipo_doc)
+        {
+            SqlParameter param1 = new SqlParameter("@id_tipo_doc", id_tipo_doc) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarEntrevista = EjecutarConsultas("eliminar_tipoDoc_sp", listaParametros.ToArray());
+            return resultadoEliminarEntrevista.Rows.Count != 0;
+        }
+        public bool ConsultarTipoDocConPersona(int id_tipo_doc)
+        {
+            SqlParameter param1 = new SqlParameter("@id_tipo_doc", id_tipo_doc) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaTipoDoc = EjecutarConsultas("consultar_persona_tipoDoc_sp", listaParametros.ToArray());
+            return resultadoPersonaTipoDoc.Rows.Count != 0;
+        }
     }
 }
