@@ -105,5 +105,99 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoPersonaTipoTel = EjecutarConsultas("consultar_persona_tipoTel_sp", listaParametros.ToArray());
             return resultadoPersonaTipoTel.Rows.Count != 0;
         }
+        // Nacionalidad
+        public DataTable ObtenerNacionalidad()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("obtener_nacionalidad_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ConsultarNacionalidadRepetida(string nacionalidadRepetida)
+        {
+            SqlParameter param1 = new SqlParameter("@nacionalidadRepetida", nacionalidadRepetida) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoNacionalidad = EjecutarConsultas("consultar_nacionalidad_repetida_sp", listaParametros.ToArray());
+
+            return resultadoNacionalidad.Rows.Count != 0;
+        }
+        public DataTable InsertarNacionalidad(string nacionalidad)
+        {
+            SqlParameter param1 = new SqlParameter("@nacionalidad", nacionalidad) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("insertar_nacionalidad_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
+        public bool ModificarNacionalidad(int id_nacionalidad, string nacionalidad)
+        {
+            SqlParameter param1 = new SqlParameter("@id_nacionalidad", id_nacionalidad) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@nacionalidad", nacionalidad) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifNacionalidad = EjecutarConsultas("modificar_nacionalidad_sp", listaParametros.ToArray());
+            return resultadoModifNacionalidad.Rows.Count != 0;
+        }
+        public bool EliminarNacionalidad(int id_nacionalidad)
+        {
+            SqlParameter param1 = new SqlParameter("@id_nacionalidad", id_nacionalidad) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarNacionalidad = EjecutarConsultas("eliminar_nacionalidad_sp", listaParametros.ToArray());
+            return resultadoEliminarNacionalidad.Rows.Count != 0;
+        }
+        public bool ConsultarNacionalidadConPersona(int id_nacionalidad)
+        {
+            SqlParameter param1 = new SqlParameter("@id_nacionalidad", id_nacionalidad) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaNacionalidad = EjecutarConsultas("consultar_persona_nacionalidad_sp", listaParametros.ToArray());
+            return resultadoPersonaNacionalidad.Rows.Count != 0;
+        }
+        // Género
+        public DataTable ObtenerGenero()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("obtener_genero_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ConsultarGeneroRepetido(string generoRepetido)
+        {
+            SqlParameter param1 = new SqlParameter("@generoRepetido", generoRepetido) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoGenero = EjecutarConsultas("consultar_genero_repetida_sp", listaParametros.ToArray());
+
+            return resultadoGenero.Rows.Count != 0;
+        }
+        public DataTable InsertarGenero(string genero)
+        {
+            SqlParameter param1 = new SqlParameter("@genero", genero) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("insertar_genero_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
+        public bool ModificarGenero(int id_genero, string genero)
+        {
+            SqlParameter param1 = new SqlParameter("@id_genero", id_genero) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@genero", genero) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifGenero = EjecutarConsultas("modificar_genero_sp", listaParametros.ToArray());
+            return resultadoModifGenero.Rows.Count != 0;
+        }
+        public bool EliminarGenero(int id_genero)
+        {
+            SqlParameter param1 = new SqlParameter("@id_genero", id_genero) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarGenero = EjecutarConsultas("eliminar_genero_sp", listaParametros.ToArray());
+            return resultadoEliminarGenero.Rows.Count != 0;
+        }
+        public bool ConsultarGeneroConPersona(int id_genero)
+        {
+            SqlParameter param1 = new SqlParameter("@id_genero", id_genero) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaGenero = EjecutarConsultas("consultar_persona_genero_sp", listaParametros.ToArray());
+            return resultadoPersonaGenero.Rows.Count != 0;
+        }
     }
 }
