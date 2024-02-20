@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio.Accesibilidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Vista.Accesibilidad
 {
     public partial class frmConfigAltaPersonal : Form
     {
+        CN_ConfigAltaPersonal config = new CN_ConfigAltaPersonal();
         public frmConfigAltaPersonal()
         {
             InitializeComponent();
+            grpModificar.Enabled = false;
+            grpModificarTel.Enabled = false;
+            grpNacioMod.Enabled = false;
+            grpModificarGenero.Enabled = false;
+            
         }
         private void NavigateTabs(int offset)
         {
@@ -45,7 +52,26 @@ namespace Vista.Accesibilidad
 
         private void btnGuardarAlta_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtDocumento.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(!config.ValidarTipoDoc(txtDocumento.Text))
+            {
+                //CargarGrid();
+                MessageBox.Show("Se agrego el Tipo de documento correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDocumento.Clear();
+            } else
+            {
+                MessageBox.Show("El Tipo de documento ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDocumento.Clear();
+            }
 
+        }
+
+        private void btnCancelarAlta_Click(object sender, EventArgs e)
+        {
+            txtDocumento.Clear();
         }
     }
 }

@@ -262,6 +262,7 @@
             this.btnCancelarAlta.TabIndex = 2;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = false;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
             // btnGuardarAlta
             // 
