@@ -26,5 +26,21 @@ namespace AccesoDatos.Accesibilidad
 
             return resultadoTipoDoc.Rows.Count != 0;
         }
+        public DataTable ObtenerTipoDoc()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("obtener_tipoDoc_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ModificarTipoDoc(int id_tipo_doc, string tipo_doc)
+        {
+            SqlParameter param1 = new SqlParameter("@id_tipo_doc", id_tipo_doc) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@tipo_doc", tipo_doc) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifTipoDoc = EjecutarConsultas("modificar_tipoDoc_sp", listaParametros.ToArray());
+            return resultadoModifTipoDoc.Rows.Count != 0;
+        }
     }
 }

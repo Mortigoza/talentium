@@ -21,7 +21,10 @@ namespace Vista.Accesibilidad
             grpModificarTel.Enabled = false;
             grpNacioMod.Enabled = false;
             grpModificarGenero.Enabled = false;
-            
+            CargarDataGrid();
+            dtgDocumento.AutoGenerateColumns = false;
+            dtgDocumento.AllowUserToAddRows = false;
+            dtgDocumento.MultiSelect = false;
         }
         private void NavigateTabs(int offset)
         {
@@ -34,22 +37,34 @@ namespace Vista.Accesibilidad
                 tabConfigAltaPersonal.SelectedIndex = newIndex;
             }
         }
-
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             NavigateTabs(-1);
         }
-
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             NavigateTabs(1);
         }
-
         private void btnGuardarMod_Click(object sender, EventArgs e)
         {
-
+            int id_tipo_doc = (int)dtgDocumento.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtDocumentoMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarTipoDoc(id_tipo_doc, txtDocumentoMod.Text))
+            {
+                CargarDataGrid();
+                MessageBox.Show("Se modificó el Tipo de documento correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDocumentoMod.Clear();
+                grpModificar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El Tipo de documento ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDocumentoMod.Clear();
+            }
         }
-
         private void btnGuardarAlta_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDocumento.Text))
@@ -58,20 +73,62 @@ namespace Vista.Accesibilidad
             }
             else if(!config.ValidarTipoDoc(txtDocumento.Text))
             {
-                //CargarGrid();
-                MessageBox.Show("Se agrego el Tipo de documento correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarDataGrid();
+                MessageBox.Show("Se agregó el Tipo de documento correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtDocumento.Clear();
             } else
             {
                 MessageBox.Show("El Tipo de documento ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtDocumento.Clear();
             }
-
         }
-
         private void btnCancelarAlta_Click(object sender, EventArgs e)
         {
             txtDocumento.Clear();
+        }
+        public void CargarDataGrid()
+        {
+            DataTable tipoDoc = config.ObtenerTipoDoc();
+            dtgDocumento.DataSource = tipoDoc;
+            for (int i = 0; i < tipoDoc.Rows.Count; i++)
+            {
+                dtgDocumento.Rows[i].Cells["Nombre"].Value = tipoDoc.Rows[i]["tipo_doc"];
+            }
+            dtgDocumento.Columns["ID"].Visible = false;
+        }
+
+        private void dtgDocumento_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModificar.Enabled = dtgDocumento.SelectedRows.Count > 0;
+            btnBaja.Enabled = dtgDocumento.SelectedRows.Count > 0;
+        }
+
+        private void dtgDocumento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificar.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtDocumentoMod.Text = dtgDocumento.SelectedCells[1].Value.ToString();
+            }
+        }
+        private void btnCancelarMod_Click(object sender, EventArgs e)
+        {
+            txtDocumentoMod.Clear();
+            grpModificar.Enabled = false;
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            grpModificar.Enabled = true;
+            if (dtgDocumento.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgDocumento.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["Nombre"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                    txtDocumentoMod.Text = valorCelda;
+                }
+            }
         }
     }
 }

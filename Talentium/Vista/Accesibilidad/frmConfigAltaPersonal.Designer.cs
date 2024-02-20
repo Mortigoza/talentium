@@ -38,7 +38,6 @@
             this.lblDocumento = new System.Windows.Forms.Label();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.dtgDocumento = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpAlta = new System.Windows.Forms.GroupBox();
             this.btnCancelarAlta = new System.Windows.Forms.Button();
             this.btnGuardarAlta = new System.Windows.Forms.Button();
@@ -91,6 +90,8 @@
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.dtgGenero = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.tabTelefono.SuspendLayout();
@@ -223,6 +224,7 @@
             this.dtgDocumento.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgDocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDocumento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Nombre});
             this.dtgDocumento.Location = new System.Drawing.Point(30, 24);
             this.dtgDocumento.Name = "dtgDocumento";
@@ -230,13 +232,8 @@
             this.dtgDocumento.RowTemplate.Height = 24;
             this.dtgDocumento.Size = new System.Drawing.Size(295, 250);
             this.dtgDocumento.TabIndex = 2;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.dtgDocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellDoubleClick);
+            this.dtgDocumento.SelectionChanged += new System.EventHandler(this.dtgDocumento_SelectionChanged);
             // 
             // grpAlta
             // 
@@ -314,6 +311,7 @@
             this.btnCancelarMod.TabIndex = 2;
             this.btnCancelarMod.Text = "Cancelar";
             this.btnCancelarMod.UseVisualStyleBackColor = false;
+            this.btnCancelarMod.Click += new System.EventHandler(this.btnCancelarMod_Click);
             // 
             // lblDocumentoMod
             // 
@@ -334,6 +332,7 @@
             // btnBaja
             // 
             this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBaja.Enabled = false;
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBaja.Location = new System.Drawing.Point(225, 280);
@@ -346,6 +345,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModificar.Enabled = false;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnModificar.Location = new System.Drawing.Point(30, 280);
@@ -354,6 +354,7 @@
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnModificarTel
             // 
@@ -805,6 +806,23 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_tipo_doc";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "tipo_doc";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
             // frmConfigAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -859,7 +877,6 @@
         private System.Windows.Forms.Button btnGuardarAlta;
         private System.Windows.Forms.Button btnCancelarAlta;
         private System.Windows.Forms.DataGridView dtgDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.GroupBox grpModificar;
         private System.Windows.Forms.Button btnGuardarMod;
         private System.Windows.Forms.Button btnCancelarMod;
@@ -909,5 +926,7 @@
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.DataGridView dtgGenero;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }
