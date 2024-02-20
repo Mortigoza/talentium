@@ -24,6 +24,7 @@ namespace Vista.Accesibilidad
             grpModificarGenero.Enabled = false;
             CargarDataGrid();
             CargarDataGridTipoTel();
+            CargarDataGridNacionalidad();
             // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
@@ -313,6 +314,138 @@ namespace Vista.Accesibilidad
             {
                 e.Handled = true;
             }
+        }
+
+        // tab Nacionalidad
+        private void btnCancelarNacioAlta_Click(object sender, EventArgs e)
+        {
+            txtNacionalidad.Clear();
+        }
+
+        private void btnNacioGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNacionalidad.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarNacionalidad(txtNacionalidad.Text))
+            {
+                CargarDataGridNacionalidad();
+                MessageBox.Show("Se agregó la nacionalidad correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNacionalidad.Clear();
+            }
+            else
+            {
+                MessageBox.Show("La nacionalidad ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNacionalidad.Clear();
+            }
+        }
+
+        private void btnNacioCancelarMod_Click(object sender, EventArgs e)
+        {
+            txtNacioMod.Clear();
+            grpNacioMod.Enabled = false;
+        }
+
+        private void btnNacioGuardarMod_Click(object sender, EventArgs e)
+        {
+            int id_nacionalidad = (int)dtgNacionalidad.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtNacioMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarNacionalidad(id_nacionalidad, txtNacioMod.Text))
+            {
+                CargarDataGridNacionalidad();
+                MessageBox.Show("Se modificó la nacionalidad correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNacioMod.Clear();
+                grpNacioMod.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("La nacionalidad ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNacioMod.Clear();
+            }
+        }
+
+        private void btnNacionalidadMod_Click(object sender, EventArgs e)
+        {
+            grpNacioMod.Enabled = true;
+            if (dtgNacionalidad.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgNacionalidad.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombreNac"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombreNac"].Value.ToString();
+                    txtNacioMod.Text = valorCelda;
+                }
+            }
+        }
+
+        private void btnBajaNacionalidad_Click(object sender, EventArgs e)
+        {
+            if (dtgNacionalidad.SelectedRows.Count > 0)
+            {
+                int id_nacionalidad = Convert.ToInt32(dtgNacionalidad.SelectedCells[0].Value);
+                if (config.NacionalidadAsociadaAPersona(id_nacionalidad) == true)
+                {
+                    MessageBox.Show("No se puede eliminar la nacionalidad porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar la nacionalidad?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarNacionalidad(id_nacionalidad);
+                        MessageBox.Show("La nacionalidad ha sido eliminada con éxito.");
+                        CargarDataGridNacionalidad();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+            }
+        }
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtNacioMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtgNacionalidad_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpNacioMod.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtNacioMod.Text = dtgNacionalidad.SelectedCells[1].Value.ToString();
+            }
+        }
+        private void dtgNacionalidad_SelectionChanged(object sender, EventArgs e)
+        {
+            btnNacionalidadMod.Enabled = dtgNacionalidad.SelectedRows.Count > 0;
+            btnBajaNacionalidad.Enabled = dtgNacionalidad.SelectedRows.Count > 0;
+        }
+        public void CargarDataGridNacionalidad()
+        {
+            DataTable nacionalidad = config.ObtenerNacionalidad();
+            dtgNacionalidad.DataSource = nacionalidad;
+            for (int i = 0; i < nacionalidad.Rows.Count; i++)
+            {
+                dtgTelefono.Rows[i].Cells["NombreNac"].Value = nacionalidad.Rows[i]["nacionalidad"];
+            }
+            dtgTelefono.Columns["IDNac"].Visible = false;
         }
     }
 }

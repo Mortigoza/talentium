@@ -67,14 +67,13 @@
             this.btnNacioGuardarMod = new System.Windows.Forms.Button();
             this.btnNacioCancelarMod = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNacioMod = new System.Windows.Forms.TextBox();
             this.grpNacionalidadAlta = new System.Windows.Forms.GroupBox();
             this.btnNacioGuardar = new System.Windows.Forms.Button();
             this.btnCancelarNacioAlta = new System.Windows.Forms.Button();
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.dtgNacionalidad = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGeneroMod = new System.Windows.Forms.Button();
             this.btnBajaGenero = new System.Windows.Forms.Button();
             this.grpModificarGenero = new System.Windows.Forms.GroupBox();
@@ -93,6 +92,8 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.tabTelefono.SuspendLayout();
@@ -525,6 +526,7 @@
             this.btnNacionalidadMod.TabIndex = 11;
             this.btnNacionalidadMod.Text = "Modificar";
             this.btnNacionalidadMod.UseVisualStyleBackColor = false;
+            this.btnNacionalidadMod.Click += new System.EventHandler(this.btnNacionalidadMod_Click);
             // 
             // btnBajaNacionalidad
             // 
@@ -537,13 +539,14 @@
             this.btnBajaNacionalidad.TabIndex = 10;
             this.btnBajaNacionalidad.Text = "Dar de Baja";
             this.btnBajaNacionalidad.UseVisualStyleBackColor = false;
+            this.btnBajaNacionalidad.Click += new System.EventHandler(this.btnBajaNacionalidad_Click);
             // 
             // grpNacioMod
             // 
             this.grpNacioMod.Controls.Add(this.btnNacioGuardarMod);
             this.grpNacioMod.Controls.Add(this.btnNacioCancelarMod);
             this.grpNacioMod.Controls.Add(this.label4);
-            this.grpNacioMod.Controls.Add(this.textBox4);
+            this.grpNacioMod.Controls.Add(this.txtNacioMod);
             this.grpNacioMod.Location = new System.Drawing.Point(343, 174);
             this.grpNacioMod.Name = "grpNacioMod";
             this.grpNacioMod.Size = new System.Drawing.Size(294, 100);
@@ -562,6 +565,7 @@
             this.btnNacioGuardarMod.TabIndex = 3;
             this.btnNacioGuardarMod.Text = "Guardar";
             this.btnNacioGuardarMod.UseVisualStyleBackColor = false;
+            this.btnNacioGuardarMod.Click += new System.EventHandler(this.btnNacioGuardarMod_Click);
             // 
             // btnNacioCancelarMod
             // 
@@ -574,6 +578,7 @@
             this.btnNacioCancelarMod.TabIndex = 2;
             this.btnNacioCancelarMod.Text = "Cancelar";
             this.btnNacioCancelarMod.UseVisualStyleBackColor = false;
+            this.btnNacioCancelarMod.Click += new System.EventHandler(this.btnNacioCancelarMod_Click);
             // 
             // label4
             // 
@@ -584,12 +589,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Nacionalidad";
             // 
-            // textBox4
+            // txtNacioMod
             // 
-            this.textBox4.Location = new System.Drawing.Point(123, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 22);
-            this.textBox4.TabIndex = 1;
+            this.txtNacioMod.Location = new System.Drawing.Point(123, 27);
+            this.txtNacioMod.Name = "txtNacioMod";
+            this.txtNacioMod.Size = new System.Drawing.Size(141, 22);
+            this.txtNacioMod.TabIndex = 1;
+            this.txtNacioMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacioMod_KeyPress);
             // 
             // grpNacionalidadAlta
             // 
@@ -615,6 +621,7 @@
             this.btnNacioGuardar.TabIndex = 3;
             this.btnNacioGuardar.Text = "Guardar";
             this.btnNacioGuardar.UseVisualStyleBackColor = false;
+            this.btnNacioGuardar.Click += new System.EventHandler(this.btnNacioGuardar_Click);
             // 
             // btnCancelarNacioAlta
             // 
@@ -627,6 +634,7 @@
             this.btnCancelarNacioAlta.TabIndex = 2;
             this.btnCancelarNacioAlta.Text = "Cancelar";
             this.btnCancelarNacioAlta.UseVisualStyleBackColor = false;
+            this.btnCancelarNacioAlta.Click += new System.EventHandler(this.btnCancelarNacioAlta_Click);
             // 
             // lblNacionalidad
             // 
@@ -643,26 +651,23 @@
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(141, 22);
             this.txtNacionalidad.TabIndex = 1;
+            this.txtNacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNacionalidad_KeyPress);
             // 
             // dtgNacionalidad
             // 
             this.dtgNacionalidad.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgNacionalidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgNacionalidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
+            this.IDNac,
+            this.NombreNac});
             this.dtgNacionalidad.Location = new System.Drawing.Point(30, 24);
             this.dtgNacionalidad.Name = "dtgNacionalidad";
             this.dtgNacionalidad.RowHeadersWidth = 51;
             this.dtgNacionalidad.RowTemplate.Height = 24;
             this.dtgNacionalidad.Size = new System.Drawing.Size(295, 250);
             this.dtgNacionalidad.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.dtgNacionalidad.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNacionalidad_CellDoubleClick);
+            this.dtgNacionalidad.SelectionChanged += new System.EventHandler(this.dtgNacionalidad_SelectionChanged);
             // 
             // btnGeneroMod
             // 
@@ -848,6 +853,23 @@
             this.NombreTel.Name = "NombreTel";
             this.NombreTel.Width = 125;
             // 
+            // IDNac
+            // 
+            this.IDNac.DataPropertyName = "id_nacionalidad";
+            this.IDNac.HeaderText = "ID";
+            this.IDNac.MinimumWidth = 6;
+            this.IDNac.Name = "IDNac";
+            this.IDNac.Visible = false;
+            this.IDNac.Width = 125;
+            // 
+            // NombreNac
+            // 
+            this.NombreNac.DataPropertyName = "nacionalidad";
+            this.NombreNac.HeaderText = "Nombre";
+            this.NombreNac.MinimumWidth = 6;
+            this.NombreNac.Name = "NombreNac";
+            this.NombreNac.Width = 125;
+            // 
             // frmConfigAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -928,14 +950,13 @@
         private System.Windows.Forms.Button btnNacioGuardarMod;
         private System.Windows.Forms.Button btnNacioCancelarMod;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNacioMod;
         private System.Windows.Forms.GroupBox grpNacionalidadAlta;
         private System.Windows.Forms.Button btnNacioGuardar;
         private System.Windows.Forms.Button btnCancelarNacioAlta;
         private System.Windows.Forms.Label lblNacionalidad;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.DataGridView dtgNacionalidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnGeneroMod;
         private System.Windows.Forms.Button btnBajaGenero;
         private System.Windows.Forms.GroupBox grpModificarGenero;
@@ -954,5 +975,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDNac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreNac;
     }
 }
