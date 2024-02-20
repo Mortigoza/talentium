@@ -20,7 +20,6 @@ namespace LogicaNegocio.Accesibilidad
                 configAltaPersonal.InsertarTipoDoc(tipoDoc);
                 return false;
             }
-
             return true;
         }
         public DataTable ObtenerTipoDoc()
@@ -53,7 +52,6 @@ namespace LogicaNegocio.Accesibilidad
                 configAltaPersonal.InsertarTipoTel(tipoTel);
                 return false;
             }
-
             return true;
         }
         public DataTable ObtenerTipoTel()
@@ -86,7 +84,6 @@ namespace LogicaNegocio.Accesibilidad
                 configAltaPersonal.InsertarNacionalidad(nacionalidad);
                 return false;
             }
-
             return true;
         }
         public DataTable ObtenerNacionalidad()
@@ -119,7 +116,6 @@ namespace LogicaNegocio.Accesibilidad
                 configAltaPersonal.InsertarGenero(genero);
                 return false;
             }
-
             return true;
         }
         public DataTable ObtenerGenero()

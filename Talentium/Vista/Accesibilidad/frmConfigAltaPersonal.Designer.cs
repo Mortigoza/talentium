@@ -59,9 +59,8 @@
             this.btnGuardarAltaTel = new System.Windows.Forms.Button();
             this.btnCancelarAltaTel = new System.Windows.Forms.Button();
             this.lblTipoTel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefonoAlta = new System.Windows.Forms.TextBox();
             this.dtgTelefono = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNacionalidadMod = new System.Windows.Forms.Button();
             this.btnBajaNacionalidad = new System.Windows.Forms.Button();
             this.grpNacioMod = new System.Windows.Forms.GroupBox();
@@ -92,6 +91,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.tabTelefono.SuspendLayout();
@@ -370,6 +371,7 @@
             this.btnModificarTel.TabIndex = 11;
             this.btnModificarTel.Text = "Modificar";
             this.btnModificarTel.UseVisualStyleBackColor = false;
+            this.btnModificarTel.Click += new System.EventHandler(this.btnModificarTel_Click);
             // 
             // btnBajaTel
             // 
@@ -382,6 +384,7 @@
             this.btnBajaTel.TabIndex = 10;
             this.btnBajaTel.Text = "Dar de Baja";
             this.btnBajaTel.UseVisualStyleBackColor = false;
+            this.btnBajaTel.Click += new System.EventHandler(this.btnBajaTel_Click);
             // 
             // grpModificarTel
             // 
@@ -407,6 +410,7 @@
             this.btnGuardarTelMod.TabIndex = 3;
             this.btnGuardarTelMod.Text = "Guardar";
             this.btnGuardarTelMod.UseVisualStyleBackColor = false;
+            this.btnGuardarTelMod.Click += new System.EventHandler(this.btnGuardarTelMod_Click);
             // 
             // btnCancelarTelMod
             // 
@@ -419,6 +423,7 @@
             this.btnCancelarTelMod.TabIndex = 2;
             this.btnCancelarTelMod.Text = "Cancelar";
             this.btnCancelarTelMod.UseVisualStyleBackColor = false;
+            this.btnCancelarTelMod.Click += new System.EventHandler(this.btnCancelarTelMod_Click);
             // 
             // lblTipoTelMod
             // 
@@ -435,13 +440,14 @@
             this.txtTipoTelMod.Name = "txtTipoTelMod";
             this.txtTipoTelMod.Size = new System.Drawing.Size(141, 22);
             this.txtTipoTelMod.TabIndex = 1;
+            this.txtTipoTelMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipoTelMod_KeyPress);
             // 
             // grpAltaTel
             // 
             this.grpAltaTel.Controls.Add(this.btnGuardarAltaTel);
             this.grpAltaTel.Controls.Add(this.btnCancelarAltaTel);
             this.grpAltaTel.Controls.Add(this.lblTipoTel);
-            this.grpAltaTel.Controls.Add(this.textBox3);
+            this.grpAltaTel.Controls.Add(this.txtTelefonoAlta);
             this.grpAltaTel.Location = new System.Drawing.Point(343, 24);
             this.grpAltaTel.Name = "grpAltaTel";
             this.grpAltaTel.Size = new System.Drawing.Size(294, 100);
@@ -460,6 +466,7 @@
             this.btnGuardarAltaTel.TabIndex = 3;
             this.btnGuardarAltaTel.Text = "Guardar";
             this.btnGuardarAltaTel.UseVisualStyleBackColor = false;
+            this.btnGuardarAltaTel.Click += new System.EventHandler(this.btnGuardarAltaTel_Click);
             // 
             // btnCancelarAltaTel
             // 
@@ -472,6 +479,7 @@
             this.btnCancelarAltaTel.TabIndex = 2;
             this.btnCancelarAltaTel.Text = "Cancelar";
             this.btnCancelarAltaTel.UseVisualStyleBackColor = false;
+            this.btnCancelarAltaTel.Click += new System.EventHandler(this.btnCancelarAltaTel_Click);
             // 
             // lblTipoTel
             // 
@@ -482,32 +490,29 @@
             this.lblTipoTel.TabIndex = 0;
             this.lblTipoTel.Text = "Tipo de Teléfono";
             // 
-            // textBox3
+            // txtTelefonoAlta
             // 
-            this.textBox3.Location = new System.Drawing.Point(141, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 22);
-            this.textBox3.TabIndex = 1;
+            this.txtTelefonoAlta.Location = new System.Drawing.Point(141, 27);
+            this.txtTelefonoAlta.Name = "txtTelefonoAlta";
+            this.txtTelefonoAlta.Size = new System.Drawing.Size(141, 22);
+            this.txtTelefonoAlta.TabIndex = 1;
+            this.txtTelefonoAlta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoAlta_KeyPress);
             // 
             // dtgTelefono
             // 
             this.dtgTelefono.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTelefono.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.IDTel,
+            this.NombreTel});
             this.dtgTelefono.Location = new System.Drawing.Point(30, 24);
             this.dtgTelefono.Name = "dtgTelefono";
             this.dtgTelefono.RowHeadersWidth = 51;
             this.dtgTelefono.RowTemplate.Height = 24;
             this.dtgTelefono.Size = new System.Drawing.Size(295, 250);
             this.dtgTelefono.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dtgTelefono.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTelefono_CellDoubleClick);
+            this.dtgTelefono.SelectionChanged += new System.EventHandler(this.dtgTelefono_SelectionChanged);
             // 
             // btnNacionalidadMod
             // 
@@ -826,6 +831,23 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Width = 125;
             // 
+            // IDTel
+            // 
+            this.IDTel.DataPropertyName = "id_tipo";
+            this.IDTel.HeaderText = "IDTel";
+            this.IDTel.MinimumWidth = 6;
+            this.IDTel.Name = "IDTel";
+            this.IDTel.Visible = false;
+            this.IDTel.Width = 125;
+            // 
+            // NombreTel
+            // 
+            this.NombreTel.DataPropertyName = "tipo";
+            this.NombreTel.HeaderText = "Nombre";
+            this.NombreTel.MinimumWidth = 6;
+            this.NombreTel.Name = "NombreTel";
+            this.NombreTel.Width = 125;
+            // 
             // frmConfigAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -898,9 +920,8 @@
         private System.Windows.Forms.Button btnGuardarAltaTel;
         private System.Windows.Forms.Button btnCancelarAltaTel;
         private System.Windows.Forms.Label lblTipoTel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefonoAlta;
         private System.Windows.Forms.DataGridView dtgTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button btnNacionalidadMod;
         private System.Windows.Forms.Button btnBajaNacionalidad;
         private System.Windows.Forms.GroupBox grpNacioMod;
@@ -931,5 +952,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTel;
     }
 }

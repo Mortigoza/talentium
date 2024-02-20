@@ -23,6 +23,7 @@ namespace Vista.Accesibilidad
             grpNacioMod.Enabled = false;
             grpModificarGenero.Enabled = false;
             CargarDataGrid();
+            CargarDataGridTipoTel();
             // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
@@ -187,5 +188,131 @@ namespace Vista.Accesibilidad
         }
 
         // tab tipo de teléfono 
+        private void btnCancelarAltaTel_Click(object sender, EventArgs e)
+        {
+            txtTelefonoAlta.Clear();
+        }
+
+        private void btnGuardarAltaTel_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTelefonoAlta.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarTipoTel(txtTelefonoAlta.Text))
+            {
+                CargarDataGridTipoTel();
+                MessageBox.Show("Se agregó el Tipo de teléfono correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTelefonoAlta.Clear();
+            }
+            else
+            {
+                MessageBox.Show("El Tipo de teléfono ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTelefonoAlta.Clear();
+            }
+        }
+        public void CargarDataGridTipoTel()
+        {
+            DataTable tipoTel = config.ObtenerTipoTel();
+            dtgTelefono.DataSource = tipoTel;
+            for (int i = 0; i < tipoTel.Rows.Count; i++)
+            {
+                dtgTelefono.Rows[i].Cells["NombreTel"].Value = tipoTel.Rows[i]["tipo"];
+            }
+            dtgTelefono.Columns["IDTel"].Visible = false;
+        }
+        private void btnGuardarTelMod_Click(object sender, EventArgs e)
+        {
+            int id_tipo_tel = (int)dtgTelefono.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtTipoTelMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarTipoTel(id_tipo_tel, txtTipoTelMod.Text))
+            {
+                CargarDataGridTipoTel();
+                MessageBox.Show("Se modificó el Tipo de teléfono correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTipoTelMod.Clear();
+                grpModificarTel.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El Tipo de teléfono ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTipoTelMod.Clear();
+            }
+        }
+        private void btnCancelarTelMod_Click(object sender, EventArgs e)
+        {
+            txtTipoTelMod.Clear();
+            grpModificarTel.Enabled = false;
+        }
+        private void dtgTelefono_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModificarTel.Enabled = dtgTelefono.SelectedRows.Count > 0;
+            btnBajaTel.Enabled = dtgTelefono.SelectedRows.Count > 0;
+        }
+        private void dtgTelefono_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificarTel.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtTipoTelMod.Text = dtgTelefono.SelectedCells[1].Value.ToString();
+            }
+        }
+        private void btnModificarTel_Click(object sender, EventArgs e)
+        {
+            grpModificarTel.Enabled = true;
+            if (dtgTelefono.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgTelefono.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombreTel"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombreTel"].Value.ToString();
+                    txtTipoTelMod.Text = valorCelda;
+                }
+            }
+        }
+        private void btnBajaTel_Click(object sender, EventArgs e)
+        {
+            if (dtgTelefono.SelectedRows.Count > 0)
+            {
+                int id_tel = Convert.ToInt32(dtgTelefono.SelectedCells[0].Value);
+                if (config.TipoTelAsociadoAPersona(id_tel) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el tipo de teléfono porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el tipo de teléfono?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarTipoTel(id_tel);
+                        MessageBox.Show("El tipo de teléfono ha sido eliminado con éxito.");
+                        CargarDataGridTipoTel();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+
+            }
+        }
+        private void txtTelefonoAlta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtTipoTelMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
