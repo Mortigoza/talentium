@@ -25,6 +25,7 @@ namespace Vista.Accesibilidad
             CargarDataGrid();
             CargarDataGridTipoTel();
             CargarDataGridNacionalidad();
+            CargarDataGridGenero();
             // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
@@ -443,9 +444,142 @@ namespace Vista.Accesibilidad
             dtgNacionalidad.DataSource = nacionalidad;
             for (int i = 0; i < nacionalidad.Rows.Count; i++)
             {
-                dtgTelefono.Rows[i].Cells["NombreNac"].Value = nacionalidad.Rows[i]["nacionalidad"];
+                dtgNacionalidad.Rows[i].Cells["NombreNac"].Value = nacionalidad.Rows[i]["nacionalidad"];
             }
-            dtgTelefono.Columns["IDNac"].Visible = false;
+            dtgNacionalidad.Columns["IDNac"].Visible = false;
+        }
+
+        // tab Genero
+        private void btnGeneroCancelarAlta_Click(object sender, EventArgs e)
+        {
+            txtGenero.Clear();
+        }
+
+        private void btnGeneroGuardarAlta_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtGenero.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarGenero(txtGenero.Text))
+            {
+                CargarDataGridGenero();
+                MessageBox.Show("Se agregó el género correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGenero.Clear();
+            }
+            else
+            {
+                MessageBox.Show("El género ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGenero.Clear();
+            }
+        }
+        private void btnGeneroCancelarMod_Click(object sender, EventArgs e)
+        {
+            txtGeneroMod.Clear();
+            grpModificarGenero.Enabled = false;
+        }
+
+        private void btnGuardarGeneroMod_Click(object sender, EventArgs e)
+        {
+            int id_genero = (int)dtgGenero.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtGeneroMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarGenero(id_genero, txtGeneroMod.Text))
+            {
+                CargarDataGridGenero();
+                MessageBox.Show("Se modificó el género correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGeneroMod.Clear();
+                grpModificarGenero.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El género ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtGeneroMod.Clear();
+            }
+        }
+        private void btnGeneroMod_Click(object sender, EventArgs e)
+        {
+            grpModificarGenero.Enabled = true;
+            if (dtgGenero.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgGenero.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombreGen"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombreGen"].Value.ToString();
+                    txtGeneroMod.Text = valorCelda;
+                }
+            }
+        }
+
+        private void btnBajaGenero_Click(object sender, EventArgs e)
+        {
+            if (dtgGenero.SelectedRows.Count > 0)
+            {
+                int id_genero = Convert.ToInt32(dtgGenero.SelectedCells[0].Value);
+                if (config.GeneroAsociadoAPersona(id_genero) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el género porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el género?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarGenero(id_genero);
+                        MessageBox.Show("El género ha sido eliminada con éxito.");
+                        CargarDataGridGenero();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+            }
+        }
+        private void txtGenero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ' ')
+            {
+                e.Handled = false;
+            }
+        }
+        private void dtgGenero_SelectionChanged(object sender, EventArgs e)
+        {
+            btnGeneroMod.Enabled = dtgGenero.SelectedRows.Count > 0;
+            btnBajaGenero.Enabled = dtgGenero.SelectedRows.Count > 0;
+        }
+        private void dtgGenero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificarGenero.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtGeneroMod.Text = dtgGenero.SelectedCells[1].Value.ToString();
+            }
+        }
+        public void CargarDataGridGenero()
+        {
+            DataTable genero = config.ObtenerGenero();
+            dtgGenero.DataSource = genero;
+            for (int i = 0; i < genero.Rows.Count; i++)
+            {
+                dtgGenero.Rows[i].Cells["NombreGen"].Value = genero.Rows[i]["genero"];
+            }
+            dtgGenero.Columns["IDGen"].Visible = false;
         }
     }
 }

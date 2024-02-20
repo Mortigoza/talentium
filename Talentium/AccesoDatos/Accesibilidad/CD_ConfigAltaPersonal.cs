@@ -164,7 +164,7 @@ namespace AccesoDatos.Accesibilidad
         {
             SqlParameter param1 = new SqlParameter("@generoRepetido", generoRepetido) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-            DataTable resultadoGenero = EjecutarConsultas("consultar_genero_repetida_sp", listaParametros.ToArray());
+            DataTable resultadoGenero = EjecutarConsultas("consultar_genero_repetido_sp", listaParametros.ToArray());
 
             return resultadoGenero.Rows.Count != 0;
         }

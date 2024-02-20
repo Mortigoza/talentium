@@ -80,20 +80,21 @@
             this.btnGuardarGeneroMod = new System.Windows.Forms.Button();
             this.btnGeneroCancelarMod = new System.Windows.Forms.Button();
             this.lblGeneroMod = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtGeneroMod = new System.Windows.Forms.TextBox();
             this.grpGeneroAlta = new System.Windows.Forms.GroupBox();
             this.btnGeneroGuardarAlta = new System.Windows.Forms.Button();
             this.btnGeneroCancelarAlta = new System.Windows.Forms.Button();
             this.lblGenero = new System.Windows.Forms.Label();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.dtgGenero = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.tabTelefono.SuspendLayout();
@@ -680,6 +681,7 @@
             this.btnGeneroMod.TabIndex = 11;
             this.btnGeneroMod.Text = "Modificar";
             this.btnGeneroMod.UseVisualStyleBackColor = false;
+            this.btnGeneroMod.Click += new System.EventHandler(this.btnGeneroMod_Click);
             // 
             // btnBajaGenero
             // 
@@ -692,13 +694,14 @@
             this.btnBajaGenero.TabIndex = 10;
             this.btnBajaGenero.Text = "Dar de Baja";
             this.btnBajaGenero.UseVisualStyleBackColor = false;
+            this.btnBajaGenero.Click += new System.EventHandler(this.btnBajaGenero_Click);
             // 
             // grpModificarGenero
             // 
             this.grpModificarGenero.Controls.Add(this.btnGuardarGeneroMod);
             this.grpModificarGenero.Controls.Add(this.btnGeneroCancelarMod);
             this.grpModificarGenero.Controls.Add(this.lblGeneroMod);
-            this.grpModificarGenero.Controls.Add(this.textBox6);
+            this.grpModificarGenero.Controls.Add(this.txtGeneroMod);
             this.grpModificarGenero.Location = new System.Drawing.Point(343, 174);
             this.grpModificarGenero.Name = "grpModificarGenero";
             this.grpModificarGenero.Size = new System.Drawing.Size(294, 100);
@@ -717,6 +720,7 @@
             this.btnGuardarGeneroMod.TabIndex = 3;
             this.btnGuardarGeneroMod.Text = "Guardar";
             this.btnGuardarGeneroMod.UseVisualStyleBackColor = false;
+            this.btnGuardarGeneroMod.Click += new System.EventHandler(this.btnGuardarGeneroMod_Click);
             // 
             // btnGeneroCancelarMod
             // 
@@ -729,6 +733,7 @@
             this.btnGeneroCancelarMod.TabIndex = 2;
             this.btnGeneroCancelarMod.Text = "Cancelar";
             this.btnGeneroCancelarMod.UseVisualStyleBackColor = false;
+            this.btnGeneroCancelarMod.Click += new System.EventHandler(this.btnGeneroCancelarMod_Click);
             // 
             // lblGeneroMod
             // 
@@ -739,12 +744,13 @@
             this.lblGeneroMod.TabIndex = 0;
             this.lblGeneroMod.Text = "Género";
             // 
-            // textBox6
+            // txtGeneroMod
             // 
-            this.textBox6.Location = new System.Drawing.Point(109, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(141, 22);
-            this.textBox6.TabIndex = 1;
+            this.txtGeneroMod.Location = new System.Drawing.Point(109, 27);
+            this.txtGeneroMod.Name = "txtGeneroMod";
+            this.txtGeneroMod.Size = new System.Drawing.Size(141, 22);
+            this.txtGeneroMod.TabIndex = 1;
+            this.txtGeneroMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // grpGeneroAlta
             // 
@@ -770,6 +776,7 @@
             this.btnGeneroGuardarAlta.TabIndex = 3;
             this.btnGeneroGuardarAlta.Text = "Guardar";
             this.btnGeneroGuardarAlta.UseVisualStyleBackColor = false;
+            this.btnGeneroGuardarAlta.Click += new System.EventHandler(this.btnGeneroGuardarAlta_Click);
             // 
             // btnGeneroCancelarAlta
             // 
@@ -782,6 +789,7 @@
             this.btnGeneroCancelarAlta.TabIndex = 2;
             this.btnGeneroCancelarAlta.Text = "Cancelar";
             this.btnGeneroCancelarAlta.UseVisualStyleBackColor = false;
+            this.btnGeneroCancelarAlta.Click += new System.EventHandler(this.btnGeneroCancelarAlta_Click);
             // 
             // lblGenero
             // 
@@ -798,26 +806,23 @@
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(141, 22);
             this.txtGenero.TabIndex = 1;
+            this.txtGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGenero_KeyPress);
             // 
             // dtgGenero
             // 
             this.dtgGenero.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgGenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgGenero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3});
+            this.IDGen,
+            this.NombreGen});
             this.dtgGenero.Location = new System.Drawing.Point(30, 24);
             this.dtgGenero.Name = "dtgGenero";
             this.dtgGenero.RowHeadersWidth = 51;
             this.dtgGenero.RowTemplate.Height = 24;
             this.dtgGenero.Size = new System.Drawing.Size(295, 250);
             this.dtgGenero.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dtgGenero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGenero_CellDoubleClick);
+            this.dtgGenero.SelectionChanged += new System.EventHandler(this.dtgGenero_SelectionChanged);
             // 
             // ID
             // 
@@ -869,6 +874,23 @@
             this.NombreNac.MinimumWidth = 6;
             this.NombreNac.Name = "NombreNac";
             this.NombreNac.Width = 125;
+            // 
+            // IDGen
+            // 
+            this.IDGen.DataPropertyName = "id_genero";
+            this.IDGen.HeaderText = "ID";
+            this.IDGen.MinimumWidth = 6;
+            this.IDGen.Name = "IDGen";
+            this.IDGen.Visible = false;
+            this.IDGen.Width = 125;
+            // 
+            // NombreGen
+            // 
+            this.NombreGen.DataPropertyName = "genero";
+            this.NombreGen.HeaderText = "Nombre";
+            this.NombreGen.MinimumWidth = 6;
+            this.NombreGen.Name = "NombreGen";
+            this.NombreGen.Width = 125;
             // 
             // frmConfigAltaPersonal
             // 
@@ -963,19 +985,20 @@
         private System.Windows.Forms.Button btnGuardarGeneroMod;
         private System.Windows.Forms.Button btnGeneroCancelarMod;
         private System.Windows.Forms.Label lblGeneroMod;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtGeneroMod;
         private System.Windows.Forms.GroupBox grpGeneroAlta;
         private System.Windows.Forms.Button btnGeneroGuardarAlta;
         private System.Windows.Forms.Button btnGeneroCancelarAlta;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.DataGridView dtgGenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreNac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDGen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreGen;
     }
 }
