@@ -17,14 +17,28 @@ namespace Vista.Accesibilidad
         public frmConfigAltaPersonal()
         {
             InitializeComponent();
+            // tab Tipo de Documento
             grpModificar.Enabled = false;
             grpModificarTel.Enabled = false;
             grpNacioMod.Enabled = false;
             grpModificarGenero.Enabled = false;
             CargarDataGrid();
+            // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
             dtgDocumento.MultiSelect = false;
+            // Config data grid Tipo de teléfono
+            dtgTelefono.AutoGenerateColumns = false;
+            dtgTelefono.AllowUserToAddRows = false;
+            dtgTelefono.MultiSelect = false;
+            // Config data grid Nacionalidad
+            dtgNacionalidad.AutoGenerateColumns = false;
+            dtgNacionalidad.AllowUserToAddRows = false;
+            dtgNacionalidad.MultiSelect = false;
+            // Config data grid Género
+            dtgGenero.AutoGenerateColumns = false;
+            dtgGenero.AllowUserToAddRows = false;
+            dtgGenero.MultiSelect = false;
         }
         private void NavigateTabs(int offset)
         {
@@ -129,11 +143,6 @@ namespace Vista.Accesibilidad
         }
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            //if (dtgDocumento.SelectedRows.Count > 0)
-            //{
-            //    int idTipoDoc = Convert.ToInt32(dtgDocumento.SelectedRows[0].Cells["ID"].Value);
-            //    config.EliminarTipoDoc(idTipoDoc);
-            //}
             if (dtgDocumento.SelectedRows.Count > 0)
             {
                 int id_tipo_doc = Convert.ToInt32(dtgDocumento.SelectedCells[0].Value);
