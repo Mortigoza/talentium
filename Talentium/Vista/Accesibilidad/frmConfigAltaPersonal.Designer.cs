@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabConfigAltaPersonal = new System.Windows.Forms.TabControl();
             this.tabDocumento = new System.Windows.Forms.TabPage();
             this.tabTelefono = new System.Windows.Forms.TabPage();
             this.tabNacionalidad = new System.Windows.Forms.TabPage();
@@ -91,7 +91,7 @@
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.dtgGenero = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1.SuspendLayout();
+            this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.tabTelefono.SuspendLayout();
             this.tabNacionalidad.SuspendLayout();
@@ -110,17 +110,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgGenero)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabConfigAltaPersonal
             // 
-            this.tabControl1.Controls.Add(this.tabDocumento);
-            this.tabControl1.Controls.Add(this.tabTelefono);
-            this.tabControl1.Controls.Add(this.tabNacionalidad);
-            this.tabControl1.Controls.Add(this.tabGenero);
-            this.tabControl1.Location = new System.Drawing.Point(58, 70);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(674, 356);
-            this.tabControl1.TabIndex = 0;
+            this.tabConfigAltaPersonal.Controls.Add(this.tabDocumento);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabTelefono);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabNacionalidad);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabGenero);
+            this.tabConfigAltaPersonal.Location = new System.Drawing.Point(58, 70);
+            this.tabConfigAltaPersonal.Name = "tabConfigAltaPersonal";
+            this.tabConfigAltaPersonal.SelectedIndex = 0;
+            this.tabConfigAltaPersonal.Size = new System.Drawing.Size(674, 356);
+            this.tabConfigAltaPersonal.TabIndex = 0;
             // 
             // tabDocumento
             // 
@@ -190,6 +190,7 @@
             this.btnAnterior.TabIndex = 1;
             this.btnAnterior.Text = "<-";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
             // 
@@ -199,6 +200,7 @@
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "->";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // lblDocumento
             // 
@@ -256,7 +258,7 @@
             this.btnCancelarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelarAlta.Location = new System.Drawing.Point(14, 60);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
-            this.btnCancelarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarAlta.Size = new System.Drawing.Size(83, 23);
             this.btnCancelarAlta.TabIndex = 2;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = false;
@@ -266,12 +268,13 @@
             this.btnGuardarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardarAlta.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarAlta.Location = new System.Drawing.Point(199, 60);
             this.btnGuardarAlta.Name = "btnGuardarAlta";
-            this.btnGuardarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarAlta.Size = new System.Drawing.Size(83, 23);
             this.btnGuardarAlta.TabIndex = 3;
             this.btnGuardarAlta.Text = "Guardar";
             this.btnGuardarAlta.UseVisualStyleBackColor = false;
+            this.btnGuardarAlta.Click += new System.EventHandler(this.btnGuardarAlta_Click);
             // 
             // grpModificar
             // 
@@ -291,12 +294,13 @@
             this.btnGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarMod.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardarMod.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarMod.Location = new System.Drawing.Point(199, 60);
             this.btnGuardarMod.Name = "btnGuardarMod";
-            this.btnGuardarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarMod.Size = new System.Drawing.Size(83, 23);
             this.btnGuardarMod.TabIndex = 3;
             this.btnGuardarMod.Text = "Guardar";
             this.btnGuardarMod.UseVisualStyleBackColor = false;
+            this.btnGuardarMod.Click += new System.EventHandler(this.btnGuardarMod_Click);
             // 
             // btnCancelarMod
             // 
@@ -305,7 +309,7 @@
             this.btnCancelarMod.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelarMod.Location = new System.Drawing.Point(14, 60);
             this.btnCancelarMod.Name = "btnCancelarMod";
-            this.btnCancelarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarMod.Size = new System.Drawing.Size(83, 23);
             this.btnCancelarMod.TabIndex = 2;
             this.btnCancelarMod.Text = "Cancelar";
             this.btnCancelarMod.UseVisualStyleBackColor = false;
@@ -331,9 +335,9 @@
             this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBaja.Location = new System.Drawing.Point(237, 280);
+            this.btnBaja.Location = new System.Drawing.Point(225, 280);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(88, 23);
+            this.btnBaja.Size = new System.Drawing.Size(100, 26);
             this.btnBaja.TabIndex = 5;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = false;
@@ -345,7 +349,7 @@
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnModificar.Location = new System.Drawing.Point(30, 280);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(88, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 26);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -357,7 +361,7 @@
             this.btnModificarTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModificarTel.Location = new System.Drawing.Point(30, 280);
             this.btnModificarTel.Name = "btnModificarTel";
-            this.btnModificarTel.Size = new System.Drawing.Size(87, 23);
+            this.btnModificarTel.Size = new System.Drawing.Size(100, 26);
             this.btnModificarTel.TabIndex = 11;
             this.btnModificarTel.Text = "Modificar";
             this.btnModificarTel.UseVisualStyleBackColor = false;
@@ -367,9 +371,9 @@
             this.btnBajaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBajaTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBajaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBajaTel.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaTel.Location = new System.Drawing.Point(225, 280);
             this.btnBajaTel.Name = "btnBajaTel";
-            this.btnBajaTel.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaTel.Size = new System.Drawing.Size(100, 26);
             this.btnBajaTel.TabIndex = 10;
             this.btnBajaTel.Text = "Dar de Baja";
             this.btnBajaTel.UseVisualStyleBackColor = false;
@@ -392,9 +396,9 @@
             this.btnGuardarTelMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarTelMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarTelMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarTelMod.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarTelMod.Location = new System.Drawing.Point(199, 60);
             this.btnGuardarTelMod.Name = "btnGuardarTelMod";
-            this.btnGuardarTelMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarTelMod.Size = new System.Drawing.Size(83, 23);
             this.btnGuardarTelMod.TabIndex = 3;
             this.btnGuardarTelMod.Text = "Guardar";
             this.btnGuardarTelMod.UseVisualStyleBackColor = false;
@@ -406,7 +410,7 @@
             this.btnCancelarTelMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancelarTelMod.Location = new System.Drawing.Point(14, 60);
             this.btnCancelarTelMod.Name = "btnCancelarTelMod";
-            this.btnCancelarTelMod.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarTelMod.Size = new System.Drawing.Size(83, 23);
             this.btnCancelarTelMod.TabIndex = 2;
             this.btnCancelarTelMod.Text = "Cancelar";
             this.btnCancelarTelMod.UseVisualStyleBackColor = false;
@@ -445,9 +449,9 @@
             this.btnGuardarAltaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarAltaTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarAltaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarAltaTel.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarAltaTel.Location = new System.Drawing.Point(199, 60);
             this.btnGuardarAltaTel.Name = "btnGuardarAltaTel";
-            this.btnGuardarAltaTel.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarAltaTel.Size = new System.Drawing.Size(83, 23);
             this.btnGuardarAltaTel.TabIndex = 3;
             this.btnGuardarAltaTel.Text = "Guardar";
             this.btnGuardarAltaTel.UseVisualStyleBackColor = false;
@@ -459,7 +463,7 @@
             this.btnCancelarAltaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancelarAltaTel.Location = new System.Drawing.Point(14, 60);
             this.btnCancelarAltaTel.Name = "btnCancelarAltaTel";
-            this.btnCancelarAltaTel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarAltaTel.Size = new System.Drawing.Size(83, 23);
             this.btnCancelarAltaTel.TabIndex = 2;
             this.btnCancelarAltaTel.Text = "Cancelar";
             this.btnCancelarAltaTel.UseVisualStyleBackColor = false;
@@ -507,7 +511,7 @@
             this.btnNacionalidadMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNacionalidadMod.Location = new System.Drawing.Point(30, 280);
             this.btnNacionalidadMod.Name = "btnNacionalidadMod";
-            this.btnNacionalidadMod.Size = new System.Drawing.Size(87, 23);
+            this.btnNacionalidadMod.Size = new System.Drawing.Size(100, 26);
             this.btnNacionalidadMod.TabIndex = 11;
             this.btnNacionalidadMod.Text = "Modificar";
             this.btnNacionalidadMod.UseVisualStyleBackColor = false;
@@ -517,9 +521,9 @@
             this.btnBajaNacionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBajaNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBajaNacionalidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBajaNacionalidad.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaNacionalidad.Location = new System.Drawing.Point(225, 280);
             this.btnBajaNacionalidad.Name = "btnBajaNacionalidad";
-            this.btnBajaNacionalidad.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaNacionalidad.Size = new System.Drawing.Size(100, 26);
             this.btnBajaNacionalidad.TabIndex = 10;
             this.btnBajaNacionalidad.Text = "Dar de Baja";
             this.btnBajaNacionalidad.UseVisualStyleBackColor = false;
@@ -542,9 +546,9 @@
             this.btnNacioGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnNacioGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNacioGuardarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNacioGuardarMod.Location = new System.Drawing.Point(207, 60);
+            this.btnNacioGuardarMod.Location = new System.Drawing.Point(196, 60);
             this.btnNacioGuardarMod.Name = "btnNacioGuardarMod";
-            this.btnNacioGuardarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioGuardarMod.Size = new System.Drawing.Size(83, 23);
             this.btnNacioGuardarMod.TabIndex = 3;
             this.btnNacioGuardarMod.Text = "Guardar";
             this.btnNacioGuardarMod.UseVisualStyleBackColor = false;
@@ -556,7 +560,7 @@
             this.btnNacioCancelarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNacioCancelarMod.Location = new System.Drawing.Point(14, 60);
             this.btnNacioCancelarMod.Name = "btnNacioCancelarMod";
-            this.btnNacioCancelarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioCancelarMod.Size = new System.Drawing.Size(83, 23);
             this.btnNacioCancelarMod.TabIndex = 2;
             this.btnNacioCancelarMod.Text = "Cancelar";
             this.btnNacioCancelarMod.UseVisualStyleBackColor = false;
@@ -595,9 +599,9 @@
             this.btnNacioGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnNacioGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNacioGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNacioGuardar.Location = new System.Drawing.Point(207, 60);
+            this.btnNacioGuardar.Location = new System.Drawing.Point(196, 60);
             this.btnNacioGuardar.Name = "btnNacioGuardar";
-            this.btnNacioGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioGuardar.Size = new System.Drawing.Size(83, 23);
             this.btnNacioGuardar.TabIndex = 3;
             this.btnNacioGuardar.Text = "Guardar";
             this.btnNacioGuardar.UseVisualStyleBackColor = false;
@@ -609,7 +613,7 @@
             this.btnCancelarNacioAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCancelarNacioAlta.Location = new System.Drawing.Point(14, 60);
             this.btnCancelarNacioAlta.Name = "btnCancelarNacioAlta";
-            this.btnCancelarNacioAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarNacioAlta.Size = new System.Drawing.Size(83, 23);
             this.btnCancelarNacioAlta.TabIndex = 2;
             this.btnCancelarNacioAlta.Text = "Cancelar";
             this.btnCancelarNacioAlta.UseVisualStyleBackColor = false;
@@ -657,7 +661,7 @@
             this.btnGeneroMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGeneroMod.Location = new System.Drawing.Point(30, 280);
             this.btnGeneroMod.Name = "btnGeneroMod";
-            this.btnGeneroMod.Size = new System.Drawing.Size(87, 23);
+            this.btnGeneroMod.Size = new System.Drawing.Size(100, 26);
             this.btnGeneroMod.TabIndex = 11;
             this.btnGeneroMod.Text = "Modificar";
             this.btnGeneroMod.UseVisualStyleBackColor = false;
@@ -667,9 +671,9 @@
             this.btnBajaGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnBajaGenero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBajaGenero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBajaGenero.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaGenero.Location = new System.Drawing.Point(225, 280);
             this.btnBajaGenero.Name = "btnBajaGenero";
-            this.btnBajaGenero.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaGenero.Size = new System.Drawing.Size(100, 26);
             this.btnBajaGenero.TabIndex = 10;
             this.btnBajaGenero.Text = "Dar de Baja";
             this.btnBajaGenero.UseVisualStyleBackColor = false;
@@ -692,9 +696,9 @@
             this.btnGuardarGeneroMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardarGeneroMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarGeneroMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarGeneroMod.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarGeneroMod.Location = new System.Drawing.Point(196, 60);
             this.btnGuardarGeneroMod.Name = "btnGuardarGeneroMod";
-            this.btnGuardarGeneroMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarGeneroMod.Size = new System.Drawing.Size(83, 23);
             this.btnGuardarGeneroMod.TabIndex = 3;
             this.btnGuardarGeneroMod.Text = "Guardar";
             this.btnGuardarGeneroMod.UseVisualStyleBackColor = false;
@@ -706,7 +710,7 @@
             this.btnGeneroCancelarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGeneroCancelarMod.Location = new System.Drawing.Point(14, 60);
             this.btnGeneroCancelarMod.Name = "btnGeneroCancelarMod";
-            this.btnGeneroCancelarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroCancelarMod.Size = new System.Drawing.Size(83, 23);
             this.btnGeneroCancelarMod.TabIndex = 2;
             this.btnGeneroCancelarMod.Text = "Cancelar";
             this.btnGeneroCancelarMod.UseVisualStyleBackColor = false;
@@ -745,9 +749,9 @@
             this.btnGeneroGuardarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGeneroGuardarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGeneroGuardarAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGeneroGuardarAlta.Location = new System.Drawing.Point(207, 60);
+            this.btnGeneroGuardarAlta.Location = new System.Drawing.Point(196, 60);
             this.btnGeneroGuardarAlta.Name = "btnGeneroGuardarAlta";
-            this.btnGeneroGuardarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroGuardarAlta.Size = new System.Drawing.Size(83, 23);
             this.btnGeneroGuardarAlta.TabIndex = 3;
             this.btnGeneroGuardarAlta.Text = "Guardar";
             this.btnGeneroGuardarAlta.UseVisualStyleBackColor = false;
@@ -759,7 +763,7 @@
             this.btnGeneroCancelarAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGeneroCancelarAlta.Location = new System.Drawing.Point(14, 60);
             this.btnGeneroCancelarAlta.Name = "btnGeneroCancelarAlta";
-            this.btnGeneroCancelarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroCancelarAlta.Size = new System.Drawing.Size(83, 23);
             this.btnGeneroCancelarAlta.TabIndex = 2;
             this.btnGeneroCancelarAlta.Text = "Cancelar";
             this.btnGeneroCancelarAlta.UseVisualStyleBackColor = false;
@@ -807,10 +811,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabConfigAltaPersonal);
             this.Name = "frmConfigAltaPersonal";
             this.Text = "Configuración Alta de Personal";
-            this.tabControl1.ResumeLayout(false);
+            this.tabConfigAltaPersonal.ResumeLayout(false);
             this.tabDocumento.ResumeLayout(false);
             this.tabTelefono.ResumeLayout(false);
             this.tabNacionalidad.ResumeLayout(false);
@@ -841,7 +845,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabConfigAltaPersonal;
         private System.Windows.Forms.TabPage tabDocumento;
         private System.Windows.Forms.TabPage tabTelefono;
         private System.Windows.Forms.TabPage tabNacionalidad;
