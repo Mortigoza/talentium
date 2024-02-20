@@ -199,5 +199,6 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoPersonaGenero = EjecutarConsultas("consultar_persona_genero_sp", listaParametros.ToArray());
             return resultadoPersonaGenero.Rows.Count != 0;
         }
+        // TENGO QUE HACER TODOS LOS SP!!!!!!!!!!!!!!!!!!!!!!!! DE GENERO Y NACIONALIDAD!!!!!!!!!!!!!!!!!!!!!!!!!1
     }
 }

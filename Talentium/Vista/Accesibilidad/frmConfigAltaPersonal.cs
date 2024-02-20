@@ -57,6 +57,7 @@ namespace Vista.Accesibilidad
         {
             NavigateTabs(1);
         }
+        // tab Tipo de documento
         private void btnGuardarMod_Click(object sender, EventArgs e)
         {
             int id_tipo_doc = (int)dtgDocumento.SelectedCells[0].Value;
@@ -168,5 +169,23 @@ namespace Vista.Accesibilidad
 
             }
         }
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDocumentoMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        // tab tipo de teléfono 
     }
 }

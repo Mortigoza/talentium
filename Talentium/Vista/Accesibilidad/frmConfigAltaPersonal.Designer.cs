@@ -218,6 +218,7 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(141, 22);
             this.txtDocumento.TabIndex = 1;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // dtgDocumento
             // 
@@ -328,6 +329,7 @@
             this.txtDocumentoMod.Name = "txtDocumentoMod";
             this.txtDocumentoMod.Size = new System.Drawing.Size(141, 22);
             this.txtDocumentoMod.TabIndex = 1;
+            this.txtDocumentoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumentoMod_KeyPress);
             // 
             // btnBaja
             // 
