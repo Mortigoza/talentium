@@ -49,47 +49,47 @@
             this.txtDocumentoMod = new System.Windows.Forms.TextBox();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnModificarTel = new System.Windows.Forms.Button();
+            this.btnBajaTel = new System.Windows.Forms.Button();
+            this.grpModificarTel = new System.Windows.Forms.GroupBox();
+            this.btnGuardarTelMod = new System.Windows.Forms.Button();
+            this.btnCancelarTelMod = new System.Windows.Forms.Button();
+            this.lblTipoTelMod = new System.Windows.Forms.Label();
+            this.txtTipoTelMod = new System.Windows.Forms.TextBox();
+            this.grpAltaTel = new System.Windows.Forms.GroupBox();
+            this.btnGuardarAltaTel = new System.Windows.Forms.Button();
+            this.btnCancelarAltaTel = new System.Windows.Forms.Button();
+            this.lblTipoTel = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgTelefono = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.btnNacionalidadMod = new System.Windows.Forms.Button();
+            this.btnBajaNacionalidad = new System.Windows.Forms.Button();
+            this.grpNacioMod = new System.Windows.Forms.GroupBox();
+            this.btnNacioGuardarMod = new System.Windows.Forms.Button();
+            this.btnNacioCancelarMod = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.grpNacionalidadAlta = new System.Windows.Forms.GroupBox();
+            this.btnNacioGuardar = new System.Windows.Forms.Button();
+            this.btnCancelarNacioAlta = new System.Windows.Forms.Button();
+            this.lblNacionalidad = new System.Windows.Forms.Label();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
+            this.dtgNacionalidad = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnGeneroMod = new System.Windows.Forms.Button();
+            this.btnBajaGenero = new System.Windows.Forms.Button();
+            this.grpModificarGenero = new System.Windows.Forms.GroupBox();
+            this.btnGuardarGeneroMod = new System.Windows.Forms.Button();
+            this.btnGeneroCancelarMod = new System.Windows.Forms.Button();
+            this.lblGeneroMod = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.grpGeneroAlta = new System.Windows.Forms.GroupBox();
+            this.btnGeneroGuardarAlta = new System.Windows.Forms.Button();
+            this.btnGeneroCancelarAlta = new System.Windows.Forms.Button();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.txtGenero = new System.Windows.Forms.TextBox();
+            this.dtgGenero = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabDocumento.SuspendLayout();
@@ -99,15 +99,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDocumento)).BeginInit();
             this.grpAlta.SuspendLayout();
             this.grpModificar.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.grpModificarTel.SuspendLayout();
+            this.grpAltaTel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTelefono)).BeginInit();
+            this.grpNacioMod.SuspendLayout();
+            this.grpNacionalidadAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).BeginInit();
+            this.grpModificarGenero.SuspendLayout();
+            this.grpGeneroAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgGenero)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -139,11 +139,11 @@
             // 
             // tabTelefono
             // 
-            this.tabTelefono.Controls.Add(this.button7);
-            this.tabTelefono.Controls.Add(this.button8);
-            this.tabTelefono.Controls.Add(this.groupBox3);
-            this.tabTelefono.Controls.Add(this.groupBox4);
-            this.tabTelefono.Controls.Add(this.dataGridView1);
+            this.tabTelefono.Controls.Add(this.btnModificarTel);
+            this.tabTelefono.Controls.Add(this.btnBajaTel);
+            this.tabTelefono.Controls.Add(this.grpModificarTel);
+            this.tabTelefono.Controls.Add(this.grpAltaTel);
+            this.tabTelefono.Controls.Add(this.dtgTelefono);
             this.tabTelefono.Location = new System.Drawing.Point(4, 25);
             this.tabTelefono.Name = "tabTelefono";
             this.tabTelefono.Padding = new System.Windows.Forms.Padding(3);
@@ -154,11 +154,11 @@
             // 
             // tabNacionalidad
             // 
-            this.tabNacionalidad.Controls.Add(this.button13);
-            this.tabNacionalidad.Controls.Add(this.button14);
-            this.tabNacionalidad.Controls.Add(this.groupBox5);
-            this.tabNacionalidad.Controls.Add(this.groupBox6);
-            this.tabNacionalidad.Controls.Add(this.dataGridView2);
+            this.tabNacionalidad.Controls.Add(this.btnNacionalidadMod);
+            this.tabNacionalidad.Controls.Add(this.btnBajaNacionalidad);
+            this.tabNacionalidad.Controls.Add(this.grpNacioMod);
+            this.tabNacionalidad.Controls.Add(this.grpNacionalidadAlta);
+            this.tabNacionalidad.Controls.Add(this.dtgNacionalidad);
             this.tabNacionalidad.Location = new System.Drawing.Point(4, 25);
             this.tabNacionalidad.Name = "tabNacionalidad";
             this.tabNacionalidad.Padding = new System.Windows.Forms.Padding(3);
@@ -169,11 +169,11 @@
             // 
             // tabGenero
             // 
-            this.tabGenero.Controls.Add(this.button19);
-            this.tabGenero.Controls.Add(this.button20);
-            this.tabGenero.Controls.Add(this.groupBox7);
-            this.tabGenero.Controls.Add(this.groupBox8);
-            this.tabGenero.Controls.Add(this.dataGridView3);
+            this.tabGenero.Controls.Add(this.btnGeneroMod);
+            this.tabGenero.Controls.Add(this.btnBajaGenero);
+            this.tabGenero.Controls.Add(this.grpModificarGenero);
+            this.tabGenero.Controls.Add(this.grpGeneroAlta);
+            this.tabGenero.Controls.Add(this.dtgGenero);
             this.tabGenero.Location = new System.Drawing.Point(4, 25);
             this.tabGenero.Name = "tabGenero";
             this.tabGenero.Padding = new System.Windows.Forms.Padding(3);
@@ -350,110 +350,128 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnModificarTel
             // 
-            this.button7.Location = new System.Drawing.Point(30, 280);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnModificarTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModificarTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificarTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnModificarTel.Location = new System.Drawing.Point(30, 280);
+            this.btnModificarTel.Name = "btnModificarTel";
+            this.btnModificarTel.Size = new System.Drawing.Size(87, 23);
+            this.btnModificarTel.TabIndex = 11;
+            this.btnModificarTel.Text = "Modificar";
+            this.btnModificarTel.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnBajaTel
             // 
-            this.button8.Location = new System.Drawing.Point(250, 280);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnBajaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBajaTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBajaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBajaTel.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaTel.Name = "btnBajaTel";
+            this.btnBajaTel.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaTel.TabIndex = 10;
+            this.btnBajaTel.Text = "Dar de Baja";
+            this.btnBajaTel.UseVisualStyleBackColor = false;
             // 
-            // groupBox3
+            // grpModificarTel
             // 
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Location = new System.Drawing.Point(343, 174);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(294, 100);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.grpModificarTel.Controls.Add(this.btnGuardarTelMod);
+            this.grpModificarTel.Controls.Add(this.btnCancelarTelMod);
+            this.grpModificarTel.Controls.Add(this.lblTipoTelMod);
+            this.grpModificarTel.Controls.Add(this.txtTipoTelMod);
+            this.grpModificarTel.Location = new System.Drawing.Point(343, 174);
+            this.grpModificarTel.Name = "grpModificarTel";
+            this.grpModificarTel.Size = new System.Drawing.Size(294, 100);
+            this.grpModificarTel.TabIndex = 9;
+            this.grpModificarTel.TabStop = false;
+            this.grpModificarTel.Text = "Modificar";
             // 
-            // button9
+            // btnGuardarTelMod
             // 
-            this.button9.Location = new System.Drawing.Point(207, 60);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnGuardarTelMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarTelMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarTelMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardarTelMod.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarTelMod.Name = "btnGuardarTelMod";
+            this.btnGuardarTelMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarTelMod.TabIndex = 3;
+            this.btnGuardarTelMod.Text = "Guardar";
+            this.btnGuardarTelMod.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnCancelarTelMod
             // 
-            this.button10.Location = new System.Drawing.Point(14, 60);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnCancelarTelMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarTelMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarTelMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelarTelMod.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarTelMod.Name = "btnCancelarTelMod";
+            this.btnCancelarTelMod.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarTelMod.TabIndex = 2;
+            this.btnCancelarTelMod.Text = "Cancelar";
+            this.btnCancelarTelMod.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lblTipoTelMod
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tipo de documento";
+            this.lblTipoTelMod.AutoSize = true;
+            this.lblTipoTelMod.Location = new System.Drawing.Point(11, 30);
+            this.lblTipoTelMod.Name = "lblTipoTelMod";
+            this.lblTipoTelMod.Size = new System.Drawing.Size(111, 16);
+            this.lblTipoTelMod.TabIndex = 0;
+            this.lblTipoTelMod.Text = "Tipo de Teléfono";
             // 
-            // textBox2
+            // txtTipoTelMod
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 22);
-            this.textBox2.TabIndex = 1;
+            this.txtTipoTelMod.Location = new System.Drawing.Point(141, 27);
+            this.txtTipoTelMod.Name = "txtTipoTelMod";
+            this.txtTipoTelMod.Size = new System.Drawing.Size(141, 22);
+            this.txtTipoTelMod.TabIndex = 1;
             // 
-            // groupBox4
+            // grpAltaTel
             // 
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Location = new System.Drawing.Point(343, 24);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(294, 100);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.grpAltaTel.Controls.Add(this.btnGuardarAltaTel);
+            this.grpAltaTel.Controls.Add(this.btnCancelarAltaTel);
+            this.grpAltaTel.Controls.Add(this.lblTipoTel);
+            this.grpAltaTel.Controls.Add(this.textBox3);
+            this.grpAltaTel.Location = new System.Drawing.Point(343, 24);
+            this.grpAltaTel.Name = "grpAltaTel";
+            this.grpAltaTel.Size = new System.Drawing.Size(294, 100);
+            this.grpAltaTel.TabIndex = 8;
+            this.grpAltaTel.TabStop = false;
+            this.grpAltaTel.Text = "Alta";
             // 
-            // button11
+            // btnGuardarAltaTel
             // 
-            this.button11.Location = new System.Drawing.Point(207, 60);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnGuardarAltaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarAltaTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarAltaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardarAltaTel.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarAltaTel.Name = "btnGuardarAltaTel";
+            this.btnGuardarAltaTel.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarAltaTel.TabIndex = 3;
+            this.btnGuardarAltaTel.Text = "Guardar";
+            this.btnGuardarAltaTel.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // btnCancelarAltaTel
             // 
-            this.button12.Location = new System.Drawing.Point(14, 60);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnCancelarAltaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarAltaTel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarAltaTel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelarAltaTel.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarAltaTel.Name = "btnCancelarAltaTel";
+            this.btnCancelarAltaTel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarAltaTel.TabIndex = 2;
+            this.btnCancelarAltaTel.Text = "Cancelar";
+            this.btnCancelarAltaTel.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // lblTipoTel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tipo de documento";
+            this.lblTipoTel.AutoSize = true;
+            this.lblTipoTel.Location = new System.Drawing.Point(11, 30);
+            this.lblTipoTel.Name = "lblTipoTel";
+            this.lblTipoTel.Size = new System.Drawing.Size(111, 16);
+            this.lblTipoTel.TabIndex = 0;
+            this.lblTipoTel.Text = "Tipo de Teléfono";
             // 
             // textBox3
             // 
@@ -462,18 +480,18 @@
             this.textBox3.Size = new System.Drawing.Size(141, 22);
             this.textBox3.TabIndex = 1;
             // 
-            // dataGridView1
+            // dtgTelefono
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgTelefono.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtgTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTelefono.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(295, 250);
-            this.dataGridView1.TabIndex = 7;
+            this.dtgTelefono.Location = new System.Drawing.Point(30, 24);
+            this.dtgTelefono.Name = "dtgTelefono";
+            this.dtgTelefono.RowHeadersWidth = 51;
+            this.dtgTelefono.RowTemplate.Height = 24;
+            this.dtgTelefono.Size = new System.Drawing.Size(295, 250);
+            this.dtgTelefono.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -482,130 +500,148 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // button13
+            // btnNacionalidadMod
             // 
-            this.button13.Location = new System.Drawing.Point(30, 280);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 11;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnNacionalidadMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnNacionalidadMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNacionalidadMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNacionalidadMod.Location = new System.Drawing.Point(30, 280);
+            this.btnNacionalidadMod.Name = "btnNacionalidadMod";
+            this.btnNacionalidadMod.Size = new System.Drawing.Size(87, 23);
+            this.btnNacionalidadMod.TabIndex = 11;
+            this.btnNacionalidadMod.Text = "Modificar";
+            this.btnNacionalidadMod.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btnBajaNacionalidad
             // 
-            this.button14.Location = new System.Drawing.Point(250, 280);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 10;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnBajaNacionalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBajaNacionalidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBajaNacionalidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBajaNacionalidad.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaNacionalidad.Name = "btnBajaNacionalidad";
+            this.btnBajaNacionalidad.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaNacionalidad.TabIndex = 10;
+            this.btnBajaNacionalidad.Text = "Dar de Baja";
+            this.btnBajaNacionalidad.UseVisualStyleBackColor = false;
             // 
-            // groupBox5
+            // grpNacioMod
             // 
-            this.groupBox5.Controls.Add(this.button15);
-            this.groupBox5.Controls.Add(this.button16);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.textBox4);
-            this.groupBox5.Location = new System.Drawing.Point(343, 174);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(294, 100);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
+            this.grpNacioMod.Controls.Add(this.btnNacioGuardarMod);
+            this.grpNacioMod.Controls.Add(this.btnNacioCancelarMod);
+            this.grpNacioMod.Controls.Add(this.label4);
+            this.grpNacioMod.Controls.Add(this.textBox4);
+            this.grpNacioMod.Location = new System.Drawing.Point(343, 174);
+            this.grpNacioMod.Name = "grpNacioMod";
+            this.grpNacioMod.Size = new System.Drawing.Size(294, 100);
+            this.grpNacioMod.TabIndex = 9;
+            this.grpNacioMod.TabStop = false;
+            this.grpNacioMod.Text = "Modificar";
             // 
-            // button15
+            // btnNacioGuardarMod
             // 
-            this.button15.Location = new System.Drawing.Point(207, 60);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnNacioGuardarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnNacioGuardarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNacioGuardarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNacioGuardarMod.Location = new System.Drawing.Point(207, 60);
+            this.btnNacioGuardarMod.Name = "btnNacioGuardarMod";
+            this.btnNacioGuardarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioGuardarMod.TabIndex = 3;
+            this.btnNacioGuardarMod.Text = "Guardar";
+            this.btnNacioGuardarMod.UseVisualStyleBackColor = false;
             // 
-            // button16
+            // btnNacioCancelarMod
             // 
-            this.button16.Location = new System.Drawing.Point(14, 60);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 2;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnNacioCancelarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnNacioCancelarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNacioCancelarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNacioCancelarMod.Location = new System.Drawing.Point(14, 60);
+            this.btnNacioCancelarMod.Name = "btnNacioCancelarMod";
+            this.btnNacioCancelarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioCancelarMod.TabIndex = 2;
+            this.btnNacioCancelarMod.Text = "Cancelar";
+            this.btnNacioCancelarMod.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 30);
+            this.label4.Location = new System.Drawing.Point(29, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Tipo de documento";
+            this.label4.Text = "Nacionalidad";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(141, 27);
+            this.textBox4.Location = new System.Drawing.Point(123, 27);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(141, 22);
             this.textBox4.TabIndex = 1;
             // 
-            // groupBox6
+            // grpNacionalidadAlta
             // 
-            this.groupBox6.Controls.Add(this.button17);
-            this.groupBox6.Controls.Add(this.button18);
-            this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Location = new System.Drawing.Point(343, 24);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(294, 100);
-            this.groupBox6.TabIndex = 8;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
+            this.grpNacionalidadAlta.Controls.Add(this.btnNacioGuardar);
+            this.grpNacionalidadAlta.Controls.Add(this.btnCancelarNacioAlta);
+            this.grpNacionalidadAlta.Controls.Add(this.lblNacionalidad);
+            this.grpNacionalidadAlta.Controls.Add(this.txtNacionalidad);
+            this.grpNacionalidadAlta.Location = new System.Drawing.Point(343, 24);
+            this.grpNacionalidadAlta.Name = "grpNacionalidadAlta";
+            this.grpNacionalidadAlta.Size = new System.Drawing.Size(294, 100);
+            this.grpNacionalidadAlta.TabIndex = 8;
+            this.grpNacionalidadAlta.TabStop = false;
+            this.grpNacionalidadAlta.Text = "Alta";
             // 
-            // button17
+            // btnNacioGuardar
             // 
-            this.button17.Location = new System.Drawing.Point(207, 60);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 3;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnNacioGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnNacioGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNacioGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNacioGuardar.Location = new System.Drawing.Point(207, 60);
+            this.btnNacioGuardar.Name = "btnNacioGuardar";
+            this.btnNacioGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnNacioGuardar.TabIndex = 3;
+            this.btnNacioGuardar.Text = "Guardar";
+            this.btnNacioGuardar.UseVisualStyleBackColor = false;
             // 
-            // button18
+            // btnCancelarNacioAlta
             // 
-            this.button18.Location = new System.Drawing.Point(14, 60);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 2;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnCancelarNacioAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarNacioAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarNacioAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelarNacioAlta.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarNacioAlta.Name = "btnCancelarNacioAlta";
+            this.btnCancelarNacioAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarNacioAlta.TabIndex = 2;
+            this.btnCancelarNacioAlta.Text = "Cancelar";
+            this.btnCancelarNacioAlta.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // lblNacionalidad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tipo de documento";
+            this.lblNacionalidad.AutoSize = true;
+            this.lblNacionalidad.Location = new System.Drawing.Point(29, 30);
+            this.lblNacionalidad.Name = "lblNacionalidad";
+            this.lblNacionalidad.Size = new System.Drawing.Size(88, 16);
+            this.lblNacionalidad.TabIndex = 0;
+            this.lblNacionalidad.Text = "Nacionalidad";
             // 
-            // textBox5
+            // txtNacionalidad
             // 
-            this.textBox5.Location = new System.Drawing.Point(141, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(141, 22);
-            this.textBox5.TabIndex = 1;
+            this.txtNacionalidad.Location = new System.Drawing.Point(123, 27);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(141, 22);
+            this.txtNacionalidad.TabIndex = 1;
             // 
-            // dataGridView2
+            // dtgNacionalidad
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgNacionalidad.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtgNacionalidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNacionalidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
-            this.dataGridView2.Location = new System.Drawing.Point(30, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(295, 250);
-            this.dataGridView2.TabIndex = 7;
+            this.dtgNacionalidad.Location = new System.Drawing.Point(30, 24);
+            this.dtgNacionalidad.Name = "dtgNacionalidad";
+            this.dtgNacionalidad.RowHeadersWidth = 51;
+            this.dtgNacionalidad.RowTemplate.Height = 24;
+            this.dtgNacionalidad.Size = new System.Drawing.Size(295, 250);
+            this.dtgNacionalidad.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -614,130 +650,148 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // button19
+            // btnGeneroMod
             // 
-            this.button19.Location = new System.Drawing.Point(30, 280);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 23);
-            this.button19.TabIndex = 11;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnGeneroMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGeneroMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGeneroMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGeneroMod.Location = new System.Drawing.Point(30, 280);
+            this.btnGeneroMod.Name = "btnGeneroMod";
+            this.btnGeneroMod.Size = new System.Drawing.Size(87, 23);
+            this.btnGeneroMod.TabIndex = 11;
+            this.btnGeneroMod.Text = "Modificar";
+            this.btnGeneroMod.UseVisualStyleBackColor = false;
             // 
-            // button20
+            // btnBajaGenero
             // 
-            this.button20.Location = new System.Drawing.Point(250, 280);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 10;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnBajaGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBajaGenero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBajaGenero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBajaGenero.Location = new System.Drawing.Point(238, 280);
+            this.btnBajaGenero.Name = "btnBajaGenero";
+            this.btnBajaGenero.Size = new System.Drawing.Size(87, 23);
+            this.btnBajaGenero.TabIndex = 10;
+            this.btnBajaGenero.Text = "Dar de Baja";
+            this.btnBajaGenero.UseVisualStyleBackColor = false;
             // 
-            // groupBox7
+            // grpModificarGenero
             // 
-            this.groupBox7.Controls.Add(this.button21);
-            this.groupBox7.Controls.Add(this.button22);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.textBox6);
-            this.groupBox7.Location = new System.Drawing.Point(343, 174);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(294, 100);
-            this.groupBox7.TabIndex = 9;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
+            this.grpModificarGenero.Controls.Add(this.btnGuardarGeneroMod);
+            this.grpModificarGenero.Controls.Add(this.btnGeneroCancelarMod);
+            this.grpModificarGenero.Controls.Add(this.lblGeneroMod);
+            this.grpModificarGenero.Controls.Add(this.textBox6);
+            this.grpModificarGenero.Location = new System.Drawing.Point(343, 174);
+            this.grpModificarGenero.Name = "grpModificarGenero";
+            this.grpModificarGenero.Size = new System.Drawing.Size(294, 100);
+            this.grpModificarGenero.TabIndex = 9;
+            this.grpModificarGenero.TabStop = false;
+            this.grpModificarGenero.Text = "Modificar";
             // 
-            // button21
+            // btnGuardarGeneroMod
             // 
-            this.button21.Location = new System.Drawing.Point(207, 60);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnGuardarGeneroMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarGeneroMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarGeneroMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardarGeneroMod.Location = new System.Drawing.Point(207, 60);
+            this.btnGuardarGeneroMod.Name = "btnGuardarGeneroMod";
+            this.btnGuardarGeneroMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarGeneroMod.TabIndex = 3;
+            this.btnGuardarGeneroMod.Text = "Guardar";
+            this.btnGuardarGeneroMod.UseVisualStyleBackColor = false;
             // 
-            // button22
+            // btnGeneroCancelarMod
             // 
-            this.button22.Location = new System.Drawing.Point(14, 60);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 23);
-            this.button22.TabIndex = 2;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnGeneroCancelarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGeneroCancelarMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGeneroCancelarMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGeneroCancelarMod.Location = new System.Drawing.Point(14, 60);
+            this.btnGeneroCancelarMod.Name = "btnGeneroCancelarMod";
+            this.btnGeneroCancelarMod.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroCancelarMod.TabIndex = 2;
+            this.btnGeneroCancelarMod.Text = "Cancelar";
+            this.btnGeneroCancelarMod.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // lblGeneroMod
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tipo de documento";
+            this.lblGeneroMod.AutoSize = true;
+            this.lblGeneroMod.Location = new System.Drawing.Point(37, 30);
+            this.lblGeneroMod.Name = "lblGeneroMod";
+            this.lblGeneroMod.Size = new System.Drawing.Size(52, 16);
+            this.lblGeneroMod.TabIndex = 0;
+            this.lblGeneroMod.Text = "Género";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(141, 27);
+            this.textBox6.Location = new System.Drawing.Point(109, 27);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(141, 22);
             this.textBox6.TabIndex = 1;
             // 
-            // groupBox8
+            // grpGeneroAlta
             // 
-            this.groupBox8.Controls.Add(this.button23);
-            this.groupBox8.Controls.Add(this.button24);
-            this.groupBox8.Controls.Add(this.label7);
-            this.groupBox8.Controls.Add(this.textBox7);
-            this.groupBox8.Location = new System.Drawing.Point(343, 24);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(294, 100);
-            this.groupBox8.TabIndex = 8;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
+            this.grpGeneroAlta.Controls.Add(this.btnGeneroGuardarAlta);
+            this.grpGeneroAlta.Controls.Add(this.btnGeneroCancelarAlta);
+            this.grpGeneroAlta.Controls.Add(this.lblGenero);
+            this.grpGeneroAlta.Controls.Add(this.txtGenero);
+            this.grpGeneroAlta.Location = new System.Drawing.Point(343, 24);
+            this.grpGeneroAlta.Name = "grpGeneroAlta";
+            this.grpGeneroAlta.Size = new System.Drawing.Size(294, 100);
+            this.grpGeneroAlta.TabIndex = 8;
+            this.grpGeneroAlta.TabStop = false;
+            this.grpGeneroAlta.Text = "Alta";
             // 
-            // button23
+            // btnGeneroGuardarAlta
             // 
-            this.button23.Location = new System.Drawing.Point(207, 60);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 23);
-            this.button23.TabIndex = 3;
-            this.button23.Text = "button23";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btnGeneroGuardarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGeneroGuardarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGeneroGuardarAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGeneroGuardarAlta.Location = new System.Drawing.Point(207, 60);
+            this.btnGeneroGuardarAlta.Name = "btnGeneroGuardarAlta";
+            this.btnGeneroGuardarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroGuardarAlta.TabIndex = 3;
+            this.btnGeneroGuardarAlta.Text = "Guardar";
+            this.btnGeneroGuardarAlta.UseVisualStyleBackColor = false;
             // 
-            // button24
+            // btnGeneroCancelarAlta
             // 
-            this.button24.Location = new System.Drawing.Point(14, 60);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 2;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnGeneroCancelarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGeneroCancelarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGeneroCancelarAlta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGeneroCancelarAlta.Location = new System.Drawing.Point(14, 60);
+            this.btnGeneroCancelarAlta.Name = "btnGeneroCancelarAlta";
+            this.btnGeneroCancelarAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneroCancelarAlta.TabIndex = 2;
+            this.btnGeneroCancelarAlta.Text = "Cancelar";
+            this.btnGeneroCancelarAlta.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // lblGenero
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tipo de documento";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(37, 30);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(52, 16);
+            this.lblGenero.TabIndex = 0;
+            this.lblGenero.Text = "Género";
             // 
-            // textBox7
+            // txtGenero
             // 
-            this.textBox7.Location = new System.Drawing.Point(141, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(141, 22);
-            this.textBox7.TabIndex = 1;
+            this.txtGenero.Location = new System.Drawing.Point(109, 27);
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(141, 22);
+            this.txtGenero.TabIndex = 1;
             // 
-            // dataGridView3
+            // dtgGenero
             // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgGenero.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtgGenero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgGenero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView3.Location = new System.Drawing.Point(30, 24);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(295, 250);
-            this.dataGridView3.TabIndex = 7;
+            this.dtgGenero.Location = new System.Drawing.Point(30, 24);
+            this.dtgGenero.Name = "dtgGenero";
+            this.dtgGenero.RowHeadersWidth = 51;
+            this.dtgGenero.RowTemplate.Height = 24;
+            this.dtgGenero.Size = new System.Drawing.Size(295, 250);
+            this.dtgGenero.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -766,21 +820,21 @@
             this.grpAlta.PerformLayout();
             this.grpModificar.ResumeLayout(false);
             this.grpModificar.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.grpModificarTel.ResumeLayout(false);
+            this.grpModificarTel.PerformLayout();
+            this.grpAltaTel.ResumeLayout(false);
+            this.grpAltaTel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTelefono)).EndInit();
+            this.grpNacioMod.ResumeLayout(false);
+            this.grpNacioMod.PerformLayout();
+            this.grpNacionalidadAlta.ResumeLayout(false);
+            this.grpNacionalidadAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).EndInit();
+            this.grpModificarGenero.ResumeLayout(false);
+            this.grpModificarGenero.PerformLayout();
+            this.grpGeneroAlta.ResumeLayout(false);
+            this.grpGeneroAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgGenero)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -808,47 +862,47 @@
         private System.Windows.Forms.TextBox txtDocumentoMod;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBaja;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnModificarTel;
+        private System.Windows.Forms.Button btnBajaTel;
+        private System.Windows.Forms.GroupBox grpModificarTel;
+        private System.Windows.Forms.Button btnGuardarTelMod;
+        private System.Windows.Forms.Button btnCancelarTelMod;
+        private System.Windows.Forms.Label lblTipoTelMod;
+        private System.Windows.Forms.TextBox txtTipoTelMod;
+        private System.Windows.Forms.GroupBox grpAltaTel;
+        private System.Windows.Forms.Button btnGuardarAltaTel;
+        private System.Windows.Forms.Button btnCancelarAltaTel;
+        private System.Windows.Forms.Label lblTipoTel;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btnNacionalidadMod;
+        private System.Windows.Forms.Button btnBajaNacionalidad;
+        private System.Windows.Forms.GroupBox grpNacioMod;
+        private System.Windows.Forms.Button btnNacioGuardarMod;
+        private System.Windows.Forms.Button btnNacioCancelarMod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox grpNacionalidadAlta;
+        private System.Windows.Forms.Button btnNacioGuardar;
+        private System.Windows.Forms.Button btnCancelarNacioAlta;
+        private System.Windows.Forms.Label lblNacionalidad;
+        private System.Windows.Forms.TextBox txtNacionalidad;
+        private System.Windows.Forms.DataGridView dtgNacionalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnGeneroMod;
+        private System.Windows.Forms.Button btnBajaGenero;
+        private System.Windows.Forms.GroupBox grpModificarGenero;
+        private System.Windows.Forms.Button btnGuardarGeneroMod;
+        private System.Windows.Forms.Button btnGeneroCancelarMod;
+        private System.Windows.Forms.Label lblGeneroMod;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.GroupBox grpGeneroAlta;
+        private System.Windows.Forms.Button btnGeneroGuardarAlta;
+        private System.Windows.Forms.Button btnGeneroCancelarAlta;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.TextBox txtGenero;
+        private System.Windows.Forms.DataGridView dtgGenero;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
