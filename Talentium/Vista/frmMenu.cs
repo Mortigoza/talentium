@@ -257,5 +257,13 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void configuraciónDeAltaPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConfigAltaPersonal frm = new frmConfigAltaPersonal();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
