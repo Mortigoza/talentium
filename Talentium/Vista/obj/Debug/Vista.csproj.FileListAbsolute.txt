@@ -375,3 +375,5 @@ C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\D
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources

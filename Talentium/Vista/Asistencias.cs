@@ -21,9 +21,11 @@ namespace Vista
     public partial class Asistencias : Form
     {
         CN_Asistencias asistencias = new CN_Asistencias();
+        public bool isReport = false;
         public Asistencias()
         {
             InitializeComponent();
+            btnExcel.Visible = false;
             buscarAlta.Enabled = false;
             DataTable asistencia = asistencias.area();
             areasAltas.DisplayMember = "area";
@@ -41,7 +43,17 @@ namespace Vista
             Refrescar(dataGridModificar);
 
         }
-
+        public void RecibirDatos(bool ocultar)
+        {
+            isReport = ocultar;
+            btnExcel.Visible = ocultar;
+            btnExcel.Enabled = false; 
+            ControlAsist.TabPages[0].Enabled = false;
+            ControlAsist.TabPages[0].Hide();
+            ControlAsist.TabPages[1].Enabled = true;
+            ControlAsist.SelectedIndex = 1;
+            tbpModificar.Text = "Reporte Inasistencias";
+        }
         public void Refrescar(DataGridView dtg)
         {
             dtg.DataSource = null;
@@ -74,7 +86,6 @@ namespace Vista
                         datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
                         datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
                         datos.Alta = true;
-                        // y así sucesivamente para las otras columnas
                     }
                     AsistenciasPanel panel = new AsistenciasPanel(datos);
 
@@ -108,9 +119,11 @@ namespace Vista
         {
             dataGridModificar.AllowUserToAddRows = false;
             dataGridModificar.DataSource = data;
-            dataGridModificar.Columns["Modificar"].Visible = true;
-            dataGridModificar.Columns["Eliminar"].Visible = true;
-
+            if (!isReport)
+            {
+                dataGridModificar.Columns["Modificar"].Visible = true;
+                dataGridModificar.Columns["Eliminar"].Visible = true;
+            }
 
             // Ocultar los id en las columnas
 
@@ -209,7 +222,13 @@ namespace Vista
             //corroborar las cargas del dtg aplicar la busqueda del motivo para traerlo.
             //tengo que traer nombre y apellido de persona, dejando el id_persona y el id_motivo
             cargarDtg(asis);
-
+            if (asis.Rows.Count >= 1)
+            {
+                btnExcel.Enabled = true;
+            }
+            else {
+                btnExcel.Enabled = false;
+            }
 
 
         }

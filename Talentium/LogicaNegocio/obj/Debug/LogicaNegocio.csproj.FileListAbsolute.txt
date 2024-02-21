@@ -184,3 +184,7 @@ C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegoc
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll.config
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.resources
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.en-US.resources
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.es-AR.resources
