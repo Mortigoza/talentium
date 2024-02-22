@@ -39,20 +39,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbAreas = new System.Windows.Forms.ComboBox();
             this.cmbPersonal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgEvaluacion = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Efectividad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Puntualidad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.RelSuperiores = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Disciplina = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblReferencia = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).BeginInit();
@@ -112,6 +112,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de búsqueda *";
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSeleccionar.Location = new System.Drawing.Point(233, 124);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(112, 31);
+            this.btnSeleccionar.TabIndex = 16;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -151,11 +166,11 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardar.Enabled = false;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGuardar.Location = new System.Drawing.Point(793, 396);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
@@ -207,37 +222,6 @@
             this.dtgEvaluacion.RowTemplate.Height = 24;
             this.dtgEvaluacion.Size = new System.Drawing.Size(875, 183);
             this.dtgEvaluacion.TabIndex = 18;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cmbMes);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cmbAnio);
-            this.groupBox2.Location = new System.Drawing.Point(546, 12);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(288, 171);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Periodo de evaluación";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSeleccionar.Location = new System.Drawing.Point(233, 124);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(112, 31);
-            this.btnSeleccionar.TabIndex = 16;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // NombreApellido
             // 
@@ -325,6 +309,22 @@
             this.DesempEquipo.MinimumWidth = 6;
             this.DesempEquipo.Name = "DesempEquipo";
             this.DesempEquipo.Width = 125;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.cmbMes);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.cmbAnio);
+            this.groupBox2.Location = new System.Drawing.Point(546, 12);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(288, 171);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Periodo de evaluación";
             // 
             // lblReferencia
             // 
