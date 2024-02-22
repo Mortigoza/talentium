@@ -123,7 +123,7 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(112, 31);
             this.btnSeleccionar.TabIndex = 16;
-            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Text = "Filtrar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
