@@ -48,7 +48,7 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblError.Location = new System.Drawing.Point(231, 84);
+            this.lblError.Location = new System.Drawing.Point(494, 137);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(29, 13);
             this.lblError.TabIndex = 38;
@@ -58,73 +58,80 @@
             // 
             // respuesta
             // 
-            this.respuesta.Location = new System.Drawing.Point(234, 242);
+            this.respuesta.Location = new System.Drawing.Point(210, 257);
             this.respuesta.Margin = new System.Windows.Forms.Padding(2);
             this.respuesta.Name = "respuesta";
-            this.respuesta.Size = new System.Drawing.Size(182, 20);
+            this.respuesta.Size = new System.Drawing.Size(279, 20);
             this.respuesta.TabIndex = 37;
+            this.respuesta.TextChanged += new System.EventHandler(this.respuesta_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 242);
+            this.label5.Location = new System.Drawing.Point(41, 260);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 36;
             this.label5.Text = "Respuesta:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 199);
+            this.label4.Location = new System.Drawing.Point(41, 220);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 17);
             this.label4.TabIndex = 35;
             this.label4.Text = "Pregunta de seguridad:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(234, 199);
+            this.comboBox1.Location = new System.Drawing.Point(210, 216);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(283, 21);
+            this.comboBox1.Size = new System.Drawing.Size(279, 21);
             this.comboBox1.TabIndex = 34;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 47);
+            this.panel1.Size = new System.Drawing.Size(718, 50);
             this.panel1.TabIndex = 33;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(178, 5);
+            this.label2.Location = new System.Drawing.Point(222, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 31);
+            this.label2.Size = new System.Drawing.Size(280, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cambio de Contraseña";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // continuar
             // 
-            this.continuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.continuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.continuar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(128)))));
-            this.continuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.continuar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.continuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.continuar.Location = new System.Drawing.Point(451, 299);
+            this.continuar.Location = new System.Drawing.Point(618, 322);
             this.continuar.Name = "continuar";
             this.continuar.Size = new System.Drawing.Size(88, 32);
             this.continuar.TabIndex = 32;
@@ -136,56 +143,61 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 156);
+            this.label6.Location = new System.Drawing.Point(41, 180);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 17);
             this.label6.TabIndex = 31;
             this.label6.Text = "Reingresar contraseña:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tbContra2
             // 
-            this.tbContra2.Location = new System.Drawing.Point(234, 153);
+            this.tbContra2.Location = new System.Drawing.Point(210, 177);
             this.tbContra2.Margin = new System.Windows.Forms.Padding(2);
             this.tbContra2.Name = "tbContra2";
-            this.tbContra2.Size = new System.Drawing.Size(182, 20);
+            this.tbContra2.Size = new System.Drawing.Size(279, 20);
             this.tbContra2.TabIndex = 30;
             this.tbContra2.TextChanged += new System.EventHandler(this.tbContra2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 178);
+            this.label3.Location = new System.Drawing.Point(137, 200);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 29;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 108);
+            this.label1.Location = new System.Drawing.Point(41, 140);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "Nueva contraseña:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbContra1
             // 
-            this.tbContra1.Location = new System.Drawing.Point(234, 108);
+            this.tbContra1.Location = new System.Drawing.Point(210, 137);
             this.tbContra1.Margin = new System.Windows.Forms.Padding(2);
             this.tbContra1.Name = "tbContra1";
-            this.tbContra1.Size = new System.Drawing.Size(182, 20);
+            this.tbContra1.Size = new System.Drawing.Size(279, 20);
             this.tbContra1.TabIndex = 27;
+            this.tbContra1.TextChanged += new System.EventHandler(this.tbContra1_TextChanged_2);
             this.tbContra1.Leave += new System.EventHandler(this.tbContra1_Leave);
             // 
             // CambioDePassNU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 366);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(718, 366);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.respuesta);
             this.Controls.Add(this.label5);
@@ -225,5 +237,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbContra1;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

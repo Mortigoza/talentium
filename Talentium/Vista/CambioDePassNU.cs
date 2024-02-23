@@ -82,7 +82,11 @@ namespace Vista
             else
             {
                 lblError.Visible = true;
-                lblError.Text = CN_Validaciones.GetMensajeErrorLabel();
+                lblError.Text = "";
+                foreach (string error in CN_Validaciones.GetMensajeErrorLabel())
+                {
+                    lblError.Text = lblError.Text + error + "\n";
+                }
             }
         }
 
@@ -102,6 +106,46 @@ namespace Vista
         }
 
         private void tbContra2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void respuesta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbContra1_TextChanged_2(object sender, EventArgs e)
         {
 
         }

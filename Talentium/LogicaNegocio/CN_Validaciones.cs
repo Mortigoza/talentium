@@ -12,14 +12,14 @@ namespace LogicaNegocio
     public static class CN_Validaciones
     {
 
-        private static string mensajeErrorLabel; // NOTA: mover a otra clase mas adelante
-        public static string GetMensajeErrorLabel() { return mensajeErrorLabel; }
+        private static List<string> mensajeErrorLabel = new List<string>(); // NOTA: mover a otra clase mas adelante
+        public static string[] GetMensajeErrorLabel() { return mensajeErrorLabel.ToArray(); }
 
         // VALIDA SI TIENE MINIMO 8 CARACTERES.
         private static bool minimoDeCaracteres(string str)
         {
             if (str.Length >= 8) return true;
-            mensajeErrorLabel = "Debe ingresar minimo 8 caracteres";
+            mensajeErrorLabel.Add("Debe ingresar minimo 8 caracteres");
             return false;
         }
         // VALIDA SI TIENE MAYUSCULAS.
@@ -27,7 +27,7 @@ namespace LogicaNegocio
         {
             string mayusculas = @"[A-Z]";
             if (Regex.IsMatch(str, mayusculas)) return true;
-            mensajeErrorLabel = "Debe ingresar minimo una mayuscula";
+            mensajeErrorLabel.Add("Debe ingresar minimo una mayuscula");
             return false;
         }
         // VALIDA SI TIENE MINUSCULAS.
@@ -35,7 +35,7 @@ namespace LogicaNegocio
         {
             string minusculas = @"[a-z]";
             if (Regex.IsMatch(str, minusculas)) return true;
-            mensajeErrorLabel = "Debe ingresar minimo una minuscula";
+            mensajeErrorLabel.Add("Debe ingresar minimo una minuscula");
             return false;
         }
         // VALIDA SI TIENE NUMEROS.
@@ -43,7 +43,7 @@ namespace LogicaNegocio
         {
             string numeros = @"[0-9]";
             if (Regex.IsMatch(str, numeros)) return true;
-            mensajeErrorLabel = "Debe ingresar minimo un numero";
+            mensajeErrorLabel.Add("Debe ingresar minimo un numero");
             return false;
         }
         // VALIDA SI TIENE CARACTERES ESPECIALES.
@@ -51,15 +51,16 @@ namespace LogicaNegocio
         {
             string especiales = @"[^\w \-]";
             if (Regex.IsMatch(str, especiales)) return true;
-            mensajeErrorLabel = "Debe ingresar minimo un caracter especial";
+            mensajeErrorLabel.Add("Debe ingresar minimo un caracter especial");
             return false;
         }
         // VALIDACION FINAL DE CARACTERES: SE ELIGE QUE VALIDACIONES SE USAN, Y SI LAS SELECCIONADAS SON true DEVUELVE true.
         public static bool ValCar(string str, bool minCaracteres, bool mayusculas, bool numeros, bool especiales, bool passAnteriores, bool noDatosPersonales)
         {
+            mensajeErrorLabel.Clear();
             bool minCar, may, num, min, esp, antPass, noDat;
 
-            if (tieneMinuscula(str)) min = true; else min = false;
+            if (!tieneMinuscula(str)) min = false; else min = true;
             if (minCaracteres) minCar = minimoDeCaracteres(str); else minCar = true;
             if (mayusculas) may = tieneMayuscula(str); else may = true;
             if (numeros) num = tieneNumero(str); else num = true;

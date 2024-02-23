@@ -88,8 +88,17 @@ namespace Vista
             else
             {
                 lblError.Visible = true;
-                lblError.Text = CN_Validaciones.GetMensajeErrorLabel();
+                lblError.Text = "";
+                foreach (string error in CN_Validaciones.GetMensajeErrorLabel())
+                {
+                    lblError.Text = lblError.Text + error + "\n";
+                }
             }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
