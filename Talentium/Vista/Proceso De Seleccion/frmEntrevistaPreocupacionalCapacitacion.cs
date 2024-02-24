@@ -62,6 +62,16 @@ namespace Vista.Gestion_de_Talento
             groupBox2.Size = new Size(400, 200);
             groupBox2.Location = new Point(70, 95);
 
+            ComboBox cmbEstado = new ComboBox();
+            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" });
+            cmbEstado.Location = new Point(150, 150);
+            cmbEstado.Size = new Size(200, 20);
+            cmbEstado.SelectedIndex = 0;
+            cmbEstado.Tag = "Estado";
+            cmbEstado.Text = estado;
+            
+
             Label lblFecha = new Label();
             lblFecha.Text = "Fecha:";
             lblFecha.Location = new Point(20, 30);
@@ -70,18 +80,33 @@ namespace Vista.Gestion_de_Talento
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(150, 30);
             dtpFecha.Tag = "FechaEntrevista";
+            dtpFecha.Value = fecha;
             if (fecha < DateTime.Today)
             {
-                dtpFecha.MinDate = fecha;
+                dtpFecha.MinDate = dtpFecha.Value;
             }
             else
             {
                 dtpFecha.MinDate = DateTime.Today;
             }
+            if (fecha > DateTime.Today)
+            {
+                cmbEstado.Enabled = false;
+            }
+            else
+            {
+                cmbEstado.Enabled = true;
+            }
 
-            dtpFecha.Value = fecha;
-            //dtpFecha.MinDate = DateTime.Today;
-            //dtpFecha.Value = fecha;
+            if(dtpFecha.Value.Date > DateTime.Today)
+                {
+                cmbEstado.SelectedItem = "PROGRAMADA";
+                cmbEstado.Enabled = false;
+            }
+                else
+            {
+                cmbEstado.Enabled = true;
+            }
 
             Label lblArea = new Label();
             lblArea.Text = "Área:";
@@ -110,15 +135,6 @@ namespace Vista.Gestion_de_Talento
             Label lblEstado = new Label();
             lblEstado.Text = "Estado:";
             lblEstado.Location = new Point(20, 150);
-
-            ComboBox cmbEstado = new ComboBox();
-            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbEstado.Items.AddRange(new string[] { "PROGRAMADA", "APTO", "NO APTO" });
-            cmbEstado.Location = new Point(150, 150);
-            cmbEstado.Size = new Size(200, 20);
-            cmbEstado.SelectedIndex = 0;
-            cmbEstado.Tag = "Estado";
-            cmbEstado.Text = estado;
 
             groupBox2.Controls.Add(lblFecha);
             groupBox2.Controls.Add(dtpFecha);
@@ -152,7 +168,7 @@ namespace Vista.Gestion_de_Talento
             };
             dtpFecha.ValueChanged += (sender, e) =>
             {
-                if (dtpFecha.Value.Date >= DateTime.Today)
+                if (dtpFecha.Value.Date > DateTime.Today)
                 {
                     cmbEstado.SelectedItem = "PROGRAMADA";
                     cmbEstado.Enabled = false;
