@@ -58,5 +58,11 @@ namespace AccesoDatos.Login
             DataTable resultado = EjecutarConsultas("ValidarCodEmail_sp", listaParametros.ToArray());
             return resultado;
         }
+        public DataTable TraerDatosPersonales()
+        {
+            SqlParameter param1 = new SqlParameter("@id", UserCache.id) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            return EjecutarConsultas("consultar_datos_verifpass_sp", listaParametros.ToArray());
+        }
     }
 }

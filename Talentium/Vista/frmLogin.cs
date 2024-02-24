@@ -78,7 +78,8 @@ namespace Vista
         {
             this.Hide();
             frmRecupero recupero = new frmRecupero();
-            recupero.Show();
+            recupero.ShowDialog();
+            this.Show();
         }
 
         private void cmbLenguaje_SelectionChangeCommitted(object sender, EventArgs e)

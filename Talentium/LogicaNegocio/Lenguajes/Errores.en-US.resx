@@ -162,4 +162,25 @@
   <data name="QuiereContinuar" xml:space="preserve">
     <value>Do you want to continue?</value>
   </data>
+  <data name="PasMinimo8" xml:space="preserve">
+    <value>At least eight characters.</value>
+  </data>
+  <data name="PasMinimoEsp" xml:space="preserve">
+    <value>At least one special character.</value>
+  </data>
+  <data name="PasMinimoMay" xml:space="preserve">
+    <value>At least one uppercase letter.</value>
+  </data>
+  <data name="PasMinimoMin" xml:space="preserve">
+    <value>At least one lowercase letter.</value>
+  </data>
+  <data name="PasMinimoNum" xml:space="preserve">
+    <value>At least one number.</value>
+  </data>
+  <data name="PasDatos" xml:space="preserve">
+    <value>Do not include personal data.</value>
+  </data>
+  <data name="PasNoIgual" xml:space="preserve">
+    <value>The passwords aren't the same.</value>
+  </data>
 </root>

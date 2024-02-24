@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista
@@ -16,6 +17,7 @@ namespace Vista
     public partial class CambioDePassRecupero : Form
     {
         private string rta;
+        private bool allow = false;
         public CambioDePassRecupero()
         {
             InitializeComponent();
@@ -50,44 +52,38 @@ namespace Vista
             CN_CambarPassword pass = new CN_CambarPassword();
             if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text)) 
             {
-                MessageBox.Show("Los campos no deben estar vacios");
+                MessageBox.Show(Errores.CamposIncompletos);
             }else {
 
                 if (tbContra1.Text == tbContra2.Text)
                 {
-                    if (comboBox1.SelectedItem != null)
+                    if (comboBox1.SelectedItem != null && respuesta.Text.ToUpper() == rta && allow)
                     {
-                       // DataRowView selectedRow = (DataRowView)comboBox1.SelectedItem;
-                       // int id = Convert.ToInt32(selectedRow["id_pregunta"]);
-                        
-
-                        if (respuesta.Text.ToUpper() == rta)
-                        {
-                           // se realiza el update de la nueva pass y se hashea la misma. 
-                           pass.insertarPass(UserCache.usuario, tbContra2.Text);
-                            MessageBox.Show("Operación realizada con éxito");
-                            this.Dispose();
-                        }
-
+                        // se realiza el update de la nueva pass y se hashea la misma. 
+                        pass.insertarPass(UserCache.usuario, tbContra2.Text);
+                        this.Dispose();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden");
+                    MessageBox.Show(Errores.PasNoIgual);
                 }
             }
         }
 
         private void tbContra1_Leave(object sender, EventArgs e)
         {
-            if (CN_Validaciones.ValCar(tbContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
-                ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales))
+            allow = (CN_Validaciones.ValCar(tbContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
+                ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales));
+            if (allow)
             {
                 lblError.Visible = false;
+                continuar.Enabled = true;
             }
             else
             {
                 lblError.Visible = true;
+                continuar.Enabled = false;
                 lblError.Text = "";
                 foreach (string error in CN_Validaciones.GetMensajeErrorLabel())
                 {
