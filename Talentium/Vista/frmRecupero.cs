@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Comun;
 using LogicaNegocio;
 using Vista.Lenguajes;
 
@@ -72,7 +73,15 @@ namespace Vista
             if (valor) 
             {
                 this.Hide();
-                frmCambioPass cambioDePass =  new frmCambioPass();
+                frmCambioPass cambioDePass;
+                if (UserCache.nuevo)
+                {
+                    cambioDePass = new frmCambioPass(true);
+                }
+                else
+                {
+                    cambioDePass = new frmCambioPass();
+                }
                 cambioDePass.ShowDialog();
                 this.Dispose();
             }

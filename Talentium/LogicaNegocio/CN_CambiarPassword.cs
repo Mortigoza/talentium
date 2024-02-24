@@ -15,9 +15,13 @@ namespace LogicaNegocio
         {
             return acceso.ConsultarTodasPregSeg();
         }
-        public DataTable ObtenerPregutasUsuarios(int id_preg)
+        public DataTable ObtenerPregutasUsuarios()
         {
-            return acceso.Consulta1PgtaSeg(id_preg);
+            CN_CambiarPassword pass = new CN_CambiarPassword();
+            int idPregunta;
+            DataTable rtaUsuarios = pass.ObtenerRespuetasUsuarios(UserCache.id); //pasar el id por el userCache
+            idPregunta = (int)rtaUsuarios.Rows[0][1];
+            return acceso.Consulta1PgtaSeg(idPregunta);
             //return acceso.ConsultaPregSeg(id);
         }
         public DataTable ObtenerRespuetasUsuarios(int id)
@@ -30,8 +34,6 @@ namespace LogicaNegocio
             //user ya viene hasheado
             try
             {
-               
-
                 acceso.InsertarRespuestaSeg(idUsuario, rta, idPregunta);
             }
             catch (Exception ex)
@@ -55,14 +57,14 @@ namespace LogicaNegocio
                 MessageBox.Show("Error al actualiar la contraseña" + ex);
             }
         }
-        public bool ValidarPass(bool esNuevo, bool allow, System.Windows.Forms.TextBox txtContra1, System.Windows.Forms.TextBox txtContra2, System.Windows.Forms.TextBox txtRespuesta, System.Windows.Forms.ComboBox cmbPreguntas)
+        public bool ValidarPass(bool esNuevo, bool allow, string contra1, string contra2, string respuesta, object idPregunta)
         {
-            if (string.IsNullOrWhiteSpace(txtContra1.Text) || string.IsNullOrWhiteSpace(txtContra2.Text))
+            if (string.IsNullOrWhiteSpace(contra1) || string.IsNullOrWhiteSpace(contra2))
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (txtContra1.Text != txtContra2.Text)
+            if (contra1 != contra2)
             {
                 MessageBox.Show(Errores.PasNoIgual, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -72,19 +74,26 @@ namespace LogicaNegocio
                 MessageBox.Show(Errores.PasFaltaCriterio, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (cmbPreguntas.SelectedItem != null && allow)
+
+            CN_CambiarPassword pass = new CN_CambiarPassword();
+            DataTable rtaUsuarios = pass.ObtenerRespuetasUsuarios(UserCache.id); //pasar el id por el userCache
+            string respuestaBd = rtaUsuarios.Rows[0][3].ToString().Trim();
+            if (respuestaBd != respuesta.Trim().ToUpper())
             {
-                CN_CambiarPassword pass = new CN_CambiarPassword();
+                MessageBox.Show(Errores.PasFaltaCriterio, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if ((int?)idPregunta != null && allow)
+            {
+                pass.insertarPass(UserCache.usuario, contra2);
+
                 switch (esNuevo)
                 {
                     default:
-                        pass.insertarPass(UserCache.usuario, txtContra2.Text);
                         return true;
                     case true:
-                        DataRowView selectedRow = (DataRowView)cmbPreguntas.SelectedItem;
-                        int id = Convert.ToInt32(selectedRow["id_pregunta"]);
-
-                        string rta = txtRespuesta.Text.ToUpper();
+                        int id = (int)idPregunta;
+                        string rta = respuesta.ToUpper();
 
                         // Se realiza el insert de las respuestas y preguntas.
                         pass.insertarRta(UserCache.id, rta, id);

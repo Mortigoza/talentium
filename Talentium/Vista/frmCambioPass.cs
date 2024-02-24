@@ -37,13 +37,7 @@ namespace Vista
             {
                 default:
                     btnAtras.Visible = true;
-                    int idPregunta;
-                    DataTable rtaUsuarios = pass.ObtenerRespuetasUsuarios(UserCache.id); //pasar el id por el userCache
-                    rta = rtaUsuarios.Rows[0][3].ToString().Trim();
-                    idPregunta = (int)rtaUsuarios.Rows[0][1];
-                    preguntas = pass.ObtenerPregutasUsuarios(idPregunta);
-                    cmbPreguntas.DisplayMember = "pregunta";
-                    cmbPreguntas.DataSource = preguntas;
+                    preguntas = pass.ObtenerPregutasUsuarios();
                     break;
 
                 case true:
@@ -51,18 +45,17 @@ namespace Vista
                     preguntas = pass.ObtenerTodasPregutasSeg();
                     break;
             }
+            cmbPreguntas.ValueMember = "id_pregunta";
             cmbPreguntas.DisplayMember = "pregunta";
             cmbPreguntas.DataSource = preguntas;
+            txtContra1.Focus();
+
         }
         private void continuar_Click(object sender, EventArgs e)
         {
-            if (pass.ValidarPass(_esNuevo, allow, txtContra1, txtContra2, txtRespuesta, cmbPreguntas))
+            if (pass.ValidarPass(_esNuevo, allow, txtContra1.Text, txtContra2.Text, txtRespuesta.Text, cmbPreguntas.SelectedValue))
             {
                 this.Dispose();
-            }
-            else
-            {
-                MessageBox.Show(Errores.Error, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

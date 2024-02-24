@@ -40,6 +40,10 @@ namespace Vista
                     this.Hide();
                     frmCambioPass cambioPass = new frmCambioPass(true);
                     cambioPass.ShowDialog();
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
                 }
                 else
                 {
@@ -49,17 +53,10 @@ namespace Vista
                     CN_Bitacora.AltaBitacora("Login exitoso", "LogIn", this.Name);
                     frmMenu menu = new frmMenu();
                     menu.ShowDialog();
-                    if (menu.DialogResult == DialogResult.OK)
-                    {
-                        txtUsername.Text = "";
-                        txtPassword.Text = "";
-                        this.Show();
-                        txtUsername.Focus();
-                    }
-                    else
-                    {
-                        this.Dispose();
-                    }
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
                 }
             }
         }
