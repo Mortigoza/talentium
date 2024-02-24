@@ -70,7 +70,18 @@ namespace Vista.Gestion_de_Talento
             dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(150, 30);
             dtpFecha.Tag = "FechaEntrevista";
-            dtpFecha.Value = fecha; // Establecer el valor de la fecha
+            if (fecha < DateTime.Today)
+            {
+                dtpFecha.MinDate = fecha;
+            }
+            else
+            {
+                dtpFecha.MinDate = DateTime.Today;
+            }
+
+            dtpFecha.Value = fecha;
+            //dtpFecha.MinDate = DateTime.Today;
+            //dtpFecha.Value = fecha;
 
             Label lblArea = new Label();
             lblArea.Text = "Área:";
@@ -93,9 +104,8 @@ namespace Vista.Gestion_de_Talento
             ComboBox cmbEntrevistador = new ComboBox();
             cmbEntrevistador.Location = new Point(150, 110);
             cmbEntrevistador.Size = new Size(200, 20);
-            //cmbEntrevistador.Enabled = false;
             cmbEntrevistador.Tag = "Entrevistador";
-            cmbEntrevistador.Text = entrevistador; // Establecer el valor del entrevistador
+            cmbEntrevistador.Text = entrevistador;
 
             Label lblEstado = new Label();
             lblEstado.Text = "Estado:";
@@ -108,7 +118,7 @@ namespace Vista.Gestion_de_Talento
             cmbEstado.Size = new Size(200, 20);
             cmbEstado.SelectedIndex = 0;
             cmbEstado.Tag = "Estado";
-            cmbEstado.Text = estado; // Establecer el valor del estado
+            cmbEstado.Text = estado;
 
             groupBox2.Controls.Add(lblFecha);
             groupBox2.Controls.Add(dtpFecha);
@@ -131,8 +141,6 @@ namespace Vista.Gestion_de_Talento
             btnGuardar.ForeColor = Color.WhiteSmoke;
 
             nuevaPestana.Controls.Add(btnGuardar);
-            //nuevaPestana.Controls.Add(btnSiguiente);
-            //nuevaPestana.Controls.Add(btnAnterior);
             cmbArea.SelectedIndexChanged += (sender, e) =>
             {
                 DataRowView selectedArea = cmbArea.SelectedItem as DataRowView;
@@ -141,20 +149,30 @@ namespace Vista.Gestion_de_Talento
                 DTEmpleados.Columns.Add("NombreCompleto", typeof(string), "APELLIDOS + ', ' + NOMBRES");
                 cmbEntrevistador.DataSource = DTEmpleados;
                 cmbEntrevistador.DisplayMember = "NombreCompleto";
-                //cmbEntrevistador.Enabled = true;
+            };
+            dtpFecha.ValueChanged += (sender, e) =>
+            {
+                if (dtpFecha.Value.Date >= DateTime.Today)
+                {
+                    cmbEstado.SelectedItem = "PROGRAMADA";
+                    cmbEstado.Enabled = false;
+                }
+                else
+                {
+                    cmbEstado.Enabled = true;
+                }
             };
             return id_persona;
         }
 
-        private void NavigateTabs(int offset)
+        private void NavegarTabs(int siguiente)
         {
-            int currentIndex = tabEtapas.SelectedIndex;
-            int newIndex = currentIndex + offset;
+            int indiceActual = tabEtapas.SelectedIndex;
+            int nuevoIndice = indiceActual + siguiente;
 
-            // Verificar límites de las pestañas
-            if (newIndex >= 0 && newIndex < tabEtapas.TabCount)
+            if (nuevoIndice >= 0 && nuevoIndice < tabEtapas.TabCount)
             {
-                tabEtapas.SelectedIndex = newIndex;
+                tabEtapas.SelectedIndex = nuevoIndice;
             }
         }
         private void cmbEmpleados_DropDown(object sender, EventArgs e)
@@ -273,12 +291,12 @@ namespace Vista.Gestion_de_Talento
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            NavigateTabs(-1);
+            NavegarTabs(-1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NavigateTabs(1);
+            NavegarTabs(1);
         }
 
         private void frmEntrevistaPreocupacionalCapacitacion_FormClosed(object sender, FormClosedEventArgs e)
