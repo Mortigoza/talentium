@@ -133,7 +133,6 @@ namespace LogicaNegocio
                     string correo = Convert.ToString(tabla.Rows[0][0]);
                     //UserCache.id = Convert.ToInt32(tabla.Rows[0][2]);
                     var tup = email.ObtenerCod();
-                    Console.WriteLine(tup.Item1);
                     string cod = tup.Item1;
                     DateTime fhCaducidad = tup.Item2;
 

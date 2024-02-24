@@ -55,7 +55,7 @@
             this.btnContinuar.Location = new System.Drawing.Point(618, 322);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(88, 32);
-            this.btnContinuar.TabIndex = 20;
+            this.btnContinuar.TabIndex = 5;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = false;
             this.btnContinuar.Click += new System.EventHandler(this.continuar_Click);
@@ -75,9 +75,10 @@
             // 
             this.txtContra2.Location = new System.Drawing.Point(210, 177);
             this.txtContra2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContra2.MaxLength = 30;
             this.txtContra2.Name = "txtContra2";
             this.txtContra2.Size = new System.Drawing.Size(279, 20);
-            this.txtContra2.TabIndex = 18;
+            this.txtContra2.TabIndex = 2;
             // 
             // label3
             // 
@@ -103,9 +104,10 @@
             // 
             this.txtContra1.Location = new System.Drawing.Point(210, 137);
             this.txtContra1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContra1.MaxLength = 30;
             this.txtContra1.Name = "txtContra1";
             this.txtContra1.Size = new System.Drawing.Size(279, 20);
-            this.txtContra1.TabIndex = 13;
+            this.txtContra1.TabIndex = 1;
             this.txtContra1.Leave += new System.EventHandler(this.tbContra1_Leave);
             // 
             // panel1
@@ -136,12 +138,13 @@
             // cmbPreguntas
             // 
             this.cmbPreguntas.FormattingEnabled = true;
+            this.cmbPreguntas.ItemHeight = 13;
             this.cmbPreguntas.Location = new System.Drawing.Point(210, 216);
             this.cmbPreguntas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPreguntas.MaxLength = 10;
             this.cmbPreguntas.Name = "cmbPreguntas";
             this.cmbPreguntas.Size = new System.Drawing.Size(279, 21);
-            this.cmbPreguntas.TabIndex = 22;
+            this.cmbPreguntas.TabIndex = 3;
             // 
             // lblPreguntaSeguridad
             // 
@@ -170,9 +173,10 @@
             // 
             this.txtRespuesta.Location = new System.Drawing.Point(210, 257);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRespuesta.MaxLength = 30;
             this.txtRespuesta.Name = "txtRespuesta";
             this.txtRespuesta.Size = new System.Drawing.Size(279, 20);
-            this.txtRespuesta.TabIndex = 25;
+            this.txtRespuesta.TabIndex = 4;
             // 
             // lblError
             // 
@@ -202,6 +206,7 @@
             // 
             // frmCambioPass
             // 
+            this.AcceptButton = this.btnContinuar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

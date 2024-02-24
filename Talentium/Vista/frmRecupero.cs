@@ -45,9 +45,10 @@ namespace Vista
                         label3.Visible = true;
                         label6.Visible = true;
                         codigo.Visible = true;
-                        Verificar.Visible = true;
+                        btnVerificar.Visible = true;
                         textBoxUsuarioRec.Enabled = false;
                         btnContinuar.Visible = false;
+                        this.AcceptButton = btnVerificar;
                     }
 
            // ocultar el boton, disablear el texbox usuario y agregar visible el textbox cod email y el boton verificar cod

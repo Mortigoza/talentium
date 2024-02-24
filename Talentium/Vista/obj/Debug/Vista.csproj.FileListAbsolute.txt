@@ -402,8 +402,6 @@ C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.f
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
-C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
-C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
@@ -439,3 +437,4 @@ C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\es-AR\Vista.resources
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.csproj.Up2Date
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.frmCambioPass.resources
