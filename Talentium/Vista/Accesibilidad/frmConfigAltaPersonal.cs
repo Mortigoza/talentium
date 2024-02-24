@@ -22,10 +22,12 @@ namespace Vista.Accesibilidad
             grpModificarTel.Enabled = false;
             grpNacioMod.Enabled = false;
             grpModificarGenero.Enabled = false;
+            grpModificarIdioma.Enabled = false;
             CargarDataGrid();
             CargarDataGridTipoTel();
             CargarDataGridNacionalidad();
             CargarDataGridGenero();
+            CargarDataGridIdioma();
             // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
@@ -42,6 +44,10 @@ namespace Vista.Accesibilidad
             dtgGenero.AutoGenerateColumns = false;
             dtgGenero.AllowUserToAddRows = false;
             dtgGenero.MultiSelect = false;
+            // Config data grid Idioma
+            dtgIdiomas.AutoGenerateColumns = false;
+            dtgIdiomas.AllowUserToAddRows = false;
+            dtgIdiomas.MultiSelect = false;
         }
         private void NavigateTabs(int offset)
         {
@@ -475,7 +481,6 @@ namespace Vista.Accesibilidad
             txtGeneroMod.Clear();
             grpModificarGenero.Enabled = false;
         }
-
         private void btnGuardarGeneroMod_Click(object sender, EventArgs e)
         {
             int id_genero = (int)dtgGenero.SelectedCells[0].Value;
@@ -510,7 +515,6 @@ namespace Vista.Accesibilidad
                 }
             }
         }
-
         private void btnBajaGenero_Click(object sender, EventArgs e)
         {
             if (dtgGenero.SelectedRows.Count > 0)
@@ -573,6 +577,148 @@ namespace Vista.Accesibilidad
                 dtgGenero.Rows[i].Cells["NombreGen"].Value = genero.Rows[i]["genero"];
             }
             dtgGenero.Columns["IDGen"].Visible = false;
+        }
+
+        // tab Idiomas
+        private void btnCancelarAltaIdioma_Click(object sender, EventArgs e)
+        {
+            txtIdiomasAlta.Clear();
+        }
+        public void CargarDataGridIdioma()
+        {
+            DataTable idioma = config.ObtenerIdioma();
+            dtgIdiomas.DataSource = idioma;
+            for (int i = 0; i < idioma.Rows.Count; i++)
+            {
+                dtgIdiomas.Rows[i].Cells["NombreIdioma"].Value = idioma.Rows[i]["idioma"];
+            }
+            dtgIdiomas.Columns["IDIdioma"].Visible = false;
+        }
+
+        private void btnCancelarIdiomaMod_Click(object sender, EventArgs e)
+        {
+            txtIdiomaMod.Clear();
+            grpModificarIdioma.Enabled = false;
+        }
+
+        private void btnGuardarAltaIdioma_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtIdiomasAlta.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarIdioma(txtIdiomasAlta.Text))
+            {
+                CargarDataGridIdioma();
+                MessageBox.Show("Se agregó el idioma correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdiomasAlta.Clear();
+            }
+            else
+            {
+                MessageBox.Show("El idioma ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdiomasAlta.Clear();
+            }
+        }
+
+        private void btnGuardarIdiomaMod_Click(object sender, EventArgs e)
+        {
+            int id_idioma = (int)dtgIdiomas.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtIdiomaMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarIdioma(id_idioma, txtIdiomaMod.Text))
+            {
+                CargarDataGridIdioma();
+                MessageBox.Show("Se modificó el idioma correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdiomaMod.Clear();
+                grpModificarIdioma.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El idioma ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdiomaMod.Clear();
+            }
+        }
+
+        private void btnModIdiomas_Click(object sender, EventArgs e)
+        {
+            grpModificarIdioma.Enabled = true;
+            if (dtgIdiomas.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgIdiomas.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombreIdioma"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombreIdioma"].Value.ToString();
+                    txtIdiomaMod.Text = valorCelda;
+                }
+            }
+        }
+
+        private void dtgIdiomas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dtgIdiomas_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModIdiomas.Enabled = dtgIdiomas.SelectedRows.Count > 0;
+            btnBajaIdiomas.Enabled = dtgIdiomas.SelectedRows.Count > 0;
+        }
+
+        private void txtIdiomasAlta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdiomaMod_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void txtIdiomaMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtgIdiomas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificarIdioma.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtIdiomaMod.Text = dtgIdiomas.SelectedCells[1].Value.ToString();
+            }
+        }
+
+        private void btnBajaIdiomas_Click(object sender, EventArgs e)
+        {
+            if (dtgIdiomas.SelectedRows.Count > 0)
+            {
+                int id_idiomas = Convert.ToInt32(dtgIdiomas.SelectedCells[0].Value);
+                if (config.IdiomaAsociadoAPersona(id_idiomas) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el idioma porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el idioma?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarIdioma(id_idiomas);
+                        MessageBox.Show("El idioma ha sido eliminada con éxito.");
+                        CargarDataGridIdioma();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+            }
         }
     }
 }

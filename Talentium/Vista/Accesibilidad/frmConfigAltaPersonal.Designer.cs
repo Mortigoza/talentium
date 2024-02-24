@@ -30,24 +30,22 @@
         {
             this.tabConfigAltaPersonal = new System.Windows.Forms.TabControl();
             this.tabDocumento = new System.Windows.Forms.TabPage();
-            this.tabTelefono = new System.Windows.Forms.TabPage();
-            this.tabNacionalidad = new System.Windows.Forms.TabPage();
-            this.tabGenero = new System.Windows.Forms.TabPage();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.lblDocumento = new System.Windows.Forms.Label();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.dtgDocumento = new System.Windows.Forms.DataGridView();
-            this.grpAlta = new System.Windows.Forms.GroupBox();
-            this.btnCancelarAlta = new System.Windows.Forms.Button();
-            this.btnGuardarAlta = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnBaja = new System.Windows.Forms.Button();
             this.grpModificar = new System.Windows.Forms.GroupBox();
             this.btnGuardarMod = new System.Windows.Forms.Button();
             this.btnCancelarMod = new System.Windows.Forms.Button();
             this.lblDocumentoMod = new System.Windows.Forms.Label();
             this.txtDocumentoMod = new System.Windows.Forms.TextBox();
-            this.btnBaja = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.grpAlta = new System.Windows.Forms.GroupBox();
+            this.btnGuardarAlta = new System.Windows.Forms.Button();
+            this.btnCancelarAlta = new System.Windows.Forms.Button();
+            this.lblDocumento = new System.Windows.Forms.Label();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.dtgDocumento = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabTelefono = new System.Windows.Forms.TabPage();
             this.btnModificarTel = new System.Windows.Forms.Button();
             this.btnBajaTel = new System.Windows.Forms.Button();
             this.grpModificarTel = new System.Windows.Forms.GroupBox();
@@ -61,6 +59,9 @@
             this.lblTipoTel = new System.Windows.Forms.Label();
             this.txtTelefonoAlta = new System.Windows.Forms.TextBox();
             this.dtgTelefono = new System.Windows.Forms.DataGridView();
+            this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabNacionalidad = new System.Windows.Forms.TabPage();
             this.btnNacionalidadMod = new System.Windows.Forms.Button();
             this.btnBajaNacionalidad = new System.Windows.Forms.Button();
             this.grpNacioMod = new System.Windows.Forms.GroupBox();
@@ -74,6 +75,9 @@
             this.lblNacionalidad = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.dtgNacionalidad = new System.Windows.Forms.DataGridView();
+            this.IDNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabGenero = new System.Windows.Forms.TabPage();
             this.btnGeneroMod = new System.Windows.Forms.Button();
             this.btnBajaGenero = new System.Windows.Forms.Button();
             this.grpModificarGenero = new System.Windows.Forms.GroupBox();
@@ -87,31 +91,47 @@
             this.lblGenero = new System.Windows.Forms.Label();
             this.txtGenero = new System.Windows.Forms.TextBox();
             this.dtgGenero = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.tabIdiomas = new System.Windows.Forms.TabPage();
+            this.btnModIdiomas = new System.Windows.Forms.Button();
+            this.btnBajaIdiomas = new System.Windows.Forms.Button();
+            this.grpModificarIdioma = new System.Windows.Forms.GroupBox();
+            this.btnGuardarIdiomaMod = new System.Windows.Forms.Button();
+            this.btnCancelarIdiomaMod = new System.Windows.Forms.Button();
+            this.lblIdiomaMod = new System.Windows.Forms.Label();
+            this.txtIdiomaMod = new System.Windows.Forms.TextBox();
+            this.grpAltaIdiomas = new System.Windows.Forms.GroupBox();
+            this.btnGuardarAltaIdioma = new System.Windows.Forms.Button();
+            this.btnCancelarAltaIdioma = new System.Windows.Forms.Button();
+            this.lblIdiomas = new System.Windows.Forms.Label();
+            this.txtIdiomasAlta = new System.Windows.Forms.TextBox();
+            this.dtgIdiomas = new System.Windows.Forms.DataGridView();
+            this.IDIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
-            this.tabTelefono.SuspendLayout();
-            this.tabNacionalidad.SuspendLayout();
-            this.tabGenero.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDocumento)).BeginInit();
-            this.grpAlta.SuspendLayout();
             this.grpModificar.SuspendLayout();
+            this.grpAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDocumento)).BeginInit();
+            this.tabTelefono.SuspendLayout();
             this.grpModificarTel.SuspendLayout();
             this.grpAltaTel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTelefono)).BeginInit();
+            this.tabNacionalidad.SuspendLayout();
             this.grpNacioMod.SuspendLayout();
             this.grpNacionalidadAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).BeginInit();
+            this.tabGenero.SuspendLayout();
             this.grpModificarGenero.SuspendLayout();
             this.grpGeneroAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgGenero)).BeginInit();
+            this.tabIdiomas.SuspendLayout();
+            this.grpModificarIdioma.SuspendLayout();
+            this.grpAltaIdiomas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabConfigAltaPersonal
@@ -120,6 +140,7 @@
             this.tabConfigAltaPersonal.Controls.Add(this.tabTelefono);
             this.tabConfigAltaPersonal.Controls.Add(this.tabNacionalidad);
             this.tabConfigAltaPersonal.Controls.Add(this.tabGenero);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabIdiomas);
             this.tabConfigAltaPersonal.Location = new System.Drawing.Point(58, 70);
             this.tabConfigAltaPersonal.Name = "tabConfigAltaPersonal";
             this.tabConfigAltaPersonal.SelectedIndex = 0;
@@ -141,142 +162,33 @@
             this.tabDocumento.Text = "Tipo de documento";
             this.tabDocumento.UseVisualStyleBackColor = true;
             // 
-            // tabTelefono
+            // btnModificar
             // 
-            this.tabTelefono.Controls.Add(this.btnModificarTel);
-            this.tabTelefono.Controls.Add(this.btnBajaTel);
-            this.tabTelefono.Controls.Add(this.grpModificarTel);
-            this.tabTelefono.Controls.Add(this.grpAltaTel);
-            this.tabTelefono.Controls.Add(this.dtgTelefono);
-            this.tabTelefono.Location = new System.Drawing.Point(4, 25);
-            this.tabTelefono.Name = "tabTelefono";
-            this.tabTelefono.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTelefono.Size = new System.Drawing.Size(666, 327);
-            this.tabTelefono.TabIndex = 1;
-            this.tabTelefono.Text = "Tipo de teléfono";
-            this.tabTelefono.UseVisualStyleBackColor = true;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificar.Location = new System.Drawing.Point(30, 280);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(100, 26);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // tabNacionalidad
+            // btnBaja
             // 
-            this.tabNacionalidad.Controls.Add(this.btnNacionalidadMod);
-            this.tabNacionalidad.Controls.Add(this.btnBajaNacionalidad);
-            this.tabNacionalidad.Controls.Add(this.grpNacioMod);
-            this.tabNacionalidad.Controls.Add(this.grpNacionalidadAlta);
-            this.tabNacionalidad.Controls.Add(this.dtgNacionalidad);
-            this.tabNacionalidad.Location = new System.Drawing.Point(4, 25);
-            this.tabNacionalidad.Name = "tabNacionalidad";
-            this.tabNacionalidad.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNacionalidad.Size = new System.Drawing.Size(666, 327);
-            this.tabNacionalidad.TabIndex = 2;
-            this.tabNacionalidad.Text = "Nacionalidad";
-            this.tabNacionalidad.UseVisualStyleBackColor = true;
-            // 
-            // tabGenero
-            // 
-            this.tabGenero.Controls.Add(this.btnGeneroMod);
-            this.tabGenero.Controls.Add(this.btnBajaGenero);
-            this.tabGenero.Controls.Add(this.grpModificarGenero);
-            this.tabGenero.Controls.Add(this.grpGeneroAlta);
-            this.tabGenero.Controls.Add(this.dtgGenero);
-            this.tabGenero.Location = new System.Drawing.Point(4, 25);
-            this.tabGenero.Name = "tabGenero";
-            this.tabGenero.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenero.Size = new System.Drawing.Size(666, 327);
-            this.tabGenero.TabIndex = 3;
-            this.tabGenero.Text = "Género";
-            this.tabGenero.UseVisualStyleBackColor = true;
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.Location = new System.Drawing.Point(25, 28);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 1;
-            this.btnAnterior.Text = "<-";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Location = new System.Drawing.Point(696, 28);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 2;
-            this.btnSiguiente.Text = "->";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // lblDocumento
-            // 
-            this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(11, 30);
-            this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(124, 16);
-            this.lblDocumento.TabIndex = 0;
-            this.lblDocumento.Text = "Tipo de documento";
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Location = new System.Drawing.Point(141, 27);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(141, 22);
-            this.txtDocumento.TabIndex = 1;
-            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
-            // 
-            // dtgDocumento
-            // 
-            this.dtgDocumento.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dtgDocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDocumento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre});
-            this.dtgDocumento.Location = new System.Drawing.Point(30, 24);
-            this.dtgDocumento.Name = "dtgDocumento";
-            this.dtgDocumento.RowHeadersWidth = 51;
-            this.dtgDocumento.RowTemplate.Height = 24;
-            this.dtgDocumento.Size = new System.Drawing.Size(295, 250);
-            this.dtgDocumento.TabIndex = 2;
-            this.dtgDocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellDoubleClick);
-            this.dtgDocumento.SelectionChanged += new System.EventHandler(this.dtgDocumento_SelectionChanged);
-            // 
-            // grpAlta
-            // 
-            this.grpAlta.Controls.Add(this.btnGuardarAlta);
-            this.grpAlta.Controls.Add(this.btnCancelarAlta);
-            this.grpAlta.Controls.Add(this.lblDocumento);
-            this.grpAlta.Controls.Add(this.txtDocumento);
-            this.grpAlta.Location = new System.Drawing.Point(343, 24);
-            this.grpAlta.Name = "grpAlta";
-            this.grpAlta.Size = new System.Drawing.Size(294, 100);
-            this.grpAlta.TabIndex = 3;
-            this.grpAlta.TabStop = false;
-            this.grpAlta.Text = "Alta";
-            // 
-            // btnCancelarAlta
-            // 
-            this.btnCancelarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnCancelarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelarAlta.Location = new System.Drawing.Point(14, 60);
-            this.btnCancelarAlta.Name = "btnCancelarAlta";
-            this.btnCancelarAlta.Size = new System.Drawing.Size(83, 23);
-            this.btnCancelarAlta.TabIndex = 2;
-            this.btnCancelarAlta.Text = "Cancelar";
-            this.btnCancelarAlta.UseVisualStyleBackColor = false;
-            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
-            // 
-            // btnGuardarAlta
-            // 
-            this.btnGuardarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnGuardarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardarAlta.Location = new System.Drawing.Point(199, 60);
-            this.btnGuardarAlta.Name = "btnGuardarAlta";
-            this.btnGuardarAlta.Size = new System.Drawing.Size(83, 23);
-            this.btnGuardarAlta.TabIndex = 3;
-            this.btnGuardarAlta.Text = "Guardar";
-            this.btnGuardarAlta.UseVisualStyleBackColor = false;
-            this.btnGuardarAlta.Click += new System.EventHandler(this.btnGuardarAlta_Click);
+            this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBaja.Enabled = false;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBaja.Location = new System.Drawing.Point(225, 280);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(100, 26);
+            this.btnBaja.TabIndex = 5;
+            this.btnBaja.Text = "Dar de Baja";
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // grpModificar
             // 
@@ -334,33 +246,109 @@
             this.txtDocumentoMod.TabIndex = 1;
             this.txtDocumentoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumentoMod_KeyPress);
             // 
-            // btnBaja
+            // grpAlta
             // 
-            this.btnBaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnBaja.Enabled = false;
-            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBaja.Location = new System.Drawing.Point(225, 280);
-            this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(100, 26);
-            this.btnBaja.TabIndex = 5;
-            this.btnBaja.Text = "Dar de Baja";
-            this.btnBaja.UseVisualStyleBackColor = false;
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            this.grpAlta.Controls.Add(this.btnGuardarAlta);
+            this.grpAlta.Controls.Add(this.btnCancelarAlta);
+            this.grpAlta.Controls.Add(this.lblDocumento);
+            this.grpAlta.Controls.Add(this.txtDocumento);
+            this.grpAlta.Location = new System.Drawing.Point(343, 24);
+            this.grpAlta.Name = "grpAlta";
+            this.grpAlta.Size = new System.Drawing.Size(294, 100);
+            this.grpAlta.TabIndex = 3;
+            this.grpAlta.TabStop = false;
+            this.grpAlta.Text = "Alta";
             // 
-            // btnModificar
+            // btnGuardarAlta
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnModificar.Enabled = false;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnModificar.Location = new System.Drawing.Point(30, 280);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 26);
-            this.btnModificar.TabIndex = 6;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnGuardarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGuardarAlta.Location = new System.Drawing.Point(199, 60);
+            this.btnGuardarAlta.Name = "btnGuardarAlta";
+            this.btnGuardarAlta.Size = new System.Drawing.Size(83, 23);
+            this.btnGuardarAlta.TabIndex = 3;
+            this.btnGuardarAlta.Text = "Guardar";
+            this.btnGuardarAlta.UseVisualStyleBackColor = false;
+            this.btnGuardarAlta.Click += new System.EventHandler(this.btnGuardarAlta_Click);
+            // 
+            // btnCancelarAlta
+            // 
+            this.btnCancelarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarAlta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarAlta.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelarAlta.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarAlta.Name = "btnCancelarAlta";
+            this.btnCancelarAlta.Size = new System.Drawing.Size(83, 23);
+            this.btnCancelarAlta.TabIndex = 2;
+            this.btnCancelarAlta.Text = "Cancelar";
+            this.btnCancelarAlta.UseVisualStyleBackColor = false;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(11, 30);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(124, 16);
+            this.lblDocumento.TabIndex = 0;
+            this.lblDocumento.Text = "Tipo de documento";
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Location = new System.Drawing.Point(141, 27);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(141, 22);
+            this.txtDocumento.TabIndex = 1;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            // 
+            // dtgDocumento
+            // 
+            this.dtgDocumento.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtgDocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDocumento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nombre});
+            this.dtgDocumento.Location = new System.Drawing.Point(30, 24);
+            this.dtgDocumento.Name = "dtgDocumento";
+            this.dtgDocumento.RowHeadersWidth = 51;
+            this.dtgDocumento.RowTemplate.Height = 24;
+            this.dtgDocumento.Size = new System.Drawing.Size(295, 250);
+            this.dtgDocumento.TabIndex = 2;
+            this.dtgDocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellDoubleClick);
+            this.dtgDocumento.SelectionChanged += new System.EventHandler(this.dtgDocumento_SelectionChanged);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_tipo_doc";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "tipo_doc";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // tabTelefono
+            // 
+            this.tabTelefono.Controls.Add(this.btnModificarTel);
+            this.tabTelefono.Controls.Add(this.btnBajaTel);
+            this.tabTelefono.Controls.Add(this.grpModificarTel);
+            this.tabTelefono.Controls.Add(this.grpAltaTel);
+            this.tabTelefono.Controls.Add(this.dtgTelefono);
+            this.tabTelefono.Location = new System.Drawing.Point(4, 25);
+            this.tabTelefono.Name = "tabTelefono";
+            this.tabTelefono.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTelefono.Size = new System.Drawing.Size(666, 327);
+            this.tabTelefono.TabIndex = 1;
+            this.tabTelefono.Text = "Tipo de teléfono";
+            this.tabTelefono.UseVisualStyleBackColor = true;
             // 
             // btnModificarTel
             // 
@@ -516,6 +504,38 @@
             this.dtgTelefono.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTelefono_CellDoubleClick);
             this.dtgTelefono.SelectionChanged += new System.EventHandler(this.dtgTelefono_SelectionChanged);
             // 
+            // IDTel
+            // 
+            this.IDTel.DataPropertyName = "id_tipo";
+            this.IDTel.HeaderText = "IDTel";
+            this.IDTel.MinimumWidth = 6;
+            this.IDTel.Name = "IDTel";
+            this.IDTel.Visible = false;
+            this.IDTel.Width = 125;
+            // 
+            // NombreTel
+            // 
+            this.NombreTel.DataPropertyName = "tipo";
+            this.NombreTel.HeaderText = "Nombre";
+            this.NombreTel.MinimumWidth = 6;
+            this.NombreTel.Name = "NombreTel";
+            this.NombreTel.Width = 125;
+            // 
+            // tabNacionalidad
+            // 
+            this.tabNacionalidad.Controls.Add(this.btnNacionalidadMod);
+            this.tabNacionalidad.Controls.Add(this.btnBajaNacionalidad);
+            this.tabNacionalidad.Controls.Add(this.grpNacioMod);
+            this.tabNacionalidad.Controls.Add(this.grpNacionalidadAlta);
+            this.tabNacionalidad.Controls.Add(this.dtgNacionalidad);
+            this.tabNacionalidad.Location = new System.Drawing.Point(4, 25);
+            this.tabNacionalidad.Name = "tabNacionalidad";
+            this.tabNacionalidad.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNacionalidad.Size = new System.Drawing.Size(666, 327);
+            this.tabNacionalidad.TabIndex = 2;
+            this.tabNacionalidad.Text = "Nacionalidad";
+            this.tabNacionalidad.UseVisualStyleBackColor = true;
+            // 
             // btnNacionalidadMod
             // 
             this.btnNacionalidadMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
@@ -669,6 +689,38 @@
             this.dtgNacionalidad.TabIndex = 7;
             this.dtgNacionalidad.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNacionalidad_CellDoubleClick);
             this.dtgNacionalidad.SelectionChanged += new System.EventHandler(this.dtgNacionalidad_SelectionChanged);
+            // 
+            // IDNac
+            // 
+            this.IDNac.DataPropertyName = "id_nacionalidad";
+            this.IDNac.HeaderText = "ID";
+            this.IDNac.MinimumWidth = 6;
+            this.IDNac.Name = "IDNac";
+            this.IDNac.Visible = false;
+            this.IDNac.Width = 125;
+            // 
+            // NombreNac
+            // 
+            this.NombreNac.DataPropertyName = "nacionalidad";
+            this.NombreNac.HeaderText = "Nombre";
+            this.NombreNac.MinimumWidth = 6;
+            this.NombreNac.Name = "NombreNac";
+            this.NombreNac.Width = 125;
+            // 
+            // tabGenero
+            // 
+            this.tabGenero.Controls.Add(this.btnGeneroMod);
+            this.tabGenero.Controls.Add(this.btnBajaGenero);
+            this.tabGenero.Controls.Add(this.grpModificarGenero);
+            this.tabGenero.Controls.Add(this.grpGeneroAlta);
+            this.tabGenero.Controls.Add(this.dtgGenero);
+            this.tabGenero.Location = new System.Drawing.Point(4, 25);
+            this.tabGenero.Name = "tabGenero";
+            this.tabGenero.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGenero.Size = new System.Drawing.Size(666, 327);
+            this.tabGenero.TabIndex = 3;
+            this.tabGenero.Text = "Género";
+            this.tabGenero.UseVisualStyleBackColor = true;
             // 
             // btnGeneroMod
             // 
@@ -824,57 +876,6 @@
             this.dtgGenero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGenero_CellDoubleClick);
             this.dtgGenero.SelectionChanged += new System.EventHandler(this.dtgGenero_SelectionChanged);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_tipo_doc";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            this.ID.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "tipo_doc";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // IDTel
-            // 
-            this.IDTel.DataPropertyName = "id_tipo";
-            this.IDTel.HeaderText = "IDTel";
-            this.IDTel.MinimumWidth = 6;
-            this.IDTel.Name = "IDTel";
-            this.IDTel.Visible = false;
-            this.IDTel.Width = 125;
-            // 
-            // NombreTel
-            // 
-            this.NombreTel.DataPropertyName = "tipo";
-            this.NombreTel.HeaderText = "Nombre";
-            this.NombreTel.MinimumWidth = 6;
-            this.NombreTel.Name = "NombreTel";
-            this.NombreTel.Width = 125;
-            // 
-            // IDNac
-            // 
-            this.IDNac.DataPropertyName = "id_nacionalidad";
-            this.IDNac.HeaderText = "ID";
-            this.IDNac.MinimumWidth = 6;
-            this.IDNac.Name = "IDNac";
-            this.IDNac.Visible = false;
-            this.IDNac.Width = 125;
-            // 
-            // NombreNac
-            // 
-            this.NombreNac.DataPropertyName = "nacionalidad";
-            this.NombreNac.HeaderText = "Nombre";
-            this.NombreNac.MinimumWidth = 6;
-            this.NombreNac.Name = "NombreNac";
-            this.NombreNac.Width = 125;
-            // 
             // IDGen
             // 
             this.IDGen.DataPropertyName = "id_genero";
@@ -892,6 +893,214 @@
             this.NombreGen.Name = "NombreGen";
             this.NombreGen.Width = 125;
             // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(25, 28);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 1;
+            this.btnAnterior.Text = "<-";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(696, 28);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 2;
+            this.btnSiguiente.Text = "->";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // tabIdiomas
+            // 
+            this.tabIdiomas.Controls.Add(this.btnModIdiomas);
+            this.tabIdiomas.Controls.Add(this.btnBajaIdiomas);
+            this.tabIdiomas.Controls.Add(this.grpModificarIdioma);
+            this.tabIdiomas.Controls.Add(this.grpAltaIdiomas);
+            this.tabIdiomas.Controls.Add(this.dtgIdiomas);
+            this.tabIdiomas.Location = new System.Drawing.Point(4, 25);
+            this.tabIdiomas.Name = "tabIdiomas";
+            this.tabIdiomas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabIdiomas.Size = new System.Drawing.Size(666, 327);
+            this.tabIdiomas.TabIndex = 4;
+            this.tabIdiomas.Text = "Idiomas";
+            this.tabIdiomas.UseVisualStyleBackColor = true;
+            // 
+            // btnModIdiomas
+            // 
+            this.btnModIdiomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnModIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModIdiomas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnModIdiomas.Location = new System.Drawing.Point(30, 278);
+            this.btnModIdiomas.Name = "btnModIdiomas";
+            this.btnModIdiomas.Size = new System.Drawing.Size(100, 26);
+            this.btnModIdiomas.TabIndex = 16;
+            this.btnModIdiomas.Text = "Modificar";
+            this.btnModIdiomas.UseVisualStyleBackColor = false;
+            this.btnModIdiomas.Click += new System.EventHandler(this.btnModIdiomas_Click);
+            // 
+            // btnBajaIdiomas
+            // 
+            this.btnBajaIdiomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnBajaIdiomas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBajaIdiomas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBajaIdiomas.Location = new System.Drawing.Point(225, 278);
+            this.btnBajaIdiomas.Name = "btnBajaIdiomas";
+            this.btnBajaIdiomas.Size = new System.Drawing.Size(100, 26);
+            this.btnBajaIdiomas.TabIndex = 15;
+            this.btnBajaIdiomas.Text = "Dar de Baja";
+            this.btnBajaIdiomas.UseVisualStyleBackColor = false;
+            this.btnBajaIdiomas.Click += new System.EventHandler(this.btnBajaIdiomas_Click);
+            // 
+            // grpModificarIdioma
+            // 
+            this.grpModificarIdioma.Controls.Add(this.btnGuardarIdiomaMod);
+            this.grpModificarIdioma.Controls.Add(this.btnCancelarIdiomaMod);
+            this.grpModificarIdioma.Controls.Add(this.lblIdiomaMod);
+            this.grpModificarIdioma.Controls.Add(this.txtIdiomaMod);
+            this.grpModificarIdioma.Location = new System.Drawing.Point(343, 172);
+            this.grpModificarIdioma.Name = "grpModificarIdioma";
+            this.grpModificarIdioma.Size = new System.Drawing.Size(294, 100);
+            this.grpModificarIdioma.TabIndex = 14;
+            this.grpModificarIdioma.TabStop = false;
+            this.grpModificarIdioma.Text = "Modificar";
+            // 
+            // btnGuardarIdiomaMod
+            // 
+            this.btnGuardarIdiomaMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarIdiomaMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarIdiomaMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardarIdiomaMod.Location = new System.Drawing.Point(196, 60);
+            this.btnGuardarIdiomaMod.Name = "btnGuardarIdiomaMod";
+            this.btnGuardarIdiomaMod.Size = new System.Drawing.Size(83, 23);
+            this.btnGuardarIdiomaMod.TabIndex = 3;
+            this.btnGuardarIdiomaMod.Text = "Guardar";
+            this.btnGuardarIdiomaMod.UseVisualStyleBackColor = false;
+            this.btnGuardarIdiomaMod.Click += new System.EventHandler(this.btnGuardarIdiomaMod_Click);
+            // 
+            // btnCancelarIdiomaMod
+            // 
+            this.btnCancelarIdiomaMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarIdiomaMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarIdiomaMod.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelarIdiomaMod.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarIdiomaMod.Name = "btnCancelarIdiomaMod";
+            this.btnCancelarIdiomaMod.Size = new System.Drawing.Size(83, 23);
+            this.btnCancelarIdiomaMod.TabIndex = 2;
+            this.btnCancelarIdiomaMod.Text = "Cancelar";
+            this.btnCancelarIdiomaMod.UseVisualStyleBackColor = false;
+            this.btnCancelarIdiomaMod.Click += new System.EventHandler(this.btnCancelarIdiomaMod_Click);
+            // 
+            // lblIdiomaMod
+            // 
+            this.lblIdiomaMod.AutoSize = true;
+            this.lblIdiomaMod.Location = new System.Drawing.Point(37, 30);
+            this.lblIdiomaMod.Name = "lblIdiomaMod";
+            this.lblIdiomaMod.Size = new System.Drawing.Size(48, 16);
+            this.lblIdiomaMod.TabIndex = 0;
+            this.lblIdiomaMod.Text = "Idioma";
+            // 
+            // txtIdiomaMod
+            // 
+            this.txtIdiomaMod.Location = new System.Drawing.Point(109, 27);
+            this.txtIdiomaMod.Name = "txtIdiomaMod";
+            this.txtIdiomaMod.Size = new System.Drawing.Size(141, 22);
+            this.txtIdiomaMod.TabIndex = 1;
+            this.txtIdiomaMod.TextChanged += new System.EventHandler(this.txtIdiomaMod_TextChanged);
+            this.txtIdiomaMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdiomaMod_KeyPress);
+            // 
+            // grpAltaIdiomas
+            // 
+            this.grpAltaIdiomas.Controls.Add(this.btnGuardarAltaIdioma);
+            this.grpAltaIdiomas.Controls.Add(this.btnCancelarAltaIdioma);
+            this.grpAltaIdiomas.Controls.Add(this.lblIdiomas);
+            this.grpAltaIdiomas.Controls.Add(this.txtIdiomasAlta);
+            this.grpAltaIdiomas.Location = new System.Drawing.Point(343, 22);
+            this.grpAltaIdiomas.Name = "grpAltaIdiomas";
+            this.grpAltaIdiomas.Size = new System.Drawing.Size(294, 100);
+            this.grpAltaIdiomas.TabIndex = 13;
+            this.grpAltaIdiomas.TabStop = false;
+            this.grpAltaIdiomas.Text = "Alta";
+            // 
+            // btnGuardarAltaIdioma
+            // 
+            this.btnGuardarAltaIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnGuardarAltaIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardarAltaIdioma.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnGuardarAltaIdioma.Location = new System.Drawing.Point(196, 60);
+            this.btnGuardarAltaIdioma.Name = "btnGuardarAltaIdioma";
+            this.btnGuardarAltaIdioma.Size = new System.Drawing.Size(83, 23);
+            this.btnGuardarAltaIdioma.TabIndex = 3;
+            this.btnGuardarAltaIdioma.Text = "Guardar";
+            this.btnGuardarAltaIdioma.UseVisualStyleBackColor = false;
+            this.btnGuardarAltaIdioma.Click += new System.EventHandler(this.btnGuardarAltaIdioma_Click);
+            // 
+            // btnCancelarAltaIdioma
+            // 
+            this.btnCancelarAltaIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCancelarAltaIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelarAltaIdioma.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelarAltaIdioma.Location = new System.Drawing.Point(14, 60);
+            this.btnCancelarAltaIdioma.Name = "btnCancelarAltaIdioma";
+            this.btnCancelarAltaIdioma.Size = new System.Drawing.Size(83, 23);
+            this.btnCancelarAltaIdioma.TabIndex = 2;
+            this.btnCancelarAltaIdioma.Text = "Cancelar";
+            this.btnCancelarAltaIdioma.UseVisualStyleBackColor = false;
+            this.btnCancelarAltaIdioma.Click += new System.EventHandler(this.btnCancelarAltaIdioma_Click);
+            // 
+            // lblIdiomas
+            // 
+            this.lblIdiomas.AutoSize = true;
+            this.lblIdiomas.Location = new System.Drawing.Point(37, 30);
+            this.lblIdiomas.Name = "lblIdiomas";
+            this.lblIdiomas.Size = new System.Drawing.Size(48, 16);
+            this.lblIdiomas.TabIndex = 0;
+            this.lblIdiomas.Text = "Idioma";
+            // 
+            // txtIdiomasAlta
+            // 
+            this.txtIdiomasAlta.Location = new System.Drawing.Point(109, 27);
+            this.txtIdiomasAlta.Name = "txtIdiomasAlta";
+            this.txtIdiomasAlta.Size = new System.Drawing.Size(141, 22);
+            this.txtIdiomasAlta.TabIndex = 1;
+            this.txtIdiomasAlta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdiomasAlta_KeyPress);
+            // 
+            // dtgIdiomas
+            // 
+            this.dtgIdiomas.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtgIdiomas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgIdiomas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDIdioma,
+            this.NombreIdioma});
+            this.dtgIdiomas.Location = new System.Drawing.Point(30, 22);
+            this.dtgIdiomas.Name = "dtgIdiomas";
+            this.dtgIdiomas.RowHeadersWidth = 51;
+            this.dtgIdiomas.RowTemplate.Height = 24;
+            this.dtgIdiomas.Size = new System.Drawing.Size(295, 250);
+            this.dtgIdiomas.TabIndex = 12;
+            this.dtgIdiomas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIdiomas_CellContentDoubleClick);
+            this.dtgIdiomas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIdiomas_CellDoubleClick);
+            this.dtgIdiomas.SelectionChanged += new System.EventHandler(this.dtgIdiomas_SelectionChanged);
+            // 
+            // IDIdioma
+            // 
+            this.IDIdioma.DataPropertyName = "id_idiomas";
+            this.IDIdioma.HeaderText = "ID";
+            this.IDIdioma.MinimumWidth = 6;
+            this.IDIdioma.Name = "IDIdioma";
+            this.IDIdioma.Visible = false;
+            this.IDIdioma.Width = 125;
+            // 
+            // NombreIdioma
+            // 
+            this.NombreIdioma.DataPropertyName = "idioma";
+            this.NombreIdioma.HeaderText = "Nombre";
+            this.NombreIdioma.MinimumWidth = 6;
+            this.NombreIdioma.Name = "NombreIdioma";
+            this.NombreIdioma.Width = 125;
+            // 
             // frmConfigAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -904,29 +1113,35 @@
             this.Text = "Configuración Alta de Personal";
             this.tabConfigAltaPersonal.ResumeLayout(false);
             this.tabDocumento.ResumeLayout(false);
-            this.tabTelefono.ResumeLayout(false);
-            this.tabNacionalidad.ResumeLayout(false);
-            this.tabGenero.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDocumento)).EndInit();
-            this.grpAlta.ResumeLayout(false);
-            this.grpAlta.PerformLayout();
             this.grpModificar.ResumeLayout(false);
             this.grpModificar.PerformLayout();
+            this.grpAlta.ResumeLayout(false);
+            this.grpAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDocumento)).EndInit();
+            this.tabTelefono.ResumeLayout(false);
             this.grpModificarTel.ResumeLayout(false);
             this.grpModificarTel.PerformLayout();
             this.grpAltaTel.ResumeLayout(false);
             this.grpAltaTel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTelefono)).EndInit();
+            this.tabNacionalidad.ResumeLayout(false);
             this.grpNacioMod.ResumeLayout(false);
             this.grpNacioMod.PerformLayout();
             this.grpNacionalidadAlta.ResumeLayout(false);
             this.grpNacionalidadAlta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNacionalidad)).EndInit();
+            this.tabGenero.ResumeLayout(false);
             this.grpModificarGenero.ResumeLayout(false);
             this.grpModificarGenero.PerformLayout();
             this.grpGeneroAlta.ResumeLayout(false);
             this.grpGeneroAlta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgGenero)).EndInit();
+            this.tabIdiomas.ResumeLayout(false);
+            this.grpModificarIdioma.ResumeLayout(false);
+            this.grpModificarIdioma.PerformLayout();
+            this.grpAltaIdiomas.ResumeLayout(false);
+            this.grpAltaIdiomas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1000,5 +1215,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDGen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreGen;
+        private System.Windows.Forms.TabPage tabIdiomas;
+        private System.Windows.Forms.Button btnModIdiomas;
+        private System.Windows.Forms.Button btnBajaIdiomas;
+        private System.Windows.Forms.GroupBox grpModificarIdioma;
+        private System.Windows.Forms.Button btnGuardarIdiomaMod;
+        private System.Windows.Forms.Button btnCancelarIdiomaMod;
+        private System.Windows.Forms.Label lblIdiomaMod;
+        private System.Windows.Forms.TextBox txtIdiomaMod;
+        private System.Windows.Forms.GroupBox grpAltaIdiomas;
+        private System.Windows.Forms.Button btnGuardarAltaIdioma;
+        private System.Windows.Forms.Button btnCancelarAltaIdioma;
+        private System.Windows.Forms.Label lblIdiomas;
+        private System.Windows.Forms.TextBox txtIdiomasAlta;
+        private System.Windows.Forms.DataGridView dtgIdiomas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDIdioma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreIdioma;
     }
 }

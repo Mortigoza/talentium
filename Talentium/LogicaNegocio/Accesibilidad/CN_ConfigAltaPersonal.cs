@@ -139,5 +139,36 @@ namespace LogicaNegocio.Accesibilidad
         {
             return configAltaPersonal.EliminarGenero(id_genero);
         }
+        /////////////////// Idioma ///////////////////
+        public bool ValidarIdioma(string idioma)
+        {
+            if (!configAltaPersonal.ConsultarIdiomaRepetido(idioma))
+            {
+                configAltaPersonal.InsertarIdioma(idioma);
+                return false;
+            }
+            return true;
+        }
+        public DataTable ObtenerIdioma()
+        {
+            return configAltaPersonal.ObtenerIdioma();
+        }
+        public bool ModificarIdioma(int id_idioma, string idioma)
+        {
+            if (!configAltaPersonal.ConsultarIdiomaRepetido(idioma))
+            {
+                configAltaPersonal.ModificarIdioma(id_idioma, idioma);
+                return false;
+            }
+            return true;
+        }
+        public bool IdiomaAsociadoAPersona(int id_idioma)
+        {
+            return configAltaPersonal.ConsultarIdiomaConPersona(id_idioma);
+        }
+        public bool EliminarIdioma(int id_idioma)
+        {
+            return configAltaPersonal.EliminarIdioma(id_idioma);
+        }
     }
 }

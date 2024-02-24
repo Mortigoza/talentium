@@ -199,5 +199,52 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoPersonaGenero = EjecutarConsultas("consultar_persona_genero_sp", listaParametros.ToArray());
             return resultadoPersonaGenero.Rows.Count != 0;
         }
+        // Idiomas
+        public DataTable ObtenerIdioma()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("obtener_idioma_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ConsultarIdiomaRepetido(string idiomaRepetido)
+        {
+            SqlParameter param1 = new SqlParameter("@idiomaRepetido", idiomaRepetido) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoIdioma = EjecutarConsultas("consultar_idioma_repetido_sp", listaParametros.ToArray());
+
+            return resultadoIdioma.Rows.Count != 0;
+        }
+        public DataTable InsertarIdioma(string idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@idioma", idioma) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("insertar_idioma_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
+        public bool ModificarIdioma(int id_idioma, string idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_idioma", id_idioma) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@idioma", idioma) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifIdioma = EjecutarConsultas("modificar_idioma_sp", listaParametros.ToArray());
+            return resultadoModifIdioma.Rows.Count != 0;
+        }
+        public bool EliminarIdioma(int id_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_idioma", id_idioma) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarIdioma = EjecutarConsultas("eliminar_idioma_sp", listaParametros.ToArray());
+            return resultadoEliminarIdioma.Rows.Count != 0;
+        }
+        public bool ConsultarIdiomaConPersona(int id_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_idioma", id_idioma) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaIdioma = EjecutarConsultas("consultar_persona_idioma_sp", listaParametros.ToArray());
+            return resultadoPersonaIdioma.Rows.Count != 0;
+        }
     }
 }
