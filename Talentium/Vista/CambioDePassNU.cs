@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista
@@ -16,6 +17,7 @@ namespace Vista
     public partial class CambioDePassNU : Form
     {
         CN_CambarPassword pass = new CN_CambarPassword();
+        private bool allow = false;
         public CambioDePassNU()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace Vista
         {
             if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text))
             {
-                MessageBox.Show("Los campos no deben estar vacios");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -56,26 +58,22 @@ namespace Vista
 
                         // se realiza el update de la nueva pass y se hashea la misma. 
                         pass.insertarPass(UserCache.usuario, tbContra2.Text);
-
-                            MessageBox.Show("Operación realizada con éxito");
-                            this.Hide();
-                            frmLogin login = new frmLogin();
-                            login.Show();
-                       
-
+                        this.Dispose();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden");
+                    MessageBox.Show(Errores.PasNoIgual, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
         private void tbContra1_Leave(object sender, EventArgs e)
         {
-            if (CN_Validaciones.ValCar(tbContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
-                ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales))
+            allow = (CN_Validaciones.ValCar(tbContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
+                ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales));
+
+            if (allow)
             {
                 lblError.Visible = false;
             }

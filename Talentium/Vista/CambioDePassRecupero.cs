@@ -52,7 +52,7 @@ namespace Vista
             CN_CambarPassword pass = new CN_CambarPassword();
             if (string.IsNullOrEmpty(tbContra1.Text) || string.IsNullOrEmpty(tbContra2.Text)) 
             {
-                MessageBox.Show(Errores.CamposIncompletos);
+                MessageBox.Show(Errores.CamposIncompletos,Errores.Aviso,MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }else {
 
                 if (tbContra1.Text == tbContra2.Text)
@@ -66,7 +66,7 @@ namespace Vista
                 }
                 else
                 {
-                    MessageBox.Show(Errores.PasNoIgual);
+                    MessageBox.Show(Errores.PasNoIgual, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -78,12 +78,10 @@ namespace Vista
             if (allow)
             {
                 lblError.Visible = false;
-                continuar.Enabled = true;
             }
             else
             {
                 lblError.Visible = true;
-                continuar.Enabled = false;
                 lblError.Text = "";
                 foreach (string error in CN_Validaciones.GetMensajeErrorLabel())
                 {

@@ -62,14 +62,6 @@ namespace Vista
                 MessageBox.Show("El campo no debe estar vacio");
             }
         }
-
-        private void lnkRecupero_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            frmLogin menu = new frmLogin();
-            menu.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
@@ -94,6 +86,11 @@ namespace Vista
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
