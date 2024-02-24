@@ -71,7 +71,7 @@ namespace Vista
             if (valor) 
             {
                 this.Hide();
-                CambioDePassRecupero cambioDePass =  new CambioDePassRecupero();
+                frmCambioPass cambioDePass =  new frmCambioPass();
                 cambioDePass.ShowDialog();
                 this.Dispose();
             }

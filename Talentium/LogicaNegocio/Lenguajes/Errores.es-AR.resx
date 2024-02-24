@@ -183,4 +183,7 @@
   <data name="PasNoIgual" xml:space="preserve">
     <value>Las contraseñas no coinciden.</value>
   </data>
+  <data name="PasFaltaCriterio" xml:space="preserve">
+    <value>La contraseña no cumple con una o más de los requisitos.</value>
+  </data>
 </root>

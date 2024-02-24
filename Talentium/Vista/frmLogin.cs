@@ -38,8 +38,8 @@ namespace Vista
                 {
                     //llamar al form que cambia la contraseña.
                     this.Hide();
-                    CambioDePassNU CP = new CambioDePassNU();
-                    CP.Show();
+                    frmCambioPass cambioPass = new frmCambioPass(true);
+                    cambioPass.ShowDialog();
                 }
                 else
                 {

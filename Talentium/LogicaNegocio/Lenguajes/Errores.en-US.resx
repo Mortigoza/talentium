@@ -183,4 +183,7 @@
   <data name="PasNoIgual" xml:space="preserve">
     <value>The passwords aren't the same.</value>
   </data>
+  <data name="PasFaltaCriterio" xml:space="preserve">
+    <value>The password doesn't meet one or more of the requirements.</value>
+  </data>
 </root>

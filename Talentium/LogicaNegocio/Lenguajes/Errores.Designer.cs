@@ -142,6 +142,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña no cumple con una o más de los requisitos..
+        /// </summary>
+        public static string PasFaltaCriterio {
+            get {
+                return ResourceManager.GetString("PasFaltaCriterio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Minimo ocho caracteres..
         /// </summary>
         public static string PasMinimo8 {

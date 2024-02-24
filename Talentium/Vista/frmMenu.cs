@@ -230,7 +230,7 @@ namespace Vista
         private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CambioDePassRecupero frm = new CambioDePassRecupero();
+            frmCambioPass frm = new frmCambioPass();
             frm.ShowDialog();
             this.Show();
         }
