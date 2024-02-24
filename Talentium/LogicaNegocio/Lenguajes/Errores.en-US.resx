@@ -181,9 +181,12 @@
     <value>Do not include personal data.</value>
   </data>
   <data name="PasNoIgual" xml:space="preserve">
-    <value>The passwords aren't the same.</value>
+    <value>The passwords do not match.</value>
   </data>
   <data name="PasFaltaCriterio" xml:space="preserve">
     <value>The password doesn't meet one or more of the requirements.</value>
+  </data>
+  <data name="PasPregInvalida" xml:space="preserve">
+    <value>The security question answer is incorrect.</value>
   </data>
 </root>

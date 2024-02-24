@@ -80,7 +80,7 @@ namespace LogicaNegocio
             string respuestaBd = rtaUsuarios.Rows[0][3].ToString().Trim();
             if (respuestaBd != respuesta.Trim().ToUpper())
             {
-                MessageBox.Show(Errores.PasFaltaCriterio, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.PasPregInvalida, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if ((int?)idPregunta != null && allow)

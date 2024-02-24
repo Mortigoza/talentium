@@ -186,4 +186,7 @@
   <data name="PasFaltaCriterio" xml:space="preserve">
     <value>La contraseña no cumple con una o más de los requisitos.</value>
   </data>
+  <data name="PasPregInvalida" xml:space="preserve">
+    <value>La respuesta a la pregunta de seguridad es incorrecta.</value>
+  </data>
 </root>

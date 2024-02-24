@@ -205,6 +205,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La respuesta a la pregunta de seguridad es incorrecta..
+        /// </summary>
+        public static string PasPregInvalida {
+            get {
+                return ResourceManager.GetString("PasPregInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Quieres continuar?.
         /// </summary>
         public static string QuiereContinuar {
