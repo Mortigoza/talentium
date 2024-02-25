@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCambioPass));
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblReingresarConraseña = new System.Windows.Forms.Label();
             this.txtContra2 = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             this.txtRespuesta = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnMostrar2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +80,7 @@
             this.txtContra2.Margin = new System.Windows.Forms.Padding(2);
             this.txtContra2.MaxLength = 30;
             this.txtContra2.Name = "txtContra2";
+            this.txtContra2.PasswordChar = '*';
             this.txtContra2.Size = new System.Drawing.Size(279, 20);
             this.txtContra2.TabIndex = 2;
             // 
@@ -106,6 +110,7 @@
             this.txtContra1.Margin = new System.Windows.Forms.Padding(2);
             this.txtContra1.MaxLength = 30;
             this.txtContra1.Name = "txtContra1";
+            this.txtContra1.PasswordChar = '*';
             this.txtContra1.Size = new System.Drawing.Size(279, 20);
             this.txtContra1.TabIndex = 1;
             this.txtContra1.Leave += new System.EventHandler(this.tbContra1_Leave);
@@ -137,6 +142,7 @@
             // 
             // cmbPreguntas
             // 
+            this.cmbPreguntas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPreguntas.FormattingEnabled = true;
             this.cmbPreguntas.ItemHeight = 13;
             this.cmbPreguntas.Location = new System.Drawing.Point(210, 216);
@@ -183,7 +189,7 @@
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblError.Location = new System.Drawing.Point(494, 137);
+            this.lblError.Location = new System.Drawing.Point(530, 137);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(29, 13);
             this.lblError.TabIndex = 26;
@@ -204,6 +210,36 @@
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrar.BackgroundImage")));
+            this.btnMostrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrar.FlatAppearance.BorderSize = 0;
+            this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrar.Location = new System.Drawing.Point(494, 134);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(30, 30);
+            this.btnMostrar.TabIndex = 28;
+            this.btnMostrar.UseVisualStyleBackColor = false;
+            this.btnMostrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseDown);
+            this.btnMostrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar_MouseUp);
+            // 
+            // btnMostrar2
+            // 
+            this.btnMostrar2.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrar2.BackgroundImage")));
+            this.btnMostrar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrar2.FlatAppearance.BorderSize = 0;
+            this.btnMostrar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrar2.Location = new System.Drawing.Point(494, 171);
+            this.btnMostrar2.Name = "btnMostrar2";
+            this.btnMostrar2.Size = new System.Drawing.Size(30, 30);
+            this.btnMostrar2.TabIndex = 29;
+            this.btnMostrar2.UseVisualStyleBackColor = false;
+            this.btnMostrar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMostrar2_MouseDown);
+            this.btnMostrar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar2_MouseUp);
+            // 
             // frmCambioPass
             // 
             this.AcceptButton = this.btnContinuar;
@@ -211,6 +247,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(718, 366);
+            this.Controls.Add(this.btnMostrar2);
+            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtRespuesta);
@@ -252,5 +290,7 @@
         private System.Windows.Forms.TextBox txtRespuesta;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnMostrar2;
     }
 }

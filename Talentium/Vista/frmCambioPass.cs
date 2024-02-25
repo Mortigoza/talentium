@@ -37,6 +37,7 @@ namespace Vista
             {
                 default:
                     btnAtras.Visible = true;
+                    cmbPreguntas.DroppedDown = false;
                     preguntas = pass.ObtenerPregutasUsuarios();
                     break;
 
@@ -81,6 +82,26 @@ namespace Vista
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnMostrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtContra1.PasswordChar = '\0';
+        }
+
+        private void btnMostrar_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtContra1.PasswordChar = '*';
+        }
+
+        private void btnMostrar2_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtContra2.PasswordChar = '\0';
+        }
+
+        private void btnMostrar2_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtContra2.PasswordChar = '*';
         }
     }
 }
