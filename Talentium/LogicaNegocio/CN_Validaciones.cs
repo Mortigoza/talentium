@@ -63,10 +63,13 @@ namespace LogicaNegocio
             CD_Login login = new CD_Login();
             DataTable datos = login.TraerDatosPersonales();
             List<string> palabras = new List<string>();
-            separarPalabras(datos.Rows[0][0].ToString(), ref palabras);
-            separarPalabras(datos.Rows[0][1].ToString(), ref palabras);
-            palabras.Add(datos.Rows[0][2].ToString().Trim().ToLower());
-            palabras.Add(datos.Rows[0][4].ToString().Trim());
+            if (datos.Rows.Count > 0)
+            {
+                separarPalabras(datos.Rows[0][0].ToString(), ref palabras);
+                separarPalabras(datos.Rows[0][1].ToString(), ref palabras);
+                palabras.Add(datos.Rows[0][2].ToString().Trim().ToLower());
+                palabras.Add(datos.Rows[0][4].ToString().Trim());
+            }
 
             str = str.ToLower();
             foreach (string palabra in palabras)

@@ -27,7 +27,6 @@ namespace LogicaNegocio
         public DataTable ObtenerRespuetasUsuarios(int id)
         {
             return acceso.ConsultaRtaSeg(id);
-            
         }
         public void insertarRta(int idUsuario, string rta, int idPregunta)
         {
@@ -76,12 +75,16 @@ namespace LogicaNegocio
             }
 
             CN_CambiarPassword pass = new CN_CambiarPassword();
-            DataTable rtaUsuarios = pass.ObtenerRespuetasUsuarios(UserCache.id); //pasar el id por el userCache
-            string respuestaBd = rtaUsuarios.Rows[0][3].ToString().Trim();
-            if (respuestaBd != respuesta.Trim().ToUpper())
-            {
-                MessageBox.Show(Errores.PasPregInvalida, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+
+            if (!esNuevo)
+            { 
+                DataTable rtaUsuarios = pass.ObtenerRespuetasUsuarios(UserCache.id); //pasar el id por el userCache
+                string respuestaBd = rtaUsuarios.Rows[0][3].ToString().Trim();
+                if (respuestaBd != respuesta.Trim().ToUpper())
+                {
+                    MessageBox.Show(Errores.PasPregInvalida, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             if ((int?)idPregunta != null && allow)
             {

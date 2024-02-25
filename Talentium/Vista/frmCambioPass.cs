@@ -46,7 +46,7 @@ namespace Vista
                     break;
             }
             cmbPreguntas.ValueMember = "id_pregunta";
-            cmbPreguntas.DisplayMember = "pregunta";
+            cmbPreguntas.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "pregunta" : "pregunta_eng";
             cmbPreguntas.DataSource = preguntas;
             txtContra1.Focus();
 
