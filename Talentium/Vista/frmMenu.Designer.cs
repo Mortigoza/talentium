@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titulo = new System.Windows.Forms.Label();
@@ -63,6 +64,9 @@
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tmrMouse = new System.Windows.Forms.Timer(this.components);
+            this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
+            this.lblTiempoRestante = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -353,6 +357,30 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tmrMouse
+            // 
+            this.tmrMouse.Enabled = true;
+            this.tmrMouse.Interval = 1000;
+            this.tmrMouse.Tick += new System.EventHandler(this.tmrMouse_Tick);
+            // 
+            // tmrMouseQuieto
+            // 
+            this.tmrMouseQuieto.Enabled = true;
+            this.tmrMouseQuieto.Interval = 1000;
+            this.tmrMouseQuieto.Tick += new System.EventHandler(this.tmrMouseQuieto_Tick);
+            // 
+            // lblTiempoRestante
+            // 
+            this.lblTiempoRestante.AutoSize = true;
+            this.lblTiempoRestante.BackColor = System.Drawing.Color.Transparent;
+            this.lblTiempoRestante.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempoRestante.Location = new System.Drawing.Point(24, 528);
+            this.lblTiempoRestante.Name = "lblTiempoRestante";
+            this.lblTiempoRestante.Size = new System.Drawing.Size(203, 13);
+            this.lblTiempoRestante.TabIndex = 22;
+            this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
+            this.lblTiempoRestante.Visible = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +389,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1069, 562);
+            this.Controls.Add(this.lblTiempoRestante);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.titulo);
@@ -371,6 +400,8 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -414,5 +445,8 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDeCapacitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrMouse;
+        private System.Windows.Forms.Timer tmrMouseQuieto;
+        private System.Windows.Forms.Label lblTiempoRestante;
     }
 }

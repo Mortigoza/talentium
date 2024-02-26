@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,9 @@ namespace Vista
 {
     public partial class frmMenu : Form
     {
+        private Point lastMousePosition;
+        private long minTotal = 60_000 * 5; // Cantidad de minutos que va a tardar en cerrar sesión automaticamente
+        private int minActual = 0;
         public frmMenu()
         {
             InitializeComponent();
@@ -257,6 +261,61 @@ namespace Vista
             ConfigPoliticasPass frm = new ConfigPoliticasPass();
             frm.ShowDialog();
             this.Show();
+        }
+
+        private void tmrMouse_Tick(object sender, EventArgs e)
+        {
+            Point currentMousePosition = Cursor.Position;
+
+            if (currentMousePosition != lastMousePosition)
+            {
+                lastMousePosition = currentMousePosition;
+
+                tmrMouseQuieto.Stop();
+                tmrMouse.Stop();
+                tmrMouse.Start();
+                lblTiempoRestante.Visible = false;
+                minActual = 0;
+            }
+            else if (tmrMouseQuieto.Enabled == false)
+            {
+                tmrMouseQuieto.Start();
+            }
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            lastMousePosition = Cursor.Position;
+        }
+
+        private void tmrMouseQuieto_Tick(object sender, EventArgs e)
+        {
+            minActual += 1000;
+            long _minRestante = minTotal - minActual;
+
+            if (_minRestante == 30_000)
+            {
+                SystemSounds.Exclamation.Play();
+            }
+            if (_minRestante <= 30_000)
+            {
+                lblTiempoRestante.Visible = true;
+
+                TimeSpan minRestanteFormato = TimeSpan.FromMilliseconds(_minRestante);
+                string minRestantes = minRestanteFormato.ToString(@"mm\:ss");
+                lblTiempoRestante.Text = Strings.lblTiempoRestante + minRestantes;
+            }
+            if (minActual >= minTotal)
+            {
+                CN_LogicaLogout logout = new CN_LogicaLogout();
+                logout.Logout(this, true);
+            }
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CN_LogicaLogout logout = new CN_LogicaLogout();
+            logout.Logout(this);
         }
     }
 }

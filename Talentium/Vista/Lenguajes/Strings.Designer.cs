@@ -772,6 +772,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Su sesión se terminará por inactividad en .
+        /// </summary>
+        public static string lblTiempoRestante {
+            get {
+                return ResourceManager.GetString("lblTiempoRestante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Total de evaluaciones.
         /// </summary>
         public static string lblTotalEvaluaciones {

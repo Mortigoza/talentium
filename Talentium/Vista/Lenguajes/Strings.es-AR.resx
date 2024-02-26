@@ -375,4 +375,7 @@
   <data name="btnLogout" xml:space="preserve">
     <value>Cerrar sesion</value>
   </data>
+  <data name="lblTiempoRestante" xml:space="preserve">
+    <value>Su sesión se terminará por inactividad en </value>
+  </data>
 </root>
