@@ -45,8 +45,24 @@ namespace Vista
                     this.Show();
                     txtUsername.Focus();
                 }
+                else if (UserCache.cambiaCada != 0 && DateTime.Today >= UserCache.ultimoCambio.AddDays(Convert.ToDouble(UserCache.cambiaCada)))
+                {
+                    //llamar al form que cambia la contraseña.
+                    MessageBox.Show(Errores.UsrCambiaCadaVencido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    frmCambioPass cambioPass = new frmCambioPass();
+                    cambioPass.ShowDialog();
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
+                }
                 else
                 {
+                    if (UserCache.cambiaCada != 0 && DateTime.Today >= UserCache.ultimoCambio.AddDays(UserCache.cambiaCada - 7))
+                    {
+                        MessageBox.Show(Errores.UsrCambiaCadaPorVencer, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     CN_TraerPermisos tp = new CN_TraerPermisos();
                     tp.TraerPermisos();
                     this.Hide();

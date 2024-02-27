@@ -241,6 +241,24 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Su contraseña va a caducar pronto, se recomienda cambiarla..
+        /// </summary>
+        public static string UsrCambiaCadaPorVencer {
+            get {
+                return ResourceManager.GetString("UsrCambiaCadaPorVencer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Su contraseña ha caducado, debe cambiarla para poder seguir utilizando el sistema..
+        /// </summary>
+        public static string UsrCambiaCadaVencido {
+            get {
+                return ResourceManager.GetString("UsrCambiaCadaVencido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El usuario se encuentra dado de baja..
         /// </summary>
         public static string UsrDadoDeBaja {

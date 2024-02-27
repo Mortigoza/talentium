@@ -189,4 +189,10 @@
   <data name="PasPregInvalida" xml:space="preserve">
     <value>La respuesta a la pregunta de seguridad es incorrecta.</value>
   </data>
+  <data name="UsrCambiaCadaVencido" xml:space="preserve">
+    <value>Su contraseña ha caducado, debe cambiarla para poder seguir utilizando el sistema.</value>
+  </data>
+  <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
+    <value>Su contraseña va a caducar pronto, se recomienda cambiarla.</value>
+  </data>
 </root>

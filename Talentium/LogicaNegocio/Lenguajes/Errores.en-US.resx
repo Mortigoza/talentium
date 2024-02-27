@@ -189,4 +189,10 @@
   <data name="PasPregInvalida" xml:space="preserve">
     <value>The security question answer is incorrect.</value>
   </data>
+  <data name="UsrCambiaCadaVencido" xml:space="preserve">
+    <value>Your password has expired. You must change it in order to continue using the system.</value>
+  </data>
+  <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
+    <value>Your password will expire soon. It is recommended to change it.</value>
+  </data>
 </root>
