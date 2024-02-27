@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Bitacora;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,7 @@ namespace Vista
             if (ms == DialogResult.Yes)
             {
                 bk.HacerBackup();
+                CN_Bitacora.AltaBitacora("Backup de la bd creado", "Backup", this.Name);
             }
         }
 
@@ -64,6 +66,7 @@ namespace Vista
                 if (resultado == DialogResult.OK)
                 {
                     bk.CargarBackup(opnBackup.FileName);
+                    CN_Bitacora.AltaBitacora("Backup de la bd cargado", "Backup", this.Name);
                 }
             }
         }

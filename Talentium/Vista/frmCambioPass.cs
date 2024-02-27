@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Comun;
 using DocumentFormat.OpenXml.Wordprocessing;
 using LogicaNegocio;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
@@ -56,6 +57,7 @@ namespace Vista
         {
             if (pass.ValidarPass(_esNuevo, allow, txtContra1.Text, txtContra2.Text, txtRespuesta.Text, cmbPreguntas.SelectedValue))
             {
+                CN_Bitacora.AltaBitacora("Cambio de contraseña", "Update", this.Name);
                 this.Dispose();
             }
         }
