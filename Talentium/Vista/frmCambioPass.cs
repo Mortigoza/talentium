@@ -37,13 +37,11 @@ namespace Vista
             switch (_esNuevo)
             {
                 default:
-                    btnAtras.Visible = true;
                     cmbPreguntas.DroppedDown = false;
                     preguntas = pass.ObtenerPregutasUsuarios();
                     break;
 
                 case true:
-                    btnAtras.Visible = false;
                     preguntas = pass.ObtenerTodasPregutasSeg();
                     break;
             }

@@ -214,6 +214,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No puede utilizar su contraseña actual como nueva contraseña..
+        /// </summary>
+        public static string PasRepetida {
+            get {
+                return ResourceManager.GetString("PasRepetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Quieres continuar?.
         /// </summary>
         public static string QuiereContinuar {

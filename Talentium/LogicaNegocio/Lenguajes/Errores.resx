@@ -195,4 +195,7 @@
   <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
     <value>Su contraseña va a caducar pronto, se recomienda cambiarla.</value>
   </data>
+  <data name="PasRepetida" xml:space="preserve">
+    <value>No puede utilizar su contraseña actual como nueva contraseña.</value>
+  </data>
 </root>

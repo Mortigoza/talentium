@@ -199,7 +199,7 @@ namespace LogicaNegocio
                 return false;
             }
         }
-        private void CargarCache(string usuario)
+        public void CargarCache(string usuario)
         {
             DataTable dt = login.Buscar(usuario);
             UserCache.Clear();

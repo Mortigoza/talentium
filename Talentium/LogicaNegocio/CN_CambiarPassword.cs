@@ -74,6 +74,13 @@ namespace LogicaNegocio
                 return false;
             }
 
+            string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(contra2)).ToString());
+            string digBd = UserCache.digito.Trim();
+            if (dig == digBd)
+            {
+                MessageBox.Show(Errores.PasRepetida, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             CN_CambiarPassword pass = new CN_CambiarPassword();
 
             if (!esNuevo)
@@ -89,6 +96,8 @@ namespace LogicaNegocio
             if ((int?)idPregunta != null && allow)
             {
                 pass.insertarPass(UserCache.usuario, contra2);
+                CN_LogicaLogin login = new CN_LogicaLogin();
+                login.CargarCache(UserCache.usuario);
 
                 switch (esNuevo)
                 {

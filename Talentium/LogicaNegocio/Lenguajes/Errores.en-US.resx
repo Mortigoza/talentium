@@ -195,4 +195,7 @@
   <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
     <value>Your password will expire soon. It is recommended to change it.</value>
   </data>
+  <data name="PasRepetida" xml:space="preserve">
+    <value>You cannot use your current password as the new password.</value>
+  </data>
 </root>
