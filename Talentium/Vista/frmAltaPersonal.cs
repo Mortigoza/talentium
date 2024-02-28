@@ -20,6 +20,8 @@ namespace Vista
         CN_AdministracionPersonalComboBox logica= new CN_AdministracionPersonalComboBox();
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
+        private bool esCandidato;
+        private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
         //variables
         private bool inicial = true;
@@ -44,12 +46,20 @@ namespace Vista
         private int _id_informacion_laboral4;
 
         byte[] foto;
-        public frmAltaPersonal()
+        public frmAltaPersonal(bool esCandidato)
         {
 
-          InitializeComponent();
-          DeshabilitarCampos();
+          //InitializeComponent();
+
+
+  
             
+            InitializeComponent();
+            DeshabilitarCampos();
+            this.esCandidato = esCandidato;
+            dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
+
+
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
 
@@ -287,7 +297,7 @@ namespace Vista
                         }
                         else
                         {
-                            MessageBox.Show("Cuil Disponible");
+               
                             HabilitarCampos();
                             txtCuitCuil.Enabled = false;
                             pctFoto.Enabled = true;
@@ -305,6 +315,11 @@ namespace Vista
                     DeshabilitarCampos();
                     MessageBox.Show("La entrada debe contener solamente numeros.");
                 }
+            }
+            if (esCandidato)
+            {
+                cmbConvenio.Enabled = false;
+                dttFechaAlta.Enabled = false;
             }
         }
    
@@ -366,14 +381,25 @@ namespace Vista
                 insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
                 insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
                 insert.hijos = (int)nupHijos.Value;
-                insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
-                insert.fecha_alta = dttFechaAlta.Value;
+                insert.candidato = esCandidato;
+                        if (esCandidato)
+                        {
+                            insert.id_convenio = 0;
+                            insert.fecha_alta = (DateTime) fechaNull;
+                        } else
+                        {
+                            insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                            insert.fecha_alta = dttFechaAlta.Value;
+                        }
+                //insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                //insert.fecha_alta = dttFechaAlta.Value;
                 
                 insert.telefono = txtTelefono.Text;
                 insert.id_tipo = (int)cmbTipoTel.SelectedValue;
                 insert.telefono_alternativo = txtTelefonoAlternativo.Text;
                 insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                 insert.contacto = txtContacto.Text;
+                
 
 
                 //ACADEMICOS
@@ -707,7 +733,7 @@ namespace Vista
                 }
                 if (c is ComboBox cmb &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
-                    (count == -1 | c.AccessibleDescription.Length - 1 < count))
+                    (count == -1 | c.AccessibleDescription.Length - 1 < count) && cmb.Enabled == true)
                 {
                     if (cmb.SelectedIndex == -1)
                     {
@@ -940,107 +966,78 @@ namespace Vista
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-                MessageBox.Show("En este campo solo debe ingresar números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            SoloNumeros(e);
         }
 
         private void txtTelefonoAlternativo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-                MessageBox.Show("En este campo solo debe ingresar números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            SoloNumeros(e);
         }
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-                MessageBox.Show("En este campo solo debe ingresar números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            SoloNumeros(e);
         }
 
         private void txtNro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-                MessageBox.Show("En este campo solo debe ingresar números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        
         }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            SoloLetras(e);
         }
 
         private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            SoloLetras(e);
         }
 
         private void txtCalle_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
         }
 
         private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            SoloLetras(e);
         }
 
         private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            SoloLetras(e);
         }
 
         private void txtTitulo1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            SoloLetras(e);
         }
 
         private void txtTitulo2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            SoloLetras(e);
+        }
+
+
+        private void SoloLetras(KeyPressEventArgs e)
+        {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
-                MessageBox.Show("En este campo solo debe ingresar letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
+
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
+
+            }
+        }
+
 
         private void Espaniol_CheckedChanged(object sender, EventArgs e)
         {
@@ -1062,6 +1059,7 @@ namespace Vista
             }
             if (btnContinuar2.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
             {
+                btnAtrasAcademico.Enabled = true;
                 btnContinuar2.Enabled = true;
             }
         }
@@ -1086,6 +1084,7 @@ namespace Vista
             }
             if (btnContinuar2.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
             {
+                btnAtrasAcademico.Enabled = true;
                 btnContinuar2.Enabled = true;
             }
         }
@@ -1363,6 +1362,21 @@ namespace Vista
         #endregion
 
         private void tabAcademicos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtrasLaboral_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabAcademicos;
+        }
+
+        private void btnAtrasAcademico_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPersonales;
+        }
+
+        private void dtpFechaDeNacimiento_ValueChanged(object sender, EventArgs e)
         {
 
         }

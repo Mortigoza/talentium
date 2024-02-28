@@ -9,6 +9,7 @@ using Vista.Accesibilidad;
 using Vista.Analisis_y_reportes;
 using LogicaNegocio;
 using System.Threading;
+using Vista.Gestion_de_Talento;
 
 namespace Vista
 {

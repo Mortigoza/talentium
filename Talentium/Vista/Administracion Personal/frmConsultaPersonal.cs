@@ -102,7 +102,7 @@ namespace Vista
                 int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
 
                 // Abre FormAltaPersonal y pasa el id_persona
-                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
                 frmAltaPersonal.CargarDatosPersona(id);
                 frmAltaPersonal.ShowDialog();
             }
@@ -125,7 +125,7 @@ namespace Vista
                 int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
 
                 // Abre FormAltaPersonal y pasa el id_persona
-                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
                 frmAltaPersonal.CargarDatosModificacion(id);
                 frmAltaPersonal.ShowDialog();
             }

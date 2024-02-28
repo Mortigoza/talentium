@@ -13,6 +13,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
     public class CN_AdministracionDatosPersonal
     {
         private CD_AccesoBDPersonacs AccesoDatos = new CD_AccesoBDPersonacs();
+
         public void InsertarTelefono (Persona insert,int id_persona)
         {
             

@@ -36,27 +36,27 @@ namespace Vista
             {
                 MessageBox.Show("Debe ingresar un formato de Cuil/Cuit correcto.");
             }
-            else
-            {
-                bool esCuilValido = proceso.ExisteCandidato(cuil);
+            //else
+            //{
+            //    //bool esCuilValido = proceso.ExisteCandidato(cuil);
 
-                if (!esCuilValido)
-                {
-                    btnGuardar.Enabled = true;
-                    foreach (Control control in grpAltaCandidato.Controls)
-                    {
-                        if (control is ComboBox || control is TextBox || control is DateTimePicker)
-                        {
-                            control.Enabled = !control.Enabled;
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Ese cuil ya está ingresado.");
-                    txtCuilCuit.Clear();
-                }
-            }
+            //    //if (!esCuilValido)
+            //    //{
+            //    //    btnGuardar.Enabled = true;
+            //    //    foreach (Control control in grpAltaCandidato.Controls)
+            //    //    {
+            //    //        if (control is ComboBox || control is TextBox || control is DateTimePicker)
+            //    //        {
+            //    //            control.Enabled = !control.Enabled;
+            //    //        }
+            //    //    }
+            //    //}
+            //    else
+            //    {
+            //        MessageBox.Show("Ese cuil ya está ingresado.");
+            //        txtCuilCuit.Clear();
+            //    }
+            //}
         }
 
         private void frmAltaProcesoDeSeleccion_Load(object sender, EventArgs e)

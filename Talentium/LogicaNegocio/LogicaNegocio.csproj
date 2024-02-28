@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="CN_AsignarCapacitaciones.cs" />
+    <Compile Include="Accesibilidad\CN_ConfigAltaPersonal.cs" />
+    <Compile Include="Accesibilidad\CN_LogicaEntrevista.cs" />
     <Compile Include="CN_Asistencias.cs" />
     <Compile Include="Accesibilidad\CN_BajaPerfil.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarPermisosPerfil.cs" />

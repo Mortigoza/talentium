@@ -32,47 +32,37 @@
             this.btnIngresarEmpleado = new System.Windows.Forms.Button();
             this.btnEtapas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbEtapa = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtCuilCuit = new System.Windows.Forms.TextBox();
-            this.cmbPuesto = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgCandidatos = new System.Windows.Forms.DataGridView();
             this.Etapa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alternativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Entrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entrevistador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificarCandidato = new System.Windows.Forms.Button();
+            this.lblCuil = new System.Windows.Forms.Label();
+            this.lblCuilLlenar = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblNombreLlenar = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblApellidoLlenar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresarEmpleado
             // 
-            this.btnIngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnIngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnIngresarEmpleado.Enabled = false;
-            this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnIngresarEmpleado.Location = new System.Drawing.Point(146, 314);
-            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIngresarEmpleado.Location = new System.Drawing.Point(195, 377);
+            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
-            this.btnIngresarEmpleado.Size = new System.Drawing.Size(112, 33);
+            this.btnIngresarEmpleado.Size = new System.Drawing.Size(149, 41);
             this.btnIngresarEmpleado.TabIndex = 13;
             this.btnIngresarEmpleado.Text = "Ingresar Empleado";
             this.btnIngresarEmpleado.UseVisualStyleBackColor = false;
@@ -80,68 +70,42 @@
             // 
             // btnEtapas
             // 
-            this.btnEtapas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnEtapas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnEtapas.Enabled = false;
-            this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEtapas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEtapas.Location = new System.Drawing.Point(756, 314);
-            this.btnEtapas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEtapas.Location = new System.Drawing.Point(715, 377);
+            this.btnEtapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEtapas.Name = "btnEtapas";
-            this.btnEtapas.Size = new System.Drawing.Size(78, 33);
+            this.btnEtapas.Size = new System.Drawing.Size(104, 41);
             this.btnEtapas.TabIndex = 12;
-            this.btnEtapas.Text = "Ir a Etapas";
+            this.btnEtapas.Text = "Ver proceso";
             this.btnEtapas.UseVisualStyleBackColor = false;
             this.btnEtapas.Click += new System.EventHandler(this.btnEtapas_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbEtapa);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.txtCuilCuit);
-            this.groupBox1.Controls.Add(this.cmbPuesto);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(216, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(139, 43);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(416, 106);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(555, 63);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // cmbEtapa
-            // 
-            this.cmbEtapa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEtapa.FormattingEnabled = true;
-            this.cmbEtapa.Location = new System.Drawing.Point(131, 67);
-            this.cmbEtapa.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbEtapa.Name = "cmbEtapa";
-            this.cmbEtapa.Size = new System.Drawing.Size(168, 21);
-            this.cmbEtapa.TabIndex = 8;
-            this.cmbEtapa.DropDown += new System.EventHandler(this.cmbEtapa_DropDown);
-            this.cmbEtapa.TextChanged += new System.EventHandler(this.cmbEtapa_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 69);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Etapa";
-            // 
             // btnFiltrar
             // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnFiltrar.Location = new System.Drawing.Point(344, 65);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiltrar.Location = new System.Drawing.Point(448, 15);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(56, 26);
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 32);
             this.btnFiltrar.TabIndex = 6;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -149,74 +113,42 @@
             // 
             // txtCuilCuit
             // 
-            this.txtCuilCuit.Location = new System.Drawing.Point(131, 15);
-            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCuilCuit.Location = new System.Drawing.Point(175, 18);
+            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCuilCuit.MaxLength = 11;
             this.txtCuilCuit.Name = "txtCuilCuit";
-            this.txtCuilCuit.Size = new System.Drawing.Size(168, 20);
+            this.txtCuilCuit.Size = new System.Drawing.Size(223, 22);
             this.txtCuilCuit.TabIndex = 5;
             this.txtCuilCuit.TextChanged += new System.EventHandler(this.txtCuilCuit_TextChanged);
+            this.txtCuilCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuilCuit_KeyPress);
             this.txtCuilCuit.Leave += new System.EventHandler(this.txtCuilCuit_Leave);
-            // 
-            // cmbPuesto
-            // 
-            this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPuesto.FormattingEnabled = true;
-            this.cmbPuesto.Location = new System.Drawing.Point(131, 41);
-            this.cmbPuesto.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbPuesto.Name = "cmbPuesto";
-            this.cmbPuesto.Size = new System.Drawing.Size(168, 21);
-            this.cmbPuesto.TabIndex = 3;
-            this.cmbPuesto.DropDown += new System.EventHandler(this.cmbPuesto_DropDown);
-            this.cmbPuesto.TextChanged += new System.EventHandler(this.cmbPuesto_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 44);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Puesto";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(17, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "CUIL/CUIT";
             // 
             // dtgCandidatos
             // 
+            this.dtgCandidatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCandidatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Etapa,
             this.Estado,
             this.Puesto,
-            this.Cuil,
-            this.Nombre,
-            this.Apellido,
-            this.Celular,
-            this.Alternativo,
-            this.Correo,
-            this.Nacimiento,
-            this.Calle,
-            this.Nro,
-            this.Piso,
-            this.Dpto,
-            this.Localidad,
-            this.CP,
-            this.Partido,
-            this.Provincia});
-            this.dtgCandidatos.Location = new System.Drawing.Point(30, 173);
-            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2);
+            this.Fecha_Entrevista,
+            this.Entrevistador,
+            this.ID});
+            this.dtgCandidatos.Location = new System.Drawing.Point(40, 170);
+            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgCandidatos.Name = "dtgCandidatos";
             this.dtgCandidatos.RowHeadersWidth = 51;
             this.dtgCandidatos.RowTemplate.Height = 24;
-            this.dtgCandidatos.Size = new System.Drawing.Size(804, 122);
+            this.dtgCandidatos.Size = new System.Drawing.Size(779, 190);
             this.dtgCandidatos.TabIndex = 8;
             this.dtgCandidatos.SelectionChanged += new System.EventHandler(this.dtgCandidatos_SelectionChanged);
             // 
@@ -241,139 +173,120 @@
             this.Puesto.Name = "Puesto";
             this.Puesto.Width = 125;
             // 
-            // Cuil
+            // Fecha_Entrevista
             // 
-            this.Cuil.HeaderText = "CUIT/CUIL";
-            this.Cuil.MinimumWidth = 6;
-            this.Cuil.Name = "Cuil";
-            this.Cuil.Width = 105;
+            this.Fecha_Entrevista.DataPropertyName = "Fecha_Entrevista";
+            this.Fecha_Entrevista.HeaderText = "Fecha";
+            this.Fecha_Entrevista.MinimumWidth = 6;
+            this.Fecha_Entrevista.Name = "Fecha_Entrevista";
+            this.Fecha_Entrevista.Width = 125;
             // 
-            // Nombre
+            // Entrevistador
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.Entrevistador.DataPropertyName = "Entrevistador";
+            this.Entrevistador.HeaderText = "Entrevistador";
+            this.Entrevistador.MinimumWidth = 6;
+            this.Entrevistador.Name = "Entrevistador";
+            this.Entrevistador.Width = 125;
             // 
-            // Apellido
+            // ID
             // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.MinimumWidth = 6;
-            this.Apellido.Name = "Apellido";
-            this.Apellido.Width = 125;
-            // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Telefono celular";
-            this.Celular.MinimumWidth = 6;
-            this.Celular.Name = "Celular";
-            this.Celular.Width = 105;
-            // 
-            // Alternativo
-            // 
-            this.Alternativo.DataPropertyName = "Segunda entrevista";
-            this.Alternativo.HeaderText = "Telefono alternativo";
-            this.Alternativo.MinimumWidth = 6;
-            this.Alternativo.Name = "Alternativo";
-            this.Alternativo.Width = 105;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo Electronico";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 125;
-            // 
-            // Nacimiento
-            // 
-            this.Nacimiento.HeaderText = "Fecha de nacimiento";
-            this.Nacimiento.MinimumWidth = 6;
-            this.Nacimiento.Name = "Nacimiento";
-            this.Nacimiento.Width = 95;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle ";
-            this.Calle.MinimumWidth = 6;
-            this.Calle.Name = "Calle";
-            this.Calle.Width = 105;
-            // 
-            // Nro
-            // 
-            this.Nro.HeaderText = "N°";
-            this.Nro.MinimumWidth = 6;
-            this.Nro.Name = "Nro";
-            this.Nro.Width = 80;
-            // 
-            // Piso
-            // 
-            this.Piso.HeaderText = "Piso";
-            this.Piso.MinimumWidth = 6;
-            this.Piso.Name = "Piso";
-            this.Piso.Width = 80;
-            // 
-            // Dpto
-            // 
-            this.Dpto.HeaderText = "Dpto";
-            this.Dpto.MinimumWidth = 6;
-            this.Dpto.Name = "Dpto";
-            this.Dpto.Width = 80;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.MinimumWidth = 6;
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 105;
-            // 
-            // CP
-            // 
-            this.CP.HeaderText = "CP";
-            this.CP.MinimumWidth = 6;
-            this.CP.Name = "CP";
-            this.CP.Width = 80;
-            // 
-            // Partido
-            // 
-            this.Partido.HeaderText = "Partido";
-            this.Partido.MinimumWidth = 6;
-            this.Partido.Name = "Partido";
-            this.Partido.Width = 125;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.MinimumWidth = 6;
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 125;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
             // 
             // btnModificarCandidato
             // 
-            this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
+            this.btnModificarCandidato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModificarCandidato.Enabled = false;
-            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificarCandidato.Location = new System.Drawing.Point(30, 314);
-            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarCandidato.Location = new System.Drawing.Point(40, 377);
+            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarCandidato.Name = "btnModificarCandidato";
-            this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
+            this.btnModificarCandidato.Size = new System.Drawing.Size(149, 41);
             this.btnModificarCandidato.TabIndex = 14;
             this.btnModificarCandidato.Text = "Modificar Candidato";
             this.btnModificarCandidato.UseVisualStyleBackColor = false;
             this.btnModificarCandidato.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // lblCuil
+            // 
+            this.lblCuil.AutoSize = true;
+            this.lblCuil.Location = new System.Drawing.Point(36, 151);
+            this.lblCuil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuil.Name = "lblCuil";
+            this.lblCuil.Size = new System.Drawing.Size(74, 16);
+            this.lblCuil.TabIndex = 15;
+            this.lblCuil.Text = "CUIL/CUIT:";
+            // 
+            // lblCuilLlenar
+            // 
+            this.lblCuilLlenar.AutoSize = true;
+            this.lblCuilLlenar.Location = new System.Drawing.Point(128, 151);
+            this.lblCuilLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuilLlenar.Name = "lblCuilLlenar";
+            this.lblCuilLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblCuilLlenar.TabIndex = 16;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(288, 151);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(62, 16);
+            this.lblNombre.TabIndex = 17;
+            this.lblNombre.Text = "Nombre: ";
+            this.lblNombre.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lblNombreLlenar
+            // 
+            this.lblNombreLlenar.AutoSize = true;
+            this.lblNombreLlenar.Location = new System.Drawing.Point(359, 151);
+            this.lblNombreLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreLlenar.Name = "lblNombreLlenar";
+            this.lblNombreLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblNombreLlenar.TabIndex = 18;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(577, 151);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(63, 16);
+            this.lblApellido.TabIndex = 19;
+            this.lblApellido.Text = "Apellido: ";
+            // 
+            // lblApellidoLlenar
+            // 
+            this.lblApellidoLlenar.AutoSize = true;
+            this.lblApellidoLlenar.Location = new System.Drawing.Point(648, 150);
+            this.lblApellidoLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoLlenar.Name = "lblApellidoLlenar";
+            this.lblApellidoLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblApellidoLlenar.TabIndex = 20;
+            // 
             // frmConsultaProcesoDeSeleccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 379);
+            this.ClientSize = new System.Drawing.Size(861, 466);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblApellidoLlenar);
+            this.Controls.Add(this.lblNombreLlenar);
+            this.Controls.Add(this.lblCuilLlenar);
+            this.Controls.Add(this.lblCuil);
             this.Controls.Add(this.btnModificarCandidato);
             this.Controls.Add(this.btnIngresarEmpleado);
             this.Controls.Add(this.btnEtapas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmConsultaProcesoDeSeleccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Candidatos";
@@ -382,6 +295,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -390,32 +304,22 @@
         private System.Windows.Forms.Button btnIngresarEmpleado;
         private System.Windows.Forms.Button btnEtapas;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbEtapa;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.TextBox txtCuilCuit;
-        private System.Windows.Forms.ComboBox cmbPuesto;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dtgCandidatos;
+        private System.Windows.Forms.Button btnModificarCandidato;
+        private System.Windows.Forms.Label lblCuil;
+        private System.Windows.Forms.Label lblCuilLlenar;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNombreLlenar;
+        private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Etapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alternativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Piso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dpto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
-        private System.Windows.Forms.Button btnModificarCandidato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Entrevista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Entrevistador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Label lblApellidoLlenar;
+        public System.Windows.Forms.TextBox txtCuilCuit;
+        public System.Windows.Forms.DataGridView dtgCandidatos;
     }
 }

@@ -168,8 +168,7 @@ namespace Vista
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Cancela la entrada del carácter no numérico
-                MessageBox.Show("En este campo solo debe ingresar numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
 
@@ -177,8 +176,7 @@ namespace Vista
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Cancela la entrada del carácter no numérico
-                MessageBox.Show("En este campo solo debe ingresar numeros","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
 
@@ -186,8 +184,7 @@ namespace Vista
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Cancela la entrada del carácter no numérico
-                MessageBox.Show("En este campo solo debe ingresar numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
 
@@ -195,8 +192,7 @@ namespace Vista
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Cancela la entrada del carácter no numérico
-                MessageBox.Show("En este campo solo debe ingresar numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
 
