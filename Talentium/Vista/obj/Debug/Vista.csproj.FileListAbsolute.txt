@@ -438,3 +438,6 @@ C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.csproj.Up2Date
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.pdb
 C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.frmCambioPass.resources
+C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
+C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
+C:\Users\Tutoz\Desktop\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources

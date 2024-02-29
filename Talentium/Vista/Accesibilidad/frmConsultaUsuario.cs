@@ -95,6 +95,7 @@ namespace Vista
                     dtgPersonas.DataSource = null;
                     dtgPersonas.DataSource = dt;
                     dtgPersonas.Columns[0].Visible = false;
+                    UtilidadesForms.TraducirColumnasDtg(ref dtgPersonas);
                     dtgPersonas.AutoResizeColumns();
                     if (_void == false)
                     {

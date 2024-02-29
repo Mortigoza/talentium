@@ -378,4 +378,16 @@
   <data name="lblTiempoRestante" xml:space="preserve">
     <value>Your session will end due to inactivity in </value>
   </data>
+  <data name="Apellido" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
 </root>

@@ -169,7 +169,22 @@
     <Compile Include="frmConvenios.Designer.cs">
       <DependentUpon>frmConvenios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lenguajes\Columnas.en-US.Designer.cs">
+      <DependentUpon>Columnas.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Lenguajes\Columnas.es-AR.Designer.cs">
+      <DependentUpon>Columnas.es-AR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Lenguajes\Idioma.cs" />
+    <Compile Include="Lenguajes\Columnas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Columnas.resx</DependentUpon>
+    </Compile>
     <Compile Include="Lenguajes\Strings.en-US.Designer.cs">
       <DependentUpon>Strings.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -313,6 +328,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConvenios.resx">
       <DependentUpon>frmConvenios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.es-AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
