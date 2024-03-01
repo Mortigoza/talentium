@@ -121,12 +121,6 @@
     <Compile Include="AsistenciasPanel.Designer.cs">
       <DependentUpon>AsistenciasPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accesibilidad\frmAreas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accesibilidad\frmAreas.Designer.cs">
-      <DependentUpon>frmAreas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAsignarCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,35 +197,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="frmPuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPuesto.Designer.cs">
-      <DependentUpon>frmPuesto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proceso De Seleccion\frmABMCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proceso De Seleccion\frmABMCapacitaciones.Designer.cs">
       <DependentUpon>frmABMCapacitaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proceso De Seleccion\frmAltaProcesoDeSeleccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proceso De Seleccion\frmAltaProcesoDeSeleccion.Designer.cs">
-      <DependentUpon>frmAltaProcesoDeSeleccion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proceso De Seleccion\frmConsultaProcesoDeSeleccion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proceso De Seleccion\frmConsultaProcesoDeSeleccion.Designer.cs">
       <DependentUpon>frmConsultaProcesoDeSeleccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Proceso De Seleccion\frmModificarProcesoDeSeleccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proceso De Seleccion\frmModificarProcesoDeSeleccion.Designer.cs">
-      <DependentUpon>frmModificarProcesoDeSeleccion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRecupero.cs">
       <SubType>Form</SubType>
@@ -272,9 +248,6 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UtilidadesForm.cs" />
-    <EmbeddedResource Include="Accesibilidad\frmAreas.resx">
-      <DependentUpon>frmAreas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Accesibilidad\frmConfigAltaPersonal.resx">
       <DependentUpon>frmConfigAltaPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,14 +327,8 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPuesto.resx">
-      <DependentUpon>frmPuesto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Proceso De Seleccion\frmABMCapacitaciones.resx">
       <DependentUpon>frmABMCapacitaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proceso De Seleccion\frmAltaProcesoDeSeleccion.resx">
-      <DependentUpon>frmAltaProcesoDeSeleccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proceso De Seleccion\frmConsultaProcesoDeSeleccion.resx">
       <DependentUpon>frmConsultaProcesoDeSeleccion.cs</DependentUpon>
@@ -380,9 +347,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proceso De Seleccion\frmModificarProcesoDeSeleccion.resx">
-      <DependentUpon>frmModificarProcesoDeSeleccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecupero.resx">
       <DependentUpon>frmRecupero.cs</DependentUpon>

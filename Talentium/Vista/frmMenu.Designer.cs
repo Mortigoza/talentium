@@ -56,15 +56,13 @@
             this.nóminaSalarialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.certificacionDeServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.áreasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraciónDeEntrevistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraciónDeEntrevistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónDeAltaPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +73,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(501, 188);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(432, 229);
             this.pictureBox1.TabIndex = 18;
@@ -291,11 +289,8 @@
             // accesibilidadToolStripMenuItem
             // 
             this.accesibilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.áreasToolStripMenuItem,
-            this.puestosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.perfilesToolStripMenuItem,
-            this.cambioDeContraseñaToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.cambioDeContraseñaToolStripMenuItem,
             this.configuraciónDeEntrevistasToolStripMenuItem,
@@ -303,20 +298,6 @@
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
-            // 
-            // áreasToolStripMenuItem
-            // 
-            this.áreasToolStripMenuItem.Name = "áreasToolStripMenuItem";
-            this.áreasToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.áreasToolStripMenuItem.Text = "Áreas";
-            this.áreasToolStripMenuItem.Click += new System.EventHandler(this.áreasToolStripMenuItem_Click);
-            // 
-            // puestosToolStripMenuItem
-            // 
-            this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.puestosToolStripMenuItem.Text = "Puestos";
-            this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -339,12 +320,26 @@
             this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
             this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
+            // configuraciónToolStripMenuItem
+            // 
+            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
+            // 
             // configuraciónDeEntrevistasToolStripMenuItem
             // 
             this.configuraciónDeEntrevistasToolStripMenuItem.Name = "configuraciónDeEntrevistasToolStripMenuItem";
             this.configuraciónDeEntrevistasToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.configuraciónDeEntrevistasToolStripMenuItem.Text = "Configuración de entrevistas";
             this.configuraciónDeEntrevistasToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeEntrevistasToolStripMenuItem_Click);
+            // 
+            // configuraciónDeAltaPersonalToolStripMenuItem
+            // 
+            this.configuraciónDeAltaPersonalToolStripMenuItem.Name = "configuraciónDeAltaPersonalToolStripMenuItem";
+            this.configuraciónDeAltaPersonalToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.configuraciónDeAltaPersonalToolStripMenuItem.Text = "Configuración de Alta Personal";
+            this.configuraciónDeAltaPersonalToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeAltaPersonalToolStripMenuItem_Click);
             // 
             // btnLogout
             // 
@@ -359,20 +354,6 @@
             this.btnLogout.Text = "Cerrar Sesion";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // configuraciónDeAltaPersonalToolStripMenuItem
-            // 
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Name = "configuraciónDeAltaPersonalToolStripMenuItem";
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Text = "Configuración de Alta Personal";
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeAltaPersonalToolStripMenuItem_Click);
-            // 
-            // configuraciónToolStripMenuItem
-            // 
-            this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
-            this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -389,7 +370,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -413,8 +394,6 @@
         private System.Windows.Forms.ToolStripMenuItem nóminaSalarialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisYReportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accesibilidadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem áreasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem certificacionDeServiciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;

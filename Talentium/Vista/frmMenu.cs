@@ -66,7 +66,7 @@ namespace Vista
 
             // Accesibilidad
             items = new List<ToolStripMenuItem> {
-                puestosToolStripMenuItem, áreasToolStripMenuItem
+                ///*puestosToolStripMenuItem*//*,*/ áreasToolStripMenuItem
             };
             UtilidadesForms.checkPermiso(items, Permisos.Gestion_Jerarquia);
             UtilidadesForms.checkPermiso(usuariosToolStripMenuItem, Permisos.Gestion_Usuario);
@@ -75,7 +75,6 @@ namespace Vista
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -101,20 +100,11 @@ namespace Vista
 
         private void áreasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmAreas area = new frmAreas();
-            area.ShowDialog();
-            this.Show();
         }
 
         private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmPuesto puestos = new frmPuesto();
-            puestos.ShowDialog();
-            this.Show();
         }
-
         private void crearEvaluacionDeDesempenioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
