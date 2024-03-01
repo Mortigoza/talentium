@@ -28,6 +28,8 @@ namespace Vista.Accesibilidad
             CargarDataGridNacionalidad();
             CargarDataGridGenero();
             CargarDataGridIdioma();
+            CargarDataGridArea();
+            CargarDataGridPuesto();
             // Config data grid Tipo de documento
             dtgDocumento.AutoGenerateColumns = false;
             dtgDocumento.AllowUserToAddRows = false;
@@ -48,6 +50,14 @@ namespace Vista.Accesibilidad
             dtgIdiomas.AutoGenerateColumns = false;
             dtgIdiomas.AllowUserToAddRows = false;
             dtgIdiomas.MultiSelect = false;
+            // Config data grid Área
+            dtgArea.AutoGenerateColumns = false;
+            dtgArea.AllowUserToAddRows = false;
+            dtgArea.MultiSelect = false;
+            // Config data grid Puesto
+            dtgPuesto.AutoGenerateColumns = false;
+            dtgPuesto.AllowUserToAddRows = false;
+            dtgPuesto.MultiSelect = false;
         }
         private void NavigateTabs(int offset)
         {
@@ -719,6 +729,275 @@ namespace Vista.Accesibilidad
                     }
                 }
             }
+        }
+
+        // tab Área
+        private void btnCancelarAltaArea_Click(object sender, EventArgs e)
+        {
+            txtAreaAlta.Clear();
+        }
+
+        private void btnGuardarAltaArea_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAreaAlta.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarArea(txtAreaAlta.Text))
+            {
+                CargarDataGridArea();
+                MessageBox.Show("Se agregó el área correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAreaAlta.Clear();
+            }
+            else
+            {
+                MessageBox.Show("El área ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAreaAlta.Clear();
+            }
+        }
+
+        private void btnCancelarModArea_Click(object sender, EventArgs e)
+        {
+            txtAreaMod.Clear();
+            grpModificarArea.Enabled = false;
+        }
+
+        private void btnGuardarModArea_Click(object sender, EventArgs e)
+        {
+            int id_area = (int)dtgArea.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtAreaMod.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarArea(id_area, txtAreaMod.Text))
+            {
+                CargarDataGridArea();
+                MessageBox.Show("Se modificó el área correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAreaMod.Clear();
+                grpModificarArea.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El área ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAreaMod.Clear();
+            }
+        }
+
+        private void btnBajaArea_Click(object sender, EventArgs e)
+        {
+            if (dtgArea.SelectedRows.Count > 0)
+            {
+                int id_area = Convert.ToInt32(dtgArea.SelectedCells[0].Value);
+                if (config.AreaAsociadoAPersona(id_area) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el área porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el área?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarArea(id_area);
+                        MessageBox.Show("El área ha sido eliminado con éxito.");
+                        CargarDataGridArea();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+            }
+        }
+
+        private void btnModificarArea_Click(object sender, EventArgs e)
+        {
+            grpModificarArea.Enabled = true;
+            if (dtgArea.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgArea.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombreArea"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombreArea"].Value.ToString();
+                    txtAreaMod.Text = valorCelda;
+                }
+            }
+        }
+
+        private void dtgArea_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificarArea.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtAreaMod.Text = dtgArea.SelectedCells[1].Value.ToString();
+            }
+        }
+
+        private void dtgArea_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModificarArea.Enabled = dtgArea.SelectedRows.Count > 0;
+            btnBajaArea.Enabled = dtgArea.SelectedRows.Count > 0;
+        }
+
+        private void txtAreaAlta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAreaMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+        public void CargarDataGridArea()
+        {
+            DataTable area = config.ObtenerArea();
+            dtgArea.DataSource = area;
+            for (int i = 0; i < area.Rows.Count; i++)
+            {
+                dtgArea.Rows[i].Cells["NombreArea"].Value = area.Rows[i]["area"];
+            }
+            dtgArea.Columns["IDArea"].Visible = false;
+        }
+        // tabPuesto
+        private void btnCancelarPuestoAlta_Click(object sender, EventArgs e)
+        {
+            txtPuestoAlta.Clear();
+        }
+
+        private void btnGuardarPuestoAlta_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPuestoAlta.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ValidarPuesto(txtPuestoAlta.Text))
+            {
+                CargarDataGridPuesto();
+                MessageBox.Show("Se agregó el puesto correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPuestoAlta.Clear();
+            }
+            else
+            {
+                MessageBox.Show("El puesto ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPuestoAlta.Clear();
+            }
+        }
+
+        private void btnCancelarPuestoMod_Click(object sender, EventArgs e)
+        {
+            txtPuestoModificar.Clear();
+            grpModificarPuesto.Enabled = false;
+        }
+
+        private void btnGuardarPuestoMod_Click(object sender, EventArgs e)
+        {
+            int id_puesto = (int)dtgPuesto.SelectedCells[0].Value;
+            if (string.IsNullOrWhiteSpace(txtPuestoModificar.Text))
+            {
+                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!config.ModificarPuesto(id_puesto, txtPuestoModificar.Text))
+            {
+                CargarDataGridPuesto();
+                MessageBox.Show("Se modificó el puesto correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPuestoModificar.Clear();
+                grpModificarPuesto.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("El puesto ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPuestoModificar.Clear();
+            }
+        }
+
+        private void btnModificarPuesto_Click(object sender, EventArgs e)
+        {
+            grpModificarPuesto.Enabled = true;
+            if (dtgPuesto.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dtgPuesto.SelectedRows[0];
+
+                if (filaSeleccionada.Cells["NombrePuesto"].Value != null)
+                {
+                    string valorCelda = filaSeleccionada.Cells["NombrePuesto"].Value.ToString();
+                    txtPuestoModificar.Text = valorCelda;
+                }
+            }
+        }
+
+        private void btnBajaPuesto_Click(object sender, EventArgs e)
+        {
+            if (dtgPuesto.SelectedRows.Count > 0)
+            {
+                int id_puesto = Convert.ToInt32(dtgPuesto.SelectedCells[0].Value);
+                if (config.PuestoAsociadoAPersona(id_puesto) == true)
+                {
+                    MessageBox.Show("No se puede eliminar el puesto porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el puesto?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        config.EliminarPuesto(id_puesto);
+                        MessageBox.Show("El puesto ha sido eliminado con éxito.");
+                        CargarDataGridPuesto();
+                    }
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
+                }
+            }
+        }
+
+        private void txtPuestoAlta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPuestoModificar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtgPuesto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpModificarPuesto.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                txtPuestoModificar.Text = dtgPuesto.SelectedCells[1].Value.ToString();
+            }
+        }
+
+        private void dtgPuesto_SelectionChanged(object sender, EventArgs e)
+        {
+            btnModificarPuesto.Enabled = dtgPuesto.SelectedRows.Count > 0;
+            btnBajaPuesto.Enabled = dtgPuesto.SelectedRows.Count > 0;
+        }
+        public void CargarDataGridPuesto()
+        {
+            DataTable puesto = config.ObtenerPuesto();
+            dtgPuesto.DataSource = puesto;
+            for (int i = 0; i < puesto.Rows.Count; i++)
+            {
+                dtgPuesto.Rows[i].Cells["NombrePuesto"].Value = puesto.Rows[i]["puesto"];
+            }
+            dtgPuesto.Columns["IDPuesto"].Visible = false;
         }
     }
 }

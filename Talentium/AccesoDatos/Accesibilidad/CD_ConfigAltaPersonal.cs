@@ -246,5 +246,99 @@ namespace AccesoDatos.Accesibilidad
             DataTable resultadoPersonaIdioma = EjecutarConsultas("consultar_persona_idioma_sp", listaParametros.ToArray());
             return resultadoPersonaIdioma.Rows.Count != 0;
         }
+        // Área
+        public DataTable ObtenerArea()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_areas_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ConsultarAreaRepetido(string areaRepetido)
+        {
+            SqlParameter param1 = new SqlParameter("@area", areaRepetido) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoArea = EjecutarConsultas("consultar_area_repetida_sp", listaParametros.ToArray());
+
+            return resultadoArea.Rows.Count != 0;
+        }
+        public DataTable InsertarArea(string area)
+        {
+            SqlParameter param1 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("alta_area_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
+        public bool ModificarArea(int id_area, string area)
+        {
+            SqlParameter param1 = new SqlParameter("@id_area", id_area) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@area", area) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifArea = EjecutarConsultas("modificar_area_sp", listaParametros.ToArray());
+            return resultadoModifArea.Rows.Count != 0;
+        }
+        public bool EliminarArea(int id_area)
+        {
+            SqlParameter param1 = new SqlParameter("@id_area", id_area) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarArea = EjecutarConsultas("eliminar_area_sp", listaParametros.ToArray());
+            return resultadoEliminarArea.Rows.Count != 0;
+        }
+        public bool ConsultarAreaConPersona(int id_area)
+        {
+            SqlParameter param1 = new SqlParameter("@id_area", id_area) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaArea = EjecutarConsultas("consultar_persona_area_sp", listaParametros.ToArray());
+            return resultadoPersonaArea.Rows.Count != 0;
+        }
+        // Puesto
+        public DataTable ObtenerPuesto()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+
+            DataTable resultado = EjecutarConsultas("consultar_puestos_sp", listaParametros.ToArray());
+            return resultado;
+        }
+        public bool ConsultarPuestoRepetido(string puestoRepetido)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puestoRepetido) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPuesto = EjecutarConsultas("consultar_puesto_repetido_sp", listaParametros.ToArray());
+
+            return resultadoPuesto.Rows.Count != 0;
+        }
+        public DataTable InsertarPuesto(string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("alta_puesto_sp", listaParametros.ToArray(), true);
+
+            return resultado;
+        }
+        public bool ModificarPuesto(int id_puesto, string puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@id_puesto", id_puesto) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@puesto", puesto) { SqlDbType = SqlDbType.NVarChar };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultadoModifPuesto = EjecutarConsultas("modificar_puesto_sp", listaParametros.ToArray());
+            return resultadoModifPuesto.Rows.Count != 0;
+        }
+        public bool EliminarPuesto(int id_puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@id_puesto", id_puesto) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoEliminarPuesto = EjecutarConsultas("eliminar_puesto_sp", listaParametros.ToArray());
+            return resultadoEliminarPuesto.Rows.Count != 0;
+        }
+        public bool ConsultarPuestoConPersona(int id_puesto)
+        {
+            SqlParameter param1 = new SqlParameter("@id_puesto", id_puesto) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultadoPersonaPuesto = EjecutarConsultas("consultar_persona_puesto_sp", listaParametros.ToArray());
+            return resultadoPersonaPuesto.Rows.Count != 0;
+        }
     }
 }

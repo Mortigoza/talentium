@@ -170,5 +170,68 @@ namespace LogicaNegocio.Accesibilidad
         {
             return configAltaPersonal.EliminarIdioma(id_idioma);
         }
+
+        /////////////////// Area ///////////////////
+        public bool ValidarArea(string area)
+        {
+            if (!configAltaPersonal.ConsultarAreaRepetido(area))
+            {
+                configAltaPersonal.InsertarArea(area);
+                return false;
+            }
+            return true;
+        }
+        public DataTable ObtenerArea()
+        {
+            return configAltaPersonal.ObtenerArea();
+        }
+        public bool ModificarArea(int id_area, string area)
+        {
+            if (!configAltaPersonal.ConsultarAreaRepetido(area))
+            {
+                configAltaPersonal.ModificarArea(id_area, area);
+                return false;
+            }
+            return true;
+        }
+        public bool AreaAsociadoAPersona(int id_area)
+        {
+            return configAltaPersonal.ConsultarAreaConPersona(id_area);
+        }
+        public bool EliminarArea(int id_area)
+        {
+            return configAltaPersonal.EliminarArea(id_area);
+        }
+        /////////////////// Puesto ///////////////////
+        public bool ValidarPuesto(string puesto)
+        {
+            if (!configAltaPersonal.ConsultarPuestoRepetido(puesto))
+            {
+                configAltaPersonal.InsertarPuesto(puesto);
+                return false;
+            }
+            return true;
+        }
+        public DataTable ObtenerPuesto()
+        {
+            return configAltaPersonal.ObtenerPuesto();
+        }
+        public bool ModificarPuesto(int id_puesto, string puesto)
+        {
+            if (!configAltaPersonal.ConsultarPuestoRepetido(puesto))
+            {
+                configAltaPersonal.ModificarPuesto(id_puesto, puesto);
+                return false;
+            }
+            return true;
+        }
+        public bool PuestoAsociadoAPersona(int id_puesto)
+        {
+            return configAltaPersonal.ConsultarPuestoConPersona(id_puesto);
+        }
+        public bool EliminarPuesto(int id_puesto)
+        {
+            return configAltaPersonal.EliminarPuesto(id_puesto);
+        }
     }
 }
