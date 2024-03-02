@@ -110,7 +110,7 @@
             this.dtgIdiomas = new System.Windows.Forms.DataGridView();
             this.IDIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabArea = new System.Windows.Forms.TabPage();
             this.btnModificarArea = new System.Windows.Forms.Button();
             this.btnBajaArea = new System.Windows.Forms.Button();
             this.grpModificarArea = new System.Windows.Forms.GroupBox();
@@ -126,7 +126,7 @@
             this.dtgArea = new System.Windows.Forms.DataGridView();
             this.IDArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPuesto = new System.Windows.Forms.TabPage();
             this.btnModificarPuesto = new System.Windows.Forms.Button();
             this.btnBajaPuesto = new System.Windows.Forms.Button();
             this.grpModificarPuesto = new System.Windows.Forms.GroupBox();
@@ -166,11 +166,11 @@
             this.grpModificarIdioma.SuspendLayout();
             this.grpAltaIdiomas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tabArea.SuspendLayout();
             this.grpModificarArea.SuspendLayout();
             this.grpAltaArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabPuesto.SuspendLayout();
             this.grpModificarPuesto.SuspendLayout();
             this.grpAltaPuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPuesto)).BeginInit();
@@ -183,8 +183,8 @@
             this.tabConfigAltaPersonal.Controls.Add(this.tabNacionalidad);
             this.tabConfigAltaPersonal.Controls.Add(this.tabGenero);
             this.tabConfigAltaPersonal.Controls.Add(this.tabIdiomas);
-            this.tabConfigAltaPersonal.Controls.Add(this.tabPage1);
-            this.tabConfigAltaPersonal.Controls.Add(this.tabPage2);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabArea);
+            this.tabConfigAltaPersonal.Controls.Add(this.tabPuesto);
             this.tabConfigAltaPersonal.Location = new System.Drawing.Point(58, 70);
             this.tabConfigAltaPersonal.Name = "tabConfigAltaPersonal";
             this.tabConfigAltaPersonal.SelectedIndex = 0;
@@ -1125,20 +1125,20 @@
             this.NombreIdioma.Name = "NombreIdioma";
             this.NombreIdioma.Width = 125;
             // 
-            // tabPage1
+            // tabArea
             // 
-            this.tabPage1.Controls.Add(this.btnModificarArea);
-            this.tabPage1.Controls.Add(this.btnBajaArea);
-            this.tabPage1.Controls.Add(this.grpModificarArea);
-            this.tabPage1.Controls.Add(this.grpAltaArea);
-            this.tabPage1.Controls.Add(this.dtgArea);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(666, 327);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Área";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabArea.Controls.Add(this.btnModificarArea);
+            this.tabArea.Controls.Add(this.btnBajaArea);
+            this.tabArea.Controls.Add(this.grpModificarArea);
+            this.tabArea.Controls.Add(this.grpAltaArea);
+            this.tabArea.Controls.Add(this.dtgArea);
+            this.tabArea.Location = new System.Drawing.Point(4, 25);
+            this.tabArea.Name = "tabArea";
+            this.tabArea.Padding = new System.Windows.Forms.Padding(3);
+            this.tabArea.Size = new System.Drawing.Size(666, 327);
+            this.tabArea.TabIndex = 5;
+            this.tabArea.Text = "Área";
+            this.tabArea.UseVisualStyleBackColor = true;
             // 
             // btnModificarArea
             // 
@@ -1312,20 +1312,20 @@
             this.NombreArea.Name = "NombreArea";
             this.NombreArea.Width = 125;
             // 
-            // tabPage2
+            // tabPuesto
             // 
-            this.tabPage2.Controls.Add(this.btnModificarPuesto);
-            this.tabPage2.Controls.Add(this.btnBajaPuesto);
-            this.tabPage2.Controls.Add(this.grpModificarPuesto);
-            this.tabPage2.Controls.Add(this.grpAltaPuesto);
-            this.tabPage2.Controls.Add(this.dtgPuesto);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 327);
-            this.tabPage2.TabIndex = 6;
-            this.tabPage2.Text = "Puesto";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPuesto.Controls.Add(this.btnModificarPuesto);
+            this.tabPuesto.Controls.Add(this.btnBajaPuesto);
+            this.tabPuesto.Controls.Add(this.grpModificarPuesto);
+            this.tabPuesto.Controls.Add(this.grpAltaPuesto);
+            this.tabPuesto.Controls.Add(this.dtgPuesto);
+            this.tabPuesto.Location = new System.Drawing.Point(4, 25);
+            this.tabPuesto.Name = "tabPuesto";
+            this.tabPuesto.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPuesto.Size = new System.Drawing.Size(666, 327);
+            this.tabPuesto.TabIndex = 6;
+            this.tabPuesto.Text = "Puesto";
+            this.tabPuesto.UseVisualStyleBackColor = true;
             // 
             // btnModificarPuesto
             // 
@@ -1574,13 +1574,13 @@
             this.grpAltaIdiomas.ResumeLayout(false);
             this.grpAltaIdiomas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).EndInit();
-            this.tabPage1.ResumeLayout(false);
+            this.tabArea.ResumeLayout(false);
             this.grpModificarArea.ResumeLayout(false);
             this.grpModificarArea.PerformLayout();
             this.grpAltaArea.ResumeLayout(false);
             this.grpAltaArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabPuesto.ResumeLayout(false);
             this.grpModificarPuesto.ResumeLayout(false);
             this.grpModificarPuesto.PerformLayout();
             this.grpAltaPuesto.ResumeLayout(false);
@@ -1675,7 +1675,7 @@
         private System.Windows.Forms.DataGridView dtgIdiomas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDIdioma;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreIdioma;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabArea;
         private System.Windows.Forms.Button btnModificarArea;
         private System.Windows.Forms.Button btnBajaArea;
         private System.Windows.Forms.GroupBox grpModificarArea;
@@ -1689,7 +1689,7 @@
         private System.Windows.Forms.Label lblAreaAlta;
         private System.Windows.Forms.TextBox txtAreaAlta;
         private System.Windows.Forms.DataGridView dtgArea;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPuesto;
         private System.Windows.Forms.Button btnModificarPuesto;
         private System.Windows.Forms.Button btnBajaPuesto;
         private System.Windows.Forms.GroupBox grpModificarPuesto;
