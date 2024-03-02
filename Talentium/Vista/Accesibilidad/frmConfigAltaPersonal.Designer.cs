@@ -68,7 +68,7 @@
             this.grpNacioMod = new System.Windows.Forms.GroupBox();
             this.btnNacioGuardarMod = new System.Windows.Forms.Button();
             this.btnNacioCancelarMod = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNacionalidadMod = new System.Windows.Forms.Label();
             this.txtNacioMod = new System.Windows.Forms.TextBox();
             this.grpNacionalidadAlta = new System.Windows.Forms.GroupBox();
             this.btnNacioGuardar = new System.Windows.Forms.Button();
@@ -110,10 +110,7 @@
             this.dtgIdiomas = new System.Windows.Forms.DataGridView();
             this.IDIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnModificarArea = new System.Windows.Forms.Button();
             this.btnBajaArea = new System.Windows.Forms.Button();
             this.grpModificarArea = new System.Windows.Forms.GroupBox();
@@ -127,6 +124,9 @@
             this.lblAreaAlta = new System.Windows.Forms.Label();
             this.txtAreaAlta = new System.Windows.Forms.TextBox();
             this.dtgArea = new System.Windows.Forms.DataGridView();
+            this.IDArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnModificarPuesto = new System.Windows.Forms.Button();
             this.btnBajaPuesto = new System.Windows.Forms.Button();
             this.grpModificarPuesto = new System.Windows.Forms.GroupBox();
@@ -140,11 +140,11 @@
             this.lblPuestoAlta = new System.Windows.Forms.Label();
             this.txtPuestoAlta = new System.Windows.Forms.TextBox();
             this.dtgPuesto = new System.Windows.Forms.DataGridView();
-            this.IDArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDAreaPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombrePuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.grpModificar.SuspendLayout();
@@ -167,10 +167,10 @@
             this.grpAltaIdiomas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.grpModificarArea.SuspendLayout();
             this.grpAltaArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.grpModificarPuesto.SuspendLayout();
             this.grpAltaPuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPuesto)).BeginInit();
@@ -610,7 +610,7 @@
             // 
             this.grpNacioMod.Controls.Add(this.btnNacioGuardarMod);
             this.grpNacioMod.Controls.Add(this.btnNacioCancelarMod);
-            this.grpNacioMod.Controls.Add(this.label4);
+            this.grpNacioMod.Controls.Add(this.lblNacionalidadMod);
             this.grpNacioMod.Controls.Add(this.txtNacioMod);
             this.grpNacioMod.Location = new System.Drawing.Point(343, 174);
             this.grpNacioMod.Name = "grpNacioMod";
@@ -645,14 +645,14 @@
             this.btnNacioCancelarMod.UseVisualStyleBackColor = false;
             this.btnNacioCancelarMod.Click += new System.EventHandler(this.btnNacioCancelarMod_Click);
             // 
-            // label4
+            // lblNacionalidadMod
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nacionalidad";
+            this.lblNacionalidadMod.AutoSize = true;
+            this.lblNacionalidadMod.Location = new System.Drawing.Point(29, 30);
+            this.lblNacionalidadMod.Name = "lblNacionalidadMod";
+            this.lblNacionalidadMod.Size = new System.Drawing.Size(88, 16);
+            this.lblNacionalidadMod.TabIndex = 0;
+            this.lblNacionalidadMod.Text = "Nacionalidad";
             // 
             // txtNacioMod
             // 
@@ -1125,30 +1125,6 @@
             this.NombreIdioma.Name = "NombreIdioma";
             this.NombreIdioma.Width = 125;
             // 
-            // btnAnterior
-            // 
-            this.btnAnterior.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAnterior.BackgroundImage")));
-            this.btnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAnterior.Location = new System.Drawing.Point(25, 28);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 1;
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguiente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.BackgroundImage")));
-            this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSiguiente.Font = new System.Drawing.Font("Lucida Sans Typewriter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.Location = new System.Drawing.Point(701, 28);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 2;
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnModificarArea);
@@ -1163,21 +1139,6 @@
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Área";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnModificarPuesto);
-            this.tabPage2.Controls.Add(this.btnBajaPuesto);
-            this.tabPage2.Controls.Add(this.grpModificarPuesto);
-            this.tabPage2.Controls.Add(this.grpAltaPuesto);
-            this.tabPage2.Controls.Add(this.dtgPuesto);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 327);
-            this.tabPage2.TabIndex = 6;
-            this.tabPage2.Text = "Puesto";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnModificarArea
             // 
@@ -1333,6 +1294,38 @@
             this.dtgArea.TabIndex = 17;
             this.dtgArea.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgArea_CellDoubleClick);
             this.dtgArea.SelectionChanged += new System.EventHandler(this.dtgArea_SelectionChanged);
+            // 
+            // IDArea
+            // 
+            this.IDArea.DataPropertyName = "id_area";
+            this.IDArea.HeaderText = "ID";
+            this.IDArea.MinimumWidth = 6;
+            this.IDArea.Name = "IDArea";
+            this.IDArea.Visible = false;
+            this.IDArea.Width = 125;
+            // 
+            // NombreArea
+            // 
+            this.NombreArea.DataPropertyName = "area";
+            this.NombreArea.HeaderText = "Nombre";
+            this.NombreArea.MinimumWidth = 6;
+            this.NombreArea.Name = "NombreArea";
+            this.NombreArea.Width = 125;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnModificarPuesto);
+            this.tabPage2.Controls.Add(this.btnBajaPuesto);
+            this.tabPage2.Controls.Add(this.grpModificarPuesto);
+            this.tabPage2.Controls.Add(this.grpAltaPuesto);
+            this.tabPage2.Controls.Add(this.dtgPuesto);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(666, 327);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "Puesto";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnModificarPuesto
             // 
@@ -1490,23 +1483,6 @@
             this.dtgPuesto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPuesto_CellDoubleClick);
             this.dtgPuesto.SelectionChanged += new System.EventHandler(this.dtgPuesto_SelectionChanged);
             // 
-            // IDArea
-            // 
-            this.IDArea.DataPropertyName = "id_area";
-            this.IDArea.HeaderText = "ID";
-            this.IDArea.MinimumWidth = 6;
-            this.IDArea.Name = "IDArea";
-            this.IDArea.Visible = false;
-            this.IDArea.Width = 125;
-            // 
-            // NombreArea
-            // 
-            this.NombreArea.DataPropertyName = "area";
-            this.NombreArea.HeaderText = "Nombre";
-            this.NombreArea.MinimumWidth = 6;
-            this.NombreArea.Name = "NombreArea";
-            this.NombreArea.Width = 125;
-            // 
             // IDPuesto
             // 
             this.IDPuesto.DataPropertyName = "id_puesto";
@@ -1532,6 +1508,30 @@
             this.NombrePuesto.MinimumWidth = 6;
             this.NombrePuesto.Name = "NombrePuesto";
             this.NombrePuesto.Width = 125;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAnterior.BackgroundImage")));
+            this.btnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAnterior.Location = new System.Drawing.Point(25, 28);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 1;
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguiente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.BackgroundImage")));
+            this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSiguiente.Font = new System.Drawing.Font("Lucida Sans Typewriter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(701, 28);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 2;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // frmConfigAltaPersonal
             // 
@@ -1575,12 +1575,12 @@
             this.grpAltaIdiomas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgIdiomas)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.grpModificarArea.ResumeLayout(false);
             this.grpModificarArea.PerformLayout();
             this.grpAltaArea.ResumeLayout(false);
             this.grpAltaArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArea)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.grpModificarPuesto.ResumeLayout(false);
             this.grpModificarPuesto.PerformLayout();
             this.grpAltaPuesto.ResumeLayout(false);
@@ -1630,7 +1630,7 @@
         private System.Windows.Forms.GroupBox grpNacioMod;
         private System.Windows.Forms.Button btnNacioGuardarMod;
         private System.Windows.Forms.Button btnNacioCancelarMod;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNacionalidadMod;
         private System.Windows.Forms.TextBox txtNacioMod;
         private System.Windows.Forms.GroupBox grpNacionalidadAlta;
         private System.Windows.Forms.Button btnNacioGuardar;
