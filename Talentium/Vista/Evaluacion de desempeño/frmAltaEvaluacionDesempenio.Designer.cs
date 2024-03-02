@@ -36,14 +36,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaEvaluacionDesempenio));
             this.cmbMes = new System.Windows.Forms.ComboBox();
             this.cmbAnio = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMes = new System.Windows.Forms.Label();
+            this.lblAnio = new System.Windows.Forms.Label();
+            this.grpFiltrosBusqueda = new System.Windows.Forms.GroupBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblArea = new System.Windows.Forms.Label();
             this.cmbAreas = new System.Windows.Forms.ComboBox();
             this.cmbPersonal = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEmpleado = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgEvaluacion = new System.Windows.Forms.DataGridView();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +52,11 @@
             this.RelSuperiores = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Disciplina = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpPeriodo = new System.Windows.Forms.GroupBox();
             this.lblReferencia = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.grpFiltrosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.grpPeriodo.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbMes
@@ -77,40 +77,40 @@
             this.cmbAnio.Size = new System.Drawing.Size(121, 24);
             this.cmbAnio.TabIndex = 2;
             // 
-            // label4
+            // lblMes
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Mes";
+            this.lblMes.AutoSize = true;
+            this.lblMes.Location = new System.Drawing.Point(44, 91);
+            this.lblMes.Name = "lblMes";
+            this.lblMes.Size = new System.Drawing.Size(33, 16);
+            this.lblMes.TabIndex = 1;
+            this.lblMes.Text = "Mes";
             // 
-            // label3
+            // lblAnio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Año";
+            this.lblAnio.AutoSize = true;
+            this.lblAnio.Location = new System.Drawing.Point(47, 44);
+            this.lblAnio.Name = "lblAnio";
+            this.lblAnio.Size = new System.Drawing.Size(31, 16);
+            this.lblAnio.TabIndex = 0;
+            this.lblAnio.Text = "Año";
             // 
-            // groupBox1
+            // grpFiltrosBusqueda
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnSeleccionar);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cmbAreas);
-            this.groupBox1.Controls.Add(this.cmbPersonal);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(99, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(409, 171);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros de búsqueda *";
+            this.grpFiltrosBusqueda.BackColor = System.Drawing.Color.White;
+            this.grpFiltrosBusqueda.Controls.Add(this.btnSeleccionar);
+            this.grpFiltrosBusqueda.Controls.Add(this.lblArea);
+            this.grpFiltrosBusqueda.Controls.Add(this.cmbAreas);
+            this.grpFiltrosBusqueda.Controls.Add(this.cmbPersonal);
+            this.grpFiltrosBusqueda.Controls.Add(this.lblEmpleado);
+            this.grpFiltrosBusqueda.Location = new System.Drawing.Point(99, 11);
+            this.grpFiltrosBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltrosBusqueda.Name = "grpFiltrosBusqueda";
+            this.grpFiltrosBusqueda.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltrosBusqueda.Size = new System.Drawing.Size(409, 171);
+            this.grpFiltrosBusqueda.TabIndex = 25;
+            this.grpFiltrosBusqueda.TabStop = false;
+            this.grpFiltrosBusqueda.Text = "Filtros de búsqueda *";
             // 
             // btnSeleccionar
             // 
@@ -127,14 +127,14 @@
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // label1
+            // lblArea
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Área";
+            this.lblArea.AutoSize = true;
+            this.lblArea.Location = new System.Drawing.Point(27, 37);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(36, 16);
+            this.lblArea.TabIndex = 0;
+            this.lblArea.Text = "Área";
             // 
             // cmbAreas
             // 
@@ -155,14 +155,14 @@
             this.cmbPersonal.Size = new System.Drawing.Size(223, 24);
             this.cmbPersonal.TabIndex = 15;
             // 
-            // label2
+            // lblEmpleado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Empleado";
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.Location = new System.Drawing.Point(27, 81);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpleado.TabIndex = 1;
+            this.lblEmpleado.Text = "Empleado";
             // 
             // btnGuardar
             // 
@@ -310,21 +310,21 @@
             this.DesempEquipo.Name = "DesempEquipo";
             this.DesempEquipo.Width = 125;
             // 
-            // groupBox2
+            // grpPeriodo
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cmbMes);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.cmbAnio);
-            this.groupBox2.Location = new System.Drawing.Point(546, 12);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(288, 171);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Periodo de evaluación";
+            this.grpPeriodo.BackColor = System.Drawing.Color.White;
+            this.grpPeriodo.Controls.Add(this.lblAnio);
+            this.grpPeriodo.Controls.Add(this.cmbMes);
+            this.grpPeriodo.Controls.Add(this.lblMes);
+            this.grpPeriodo.Controls.Add(this.cmbAnio);
+            this.grpPeriodo.Location = new System.Drawing.Point(546, 12);
+            this.grpPeriodo.Margin = new System.Windows.Forms.Padding(4);
+            this.grpPeriodo.Name = "grpPeriodo";
+            this.grpPeriodo.Padding = new System.Windows.Forms.Padding(4);
+            this.grpPeriodo.Size = new System.Drawing.Size(288, 171);
+            this.grpPeriodo.TabIndex = 26;
+            this.grpPeriodo.TabStop = false;
+            this.grpPeriodo.Text = "Periodo de evaluación";
             // 
             // lblReferencia
             // 
@@ -343,8 +343,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 450);
             this.Controls.Add(this.lblReferencia);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpPeriodo);
+            this.Controls.Add(this.grpFiltrosBusqueda);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgEvaluacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -353,11 +353,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Evaluacion de Desempeño";
             this.Load += new System.EventHandler(this.frmAltaEvaluacionDesempeño_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpFiltrosBusqueda.ResumeLayout(false);
+            this.grpFiltrosBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpPeriodo.ResumeLayout(false);
+            this.grpPeriodo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,16 +366,16 @@
         #endregion
         private System.Windows.Forms.ComboBox cmbMes;
         private System.Windows.Forms.ComboBox cmbAnio;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMes;
+        private System.Windows.Forms.Label lblAnio;
+        private System.Windows.Forms.GroupBox grpFiltrosBusqueda;
+        private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbAreas;
         private System.Windows.Forms.ComboBox cmbPersonal;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dtgEvaluacion;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpPeriodo;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewComboBoxColumn Efectividad;
