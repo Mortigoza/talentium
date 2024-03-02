@@ -45,7 +45,7 @@
             this.lblSeguridadSalud = new System.Windows.Forms.Label();
             this.txtConvenio = new System.Windows.Forms.TextBox();
             this.lblConvenio = new System.Windows.Forms.Label();
-            this.grpModificar = new System.Windows.Forms.GroupBox();
+            this.grpModificarConvenio = new System.Windows.Forms.GroupBox();
             this.cmbCateModif = new System.Windows.Forms.ComboBox();
             this.btnGuardarModif = new System.Windows.Forms.Button();
             this.txtSueldoModif = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).BeginInit();
             this.grpCrear.SuspendLayout();
-            this.grpModificar.SuspendLayout();
+            this.grpModificarConvenio.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgConvenio
@@ -271,30 +271,30 @@
             this.lblConvenio.TabIndex = 0;
             this.lblConvenio.Text = "Convenio";
             // 
-            // grpModificar
+            // grpModificarConvenio
             // 
-            this.grpModificar.Controls.Add(this.cmbCateModif);
-            this.grpModificar.Controls.Add(this.btnGuardarModif);
-            this.grpModificar.Controls.Add(this.txtSueldoModif);
-            this.grpModificar.Controls.Add(this.btnCancelarModif);
-            this.grpModificar.Controls.Add(this.lblSueldoModif);
-            this.grpModificar.Controls.Add(this.txtJornadaModif);
-            this.grpModificar.Controls.Add(this.lblJornadaModif);
-            this.grpModificar.Controls.Add(this.lblCategoriaModif);
-            this.grpModificar.Controls.Add(this.txtObraSocialModif);
-            this.grpModificar.Controls.Add(this.lblObraSocialModif);
-            this.grpModificar.Controls.Add(this.txtSeguridadSaludModif);
-            this.grpModificar.Controls.Add(this.lblSeguridadSaludModif);
-            this.grpModificar.Controls.Add(this.txtConvenioModif);
-            this.grpModificar.Controls.Add(this.lblConvenioModif);
-            this.grpModificar.Location = new System.Drawing.Point(524, 223);
-            this.grpModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpModificar.Name = "grpModificar";
-            this.grpModificar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpModificar.Size = new System.Drawing.Size(400, 293);
-            this.grpModificar.TabIndex = 12;
-            this.grpModificar.TabStop = false;
-            this.grpModificar.Text = "Modificar Convenio";
+            this.grpModificarConvenio.Controls.Add(this.cmbCateModif);
+            this.grpModificarConvenio.Controls.Add(this.btnGuardarModif);
+            this.grpModificarConvenio.Controls.Add(this.txtSueldoModif);
+            this.grpModificarConvenio.Controls.Add(this.btnCancelarModif);
+            this.grpModificarConvenio.Controls.Add(this.lblSueldoModif);
+            this.grpModificarConvenio.Controls.Add(this.txtJornadaModif);
+            this.grpModificarConvenio.Controls.Add(this.lblJornadaModif);
+            this.grpModificarConvenio.Controls.Add(this.lblCategoriaModif);
+            this.grpModificarConvenio.Controls.Add(this.txtObraSocialModif);
+            this.grpModificarConvenio.Controls.Add(this.lblObraSocialModif);
+            this.grpModificarConvenio.Controls.Add(this.txtSeguridadSaludModif);
+            this.grpModificarConvenio.Controls.Add(this.lblSeguridadSaludModif);
+            this.grpModificarConvenio.Controls.Add(this.txtConvenioModif);
+            this.grpModificarConvenio.Controls.Add(this.lblConvenioModif);
+            this.grpModificarConvenio.Location = new System.Drawing.Point(524, 223);
+            this.grpModificarConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificarConvenio.Name = "grpModificarConvenio";
+            this.grpModificarConvenio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificarConvenio.Size = new System.Drawing.Size(400, 293);
+            this.grpModificarConvenio.TabIndex = 12;
+            this.grpModificarConvenio.TabStop = false;
+            this.grpModificarConvenio.Text = "Modificar Convenio";
             // 
             // cmbCateModif
             // 
@@ -464,7 +464,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.grpModificar);
+            this.Controls.Add(this.grpModificarConvenio);
             this.Controls.Add(this.grpCrear);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgConvenio);
@@ -476,8 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgConvenio)).EndInit();
             this.grpCrear.ResumeLayout(false);
             this.grpCrear.PerformLayout();
-            this.grpModificar.ResumeLayout(false);
-            this.grpModificar.PerformLayout();
+            this.grpModificarConvenio.ResumeLayout(false);
+            this.grpModificarConvenio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -501,7 +501,7 @@
         private System.Windows.Forms.Label lblSeguridadSalud;
         private System.Windows.Forms.TextBox txtConvenio;
         private System.Windows.Forms.Label lblConvenio;
-        private System.Windows.Forms.GroupBox grpModificar;
+        private System.Windows.Forms.GroupBox grpModificarConvenio;
         private System.Windows.Forms.Button btnGuardarModif;
         private System.Windows.Forms.TextBox txtSueldoModif;
         private System.Windows.Forms.Button btnCancelarModif;

@@ -276,7 +276,7 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            grpModificar.Enabled = true;
+            grpModificarConvenio.Enabled = true;
             id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
             txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
             txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
@@ -305,13 +305,13 @@ namespace Vista
 
         public void HabilitarModificaciones()
         {
-         grpModificar.Enabled = true;
+         grpModificarConvenio.Enabled = true;
         }
 
         public void DeshabilitarModificaciones()
         {
 
-            grpModificar.Enabled = false;
+            grpModificarConvenio.Enabled = false;
        
         }
     }
