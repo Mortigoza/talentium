@@ -16,12 +16,18 @@ namespace LogicaNegocio
         {
             _CDAcceso.InsertarConvenios(convenio);
         }
-
         public DataTable ObtenerConvenio()
         {
             return _CDAcceso.ObtenerConvenios();
         }
-
+        public DataTable area()
+        {
+            return _CDAcceso.Areas();
+        }
+        public DataTable puesto(int id)
+        {
+            return _CDAcceso.Puestos(id);
+        }
         public DataTable ObtenerCategoriaID(int id)
         {
            return _CDAcceso.ObtenerCategoriaPorId(id);
@@ -55,5 +61,12 @@ namespace LogicaNegocio
             }
         }
 
+        public DataTable ConsultarConveniosPersonas(int id_area, int id_puesto, int id_convenio, string cuil) 
+        {
+            return _CDAcceso.ConsultarConveniosPersonas(id_area, id_puesto, id_convenio, cuil);
+
+        }
+
     }
 }
+

@@ -377,3 +377,7 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\bin\Debug\itextsharp.dll
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\bin\Debug\itextsharp.xml
+C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.frmReporteNominaSalarial.resources
