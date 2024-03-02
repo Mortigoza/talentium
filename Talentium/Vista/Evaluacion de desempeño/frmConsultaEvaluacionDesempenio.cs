@@ -158,7 +158,7 @@ namespace Vista.Evaluacion_de_desempeño
                             style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
                             style.Font.Bold = true;
                             sl.SetWorksheetDefaultColumnWidth(25);
-                            int numCol = 2;
+                            int numCol = 1;
                             int numFila = 10;
 
                             string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
@@ -178,7 +178,7 @@ namespace Vista.Evaluacion_de_desempeño
 
                                         sl.SetCellValue(9, numCol, nombreColumnaFormateado);
                                         sl.SetCellStyle(9, numCol, style);
-                                        sl.SetCellStyle(9, 2, 9, numCol, style);
+                                        sl.SetCellStyle(9, 1, 9, numCol, style);
 
                                         numCol++;
                                 }
@@ -200,6 +200,13 @@ namespace Vista.Evaluacion_de_desempeño
                                 sl.SetCellValue(2, 2, "Apellido: " + apellidos);
                                 sl.SetCellStyle(3, 2, fechaEmisionStyle);
                                 sl.SetCellValue(3, 2, "Cuil: " + cuil);
+                                sl.SetCellValue(9, 8, "Referencia: " );
+                                sl.SetCellStyle(9, 8, fechaEmisionStyle);
+
+                                sl.SetCellValue(10, 8, "ⓘ Escala de 1-6, siendo 1 el ");
+                                sl.SetCellValue(11, 8, "valor más bajo y 6 el más alto.");
+
+
                                 SLStyle titulo = new SLStyle();
                                 titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 titulo.SetFontBold(true);
@@ -217,13 +224,13 @@ namespace Vista.Evaluacion_de_desempeño
                                 var fila = dtgConsultaEvaluacion.Rows;
                                 foreach (DataGridViewRow row in dtgConsultaEvaluacion.Rows)
                                 {
-                                    sl.SetCellValue(numFila, 2, row.Cells[0].Value.ToString());
-                                    sl.SetCellValue(numFila, 3, row.Cells[1].Value.ToString());
-                                    sl.SetCellValue(numFila, 4, row.Cells[2].Value.ToString());
-                                    sl.SetCellValue(numFila, 5, row.Cells[3].Value.ToString());
-                                    sl.SetCellValue(numFila, 6, row.Cells[4].Value.ToString());
-                                    sl.SetCellValue(numFila, 7, row.Cells[5].Value.ToString());
-                                    sl.SetCellValue(numFila, 8, row.Cells[6].Value.ToString());
+                                    sl.SetCellValue(numFila, 1, row.Cells[0].Value.ToString());
+                                    sl.SetCellValue(numFila, 2, row.Cells[1].Value.ToString());
+                                    sl.SetCellValue(numFila, 3, row.Cells[2].Value.ToString());
+                                    sl.SetCellValue(numFila, 4, row.Cells[3].Value.ToString());
+                                    sl.SetCellValue(numFila, 5, row.Cells[4].Value.ToString());
+                                    sl.SetCellValue(numFila, 6, row.Cells[5].Value.ToString());
+                                    sl.SetCellValue(numFila, 7, row.Cells[6].Value.ToString());
 
                                     numFila++;
                                 }

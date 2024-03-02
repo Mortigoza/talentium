@@ -124,7 +124,7 @@ namespace Vista
                 dataGridModificar.Columns["Modificar"].Visible = true;
                 dataGridModificar.Columns["Eliminar"].Visible = true;
             }
-
+            
             // Ocultar los id en las columnas
 
             dataGridModificar.Columns["id_persona"].Visible = false;
@@ -326,6 +326,14 @@ namespace Vista
         {
 
         }
+        private string ConvertirBoolASiONo(object valor)
+        {
+            if (valor is bool)
+            {
+                return (bool)valor ? "Si" : "No";//devuelve si/no si es bool
+            }
+            return valor.ToString(); // Si no es bool, devuelve el valor original
+        }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
@@ -389,15 +397,15 @@ namespace Vista
                                 fechaEmisionStyle.SetFontBold(true);
                                 fechaEmisionStyle.SetFontItalic(true);
                                 fechaEmisionStyle.Font.FontSize = 12;
-                                sl.SetCellStyle(2, 11, fechaEmisionStyle); // Fila 1, Columna 1
-                                sl.SetCellValue(2, 11, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                                sl.SetCellStyle(2, 10, fechaEmisionStyle); // Fila 1, Columna 1
+                                sl.SetCellValue(2, 10, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
                                 SLStyle titulo = new SLStyle();
                                 titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 titulo.SetFontBold(true);
                                 titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
                                 titulo.Font.FontSize = 16;
-                                sl.SetCellStyle(6, 7, titulo);
-                                sl.SetCellValue(6, 7, "Reporte de Inasistencia");
+                                sl.SetCellStyle(6, 6, titulo);
+                                sl.SetCellValue(6, 6, "Reporte de Inasistencia");
                                 SLStyle fondo = new SLStyle();
                                 fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 fondo.Fill.SetPatternType(PatternValues.Solid);
@@ -408,13 +416,14 @@ namespace Vista
                                 var fila = dataGridModificar.Rows;
                                 foreach (DataGridViewRow row in dataGridModificar.Rows)
                                 {
+
                                     sl.SetCellValue(numFila, 1, row.Cells[3].Value.ToString());
                                     sl.SetCellValue(numFila, 2, row.Cells[4].Value.ToString());
                                     sl.SetCellValue(numFila, 3, row.Cells[6].Value.ToString());
                                     sl.SetCellValue(numFila, 4, row.Cells[7].Value.ToString());
-                                    sl.SetCellValue(numFila, 5, row.Cells[8].Value.ToString());
+                                    sl.SetCellValue(numFila, 5, ConvertirBoolASiONo(row.Cells[8].Value));
                                     sl.SetCellValue(numFila, 6, row.Cells[9].Value.ToString());
-                                    sl.SetCellValue(numFila, 7, row.Cells[10].Value.ToString());
+                                    sl.SetCellValue(numFila, 7, ConvertirBoolASiONo(row.Cells[10].Value));
                                     sl.SetCellValue(numFila, 8, row.Cells[12].Value.ToString());
                                     sl.SetCellValue(numFila, 9, row.Cells[13].Value.ToString());
                                     sl.SetCellValue(numFila, 10, row.Cells[14].Value.ToString());

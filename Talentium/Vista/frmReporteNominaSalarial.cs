@@ -146,10 +146,12 @@ namespace Vista
         }
 
         private void Descargar_Click(object sender, EventArgs e)
-        {/*
+        {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
-                
+                folderDialog.Description = "Selecciona la carpeta de destino";
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
                     using (SaveFileDialog saveDialog = new SaveFileDialog())
                     {
                         saveDialog.InitialDirectory = folderDialog.SelectedPath;
@@ -171,7 +173,7 @@ namespace Vista
                             style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
                             style.Font.Bold = true;
                             sl.SetWorksheetDefaultColumnWidth(25);
-                            int numCol = 0;
+                            int numCol = 1;
                             int numFila = 10;
 
                             string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
@@ -183,17 +185,17 @@ namespace Vista
 
                             try
                             {
-                                foreach (DataGridViewColumn cl in dataGridModificar.Columns)
+                                foreach (DataGridViewColumn cl in dataGridNomina.Columns)
                                 {
                                     //El if esta para que las columnas ids no se muestren en el excel
-                                    if (cl.Index != 0 && cl.Index != 1 && cl.Index != 5 && cl.Index != 11)
+                                    if (cl.Index != 4 && cl.Index != 8)
                                     {
                                         string nombreColumna = cl.HeaderText;
                                         string nombreColumnaFormateado = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreColumna.ToLower());
 
                                         sl.SetCellValue(9, numCol, nombreColumnaFormateado);
                                         sl.SetCellStyle(9, numCol, style);
-                                        sl.SetCellStyle(9, 9, 9, numCol, style);
+                                        sl.SetCellStyle(9, 10, 9, numCol, style);
 
                                         numCol++;
                                     }
@@ -205,35 +207,35 @@ namespace Vista
                                 fechaEmisionStyle.SetFontBold(true);
                                 fechaEmisionStyle.SetFontItalic(true);
                                 fechaEmisionStyle.Font.FontSize = 12;
-                                sl.SetCellStyle(2, 11, fechaEmisionStyle); // Fila 1, Columna 1
-                                sl.SetCellValue(2, 11, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                                sl.SetCellStyle(2, 10, fechaEmisionStyle); // Fila 1, Columna 1
+                                sl.SetCellValue(2, 10, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
                                 SLStyle titulo = new SLStyle();
                                 titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 titulo.SetFontBold(true);
                                 titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
                                 titulo.Font.FontSize = 16;
-                                sl.SetCellStyle(6, 7, titulo);
-                                sl.SetCellValue(6, 7, "Reporte de Inasistencia");
+                                sl.SetCellStyle(6, 5, titulo);
+                                sl.SetCellValue(6, 5, "Reporte de nomina salarial");
                                 SLStyle fondo = new SLStyle();
                                 fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 fondo.Fill.SetPatternType(PatternValues.Solid);
                                 fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
                                 sl.SetCellStyle(1, 1, 8, 12, fondo);
 
-                                var data = dataGridModificar.Columns;
-                                var fila = dataGridModificar.Rows;
-                                foreach (DataGridViewRow row in dataGridModificar.Rows)
+                                var data = dataGridNomina.Columns;
+                                var fila = dataGridNomina.Rows;
+                                foreach (DataGridViewRow row in dataGridNomina.Rows)
                                 {
-                                    sl.SetCellValue(numFila, 1, row.Cells[3].Value.ToString());
-                                    sl.SetCellValue(numFila, 2, row.Cells[4].Value.ToString());
-                                    sl.SetCellValue(numFila, 3, row.Cells[6].Value.ToString());
-                                    sl.SetCellValue(numFila, 4, row.Cells[7].Value.ToString());
-                                    sl.SetCellValue(numFila, 5, row.Cells[8].Value.ToString());
-                                    sl.SetCellValue(numFila, 6, row.Cells[9].Value.ToString());
-                                    sl.SetCellValue(numFila, 7, row.Cells[10].Value.ToString());
-                                    sl.SetCellValue(numFila, 8, row.Cells[12].Value.ToString());
-                                    sl.SetCellValue(numFila, 9, row.Cells[13].Value.ToString());
-                                    sl.SetCellValue(numFila, 10, row.Cells[14].Value.ToString());
+                                    sl.SetCellValue(numFila, 1, row.Cells[0].Value.ToString());
+                                    sl.SetCellValue(numFila, 2, row.Cells[1].Value.ToString());
+                                    sl.SetCellValue(numFila, 3, row.Cells[2].Value.ToString());
+                                    sl.SetCellValue(numFila, 4, row.Cells[3].Value.ToString());
+                                    sl.SetCellValue(numFila, 5, row.Cells[5].Value.ToString());
+                                    sl.SetCellValue(numFila, 6, row.Cells[6].Value.ToString());
+                                    sl.SetCellValue(numFila, 7, row.Cells[7].Value.ToString());
+                                    sl.SetCellValue(numFila, 8, row.Cells[9].Value.ToString());
+                                    sl.SetCellValue(numFila, 9, row.Cells[10].Value.ToString());
+                                    sl.SetCellValue(numFila, 10, row.Cells[11].Value.ToString());
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
@@ -246,8 +248,8 @@ namespace Vista
                             }
                         }
                     }
-               
-            }*/
+                }
+            }
         }
     }
 }

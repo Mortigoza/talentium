@@ -276,5 +276,13 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void nóminaSalarialToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReporteNominaSalarial frm = new frmReporteNominaSalarial();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

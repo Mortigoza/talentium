@@ -280,6 +280,7 @@
             this.nóminaSalarialToolStripMenuItem1.Name = "nóminaSalarialToolStripMenuItem1";
             this.nóminaSalarialToolStripMenuItem1.Size = new System.Drawing.Size(256, 26);
             this.nóminaSalarialToolStripMenuItem1.Text = "Nómina salarial";
+            this.nóminaSalarialToolStripMenuItem1.Click += new System.EventHandler(this.nóminaSalarialToolStripMenuItem1_Click);
             // 
             // certificacionDeServiciosToolStripMenuItem
             // 
