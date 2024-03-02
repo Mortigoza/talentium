@@ -92,9 +92,8 @@
             this.lblCuil.AutoSize = true;
             this.lblCuil.Location = new System.Drawing.Point(135, 52);
             this.lblCuil.Name = "lblCuil";
-            this.lblCuil.Size = new System.Drawing.Size(92, 16);
+            this.lblCuil.Size = new System.Drawing.Size(0, 16);
             this.lblCuil.TabIndex = 29;
-            this.lblCuil.Text = "20-39123456-0";
             this.lblCuil.Visible = false;
             // 
             // label6
@@ -131,9 +130,8 @@
             this.lblNombreYApellido.AutoSize = true;
             this.lblNombreYApellido.Location = new System.Drawing.Point(135, 26);
             this.lblNombreYApellido.Name = "lblNombreYApellido";
-            this.lblNombreYApellido.Size = new System.Drawing.Size(97, 16);
+            this.lblNombreYApellido.Size = new System.Drawing.Size(0, 16);
             this.lblNombreYApellido.TabIndex = 25;
-            this.lblNombreYApellido.Text = "Facundo Pacci";
             this.lblNombreYApellido.Visible = false;
             // 
             // cmbAreas
@@ -260,9 +258,9 @@
             this.grpDatos.Controls.Add(this.lblNombreYApellido);
             this.grpDatos.Controls.Add(this.lblCuil);
             this.grpDatos.Location = new System.Drawing.Point(673, 64);
-            this.grpDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDatos.Margin = new System.Windows.Forms.Padding(4);
             this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDatos.Padding = new System.Windows.Forms.Padding(4);
             this.grpDatos.Size = new System.Drawing.Size(260, 78);
             this.grpDatos.TabIndex = 35;
             this.grpDatos.TabStop = false;
