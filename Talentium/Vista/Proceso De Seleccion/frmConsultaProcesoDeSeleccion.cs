@@ -19,7 +19,6 @@ namespace Vista
     {
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
         CN_LogicaEntrevista entrevista = new CN_LogicaEntrevista();
-        public DatosCandidato DatosSeleccionados { get; set; }
         private bool filtroUtilizado = false;
         public frmConsultaProcesoDeSeleccion()
         {
