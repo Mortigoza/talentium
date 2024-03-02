@@ -57,7 +57,7 @@
             this.grpAltaTel = new System.Windows.Forms.GroupBox();
             this.btnGuardarAltaTel = new System.Windows.Forms.Button();
             this.btnCancelarAltaTel = new System.Windows.Forms.Button();
-            this.lblTipoTel = new System.Windows.Forms.Label();
+            this.lblTipoTelefono = new System.Windows.Forms.Label();
             this.txtTelefonoAlta = new System.Windows.Forms.TextBox();
             this.dtgTelefono = new System.Windows.Forms.DataGridView();
             this.IDTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -480,7 +480,7 @@
             // 
             this.grpAltaTel.Controls.Add(this.btnGuardarAltaTel);
             this.grpAltaTel.Controls.Add(this.btnCancelarAltaTel);
-            this.grpAltaTel.Controls.Add(this.lblTipoTel);
+            this.grpAltaTel.Controls.Add(this.lblTipoTelefono);
             this.grpAltaTel.Controls.Add(this.txtTelefonoAlta);
             this.grpAltaTel.Location = new System.Drawing.Point(343, 24);
             this.grpAltaTel.Name = "grpAltaTel";
@@ -515,14 +515,14 @@
             this.btnCancelarAltaTel.UseVisualStyleBackColor = false;
             this.btnCancelarAltaTel.Click += new System.EventHandler(this.btnCancelarAltaTel_Click);
             // 
-            // lblTipoTel
+            // lblTipoTelefono
             // 
-            this.lblTipoTel.AutoSize = true;
-            this.lblTipoTel.Location = new System.Drawing.Point(11, 30);
-            this.lblTipoTel.Name = "lblTipoTel";
-            this.lblTipoTel.Size = new System.Drawing.Size(111, 16);
-            this.lblTipoTel.TabIndex = 0;
-            this.lblTipoTel.Text = "Tipo de Teléfono";
+            this.lblTipoTelefono.AutoSize = true;
+            this.lblTipoTelefono.Location = new System.Drawing.Point(11, 30);
+            this.lblTipoTelefono.Name = "lblTipoTelefono";
+            this.lblTipoTelefono.Size = new System.Drawing.Size(111, 16);
+            this.lblTipoTelefono.TabIndex = 0;
+            this.lblTipoTelefono.Text = "Tipo de Teléfono";
             // 
             // txtTelefonoAlta
             // 
@@ -1622,7 +1622,7 @@
         private System.Windows.Forms.GroupBox grpAltaTel;
         private System.Windows.Forms.Button btnGuardarAltaTel;
         private System.Windows.Forms.Button btnCancelarAltaTel;
-        private System.Windows.Forms.Label lblTipoTel;
+        private System.Windows.Forms.Label lblTipoTelefono;
         private System.Windows.Forms.TextBox txtTelefonoAlta;
         private System.Windows.Forms.DataGridView dtgTelefono;
         private System.Windows.Forms.Button btnNacionalidadMod;

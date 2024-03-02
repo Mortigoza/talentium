@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaProcesoDeSeleccion));
             this.btnIngresarEmpleado = new System.Windows.Forms.Button();
             this.btnEtapas = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtCuilCuit = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCuilCuit = new System.Windows.Forms.Label();
             this.dtgCandidatos = new System.Windows.Forms.DataGridView();
             this.Etapa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.lblNombreLlenar = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblApellidoLlenar = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,19 +83,19 @@
             this.btnEtapas.UseVisualStyleBackColor = false;
             this.btnEtapas.Click += new System.EventHandler(this.btnEtapas_Click);
             // 
-            // groupBox1
+            // grpFiltros
             // 
-            this.groupBox1.Controls.Add(this.btnFiltrar);
-            this.groupBox1.Controls.Add(this.txtCuilCuit);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(139, 43);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(555, 63);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.grpFiltros.Controls.Add(this.btnFiltrar);
+            this.grpFiltros.Controls.Add(this.txtCuilCuit);
+            this.grpFiltros.Controls.Add(this.lblCuilCuit);
+            this.grpFiltros.Location = new System.Drawing.Point(139, 43);
+            this.grpFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltros.Name = "grpFiltros";
+            this.grpFiltros.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltros.Size = new System.Drawing.Size(555, 63);
+            this.grpFiltros.TabIndex = 9;
+            this.grpFiltros.TabStop = false;
+            this.grpFiltros.Text = "Filtros";
             // 
             // btnFiltrar
             // 
@@ -123,14 +123,14 @@
             this.txtCuilCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuilCuit_KeyPress);
             this.txtCuilCuit.Leave += new System.EventHandler(this.txtCuilCuit_Leave);
             // 
-            // label1
+            // lblCuilCuit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CUIL/CUIT";
+            this.lblCuilCuit.AutoSize = true;
+            this.lblCuilCuit.Location = new System.Drawing.Point(17, 22);
+            this.lblCuilCuit.Name = "lblCuilCuit";
+            this.lblCuilCuit.Size = new System.Drawing.Size(71, 16);
+            this.lblCuilCuit.TabIndex = 0;
+            this.lblCuilCuit.Text = "CUIL/CUIT";
             // 
             // dtgCandidatos
             // 
@@ -283,7 +283,7 @@
             this.Controls.Add(this.btnModificarCandidato);
             this.Controls.Add(this.btnIngresarEmpleado);
             this.Controls.Add(this.btnEtapas);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpFiltros);
             this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -291,8 +291,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Candidatos";
             this.Load += new System.EventHandler(this.frmConsultaProcesoDeSeleccion_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpFiltros.ResumeLayout(false);
+            this.grpFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -303,9 +303,9 @@
 
         private System.Windows.Forms.Button btnIngresarEmpleado;
         private System.Windows.Forms.Button btnEtapas;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpFiltros;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCuilCuit;
         private System.Windows.Forms.Button btnModificarCandidato;
         private System.Windows.Forms.Label lblCuil;
         private System.Windows.Forms.Label lblCuilLlenar;
