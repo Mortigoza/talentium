@@ -189,6 +189,26 @@ namespace AccesoDatos.Administracion_Personal
             return resultado;
         }
 
+        public DataTable ObtenerDescripcionIdioma (int id_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_idioma", id_idioma) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerDescripcionIdioma_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        public DataTable ObtenerDescripcionProgresoNivel (int id_nivel, int id_progreso)
+        {
+            SqlParameter param1 = new SqlParameter("@id_nivel", id_nivel) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultado = EjecutarConsultas("ObtenerDescripcionProgresoNivel_sp", listaParametros.ToArray());
+
+            return resultado;
+
+        }
+
         //Modificar
         public DataTable ActualizarDatos (Persona modify )
         {
@@ -278,6 +298,30 @@ namespace AccesoDatos.Administracion_Personal
 
         }
 
+        public void BorrarIdioma (int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarIdioma_sp", listaParametros.ToArray(), true);
+
+        }
+
+
+        public void BorrarInfoAcademica(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarInfoAcademico_sp", listaParametros.ToArray(), true);
+
+        }
+
+        public void BorrarInfoLaboral(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarInfoLaboral_sp", listaParametros.ToArray(), true);
+
+        }
 
         //eliminacion
 

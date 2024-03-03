@@ -25,6 +25,11 @@ namespace Vista
             Application.SetCompatibleTextRenderingDefault(false);
             //Properties.Settings.Default.Idioma = "es-AR";
             Application.Run(new frmLogin());
+
+
+
+
+
         }
     }
 }

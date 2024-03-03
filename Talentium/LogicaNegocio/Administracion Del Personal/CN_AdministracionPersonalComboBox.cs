@@ -16,7 +16,11 @@ namespace LogicaNegocio.Administracion_Del_Personal
         CD_AccesoBDComboBox accesoDatos = new CD_AccesoBDComboBox();
 
         //COMBOBOXS
-      
+        public DataTable ObtenerIdioma()
+        {
+            DataTable idioma = accesoDatos.ListaIdioma();
+            return idioma;
+        }
         public DataTable ObtenerProvincia()
         {
             DataTable provincia = accesoDatos.ListaProvincias();
@@ -83,6 +87,9 @@ namespace LogicaNegocio.Administracion_Del_Personal
             DataTable convenio = accesoDatos.ListarConvenio();
             return convenio;
         }
+
+
+     
         public DataTable ObtenerPuesto()
         {
 

@@ -13,6 +13,13 @@ namespace AccesoDatos.Administracion_Personal
     public class CD_AccesoBDComboBox : CD_EjecutarSP
     {
 
+        public DataTable ListaIdioma()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+            DataTable resultado = EjecutarConsultas("ListarIdioma_sp", listaParametros.ToArray());
+            return resultado;
+        }
+
         public DataTable ListaProvincias()
         {
             List<SqlParameter> listaParametros = new List<SqlParameter>() { };
@@ -89,7 +96,9 @@ namespace AccesoDatos.Administracion_Personal
             DataTable resultado = EjecutarConsultas ("ListarConvenio_sp", listaParametros.ToArray());
             return resultado;
         }
-          public DataTable ListarPuesto ()
+
+     
+        public DataTable ListarPuesto ()
         {
             List <SqlParameter> listaParametros = new List<SqlParameter>() { };
             DataTable resultado = EjecutarConsultas ("ListarPuesto_sp", listaParametros.ToArray());

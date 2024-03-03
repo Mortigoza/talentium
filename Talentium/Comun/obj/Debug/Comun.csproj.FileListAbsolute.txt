@@ -82,3 +82,15 @@ C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Comun\obj\Debug\Com
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.dll
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\bin\Debug\Comun.pdb
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Comun\obj\Debug\Comun.pdb
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\bin\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\bin\Debug\Comun.pdb
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\obj\Debug\Comun.csproj.AssemblyReference.cache
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\obj\Debug\Comun.dll
+C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Comun\obj\Debug\Comun.pdb
