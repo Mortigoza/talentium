@@ -151,17 +151,11 @@
     <Compile Include="Accesibilidad\frmConsultaUsuario.Designer.cs">
       <DependentUpon>frmConsultaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="CambioDePassNU.cs">
+    <Compile Include="frmCambioPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CambioDePassNU.Designer.cs">
-      <DependentUpon>CambioDePassNU.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CambioDePassRecupero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CambioDePassRecupero.Designer.cs">
-      <DependentUpon>CambioDePassRecupero.cs</DependentUpon>
+    <Compile Include="frmCambioPass.Designer.cs">
+      <DependentUpon>frmCambioPass.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigPoliticasPass.cs">
       <SubType>Form</SubType>
@@ -193,7 +187,22 @@
     <Compile Include="frmReporteNominaSalarial.Designer.cs">
       <DependentUpon>frmReporteNominaSalarial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lenguajes\Columnas.en-US.Designer.cs">
+      <DependentUpon>Columnas.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Lenguajes\Columnas.es-AR.Designer.cs">
+      <DependentUpon>Columnas.es-AR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Lenguajes\Idioma.cs" />
+    <Compile Include="Lenguajes\Columnas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Columnas.resx</DependentUpon>
+    </Compile>
     <Compile Include="Lenguajes\Strings.en-US.Designer.cs">
       <DependentUpon>Strings.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -287,12 +296,8 @@
     <EmbeddedResource Include="AsistenciasPanel.resx">
       <DependentUpon>AsistenciasPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CambioDePassNU.resx">
-      <DependentUpon>CambioDePassNU.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CambioDePassRecupero.resx">
-      <DependentUpon>CambioDePassRecupero.cs</DependentUpon>
+    <EmbeddedResource Include="frmCambioPass.resx">
+      <DependentUpon>frmCambioPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Analisis y reportes\frmAltaCertificacionServicios.resx">
       <DependentUpon>frmAltaCertificacionServicios.cs</DependentUpon>
@@ -329,6 +334,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteNominaSalarial.resx">
       <DependentUpon>frmReporteNominaSalarial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.es-AR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.es-AR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lenguajes\Columnas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Columnas.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Strings.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>

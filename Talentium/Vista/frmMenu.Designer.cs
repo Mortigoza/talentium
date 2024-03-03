@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titulo = new System.Windows.Forms.Label();
@@ -58,11 +59,14 @@
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónDeEntrevistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónDeAltaPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tmrMouse = new System.Windows.Forms.Timer(this.components);
+            this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
+            this.lblTiempoRestante = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -105,7 +109,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1425, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1417, 28);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -316,19 +320,19 @@
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
-            // cambioDeContraseñaToolStripMenuItem
-            // 
-            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
-            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
-            this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
-            // 
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
+            // 
+            // cambioDeContraseñaToolStripMenuItem
+            // 
+            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
+            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
+            this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
             // configuraciónDeEntrevistasToolStripMenuItem
             // 
@@ -346,8 +350,8 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Location = new System.Drawing.Point(1249, 622);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -358,6 +362,30 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tmrMouse
+            // 
+            this.tmrMouse.Enabled = true;
+            this.tmrMouse.Interval = 1000;
+            this.tmrMouse.Tick += new System.EventHandler(this.tmrMouse_Tick);
+            // 
+            // tmrMouseQuieto
+            // 
+            this.tmrMouseQuieto.Enabled = true;
+            this.tmrMouseQuieto.Interval = 1000;
+            this.tmrMouseQuieto.Tick += new System.EventHandler(this.tmrMouseQuieto_Tick);
+            // 
+            // lblTiempoRestante
+            // 
+            this.lblTiempoRestante.AutoSize = true;
+            this.lblTiempoRestante.BackColor = System.Drawing.Color.Transparent;
+            this.lblTiempoRestante.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempoRestante.Location = new System.Drawing.Point(24, 528);
+            this.lblTiempoRestante.Name = "lblTiempoRestante";
+            this.lblTiempoRestante.Size = new System.Drawing.Size(255, 16);
+            this.lblTiempoRestante.TabIndex = 22;
+            this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
+            this.lblTiempoRestante.Visible = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -365,7 +393,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1425, 692);
+            this.ClientSize = new System.Drawing.Size(1417, 678);
+            this.Controls.Add(this.lblTiempoRestante);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.titulo);
@@ -377,6 +406,8 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -420,5 +451,8 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónDeEntrevistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónDeAltaPersonalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrMouse;
+        private System.Windows.Forms.Timer tmrMouseQuieto;
+        private System.Windows.Forms.Label lblTiempoRestante;
     }
 }

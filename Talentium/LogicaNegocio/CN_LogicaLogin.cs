@@ -25,9 +25,9 @@ namespace LogicaNegocio
             string usr = Seguridad.Encriptar(usuario);
             string psw = Seguridad.Hash(usuario + pass);
             string dig = Seguridad.Hash(Seguridad.DigVerif(Seguridad.Hash(pass)).ToString());
-            //Console.WriteLine(usr);
-            //Console.WriteLine(psw);
-            //Console.WriteLine(dig);
+            Console.WriteLine(usr);
+            Console.WriteLine(psw);
+            Console.WriteLine(dig);
             try
             {
                 CargarCache(usr);
@@ -199,7 +199,7 @@ namespace LogicaNegocio
                 return false;
             }
         }
-        private void CargarCache(string usuario)
+        public void CargarCache(string usuario)
         {
             DataTable dt = login.Buscar(usuario);
             UserCache.Clear();

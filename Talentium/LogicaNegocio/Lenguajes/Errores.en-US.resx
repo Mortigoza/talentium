@@ -162,4 +162,40 @@
   <data name="QuiereContinuar" xml:space="preserve">
     <value>Do you want to continue?</value>
   </data>
+  <data name="PasMinimo8" xml:space="preserve">
+    <value>At least eight characters.</value>
+  </data>
+  <data name="PasMinimoEsp" xml:space="preserve">
+    <value>At least one special character.</value>
+  </data>
+  <data name="PasMinimoMay" xml:space="preserve">
+    <value>At least one uppercase letter.</value>
+  </data>
+  <data name="PasMinimoMin" xml:space="preserve">
+    <value>At least one lowercase letter.</value>
+  </data>
+  <data name="PasMinimoNum" xml:space="preserve">
+    <value>At least one number.</value>
+  </data>
+  <data name="PasDatos" xml:space="preserve">
+    <value>Do not include personal data.</value>
+  </data>
+  <data name="PasNoIgual" xml:space="preserve">
+    <value>The passwords do not match.</value>
+  </data>
+  <data name="PasFaltaCriterio" xml:space="preserve">
+    <value>The password doesn't meet one or more of the requirements.</value>
+  </data>
+  <data name="PasPregInvalida" xml:space="preserve">
+    <value>The security question answer is incorrect.</value>
+  </data>
+  <data name="UsrCambiaCadaVencido" xml:space="preserve">
+    <value>Your password has expired. You must change it in order to continue using the system.</value>
+  </data>
+  <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
+    <value>Your password will expire soon. It is recommended to change it.</value>
+  </data>
+  <data name="PasRepetida" xml:space="preserve">
+    <value>You cannot use your current password as the new password.</value>
+  </data>
 </root>

@@ -117,85 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Aviso" xml:space="preserve">
-    <value>Aviso</value>
+  <data name="Apellido" xml:space="preserve">
+    <value>Last name</value>
   </data>
-  <data name="CamposIncompletos" xml:space="preserve">
-    <value>Hay campos incompletos.</value>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
   </data>
-  <data name="CodigoExpirado" xml:space="preserve">
-    <value>El codigo ingresado ha expirado.</value>
+  <data name="Nombre" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="CodigoIncorrecto" xml:space="preserve">
-    <value>El codigo ingresado es incorrecto.</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="ErrorMail" xml:space="preserve">
-    <value>Error al intentar enviar el email</value>
-  </data>
-  <data name="LiminteIntentos" xml:space="preserve">
-    <value>Limite de intentos alcanzado, intente nuevamente a las</value>
-  </data>
-  <data name="ModNoAutorizada" xml:space="preserve">
-    <value>MODIFICACION NO AUTORIZADA DE LA BASE DE DATOS.</value>
-  </data>
-  <data name="TerminalBloqueada" xml:space="preserve">
-    <value>ESTA TERMINAL SE ENCUENTRA INHABILITADA POR MANIPULACION EXTERNA DE LA BASE DE DATOS. COMUNIQUESE CON EL SOPORTE TECNICO PARA REACTICAR LA TERMINAL.</value>
-  </data>
-  <data name="UsrBloqueado" xml:space="preserve">
-    <value>Usuario bloqueado.</value>
-  </data>
-  <data name="UsrDadoDeBaja" xml:space="preserve">
-    <value>El usuario se encuentra dado de baja.</value>
-  </data>
-  <data name="UsrInvalido" xml:space="preserve">
-    <value>Usuario invalido. Porfavor verifique que el usuario sea correcto.</value>
-  </data>
-  <data name="UsrPswIncorrecto" xml:space="preserve">
-    <value>Usuario o contraseña incorrectos.</value>
-  </data>
-  <data name="UsrReactivado" xml:space="preserve">
-    <value>Usuario reactivado.</value>
-  </data>
-  <data name="QuiereContinuar" xml:space="preserve">
-    <value>¿Quieres continuar?</value>
-  </data>
-  <data name="PasMinimo8" xml:space="preserve">
-    <value>Minimo ocho caracteres.</value>
-  </data>
-  <data name="PasMinimoEsp" xml:space="preserve">
-    <value>Minimo un caracter especial.</value>
-  </data>
-  <data name="PasMinimoMay" xml:space="preserve">
-    <value>Minimo una mayuscula.</value>
-  </data>
-  <data name="PasMinimoMin" xml:space="preserve">
-    <value>Minimo una minuscula.</value>
-  </data>
-  <data name="PasMinimoNum" xml:space="preserve">
-    <value>Minimo un numero.</value>
-  </data>
-  <data name="PasDatos" xml:space="preserve">
-    <value>No incluir datos personales.</value>
-  </data>
-  <data name="PasNoIgual" xml:space="preserve">
-    <value>Las contraseñas no coinciden.</value>
-  </data>
-  <data name="PasFaltaCriterio" xml:space="preserve">
-    <value>La contraseña no cumple con una o más de los requisitos.</value>
-  </data>
-  <data name="PasPregInvalida" xml:space="preserve">
-    <value>La respuesta a la pregunta de seguridad es incorrecta.</value>
-  </data>
-  <data name="UsrCambiaCadaVencido" xml:space="preserve">
-    <value>Su contraseña ha caducado, debe cambiarla para poder seguir utilizando el sistema.</value>
-  </data>
-  <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
-    <value>Su contraseña va a caducar pronto, se recomienda cambiarla.</value>
-  </data>
-  <data name="PasRepetida" xml:space="preserve">
-    <value>No puede utilizar su contraseña actual como nueva contraseña.</value>
+  <data name="Usuario" xml:space="preserve">
+    <value>User</value>
   </data>
 </root>

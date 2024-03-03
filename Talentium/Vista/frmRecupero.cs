@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Comun;
 using LogicaNegocio;
 using Vista.Lenguajes;
 
@@ -45,9 +46,10 @@ namespace Vista
                         label3.Visible = true;
                         label6.Visible = true;
                         codigo.Visible = true;
-                        Verificar.Visible = true;
+                        btnVerificar.Visible = true;
                         textBoxUsuarioRec.Enabled = false;
                         btnContinuar.Visible = false;
+                        this.AcceptButton = btnVerificar;
                     }
 
            // ocultar el boton, disablear el texbox usuario y agregar visible el textbox cod email y el boton verificar cod
@@ -62,14 +64,6 @@ namespace Vista
                 MessageBox.Show("El campo no debe estar vacio");
             }
         }
-
-        private void lnkRecupero_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            frmLogin menu = new frmLogin();
-            menu.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
@@ -79,8 +73,17 @@ namespace Vista
             if (valor) 
             {
                 this.Hide();
-                CambioDePassRecupero cambioDePass =  new CambioDePassRecupero();
-                cambioDePass.Show();
+                frmCambioPass cambioDePass;
+                if (UserCache.nuevo)
+                {
+                    cambioDePass = new frmCambioPass(true);
+                }
+                else
+                {
+                    cambioDePass = new frmCambioPass();
+                }
+                cambioDePass.ShowDialog();
+                this.Dispose();
             }
 
         }
@@ -93,6 +96,11 @@ namespace Vista
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

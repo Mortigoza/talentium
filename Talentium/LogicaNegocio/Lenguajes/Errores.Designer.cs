@@ -133,6 +133,96 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No incluir datos personales..
+        /// </summary>
+        public static string PasDatos {
+            get {
+                return ResourceManager.GetString("PasDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña no cumple con una o más de los requisitos..
+        /// </summary>
+        public static string PasFaltaCriterio {
+            get {
+                return ResourceManager.GetString("PasFaltaCriterio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimo ocho caracteres..
+        /// </summary>
+        public static string PasMinimo8 {
+            get {
+                return ResourceManager.GetString("PasMinimo8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimo un caracter especial..
+        /// </summary>
+        public static string PasMinimoEsp {
+            get {
+                return ResourceManager.GetString("PasMinimoEsp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimo una mayuscula..
+        /// </summary>
+        public static string PasMinimoMay {
+            get {
+                return ResourceManager.GetString("PasMinimoMay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimo una minuscula..
+        /// </summary>
+        public static string PasMinimoMin {
+            get {
+                return ResourceManager.GetString("PasMinimoMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimo un numero..
+        /// </summary>
+        public static string PasMinimoNum {
+            get {
+                return ResourceManager.GetString("PasMinimoNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas no coinciden..
+        /// </summary>
+        public static string PasNoIgual {
+            get {
+                return ResourceManager.GetString("PasNoIgual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La respuesta a la pregunta de seguridad es incorrecta..
+        /// </summary>
+        public static string PasPregInvalida {
+            get {
+                return ResourceManager.GetString("PasPregInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No puede utilizar su contraseña actual como nueva contraseña..
+        /// </summary>
+        public static string PasRepetida {
+            get {
+                return ResourceManager.GetString("PasRepetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Quieres continuar?.
         /// </summary>
         public static string QuiereContinuar {
@@ -156,6 +246,24 @@ namespace LogicaNegocio.Lenguajes {
         public static string UsrBloqueado {
             get {
                 return ResourceManager.GetString("UsrBloqueado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Su contraseña va a caducar pronto, se recomienda cambiarla..
+        /// </summary>
+        public static string UsrCambiaCadaPorVencer {
+            get {
+                return ResourceManager.GetString("UsrCambiaCadaPorVencer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Su contraseña ha caducado, debe cambiarla para poder seguir utilizando el sistema..
+        /// </summary>
+        public static string UsrCambiaCadaVencido {
+            get {
+                return ResourceManager.GetString("UsrCambiaCadaVencido", resourceCulture);
             }
         }
         

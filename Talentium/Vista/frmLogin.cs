@@ -38,28 +38,41 @@ namespace Vista
                 {
                     //llamar al form que cambia la contraseña.
                     this.Hide();
-                    CambioDePassNU CP = new CambioDePassNU();
-                    CP.Show();
+                    frmCambioPass cambioPass = new frmCambioPass(true);
+                    cambioPass.ShowDialog();
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
+                }
+                else if (UserCache.cambiaCada != 0 && DateTime.Today >= UserCache.ultimoCambio.AddDays(Convert.ToDouble(UserCache.cambiaCada)))
+                {
+                    //llamar al form que cambia la contraseña.
+                    MessageBox.Show(Errores.UsrCambiaCadaVencido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    frmCambioPass cambioPass = new frmCambioPass();
+                    cambioPass.ShowDialog();
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
                 }
                 else
                 {
+                    if (UserCache.cambiaCada != 0 && DateTime.Today >= UserCache.ultimoCambio.AddDays(UserCache.cambiaCada - 7))
+                    {
+                        MessageBox.Show(Errores.UsrCambiaCadaPorVencer, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     CN_TraerPermisos tp = new CN_TraerPermisos();
                     tp.TraerPermisos();
                     this.Hide();
                     CN_Bitacora.AltaBitacora("Login exitoso", "LogIn", this.Name);
                     frmMenu menu = new frmMenu();
                     menu.ShowDialog();
-                    if (menu.DialogResult == DialogResult.OK)
-                    {
-                        txtUsername.Text = "";
-                        txtPassword.Text = "";
-                        this.Show();
-                        txtUsername.Focus();
-                    }
-                    else
-                    {
-                        this.Dispose();
-                    }
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+                    this.Show();
+                    txtUsername.Focus();
                 }
             }
         }
@@ -78,7 +91,8 @@ namespace Vista
         {
             this.Hide();
             frmRecupero recupero = new frmRecupero();
-            recupero.Show();
+            recupero.ShowDialog();
+            this.Show();
         }
 
         private void cmbLenguaje_SelectionChangeCommitted(object sender, EventArgs e)

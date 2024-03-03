@@ -175,6 +175,16 @@ namespace Comun
             lst2.DataSource = dtListaMem;
             lst2.Update();
         }
-
+        public static void TraducirColumnasDtg(ref DataGridView dtg)
+        {
+            foreach (DataGridViewColumn c in dtg.Columns)
+            {
+                string text = Columnas.ResourceManager.GetString(c.HeaderText);
+                if (text != null)
+                {
+                    c.HeaderText = text;
+                }
+            }
+        }
     }
 }

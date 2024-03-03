@@ -162,4 +162,40 @@
   <data name="QuiereContinuar" xml:space="preserve">
     <value>¿Quieres continuar?</value>
   </data>
+  <data name="PasMinimo8" xml:space="preserve">
+    <value>Minimo ocho caracteres.</value>
+  </data>
+  <data name="PasMinimoEsp" xml:space="preserve">
+    <value>Minimo un caracter especial.</value>
+  </data>
+  <data name="PasMinimoMay" xml:space="preserve">
+    <value>Minimo una mayuscula.</value>
+  </data>
+  <data name="PasMinimoMin" xml:space="preserve">
+    <value>Minimo una minuscula.</value>
+  </data>
+  <data name="PasMinimoNum" xml:space="preserve">
+    <value>Minimo un numero.</value>
+  </data>
+  <data name="PasDatos" xml:space="preserve">
+    <value>No incluir datos personales.</value>
+  </data>
+  <data name="PasNoIgual" xml:space="preserve">
+    <value>Las contraseñas no coinciden.</value>
+  </data>
+  <data name="PasFaltaCriterio" xml:space="preserve">
+    <value>La contraseña no cumple con una o más de los requisitos.</value>
+  </data>
+  <data name="PasPregInvalida" xml:space="preserve">
+    <value>La respuesta a la pregunta de seguridad es incorrecta.</value>
+  </data>
+  <data name="UsrCambiaCadaVencido" xml:space="preserve">
+    <value>Su contraseña ha caducado, debe cambiarla para poder seguir utilizando el sistema.</value>
+  </data>
+  <data name="UsrCambiaCadaPorVencer" xml:space="preserve">
+    <value>Su contraseña va a caducar pronto, se recomienda cambiarla.</value>
+  </data>
+  <data name="PasRepetida" xml:space="preserve">
+    <value>No puede utilizar su contraseña actual como nueva contraseña.</value>
+  </data>
 </root>

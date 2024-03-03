@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Bitacora;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,6 @@ namespace Vista
             chcMay.Checked = ConfigCache.mayusculas;
             chcNum.Checked = ConfigCache.numeros;
             chcEsp.Checked = ConfigCache.especiales;
-            chcPass.Checked = ConfigCache.passAnteriores;
             chcDatos.Checked = ConfigCache.noDatosPersonales;
         }
 
@@ -38,7 +38,7 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            config.upPolPass(chcChar.Checked, chcMay.Checked, chcNum.Checked, chcEsp.Checked, chcPass.Checked, chcDatos.Checked);
+            config.upPolPass(chcChar.Checked, chcMay.Checked, chcNum.Checked, chcEsp.Checked, chcDatos.Checked);
         }
 
         private void ConfigPoliticasPass_Load(object sender, EventArgs e)
@@ -52,6 +52,7 @@ namespace Vista
             if (ms == DialogResult.Yes)
             {
                 bk.HacerBackup();
+                CN_Bitacora.AltaBitacora("Backup de la bd creado", "Backup", this.Name);
             }
         }
 
@@ -65,6 +66,7 @@ namespace Vista
                 if (resultado == DialogResult.OK)
                 {
                     bk.CargarBackup(opnBackup.FileName);
+                    CN_Bitacora.AltaBitacora("Backup de la bd cargado", "Backup", this.Name);
                 }
             }
         }
