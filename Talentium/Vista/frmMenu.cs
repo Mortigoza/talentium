@@ -23,7 +23,7 @@ namespace Vista
     {
         private CN_AdministracionDatosPersonal datosPersonales;
         private Point lastMousePosition;
-        private long minTotal = 60_000 * 5; // Cantidad de minutos que va a tardar en cerrar sesión automaticamente
+        private long minTotal = 60_000 * 1; // Cantidad de minutos que va a tardar en cerrar sesión automaticamente
         private int minActual = 0;
         public frmMenu()
         {
