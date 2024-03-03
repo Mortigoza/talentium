@@ -24,6 +24,9 @@ namespace Vista
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
 
         private bool esCandidato;
+        private bool esReactivicacion;
+        private bool esEmpleado;
+
         private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
         //variables
@@ -71,6 +74,9 @@ namespace Vista
             //NoPegar(grpIdiomas);
             DeshabilitarCampos();
             this.esCandidato = esCandidato;
+         
+            this.esReactivicacion = false;
+
             dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
 
           
@@ -185,6 +191,21 @@ namespace Vista
 
  
 
+        }
+
+
+        public bool EsReactivacion
+        {
+            get { return esReactivicacion; }
+            set
+            {
+                esReactivicacion = value;
+                if (value)
+                {
+                    // Si es reactivación, habilitar el campo dttFechaAlta
+                    dttFechaAlta.Enabled = true;
+                }
+            }
         }
 
         private void frmAltaPersonal_Load(object sender, EventArgs e)
@@ -374,8 +395,8 @@ namespace Vista
                 #endregion
 
                 lblFaltanCampos2.Visible = false;
-                int id_persona = logicaPersona.InsertarPersona(insert, infoLaborales, infoAcademicos);
-                logicaPersona.InsertarInfo(id_persona,infoacademico, infolaboral, listaIdiomas, infoIdiom,infoLabora,infoAcademic);
+                int id_persona = logicaPersona.InsertarPersona(insert /*infoLaborales, infoAcademicos*/);
+                logicaPersona.InsertarInfo(id_persona,/*infoacademico, infolaboral, listaIdiomas,*/ infoIdiom,infoLabora,infoAcademic);
 
                 MessageBox.Show("Todos los datos se cargaron correctamente.");
                 this.Dispose();
@@ -445,9 +466,17 @@ namespace Vista
                     lblFaltanCampos.Visible = false;
                     lblFaltanCampos1.Visible = false;
                     lblFaltanCampos2.Visible = false;
-                    logicaPersona.InsertarInfo(modify.id_persona,infoacademico,infolaboral,listaIdiomas, infoIdiom,infoLabora, infoAcademic);
+                    logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom,infoLabora, infoAcademic);
                     logicaPersona.ActualizarDatos(modify);
-                    MessageBox.Show("Los datos se han actualizado correctamente.");
+                        //logicaPersona.ActualizarDatosAcademicos(modify,cantidad);
+                        //logicaPersona.ActualizarDatosLaborales(modify,cantidad);
+                        //logicaPersona.ActualizarIdioma(modify, id_persona);
+                        if(esReactivicacion == true)
+                        {
+                            logicaPersona.ReactivarPersona(modify.id_persona);
+                        }
+                        
+                        MessageBox.Show("Los datos se han actualizado correctamente.");
                     this.Dispose();
                     }
                     else
@@ -478,11 +507,6 @@ namespace Vista
             //     lblFaltanCampos1.Visible = true;
             //     MessageBox.Show("Faltan campos obligatorios");
             // }
-
-
-
-
-
         }
 
         //BOTON PARA VALIDAR TAB "INFORMACION PERSONAL"
@@ -612,12 +636,7 @@ namespace Vista
         {
             string msg = "";
             bool persona = validarVacios(tabPersonales);
-            //bool academico = validarVacios(tabAcademicos, infoAcademicos);
-            //bool laboral = validarVacios(tabLaborales, infoLaborales);
             if (!persona) msg += "\n" + tabPersonales.Text;
-            //if (!academico) msg += "\n" + tabAcademicos.Text;
-            //if (!laboral) msg += "\n" + tabLaborales.Text;
-
             return (persona /*&& academico && laboral*/, msg).ToTuple();
         }
 
@@ -899,27 +918,6 @@ namespace Vista
 
         private void Espaniol_CheckedChanged(object sender, EventArgs e)
         {
-            //if (rdbBasico.Checked)
-            //{
-            //    nivelEspaniol = 0;
-            //}
-            //if (rdbIntermedio.Checked)
-            //{
-            //    nivelEspaniol = 1;
-            //}
-            //if (rdbAvanzado.Checked)
-            //{
-            //    nivelEspaniol = 2;
-            //}
-            //if (rdbNativo.Checked)
-            //{
-            //    nivelEspaniol = 3;
-            //}
-            //if (btnContinuar2.Enabled == false && nivelEspaniol != -1 && nivelIngles != -1)
-            //{
-            //    btnAtrasAcademico.Enabled = true;
-            //    btnContinuar2.Enabled = true;
-            //}
         }
 
         private void Ingles_CheckedChanged(object sender, EventArgs e)
@@ -953,7 +951,9 @@ namespace Vista
 
         public void CargarDatosPersona(int id_persona, Persona modify = null)
         {
+
             _mod = true;
+            
             tabControl.TabPages[1].Enabled = true;
             tabControl.TabPages[2].Enabled = true;
             DeshabilitarCampos();
@@ -1009,7 +1009,6 @@ namespace Vista
                 }
             }
 
-
             //ACADEMICOS
             DataTable infoAcademico = logicaPersona.ObtenerInfoAcademico(id_persona);
     
@@ -1024,24 +1023,6 @@ namespace Vista
                 Progreso = row.Field<int>("id_progreso")
 
             }).ToList();
-
-
-            //foreach (var item in infoAcademic)
-            //{
-            //    DataGridViewRow nuevaFila = new DataGridViewRow();
-
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Institucion });
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Ingreso });
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Egreso });
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Titulo });
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Nivel });
-            //    nuevaFila.Cells.Add(new DataGridViewTextBoxCell { Value = item.Progreso });
-
-
-            //    dgvAcademico.Rows.Add(nuevaFila);
-
-            //}
-
 
             dgvAcademico.DataSource = infoAcademic;
 
@@ -1059,8 +1040,6 @@ namespace Vista
                 Personal_A_Cargo = row.Field<int>("personal_a_cargo")
             }).ToList();
 
-           
-
             dgvLaboral.DataSource = infoLabora;
 
             //IDIOMA
@@ -1074,37 +1053,17 @@ namespace Vista
                 Idioma = row.Field<int> ("id_idiomas")
             }).ToList();
 
-     
-
             dgvIdioma.DataSource = infoIdiom;
-
-            //Visibilizar("grpSuperior", infoAcademicos);
-
-
-
-
-            //if (infoLaborales == 0)
-            //{
-            //    lblAgregarExperienciaLaboral.Visible = true;
-            //    lblAgregarExperienciaLaboral.Text = "No cuenta con experiencia laboral.";
-
-            //}
-            //else
-            //{
-            //    grpExp1.Text = "";
-            //    lblAgregarExperienciaLaboral.Text = "Experiencia laboral.";
-            //}
-            //Visibilizar("grpExp", infoLaborales);
         }
 
 
 
 
         //Modificacion
-        public void CargarDatosModificacion(int id_persona)
+        public void CargarDatosModificacion(int id_persona, bool esReactivar = false)
         {
 
-
+           
             Persona modify = new Persona();
             
             btnGuardar.Name = "btnModificar";
@@ -1115,12 +1074,23 @@ namespace Vista
 
             BotonesInvisiblesModificacion();
             HabilitarCampos();
+            btnContinuar1.Visible = true;
+            btnContinuar2.Visible = true;
             btnEditarImagen.Visible = true;
             btnEliminarImagen.Visible = true;
             btnValidar.Visible = false;
             btnGuardar.Visible = true;
             txtCuitCuil.Enabled = false;
-            dttFechaAlta.Enabled = false;
+            if(esReactivar == false)
+            {
+                dttFechaAlta.Enabled = false;
+                esReactivicacion = false;
+            }
+            else
+            {
+                EsReactivacion = true;
+            }
+           
         }
 
         //Controles vacios
@@ -1343,73 +1313,6 @@ namespace Vista
 
                 LimpiarControles(grpSuperior1);
 
-
-
-
-
-                //    Persona datosAcademico = new Persona();
-
-                //    // Asignar los valores de las celdas a las propiedades de la persona
-                //datosAcademico.institucion1 = txtInsitutcionSuperior.Text;
-                //datosAcademico.año_ingreso1 = Convert.ToInt32(cmbIngreso.SelectedItem?.ToString());
-                //datosAcademico.año_egreso1 = Convert.ToInt32(cmbEgreso.SelectedItem?.ToString());
-                //datosAcademico.titulo1 = txtTitulo.Text;
-                //datosAcademico.id_nivel1 = int.Parse(cmbNivelAcademico.SelectedValue.ToString());
-                //datosAcademico.id_progreso1 = int.Parse(cmbProgreso.SelectedValue.ToString());
-                //    // Asigna el valor de nivel, progreso, inglés y español según corresponda
-
-                //    // Agregar la nueva persona a la lista
-                //    infoacademico.Add(datosAcademico);
-
-
-                //if (dgvAcademico.Columns.Count == 0)
-                //{
-                //    dgvAcademico.Columns.Add("Institucion", "Institucion");
-                //        dgvAcademico.Columns.Add("Ingreso", "Ingreso");
-                //        dgvAcademico.Columns.Add("Egreso", "Egreso");
-                //        dgvAcademico.Columns.Add("Titulo", "Titulo");
-                //    dgvAcademico.Columns.Add("Nivel", "Nivel");
-                //    dgvAcademico.Columns.Add("Progreso", "Progreso");
-
-                //}
-
-                //DataGridViewRow nuevaFila = new DataGridViewRow();
-
-                ////Crear las celdas para la nueva fila y asignarles valores
-                //DataGridViewTextBoxCell celdaInstitucion = new DataGridViewTextBoxCell();
-                //celdaInstitucion.Value = txtInsitutcionSuperior.Text;
-
-                //    DataGridViewTextBoxCell celdaIngreso = new DataGridViewTextBoxCell();
-                //    celdaIngreso.Value = cmbIngreso.SelectedItem?.ToString();
-
-                //    DataGridViewTextBoxCell celdaEgreso = new DataGridViewTextBoxCell();
-                //    celdaEgreso.Value = cmbEgreso.SelectedItem?.ToString();
-
-                //    DataGridViewTextBoxCell celdaTitulo = new DataGridViewTextBoxCell();
-                //celdaTitulo.Value = txtTitulo.Text;
-
-                //DataGridViewTextBoxCell celdaNivel = new DataGridViewTextBoxCell();
-                //celdaNivel.Value = (cmbNivelAcademico.SelectedItem as DataRowView)?.Row["nivel"].ToString();
-
-                //DataGridViewTextBoxCell celdaProgreso = new DataGridViewTextBoxCell();
-                //celdaProgreso.Value = (cmbProgreso.SelectedItem as DataRowView)?.Row["estado_progreso"].ToString();
-
-
-
-                ////Agregar las celdas a la nueva fila
-                //nuevaFila.Cells.Add(celdaInstitucion);
-                //    nuevaFila.Cells.Add(celdaIngreso);
-                //    nuevaFila.Cells.Add(celdaEgreso);
-                //    nuevaFila.Cells.Add(celdaTitulo);
-                //nuevaFila.Cells.Add(celdaNivel);
-                //nuevaFila.Cells.Add(celdaProgreso);
-
-
-                ////Agregar la nueva fila al DataGridView
-                //dgvAcademico.Rows.Add(nuevaFila);
-
-                LimpiarControles(grpSuperior1);
-
             }
             else
             {
@@ -1427,13 +1330,12 @@ namespace Vista
                 int indiceFilaSeleccionada = dgvAcademico.SelectedRows[0].Index;
 
                 // Eliminar la fila seleccionada del DataGridView
-                //dgvAcademico.Rows.RemoveAt(indiceFilaSeleccionada);
                 infoAcademic.RemoveAt(indiceFilaSeleccionada);
                 dgvAcademico.DataSource = null;
                 dgvAcademico.DataSource = infoAcademic;
 
                 //// Eliminar el elemento correspondiente de la lista
-                //infoacademico.RemoveAt(indiceFilaSeleccionada);
+           
             }
             else
             {
@@ -1474,55 +1376,7 @@ namespace Vista
                 dgvLaboral.DataSource = infoLabora;
 
                 LimpiarControles(grpExp1);
-           
-
-                //      Persona datosLaborales = new Persona();
-
-                //  datosLaborales.puesto1 = txtPuesto.Text;
-                //  datosLaborales.empresa1 = txtEmpresa.Text;
-                //  datosLaborales.fecha_ingreso1 = Convert.ToInt32(cmbLaboralIngreso.SelectedItem?.ToString());
-                //  datosLaborales.fecha_egreso1 = Convert.ToInt32(cmbLaboralEgreso.SelectedItem?.ToString());
-                //  datosLaborales.personal_a_cargo1 = Convert.ToInt32(nupPersonalACargo.Value);
-
-                //infolaboral.Add(datosLaborales);
-
-                //  if (dgvLaboral.Columns.Count == 0)
-                //  {
-                //      dgvLaboral.Columns.Add("Puesto", "Puesto");
-                //      dgvLaboral.Columns.Add("Empresa", "Empresa");
-                //      dgvLaboral.Columns.Add("Ingreso", "Ingreso");
-                //      dgvLaboral.Columns.Add("Egreso", "Egreso");
-                //      dgvLaboral.Columns.Add("Persona a Cargo", "Persona a cargo");
-                //  }
-
-                //  DataGridViewRow nuevaFilaLaboral = new DataGridViewRow();
-
-
-                //  DataGridViewTextBoxCell celdaPuesto = new DataGridViewTextBoxCell();
-                //  celdaPuesto.Value = txtPuesto.Text;
-
-                //  DataGridViewTextBoxCell celdaEmpresa = new DataGridViewTextBoxCell();
-                //  celdaEmpresa.Value = txtEmpresa.Text;
-
-                //  DataGridViewTextBoxCell celdaIngresoLaboral = new DataGridViewTextBoxCell();
-                //  celdaIngresoLaboral.Value = cmbLaboralIngreso.SelectedItem?.ToString();
-
-                //  DataGridViewTextBoxCell celdaEgresoLaboral = new DataGridViewTextBoxCell();
-                //  celdaEgresoLaboral.Value = cmbLaboralEgreso.SelectedItem?.ToString();
-
-                //  DataGridViewTextBoxCell celdaPersonalACargo = new DataGridViewTextBoxCell();
-                //  celdaPersonalACargo.Value = nupPersonalACargo.Value.ToString();
-
-
-                //  nuevaFilaLaboral.Cells.Add(celdaPuesto);
-                //  nuevaFilaLaboral.Cells.Add(celdaEmpresa);
-                //  nuevaFilaLaboral.Cells.Add(celdaIngresoLaboral);
-                //  nuevaFilaLaboral.Cells.Add(celdaEgresoLaboral);
-                //  nuevaFilaLaboral.Cells.Add(celdaPersonalACargo);
-
-
-                //  dgvLaboral.Rows.Add(nuevaFilaLaboral);
-                LimpiarControles(grpExp1);
+         
             }
             else
             {
@@ -1534,38 +1388,16 @@ namespace Vista
         {
             if (dgvLaboral.SelectedRows.Count > 0 )
             {
-                // Obtener el índice de la fila seleccionada
+       
                 int indiceFilaSeleccionada = dgvLaboral.SelectedRows[0].Index;
 
                 infoLabora.RemoveAt(indiceFilaSeleccionada);
                 dgvLaboral.DataSource = null;
                 dgvLaboral.DataSource = infoLabora;
 
-
-                //// Verificar si el índice de la fila seleccionada es válido
-                //if (indiceFilaSeleccionada >= 0 && indiceFilaSeleccionada < dgvLaboral.Rows.Count)
-                //{
-
-
-                //    // Eliminar la fila seleccionada del DataGridView
-                //    dgvLaboral.Rows.RemoveAt(indiceFilaSeleccionada);
-
-
-
-                //    //Eliminar el elemento correspondiente de la lista si el índice es válido
-                //    if (indiceFilaSeleccionada < infolaboral.Count)
-                //    {
-                //        infolaboral.RemoveAt(indiceFilaSeleccionada);
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("La fila seleccionada no es válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
             }
             else
             {
-                // Si no hay una fila seleccionada, mostrar un mensaje indicando al usuario que seleccione una fila primero
                 MessageBox.Show("Seleccione una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1616,7 +1448,7 @@ namespace Vista
             dgvIdioma.DataSource = null;
             //Actualizar el DataGridView(si es necesario)
             dgvIdioma.DataSource = infoIdiom;
-                dgvIdioma.Columns[0].HeaderText = "Nombre de la Columna 1";
+            
 
                 // Cambiar el nombre de la segunda columna
                
@@ -1637,14 +1469,10 @@ namespace Vista
             {
                 // Obtener el índice de la fila seleccionada
                 int indiceFilaSeleccionada = dgvIdioma.SelectedRows[0].Index;
-
-                // Eliminar la fila seleccionada del DataGridView
-                //dgvIdioma.Rows.RemoveAt(indiceFilaSeleccionada);
                 infoIdiom.RemoveAt(indiceFilaSeleccionada);
                 dgvIdioma.DataSource = null;
                 dgvIdioma.DataSource = infoIdiom;
-                // Eliminar el elemento correspondiente de la lista
-                //listaIdiomas.RemoveAt(indiceFilaSeleccionada);
+         
             }
             else
             {

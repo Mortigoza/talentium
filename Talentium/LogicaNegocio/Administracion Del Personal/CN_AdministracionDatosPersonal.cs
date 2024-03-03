@@ -27,7 +27,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             //AccesoDatos.InsertarIdioma(id_persona, 1,insert.nivel_En );
         }
 
-        public int InsertarPersona(Persona insert, int infoLaborales, int infoAcademicos)
+        public int InsertarPersona(Persona insert /*int infoLaborales, int infoAcademicos*/)
         {
             try
             {
@@ -194,65 +194,46 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
         public void ActualizarDatosAcademicos(Persona modify, int cantidad)
         {
-          //  Dictionary<int, (int id_informacion_academica, int? id_nivel, string institucion, int año_ingreso, int año_egreso, string titulo, int? id_progreso)> informacionAcademica
-          //    = new Dictionary<int, (int, int?, string, int, int, string, int?)>
-          //{
-          //      { 1, (modify.id_informacion_academica1, modify.id_nivel1, modify.institucion1, modify.año_ingreso1, modify.año_egreso1, modify.titulo1, modify.id_progreso1) },
-          //      { 2, (modify.id_informacion_academica2,modify.id_nivel2, modify.institucion2, modify.año_ingreso2, modify.año_egreso2, modify.titulo2, modify.id_progreso2)},
-          //      { 3, (modify.id_informacion_academica3,modify.id_nivel3, modify.institucion3, modify.año_ingreso3, modify.año_egreso3, modify.titulo3, modify.id_progreso3) },
-
-
-          //};
-          //  for (int i = 1; i <= cantidad; i++)
-          //  {
-          //      int id_informacion_academica = informacionAcademica[i].id_informacion_academica;
-          //      int? id_nivel = informacionAcademica[i].id_nivel;
-          //      string institucion = informacionAcademica[i].institucion;
-         
-          //      int año_ingreso = informacionAcademica[i].año_ingreso;
-          //      int año_egreso = informacionAcademica[i].año_egreso;
-          //      string titulo = informacionAcademica[i].titulo;
-          //      int? id_progreso = informacionAcademica[i].id_progreso;
-          //      AccesoDatos.ActualizarDatosAcademicos(id_informacion_academica, id_nivel, institucion, año_ingreso, año_egreso, titulo, id_progreso);
-          //  }
         }
 
 
-        public void InsertarInfo(int id_persona,List<Persona> infoacademico , List<Persona> infolaboral, List<Persona> listaidioma, List<IdiomaDto> infoidioma, List<infoLaboralDto> infolabora, List<InfoAcademicoDto>infoacademic)
+        public void InsertarInfo(int id_persona,/*List<Persona> infoacademico , List<Persona> infolaboral, List<Persona> listaidioma, */List<IdiomaDto> infoidioma, List<infoLaboralDto> infolabora, List<InfoAcademicoDto>infoacademic)
         {
+
+            LogicaNegocio.Administracion_Del_Personal.CN_AdministracionPersonalComboBox logica = new LogicaNegocio.Administracion_Del_Personal.CN_AdministracionPersonalComboBox();
             
-            foreach (var item in infoacademico)
-            {
-                int? id_nivel = item.id_nivel1;
-                string institucion = item.institucion1;
-                int año_ingreso = item.año_ingreso1;
-                int año_egreso = item.año_egreso1;
-                string titulo = item.titulo1;
-                int? id_progreso = item.id_progreso1;
+            //foreach (var item in infoacademico)
+            //{
+            //    int? id_nivel = item.id_nivel1;
+            //    string institucion = item.institucion1;
+            //    int año_ingreso = item.año_ingreso1;
+            //    int año_egreso = item.año_egreso1;
+            //    string titulo = item.titulo1;
+            //    int? id_progreso = item.id_progreso1;
               
-                AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel, institucion, año_ingreso, año_egreso, titulo, id_progreso);
-            }
+            //    AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel, institucion, año_ingreso, año_egreso, titulo, id_progreso);
+            //}
            
-            foreach (var item in infolaboral)
-            {
+            //foreach (var item in infolaboral)
+            //{
              
-                string _puesto = item.puesto1;
-                string _empresa = item.empresa1;
-                int _fecha_ingreso = item.fecha_ingreso1;
-                int _fecha_egreso = item.fecha_egreso1;
-                int _personal_a_cargo = item.personal_a_cargo1;
-                AccesoDatos.InsertarInformacionLaboral(id_persona, _puesto, _empresa, _fecha_ingreso, _fecha_egreso, _personal_a_cargo);
-            }
+            //    string _puesto = item.puesto1;
+            //    string _empresa = item.empresa1;
+            //    int _fecha_ingreso = item.fecha_ingreso1;
+            //    int _fecha_egreso = item.fecha_egreso1;
+            //    int _personal_a_cargo = item.personal_a_cargo1;
+            //    AccesoDatos.InsertarInformacionLaboral(id_persona, _puesto, _empresa, _fecha_ingreso, _fecha_egreso, _personal_a_cargo);
+            //}
 
-            foreach (var item in listaidioma)
-            {
+            //foreach (var item in listaidioma)
+            //{
                 
-                int id_idioma = item.idioma;
-                int nivel = item.nivel;
+            //    int id_idioma = item.idioma;
+            //    int nivel = item.nivel;
 
               
-                AccesoDatos.InsertarIdioma(id_persona,id_idioma,nivel);
-            }
+            //    AccesoDatos.InsertarIdioma(id_persona,id_idioma,nivel);
+            //}
 
 
 
@@ -300,26 +281,6 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
         public void ActualizarDatosLaborales(Persona modify, int cantidad)
         {
-            //Dictionary<int, (int id_informacion_laboral,string puesto, string empresa, int fecha_ingreso, int fecha_egreso, int personal_a_cargo)> informacionLaboral
-            //      = new Dictionary<int, (int,string, string, int, int, int)>
-            //  {
-            //    { 1, (modify.id_informacion_laboral1,modify.puesto1, modify.empresa1, modify.fecha_ingreso1,  modify.fecha_egreso1, modify.personal_a_cargo1) },
-            //    { 2, (modify.id_informacion_laboral2,modify.puesto2, modify.empresa2, modify.fecha_ingreso2,  modify.fecha_egreso2, modify.personal_a_cargo2) },
-            //    { 3, (modify.id_informacion_laboral3,modify.puesto3, modify.empresa3, modify.fecha_ingreso3,  modify.fecha_egreso3, modify.personal_a_cargo3) },
-            //    { 4, (modify.id_informacion_laboral4,modify.puesto4, modify.empresa4, modify.fecha_ingreso4,  modify.fecha_egreso4, modify.personal_a_cargo4) }
-                                                                               
-            //  };
-            //for (int i = 1; i <= cantidad; i++)
-            //{
-            //    int id_informacion_laboral = informacionLaboral[i].id_informacion_laboral;
-            //    string _puesto = informacionLaboral[i].puesto;
-            //    string _empresa = informacionLaboral[i].empresa;
-            //    int _fecha_ingreso = informacionLaboral[i].fecha_ingreso;
-            //    int _fecha_egreso = informacionLaboral[i].fecha_egreso;
-            //    int _personal_a_cargo = informacionLaboral[i].personal_a_cargo;
-            //    AccesoDatos.ActualizarDatosLaborales(id_informacion_laboral, _puesto, _empresa, _fecha_ingreso, _fecha_egreso, _personal_a_cargo);
-
-            //}
         }
 
         public void ActualizarTelefono(Persona modify, int id_persona)
@@ -331,8 +292,6 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
         public void ActualizarIdioma(Persona modify ,int id_persona )
         {
-            //AccesoDatos.ActualizarIdioma(id_persona,2,modify.nivel_Es);
-            //AccesoDatos.ActualizarIdioma(id_persona,1,modify.nivel_En);
         }
 
 

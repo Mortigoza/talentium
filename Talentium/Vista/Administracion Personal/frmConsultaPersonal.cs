@@ -171,6 +171,8 @@ namespace Vista
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+
+
             switch (dtgEmpleados.Rows.Count)
             {
                 default:
@@ -188,11 +190,23 @@ namespace Vista
                             break;
                         case "btnReactivar":
                             result = MessageBox.Show("¿Desea reactivar al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dtgEmpleados.SelectedRows.Count > 0)
+                            {
+                                int idper = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
+
+
+                                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
+                                frmAltaPersonal.EsReactivacion = true; // Es una reactivación
+                                frmAltaPersonal.CargarDatosModificacion(idper, true);
+                                frmAltaPersonal.ShowDialog();
+
+                            }
                             if (result == DialogResult.Yes)
                             {
 
-
-                                logicaPersona.ReactivarPersona(id);
+                            
+                      
+                                
                                 Filtros(inactivo);
                             }
                             break;
