@@ -23,6 +23,11 @@ namespace Vista
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigCache.intentos = 5; //INTENTOS POR DEFECTO PARA QUE SE BLOQUEE
             Application.Run(new frmLogin());
+
+
+
+
+
         }
     }
 }

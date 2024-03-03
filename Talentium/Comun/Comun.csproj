@@ -47,6 +47,9 @@
     <Compile Include="ConfigCache.cs" />
     <Compile Include="DatosCandidato.cs" />
     <Compile Include="C_Asistencias.cs" />
+    <Compile Include="IdiomaDto.cs" />
+    <Compile Include="InfoAcademicoDto.cs" />
+    <Compile Include="infoLaboralDto.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="PermisosCache.cs" />
     <Compile Include="ConvenioDto.cs" />

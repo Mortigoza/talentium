@@ -59,9 +59,12 @@ namespace Comun
         public bool id_baja { get; set; }
 
 
-        //Idioma
+        ////Idioma
         public int nivel_Es { get; set; }
         public int nivel_En { get; set; }
+
+        public int nivel { get; set; }
+        public int idioma { get; set; }
        
    
 
@@ -70,59 +73,30 @@ namespace Comun
 
 
         public int id_nivel1{ get; set; }
-        public int? id_nivel2 { get; set; }
-        public int? id_nivel3 { get; set; }
 
         public string institucion1 { get; set; }
-        public string institucion2 { get; set; }
-        public string institucion3 { get; set; }
+
         public int  año_ingreso1 { get; set; }
-        public int año_ingreso2 { get; set; }
-        public int año_ingreso3 { get; set; }
+ 
         public int año_egreso1 { get; set; }
-        public int año_egreso2 { get; set; }
-        public int año_egreso3 { get; set; }
+   
         public string titulo1 { get; set; }
-        public string titulo2 { get; set; }
-        public string titulo3 { get; set; }
+ 
         public int id_progreso1 { get; set; }
-        public int? id_progreso2 { get; set; }
-        public int? id_progreso3 { get; set; }
-
-
-
-        //public Puesto[] puesto { get; set; } 
+  
 
         //informacion laboral
 
         public string puesto1 { get; set; }
-        public string puesto2 { get; set; }
-        public string puesto3 { get; set; }
-        public string puesto4 { get; set; }
+
         public string empresa1 { get; set; }
-        public string empresa2 { get; set; }
-        public string empresa3 { get; set; }
-        public string empresa4 { get; set; }
+ 
         public int fecha_ingreso1 { get; set; }
-        public int fecha_ingreso2 { get; set; }
-        public int fecha_ingreso3 { get; set; }
-        public int fecha_ingreso4 { get; set; }
+
         public int fecha_egreso1 { get; set; }
-        public int fecha_egreso2 { get; set; }
-        public int fecha_egreso3 { get; set; }
-        public int fecha_egreso4 { get; set; }
+
         public int personal_a_cargo1 { get; set; }
-        public int personal_a_cargo2 { get; set; }
-        public int personal_a_cargo3 { get; set; }
-        public int personal_a_cargo4 { get; set; }
-
-
 
     }
-
-    //public class Puesto
-    //{
-    //    public string nombre_puesto { get; set; }
-    //}
 
 }

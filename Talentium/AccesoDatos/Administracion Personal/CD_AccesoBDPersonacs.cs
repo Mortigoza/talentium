@@ -278,6 +278,30 @@ namespace AccesoDatos.Administracion_Personal
 
         }
 
+        public void BorrarIdioma (int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarIdioma_sp", listaParametros.ToArray(), true);
+
+        }
+
+
+        public void BorrarInfoAcademica(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarInfoAcademico_sp", listaParametros.ToArray(), true);
+
+        }
+
+        public void BorrarInfoLaboral(int id_persona)
+        {
+            SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            EjecutarConsultas("BorrarInfoLaboral_sp", listaParametros.ToArray(), true);
+
+        }
 
         //eliminacion
 

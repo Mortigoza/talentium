@@ -51,6 +51,7 @@ namespace Vista
                 })
                 .ToList();
 
+
             string filtroNombres = txtNombre.Text;
             string filtroApellidos = txtApellido.Text;
             string filtroCuil = txtCuit.Text;
@@ -65,7 +66,22 @@ namespace Vista
             (filtroIdArea == -1 || persona1.id_area == filtroIdArea) && (persona1.id_baja == inactivo)
             ).ToList();
 
-            dtgEmpleados.DataSource = resultadosFiltrados;
+            if (resultadosFiltrados.Count == 0)
+            {
+                dtgEmpleados.DataSource = null;
+                MessageBox.Show("No se encontraron resultados.", "Sin Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dtgEmpleados.DataSource = resultadosFiltrados;
+                // Cambia el nombre de las columnas
+                dtgEmpleados.Columns["nombres"].HeaderText = "Nombres";
+                dtgEmpleados.Columns["apellidos"].HeaderText = "Apellidos";
+                dtgEmpleados.Columns["cuit_cuil"].HeaderText = "Cuit/Cuil";
+                dtgEmpleados.Columns["nro_doc"].HeaderText = "DNI";
+            }
+
+            
 
             // Oculta las columnas que no necesitas
             foreach (DataGridViewColumn columna in dtgEmpleados.Columns)
@@ -76,11 +92,7 @@ namespace Vista
                 }
             }
 
-            // Cambia el nombre de las columnas
-            dtgEmpleados.Columns["nombres"].HeaderText = "Nombres";
-            dtgEmpleados.Columns["apellidos"].HeaderText = "Apellidos";
-            dtgEmpleados.Columns["cuit_cuil"].HeaderText = "Cuit/Cuil";
-            dtgEmpleados.Columns["nro_doc"].HeaderText = "DNI";
+        
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -101,10 +113,10 @@ namespace Vista
             {
                 int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
 
-                // Abre FormAltaPersonal y pasa el id_persona
-                //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-                //frmAltaPersonal.CargarDatosPersona(id);
-                //frmAltaPersonal.ShowDialog();
+                //Abre FormAltaPersonal y pasa el id_persona
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
+                frmAltaPersonal.CargarDatosPersona(id);
+                frmAltaPersonal.ShowDialog();
             }
             else
             {
@@ -125,9 +137,9 @@ namespace Vista
                 int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
 
                 // Abre FormAltaPersonal y pasa el id_persona
-                //frmAltaPersonal frmAltaPersonal = new frmAltaPersonal();
-                //frmAltaPersonal.CargarDatosModificacion(id);
-                //frmAltaPersonal.ShowDialog();
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
+                frmAltaPersonal.CargarDatosModificacion(id);
+                frmAltaPersonal.ShowDialog();
             }
             else
             {
@@ -178,6 +190,8 @@ namespace Vista
                             result = MessageBox.Show("¿Desea reactivar al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
                             {
+
+
                                 logicaPersona.ReactivarPersona(id);
                                 Filtros(inactivo);
                             }
