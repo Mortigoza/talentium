@@ -48,48 +48,10 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
         public void InsertarInformacionLaboral (Persona insert,int id_persona,int cantidad)
         {
-            //Dictionary<int, (string puesto, string empresa, int fecha_ingreso, int fecha_egreso, int personal_a_cargo)> informacionLaboral
-            //    = new Dictionary<int, (string, string, int, int, int)>
-            //{
-            //    { 1, (insert.puesto1, insert.empresa1, insert.fecha_ingreso1,  insert.fecha_egreso1, insert.personal_a_cargo1) },
-            //    { 2, (insert.puesto2, insert.empresa2, insert.fecha_ingreso2,  insert.fecha_egreso2, insert.personal_a_cargo2) },
-            //    { 3, (insert.puesto3, insert.empresa3, insert.fecha_ingreso3,  insert.fecha_egreso3, insert.personal_a_cargo3) },
-            //    { 4, (insert.puesto4, insert.empresa4, insert.fecha_ingreso4,  insert.fecha_egreso4, insert.personal_a_cargo4) }
-
-            //};
-            //for (int i = 1; i <= cantidad; i++)
-            //{
-            //    string _puesto = informacionLaboral[i].puesto;
-            //    string _empresa = informacionLaboral[i].empresa;
-            //    int _fecha_ingreso = informacionLaboral[i].fecha_ingreso;
-            //    int _fecha_egreso = informacionLaboral[i].fecha_egreso;
-            //    int _personal_a_cargo = informacionLaboral[i].personal_a_cargo;
-            //    AccesoDatos.InsertarInformacionLaboral(id_persona,_puesto,_empresa,_fecha_ingreso,_fecha_egreso,_personal_a_cargo);
-
-            //}
           
         }
         public void InsertarInformacionAcademica (Persona insert, int id_persona, int cantidad)
         {
-          //  Dictionary<int, (int? id_nivel, string institucion, int año_ingreso ,int año_egreso, string titulo, int? id_progreso )> informacionAcademica
-          //    = new Dictionary<int, (int?, string, int, int,string,int?)>
-          //{
-          //      { 1, (insert.id_nivel1, insert.institucion1,  insert.año_ingreso1, insert.año_egreso1, insert.titulo1, insert.id_progreso1) },
-          //      { 2, (insert.id_nivel2, insert.institucion2,  insert.año_ingreso2, insert.año_egreso2, insert.titulo2, insert.id_progreso2)},
-          //      { 3, (insert.id_nivel3, insert.institucion3,  insert.año_ingreso3, insert.año_egreso3, insert.titulo3, insert.id_progreso3) },
-             
-
-          //};
-          //  for (int i = 1; i <= cantidad; i++)
-          //  {
-          //      int? id_nivel = informacionAcademica[i].id_nivel;
-          //      string institucion = informacionAcademica[i].institucion;
-          //      int año_ingreso = informacionAcademica[i].año_ingreso;
-          //      int año_egreso = informacionAcademica[i].año_egreso;
-          //      string titulo = informacionAcademica[i].titulo;
-          //      int? id_progreso = informacionAcademica[i].id_progreso;
-          //      AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel,institucion,año_ingreso,año_egreso,titulo,id_progreso);
-          //  }
         }
 
         //se crea instancia y se almacena en "AccesoDatos"
@@ -110,7 +72,22 @@ namespace LogicaNegocio.Administracion_Del_Personal
         {
             return AccesoDatos.ObtenerIdioma(id_persona);
         }
-
+        public string ObtenerDescripcionIdioma(int id_idioma)
+        {
+            string idioma = null;
+            DataTable idiomaResult = AccesoDatos.ObtenerDescripcionIdioma(id_idioma);
+            return idioma = idiomaResult.Rows[0]["idioma"].ToString();
+                
+        }
+        public  NivelProgresoMostrar ObtenerDescripcionProgresoNivel(int id_nivel, int id_progreso)
+        {
+           
+            NivelProgresoMostrar nivelProgresoMostrar = new NivelProgresoMostrar();
+            DataTable progresoResult = AccesoDatos.ObtenerDescripcionProgresoNivel(id_nivel,id_progreso);
+            nivelProgresoMostrar.Nivel = progresoResult.Rows[0]["descripcion_nivel"].ToString();
+            nivelProgresoMostrar.Progreso = progresoResult.Rows[0]["estado_progreso"].ToString();
+            return nivelProgresoMostrar;
+        }
 
 
         public void ObtenerPersona(Persona insert, int id_persona, ref int _infoAcademicos, ref int _infoLaborales)
@@ -121,7 +98,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             DataTable laborales  =AccesoDatos.ObtenerDatosLaborales(id_persona);
             DataTable telefono = AccesoDatos.ObtenerTelefono(id_persona);
             DataTable idioma = AccesoDatos.ObtenerIdioma(id_persona);
-
+            
 
             int infoAcademicos = academicos.Rows.Count;
             int infoLaborales = laborales.Rows.Count;
@@ -201,43 +178,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
         {
 
             LogicaNegocio.Administracion_Del_Personal.CN_AdministracionPersonalComboBox logica = new LogicaNegocio.Administracion_Del_Personal.CN_AdministracionPersonalComboBox();
-            
-            //foreach (var item in infoacademico)
-            //{
-            //    int? id_nivel = item.id_nivel1;
-            //    string institucion = item.institucion1;
-            //    int año_ingreso = item.año_ingreso1;
-            //    int año_egreso = item.año_egreso1;
-            //    string titulo = item.titulo1;
-            //    int? id_progreso = item.id_progreso1;
-              
-            //    AccesoDatos.InsertarInformacionAcademica(id_persona, id_nivel, institucion, año_ingreso, año_egreso, titulo, id_progreso);
-            //}
-           
-            //foreach (var item in infolaboral)
-            //{
-             
-            //    string _puesto = item.puesto1;
-            //    string _empresa = item.empresa1;
-            //    int _fecha_ingreso = item.fecha_ingreso1;
-            //    int _fecha_egreso = item.fecha_egreso1;
-            //    int _personal_a_cargo = item.personal_a_cargo1;
-            //    AccesoDatos.InsertarInformacionLaboral(id_persona, _puesto, _empresa, _fecha_ingreso, _fecha_egreso, _personal_a_cargo);
-            //}
 
-            //foreach (var item in listaidioma)
-            //{
-                
-            //    int id_idioma = item.idioma;
-            //    int nivel = item.nivel;
-
-              
-            //    AccesoDatos.InsertarIdioma(id_persona,id_idioma,nivel);
-            //}
-
-
-
-            /////////////////////////////////////
             AccesoDatos.BorrarInfoAcademica(id_persona);
             foreach (var item in infoacademic)
             {

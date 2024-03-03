@@ -36,27 +36,20 @@ namespace Vista
         private int nivelEspaniol = -1;
         private int nivelIngles = -1;
 
-
         private DateTime fn;
         private DateTime fa;
         private bool _mod = false;
 
         private int _id_persona;
-     
-        List<Persona> listaIdiomas = new List<Persona>();
-        List<Persona> infolaboral = new List<Persona>();
-        List<Persona> infoacademico = new List<Persona>();
-
-       
+           
         List<InfoAcademicoDto> infoAcademic = new List<InfoAcademicoDto>();
-
         List<IdiomaDto> infoIdiom = new List<IdiomaDto>();
-
         List<infoLaboralDto> infoLabora = new List<infoLaboralDto>();
 
+
+        List<IdiomaMostrar> mostrarIdioma = new List<IdiomaMostrar>();
+        List<NivelProgresoMostrar> mostrarProgresoNivel = new List<NivelProgresoMostrar>();
         byte[] foto;
-
-
         public frmAltaPersonal(bool esCandidato)
         {
 
@@ -1011,8 +1004,6 @@ namespace Vista
 
             //ACADEMICOS
             DataTable infoAcademico = logicaPersona.ObtenerInfoAcademico(id_persona);
-    
-            
 
             infoAcademic = infoAcademico.AsEnumerable().Select(row => new InfoAcademicoDto {
             Institucion = row.Field<string>("institucion"),
@@ -1023,13 +1014,23 @@ namespace Vista
                 Progreso = row.Field<int>("id_progreso")
 
             }).ToList();
+            foreach (var item in infoAcademic)
+            {
+                NivelProgresoMostrar progresonivelMostrar = new NivelProgresoMostrar();
+                progresonivelMostrar = logicaPersona.ObtenerDescripcionProgresoNivel(item.Nivel, item.Progreso);
+                progresonivelMostrar.Insitutcion = item.Institucion.ToString();
+                progresonivelMostrar.Titulo = item.Titulo.ToString();
+                progresonivelMostrar.Ingreso = item.Ingreso.ToString();
+                progresonivelMostrar.Egreso = item.Egreso.ToString();
 
-            dgvAcademico.DataSource = infoAcademic;
+                mostrarProgresoNivel.Add(progresonivelMostrar);
+            }
+            dgvAcademico.DataSource = null;
+            dgvAcademico.DataSource = mostrarProgresoNivel;
+
 
             //LABORAL
             DataTable infoLaboral = logicaPersona.ObtenerInfoLaboral(id_persona);
-
-            
 
             infoLabora = infoLaboral.AsEnumerable().Select(row => new infoLaboralDto {
 
@@ -1053,7 +1054,16 @@ namespace Vista
                 Idioma = row.Field<int> ("id_idiomas")
             }).ToList();
 
-            dgvIdioma.DataSource = infoIdiom;
+            foreach (var item in infoIdiom)
+            {
+                IdiomaMostrar idiomaMostrar = new IdiomaMostrar();
+                idiomaMostrar.IdiomaNombre = logicaPersona.ObtenerDescripcionIdioma(item.Idioma);
+                idiomaMostrar.Nivel = ObtenerValorNivelById(item.Nivel);
+                mostrarIdioma.Add(idiomaMostrar);
+
+            }
+            dgvIdioma.DataSource = null;
+            dgvIdioma.DataSource = mostrarIdioma;
         }
 
 
@@ -1301,15 +1311,35 @@ namespace Vista
                 academico.Progreso = int.Parse(cmbProgreso.SelectedValue.ToString ());
                 infoAcademic.Add(academico);
 
+              
+                mostrarIdioma.Clear();
+
+                foreach (var item in infoIdiom)
+                {
+                    IdiomaMostrar idiomaMostrar = new IdiomaMostrar();
+                    idiomaMostrar.IdiomaNombre = logicaPersona.ObtenerDescripcionIdioma(item.Idioma);
+                    idiomaMostrar.Nivel = ObtenerValorNivelById(item.Nivel);
+                    mostrarIdioma.Add(idiomaMostrar);
+                }
+
+           
 
                 foreach (var item in infoAcademic)
                 {
+                    NivelProgresoMostrar nivelProgresoMostrar = new NivelProgresoMostrar();
+                    nivelProgresoMostrar = logicaPersona.ObtenerDescripcionProgresoNivel(item.Nivel, item.Progreso);
+                    nivelProgresoMostrar.Insitutcion = item.Institucion.ToString();
+                    nivelProgresoMostrar.Titulo = item.Titulo.ToString();
+                    nivelProgresoMostrar.Ingreso = item.Ingreso.ToString();
+                    nivelProgresoMostrar.Egreso = item.Egreso.ToString();
+
+                    mostrarProgresoNivel.Add(nivelProgresoMostrar);
                     dt.Rows.Add(item);
                 }
 
                 dgvAcademico.DataSource = null;
 
-                dgvAcademico.DataSource = infoAcademic;
+                dgvAcademico.DataSource = mostrarProgresoNivel;
 
                 LimpiarControles(grpSuperior1);
 
@@ -1427,33 +1457,42 @@ namespace Vista
 
             if (!string.IsNullOrEmpty(cmbIdioma.Text) && !string.IsNullOrEmpty(nivelSeleccionado))
             {
+                IdiomaDto idioma = new IdiomaDto();
 
-                DataTable dt = new DataTable();
-            dt.Columns.Add("idioma", typeof(string));
-            dt.Columns.Add("nivel", typeof(string));
-          
+              idioma.Idioma = int.Parse(cmbIdioma.SelectedValue.ToString());
+              idioma.Nivel = ObtenerValorNivel(nivelSeleccionado);
+              
+              bool permitido = ValidarIdioma(idioma);
+                if (permitido)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("idioma", typeof(string));
+                    dt.Columns.Add("nivel", typeof(string));
+                    
 
-            IdiomaDto idioma = new IdiomaDto();
-           
-            idioma.Idioma = int.Parse(cmbIdioma.SelectedValue.ToString());
-            idioma.Nivel = ObtenerValorNivel(nivelSeleccionado);
-            infoIdiom.Add(idioma);
-         
-            foreach (var item in infoIdiom)
-            {
-                dt.Rows.Add(item);
-            }
+                    
+                    infoIdiom.Add(idioma);
+                    mostrarIdioma.Clear();
 
+                    foreach (var item in infoIdiom)
+                    {
+                        IdiomaMostrar idiomaMostrar = new IdiomaMostrar();
+                        idiomaMostrar.IdiomaNombre = logicaPersona.ObtenerDescripcionIdioma(item.Idioma);
+                        idiomaMostrar.Nivel = ObtenerValorNivelById(item.Nivel);
+                        mostrarIdioma.Add(idiomaMostrar);
+                    }
 
-            dgvIdioma.DataSource = null;
-            //Actualizar el DataGridView(si es necesario)
-            dgvIdioma.DataSource = infoIdiom;
-            
+                    dgvIdioma.DataSource = null;
+                    dgvIdioma.DataSource = mostrarIdioma;
 
-                // Cambiar el nombre de la segunda columna
-               
-                LimpiarControles(grpIdiomas);
-                LimpiarControles(grpNivelIdiomas);
+                    LimpiarControles(grpIdiomas);
+                    LimpiarControles(grpNivelIdiomas);
+                }
+                else
+                {
+                    MessageBox.Show("No se puede repetir el idioma.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+             
             }
             else
             {
@@ -1461,6 +1500,16 @@ namespace Vista
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        public bool ValidarIdioma(IdiomaDto idiomaDto)
+        {
+            foreach (var item in infoIdiom)
+            {
+                if (item.Idioma == idiomaDto.Idioma)
+                    return false;
+            }
+            return true;
         }
         private void btnEliminarIdioma_Click(object sender, EventArgs e)
         {
@@ -1496,6 +1545,23 @@ namespace Vista
                     return 4;
                 default:
                     return 0; // Valor predeterminado o error
+            }
+        }
+
+        private string ObtenerValorNivelById(int nivelSeleccionado)
+        {
+            switch (nivelSeleccionado)
+            {
+                case 1:
+                    return "Basico";
+                case 2:
+                    return "Intermedio";
+                case 3:
+                    return "Nativo";
+                case 4:
+                    return "Avanzado";
+                default:
+                    return null; // Valor predeterminado o error
             }
         }
 

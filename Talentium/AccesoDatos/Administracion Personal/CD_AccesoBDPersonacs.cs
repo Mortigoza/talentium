@@ -189,6 +189,26 @@ namespace AccesoDatos.Administracion_Personal
             return resultado;
         }
 
+        public DataTable ObtenerDescripcionIdioma (int id_idioma)
+        {
+            SqlParameter param1 = new SqlParameter("@id_idioma", id_idioma) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("ObtenerDescripcionIdioma_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        public DataTable ObtenerDescripcionProgresoNivel (int id_nivel, int id_progreso)
+        {
+            SqlParameter param1 = new SqlParameter("@id_nivel", id_nivel) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
+            DataTable resultado = EjecutarConsultas("ObtenerDescripcionProgresoNivel_sp", listaParametros.ToArray());
+
+            return resultado;
+
+        }
+
         //Modificar
         public DataTable ActualizarDatos (Persona modify )
         {

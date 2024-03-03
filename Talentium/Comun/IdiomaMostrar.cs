@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Comun
 {
-    public class IdiomaDto
+   public class IdiomaMostrar
     {
-        public int Idioma { get; set; }
-        public int Nivel { get; set; }
+        public string IdiomaNombre { get; set; }
+        public string Nivel { get; set; }
     }
 }
