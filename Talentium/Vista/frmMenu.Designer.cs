@@ -61,12 +61,13 @@
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraciónDeEntrevistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraciónDeAltaPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
             this.lblTiempoRestante = new System.Windows.Forms.Label();
+            this.recursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuracionDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuracionDeAltaDelPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -300,8 +301,7 @@
             this.perfilesToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.cambioDeContraseñaToolStripMenuItem,
-            this.configuraciónDeEntrevistasToolStripMenuItem,
-            this.configuraciónDeAltaPersonalToolStripMenuItem});
+            this.recursosToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
@@ -324,7 +324,7 @@
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
             this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.configuraciónToolStripMenuItem.Text = "Configuración";
+            this.configuraciónToolStripMenuItem.Text = "Seguridad";
             this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
             // 
             // cambioDeContraseñaToolStripMenuItem
@@ -333,20 +333,6 @@
             this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
             this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
             this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
-            // 
-            // configuraciónDeEntrevistasToolStripMenuItem
-            // 
-            this.configuraciónDeEntrevistasToolStripMenuItem.Name = "configuraciónDeEntrevistasToolStripMenuItem";
-            this.configuraciónDeEntrevistasToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.configuraciónDeEntrevistasToolStripMenuItem.Text = "Configuración de entrevistas";
-            this.configuraciónDeEntrevistasToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeEntrevistasToolStripMenuItem_Click);
-            // 
-            // configuraciónDeAltaPersonalToolStripMenuItem
-            // 
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Name = "configuraciónDeAltaPersonalToolStripMenuItem";
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Text = "Configuración de Alta Personal";
-            this.configuraciónDeAltaPersonalToolStripMenuItem.Click += new System.EventHandler(this.configuraciónDeAltaPersonalToolStripMenuItem_Click);
             // 
             // btnLogout
             // 
@@ -385,6 +371,29 @@
             this.lblTiempoRestante.TabIndex = 22;
             this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
             this.lblTiempoRestante.Visible = false;
+            // 
+            // recursosToolStripMenuItem
+            // 
+            this.recursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuracionDeToolStripMenuItem,
+            this.configuracionDeAltaDelPersonalToolStripMenuItem});
+            this.recursosToolStripMenuItem.Name = "recursosToolStripMenuItem";
+            this.recursosToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.recursosToolStripMenuItem.Text = "Recursos";
+            // 
+            // configuracionDeToolStripMenuItem
+            // 
+            this.configuracionDeToolStripMenuItem.Name = "configuracionDeToolStripMenuItem";
+            this.configuracionDeToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.configuracionDeToolStripMenuItem.Text = "Configuracion de Entrevistas";
+            this.configuracionDeToolStripMenuItem.Click += new System.EventHandler(this.configuracionDeToolStripMenuItem_Click);
+            // 
+            // configuracionDeAltaDelPersonalToolStripMenuItem
+            // 
+            this.configuracionDeAltaDelPersonalToolStripMenuItem.Name = "configuracionDeAltaDelPersonalToolStripMenuItem";
+            this.configuracionDeAltaDelPersonalToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.configuracionDeAltaDelPersonalToolStripMenuItem.Text = "Configuracion de Alta del Personal";
+            this.configuracionDeAltaDelPersonalToolStripMenuItem.Click += new System.EventHandler(this.configuracionDeAltaDelPersonalToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -448,11 +457,12 @@
         private System.Windows.Forms.ToolStripMenuItem asignarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeCapacitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraciónDeEntrevistasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraciónDeAltaPersonalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.Timer tmrMouse;
         private System.Windows.Forms.Timer tmrMouseQuieto;
         private System.Windows.Forms.Label lblTiempoRestante;
+        private System.Windows.Forms.ToolStripMenuItem recursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracionDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracionDeAltaDelPersonalToolStripMenuItem;
     }
 }

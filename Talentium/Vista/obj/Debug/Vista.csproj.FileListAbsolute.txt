@@ -478,8 +478,6 @@ C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vis
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.resources
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
-C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
-C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmCategorias.resources
@@ -655,3 +653,11 @@ C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\o
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\bin\Debug\itextsharp.dll
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\bin\Debug\itextsharp.xml
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmCambioPass.resources
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmReporteNominaSalarial.resources
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources

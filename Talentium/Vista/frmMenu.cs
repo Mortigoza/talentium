@@ -310,23 +310,13 @@ namespace Vista
             CN_LogicaLogout logout = new CN_LogicaLogout();
             logout.Logout(this);
         }
-
         private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmConfigEntrevistas frm = new frmConfigEntrevistas();
-            frm.ShowDialog();
-            this.Show();
         }
 
         private void configuraciónDeAltaPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmConfigAltaPersonal frm = new frmConfigAltaPersonal();
-            frm.ShowDialog();
-            this.Show();
         }
-
         private void asistenciasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -349,6 +339,22 @@ namespace Vista
         {
             this.Hide();
             frmReporteNominaSalarial frm = new frmReporteNominaSalarial();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void configuracionDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConfigEntrevistas frm = new frmConfigEntrevistas();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void configuracionDeAltaDelPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConfigAltaPersonal frm = new frmConfigAltaPersonal();
             frm.ShowDialog();
             this.Show();
         }
