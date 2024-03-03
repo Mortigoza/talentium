@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaPersonal));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPersonales = new System.Windows.Forms.TabPage();
+            this.btnPdf = new System.Windows.Forms.Button();
             this.lblFaltanCampos = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dttFechaAlta = new System.Windows.Forms.DateTimePicker();
@@ -259,6 +260,7 @@
             // 
             // tabPersonales
             // 
+            this.tabPersonales.Controls.Add(this.btnPdf);
             this.tabPersonales.Controls.Add(this.lblFaltanCampos);
             this.tabPersonales.Controls.Add(this.groupBox7);
             this.tabPersonales.Controls.Add(this.btnContinuar1);
@@ -276,6 +278,16 @@
             this.tabPersonales.Text = "Datos Personales";
             this.tabPersonales.UseVisualStyleBackColor = true;
             this.tabPersonales.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.Location = new System.Drawing.Point(1077, 602);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(88, 42);
+            this.btnPdf.TabIndex = 46;
+            this.btnPdf.Text = "PDF";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click_1);
             // 
             // lblFaltanCampos
             // 
@@ -2777,5 +2789,6 @@
         private System.Windows.Forms.Button btnAtrasLaboral;
         public System.Windows.Forms.DateTimePicker dttFechaAlta;
         public System.Windows.Forms.ComboBox cmbConvenio;
+        private System.Windows.Forms.Button btnPdf;
     }
 }

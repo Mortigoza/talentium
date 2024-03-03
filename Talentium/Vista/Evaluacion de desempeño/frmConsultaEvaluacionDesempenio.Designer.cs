@@ -51,6 +51,7 @@
             this.DesempEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.descargarExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -266,11 +267,22 @@
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos del empleado";
             // 
+            // descargarExcel
+            // 
+            this.descargarExcel.Location = new System.Drawing.Point(864, 375);
+            this.descargarExcel.Name = "descargarExcel";
+            this.descargarExcel.Size = new System.Drawing.Size(90, 43);
+            this.descargarExcel.TabIndex = 36;
+            this.descargarExcel.Text = "Descargar Excel";
+            this.descargarExcel.UseVisualStyleBackColor = true;
+            this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click);
+            // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 430);
+            this.Controls.Add(this.descargarExcel);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCantidadEval);
@@ -320,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Disciplina;
         private System.Windows.Forms.DataGridViewTextBoxColumn RelSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesempEquipo;
+        private System.Windows.Forms.Button descargarExcel;
     }
 }

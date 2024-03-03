@@ -19,6 +19,25 @@ namespace AccesoDatos
             return resultado;
         }
 
+        public DataTable Areas()
+        {
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
+            DataTable resultado = EjecutarConsultas("consultar_areas_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
+        //traer puesto
+        public DataTable Puestos(int id)
+        {
+            SqlParameter param1 = new SqlParameter("@id_areas", id) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("consultarPuestos_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
+
 
         public DataTable ObtenerCategoriaPorId(int id)
         {
@@ -65,6 +84,17 @@ namespace AccesoDatos
             parametros.Add(new SqlParameter("@id_convenio", id_convenio));
             DataTable dt = EjecutarConsultas("EliminarConvenio_sp", parametros.ToArray());
             return dt; 
+        }
+
+        public DataTable ConsultarConveniosPersonas(int id_area, int id_puesto, int id_convenio, string cuil)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_area", id_area));
+            parametros.Add(new SqlParameter("@id_puesto", id_puesto));
+            parametros.Add(new SqlParameter("@id_convenio", id_convenio));
+            parametros.Add(new SqlParameter("@Cuil", cuil));
+            DataTable dt = EjecutarConsultas("ObtenerPersonaPorConvenio_sp", parametros.ToArray());
+            return dt;
         }
     }
 }

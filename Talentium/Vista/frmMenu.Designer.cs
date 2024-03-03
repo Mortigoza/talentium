@@ -266,18 +266,21 @@
             this.asistenciasToolStripMenuItem1.Name = "asistenciasToolStripMenuItem1";
             this.asistenciasToolStripMenuItem1.Size = new System.Drawing.Size(256, 26);
             this.asistenciasToolStripMenuItem1.Text = "Asistencias";
+            this.asistenciasToolStripMenuItem1.Click += new System.EventHandler(this.asistenciasToolStripMenuItem1_Click);
             // 
             // desempeñoToolStripMenuItem
             // 
             this.desempeñoToolStripMenuItem.Name = "desempeñoToolStripMenuItem";
             this.desempeñoToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.desempeñoToolStripMenuItem.Text = "Desempeño";
+            this.desempeñoToolStripMenuItem.Click += new System.EventHandler(this.desempeñoToolStripMenuItem_Click);
             // 
             // nóminaSalarialToolStripMenuItem1
             // 
             this.nóminaSalarialToolStripMenuItem1.Name = "nóminaSalarialToolStripMenuItem1";
             this.nóminaSalarialToolStripMenuItem1.Size = new System.Drawing.Size(256, 26);
             this.nóminaSalarialToolStripMenuItem1.Text = "Nómina salarial";
+            this.nóminaSalarialToolStripMenuItem1.Click += new System.EventHandler(this.nóminaSalarialToolStripMenuItem1_Click);
             // 
             // certificacionDeServiciosToolStripMenuItem
             // 
@@ -346,8 +349,8 @@
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(125)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogout.Location = new System.Drawing.Point(937, 505);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(1249, 622);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(143, 44);
             this.btnLogout.TabIndex = 21;

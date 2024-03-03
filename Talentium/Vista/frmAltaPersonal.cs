@@ -10,7 +10,12 @@ using System.Windows.Forms;
 using Comun;
 using LogicaNegocio.Administracion_Del_Personal;
 using LogicaNegocio;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 using System.IO;
+//using Image = System.Drawing.Image;
+
 
 namespace Vista
 {
@@ -23,10 +28,12 @@ namespace Vista
         private bool esCandidato;
         private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
+        private byte[] imagenByte;
         //variables
         private bool inicial = true;
         private int infoLaborales = 0;
         private int infoAcademicos = 1;
+
         private int nivelEspaniol = -1;
         private int nivelIngles = -1;
         private int imagenBytes;
@@ -667,7 +674,7 @@ namespace Vista
                 {
                     // Lee la imagen seleccionada
                     string rutaImagen = openFileDialog.FileName;
-                    Image imagen = Image.FromFile(rutaImagen);
+                    System.Drawing.Image imagen = System.Drawing.Image.FromFile(rutaImagen);
 
                     // Muestra la imagen en el PictureBox
                     pctFoto.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1153,11 +1160,12 @@ namespace Vista
             fa = insert.fecha_alta;
 
             if (insert.foto_perfil != null && insert.foto_perfil.Length > 0)
+
             {
-                byte[] imagenBytes = (byte[])insert.foto_perfil;
-                using (MemoryStream stream = new MemoryStream(imagenBytes))
+                imagenByte = (byte[])insert.foto_perfil;
+                using (MemoryStream stream = new MemoryStream(imagenByte))
                 {
-                    Image imagen = Image.FromStream(stream);
+                    System.Drawing.Image imagen = System.Drawing.Image.FromStream(stream);
                     pctFoto.Image = imagen;
                     pctFoto.SizeMode = PictureBoxSizeMode.Zoom;
                 }
@@ -1366,6 +1374,10 @@ namespace Vista
 
         }
 
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+        }
+
         private void btnAtrasLaboral_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabAcademicos;
@@ -1379,6 +1391,121 @@ namespace Vista
         private void dtpFechaDeNacimiento_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPdf_Click_1(object sender, EventArgs e)
+        {
+
+
+            try
+            {
+                /* string iniciofecha = dtpFecDesde.Value.ToString("dd-MM-yyyy");
+                 string finfecha = dtpFecHasta.Value.ToString("dd-MM-yyyy");*/
+
+                SaveFileDialog Guardar = new SaveFileDialog();
+                Guardar.FileName = string.Format("Reporte " + DateTime.Now.ToString("ddMMyyyy") + ".pdf");
+
+                string paginaHtmlTexto = Properties.Resources.PantillaEmpleadoPdf.ToString();
+
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMYAPE", txtNombres.Text.ToString() + " " + txtApellidos.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CUIL", txtCuitCuil.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@DOC", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@TIPODOC", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@GENERO", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHANAC", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ECIVIL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@HIJOS", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NAC", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@EMAIL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@TEL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTERTEL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMALTERTEL", txtNombres.Text.ToString());
+
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PROV", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PART", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@LOC", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CODPOSTAL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CALLE", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTURA", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PISO", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@DEPTO", txtNombres.Text.ToString());
+
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@AREA", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CONVENIO", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAING", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO2", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@EMPRESA", txtCuitCuil.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@DURACION", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ESP", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ING", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAEMIT", txtNombres.Text.ToString());
+
+
+
+                /*  string filas = string.Empty;
+                  for (int i = 0; i < dgvListaEventos.RowCount - 1; i++)
+                  {
+                      filas += "<tr>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[0].Value.ToString() + "</td>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[1].Value.ToString() + "</td>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[2].Value.ToString() + "</td>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[3].Value.ToString() + "</td>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[4].Value.ToString() + "</td>";
+                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[5].Value.ToString() + "</td>";
+                      filas += "</tr>";
+
+                  }
+
+                  paginaHtmlTexto = paginaHtmlTexto.Replace("@FILAS", filas);*/
+
+                if (Guardar.ShowDialog() == DialogResult.OK)
+                {
+
+                    using (FileStream stream = new FileStream(Guardar.FileName, FileMode.Create))
+                    {
+                        Document PDF = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                        PdfWriter writer = PdfWriter.GetInstance(PDF, stream);
+                        PDF.Open();
+
+                        PDF.Add(new Phrase(""));
+                        //se agrega la imagen al pdf
+                        using (MemoryStream streamm = new MemoryStream(imagenByte))
+                        {
+                            System.Drawing.Image imagen = System.Drawing.Image.FromStream(streamm);
+                            // Convertir la imagen de System.Drawing.Image a iTextSharp.text.Image
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagen, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                            img.ScaleToFit(80, 80);
+                            float x = PDF.PageSize.Width - PDF.RightMargin - img.ScaledWidth;
+                            float y = PDF.PageSize.Height - PDF.TopMargin - img.ScaledHeight;
+
+                            // Establecer la posición absoluta de la imagen
+                            img.SetAbsolutePosition(x, y);
+                            //img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                            //img.SetAbsolutePosition(PDF.RightMargin, PDF.Top -70);
+                            PDF.Add(img);
+
+                        }
+
+
+                        using (StringReader sr = new StringReader(paginaHtmlTexto))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, PDF, sr);
+                        }
+
+                        PDF.Close();
+                        stream.Close();
+
+                    }
+                }
+                MessageBox.Show("La descarga fue realizada con éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar descargar el Pdf" + ex);
+            }
         }
     }
 }

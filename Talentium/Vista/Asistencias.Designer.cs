@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.modiicacion = new System.Windows.Forms.TabControl();
+            this.ControlAsist = new System.Windows.Forms.TabControl();
             this.tbpAlta = new System.Windows.Forms.TabPage();
             this.grbPersonalAlta = new System.Windows.Forms.GroupBox();
             this.dataGridAlta = new System.Windows.Forms.DataGridView();
+            this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltrosAlta = new System.Windows.Forms.GroupBox();
             this.lblErrorPuesto = new System.Windows.Forms.Label();
             this.lblErrorArea = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.dataGridModificar = new System.Windows.Forms.DataGridView();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltroMod = new System.Windows.Forms.GroupBox();
             this.periodo = new System.Windows.Forms.CheckBox();
             this.lblErrorPuestoMod = new System.Windows.Forms.Label();
@@ -63,10 +66,7 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.lblCuilMod = new System.Windows.Forms.Label();
-            this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.modiicacion.SuspendLayout();
+            this.ControlAsist.SuspendLayout();
             this.tbpAlta.SuspendLayout();
             this.grbPersonalAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).BeginInit();
@@ -77,25 +77,25 @@
             this.grbFiltroMod.SuspendLayout();
             this.SuspendLayout();
             // 
-            // modiicacion
+            // ControlAsist
             // 
-            this.modiicacion.AccessibleName = "";
-            this.modiicacion.Controls.Add(this.tbpAlta);
-            this.modiicacion.Controls.Add(this.tbpModificar);
-            this.modiicacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modiicacion.Location = new System.Drawing.Point(0, 0);
-            this.modiicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.modiicacion.Name = "modiicacion";
-            this.modiicacion.SelectedIndex = 0;
-            this.modiicacion.Size = new System.Drawing.Size(1469, 665);
-            this.modiicacion.TabIndex = 7;
+            this.ControlAsist.AccessibleName = "";
+            this.ControlAsist.Controls.Add(this.tbpAlta);
+            this.ControlAsist.Controls.Add(this.tbpModificar);
+            this.ControlAsist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlAsist.Location = new System.Drawing.Point(0, 0);
+            this.ControlAsist.Margin = new System.Windows.Forms.Padding(4);
+            this.ControlAsist.Name = "ControlAsist";
+            this.ControlAsist.SelectedIndex = 0;
+            this.ControlAsist.Size = new System.Drawing.Size(1469, 665);
+            this.ControlAsist.TabIndex = 7;
             // 
             // tbpAlta
             // 
             this.tbpAlta.Controls.Add(this.grbPersonalAlta);
             this.tbpAlta.Controls.Add(this.grbFiltrosAlta);
             this.tbpAlta.Location = new System.Drawing.Point(4, 25);
-            this.tbpAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpAlta.Margin = new System.Windows.Forms.Padding(4);
             this.tbpAlta.Name = "tbpAlta";
             this.tbpAlta.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpAlta.Size = new System.Drawing.Size(1461, 636);
@@ -108,10 +108,10 @@
             // 
             this.grbPersonalAlta.Controls.Add(this.dataGridAlta);
             this.grbPersonalAlta.Location = new System.Drawing.Point(404, 31);
-            this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grbPersonalAlta.Name = "grbPersonalAlta";
-            this.grbPersonalAlta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbPersonalAlta.Size = new System.Drawing.Size(1043, 468);
+            this.grbPersonalAlta.Padding = new System.Windows.Forms.Padding(4);
+            this.grbPersonalAlta.Size = new System.Drawing.Size(811, 468);
             this.grbPersonalAlta.TabIndex = 11;
             this.grbPersonalAlta.TabStop = false;
             this.grbPersonalAlta.Text = "Personal";
@@ -133,6 +133,18 @@
             this.dataGridAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Abrir
+            // 
+            this.Abrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Abrir.HeaderText = "Abrir";
+            this.Abrir.MinimumWidth = 6;
+            this.Abrir.Name = "Abrir";
+            this.Abrir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abrir.Text = "Abrir";
+            this.Abrir.ToolTipText = "Click";
+            this.Abrir.UseColumnTextForButtonValue = true;
+            this.Abrir.Width = 80;
+            // 
             // grbFiltrosAlta
             // 
             this.grbFiltrosAlta.Controls.Add(this.lblErrorPuesto);
@@ -145,9 +157,9 @@
             this.grbFiltrosAlta.Controls.Add(this.lblAreaAlta);
             this.grbFiltrosAlta.Controls.Add(this.areasAltas);
             this.grbFiltrosAlta.Location = new System.Drawing.Point(9, 31);
-            this.grbFiltrosAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbFiltrosAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grbFiltrosAlta.Name = "grbFiltrosAlta";
-            this.grbFiltrosAlta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbFiltrosAlta.Padding = new System.Windows.Forms.Padding(4);
             this.grbFiltrosAlta.Size = new System.Drawing.Size(387, 468);
             this.grbFiltrosAlta.TabIndex = 10;
             this.grbFiltrosAlta.TabStop = false;
@@ -198,13 +210,16 @@
             // 
             // buscarAlta
             // 
+            this.buscarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.buscarAlta.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buscarAlta.Location = new System.Drawing.Point(229, 192);
             this.buscarAlta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buscarAlta.Name = "buscarAlta";
             this.buscarAlta.Size = new System.Drawing.Size(81, 32);
             this.buscarAlta.TabIndex = 13;
             this.buscarAlta.Text = "Buscar";
-            this.buscarAlta.UseVisualStyleBackColor = true;
+            this.buscarAlta.UseVisualStyleBackColor = false;
             this.buscarAlta.Click += new System.EventHandler(this.button1_Click);
             // 
             // cuilAltas
@@ -251,7 +266,7 @@
             this.tbpModificar.Controls.Add(this.grbInasistenciasMod);
             this.tbpModificar.Controls.Add(this.grbFiltroMod);
             this.tbpModificar.Location = new System.Drawing.Point(4, 25);
-            this.tbpModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpModificar.Margin = new System.Windows.Forms.Padding(4);
             this.tbpModificar.Name = "tbpModificar";
             this.tbpModificar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbpModificar.Size = new System.Drawing.Size(1461, 636);
@@ -264,23 +279,26 @@
             this.grbInasistenciasMod.Controls.Add(this.btnExcel);
             this.grbInasistenciasMod.Controls.Add(this.dataGridModificar);
             this.grbInasistenciasMod.Location = new System.Drawing.Point(404, 18);
-            this.grbInasistenciasMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbInasistenciasMod.Margin = new System.Windows.Forms.Padding(4);
             this.grbInasistenciasMod.Name = "grbInasistenciasMod";
-            this.grbInasistenciasMod.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbInasistenciasMod.Size = new System.Drawing.Size(1043, 466);
+            this.grbInasistenciasMod.Padding = new System.Windows.Forms.Padding(4);
+            this.grbInasistenciasMod.Size = new System.Drawing.Size(801, 466);
             this.grbInasistenciasMod.TabIndex = 13;
             this.grbInasistenciasMod.TabStop = false;
             this.grbInasistenciasMod.Text = "Inasistencias";
             // 
             // btnExcel
             // 
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnExcel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExcel.Location = new System.Drawing.Point(645, 395);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(128, 64);
+            this.btnExcel.Size = new System.Drawing.Size(115, 49);
             this.btnExcel.TabIndex = 14;
             this.btnExcel.Text = "Descargar Excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // dataGridModificar
@@ -301,6 +319,31 @@
             this.dataGridModificar.TabIndex = 12;
             this.dataGridModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
             // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Modificar.Text = "Abrir";
+            this.Modificar.ToolTipText = "Abrir";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 68;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 80;
+            // 
             // grbFiltroMod
             // 
             this.grbFiltroMod.Controls.Add(this.periodo);
@@ -320,9 +363,9 @@
             this.grbFiltroMod.Controls.Add(this.CuilMod);
             this.grbFiltroMod.Controls.Add(this.lblCuilMod);
             this.grbFiltroMod.Location = new System.Drawing.Point(9, 18);
-            this.grbFiltroMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbFiltroMod.Margin = new System.Windows.Forms.Padding(4);
             this.grbFiltroMod.Name = "grbFiltroMod";
-            this.grbFiltroMod.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbFiltroMod.Padding = new System.Windows.Forms.Padding(4);
             this.grbFiltroMod.Size = new System.Drawing.Size(387, 466);
             this.grbFiltroMod.TabIndex = 12;
             this.grbFiltroMod.TabStop = false;
@@ -460,13 +503,16 @@
             // 
             // buscarMod
             // 
+            this.buscarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.buscarMod.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buscarMod.Location = new System.Drawing.Point(239, 338);
             this.buscarMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buscarMod.Name = "buscarMod";
             this.buscarMod.Size = new System.Drawing.Size(81, 32);
             this.buscarMod.TabIndex = 13;
             this.buscarMod.Text = "Buscar";
-            this.buscarMod.UseVisualStyleBackColor = true;
+            this.buscarMod.UseVisualStyleBackColor = false;
             this.buscarMod.Click += new System.EventHandler(this.button2_Click);
             // 
             // CuilMod
@@ -487,54 +533,17 @@
             this.lblCuilMod.TabIndex = 13;
             this.lblCuilMod.Text = "CUIL:";
             // 
-            // Abrir
-            // 
-            this.Abrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Abrir.HeaderText = "Abrir";
-            this.Abrir.MinimumWidth = 6;
-            this.Abrir.Name = "Abrir";
-            this.Abrir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Abrir.Text = "Abrir";
-            this.Abrir.ToolTipText = "Click";
-            this.Abrir.UseColumnTextForButtonValue = true;
-            this.Abrir.Width = 80;
-            // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Modificar.Text = "Abrir";
-            this.Modificar.ToolTipText = "Abrir";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 68;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 80;
-            // 
             // Asistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1469, 665);
-            this.Controls.Add(this.modiicacion);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.ControlAsist);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Asistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asistencias";
-            this.modiicacion.ResumeLayout(false);
+            this.ControlAsist.ResumeLayout(false);
             this.tbpAlta.ResumeLayout(false);
             this.grbPersonalAlta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlta)).EndInit();
@@ -551,7 +560,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl modiicacion;
+        private System.Windows.Forms.TabControl ControlAsist;
         private System.Windows.Forms.TabPage tbpAlta;
         private System.Windows.Forms.GroupBox grbPersonalAlta;
         private System.Windows.Forms.DataGridView dataGridAlta;

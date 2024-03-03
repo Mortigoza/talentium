@@ -267,5 +267,31 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void asistenciasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Asistencias frm = new Asistencias();
+            frm.RecibirDatos(true);
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void desempeñoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaEvaluacionDesempenio frm = new frmConsultaEvaluacionDesempenio();
+            frm.RecibirDatos(true);
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void nóminaSalarialToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmReporteNominaSalarial frm = new frmReporteNominaSalarial();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

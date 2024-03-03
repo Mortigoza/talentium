@@ -63,7 +63,7 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap data_management_data_processing_setting_configuration_gear_icon_190642 {
+        public static System.Drawing.Bitmap data_management_data_processing_setting_configuration_gear_icon_190642 {
             get {
                 object obj = ResourceManager.GetObject("data_management_data_processing_setting_configuration_gear_icon_190642", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fondo_pared_textura_blanca2 {
+        public static System.Drawing.Bitmap fondo_pared_textura_blanca2 {
             get {
                 object obj = ResourceManager.GetObject("fondo-pared-textura-blanca2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,9 +81,41 @@ namespace Vista.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Title of the document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    
+        ///    &lt;table style=&quot;width:100%&quot;&gt;
+        ///  [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        public static string PantillaEmpleadoPdf {
+            get {
+                return ResourceManager.GetString("PantillaEmpleadoPdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824 {
+        public static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_210824 {
             get {
                 object obj = ResourceManager.GetObject("preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_21" +
                         "0824", resourceCulture);
@@ -94,7 +126,7 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241 {
+        public static System.Drawing.Bitmap preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_2108241 {
             get {
                 object obj = ResourceManager.GetObject("preferences_options_setting_ui_cogwheel_configuration_gear_wheel_settings_icon_21" +
                         "08241", resourceCulture);
