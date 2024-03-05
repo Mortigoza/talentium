@@ -367,7 +367,6 @@ C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\D
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\maira\OneDrive\Escritorio\talentium2024\talentium\Talentium\Vista\obj\Debug\Vista.pdb
-D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\Vista.exe.config
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\Vista.exe
@@ -659,3 +658,4 @@ D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debu
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
 D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources
+D:\Users\Tutoz\Desktop\Programacion\Talentium\talentium\Talentium\Vista\bin\Debug\LogicaNegocio.dll.config

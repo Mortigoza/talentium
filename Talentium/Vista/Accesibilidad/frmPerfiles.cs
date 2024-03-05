@@ -136,7 +136,7 @@ namespace Vista.Accesibilidad
                         }
                         try
                         {
-                            CN_AltaPerfil ap = new CN_AltaPerfil();
+                            CN_LogicaPerfiles ap = new CN_LogicaPerfiles();
                             ap.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
@@ -167,8 +167,8 @@ namespace Vista.Accesibilidad
                         }
                         try
                         {
-                            CN_UpPerfil up = new CN_UpPerfil();
-                            up.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                            cn_perfil.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
@@ -257,10 +257,10 @@ namespace Vista.Accesibilidad
             DialogResult msgBox = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dtgPerfiles.Rows.Count > 0 & msgBox == DialogResult.Yes)
             {
-                CN_BajaPerfil bp = new CN_BajaPerfil();
-                if (bp.ConsultarPerfil(_index) == 0)
+                CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                if (cn_perfil.ConsultarPerfil(_index) == 0)
                 {
-                    bp.BajaPerfil(_index);
+                    cn_perfil.BajaPerfil(_index);
                     refreshDtg();
                 }
                 else
