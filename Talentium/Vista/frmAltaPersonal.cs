@@ -440,6 +440,7 @@ namespace Vista
                     modify.telefono_alternativo = txtTelefonoAlternativo.Text;
                     modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                     modify.contacto = txtContacto.Text;
+                    modify.candidato = false;
 
                     //ACADEMICOS
 
@@ -545,13 +546,6 @@ namespace Vista
                         lblFaltanCampos2.Visible = false;
                         logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom, infoLabora, infoAcademic);
                         logicaPersona.ActualizarDatos(modify);
-                        //logicaPersona.ActualizarDatosAcademicos(modify,cantidad);
-                        //logicaPersona.ActualizarDatosLaborales(modify,cantidad);
-                        //logicaPersona.ActualizarIdioma(modify, id_persona);
-                        if (esReactivicacion == true)
-                        {
-                            logicaPersona.ReactivarPersona(modify.id_persona);
-                        }
 
                         MessageBox.Show("El empleado ha sido ingresado correctamente.");
                         this.Dispose();

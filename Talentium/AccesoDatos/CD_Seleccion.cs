@@ -68,32 +68,6 @@ namespace AccesoDatos
             DataTable modifCandidato = EjecutarConsultas("modificar_candidato_sp", listaParametros.ToArray(), true);
             return modifCandidato.Rows.Count != 0;
         }
-
-        public DataTable ConsultarProvincia()
-        {
-            DataTable provincias = EjecutarConsultasSinParam("consultar_provincias_sp");
-
-            return provincias;
-        }
-
-        public DataTable ConsultarPartido(int id_provincia)
-        {
-            SqlParameter param1 = new SqlParameter("@id_provincia", id_provincia) { SqlDbType = SqlDbType.Int };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-            DataTable partido = EjecutarConsultas("consultar_partido_sp", listaParametros.ToArray());
-
-            return partido;
-        }
-
-        public DataTable ConsultarLocalidad(int id_partido)
-        {
-            SqlParameter param1 = new SqlParameter("@idPartido", id_partido) { SqlDbType = SqlDbType.Int };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
-            DataTable localidad = EjecutarConsultas("consultar_localidad_sp", listaParametros.ToArray());
-
-            return localidad;
-        }
-
         public DataTable ConsultarCandidatoFiltros(string cuil)
         {
             SqlParameter param1 = new SqlParameter("@cuit_cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
@@ -139,6 +113,13 @@ namespace AccesoDatos
 
             return datosEtapas;
         }
+        public int ConsultarIDporCuil(string cuil)
+        {
+            SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable idPersona = EjecutarConsultas("obtener_idPersona_cuil_sp", listaParametros.ToArray());
 
+            return Convert.ToInt32(idPersona.Rows[0]["id_persona"]);
+        }
     }
 }

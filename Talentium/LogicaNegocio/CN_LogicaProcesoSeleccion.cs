@@ -50,5 +50,9 @@ namespace LogicaNegocio
         {
             return entrevistaDatos.ObtenerIDEntrevistas(entrevista);
         }
+        public int ObtenerIDPersona(string cuil)
+        {
+            return seleccionDatos.ConsultarIDporCuil(cuil);
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace Vista
             dtgCandidatos.AllowUserToAddRows = false;
             dtgCandidatos.MultiSelect = false;
             dtgCandidatos.Enabled = false;
+            btnModificarCandidato.Enabled = false;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             int filas = entrevista.CantidadEntrevista();
             dtgCandidatos.Rows.Add(filas);
@@ -82,11 +83,21 @@ namespace Vista
                 DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
                 if (DTCandidatos != null && DTCandidatos.Rows.Count > 0)
                 {
+                    btnModificarCandidato.Enabled = true;
                     bool todasCoinciden = true;
                     int numFilasDataGridView = dtgCandidatos.Rows.Count;
 
                     for (int i = 0; i < DTCandidatos.Rows.Count; i++)
                     {
+                        if(string.IsNullOrEmpty(DTCandidatos.Rows[i]["Estado"].ToString()) ||
+                            string.IsNullOrEmpty(DTCandidatos.Rows[i]["Fecha_Entrevista"].ToString()) ||
+                            string.IsNullOrEmpty(DTCandidatos.Rows[i]["Entrevistador"].ToString()))
+                        {
+                            // Dejar los campos de Estado, Fecha_Entrevista y Entrevistador vacíos
+                            DTCandidatos.Rows[i]["Estado"] = DBNull.Value;
+                            DTCandidatos.Rows[i]["Fecha_Entrevista"] = DBNull.Value;
+                            DTCandidatos.Rows[i]["Entrevistador"] = DBNull.Value;
+                        }
                         if (i < numFilasDataGridView)
                         {
                             string etapaDataTable = DTCandidatos.Rows[i]["Etapa"].ToString();
@@ -143,14 +154,18 @@ namespace Vista
                     lblApellidoLlenar.Text = DTCandidatos.Rows[0]["Apellido"].ToString();
                     lblCuilLlenar.Text = DTCandidatos.Rows[0]["Cuit"].ToString();
 
-                    if (!todasCoinciden)
-                    {
-                        MessageBox.Show("Las etapas no coinciden. No se puede completar el DataGridView.");
-                    }
+                    //if (!todasCoinciden)
+                    //{
+                    //    MessageBox.Show("Las etapas no coinciden. No se puede completar el DataGridView.");
+                    //}
                 }
                 else
                 {
-                    MessageBox.Show("No hay resultados que coincidan con la búsqueda.");
+                    if (!string.IsNullOrEmpty(txtCuilCuit.Text))
+                    {
+                        MessageBox.Show("El candidato aún no ha empezado el proceso de selección", "Aviso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             if (dtgCandidatos.Rows.Count > 0)
@@ -203,16 +218,17 @@ namespace Vista
         {
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
-                object fechaEntrevista = dtgCandidatos.SelectedRows[0].Cells["Fecha_Entrevista"].Value;
+                btnEtapas.Enabled = true;
+                //object fechaEntrevista = dtgCandidatos.SelectedRows[0].Cells["Fecha_Entrevista"].Value;
 
-                if (fechaEntrevista == null || fechaEntrevista == DBNull.Value || string.IsNullOrWhiteSpace(fechaEntrevista.ToString()))
-                {
-                    btnEtapas.Enabled = false;
-                }
-                else
-                {
-                    btnEtapas.Enabled = true;
-                }
+                //if (fechaEntrevista == null || fechaEntrevista == DBNull.Value || string.IsNullOrWhiteSpace(fechaEntrevista.ToString()))
+                //{
+                //    btnEtapas.Enabled = false;
+                //}
+                //else
+                //{
+                //    btnEtapas.Enabled = true;
+                //}
             }
             else
             {
@@ -223,8 +239,9 @@ namespace Vista
         {
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
-                DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-                int id = Convert.ToInt32(seleccionado.Cells["ID"].Value);
+                int id = proceso.ObtenerIDPersona(txtCuilCuit.Text);
+                //DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
+                //int id = Convert.ToInt32(seleccionado.Cells["ID"].Value);
                 frmEntrevistaPreocupacionalCapacitacion formularioPestañas = new frmEntrevistaPreocupacionalCapacitacion();
                 MostrarFormularioPestañas(formularioPestañas, id);
             }
@@ -326,9 +343,6 @@ namespace Vista
             altaEmpleado.dttFechaAlta.MaxDate = DateTime.Now;
             altaEmpleado.dttFechaAlta.Value = DateTime.Now;
             altaEmpleado.cmbConvenio.Enabled = true;
-            
-            //altaEmpleado.btnGuardar.Name = "btnIngresarEmp";
-            //altaEmpleado.btnGuardar.Text = "Ingresar Empleado";
             altaEmpleado.Show();
         }
         private void frmConsultaProcesoDeSeleccion_Load(object sender, EventArgs e)
