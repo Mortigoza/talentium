@@ -44,7 +44,7 @@ namespace LogicaNegocio
         public string  Enviar(int id, string destEmail, string codGenerado, DateTime fhCaducidad)
         {
             // Configura la información del remitente y destinatario
-            string fromEmail = "mairaaracelirodriguez2001@gmail.com";
+            string fromEmail = "talentiumteam@gmail.com";
             string toEmail = destEmail;
             string subject = "Recupero de contraseña";
             string body = "El código para recuperar la contraseña es: "+codGenerado+"\n Porfavor recuerde que el codigo es valido durante 1 hora.";
@@ -52,8 +52,8 @@ namespace LogicaNegocio
             // Configura las credenciales del servidor SMTP
             string smtpServer = "smtp.gmail.com";
             int smtpPort = 587;
-            const string smtpUsername = "mairaaracelirodriguez2001@gmail.com";
-            const string smtpPassword = "hatongsavmlrtbok";
+            const string smtpUsername = "talentiumteam@gmail.com";
+            const string smtpPassword = "Admin1234_";
 
             // Crea el objeto SmtpClient
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
@@ -83,7 +83,7 @@ namespace LogicaNegocio
         public string EnviarContraseña(string destEmail, string psw)
         {
             // Configura la información del remitente y destinatario
-            string fromEmail = "mairaaracelirodriguez2001@gmail.com";
+            string fromEmail = "talentiumteam@gmail.com";
             string toEmail = destEmail;
             string subject = "Usuario Talentium";
             string body = $"Tu contraseña del sistema Talentium es: {psw}";
@@ -91,8 +91,8 @@ namespace LogicaNegocio
             // Configura las credenciales del servidor SMTP
             string smtpServer = "smtp.gmail.com";
             int smtpPort = 587;
-            const string smtpUsername = "mairaaracelirodriguez2001@gmail.com";
-            const string smtpPassword = "hatongsavmlrtbok";
+            const string smtpUsername = "talentiumteam@gmail.com";
+            const string smtpPassword = "Admin1234_";
 
             // Crea el objeto SmtpClient
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))

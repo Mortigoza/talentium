@@ -35,6 +35,10 @@ namespace LogicaNegocio.Accesibilidad
             entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
             return true;
         }
+        public bool EntrevistaAsociadaAPersona(int id_entrevista)
+        {
+            return entrevistaDatos.ConsultarEntrevistaConPersona(id_entrevista);
+        }
         public bool EliminarEntrevista(int id_entrevista)
         {
             return entrevistaDatos.EliminarEntrevista(id_entrevista);

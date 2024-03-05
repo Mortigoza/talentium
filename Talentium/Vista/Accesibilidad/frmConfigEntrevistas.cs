@@ -146,34 +146,58 @@ namespace Vista.Accesibilidad
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
-            int idRegistroSeleccionado = Convert.ToInt32(filaSeleccionada.Cells["id_entrevista"].Value);
-
             if (dtgEntrevistas.SelectedRows.Count > 0)
             {
-                DialogResult resultado = MessageBox.Show("¿Queres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                int id_entrevista = Convert.ToInt32(dtgEntrevistas.SelectedCells[0].Value);
+                if (logicaEntrevista.EntrevistaAsociadaAPersona(id_entrevista) == true)
+                {
+                    MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
+                }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
 
-                if (resultado == DialogResult.OK)
-                {
-                    if (logicaEntrevista.EliminarEntrevista(idRegistroSeleccionado) == false)
+                    if (resultado == DialogResult.OK)
                     {
-                        MessageBox.Show("El área ha sido eliminada con éxito.");
+                        logicaEntrevista.EliminarEntrevista(id_entrevista);
+                        MessageBox.Show("La entrevista ha sido eliminada con éxito.");
                         CargarDataGrid();
-                    } else
-                    {
-                        MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
                     }
-                    
-                    
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Se ha cancelado la operación.");
+                    }
                 }
-                else if (resultado == DialogResult.Cancel)
-                {
-                    MessageBox.Show("Se ha cancelado la operación.");
-                }
-            } else
-            {
-                MessageBox.Show("Debe seleccionar un registro.");
+
             }
+            //DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
+            //int idRegistroSeleccionado = Convert.ToInt32(filaSeleccionada.Cells["id_entrevista"].Value);
+
+            //if (dtgEntrevistas.SelectedRows.Count > 0)
+            //{
+            //    DialogResult resultado = MessageBox.Show("¿Queres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+
+            //    if (resultado == DialogResult.OK)
+            //    {
+            //        if (logicaEntrevista.EliminarEntrevista(idRegistroSeleccionado) == false)
+            //        {
+            //            MessageBox.Show("La entrevista ha sido eliminada con éxito.");
+            //            CargarDataGrid();
+            //        } else
+            //        {
+            //            MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
+            //        }
+
+
+            //    }
+            //    else if (resultado == DialogResult.Cancel)
+            //    {
+            //        MessageBox.Show("Se ha cancelado la operación.");
+            //    }
+            //} else
+            //{
+            //    MessageBox.Show("Debe seleccionar un registro.");
+            //}
         }
 
         private void dtgEntrevistas_SelectionChanged(object sender, EventArgs e)
