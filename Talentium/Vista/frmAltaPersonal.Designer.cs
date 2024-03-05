@@ -1795,7 +1795,6 @@
         private System.Windows.Forms.Label lblPersonalACargo1;
         private System.Windows.Forms.Label lblIngresoLaboral1;
         private System.Windows.Forms.Label lblPuesto1;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label52;
@@ -1847,5 +1846,6 @@
         public System.Windows.Forms.DateTimePicker dttFechaAlta;
         public System.Windows.Forms.ComboBox cmbConvenio;
         private System.Windows.Forms.Button btnPdf;
+        public System.Windows.Forms.Button btnGuardar;
     }
 }

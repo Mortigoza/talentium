@@ -306,7 +306,7 @@ namespace Vista
             string cuil = txtCuilCuit.Text;
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
             int id_persona = (int)DTCandidatos.Rows[0]["ID"];
-            altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.CargarDatosModificacion(id_persona, esCandidato);
             altaEmpleado.cmbConvenio.Enabled = false;
             altaEmpleado.Show();
         }
@@ -321,9 +321,14 @@ namespace Vista
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
             int id_persona = (int)DTCandidatos.Rows[0]["ID"];
             
-            altaEmpleado.CargarDatosModificacion(id_persona);
+            altaEmpleado.CargarDatosModificacion(id_persona, true);
             altaEmpleado.dttFechaAlta.Enabled = true;
-            altaEmpleado.dttFechaAlta.Value = DateTime.Today;
+            altaEmpleado.dttFechaAlta.MaxDate = DateTime.Now;
+            altaEmpleado.dttFechaAlta.Value = DateTime.Now;
+            altaEmpleado.cmbConvenio.Enabled = true;
+            
+            //altaEmpleado.btnGuardar.Name = "btnIngresarEmp";
+            //altaEmpleado.btnGuardar.Text = "Ingresar Empleado";
             altaEmpleado.Show();
         }
         private void frmConsultaProcesoDeSeleccion_Load(object sender, EventArgs e)

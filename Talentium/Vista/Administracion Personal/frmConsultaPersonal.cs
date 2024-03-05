@@ -138,7 +138,7 @@ namespace Vista
 
                 // Abre FormAltaPersonal y pasa el id_persona
                 frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
-                frmAltaPersonal.CargarDatosModificacion(id);
+                frmAltaPersonal.CargarDatosModificacion(id, false);
                 frmAltaPersonal.ShowDialog();
             }
             else

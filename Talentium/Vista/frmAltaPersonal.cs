@@ -334,10 +334,10 @@ namespace Vista
             {
                 case "btnGuardar":
 
-            Tuple<bool, string> validacion = validarTodos();
-            if (validacion.Item1)
-            {
-                #region Mapeo
+                    Tuple<bool, string> validacion = validarTodos();
+                    if (validacion.Item1)
+                    {
+                        #region Mapeo
                 Persona insert = new Persona();
              
                 if (pctFoto.Image != null)
@@ -393,19 +393,19 @@ namespace Vista
 
                 #endregion
 
-                lblFaltanCampos2.Visible = false;
-                int id_persona = logicaPersona.InsertarPersona(insert /*infoLaborales, infoAcademicos*/);
-                logicaPersona.InsertarInfo(id_persona,/*infoacademico, infolaboral, listaIdiomas,*/ infoIdiom,infoLabora,infoAcademic);
+                        lblFaltanCampos2.Visible = false;
+                        int id_persona = logicaPersona.InsertarPersona(insert /*infoLaborales, infoAcademicos*/);
+                        logicaPersona.InsertarInfo(id_persona,/*infoacademico, infolaboral, listaIdiomas,*/ infoIdiom,infoLabora,infoAcademic);
 
-                MessageBox.Show("Todos los datos se cargaron correctamente.");
-                this.Dispose();
+                        MessageBox.Show("Todos los datos se cargaron correctamente.");
+                        this.Dispose();
 
-            }
-            else
-            {
-                lblFaltanCampos2.Visible = true;
-                MessageBox.Show($"Faltan campos obligatorios de:{validacion.Item2}");
-            }
+                    }
+                    else
+                    {
+                        lblFaltanCampos2.Visible = true;
+                        MessageBox.Show($"Faltan campos obligatorios de:{validacion.Item2}");
+                    }
                     break;
                 case "btnModificar":
 
@@ -485,6 +485,85 @@ namespace Vista
                     }
                     #endregion
                     break;
+                case "btnIngresarEmp":
+                    Tuple<bool, string> validacion2 = validarTodos();
+                    if (validacion2.Item1)
+                    {
+                        #region
+
+                        Persona modify = new Persona();
+
+                        modify.id_persona = _id_persona;
+                        modify.nombres = txtNombres.Text;
+                        modify.apellidos = txtApellidos.Text;
+                        modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
+                        modify.nro_doc = txtDni.Text;
+                        modify.email = txtEmail.Text;
+                        modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
+                        modify.id_genero = (int)cmbGenero.SelectedValue;
+                        modify.hijos = (int)nupHijos.Value;
+                        modify.id_area = (int)cmbArea.SelectedValue;
+                        modify.id_convenio = (int)cmbConvenio.SelectedValue;
+                        modify.id_localidad = (int)cmbLocalidad.SelectedValue;
+                        modify.calle = txtCalle.Text;
+                        modify.nro = int.Parse(txtNro.Text);
+                        modify.piso = txtPiso.Text;
+                        modify.dpto = txtDpto.Text;
+                        modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
+                        modify.fecha_alta = dttFechaAlta.Value;
+                        modify.id_estado_civil = (int)cmbEstadoCivil.SelectedValue;
+                        modify.telefono = txtTelefono.Text;
+                        modify.id_tipo = (int)cmbTipoTel.SelectedValue;
+                        modify.telefono_alternativo = txtTelefonoAlternativo.Text;
+                        modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
+                        modify.contacto = txtContacto.Text;
+                        modify.candidato = false;
+
+                        //ACADEMICOS
+
+                        if (pctFoto.Image != null)
+                        {
+                            try
+                            {
+                                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                                pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                modify.foto_perfil = ms.GetBuffer();
+                            }
+                            catch
+                            {
+                                modify.foto_perfil = foto;
+                            }
+                        }
+                        else
+                        {
+
+                            modify.foto_perfil = new byte[0];
+                        }
+
+                        lblFaltanCampos.Visible = false;
+                        lblFaltanCampos1.Visible = false;
+                        lblFaltanCampos2.Visible = false;
+                        logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom, infoLabora, infoAcademic);
+                        logicaPersona.ActualizarDatos(modify);
+                        //logicaPersona.ActualizarDatosAcademicos(modify,cantidad);
+                        //logicaPersona.ActualizarDatosLaborales(modify,cantidad);
+                        //logicaPersona.ActualizarIdioma(modify, id_persona);
+                        if (esReactivicacion == true)
+                        {
+                            logicaPersona.ReactivarPersona(modify.id_persona);
+                        }
+
+                        MessageBox.Show("El empleado ha sido ingresado correctamente.");
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        lblFaltanCampos2.Visible = true;
+                        MessageBox.Show($"Faltan campos obligatorios de:{validacion2.Item2}");
+                    }
+                    #endregion
+                    break;
+
             }
         }
 
@@ -1077,14 +1156,25 @@ namespace Vista
 
 
         //Modificacion
-        public void CargarDatosModificacion(int id_persona, bool esReactivar = false)
+        public void CargarDatosModificacion(int id_persona, bool es_candidato, bool esReactivar = false)
         {
 
            
             Persona modify = new Persona();
+            if(es_candidato == false)
+            {
+                btnGuardar.Name = "btnModificar";
+                btnGuardar.Text = "Modificar";
+            } else
+            {
+                btnGuardar.Name = "btnIngresarEmp";
+                btnGuardar.Text = "Ingresar Empleado";
+                dttFechaAlta.Enabled = true;
+
+                dttFechaAlta.MaxDate = DateTime.Now;
+                dttFechaAlta.Value = DateTime.Today;
+            }
             
-            btnGuardar.Name = "btnModificar";
-            btnGuardar.Text = "Modificar";
             
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
