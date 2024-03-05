@@ -18,5 +18,13 @@ namespace AccesoDatos.Accesibilidad
 
             EjecutarConsultas("baja_perfil_sp", listaParametros.ToArray(), true);
         }
+        public DataTable ConsultarPerfil(int id_perfil)
+        {
+            SqlParameter param1 = new SqlParameter("@id_perfil", id_perfil) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable dt = EjecutarConsultas("consultar_perfil_usuarios_asignados_sp", listaParametros.ToArray());
+            return dt;
+        }
     }
 }

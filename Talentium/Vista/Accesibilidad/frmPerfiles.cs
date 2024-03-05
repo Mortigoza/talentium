@@ -254,9 +254,20 @@ namespace Vista.Accesibilidad
         }
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            CN_BajaPerfil bp = new CN_BajaPerfil();
-            bp.BajaPerfil(_index);
-            refreshDtg();
+            DialogResult msgBox = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dtgPerfiles.Rows.Count > 0 & msgBox == DialogResult.Yes)
+            {
+                CN_BajaPerfil bp = new CN_BajaPerfil();
+                if (bp.ConsultarPerfil(_index) == 0)
+                {
+                    bp.BajaPerfil(_index);
+                    refreshDtg();
+                }
+                else
+                {
+                    MessageBox.Show(Errores.PerfEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
         #region Metodos
 

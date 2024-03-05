@@ -250,6 +250,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Este perfil no puede ser eliminado porque está asignado a uno o más usuarios..
+        /// </summary>
+        public static string PerfEnUso {
+            get {
+                return ResourceManager.GetString("PerfEnUso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ingrese un nombre de perfil válido y al menos un permiso..
         /// </summary>
         public static string PerfValido {

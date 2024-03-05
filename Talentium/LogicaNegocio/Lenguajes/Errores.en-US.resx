@@ -231,4 +231,7 @@
   <data name="Personalizado" xml:space="preserve">
     <value>Customized</value>
   </data>
+  <data name="PerfEnUso" xml:space="preserve">
+    <value>This profile cannot be deleted because it is assigned to one or more users.</value>
+  </data>
 </root>

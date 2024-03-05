@@ -14,5 +14,10 @@ namespace LogicaNegocio.Accesibilidad
         {
             bp.BajaPerfil(id_perfil);
         }
+        public int ConsultarPerfil(int id_perfil)
+        {
+            int cantidadUsuarios = (int)bp.ConsultarPerfil(id_perfil).Rows[0][0];
+            return cantidadUsuarios;
+        }
     }
 }
