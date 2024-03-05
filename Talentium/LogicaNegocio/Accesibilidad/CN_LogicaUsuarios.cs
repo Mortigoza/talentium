@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using AccesoDatos.Accesibilidad;
 using Comun;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace LogicaNegocio
             {
                 DataTable dt = accesoDatos.ConsultaAreas();
                 DataRow dr = dt.NewRow();
-                dt.Rows.Add(new Object[] { -1, "Todas" });
+                dt.Rows.Add(new Object[] { -1, Errores.Todas });
                 return dt;
             }
             catch (Exception ex)
@@ -99,7 +100,7 @@ namespace LogicaNegocio
                 if (cmb)
                 {
                     DataRow dr = dt.NewRow();
-                    dt.Rows.Add(new Object[] { -1, "Personalizado" });
+                    dt.Rows.Add(new Object[] { -1, Errores.Personalizado });
                 }
                 return dt;
             }
@@ -129,22 +130,22 @@ namespace LogicaNegocio
         {
             if (string.IsNullOrWhiteSpace(usr) | string.IsNullOrWhiteSpace(psw))
             {
-                return (false, "Debe completar los campos.");
+                return (false, Errores.CamposIncompletos);
             }
 
             if (dtg.DataSource == null)
             {
-                return (false, "Debe seleccionar a un empleado para asignarle este usuario.");
+                return (false, Errores.RegNoSelec);
             }
 
             if (!string.IsNullOrEmpty(dtg.Rows[rowIndex].Cells[5].Value.ToString()))
             {
-                return (false, "Este empleado ya tiene un usuario asignado.");
+                return (false, Errores.UsrYaAsignado);
             }
 
             if (cd_usuario.ConsultarUsuarioRepetido(Seguridad.Encriptar(usr)).Rows.Count > 0)
             {
-                return (false, "Ese nombre de usuario ya está en uso.");
+                return (false, Errores.UsrYaEnUso);
             }
 
 
@@ -179,30 +180,33 @@ namespace LogicaNegocio
                 }
                 else
                 {
-                    MessageBox.Show(msg);
+                    MessageBox.Show(msg, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show(verif.Item2);
+                MessageBox.Show(verif.Item2, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return false;
         }
         public void ModificarUsuario(DataTable dtListaMem)
         {
-            List<int> permisos = new List<int>();
-            int len = dtListaMem.Rows.Count;
-
-            if ((int)IdPerfil == -1)
+            if (IdPerfil != null)
             {
-                for (int i = 0; i < len; i++)
+                List<int> permisos = new List<int>();
+                int len = dtListaMem.Rows.Count;
+
+                if ((int)IdPerfil == -1)
                 {
-                    // carga todos los permisos del dtListaMem en la lista permisos
-                    permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                    for (int i = 0; i < len; i++)
+                    {
+                        // carga todos los permisos del dtListaMem en la lista permisos
+                        permisos.Add(Convert.ToInt32(dtListaMem.Rows[i][0]));
+                    }
                 }
+                // Hace la modificacion
+                UpUsuario(permisos.ToArray());
             }
-            // Hace la modificacion
-            UpUsuario(permisos.ToArray());
         }
         private void UpUsuario(int[] permisos)
         {
@@ -211,6 +215,7 @@ namespace LogicaNegocio
                 cd_usuario.IdUsuario = IdUsuario;
                 cd_usuario.CambiaCada = (int)CambiaCada;
                 cd_usuario.Mail = Mail;
+                cd_usuario.IdPerfil = IdPerfil;
 
                 if (cd_usuario.UpUsuario() && (int)IdPerfil == -1 && permisos.Length > 0)
                 {

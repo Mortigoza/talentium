@@ -110,10 +110,12 @@
     <EmbeddedResource Include="Lenguajes\Errores.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Errores.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Errores.es-AR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Errores.es-AR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Errores.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

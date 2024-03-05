@@ -1,6 +1,7 @@
 ﻿using Comun;
 using DocumentFormat.OpenXml.Drawing;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,7 +78,7 @@ namespace Vista
                 && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1)
             // Entra si los campos de filtrado estan todos en su estado por defecto
             {
-                MessageBox.Show("Utilice al menos un filtro");
+                MessageBox.Show(Errores.FiltroIncompleto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -86,7 +87,7 @@ namespace Vista
                 if (dt.Rows.Count == 0)
                 {
                     // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
-                    MessageBox.Show("Ningun registro coinside");
+                    MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -96,6 +97,7 @@ namespace Vista
                     dtgPersonas.Columns[0].Visible = false;
                     dtgPersonas.Columns[6].Visible = false;
                     UtilidadesForms.LimpiarControles(grpFiltro);
+                    UtilidadesForms.TraducirColumnasDtg(ref dtgPersonas);
                     cmbArea.SelectedValue = -1;
                 }
             }
@@ -147,7 +149,7 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Seleccione un usuario");
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

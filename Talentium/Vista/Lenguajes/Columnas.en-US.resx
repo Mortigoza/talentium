@@ -118,15 +118,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Apellido" xml:space="preserve">
-    <value>Last name</value>
+    <value>Last Name</value>
+  </data>
+  <data name="Apellidos" xml:space="preserve">
+    <value>Last Names</value>
   </data>
   <data name="Area" xml:space="preserve">
     <value>Area</value>
   </data>
+  <data name="Capacitacion" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="Descripción" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Externo/Interno" xml:space="preserve">
+    <value>External/Internal</value>
+  </data>
+  <data name="Externo/Interno2" xml:space="preserve">
+    <value>External/Internal</value>
+  </data>
+  <data name="Fecha Entrega" xml:space="preserve">
+    <value>Delivery date</value>
+  </data>
+  <data name="Fecha Recepción" xml:space="preserve">
+    <value>Receipt date</value>
+  </data>
+  <data name="Fecha Solicitud" xml:space="preserve">
+    <value>Request date</value>
+  </data>
+  <data name="ID usuario" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="Nivel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Nivel2" xml:space="preserve">
+    <value>Level</value>
+  </data>
   <data name="Nombre" xml:space="preserve">
-    <value>Name</value>
+    <value>First Name</value>
+  </data>
+  <data name="Nombres" xml:space="preserve">
+    <value>First Names</value>
+  </data>
+  <data name="Obligatoria" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="Perfil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Puesto" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Tiempo_Estimado" xml:space="preserve">
+    <value>Estimated time</value>
   </data>
   <data name="Usuario" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="Área" xml:space="preserve">
+    <value>Area</value>
   </data>
 </root>

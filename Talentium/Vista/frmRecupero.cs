@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista
@@ -61,7 +62,7 @@ namespace Vista
                 }
             } else
             {
-                MessageBox.Show("El campo no debe estar vacio");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void button1_Click(object sender, EventArgs e)

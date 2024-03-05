@@ -198,4 +198,37 @@
   <data name="PasRepetida" xml:space="preserve">
     <value>No puede utilizar su contraseña actual como nueva contraseña.</value>
   </data>
+  <data name="Cer30Dias" xml:space="preserve">
+    <value>Este empleado ya tiene un pedido de certificación de servicios en los últimos 30 días.</value>
+  </data>
+  <data name="RegNoSelec" xml:space="preserve">
+    <value>Debe seleccionar al menos un registro.</value>
+  </data>
+  <data name="FiltroIncompleto" xml:space="preserve">
+    <value>Utilice al menos un filtro.</value>
+  </data>
+  <data name="RegNoCoincide" xml:space="preserve">
+    <value>Ningún registro coincide.</value>
+  </data>
+  <data name="RegSelecNoActivo" xml:space="preserve">
+    <value>Debe seleccionar un registro activo.</value>
+  </data>
+  <data name="PerfValido" xml:space="preserve">
+    <value>Ingrese un nombre de perfil válido y al menos un permiso.</value>
+  </data>
+  <data name="ErrorAlta" xml:space="preserve">
+    <value>Ha habido un error al intentar dar de alta.</value>
+  </data>
+  <data name="UsrYaAsignado" xml:space="preserve">
+    <value>Este empleado ya tiene un usuario asignado.</value>
+  </data>
+  <data name="UsrYaEnUso" xml:space="preserve">
+    <value>Ese nombre de usuario ya está en uso.</value>
+  </data>
+  <data name="Todas" xml:space="preserve">
+    <value>Todas</value>
+  </data>
+  <data name="Personalizado" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
 </root>

@@ -79,6 +79,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Este empleado ya tiene un pedido de certificación de servicios en los últimos 30 días..
+        /// </summary>
+        public static string Cer30Dias {
+            get {
+                return ResourceManager.GetString("Cer30Dias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El codigo ingresado ha expirado..
         /// </summary>
         public static string CodigoExpirado {
@@ -106,11 +115,29 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ha habido un error al intentar dar de alta..
+        /// </summary>
+        public static string ErrorAlta {
+            get {
+                return ResourceManager.GetString("ErrorAlta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error al intentar enviar el email.
         /// </summary>
         public static string ErrorMail {
             get {
                 return ResourceManager.GetString("ErrorMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Utilice al menos un filtro..
+        /// </summary>
+        public static string FiltroIncompleto {
+            get {
+                return ResourceManager.GetString("FiltroIncompleto", resourceCulture);
             }
         }
         
@@ -223,6 +250,24 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingrese un nombre de perfil válido y al menos un permiso..
+        /// </summary>
+        public static string PerfValido {
+            get {
+                return ResourceManager.GetString("PerfValido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Personalizado.
+        /// </summary>
+        public static string Personalizado {
+            get {
+                return ResourceManager.GetString("Personalizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Quieres continuar?.
         /// </summary>
         public static string QuiereContinuar {
@@ -232,11 +277,47 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ningún registro coincide..
+        /// </summary>
+        public static string RegNoCoincide {
+            get {
+                return ResourceManager.GetString("RegNoCoincide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar al menos un registro..
+        /// </summary>
+        public static string RegNoSelec {
+            get {
+                return ResourceManager.GetString("RegNoSelec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar un registro activo..
+        /// </summary>
+        public static string RegSelecNoActivo {
+            get {
+                return ResourceManager.GetString("RegSelecNoActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ESTA TERMINAL SE ENCUENTRA INHABILITADA POR MANIPULACION EXTERNA DE LA BASE DE DATOS. COMUNIQUESE CON EL SOPORTE TECNICO PARA REACTICAR LA TERMINAL..
         /// </summary>
         public static string TerminalBloqueada {
             get {
                 return ResourceManager.GetString("TerminalBloqueada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Todas.
+        /// </summary>
+        public static string Todas {
+            get {
+                return ResourceManager.GetString("Todas", resourceCulture);
             }
         }
         
@@ -300,6 +381,24 @@ namespace LogicaNegocio.Lenguajes {
         public static string UsrReactivado {
             get {
                 return ResourceManager.GetString("UsrReactivado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Este empleado ya tiene un usuario asignado..
+        /// </summary>
+        public static string UsrYaAsignado {
+            get {
+                return ResourceManager.GetString("UsrYaAsignado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ese nombre de usuario ya está en uso..
+        /// </summary>
+        public static string UsrYaEnUso {
+            get {
+                return ResourceManager.GetString("UsrYaEnUso", resourceCulture);
             }
         }
     }

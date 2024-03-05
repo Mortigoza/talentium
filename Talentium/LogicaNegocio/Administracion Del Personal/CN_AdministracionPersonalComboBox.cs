@@ -8,6 +8,7 @@ using AccesoDatos;
 using Comun;
 using System.Windows.Forms;
 using AccesoDatos.Administracion_Personal;
+using LogicaNegocio.Lenguajes;
 
 namespace LogicaNegocio.Administracion_Del_Personal
 {
@@ -104,7 +105,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
                 if (todas)
                 {
                     DataRow dr = dt.NewRow();
-                    dt.Rows.Add(new Object[] { -1, "Todas" });
+                    dt.Rows.Add(new Object[] { -1, Errores.Todas });
                 }
                 return dt;
             }

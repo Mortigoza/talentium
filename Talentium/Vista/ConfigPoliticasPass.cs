@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Bitacora;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +49,7 @@ namespace Vista
 
         private void btnCrearBakup_Click(object sender, EventArgs e)
         {
-            DialogResult ms = MessageBox.Show("¿Seguro que quiere realizar un backup?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ms == DialogResult.Yes)
             {
                 bk.HacerBackup();
@@ -58,7 +59,7 @@ namespace Vista
 
         private void btnCargarBakup_Click(object sender, EventArgs e)
         {
-            DialogResult ms = MessageBox.Show("¿Seguro que quiere cargar una base de datos anterior?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ms == DialogResult.Yes)
             {
                 opnBackup.InitialDirectory = bk.Path;

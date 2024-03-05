@@ -120,13 +120,64 @@
   <data name="Apellido" xml:space="preserve">
     <value>Apellido</value>
   </data>
+  <data name="Apellidos" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
   <data name="Area" xml:space="preserve">
     <value>Área</value>
+  </data>
+  <data name="Capacitacion" xml:space="preserve">
+    <value>Capacitación</value>
+  </data>
+  <data name="Descripción" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Externo/Interno" xml:space="preserve">
+    <value>Externo/Interno</value>
+  </data>
+  <data name="Externo/Interno2" xml:space="preserve">
+    <value>Externo/Interno</value>
+  </data>
+  <data name="Fecha Entrega" xml:space="preserve">
+    <value>Fecha entrega</value>
+  </data>
+  <data name="Fecha Recepción" xml:space="preserve">
+    <value>Fecha recepción</value>
+  </data>
+  <data name="Fecha Solicitud" xml:space="preserve">
+    <value>Fecha solicitud</value>
+  </data>
+  <data name="ID usuario" xml:space="preserve">
+    <value>ID Usuario</value>
+  </data>
+  <data name="Nivel" xml:space="preserve">
+    <value>Nivel</value>
+  </data>
+  <data name="Nivel2" xml:space="preserve">
+    <value>Nivel</value>
   </data>
   <data name="Nombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="Nombres" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="Obligatoria" xml:space="preserve">
+    <value>Obligatoria</value>
+  </data>
+  <data name="Perfil" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Puesto" xml:space="preserve">
+    <value>Puesto</value>
+  </data>
+  <data name="Tiempo_Estimado" xml:space="preserve">
+    <value>Tiempo estimado</value>
+  </data>
   <data name="Usuario" xml:space="preserve">
     <value>Usuario</value>
+  </data>
+  <data name="Área" xml:space="preserve">
+    <value>Área</value>
   </data>
 </root>

@@ -183,7 +183,7 @@ namespace Comun
                 if (text != null)
                 {
                     c.HeaderText = text;
-                }
+                }   
             }
         }
     }

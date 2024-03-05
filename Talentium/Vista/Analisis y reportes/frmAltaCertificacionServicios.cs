@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio.Analisis_y_reportes;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,6 +62,7 @@ namespace Vista.Analisis_y_reportes
         public frmAltaCertificacionServicios(int idCertificacion, int idEmpleado, int etapa)
         {
             InitializeComponent();
+            this.Name = "frmModCertificacionServicios";
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             _mod = true;
 
@@ -130,7 +132,7 @@ namespace Vista.Analisis_y_reportes
                     }
                     else
                     {
-                        MessageBox.Show(verif.Item2);
+                        MessageBox.Show(verif.Item2, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case true:
@@ -195,7 +197,7 @@ namespace Vista.Analisis_y_reportes
                 && string.IsNullOrEmpty(txtApellido.Text))
             // Entra si los campos de filtrado estan todos en su estado por defecto
             {
-                MessageBox.Show("Utilice al menos un filtro");
+                MessageBox.Show(Errores.FiltroIncompleto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             //Entra si se usa al menos uno de los filtros
@@ -210,7 +212,7 @@ namespace Vista.Analisis_y_reportes
                 if (dt.Rows.Count == 0)
                 {
                     // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
-                    MessageBox.Show("Ningun registro coinside");
+                    MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -276,6 +278,7 @@ namespace Vista.Analisis_y_reportes
 
             dtgCertificados.DataSource = dt;
             dtgCertificados.Columns[0].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCertificados);
             dtgCertificados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         public void refreshDtg(int idCertificacion)
@@ -285,6 +288,7 @@ namespace Vista.Analisis_y_reportes
 
             dtgCertificados.DataSource = dt;
             dtgCertificados.Columns[0].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCertificados);
             dtgCertificados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         #endregion

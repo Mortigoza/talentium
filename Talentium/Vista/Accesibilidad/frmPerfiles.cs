@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -141,16 +142,15 @@ namespace Vista.Accesibilidad
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
-                            MessageBox.Show("Alta exitosa");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un nombre de perfil valido y al menos un permiso");
+                        MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
 
@@ -173,7 +173,6 @@ namespace Vista.Accesibilidad
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
-                            MessageBox.Show("Modificación exitosa");
                         }
                         catch (Exception ex)
                         {
@@ -182,7 +181,7 @@ namespace Vista.Accesibilidad
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un nombre de perfil valido y al menos un permiso");
+                        MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
             }
@@ -283,6 +282,7 @@ namespace Vista.Accesibilidad
             dtgPerfiles.DataSource = logica.ConsultarPerfiles(false);
             dtgPerfiles.Columns[2].MinimumWidth = 200;
             dtgPerfiles.Columns[0].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgPerfiles);
             dtgPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         #endregion
