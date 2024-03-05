@@ -359,6 +359,7 @@
             this.dtgDocumento.RowTemplate.Height = 24;
             this.dtgDocumento.Size = new System.Drawing.Size(295, 250);
             this.dtgDocumento.TabIndex = 2;
+            this.dtgDocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellClick);
             this.dtgDocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellDoubleClick);
             this.dtgDocumento.SelectionChanged += new System.EventHandler(this.dtgDocumento_SelectionChanged);
             // 

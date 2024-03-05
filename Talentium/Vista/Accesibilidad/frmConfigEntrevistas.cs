@@ -22,6 +22,7 @@ namespace Vista.Accesibilidad
             dtgEntrevistas.AutoGenerateColumns = false;
             dtgEntrevistas.MultiSelect = false;
             dtgEntrevistas.ReadOnly = true;
+            dtgEntrevistas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grpModEntrevista.Enabled = false;
             dtgEntrevistas.Columns["id_entrevista"].Visible = false;
         }
