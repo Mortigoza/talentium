@@ -295,7 +295,7 @@ namespace Vista
                 lblTiempoRestante.Visible = true;
 
                 TimeSpan minRestanteFormato = TimeSpan.FromMilliseconds(_minRestante);
-                string minRestantes = minRestanteFormato.ToString(@"mm\\:ss");
+                string minRestantes = minRestanteFormato.ToString(@"mm\:ss");
                 lblTiempoRestante.Text = Strings.lblTiempoRestante + minRestantes;
             }
             if (minActual >= minTotal && this.Visible == true)
