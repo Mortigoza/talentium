@@ -35,36 +35,43 @@ namespace Vista.Accesibilidad
             dtgDocumento.AllowUserToAddRows = false;
             dtgDocumento.MultiSelect = false;
             dtgDocumento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgDocumento.ReadOnly = true;
             // Config data grid Tipo de teléfono
             dtgTelefono.AutoGenerateColumns = false;
             dtgTelefono.AllowUserToAddRows = false;
             dtgTelefono.MultiSelect = false;
             dtgTelefono.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgTelefono.ReadOnly = true;
             // Config data grid Nacionalidad
             dtgNacionalidad.AutoGenerateColumns = false;
             dtgNacionalidad.AllowUserToAddRows = false;
             dtgNacionalidad.MultiSelect = false;
             dtgNacionalidad.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgNacionalidad.ReadOnly = true;
             // Config data grid Género
             dtgGenero.AutoGenerateColumns = false;
             dtgGenero.AllowUserToAddRows = false;
             dtgGenero.MultiSelect = false;
             dtgGenero.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgGenero.ReadOnly = true;
             // Config data grid Idioma
             dtgIdiomas.AutoGenerateColumns = false;
             dtgIdiomas.AllowUserToAddRows = false;
             dtgIdiomas.MultiSelect = false;
             dtgIdiomas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgIdiomas.ReadOnly = true;
             // Config data grid Área
             dtgArea.AutoGenerateColumns = false;
             dtgArea.AllowUserToAddRows = false;
             dtgArea.MultiSelect = false;
             dtgArea.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgArea.ReadOnly = true;
             // Config data grid Puesto
             dtgPuesto.AutoGenerateColumns = false;
             dtgPuesto.AllowUserToAddRows = false;
             dtgPuesto.MultiSelect = false;
             dtgPuesto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgPuesto.ReadOnly = true;
         }
         private void NavigateTabs(int offset)
         {
