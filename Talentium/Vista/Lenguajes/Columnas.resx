@@ -117,67 +117,220 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Apellido" xml:space="preserve">
+  <data name="apellido" xml:space="preserve">
     <value>Apellido</value>
   </data>
-  <data name="Area" xml:space="preserve">
-    <value>Área</value>
-  </data>
-  <data name="Nombre" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="Usuario" xml:space="preserve">
-    <value>Usuario</value>
-  </data>
-  <data name="Nombres" xml:space="preserve">
-    <value>Nombres</value>
-  </data>
-  <data name="Apellidos" xml:space="preserve">
+  <data name="apellidos" xml:space="preserve">
     <value>Apellidos</value>
   </data>
-  <data name="Capacitacion" xml:space="preserve">
+  <data name="area" xml:space="preserve">
+    <value>Área</value>
+  </data>
+  <data name="año" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="capacitacion" xml:space="preserve">
     <value>Capacitación</value>
   </data>
-  <data name="Descripción" xml:space="preserve">
+  <data name="categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="convenio" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
+  <data name="cuil" xml:space="preserve">
+    <value>CUIT/CUIL</value>
+  </data>
+  <data name="cuit/cuil" xml:space="preserve">
+    <value>CUIT/CUIL</value>
+  </data>
+  <data name="descripción" xml:space="preserve">
     <value>Descripción</value>
   </data>
-  <data name="Externo/Interno" xml:space="preserve">
+  <data name="desempleño en equipo" xml:space="preserve">
+    <value>Desempeñó En Equipo</value>
+  </data>
+  <data name="desempleño en equipo *" xml:space="preserve">
+    <value>Desempeñó En Equipo *</value>
+  </data>
+  <data name="diciplina *" xml:space="preserve">
+    <value>Disciplina *</value>
+  </data>
+  <data name="disciplina" xml:space="preserve">
+    <value>Disciplina</value>
+  </data>
+  <data name="dni" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="efectividad en las tareas" xml:space="preserve">
+    <value>Efectividad En Las Tareas</value>
+  </data>
+  <data name="efectividad en las tareas *" xml:space="preserve">
+    <value>Efectividad En Las Tareas *</value>
+  </data>
+  <data name="egreso" xml:space="preserve">
+    <value>Egreso</value>
+  </data>
+  <data name="eliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="empresa" xml:space="preserve">
+    <value>Empresa</value>
+  </data>
+  <data name="entrevista" xml:space="preserve">
+    <value>Entrevista</value>
+  </data>
+  <data name="entrevistador" xml:space="preserve">
+    <value>Entrevistador</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="etapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="externo/interno" xml:space="preserve">
     <value>Externo/Interno</value>
   </data>
-  <data name="Externo/Interno2" xml:space="preserve">
-    <value>Externo/Interno</value>
+  <data name="externo/interno2" xml:space="preserve">
+    <value>Externo/Interno2</value>
   </data>
-  <data name="Fecha Entrega" xml:space="preserve">
-    <value>Fecha entrega</value>
+  <data name="fecha" xml:space="preserve">
+    <value>Fecha</value>
   </data>
-  <data name="Fecha Recepción" xml:space="preserve">
-    <value>Fecha recepción</value>
+  <data name="fecha alta" xml:space="preserve">
+    <value>Fecha Alta</value>
   </data>
-  <data name="Fecha Solicitud" xml:space="preserve">
-    <value>Fecha solicitud</value>
+  <data name="fecha entrega" xml:space="preserve">
+    <value>Fecha Entrega</value>
   </data>
-  <data name="ID usuario" xml:space="preserve">
-    <value>ID Usuario</value>
+  <data name="fecha recepción" xml:space="preserve">
+    <value>Fecha Recepción</value>
   </data>
-  <data name="Nivel" xml:space="preserve">
+  <data name="fecha solicitud" xml:space="preserve">
+    <value>Fecha Solicitud</value>
+  </data>
+  <data name="fecha_egreso" xml:space="preserve">
+    <value>Fecha Egreso</value>
+  </data>
+  <data name="fecha_ingreso" xml:space="preserve">
+    <value>Fecha Ingreso</value>
+  </data>
+  <data name="horas_laborales" xml:space="preserve">
+    <value>Horas Laborales</value>
+  </data>
+  <data name="id usuario" xml:space="preserve">
+    <value>Id Usuario</value>
+  </data>
+  <data name="idiomanombre" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="ingreso" xml:space="preserve">
+    <value>Ingreso</value>
+  </data>
+  <data name="institucion" xml:space="preserve">
+    <value>Institución</value>
+  </data>
+  <data name="jornada" xml:space="preserve">
+    <value>Jornada</value>
+  </data>
+  <data name="justificada" xml:space="preserve">
+    <value>Justificada</value>
+  </data>
+  <data name="mes de evaluacion" xml:space="preserve">
+    <value>Mes De Evaluación</value>
+  </data>
+  <data name="modificar" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="motivo" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="nivel" xml:space="preserve">
     <value>Nivel</value>
   </data>
-  <data name="Nivel2" xml:space="preserve">
-    <value>Nivel</value>
+  <data name="nivel2" xml:space="preserve">
+    <value>Nivel2</value>
   </data>
-  <data name="Obligatoria" xml:space="preserve">
+  <data name="nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="nombre y apellido" xml:space="preserve">
+    <value>Nombre Y Apellido</value>
+  </data>
+  <data name="nombres" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="nombre_categoria" xml:space="preserve">
+    <value>Nombre Categoría</value>
+  </data>
+  <data name="obligatoria" xml:space="preserve">
     <value>Obligatoria</value>
   </data>
-  <data name="Perfil" xml:space="preserve">
+  <data name="obra social" xml:space="preserve">
+    <value>Obra Social</value>
+  </data>
+  <data name="obra_social" xml:space="preserve">
+    <value>Obra Social</value>
+  </data>
+  <data name="observaciones" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="otro_motivo" xml:space="preserve">
+    <value>Otro Motivo</value>
+  </data>
+  <data name="perfil" xml:space="preserve">
     <value>Perfil</value>
   </data>
-  <data name="Puesto" xml:space="preserve">
+  <data name="periodo" xml:space="preserve">
+    <value>Periodo</value>
+  </data>
+  <data name="personal_a_cargo" xml:space="preserve">
+    <value>Personal A Cargo</value>
+  </data>
+  <data name="progreso" xml:space="preserve">
+    <value>Progreso</value>
+  </data>
+  <data name="puesto" xml:space="preserve">
     <value>Puesto</value>
   </data>
-  <data name="Tiempo_Estimado" xml:space="preserve">
-    <value>Tiempo estimado</value>
+  <data name="puesto a postularse" xml:space="preserve">
+    <value>Puesto A Postularse</value>
   </data>
-  <data name="Área" xml:space="preserve">
+  <data name="puntualidad" xml:space="preserve">
+    <value>Puntualidad</value>
+  </data>
+  <data name="puntualidad *" xml:space="preserve">
+    <value>Puntualidad *</value>
+  </data>
+  <data name="relacion con superiores" xml:space="preserve">
+    <value>Relación Con Superiores</value>
+  </data>
+  <data name="relación con superiores *" xml:space="preserve">
+    <value>Relación Con Superiores *</value>
+  </data>
+  <data name="seguridad y salud" xml:space="preserve">
+    <value>Seguridad Y Salud</value>
+  </data>
+  <data name="seguridad_salud" xml:space="preserve">
+    <value>Seguridad Salud</value>
+  </data>
+  <data name="sueldo" xml:space="preserve">
+    <value>Sueldo</value>
+  </data>
+  <data name="sueldos" xml:space="preserve">
+    <value>Sueldos</value>
+  </data>
+  <data name="tiempo_estimado" xml:space="preserve">
+    <value>Tiempo Estimado</value>
+  </data>
+  <data name="titulo" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="área" xml:space="preserve">
     <value>Área</value>
   </data>
 </root>
