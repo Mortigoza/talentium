@@ -51,17 +51,21 @@ namespace Vista.Accesibilidad
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
 
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = logica.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             #endregion
             dtgPerfiles.AutoResizeColumns();
@@ -136,8 +140,8 @@ namespace Vista.Accesibilidad
                         }
                         try
                         {
-                            CN_LogicaPerfiles ap = new CN_LogicaPerfiles();
-                            ap.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                            cn_perfil.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);

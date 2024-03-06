@@ -71,17 +71,22 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
+
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             #endregion
 
@@ -150,17 +155,22 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
+
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             usuario.IdUsuario = id_usuario;
             usuario.IdPerfil = (int)(dt.Rows[0][9]);
