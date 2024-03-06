@@ -41,7 +41,7 @@ namespace Vista
             conven.DisplayMember = "convenio";
             conven.DataSource = nuevoDataTable;
 
-
+            btnExcel.Enabled = false;
 
         }
 
@@ -51,6 +51,14 @@ namespace Vista
         }
         public void cargarDtg(DataTable data)
         {
+            if (data.Rows.Count >= 1)
+            {
+                btnExcel.Enabled = true;
+            }
+            else
+            {
+                btnExcel.Enabled = false;
+            }
             dataGridNomina.AllowUserToAddRows = false;
             dataGridNomina.DataSource = data;
 
@@ -113,6 +121,7 @@ namespace Vista
                     cargarDtg(cvenios);
                 }
             }
+            
         }
 
         private void areasAltas_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,22 +156,17 @@ namespace Vista
 
         private void Descargar_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
-                folderDialog.Description = "Selecciona la carpeta de destino";
-                if (folderDialog.ShowDialog() == DialogResult.OK)
+                saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
+                saveDialog.Title = "Elije el nombre del archivo Excel";
+                string defaultFileName = string.Format("Reporte Nomina salarial " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
+                saveDialog.FileName = defaultFileName;
+                if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (SaveFileDialog saveDialog = new SaveFileDialog())
-                    {
-                        saveDialog.InitialDirectory = folderDialog.SelectedPath;
-                        saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
-                        saveDialog.Title = "Elije el nombre del archivo Excel";
+                    string rutaCompleta = saveDialog.FileName;
 
-                        if (saveDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            string rutaCompleta = saveDialog.FileName;
-
-                            SLDocument sl = new SLDocument();
+                    SLDocument sl = new SLDocument();
                             SLStyle style = new SLStyle();
                             style.Font.FontSize = 12;
                             style.Fill.SetPatternType(PatternValues.Solid);
@@ -201,7 +205,7 @@ namespace Vista
                                     }
                                 }
 
-                                DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
+                                DateTime fechaEmision = DateTime.Now; 
                                 SLStyle fechaEmisionStyle = new SLStyle();
                                 fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 fechaEmisionStyle.SetFontBold(true);
@@ -239,7 +243,7 @@ namespace Vista
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa. Archivo guardado en: " + rutaCompleta);
+                                MessageBox.Show("Operación exitosa.");
                             }
                             catch (Exception msj)
                             {
@@ -247,9 +251,9 @@ namespace Vista
 
                             }
                         }
-                    }
                 }
             }
-        }
+            
+        
     }
 }

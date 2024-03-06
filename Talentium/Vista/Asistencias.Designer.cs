@@ -44,8 +44,8 @@
             this.lblAreaAlta = new System.Windows.Forms.Label();
             this.areasAltas = new System.Windows.Forms.ComboBox();
             this.tbpModificar = new System.Windows.Forms.TabPage();
-            this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.dataGridModificar = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -274,6 +274,20 @@
             this.tbpModificar.Text = "Modificaciòn y consulta";
             this.tbpModificar.UseVisualStyleBackColor = true;
             // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnExcel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExcel.Location = new System.Drawing.Point(659, 409);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(115, 49);
+            this.btnExcel.TabIndex = 14;
+            this.btnExcel.Text = "Descargar Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // grbInasistenciasMod
             // 
             this.grbInasistenciasMod.Controls.Add(this.btnExcel);
@@ -286,20 +300,6 @@
             this.grbInasistenciasMod.TabIndex = 13;
             this.grbInasistenciasMod.TabStop = false;
             this.grbInasistenciasMod.Text = "Inasistencias";
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
-            this.btnExcel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcel.Location = new System.Drawing.Point(645, 395);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(115, 49);
-            this.btnExcel.TabIndex = 14;
-            this.btnExcel.Text = "Descargar Excel";
-            this.btnExcel.UseVisualStyleBackColor = false;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // dataGridModificar
             // 
@@ -315,7 +315,7 @@
             this.dataGridModificar.Name = "dataGridModificar";
             this.dataGridModificar.RowHeadersWidth = 51;
             this.dataGridModificar.RowTemplate.Height = 24;
-            this.dataGridModificar.Size = new System.Drawing.Size(771, 353);
+            this.dataGridModificar.Size = new System.Drawing.Size(791, 353);
             this.dataGridModificar.TabIndex = 12;
             this.dataGridModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
             // 

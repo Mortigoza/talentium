@@ -1659,7 +1659,17 @@ namespace Vista
 
                 SaveFileDialog Guardar = new SaveFileDialog();
                 Guardar.FileName = string.Format("Reporte " + DateTime.Now.ToString("ddMMyyyy") + ".pdf");
-
+                string filasNivel = string.Empty;
+                string filasIdioma = string.Empty;
+                for (int i = 0; i < dgvIdioma.RowCount - 1; i++)
+                {
+                    filasNivel += "<tr>";
+                    filasNivel += "<td>" + dgvIdioma.Rows[i].Cells[0].Value.ToString() + "</td>";
+                    filasNivel += "</tr>";
+                    filasIdioma += "<tr>";
+                    filasIdioma += "<td>" + dgvIdioma.Rows[i].Cells[1].Value.ToString() + "</td>";
+                    filasIdioma += "</tr>";
+                }
                 string paginaHtmlTexto = Properties.Resources.PantillaEmpleadoPdf.ToString();
 
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMYAPE", txtNombres.Text.ToString() + " " + txtApellidos.Text.ToString());
@@ -1692,11 +1702,14 @@ namespace Vista
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO2", txtNombres.Text.ToString());
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@EMPRESA", txtCuitCuil.Text.ToString());
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@DURACION", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@ESP", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@ING", txtNombres.Text.ToString());
+
+
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NIVELIDIOMA", filasNivel.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@IDIOMA", filasIdioma.ToString());
+
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAEMIT", txtNombres.Text.ToString());
 
-
+              
 
                 /*  string filas = string.Empty;
                   for (int i = 0; i < dgvListaEventos.RowCount - 1; i++)

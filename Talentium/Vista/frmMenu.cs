@@ -54,7 +54,7 @@ namespace Vista
             UtilidadesForms.checkPermiso(gestionDeCapacitacionesToolStripMenuItem, Permisos.Gestion_Capacitaciones);
 
             // GestAsistencia
-            UtilidadesForms.checkPermiso(consultaDeAsistenciasToolStripMenuItem, Permisos.Gestion_Asistencias);
+            UtilidadesForms.checkPermiso(gestiónDeAsistenciasToolStripMenuItem, Permisos.Gestion_Asistencias);
 
             // NominaSalarial
             items = new List<ToolStripMenuItem>{
@@ -349,6 +349,14 @@ namespace Vista
         {
             this.Hide();
             frmReporteNominaSalarial frm = new frmReporteNominaSalarial();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void gestiónDeAsistenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Asistencias frm = new Asistencias();
             frm.ShowDialog();
             this.Show();
         }

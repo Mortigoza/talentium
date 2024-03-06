@@ -47,7 +47,6 @@
             this.asignarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeCapacitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeAsistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conveniosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +66,7 @@
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
             this.lblTiempoRestante = new System.Windows.Forms.Label();
+            this.candidatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -218,18 +218,10 @@
             // 
             // gestiónDeAsistenciasToolStripMenuItem
             // 
-            this.gestiónDeAsistenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaDeAsistenciasToolStripMenuItem});
             this.gestiónDeAsistenciasToolStripMenuItem.Name = "gestiónDeAsistenciasToolStripMenuItem";
-            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
-            this.gestiónDeAsistenciasToolStripMenuItem.Text = "Gestión de Asistencias";
-            // 
-            // consultaDeAsistenciasToolStripMenuItem
-            // 
-            this.consultaDeAsistenciasToolStripMenuItem.Name = "consultaDeAsistenciasToolStripMenuItem";
-            this.consultaDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.consultaDeAsistenciasToolStripMenuItem.Text = "Gestión de asistencias";
-            this.consultaDeAsistenciasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeAsistenciasToolStripMenuItem_Click);
+            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.gestiónDeAsistenciasToolStripMenuItem.Text = "Gestión de Inasistencias";
+            this.gestiónDeAsistenciasToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeAsistenciasToolStripMenuItem_Click);
             // 
             // nóminaSalarialToolStripMenuItem
             // 
@@ -260,7 +252,8 @@
             this.asistenciasToolStripMenuItem1,
             this.desempeñoToolStripMenuItem,
             this.nóminaSalarialToolStripMenuItem1,
-            this.certificacionDeServiciosToolStripMenuItem});
+            this.certificacionDeServiciosToolStripMenuItem,
+            this.candidatoToolStripMenuItem});
             this.análisisYReportesToolStripMenuItem.Name = "análisisYReportesToolStripMenuItem";
             this.análisisYReportesToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
             this.análisisYReportesToolStripMenuItem.Text = "Análisis y Reportes";
@@ -269,7 +262,7 @@
             // 
             this.asistenciasToolStripMenuItem1.Name = "asistenciasToolStripMenuItem1";
             this.asistenciasToolStripMenuItem1.Size = new System.Drawing.Size(256, 26);
-            this.asistenciasToolStripMenuItem1.Text = "Asistencias";
+            this.asistenciasToolStripMenuItem1.Text = "Inasistencias";
             this.asistenciasToolStripMenuItem1.Click += new System.EventHandler(this.asistenciasToolStripMenuItem1_Click);
             // 
             // desempeñoToolStripMenuItem
@@ -386,6 +379,12 @@
             this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
             this.lblTiempoRestante.Visible = false;
             // 
+            // candidatoToolStripMenuItem
+            // 
+            this.candidatoToolStripMenuItem.Name = "candidatoToolStripMenuItem";
+            this.candidatoToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.candidatoToolStripMenuItem.Text = "Candidato";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,7 +431,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeAsistenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conveniosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asistenciasToolStripMenuItem1;
@@ -454,5 +452,6 @@
         private System.Windows.Forms.Timer tmrMouse;
         private System.Windows.Forms.Timer tmrMouseQuieto;
         private System.Windows.Forms.Label lblTiempoRestante;
+        private System.Windows.Forms.ToolStripMenuItem candidatoToolStripMenuItem;
     }
 }

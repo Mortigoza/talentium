@@ -208,11 +208,11 @@
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(1077, 602);
+            this.btnPdf.Location = new System.Drawing.Point(1076, 614);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Size = new System.Drawing.Size(88, 42);
             this.btnPdf.TabIndex = 46;
-            this.btnPdf.Text = "PDF";
+            this.btnPdf.Text = "Descargar PDF";
             this.btnPdf.UseVisualStyleBackColor = true;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click_1);
             // 

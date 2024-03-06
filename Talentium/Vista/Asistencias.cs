@@ -48,10 +48,8 @@ namespace Vista
             isReport = ocultar;
             btnExcel.Visible = ocultar;
             btnExcel.Enabled = false; 
-            ControlAsist.TabPages[0].Enabled = false;
-            ControlAsist.TabPages[0].Hide();
-            ControlAsist.TabPages[1].Enabled = true;
-            ControlAsist.SelectedIndex = 1;
+            ControlAsist.TabPages.Remove(tbpAlta);
+            ControlAsist.SelectedTab = tbpModificar;
             tbpModificar.Text = "Reporte Inasistencias";
         }
         public void Refrescar(DataGridView dtg)
@@ -337,22 +335,18 @@ namespace Vista
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
-            {
-                folderDialog.Description = "Selecciona la carpeta de destino";
-                if (folderDialog.ShowDialog() == DialogResult.OK)
-                {
                     using (SaveFileDialog saveDialog = new SaveFileDialog())
                     {
-                        saveDialog.InitialDirectory = folderDialog.SelectedPath;
                         saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
                         saveDialog.Title = "Elije el nombre del archivo Excel";
-
+                        string defaultFileName = string.Format("Reporte Inasistencia " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
+                        saveDialog.FileName = defaultFileName;
                         if (saveDialog.ShowDialog() == DialogResult.OK)
                         {
-                            string rutaCompleta = saveDialog.FileName;
+                       // string rutaCompleta = Path.Combine(folderDialog.SelectedPath, defaultFileName);
+                        string rutaCompleta = saveDialog.FileName;
 
-                            SLDocument sl = new SLDocument();
+                        SLDocument sl = new SLDocument();
                             SLStyle style = new SLStyle();
                             style.Font.FontSize = 12;
                             style.Fill.SetPatternType(PatternValues.Solid);
@@ -430,7 +424,7 @@ namespace Vista
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa. Archivo guardado en: " + rutaCompleta);
+                                MessageBox.Show("Operación exitosa.");
                             }
                             catch (Exception msj)
                             {
@@ -439,8 +433,8 @@ namespace Vista
                             }
                         }
                     }
-                }
-            }
+                //}
+            
         }
     }
 }

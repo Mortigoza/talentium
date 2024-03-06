@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbPersonalAlta = new System.Windows.Forms.GroupBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.dataGridNomina = new System.Windows.Forms.DataGridView();
             this.grbFiltrosAlta = new System.Windows.Forms.GroupBox();
             this.convenio = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.lblCuilAlta = new System.Windows.Forms.Label();
             this.lblAreaAlta = new System.Windows.Forms.Label();
             this.areas = new System.Windows.Forms.ComboBox();
-            this.Descargar = new System.Windows.Forms.Button();
             this.grbPersonalAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNomina)).BeginInit();
             this.grbFiltrosAlta.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             // grbPersonalAlta
             // 
-            this.grbPersonalAlta.Controls.Add(this.Descargar);
+            this.grbPersonalAlta.Controls.Add(this.btnExcel);
             this.grbPersonalAlta.Controls.Add(this.dataGridNomina);
             this.grbPersonalAlta.Location = new System.Drawing.Point(348, 13);
             this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(4);
@@ -60,6 +60,17 @@
             this.grbPersonalAlta.TabIndex = 13;
             this.grbPersonalAlta.TabStop = false;
             this.grbPersonalAlta.Text = "Personal";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnExcel.Location = new System.Drawing.Point(750, 467);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(93, 46);
+            this.btnExcel.TabIndex = 14;
+            this.btnExcel.Text = "Descargar Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.Descargar_Click);
             // 
             // dataGridNomina
             // 
@@ -212,17 +223,6 @@
             this.areas.TabIndex = 9;
             this.areas.SelectedIndexChanged += new System.EventHandler(this.areasAltas_SelectedIndexChanged);
             // 
-            // Descargar
-            // 
-            this.Descargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
-            this.Descargar.Location = new System.Drawing.Point(750, 467);
-            this.Descargar.Name = "Descargar";
-            this.Descargar.Size = new System.Drawing.Size(93, 46);
-            this.Descargar.TabIndex = 14;
-            this.Descargar.Text = "Descargar Excel";
-            this.Descargar.UseVisualStyleBackColor = false;
-            this.Descargar.Click += new System.EventHandler(this.Descargar_Click);
-            // 
             // frmReporteNominaSalarial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,6 +258,6 @@
         private System.Windows.Forms.Label lblCuilAlta;
         private System.Windows.Forms.Label lblAreaAlta;
         private System.Windows.Forms.ComboBox areas;
-        private System.Windows.Forms.Button Descargar;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

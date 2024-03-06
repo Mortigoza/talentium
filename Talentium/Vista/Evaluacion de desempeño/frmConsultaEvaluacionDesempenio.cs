@@ -32,13 +32,14 @@ namespace Vista.Evaluacion_de_desempeño
         public frmConsultaEvaluacionDesempenio()
         {
             InitializeComponent();
-            descargarExcel.Visible = false;
+            btnExcel.Visible = false;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
         public void RecibirDatos(bool ocultar)
         {
             isReport = ocultar;
-            descargarExcel.Visible = ocultar;
+            btnExcel.Visible = ocultar;
+            btnExcel.Enabled = false;
             
         }
         private void frmConsultaEvaluacionDesempenio_Load(object sender, EventArgs e)
@@ -117,6 +118,14 @@ namespace Vista.Evaluacion_de_desempeño
                 int cantidadEvaluacion = dtgConsultaEvaluacion.Rows.Count;
                 lblCantidadEval.Text = cantidadEvaluacion.ToString();
             }
+            if (dtgConsultaEvaluacion.Rows.Count >= 1)
+            {
+                btnExcel.Enabled = true;
+            }
+            else
+            {
+                btnExcel.Enabled = false;
+            }
         }
 
         public void CargarColumnasDataGrid()
@@ -132,20 +141,15 @@ namespace Vista.Evaluacion_de_desempeño
 
         private void descargarExcel_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
-                folderDialog.Description = "Selecciona la carpeta de destino";
-                if (folderDialog.ShowDialog() == DialogResult.OK)
+                saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
+                saveDialog.Title = "Elije el nombre del archivo Excel";
+                string defaultFileName = string.Format("Reporte Desempeño " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
+                saveDialog.FileName = defaultFileName;
+                if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (SaveFileDialog saveDialog = new SaveFileDialog())
-                    {
-                        saveDialog.InitialDirectory = folderDialog.SelectedPath;
-                        saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
-                        saveDialog.Title = "Elije el nombre del archivo Excel";
-
-                        if (saveDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            string rutaCompleta = saveDialog.FileName;
+                    string rutaCompleta = saveDialog.FileName;
                             //Estilo del encabezado
                             SLDocument sl = new SLDocument();
                             SLStyle style = new SLStyle();
@@ -235,7 +239,7 @@ namespace Vista.Evaluacion_de_desempeño
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa.\n Archivo guardado en: " + rutaCompleta);
+                                MessageBox.Show("Operación exitosa.");
                             }
                             catch (Exception msj)
                             {
@@ -245,7 +249,7 @@ namespace Vista.Evaluacion_de_desempeño
                         }
                     }
                 }
-            }
-        }
+            
+        
     }
 }
