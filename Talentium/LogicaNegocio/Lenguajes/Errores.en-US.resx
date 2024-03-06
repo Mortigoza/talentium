@@ -234,4 +234,7 @@
   <data name="PerfEnUso" xml:space="preserve">
     <value>This profile cannot be deleted because it is assigned to one or more users.</value>
   </data>
+  <data name="UsrEspacios" xml:space="preserve">
+    <value>The username cannot contain spaces.</value>
+  </data>
 </root>

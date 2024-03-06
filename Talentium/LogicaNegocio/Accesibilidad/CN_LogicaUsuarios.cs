@@ -133,6 +133,11 @@ namespace LogicaNegocio
                 return (false, Errores.CamposIncompletos);
             }
 
+            if (usr.Contains(" "))
+            {
+                return (false, Errores.UsrEspacios);
+            }
+
             if (dtg.DataSource == null)
             {
                 return (false, Errores.RegNoSelec);

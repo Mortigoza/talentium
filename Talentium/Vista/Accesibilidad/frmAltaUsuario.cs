@@ -423,5 +423,13 @@ namespace Vista
                 perfilCustom = false;
             }
         }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

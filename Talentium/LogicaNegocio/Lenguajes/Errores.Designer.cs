@@ -367,6 +367,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El nombre de usuario no puede contener espacios..
+        /// </summary>
+        public static string UsrEspacios {
+            get {
+                return ResourceManager.GetString("UsrEspacios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario invalido. Porfavor verifique que el usuario sea correcto..
         /// </summary>
         public static string UsrInvalido {
