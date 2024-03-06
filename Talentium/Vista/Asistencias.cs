@@ -15,6 +15,8 @@ using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
+using Vista.Lenguajes;
+using LogicaNegocio.Lenguajes;
 
 namespace Vista
 {
@@ -41,7 +43,6 @@ namespace Vista
             lblFechaDesdeMod.Visible = false;
             Refrescar(dataGridAlta);
             Refrescar(dataGridModificar);
-
         }
         public void RecibirDatos(bool ocultar)
         {
@@ -112,6 +113,7 @@ namespace Vista
             // Ocultar las demás columnas
 
             dataGridAlta.Columns["id_persona"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dataGridAlta);
         }
         public void cargarDtg(DataTable data)
         {
@@ -128,25 +130,28 @@ namespace Vista
             dataGridModificar.Columns["id_persona"].Visible = false;
             dataGridModificar.Columns["id_asistencia"].Visible = false;
             dataGridModificar.Columns["id_motivo"].Visible = false;
-
+            UtilidadesForms.TraducirColumnasDtg(ref dataGridModificar);
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            //boton buscar del alta
-            DataRowView selectedArea = (DataRowView)areasAltas.SelectedItem;
-            DataRowView selectedPuesto = (DataRowView)puestosAltas.SelectedItem;
-            int idA = Convert.ToInt32(selectedArea["id_area"]);
-            int idP = Convert.ToInt32(selectedPuesto["id_puesto"]);
-            if (string.IsNullOrEmpty(cuilAltas.Text))
+            if (areasAltas.Items.Count > 0 && puestosAltas.Items.Count > 0)
             {
-                DataTable asis = asistencias.filtroAlta(idA, idP, null);
-                cargar(asis);
-            }
-            else
-            {
-                DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
-                cargar(asis);
+                //boton buscar del alta
+                DataRowView selectedArea = (DataRowView)areasAltas.SelectedItem;
+                DataRowView selectedPuesto = (DataRowView)puestosAltas.SelectedItem;
+                int idA = Convert.ToInt32(selectedArea["id_area"]);
+                int idP = Convert.ToInt32(selectedPuesto["id_puesto"]);
+                if (string.IsNullOrEmpty(cuilAltas.Text))
+                {
+                    DataTable asis = asistencias.filtroAlta(idA, idP, null);
+                    cargar(asis);
+                }
+                else
+                {
+                    DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
+                    cargar(asis);
 
+                }
             }
         }
 
@@ -210,25 +215,27 @@ namespace Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //boton buscar del modificar
-            DataRowView selectedArea = (DataRowView)AreaMod.SelectedItem;
-            DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
-            object idA = selectedArea["id_area"];
-            object idP = selectedPuesto["id_puesto"];
-
-            DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
-            //corroborar las cargas del dtg aplicar la busqueda del motivo para traerlo.
-            //tengo que traer nombre y apellido de persona, dejando el id_persona y el id_motivo
-            cargarDtg(asis);
-            if (asis.Rows.Count >= 1)
+            if (AreaMod.Items.Count > 0 && PuestoMod.Items.Count > 0)
             {
-                btnExcel.Enabled = true;
-            }
-            else {
-                btnExcel.Enabled = false;
-            }
+                //boton buscar del modificar
+                DataRowView selectedArea = (DataRowView)AreaMod.SelectedItem;
+                DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
+                object idA = selectedArea["id_area"];
+                object idP = selectedPuesto["id_puesto"];
 
-
+                DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
+                //corroborar las cargas del dtg aplicar la busqueda del motivo para traerlo.
+                //tengo que traer nombre y apellido de persona, dejando el id_persona y el id_motivo
+                cargarDtg(asis);
+                if (asis.Rows.Count >= 1)
+                {
+                    btnExcel.Enabled = true;
+                }
+                else
+                {
+                    btnExcel.Enabled = false;
+                }
+            }
         }
 
         private void AreaMod_SelectedIndexChanged(object sender, EventArgs e)
@@ -306,7 +313,7 @@ namespace Vista
                     dataGridModificar.Columns["Eliminar"].Visible = false;
                 }
                 else if(e.ColumnIndex == 1) {
-                    DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     // Verificar la respuesta del usuario
                     if (result == DialogResult.Yes)
@@ -347,25 +354,25 @@ namespace Vista
                         string rutaCompleta = saveDialog.FileName;
 
                         SLDocument sl = new SLDocument();
-                            SLStyle style = new SLStyle();
-                            style.Font.FontSize = 12;
-                            style.Fill.SetPatternType(PatternValues.Solid);
-                            style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
-                            style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Font.Bold = true;
-                            sl.SetWorksheetDefaultColumnWidth(25);
-                            int numCol = 0;
-                            int numFila = 10;
+                        SLStyle style = new SLStyle();
+                        style.Font.FontSize = 12;
+                        style.Fill.SetPatternType(PatternValues.Solid);
+                        style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
+                        style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
+                        style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
+                        style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
+                        style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
+                        style.Font.Bold = true;
+                        sl.SetWorksheetDefaultColumnWidth(25);
+                        int numCol = 0;
+                        int numFila = 10;
 
-                            string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
+                        string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
 
-                            SLPicture picture = new SLPicture(rutaImagen);
-                            picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
-                            picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
-                            sl.InsertPicture(picture);
+                        SLPicture picture = new SLPicture(rutaImagen);
+                        picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
+                        picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
+                        sl.InsertPicture(picture);
 
                             try
                             {
@@ -424,7 +431,7 @@ namespace Vista
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa.");
+                                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             catch (Exception msj)
                             {
@@ -435,6 +442,32 @@ namespace Vista
                     }
                 //}
             
+        }
+
+        private void dataGridModificar_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridModificar.Columns[e.ColumnIndex] is DataGridViewButtonColumn && (e.RowIndex >= 0))
+            {
+                if (dataGridModificar.Columns[e.ColumnIndex].Name == "Modificar")
+                {
+                    e.Value = Columnas.abrir;
+                }
+                else if (dataGridModificar.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    e.Value = Columnas.eliminar;
+                }
+            }
+        }
+
+        private void dataGridAlta_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridAlta.Columns[e.ColumnIndex] is DataGridViewButtonColumn && (e.RowIndex >= 0))
+            {
+                if (dataGridAlta.Columns[e.ColumnIndex].Name == "Abrir")
+                {
+                    e.Value = Columnas.abrir;
+                }
+            }
         }
     }
 }
