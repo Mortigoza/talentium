@@ -353,17 +353,17 @@
             // 
             // btnContinuar1
             // 
-            this.btnContinuar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnContinuar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.btnContinuar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContinuar1.BackgroundImage")));
             this.btnContinuar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnContinuar1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnContinuar1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnContinuar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnContinuar1.Location = new System.Drawing.Point(1212, 602);
+            this.btnContinuar1.Location = new System.Drawing.Point(1240, 601);
             this.btnContinuar1.Margin = new System.Windows.Forms.Padding(5);
             this.btnContinuar1.Name = "btnContinuar1";
-            this.btnContinuar1.Size = new System.Drawing.Size(140, 54);
+            this.btnContinuar1.Size = new System.Drawing.Size(93, 43);
             this.btnContinuar1.TabIndex = 42;
             this.btnContinuar1.UseVisualStyleBackColor = false;
             this.btnContinuar1.Click += new System.EventHandler(this.button4_Click);
@@ -662,6 +662,7 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(99, 24);
             this.cmbTipoDoc.TabIndex = 5;
+            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
             // 
             // lblTipoDni
             // 
@@ -976,6 +977,7 @@
             this.txtCuitCuil.Size = new System.Drawing.Size(249, 22);
             this.txtCuitCuil.TabIndex = 1;
             this.txtCuitCuil.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxNoPegar);
+            this.txtCuitCuil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuitCuil_KeyPress);
             // 
             // lblGenero
             // 
@@ -1208,7 +1210,7 @@
             // 
             // btnAtrasAcademico
             // 
-            this.btnAtrasAcademico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnAtrasAcademico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.btnAtrasAcademico.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtrasAcademico.BackgroundImage")));
             this.btnAtrasAcademico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAtrasAcademico.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -1219,7 +1221,7 @@
             this.btnAtrasAcademico.Location = new System.Drawing.Point(87, 602);
             this.btnAtrasAcademico.Margin = new System.Windows.Forms.Padding(5);
             this.btnAtrasAcademico.Name = "btnAtrasAcademico";
-            this.btnAtrasAcademico.Size = new System.Drawing.Size(140, 54);
+            this.btnAtrasAcademico.Size = new System.Drawing.Size(93, 43);
             this.btnAtrasAcademico.TabIndex = 92;
             this.btnAtrasAcademico.TabStop = false;
             this.btnAtrasAcademico.UseVisualStyleBackColor = false;
@@ -1240,7 +1242,7 @@
             // 
             // btnContinuar2
             // 
-            this.btnContinuar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnContinuar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.btnContinuar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContinuar2.BackgroundImage")));
             this.btnContinuar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnContinuar2.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -1251,7 +1253,7 @@
             this.btnContinuar2.Location = new System.Drawing.Point(1212, 602);
             this.btnContinuar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnContinuar2.Name = "btnContinuar2";
-            this.btnContinuar2.Size = new System.Drawing.Size(140, 54);
+            this.btnContinuar2.Size = new System.Drawing.Size(93, 43);
             this.btnContinuar2.TabIndex = 73;
             this.btnContinuar2.UseVisualStyleBackColor = false;
             this.btnContinuar2.Click += new System.EventHandler(this.button8_Click);
@@ -1443,7 +1445,7 @@
             this.btnEliminarLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarLaboral.Location = new System.Drawing.Point(1212, 546);
             this.btnEliminarLaboral.Name = "btnEliminarLaboral";
-            this.btnEliminarLaboral.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarLaboral.Size = new System.Drawing.Size(133, 28);
             this.btnEliminarLaboral.TabIndex = 51;
             this.btnEliminarLaboral.Text = "Eliminar";
             this.btnEliminarLaboral.UseVisualStyleBackColor = false;
@@ -1465,7 +1467,7 @@
             // 
             // btnAtrasLaboral
             // 
-            this.btnAtrasLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnAtrasLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.btnAtrasLaboral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtrasLaboral.BackgroundImage")));
             this.btnAtrasLaboral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAtrasLaboral.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -1475,7 +1477,7 @@
             this.btnAtrasLaboral.Location = new System.Drawing.Point(87, 597);
             this.btnAtrasLaboral.Margin = new System.Windows.Forms.Padding(5);
             this.btnAtrasLaboral.Name = "btnAtrasLaboral";
-            this.btnAtrasLaboral.Size = new System.Drawing.Size(140, 54);
+            this.btnAtrasLaboral.Size = new System.Drawing.Size(93, 43);
             this.btnAtrasLaboral.TabIndex = 52;
             this.btnAtrasLaboral.UseVisualStyleBackColor = false;
             this.btnAtrasLaboral.Click += new System.EventHandler(this.btnAtrasLaboral_Click);
@@ -1515,13 +1517,13 @@
             this.lblAgregarExperienciaLaboral.Location = new System.Drawing.Point(87, 36);
             this.lblAgregarExperienciaLaboral.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAgregarExperienciaLaboral.Name = "lblAgregarExperienciaLaboral";
-            this.lblAgregarExperienciaLaboral.Size = new System.Drawing.Size(179, 16);
+            this.lblAgregarExperienciaLaboral.Size = new System.Drawing.Size(127, 16);
             this.lblAgregarExperienciaLaboral.TabIndex = 94;
-            this.lblAgregarExperienciaLaboral.Text = "Agregar Experiencia Laboral";
+            this.lblAgregarExperienciaLaboral.Text = "Experiencia Laboral";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;

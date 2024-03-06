@@ -397,13 +397,10 @@ C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bi
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\es-AR\LogicaNegocio.resources.dll
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmAreas.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmPerfiles.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.Etapas.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Asistencias.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.AsistenciasPanel.resources
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassNU.resources
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.CambioDePassRecupero.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmAltaCertificacionServicios.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Analisis_y_reportes.frmCertificacionServicios.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmCategorias.resources
@@ -415,14 +412,11 @@ C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\ob
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaPersonal.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmConvenios.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Strings.resources
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmPuesto.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmABMCapacitaciones.resources
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaProcesoDeSeleccion.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmConsultaProcesoDeSeleccion.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmAltaUsuario.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmLogin.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmMenu.resources
-C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmModificarProcesoDeSeleccion.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmRecupero.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Gestion_de_Talento.frmEntrevistaPreocupacionalCapacitacion.resources
 C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Properties.Resources.resources
@@ -655,3 +649,13 @@ C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\o
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
 C:\Users\maira\OneDrive\Escritorio\Nueva carpeta (3)\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\itextsharp.dll
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\bin\Debug\itextsharp.xml
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Accesibilidad.frmConfigAltaPersonal.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmCambioPass.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmAsignarCapacitaciones.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.frmReporteNominaSalarial.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.en-US.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\Vista\obj\Debug\Vista.Lenguajes.Columnas.es-AR.resources

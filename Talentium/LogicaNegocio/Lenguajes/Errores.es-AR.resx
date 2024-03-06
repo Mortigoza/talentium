@@ -198,4 +198,25 @@
   <data name="PasRepetida" xml:space="preserve">
     <value>No puede utilizar su contraseña actual como nueva contraseña.</value>
   </data>
+  <data name="CampoMinimo11" xml:space="preserve">
+    <value>El campo debe contener 11 digitos.</value>
+  </data>
+  <data name="CorreoNoValido" xml:space="preserve">
+    <value>El correo electrónico no es válido.</value>
+  </data>
+  <data name="CuitEnUso" xml:space="preserve">
+    <value>El Cuit/Cuil ya esta asociado a un empleado.</value>
+  </data>
+  <data name="DescargarExitosa" xml:space="preserve">
+    <value>La descarga fue realizada con éxito.</value>
+  </data>
+  <data name="IdiomaRepetido" xml:space="preserve">
+    <value>No se puede repetir el idioma.</value>
+  </data>
+  <data name="InfoAcademicaOb" xml:space="preserve">
+    <value>La información académica es obligatoria.</value>
+  </data>
+  <data name="OperacionExitosa" xml:space="preserve">
+    <value>Operación Exitosa.</value>
+  </data>
 </root>

@@ -284,3 +284,7 @@ C:\Users\Tutoz\Desktop\talentium\Talentium\LogicaNegocio\obj\Debug\es-AR\LogicaN
 C:\Users\Tutoz\Desktop\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
 C:\Users\Tutoz\Desktop\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\Tutoz\Desktop\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\LogicaNegocio\bin\Debug\LogicaNegocio.dll.config
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.en-US.resources
+C:\Users\Facundo\OneDrive\Escritorio\Talentium Full\talentium\Talentium\LogicaNegocio\obj\Debug\LogicaNegocio.Lenguajes.Errores.es-AR.resources

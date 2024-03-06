@@ -113,5 +113,14 @@ namespace LogicaNegocio {
                 return ResourceManager.GetString("cmbNivel2", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nativo.
+        /// </summary>
+        public static string cmbNivel3 {
+            get {
+                return ResourceManager.GetString("cmbNivel3", resourceCulture);
+            }
+        }
     }
 }
