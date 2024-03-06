@@ -145,6 +145,7 @@
             this.NombrePuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.tabConfigAltaPersonal.SuspendLayout();
             this.tabDocumento.SuspendLayout();
             this.grpModificar.SuspendLayout();
@@ -1534,11 +1535,23 @@
             this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(22, 437);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 3;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmConfigAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 462);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.tabConfigAltaPersonal);
@@ -1588,6 +1601,7 @@
             this.grpAltaPuesto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPuesto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1709,5 +1723,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDAreaPuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePuesto;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

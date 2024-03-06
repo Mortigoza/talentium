@@ -49,6 +49,7 @@
             this.lblNombreLlenar = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblApellidoLlenar = new System.Windows.Forms.Label();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCandidatos)).BeginInit();
             this.SuspendLayout();
@@ -269,11 +270,23 @@
             this.lblApellidoLlenar.Size = new System.Drawing.Size(0, 16);
             this.lblApellidoLlenar.TabIndex = 20;
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 21;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmConsultaProcesoDeSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 466);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblApellidoLlenar);
@@ -321,5 +334,6 @@
         private System.Windows.Forms.Label lblApellidoLlenar;
         public System.Windows.Forms.TextBox txtCuilCuit;
         public System.Windows.Forms.DataGridView dtgCandidatos;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

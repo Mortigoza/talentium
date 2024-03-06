@@ -1033,6 +1033,9 @@ namespace Vista.Accesibilidad
             dtgPuesto.Columns["IDPuesto"].Visible = false;
         }
 
-        
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

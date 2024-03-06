@@ -206,5 +206,10 @@ namespace Vista.Accesibilidad
             btnModificar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
             btnEliminar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
         }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -54,6 +54,7 @@
             this.DesempEquipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.grpPeriodo = new System.Windows.Forms.GroupBox();
             this.lblReferencia = new System.Windows.Forms.Label();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.grpFiltrosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).BeginInit();
             this.grpPeriodo.SuspendLayout();
@@ -337,11 +338,23 @@
             this.lblReferencia.Text = "ⓘ Elegir un valor dentro de la escala 1-6, siendo 1 el valor más bajo y 6 el más " +
     "alto.";
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 425);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 28;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmAltaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 450);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.lblReferencia);
             this.Controls.Add(this.grpPeriodo);
             this.Controls.Add(this.grpFiltrosBusqueda);
@@ -384,5 +397,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn Disciplina;
         private System.Windows.Forms.DataGridViewComboBoxColumn DesempEquipo;
         private System.Windows.Forms.Label lblReferencia;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

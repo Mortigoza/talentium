@@ -32,6 +32,7 @@
             this.tabEtapas = new System.Windows.Forms.TabControl();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tabEtapas
@@ -72,11 +73,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(27, 515);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 3;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmEntrevistaPreocupacionalCapacitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 517);
+            this.ClientSize = new System.Drawing.Size(783, 550);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.tabEtapas);
@@ -88,6 +101,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEntrevistaPreocupacionalCapacitacion_FormClosed);
             this.Load += new System.EventHandler(this.frmEntrevistaPreocupacionalCapacitacion_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,5 +109,6 @@
         public System.Windows.Forms.TabControl tabEtapas;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

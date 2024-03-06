@@ -29,6 +29,7 @@ namespace Vista
             dtgCandidatos.MultiSelect = false;
             dtgCandidatos.Enabled = false;
             btnModificarCandidato.Enabled = false;
+            dtgCandidatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             int filas = entrevista.CantidadEntrevista();
             dtgCandidatos.Rows.Add(filas);
@@ -272,7 +273,7 @@ namespace Vista
                     string nombre = datosEtapa[0]["Nombre"].ToString();
                     string apellido = datosEtapa[0]["Apellido"].ToString();
                     string puesto = datosEtapa[0]["Puesto"].ToString();
-                    DateTime fecha = (DateTime)datosEtapa[0]["Fecha_Entrevista"];
+                    DateTime fecha = Convert.ToDateTime(datosEtapa[0]["Fecha_Entrevista"]);
                     string entrevistador = datosEtapa[0]["Entrevistador"].ToString();
                     string estado = datosEtapa[0]["Estado"].ToString();
 
@@ -357,6 +358,15 @@ namespace Vista
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

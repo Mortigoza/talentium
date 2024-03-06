@@ -47,6 +47,7 @@
             this.txtModNombre = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntrevistas)).BeginInit();
             this.grpAltaEntrevista.SuspendLayout();
             this.grpModEntrevista.SuspendLayout();
@@ -278,12 +279,24 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 7;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmConfigEntrevistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(979, 486);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModEntrevista);
@@ -298,6 +311,7 @@
             this.grpModEntrevista.ResumeLayout(false);
             this.grpModEntrevista.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -322,5 +336,6 @@
         private System.Windows.Forms.TextBox txtInstanciaMod;
         private System.Windows.Forms.DataGridViewTextBoxColumn etapa;
         private System.Windows.Forms.DataGridViewTextBoxColumn entrevista;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

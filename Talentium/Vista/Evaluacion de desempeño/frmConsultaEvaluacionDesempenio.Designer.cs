@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
             this.descargarExcel = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -277,11 +278,23 @@
             this.descargarExcel.UseVisualStyleBackColor = true;
             this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 402);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 37;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 430);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.descargarExcel);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.btnBuscar);
@@ -333,5 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RelSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesempEquipo;
         private System.Windows.Forms.Button descargarExcel;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }
