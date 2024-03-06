@@ -61,15 +61,15 @@ namespace Vista
 
             //InitializeComponent();
 
-          
             InitializeComponent();
             DeshabilitarCampos();
             this.esCandidato = esCandidato;
          
             this.esReactivicacion = false;
 
+            dtpFechaDeNacimiento.MaxDate = DateTime.Today;
             dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
-
+            dttFechaAlta.MaxDate = DateTime.Today;
           
             inicial = false;
 
@@ -314,14 +314,19 @@ namespace Vista
             return true; // La cadena contiene solo números
         }
 
+        public void ValidarTotal ()
+        {
+
+        }
+
         //BOTTON PARA MODIFICAR Y GUARDAR
         private void button9_Click(object sender, EventArgs e)
         {
             switch (btnGuardar.Name)
             {
                 case "btnGuardar":
-
-            Tuple<bool, string> validacion = validarTodos();
+        
+                    Tuple<bool, string> validacion = validarTodos();
             if (validacion.Item1)
             {
                 #region Mapeo
@@ -451,11 +456,9 @@ namespace Vista
                     lblFaltanCampos.Visible = false;
                     lblFaltanCampos1.Visible = false;
                     lblFaltanCampos2.Visible = false;
-                    logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom,infoLabora, infoAcademic);
+                    logicaPersona.InsertarInfo(modify.id_persona, infoIdiom,infoLabora, infoAcademic);
                     logicaPersona.ActualizarDatos(modify);
-                        //logicaPersona.ActualizarDatosAcademicos(modify,cantidad);
-                        //logicaPersona.ActualizarDatosLaborales(modify,cantidad);
-                        //logicaPersona.ActualizarIdioma(modify, id_persona);
+
                         if(esReactivicacion == true)
                         {
                             logicaPersona.ReactivarPersona(modify.id_persona);
@@ -564,7 +567,10 @@ namespace Vista
         }
         private bool validarVacios(Control control, int count = -1)
         {
+
+
             bool todosCompletos = true;
+    
             foreach (Control c in control.Controls)
             {
                 if (c is GroupBox grp)
@@ -574,22 +580,25 @@ namespace Vista
                         todosCompletos = false;
                     }
                 }
+              
+               
                 if (c is TextBox txt &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
                     (count == -1 | c.AccessibleDescription.Length - 1 < count))
                 {
                     if (string.IsNullOrWhiteSpace(c.Text))
                     {
-                        //errorProvider1.SetError(txt, "Oblicatiorio");
+                       
                         cambiarColorLabel(txt, Color.Red);
                         todosCompletos = false;
                     }
                     else
                     {
                         cambiarColorLabel(txt, Color.Black);
-                        //errorProvider1.SetError(txt, "");
+                    
                     }
                 }
+
 
                 if (c is ComboBox cmb &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
@@ -597,14 +606,14 @@ namespace Vista
                 {
                     if (cmb.SelectedIndex == -1)
                     {
-                        //errorProvider1.SetError(c, "Oblicatiorio");
+                       
                         cambiarColorLabel(cmb, Color.Red);
                         todosCompletos = false;
                     }
                     else
                     {
                         cambiarColorLabel(cmb, Color.Black);
-                        //errorProvider1.SetError(c, "");
+                  
                     }
                 }
             }
@@ -622,8 +631,13 @@ namespace Vista
         {
             string msg = "";
             bool persona = validarVacios(tabPersonales);
+            bool academico = ValidarDataGrid(true);
+            bool resultado = persona && academico;
+
             if (!persona) msg += "\n" + tabPersonales.Text;
-            return (persona /*&& academico && laboral*/, msg).ToTuple();
+            if (!academico) msg += "\n" + tabAcademicos.Text;
+
+            return (resultado , msg).ToTuple();
         }
 
         private void cambiarColorLabel(Control control, Color color)
@@ -1603,17 +1617,21 @@ namespace Vista
 
             
         }
-        private void ValidarDataGrid()
+        private bool ValidarDataGrid(bool esValidacion = false)
         {
             if (dgvAcademico.Columns.Count > 0 && dgvAcademico.Rows.Count > 0 && dgvIdioma.Columns.Count > 0 && dgvIdioma.Rows.Count > 0)
             {
                 tabControl.TabPages[2].Enabled = true;
                 tabControl.SelectedTab = tabLaborales;
-
+                return true;
             }
             else
             {
-                MessageBox.Show(Errores.InfoAcademicaOb, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if(esValidacion == false)
+                {
+                    MessageBox.Show(Errores.InfoAcademicaOb, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return false;
             }
         }
 
@@ -1796,6 +1814,11 @@ namespace Vista
         private void txtCuitCuil_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

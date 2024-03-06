@@ -256,11 +256,11 @@
             this.dttFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttFechaAlta.Location = new System.Drawing.Point(35, 267);
             this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(5);
-            this.dttFechaAlta.MaxDate = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
+            this.dttFechaAlta.MaxDate = new System.DateTime(2024, 3, 6, 0, 0, 0, 0);
             this.dttFechaAlta.Name = "dttFechaAlta";
             this.dttFechaAlta.Size = new System.Drawing.Size(195, 22);
             this.dttFechaAlta.TabIndex = 21;
-            this.dttFechaAlta.Value = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
+            this.dttFechaAlta.Value = new System.DateTime(2024, 3, 6, 0, 0, 0, 0);
             // 
             // lblFechaDeIngreso
             // 
@@ -777,6 +777,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(496, 22);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtContacto
