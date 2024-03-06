@@ -306,5 +306,10 @@ namespace Vista.Accesibilidad
         {
             this.Dispose();
         }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

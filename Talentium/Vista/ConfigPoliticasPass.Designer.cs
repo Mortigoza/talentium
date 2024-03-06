@@ -37,16 +37,16 @@
             this.btnCrearBackup = new System.Windows.Forms.Button();
             this.btnCargarBackup = new System.Windows.Forms.Button();
             this.opnBackup = new System.Windows.Forms.OpenFileDialog();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.tbcConfig = new System.Windows.Forms.TabControl();
             this.tbpPoliticasPass = new System.Windows.Forms.TabPage();
-            this.tbpBackups = new System.Windows.Forms.TabPage();
             this.grpCriterios = new System.Windows.Forms.GroupBox();
+            this.tbpBackups = new System.Windows.Forms.TabPage();
             this.grpBackup = new System.Windows.Forms.GroupBox();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.tbcConfig.SuspendLayout();
             this.tbpPoliticasPass.SuspendLayout();
-            this.tbpBackups.SuspendLayout();
             this.grpCriterios.SuspendLayout();
+            this.tbpBackups.SuspendLayout();
             this.grpBackup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,20 +153,6 @@
             // 
             this.opnBackup.Filter = "*.bak|";
             // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 24;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
             // tbcConfig
             // 
             this.tbcConfig.Controls.Add(this.tbpPoliticasPass);
@@ -192,17 +178,6 @@
             this.tbpPoliticasPass.TabIndex = 0;
             this.tbpPoliticasPass.Text = "Politicas de contraseña";
             // 
-            // tbpBackups
-            // 
-            this.tbpBackups.BackColor = System.Drawing.Color.White;
-            this.tbpBackups.Controls.Add(this.grpBackup);
-            this.tbpBackups.Location = new System.Drawing.Point(4, 22);
-            this.tbpBackups.Name = "tbpBackups";
-            this.tbpBackups.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpBackups.Size = new System.Drawing.Size(308, 366);
-            this.tbpBackups.TabIndex = 1;
-            this.tbpBackups.Text = "Backups";
-            // 
             // grpCriterios
             // 
             this.grpCriterios.Controls.Add(this.chcChar);
@@ -217,6 +192,17 @@
             this.grpCriterios.TabStop = false;
             this.grpCriterios.Text = "Criterios";
             // 
+            // tbpBackups
+            // 
+            this.tbpBackups.BackColor = System.Drawing.Color.White;
+            this.tbpBackups.Controls.Add(this.grpBackup);
+            this.tbpBackups.Location = new System.Drawing.Point(4, 22);
+            this.tbpBackups.Name = "tbpBackups";
+            this.tbpBackups.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpBackups.Size = new System.Drawing.Size(308, 366);
+            this.tbpBackups.TabIndex = 1;
+            this.tbpBackups.Text = "Backups";
+            // 
             // grpBackup
             // 
             this.grpBackup.Controls.Add(this.btnCrearBackup);
@@ -228,14 +214,25 @@
             this.grpBackup.TabStop = false;
             this.grpBackup.Text = "Backup";
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 31;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // ConfigPoliticasPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(381, 392);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.tbcConfig);
-            this.Controls.Add(this.btnAtras);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConfigPoliticasPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -243,11 +240,12 @@
             this.Load += new System.EventHandler(this.ConfigPoliticasPass_Load);
             this.tbcConfig.ResumeLayout(false);
             this.tbpPoliticasPass.ResumeLayout(false);
-            this.tbpBackups.ResumeLayout(false);
             this.grpCriterios.ResumeLayout(false);
             this.grpCriterios.PerformLayout();
+            this.tbpBackups.ResumeLayout(false);
             this.grpBackup.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,11 +260,11 @@
         private System.Windows.Forms.Button btnCrearBackup;
         private System.Windows.Forms.Button btnCargarBackup;
         private System.Windows.Forms.OpenFileDialog opnBackup;
-        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.TabControl tbcConfig;
         private System.Windows.Forms.TabPage tbpPoliticasPass;
         private System.Windows.Forms.TabPage tbpBackups;
         private System.Windows.Forms.GroupBox grpCriterios;
         private System.Windows.Forms.GroupBox grpBackup;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

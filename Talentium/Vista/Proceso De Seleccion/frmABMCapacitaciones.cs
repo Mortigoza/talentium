@@ -250,5 +250,10 @@ namespace Vista.Gestion_de_Talento
         {
             this.Dispose();
         }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

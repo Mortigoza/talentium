@@ -103,5 +103,10 @@ namespace Vista
         {
             txtContra2.PasswordChar = '*';
         }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

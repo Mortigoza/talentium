@@ -41,7 +41,7 @@
             this.codigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnVerificar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,19 +159,16 @@
             this.btnVerificar.Visible = false;
             this.btnVerificar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAtras
+            // lnkAtras
             // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 55);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 4;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 52);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 32;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
             // 
             // frmRecupero
             // 
@@ -180,7 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(602, 366);
-            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.codigo);
@@ -215,6 +212,6 @@
         private System.Windows.Forms.TextBox codigo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnVerificar;
-        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

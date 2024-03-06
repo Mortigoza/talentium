@@ -66,7 +66,7 @@
             this.lblAltaCapacitacion = new System.Windows.Forms.Label();
             this.txtNombreAlta = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCapacitacion)).BeginInit();
             this.grpModificacion.SuspendLayout();
             this.grpAlta.SuspendLayout();
@@ -78,7 +78,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFiltrar.Location = new System.Drawing.Point(534, 68);
+            this.btnFiltrar.Location = new System.Drawing.Point(534, 52);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(64, 30);
@@ -89,7 +89,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(253, 74);
+            this.txtFiltro.Location = new System.Drawing.Point(253, 58);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(274, 20);
@@ -98,7 +98,7 @@
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(61, 74);
+            this.lblFiltro.Location = new System.Drawing.Point(61, 58);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(167, 13);
@@ -112,7 +112,7 @@
             this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBaja.Location = new System.Drawing.Point(575, 547);
+            this.btnBaja.Location = new System.Drawing.Point(575, 531);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(110, 31);
@@ -130,7 +130,7 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dtgCapacitacion.Location = new System.Drawing.Point(41, 127);
+            this.dtgCapacitacion.Location = new System.Drawing.Point(41, 111);
             this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCapacitacion.Name = "dtgCapacitacion";
             this.dtgCapacitacion.RowHeadersWidth = 51;
@@ -184,7 +184,7 @@
             this.grpModificacion.Controls.Add(this.btnGuardarMod);
             this.grpModificacion.Controls.Add(this.lblNombreMod);
             this.grpModificacion.Controls.Add(this.txtNombreMod);
-            this.grpModificacion.Location = new System.Drawing.Point(738, 349);
+            this.grpModificacion.Location = new System.Drawing.Point(738, 333);
             this.grpModificacion.Margin = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Name = "grpModificacion";
             this.grpModificacion.Padding = new System.Windows.Forms.Padding(4);
@@ -346,7 +346,7 @@
             this.grpAlta.Controls.Add(this.lblDuracion);
             this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
-            this.grpAlta.Location = new System.Drawing.Point(738, 74);
+            this.grpAlta.Location = new System.Drawing.Point(738, 58);
             this.grpAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grpAlta.Name = "grpAlta";
             this.grpAlta.Padding = new System.Windows.Forms.Padding(4);
@@ -498,7 +498,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(458, 547);
+            this.btnModificar.Location = new System.Drawing.Point(458, 531);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(110, 31);
@@ -507,27 +507,24 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnDtgMod_Click);
             // 
-            // btnAtras
+            // lnkAtras
             // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 24;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 32;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
             // 
             // frmABMCapacitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1334, 682);
-            this.Controls.Add(this.btnAtras);
+            this.ClientSize = new System.Drawing.Size(1334, 660);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
@@ -593,6 +590,6 @@
         private System.Windows.Forms.MaskedTextBox txtTiempoEstimadoMod;
         private System.Windows.Forms.CheckBox chcObligatorioAlta;
         private System.Windows.Forms.CheckBox chcObligatorioMod;
-        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

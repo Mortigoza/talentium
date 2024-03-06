@@ -42,9 +42,9 @@
             this.lblRespuesta = new System.Windows.Forms.Label();
             this.txtRespuesta = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnMostrar2 = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,20 +196,6 @@
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
             // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 55);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 27;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
             // btnMostrar
             // 
             this.btnMostrar.BackColor = System.Drawing.Color.Transparent;
@@ -240,6 +226,17 @@
             this.btnMostrar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMostrar2_MouseDown);
             this.btnMostrar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMostrar2_MouseUp);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 52);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 32;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmCambioPass
             // 
             this.AcceptButton = this.btnContinuar;
@@ -247,9 +244,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(718, 366);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnMostrar2);
             this.Controls.Add(this.btnMostrar);
-            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtRespuesta);
             this.Controls.Add(this.lblRespuesta);
@@ -289,8 +286,8 @@
         private System.Windows.Forms.Label lblRespuesta;
         private System.Windows.Forms.TextBox txtRespuesta;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Button btnMostrar2;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

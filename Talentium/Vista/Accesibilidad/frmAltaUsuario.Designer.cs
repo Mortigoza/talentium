@@ -52,7 +52,6 @@
             this.btnCrearContrasenia = new System.Windows.Forms.Button();
             this.btnAsignarPermisos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisos = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
             this.lstPermisos = new System.Windows.Forms.ListBox();
             this.lstPermisosAsignados = new System.Windows.Forms.ListBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.chcEmail = new System.Windows.Forms.CheckBox();
             this.btnAsignarPermisosTodos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisosTodos = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPersonas)).BeginInit();
             this.grpFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrCambiaCada)).BeginInit();
@@ -69,7 +69,7 @@
             // 
             this.dtgPersonas.BackgroundColor = System.Drawing.Color.White;
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPersonas.Location = new System.Drawing.Point(173, 79);
+            this.dtgPersonas.Location = new System.Drawing.Point(173, 58);
             this.dtgPersonas.Name = "dtgPersonas";
             this.dtgPersonas.ReadOnly = true;
             this.dtgPersonas.Size = new System.Drawing.Size(648, 231);
@@ -87,7 +87,7 @@
             this.grpFiltro.Controls.Add(this.lblApellido);
             this.grpFiltro.Controls.Add(this.txtCuit);
             this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(24, 79);
+            this.grpFiltro.Location = new System.Drawing.Point(24, 58);
             this.grpFiltro.Name = "grpFiltro";
             this.grpFiltro.Size = new System.Drawing.Size(137, 231);
             this.grpFiltro.TabIndex = 12;
@@ -183,7 +183,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(36, 381);
+            this.txtUsuario.Location = new System.Drawing.Point(36, 360);
             this.txtUsuario.MaxLength = 30;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 20);
@@ -197,7 +197,7 @@
             0,
             0,
             0});
-            this.nmrCambiaCada.Location = new System.Drawing.Point(36, 499);
+            this.nmrCambiaCada.Location = new System.Drawing.Point(36, 478);
             this.nmrCambiaCada.Maximum = new decimal(new int[] {
             360,
             0,
@@ -214,7 +214,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(746, 563);
+            this.btnAceptar.Location = new System.Drawing.Point(746, 542);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 14;
@@ -224,7 +224,7 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(36, 420);
+            this.txtContrasenia.Location = new System.Drawing.Point(36, 399);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.ReadOnly = true;
             this.txtContrasenia.Size = new System.Drawing.Size(167, 20);
@@ -234,7 +234,7 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(33, 365);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(33, 344);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(96, 13);
             this.lblNombreUsuario.TabIndex = 3;
@@ -244,7 +244,7 @@
             // 
             this.lblCambiaCada.AutoSize = true;
             this.lblCambiaCada.BackColor = System.Drawing.Color.Transparent;
-            this.lblCambiaCada.Location = new System.Drawing.Point(33, 483);
+            this.lblCambiaCada.Location = new System.Drawing.Point(33, 462);
             this.lblCambiaCada.Name = "lblCambiaCada";
             this.lblCambiaCada.Size = new System.Drawing.Size(128, 13);
             this.lblCambiaCada.TabIndex = 4;
@@ -254,7 +254,7 @@
             // 
             this.lblContrasenia.AutoSize = true;
             this.lblContrasenia.BackColor = System.Drawing.Color.Transparent;
-            this.lblContrasenia.Location = new System.Drawing.Point(33, 404);
+            this.lblContrasenia.Location = new System.Drawing.Point(33, 383);
             this.lblContrasenia.Name = "lblContrasenia";
             this.lblContrasenia.Size = new System.Drawing.Size(61, 13);
             this.lblContrasenia.TabIndex = 5;
@@ -264,7 +264,7 @@
             // 
             this.lblPerfil.AutoSize = true;
             this.lblPerfil.BackColor = System.Drawing.Color.Transparent;
-            this.lblPerfil.Location = new System.Drawing.Point(33, 443);
+            this.lblPerfil.Location = new System.Drawing.Point(33, 422);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(81, 13);
             this.lblPerfil.TabIndex = 6;
@@ -274,7 +274,7 @@
             // 
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(35, 459);
+            this.cmbRol.Location = new System.Drawing.Point(35, 438);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(168, 21);
             this.cmbRol.TabIndex = 7;
@@ -284,7 +284,7 @@
             // 
             this.lblDatosDtg.AutoSize = true;
             this.lblDatosDtg.BackColor = System.Drawing.Color.Transparent;
-            this.lblDatosDtg.Location = new System.Drawing.Point(181, 322);
+            this.lblDatosDtg.Location = new System.Drawing.Point(181, 301);
             this.lblDatosDtg.Name = "lblDatosDtg";
             this.lblDatosDtg.Size = new System.Drawing.Size(165, 13);
             this.lblDatosDtg.TabIndex = 17;
@@ -296,7 +296,7 @@
             this.btnCrearContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearContrasenia.ForeColor = System.Drawing.Color.White;
-            this.btnCrearContrasenia.Location = new System.Drawing.Point(209, 414);
+            this.btnCrearContrasenia.Location = new System.Drawing.Point(209, 393);
             this.btnCrearContrasenia.Name = "btnCrearContrasenia";
             this.btnCrearContrasenia.Size = new System.Drawing.Size(30, 30);
             this.btnCrearContrasenia.TabIndex = 18;
@@ -310,7 +310,7 @@
             this.btnAsignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisos.Location = new System.Drawing.Point(518, 411);
+            this.btnAsignarPermisos.Location = new System.Drawing.Point(518, 390);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 19;
@@ -324,7 +324,7 @@
             this.btnDesasignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDesasignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisos.Location = new System.Drawing.Point(518, 452);
+            this.btnDesasignarPermisos.Location = new System.Drawing.Point(518, 431);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 20;
@@ -332,25 +332,11 @@
             this.btnDesasignarPermisos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisos.Click += new System.EventHandler(this.btnDesasignarPermisos_Click);
             // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 22;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // lstPermisos
             // 
             this.lstPermisos.BackColor = System.Drawing.Color.White;
             this.lstPermisos.FormattingEnabled = true;
-            this.lstPermisos.Location = new System.Drawing.Point(296, 365);
+            this.lstPermisos.Location = new System.Drawing.Point(296, 344);
             this.lstPermisos.Name = "lstPermisos";
             this.lstPermisos.Size = new System.Drawing.Size(216, 173);
             this.lstPermisos.TabIndex = 23;
@@ -360,7 +346,7 @@
             // 
             this.lstPermisosAsignados.BackColor = System.Drawing.Color.White;
             this.lstPermisosAsignados.FormattingEnabled = true;
-            this.lstPermisosAsignados.Location = new System.Drawing.Point(564, 365);
+            this.lstPermisosAsignados.Location = new System.Drawing.Point(564, 344);
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
             this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 173);
             this.lstPermisosAsignados.TabIndex = 24;
@@ -368,7 +354,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(36, 538);
+            this.txtEmail.Location = new System.Drawing.Point(36, 517);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
@@ -379,7 +365,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Location = new System.Drawing.Point(32, 522);
+            this.lblEmail.Location = new System.Drawing.Point(32, 501);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 26;
@@ -389,7 +375,7 @@
             // 
             this.chcEmail.AutoSize = true;
             this.chcEmail.BackColor = System.Drawing.Color.Transparent;
-            this.chcEmail.Location = new System.Drawing.Point(102, 563);
+            this.chcEmail.Location = new System.Drawing.Point(102, 542);
             this.chcEmail.Name = "chcEmail";
             this.chcEmail.Size = new System.Drawing.Size(119, 17);
             this.chcEmail.TabIndex = 27;
@@ -403,7 +389,7 @@
             this.btnAsignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(518, 365);
+            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(518, 344);
             this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
             this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisosTodos.TabIndex = 28;
@@ -417,7 +403,7 @@
             this.btnDesasignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDesasignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(518, 498);
+            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(518, 477);
             this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
             this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisosTodos.TabIndex = 29;
@@ -425,12 +411,24 @@
             this.btnDesasignarPermisosTodos.UseVisualStyleBackColor = false;
             this.btnDesasignarPermisosTodos.Click += new System.EventHandler(this.btnDesasignarPermisosTodos_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 30;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 623);
+            this.ClientSize = new System.Drawing.Size(857, 592);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnDesasignarPermisosTodos);
             this.Controls.Add(this.btnAsignarPermisosTodos);
             this.Controls.Add(this.chcEmail);
@@ -438,7 +436,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lstPermisosAsignados);
             this.Controls.Add(this.lstPermisos);
-            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
             this.Controls.Add(this.btnCrearContrasenia);
@@ -494,7 +491,6 @@
         private System.Windows.Forms.Button btnCrearContrasenia;
         private System.Windows.Forms.Button btnAsignarPermisos;
         private System.Windows.Forms.Button btnDesasignarPermisos;
-        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.ListBox lstPermisos;
         private System.Windows.Forms.ListBox lstPermisosAsignados;
         private System.Windows.Forms.TextBox txtEmail;
@@ -502,5 +498,6 @@
         private System.Windows.Forms.CheckBox chcEmail;
         private System.Windows.Forms.Button btnAsignarPermisosTodos;
         private System.Windows.Forms.Button btnDesasignarPermisosTodos;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }
