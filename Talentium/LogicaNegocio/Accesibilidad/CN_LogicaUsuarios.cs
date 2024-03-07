@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using AccesoDatos.Accesibilidad;
 using Comun;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections;
@@ -61,6 +62,7 @@ namespace LogicaNegocio
                         cd_usuario.InsertarNuevoPermisoUsuario(id_usuario, id_permiso);
                     }
                 }
+                CN_Bitacora.AltaBitacora($"Usuario dado de alta ID: {id_usuario}", "INSERT", "frmAltaUsuario");
             }
             catch (Exception ex)
             {

@@ -17,6 +17,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
+using LogicaNegocio.Bitacora;
 
 namespace Vista
 {
@@ -342,71 +343,78 @@ namespace Vista
                 case "btnGuardar":
         
                     Tuple<bool, string> validacion = validarTodos();
-            if (validacion.Item1)
-            {
-                #region Mapeo
-                Persona insert = new Persona();
+                    if (validacion.Item1)
+                    {
+                        #region Mapeo
+                        Persona insert = new Persona();
              
-                if (pctFoto.Image != null)
-                {
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                    pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    insert.foto_perfil = ms.GetBuffer();
-                }
-                else
-                {
-                    insert.foto_perfil = new byte[0];
-                }
-
-                insert.apellidos = txtApellidos.Text;
-                insert.nombres = txtNombres.Text;
-                insert.id_tipo_doc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
-                insert.nro_doc = txtDni.Text;
-                insert.cuit_cuil = txtCuitCuil.Text;
-                insert.calle = txtCalle.Text;
-                insert.nro = txtNro.Text.Length;
-                insert.dpto = txtDpto.Text;
-                insert.piso = txtPiso.Text;
-                insert.id_localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
-                insert.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
-                insert.id_area = int.Parse(cmbArea.SelectedValue.ToString());
-                insert.email = txtEmail.Text;
-                insert.id_nacionalidad = int.Parse(cmbNacionalidad.SelectedValue.ToString());
-                insert.id_genero = int.Parse(cmbGenero.SelectedValue.ToString());
-                insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
-                insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
-                insert.hijos = (int)nupHijos.Value;
-                insert.candidato = esCandidato;
-                        if (esCandidato)
+                        if (pctFoto.Image != null)
                         {
-                            insert.id_convenio = 0;
-                            insert.fecha_alta = (DateTime) fechaNull;
-                        } else
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                            pctFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            insert.foto_perfil = ms.GetBuffer();
+                        }
+                        else
                         {
-                            insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
-                            insert.fecha_alta = dttFechaAlta.Value;
+                            insert.foto_perfil = new byte[0];
                         }
 
-                        //CONSULTAR
-                //insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
-                //insert.fecha_alta = dttFechaAlta.Value;
+                        insert.apellidos = txtApellidos.Text;
+                        insert.nombres = txtNombres.Text;
+                        insert.id_tipo_doc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
+                        insert.nro_doc = txtDni.Text;
+                        insert.cuit_cuil = txtCuitCuil.Text;
+                        insert.calle = txtCalle.Text;
+                        insert.nro = txtNro.Text.Length;
+                        insert.dpto = txtDpto.Text;
+                        insert.piso = txtPiso.Text;
+                        insert.id_localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
+                        insert.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
+                        insert.id_area = int.Parse(cmbArea.SelectedValue.ToString());
+                        insert.email = txtEmail.Text;
+                        insert.id_nacionalidad = int.Parse(cmbNacionalidad.SelectedValue.ToString());
+                        insert.id_genero = int.Parse(cmbGenero.SelectedValue.ToString());
+                        insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
+                        insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
+                        insert.hijos = (int)nupHijos.Value;
+                        insert.candidato = esCandidato;
+                                if (esCandidato)
+                                {
+                                    insert.id_convenio = 0;
+                                    insert.fecha_alta = (DateTime) fechaNull;
+                                } else
+                                {
+                                    insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                                    insert.fecha_alta = dttFechaAlta.Value;
+                                }
+
+                                //CONSULTAR
+                        //insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
+                        //insert.fecha_alta = dttFechaAlta.Value;
                 
-                insert.telefono = txtTelefono.Text;
-                insert.id_tipo = (int)cmbTipoTel.SelectedValue;
-                insert.telefono_alternativo = txtTelefonoAlternativo.Text;
-                insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
-                insert.contacto = txtContacto.Text;
+                        insert.telefono = txtTelefono.Text;
+                        insert.id_tipo = (int)cmbTipoTel.SelectedValue;
+                        insert.telefono_alternativo = txtTelefonoAlternativo.Text;
+                        insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
+                        insert.contacto = txtContacto.Text;
                 
 
-                #endregion
+                        #endregion
 
-                lblFaltanCampos2.Visible = false;
-                int id_persona = logicaPersona.InsertarPersona(insert);
-                logicaPersona.InsertarInfo(id_persona, infoIdiom,infoLabora,infoAcademic);
-                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Dispose();
-
-            }
+                        lblFaltanCampos2.Visible = false;
+                        int id_persona = logicaPersona.InsertarPersona(insert);
+                        logicaPersona.InsertarInfo(id_persona, infoIdiom,infoLabora,infoAcademic);
+                        if (esCandidato)
+                        {
+                            CN_Bitacora.AltaBitacora($"Candidato dado de alta ID: {id_persona}", "INSERT", this.Name);
+                        }
+                        else
+                        {
+                            CN_Bitacora.AltaBitacora($"Empleado dado de alta ID: {id_persona}", "INSERT", this.Name);
+                        }
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
+                    }
             else
             {
                 lblFaltanCampos2.Visible = true;
@@ -478,8 +486,19 @@ namespace Vista
                         if(esReactivicacion == true)
                         {
                             logicaPersona.ReactivarPersona(modify.id_persona);
+                            CN_Bitacora.AltaBitacora($"Empleado reactivado ID: {modify.id_persona}", "UPDATE", this.Name);
                         }
-
+                        else
+                        {
+                            if (esCandidato)
+                            {
+                                CN_Bitacora.AltaBitacora($"Candidato modificado ID: {modify.id_persona}", "UPDATE", this.Name);
+                            }
+                            else
+                            {
+                                CN_Bitacora.AltaBitacora($"Empleado modificado ID: {modify.id_persona}", "UPDATE", this.Name);
+                            }
+                        }
                         MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
                     }
@@ -551,13 +570,14 @@ namespace Vista
                         logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom, infoLabora, infoAcademic);
                         logicaPersona.ActualizarDatos(modify);
 
-                        MessageBox.Show("El empleado ha sido ingresado correctamente.");
+                        CN_Bitacora.AltaBitacora($"Candidato ID: {modify.id_persona} ahora es empleado", "UPDATE", this.Name);
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
                     }
                     else
                     {
                         lblFaltanCampos2.Visible = true;
-                        MessageBox.Show($"Faltan campos obligatorios de:{validacion2.Item2}");
+                        MessageBox.Show($"{Errores.CamposIncompletos} {validacion2.Item2}", Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     #endregion
                     break;

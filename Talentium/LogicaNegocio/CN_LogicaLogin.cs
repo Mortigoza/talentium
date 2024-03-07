@@ -7,8 +7,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AccesoDatos.Accesibilidad;
 using AccesoDatos.Login;
 using Comun;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 
 namespace LogicaNegocio
@@ -247,12 +249,14 @@ namespace LogicaNegocio
                 else if (UserCache.intentos <= 0 && UserCache.bloqueo == ConfigCache.FechaDefecto)
                 {
                     logicaLogin.BloqueoUser(UserCache.id, System.DateTime.Now);
+                    CN_Bitacora.AltaBitacora($"Demasiados intentos", "Bloqueo", "frmLogin");
                     logicaLogin.CargarCache(UserCache.usuario);
                 }
                 else
                 {
                     MensajeError = Errores.UsrReactivado;
                     reactivar(); // Chekea si ya paso el lapso de bloqueo.
+                    CN_Bitacora.AltaBitacora($"Usuario reactivado", "Reactivación", "frmLogin");
                 }
             }
         }
@@ -304,7 +308,7 @@ namespace LogicaNegocio
                         {
                             Properties.Terminal.Default.Estado_terminal = false;
                             Properties.Terminal.Default.Save();
-                            Console.WriteLine($"Se bloqueo el usuario {UserCache.id}: {Seguridad.DesEncriptar(UserCache.usuario)}, fecha: {DateTime.Now}, porque se detecto que su usuario fue manipulado externamente"); // esto va en bitacora
+                            CN_Bitacora.AltaBitacora($"LA BD FUE MODIFICADA DE FORMA EXTERNA", "BLOQUEO DE TERMINAL", "frmLogin", "ERROR");
                             MessageBox.Show(Errores.ModNoAutorizada, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             Application.Exit();
                         }

@@ -16,6 +16,7 @@ using Vista.Evaluacion_de_desempeño;
 using Vista.Gestion_de_Talento;
 using Vista.Lenguajes;
 using LogicaNegocio.Administracion_Del_Personal;
+using Vista.Bitacora;
 
 namespace Vista
 {
@@ -164,8 +165,8 @@ namespace Vista
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            CN_LogicaLogout logout = new CN_LogicaLogout();
-            logout.Logout(this);
+            this.DialogResult = DialogResult.OK;
+            this.Dispose();
         }
 
         private void altaCandidatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -301,14 +302,22 @@ namespace Vista
             if (minActual >= minTotal && this.Visible == true)
             {
                 CN_LogicaLogout logout = new CN_LogicaLogout();
-                logout.Logout(this, true);
+                this.DialogResult = DialogResult.Abort;
+                this.Dispose();
             }
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             CN_LogicaLogout logout = new CN_LogicaLogout();
-            logout.Logout(this);
+            if (this.DialogResult == DialogResult.Abort)
+            {
+                logout.Logout(this, true);
+            }
+            else
+            {
+                logout.Logout(this);
+            }
         }
         private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -372,6 +381,14 @@ namespace Vista
             this.Hide();
             frmConsultaPersonal frm = new frmConsultaPersonal();
             frm.RecibirDatos(true);
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBitacora frm = new frmBitacora();
             frm.ShowDialog();
             this.Show();
         }

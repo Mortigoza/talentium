@@ -64,6 +64,7 @@
             this.recursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeAltaDelPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
@@ -218,7 +219,7 @@
             // gestiónDeAsistenciasToolStripMenuItem
             // 
             this.gestiónDeAsistenciasToolStripMenuItem.Name = "gestiónDeAsistenciasToolStripMenuItem";
-            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(144, 20);
             this.gestiónDeAsistenciasToolStripMenuItem.Text = "Gestión de Inasistencias";
             this.gestiónDeAsistenciasToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeAsistenciasToolStripMenuItem_Click);
             // 
@@ -260,7 +261,7 @@
             // asistenciasToolStripMenuItem1
             // 
             this.asistenciasToolStripMenuItem1.Name = "asistenciasToolStripMenuItem1";
-            this.asistenciasToolStripMenuItem1.Size = new System.Drawing.Size(256, 26);
+            this.asistenciasToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
             this.asistenciasToolStripMenuItem1.Text = "Inasistencias";
             this.asistenciasToolStripMenuItem1.Click += new System.EventHandler(this.asistenciasToolStripMenuItem1_Click);
             // 
@@ -288,7 +289,7 @@
             // candidatoToolStripMenuItem
             // 
             this.candidatoToolStripMenuItem.Name = "candidatoToolStripMenuItem";
-            this.candidatoToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.candidatoToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.candidatoToolStripMenuItem.Text = "Candidato";
             this.candidatoToolStripMenuItem.Click += new System.EventHandler(this.candidatoToolStripMenuItem_Click);
             // 
@@ -299,7 +300,8 @@
             this.perfilesToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.cambioDeContraseñaToolStripMenuItem,
-            this.recursosToolStripMenuItem});
+            this.recursosToolStripMenuItem,
+            this.bitacoraToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
@@ -355,13 +357,20 @@
             this.configuracionDeAltaDelPersonalToolStripMenuItem.Text = "Configuracion de Alta del Personal";
             this.configuracionDeAltaDelPersonalToolStripMenuItem.Click += new System.EventHandler(this.configuracionDeAltaDelPersonalToolStripMenuItem_Click);
             // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Location = new System.Drawing.Point(945, 504);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(107, 36);
             this.btnLogout.TabIndex = 21;
@@ -464,5 +473,6 @@
         private System.Windows.Forms.ToolStripMenuItem configuracionDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionDeAltaDelPersonalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem candidatoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
     }
 }

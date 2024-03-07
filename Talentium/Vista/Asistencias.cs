@@ -17,6 +17,7 @@ using System.Reflection;
 using System.Globalization;
 using Vista.Lenguajes;
 using LogicaNegocio.Lenguajes;
+using LogicaNegocio.Bitacora;
 
 namespace Vista
 {
@@ -341,10 +342,12 @@ namespace Vista
                     {
                         datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
 
+                        string _idAsis = filaSeleccionada.Cells["id_persona"].Value.ToString();
                         asistencias.EliminarAsistencias(datos.idAsistencia);
+                        CN_Bitacora.AltaBitacora($"Inasistencia del empleado ID: {_idAsis} eliminada", "DELETE", this.Name);
                         Refrescar(dtgModificar);
                     }
-                    }
+                }
             }
         }
 

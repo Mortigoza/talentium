@@ -156,6 +156,5 @@ namespace LogicaNegocio
         {
             asistenciasDatos.EliminarAsistencia(idA);
         }
-
     }
 }

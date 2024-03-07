@@ -84,15 +84,15 @@
             // 
             // lblRecuperoContraseña
             // 
-            this.lblRecuperoContraseña.AutoSize = true;
             this.lblRecuperoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecuperoContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRecuperoContraseña.Location = new System.Drawing.Point(155, 11);
+            this.lblRecuperoContraseña.Location = new System.Drawing.Point(0, 0);
             this.lblRecuperoContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecuperoContraseña.Name = "lblRecuperoContraseña";
-            this.lblRecuperoContraseña.Size = new System.Drawing.Size(304, 29);
+            this.lblRecuperoContraseña.Size = new System.Drawing.Size(600, 50);
             this.lblRecuperoContraseña.TabIndex = 0;
             this.lblRecuperoContraseña.Text = "Recupero de Contraseña";
+            this.lblRecuperoContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnContinuar
             // 
@@ -195,7 +195,6 @@
             this.Text = "Recupero de Contraseña";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
