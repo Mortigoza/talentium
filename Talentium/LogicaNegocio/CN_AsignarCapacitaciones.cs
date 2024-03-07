@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,7 @@ namespace LogicaNegocio
         {
             DataTable dt = acceso.ConsultaAreas();
             DataRow dr = dt.NewRow();
-            dt.Rows.Add(new Object[] { -1, "Todas" });
+            dt.Rows.Add(new Object[] { -1, Errores.Todas });
             return dt;
         }
         public DataTable ConsultarCapacitaciones(bool dePersona = false)

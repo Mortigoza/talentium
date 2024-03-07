@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista.Lenguajes;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
+using Comun;
 
 namespace Vista.Gestion_de_Talento
 {
@@ -85,6 +87,7 @@ namespace Vista.Gestion_de_Talento
             dtgCapacitacion.Columns[2].Visible = false;
             dtgCapacitacion.Columns[4].Visible = false;
             dtgCapacitacion.Columns[5].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCapacitacion);
         }
         private void frmABMCapacitaciones_Load(object sender, EventArgs e)
         {
@@ -98,7 +101,7 @@ namespace Vista.Gestion_de_Talento
         {
             if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text)) 
             {
-                MessageBox.Show("Todos los campos deben estar completos");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -144,7 +147,7 @@ namespace Vista.Gestion_de_Talento
 
             if (dtgCapacitacion.SelectedRows == null || dtgCapacitacion.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar la fila que desea modificar");
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             cargaCtrMod();
@@ -162,7 +165,7 @@ namespace Vista.Gestion_de_Talento
         {
             if (string.IsNullOrWhiteSpace(txtNombreMod.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoMod.Text))
             {
-                MessageBox.Show("Todos los campos deben estar completos");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -189,11 +192,11 @@ namespace Vista.Gestion_de_Talento
         {
             if (dtgCapacitacion.SelectedRows == null || dtgCapacitacion.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar la fila que desea eliminar");
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("¿Desea eliminar la fila seleccionada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -244,6 +247,11 @@ namespace Vista.Gestion_de_Talento
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
         }

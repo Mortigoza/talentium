@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista
@@ -44,7 +45,7 @@ namespace Vista
                     {
                         label3.Text = cnRecupero.Message;
                         label3.Visible = true;
-                        label6.Visible = true;
+                        lblIngreseCodigo.Visible = true;
                         codigo.Visible = true;
                         btnVerificar.Visible = true;
                         textBoxUsuarioRec.Enabled = false;
@@ -61,7 +62,7 @@ namespace Vista
                 }
             } else
             {
-                MessageBox.Show("El campo no debe estar vacio");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -99,6 +100,11 @@ namespace Vista
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
         }

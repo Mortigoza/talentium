@@ -47,10 +47,8 @@
     <Compile Include="Accesibilidad\CN_ConfigAltaPersonal.cs" />
     <Compile Include="Accesibilidad\CN_LogicaEntrevista.cs" />
     <Compile Include="CN_Asistencias.cs" />
-    <Compile Include="Accesibilidad\CN_BajaPerfil.cs" />
     <Compile Include="Accesibilidad\CN_ConsultarPermisosPerfil.cs" />
-    <Compile Include="Accesibilidad\CN_AltaPerfil.cs" />
-    <Compile Include="Accesibilidad\CN_UpPerfil.cs" />
+    <Compile Include="Accesibilidad\CN_LogicaPerfiles.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionMetodos.cs" />
     <Compile Include="Analisis y reportes\CN_CertificacionServicios.cs" />
     <Compile Include="CN_Backup.cs" />
@@ -110,10 +108,12 @@
     <EmbeddedResource Include="Lenguajes\Errores.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Errores.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Errores.es-AR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Errores.es-AR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Lenguajes\Errores.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

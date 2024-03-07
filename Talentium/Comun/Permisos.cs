@@ -25,6 +25,7 @@ namespace Comun
         public static readonly string Gestion_Nomina = "Gestion_Nomina";
         public static readonly string Gestion_Informes = "Gestion_Informes";
         public static readonly string Gestion_Certificado = "Gestion_Certificado";
+        public static readonly string Seguridad = "Seguridad";
 
     }
 }

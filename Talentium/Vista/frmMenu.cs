@@ -286,11 +286,11 @@ namespace Vista
             minActual += 1000;
             long _minRestante = minTotal - minActual;
 
-            if (_minRestante == 30_000)
+            if (_minRestante == 30_000 && this.Visible == true)
             {
                 SystemSounds.Exclamation.Play();
             }
-            if (_minRestante <= 30_000)
+            if (_minRestante <= 30_000 && this.Visible == true)
             {
                 lblTiempoRestante.Visible = true;
 
@@ -298,7 +298,7 @@ namespace Vista
                 string minRestantes = minRestanteFormato.ToString(@"mm\:ss");
                 lblTiempoRestante.Text = Strings.lblTiempoRestante + minRestantes;
             }
-            if (minActual >= minTotal)
+            if (minActual >= minTotal && this.Visible == true)
             {
                 CN_LogicaLogout logout = new CN_LogicaLogout();
                 logout.Logout(this, true);

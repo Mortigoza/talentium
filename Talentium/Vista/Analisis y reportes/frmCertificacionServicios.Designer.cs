@@ -41,7 +41,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCertificados)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             this.dtgCertificados.BackgroundColor = System.Drawing.Color.White;
             this.dtgCertificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCertificados.Location = new System.Drawing.Point(179, 75);
+            this.dtgCertificados.Location = new System.Drawing.Point(179, 54);
             this.dtgCertificados.Name = "dtgCertificados";
             this.dtgCertificados.ReadOnly = true;
             this.dtgCertificados.RowHeadersVisible = false;
@@ -63,7 +63,7 @@
             this.rdbEnProceso.AutoSize = true;
             this.rdbEnProceso.BackColor = System.Drawing.Color.Transparent;
             this.rdbEnProceso.Checked = true;
-            this.rdbEnProceso.Location = new System.Drawing.Point(731, 438);
+            this.rdbEnProceso.Location = new System.Drawing.Point(731, 417);
             this.rdbEnProceso.Name = "rdbEnProceso";
             this.rdbEnProceso.Size = new System.Drawing.Size(79, 17);
             this.rdbEnProceso.TabIndex = 1;
@@ -76,7 +76,7 @@
             // 
             this.rdbFinalizados.AutoSize = true;
             this.rdbFinalizados.BackColor = System.Drawing.Color.Transparent;
-            this.rdbFinalizados.Location = new System.Drawing.Point(816, 438);
+            this.rdbFinalizados.Location = new System.Drawing.Point(816, 417);
             this.rdbFinalizados.Name = "rdbFinalizados";
             this.rdbFinalizados.Size = new System.Drawing.Size(77, 17);
             this.rdbFinalizados.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.grpFiltro.Controls.Add(this.lblApellido);
             this.grpFiltro.Controls.Add(this.txtCuit);
             this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(21, 75);
+            this.grpFiltro.Location = new System.Drawing.Point(21, 54);
             this.grpFiltro.Name = "grpFiltro";
             this.grpFiltro.Size = new System.Drawing.Size(137, 201);
             this.grpFiltro.TabIndex = 13;
@@ -175,7 +175,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(38, 328);
+            this.btnAgregar.Location = new System.Drawing.Point(38, 307);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 27);
             this.btnAgregar.TabIndex = 14;
@@ -189,7 +189,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(38, 361);
+            this.btnModificar.Location = new System.Drawing.Point(38, 340);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 27);
             this.btnModificar.TabIndex = 15;
@@ -197,19 +197,16 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // btnAtras
+            // lnkAtras
             // 
-            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(40, 40);
-            this.btnAtras.TabIndex = 24;
-            this.btnAtras.Text = "<";
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 32;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
             // 
             // frmCertificacionServicios
             // 
@@ -217,7 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(924, 485);
-            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grpFiltro);
@@ -252,6 +249,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

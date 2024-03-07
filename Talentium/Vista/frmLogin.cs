@@ -116,5 +116,13 @@ namespace Vista
                 }
             }
         }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

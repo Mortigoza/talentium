@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio.Lenguajes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace LogicaNegocio.Analisis_y_reportes
         {
             if (dtg.DataSource == null | dtg.RowCount == 0)
             {
-                return (false, "Debe seleccionar un empleado");
+                return (false, Errores.RegNoSelec);
             }
             CN_CertificacionServicios cs = new CN_CertificacionServicios();
             DateTime? dateTime = cs.ConsultaFechaUltimaCertificacion(idEmpleado);
@@ -22,7 +23,7 @@ namespace LogicaNegocio.Analisis_y_reportes
             {
                 if (DateTime.Today < Convert.ToDateTime(dateTime).AddDays(30))
                 {
-                    return (false, "Este empleado ya tiene un pedido de certificacion de servicios en los ultimos 30 días");
+                    return (false, Errores.Cer30Dias);
                 }
             }
             return (true, "");

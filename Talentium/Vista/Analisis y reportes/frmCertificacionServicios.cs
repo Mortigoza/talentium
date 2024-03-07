@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio.Analisis_y_reportes;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,7 +61,7 @@ namespace Vista.Analisis_y_reportes
 
             if (rows == 0)
             {
-                MessageBox.Show("Ningun registro coinside");
+                MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             UtilidadesForms.LimpiarControles(grpFiltro);
@@ -75,31 +76,38 @@ namespace Vista.Analisis_y_reportes
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int id_certificacion = _index;
-            int id_empleado = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[8].Value);
-            int etapa;
-            switch (dtgCertificados.Rows[_rowIndex].Cells[5].Value.ToString())
+            if (dtgCertificados.Rows.Count > 0)
             {
-                default:
-                    switch (_estado)
-                    {
-                        default:
-                            etapa = 2;
-                            break;
-                        case 1:
-                            etapa = 3;
-                            break;
-                    }
-                    break;
-                case "":
-                    etapa = 1;
-                    break;
+                int id_certificacion = _index;
+                int id_empleado = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[8].Value);
+                int etapa;
+                switch (dtgCertificados.Rows[_rowIndex].Cells[5].Value.ToString())
+                {
+                    default:
+                        switch (_estado)
+                        {
+                            default:
+                                etapa = 2;
+                                break;
+                            case 1:
+                                etapa = 3;
+                                break;
+                        }
+                        break;
+                    case "":
+                        etapa = 1;
+                        break;
+                }
+                frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado, etapa);
+                this.Hide();
+                acs.ShowDialog();
+                refreshDtg();
+                this.Show();
             }
-            frmAltaCertificacionServicios acs = new frmAltaCertificacionServicios(id_certificacion, id_empleado, etapa);
-            this.Hide();
-            acs.ShowDialog();
-            refreshDtg();
-            this.Show();
+            else
+            {
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         #region metodos
         public int refreshDtg(bool filtro = false)
@@ -113,6 +121,7 @@ namespace Vista.Analisis_y_reportes
                 dtgCertificados.Columns[0].Visible = false;
                 dtgCertificados.Columns[7].Visible = false;
                 dtgCertificados.Columns[8].Visible = false;
+                UtilidadesForms.TraducirColumnasDtg(ref dtgCertificados);
                 dtgCertificados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
 
@@ -121,6 +130,11 @@ namespace Vista.Analisis_y_reportes
         #endregion
 
         private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
         }

@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace Vista
                 && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1 && _void == false)
             // Entra si los campos de filtrado estan todos en su estado por defecto
             {
-                MessageBox.Show("Utilice al menos un filtro");
+                MessageBox.Show(Errores.FiltroIncompleto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             //Entra si se usa al menos uno de los filtros
@@ -86,8 +87,7 @@ namespace Vista
                 if (dt.Rows.Count == 0 && _void == false)
                 // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
                 {
-                    MessageBox.Show("Ningun registro coinside");
-                    _estado = !_estado;
+                    MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -117,7 +117,7 @@ namespace Vista
             DialogResult msgBox;
             if (dtgPersonas.Rows.Count > 0 && rdbActivos.Checked && btnBaja.Name == "btnBaja")
             {
-                msgBox = MessageBox.Show("¿Desea dar de baja este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                msgBox = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (msgBox == DialogResult.Yes)
                 {
                     // Si el boton esta en modo baja: elimina de forma logica al usuario seleccionado
@@ -125,19 +125,17 @@ namespace Vista
                     cn_usuario.IdUsuario = _idUsuario;
                     cn_usuario.BajaUsuario();
                     dtgRefresh(sender, e);
-                    MessageBox.Show("Usuario dado de baja exitosamente");
                 }
             }
             if (dtgPersonas.Rows.Count > 0 && rdbInactivos.Checked && btnBaja.Name == "btnReactivar")
             {
-                msgBox = MessageBox.Show("¿Desea reactivar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                msgBox = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (msgBox == DialogResult.Yes)
                 {
                     // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
                     cn_usuario.IdUsuario = _idUsuario;
                     cn_usuario.ReactivarUsuario();
                     dtgRefresh(sender, e);
-                    MessageBox.Show("Usuario reactivado exitosamente");
                 }
             }
         }
@@ -145,8 +143,11 @@ namespace Vista
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             // Abre el formulario de alta de usuario
+            this.Hide();
             frmAltaUsuario alta = new frmAltaUsuario();
             alta.ShowDialog();
+            this.Show();
+            dtgRefresh(sender, e);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -154,13 +155,15 @@ namespace Vista
             if (_estado && dtgPersonas.Rows.Count > 0 && _idUsuario > 0)
             {
                 // Abre el formulario de alta de usuario
+                this.Hide();
                 frmAltaUsuario mod = new frmAltaUsuario(_idUsuario);
                 mod.ShowDialog();
+                this.Show();
                 dtgRefresh(sender, e);
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un usuario activo.");
+                MessageBox.Show(Errores.RegSelecNoActivo, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -213,6 +216,11 @@ namespace Vista
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
         }

@@ -198,4 +198,43 @@
   <data name="PasRepetida" xml:space="preserve">
     <value>You cannot use your current password as the new password.</value>
   </data>
+  <data name="Cer30Dias" xml:space="preserve">
+    <value>This employee already has a service certification request in the last 30 days.</value>
+  </data>
+  <data name="RegNoSelec" xml:space="preserve">
+    <value>You must select at least one record.</value>
+  </data>
+  <data name="FiltroIncompleto" xml:space="preserve">
+    <value>Please use at least one filter.</value>
+  </data>
+  <data name="RegNoCoincide" xml:space="preserve">
+    <value>No records match.</value>
+  </data>
+  <data name="RegSelecNoActivo" xml:space="preserve">
+    <value>You must select an active record.</value>
+  </data>
+  <data name="PerfValido" xml:space="preserve">
+    <value>Please enter a valid profile name and at least one permission.</value>
+  </data>
+  <data name="ErrorAlta" xml:space="preserve">
+    <value>There was an error while trying to register.</value>
+  </data>
+  <data name="UsrYaAsignado" xml:space="preserve">
+    <value>This employee already has an assigned user.</value>
+  </data>
+  <data name="UsrYaEnUso" xml:space="preserve">
+    <value>That username is already in use.</value>
+  </data>
+  <data name="Todas" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Personalizado" xml:space="preserve">
+    <value>Customized</value>
+  </data>
+  <data name="PerfEnUso" xml:space="preserve">
+    <value>This profile cannot be deleted because it is assigned to one or more users.</value>
+  </data>
+  <data name="UsrEspacios" xml:space="preserve">
+    <value>The username cannot contain spaces.</value>
+  </data>
 </root>

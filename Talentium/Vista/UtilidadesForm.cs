@@ -179,11 +179,11 @@ namespace Comun
         {
             foreach (DataGridViewColumn c in dtg.Columns)
             {
-                string text = Columnas.ResourceManager.GetString(c.HeaderText);
+                string text = Columnas.ResourceManager.GetString(c.HeaderText.ToLower());
                 if (text != null)
                 {
                     c.HeaderText = text;
-                }
+                }   
             }
         }
     }

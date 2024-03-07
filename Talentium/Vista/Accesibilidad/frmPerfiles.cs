@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,17 +51,21 @@ namespace Vista.Accesibilidad
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
 
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = logica.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             #endregion
             dtgPerfiles.AutoResizeColumns();
@@ -135,22 +140,21 @@ namespace Vista.Accesibilidad
                         }
                         try
                         {
-                            CN_AltaPerfil ap = new CN_AltaPerfil();
-                            ap.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                            cn_perfil.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
-                            MessageBox.Show("Alta exitosa");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un nombre de perfil valido y al menos un permiso");
+                        MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
 
@@ -167,13 +171,12 @@ namespace Vista.Accesibilidad
                         }
                         try
                         {
-                            CN_UpPerfil up = new CN_UpPerfil();
-                            up.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                            cn_perfil.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
                             refreshDtg();
-                            MessageBox.Show("Modificación exitosa");
                         }
                         catch (Exception ex)
                         {
@@ -182,7 +185,7 @@ namespace Vista.Accesibilidad
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un nombre de perfil valido y al menos un permiso");
+                        MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
             }
@@ -255,9 +258,20 @@ namespace Vista.Accesibilidad
         }
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            CN_BajaPerfil bp = new CN_BajaPerfil();
-            bp.BajaPerfil(_index);
-            refreshDtg();
+            DialogResult msgBox = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dtgPerfiles.Rows.Count > 0 & msgBox == DialogResult.Yes)
+            {
+                CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
+                if (cn_perfil.ConsultarPerfil(_index) == 0)
+                {
+                    cn_perfil.BajaPerfil(_index);
+                    refreshDtg();
+                }
+                else
+                {
+                    MessageBox.Show(Errores.PerfEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
         #region Metodos
 
@@ -283,11 +297,17 @@ namespace Vista.Accesibilidad
             dtgPerfiles.DataSource = logica.ConsultarPerfiles(false);
             dtgPerfiles.Columns[2].MinimumWidth = 200;
             dtgPerfiles.Columns[0].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgPerfiles);
             dtgPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         #endregion
 
         private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
         }

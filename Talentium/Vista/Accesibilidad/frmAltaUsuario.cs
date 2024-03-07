@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,17 +71,22 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
+
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             #endregion
 
@@ -115,6 +121,7 @@ namespace Vista
             dtgPersonas.Columns[7].Visible = false;
             dtgPersonas.Columns[8].Visible = false;
             dtgPersonas.Columns[9].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgPersonas);
             //Cargar datos
             txtUsuario.Text = Seguridad.DesEncriptar(dt.Rows[0][7].ToString());
             nmrCambiaCada.Value = (int)(dt.Rows[0][8]);
@@ -148,17 +155,22 @@ namespace Vista
             fNameColumn.DataType = System.Type.GetType("System.String");
             fNameColumn.ColumnName = "funcionalidad";
             dtListaMem.Columns.Add(fNameColumn);
+
+            DataColumn fNameColumnEng = new DataColumn();
+            fNameColumnEng.DataType = System.Type.GetType("System.String");
+            fNameColumnEng.ColumnName = "funcionalidad_eng";
+            dtListaMem.Columns.Add(fNameColumnEng);
             //lst, carga los dt en las listBox de permisos
             lstPermisos.DataSource = null;
             dtListaBd = usuario.ConsultarPermisosLst();
             lstPermisos.DataSource = dtListaBd;
             lstPermisos.ValueMember = "id_permiso";
-            lstPermisos.DisplayMember = "funcionalidad";
+            lstPermisos.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             lstPermisosAsignados.DataSource = null;
             lstPermisosAsignados.DataSource = dtListaMem;
             lstPermisosAsignados.ValueMember = "id_permiso";
-            lstPermisosAsignados.DisplayMember = "funcionalidad";
+            lstPermisosAsignados.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "funcionalidad" : "funcionalidad_eng";
 
             usuario.IdUsuario = id_usuario;
             usuario.IdPerfil = (int)(dt.Rows[0][9]);
@@ -207,7 +219,6 @@ namespace Vista
 
                     if (usuario.AltaUsuario(dtListaMem, dtgPersonas))
                     {
-                        MessageBox.Show("Alta exitosa");
                         this.Dispose();
                     }
                     break;
@@ -224,7 +235,6 @@ namespace Vista
                     usuario.RowIndex = _rowIndex;
 
                     usuario.ModificarUsuario(dtListaMem);
-                    MessageBox.Show("Modificación exitosa");
                     this.Dispose();
                     break;
             }
@@ -242,7 +252,7 @@ namespace Vista
                 && string.IsNullOrEmpty(txtApellido.Text) && (int)cmbArea.SelectedValue == -1)
             // Entra si los campos de filtrado estan todos en su estado por defecto
             {
-                MessageBox.Show("Utilice al menos un filtro");
+                MessageBox.Show(Errores.FiltroIncompleto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             //Entra si se usa al menos uno de los filtros
@@ -252,7 +262,7 @@ namespace Vista
                 if (dt.Rows.Count == 0)
                 {
                     // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
-                    MessageBox.Show("Ningun registro coinside");
+                    MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -263,6 +273,7 @@ namespace Vista
                     dtgPersonas.Columns[6].Visible = false;
                     UtilidadesForms.LimpiarControles(grpFiltro);
                     cmbArea.SelectedValue = -1;
+                    UtilidadesForms.TraducirColumnasDtg(ref dtgPersonas);
                 }
             }
             dtgPersonas.AutoResizeColumns();
@@ -411,6 +422,19 @@ namespace Vista
                 cmbRol.SelectedValue = -1;
                 perfilCustom = false;
             }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
