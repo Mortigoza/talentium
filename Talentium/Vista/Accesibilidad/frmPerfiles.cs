@@ -267,8 +267,9 @@ namespace Vista.Accesibilidad
                 CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
                 if (cn_perfil.ConsultarPerfil(_index) == 0)
                 {
+                    string _perfil = dtgPerfiles.Rows[_rowIndex].Cells[1].Value.ToString();
                     cn_perfil.BajaPerfil(_index);
-                    CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" eliminado", "DELETE", this.Name);
+                    CN_Bitacora.AltaBitacora($"Perfil \"{_perfil}\" eliminado", "DELETE", this.Name);
                     refreshDtg();
                 }
                 else

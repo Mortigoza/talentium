@@ -309,13 +309,13 @@ namespace Vista
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             CN_LogicaLogout logout = new CN_LogicaLogout();
-            if (this.DialogResult == DialogResult.OK)
-            {
-                logout.Logout(this);
-            }
-            else if (this.DialogResult == DialogResult.Abort)
+            if (this.DialogResult == DialogResult.Abort)
             {
                 logout.Logout(this, true);
+            }
+            else
+            {
+                logout.Logout(this);
             }
         }
         private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)

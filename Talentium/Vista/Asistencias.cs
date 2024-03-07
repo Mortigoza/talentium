@@ -318,8 +318,9 @@ namespace Vista
                     {
                         datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
 
+                        string _idAsis = filaSeleccionada.Cells["id_persona"].Value.ToString();
                         asistencias.EliminarAsistencias(datos.idAsistencia);
-                        CN_Bitacora.AltaBitacora($"Inasistencia del empleado ID: {filaSeleccionada.Cells["id_persona"]} eliminada", "DELETE", this.Name);
+                        CN_Bitacora.AltaBitacora($"Inasistencia del empleado ID: {_idAsis} eliminada", "DELETE", this.Name);
                         Refrescar(dataGridModificar);
                     }
                 }
