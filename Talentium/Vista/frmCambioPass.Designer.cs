@@ -259,7 +259,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNuevaContraseña);
             this.Controls.Add(this.txtContra1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "frmCambioPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio de contraseña";

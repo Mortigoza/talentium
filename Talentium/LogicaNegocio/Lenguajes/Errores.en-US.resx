@@ -198,6 +198,27 @@
   <data name="PasRepetida" xml:space="preserve">
     <value>You cannot use your current password as the new password.</value>
   </data>
+  <data name="CampoMinimo11" xml:space="preserve">
+    <value>The field must contain 11 digits.</value>
+  </data>
+  <data name="CorreoNoValido" xml:space="preserve">
+    <value>The email address is not valid.</value>
+  </data>
+  <data name="CuitEnUso" xml:space="preserve">
+    <value>The CUIT/CUIL is already associated with an employee.</value>
+  </data>
+  <data name="DescargaExitosa" xml:space="preserve">
+    <value>The download was completed successfully</value>
+  </data>
+  <data name="IdiomaRepetido" xml:space="preserve">
+    <value>You cannot repeat the language.</value>
+  </data>
+  <data name="InfoAcademicaOb" xml:space="preserve">
+    <value>The academic information is mandatory.</value>
+  </data>
+  <data name="OperacionExitosa" xml:space="preserve">
+    <value>Successful Operation.</value>
+  </data>
   <data name="Cer30Dias" xml:space="preserve">
     <value>This employee already has a service certification request in the last 30 days.</value>
   </data>

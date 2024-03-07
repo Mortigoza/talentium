@@ -15,6 +15,7 @@ using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -25,6 +26,7 @@ namespace Vista
         public Asistencias()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             btnExcel.Visible = false;
             buscarAlta.Enabled = false;
             DataTable asistencia = asistencias.area();

@@ -4,6 +4,8 @@ using System.Data;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using Vista.Lenguajes;
+
 namespace Vista
 {
     public partial class AsistenciasPanel : Form
@@ -15,6 +17,7 @@ namespace Vista
         public AsistenciasPanel(C_Asistencias dato)
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             datos = dato;
             
             DataTable asistencia = asistencias.motivo();

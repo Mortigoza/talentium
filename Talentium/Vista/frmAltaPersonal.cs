@@ -15,7 +15,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System.IO;
 using System.Text.RegularExpressions;
-
+using LogicaNegocio.Lenguajes;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -38,61 +39,59 @@ namespace Vista
         private bool inicial = true;
         private int infoLaborales = 0;
         private int infoAcademicos = 1;
-
         private int nivelEspaniol = -1;
         private int nivelIngles = -1;
-
         private DateTime fn;
         private DateTime fa;
         private bool _mod = false;
-
         private int _id_persona;
-           
+        //listas
         List<InfoAcademicoDto> infoAcademic = new List<InfoAcademicoDto>();
         List<IdiomaDto> infoIdiom = new List<IdiomaDto>();
         List<infoLaboralDto> infoLabora = new List<infoLaboralDto>();
-
 
         List<IdiomaMostrar> mostrarIdioma = new List<IdiomaMostrar>();
         List<NivelProgresoMostrar> mostrarProgresoNivel = new List<NivelProgresoMostrar>();
         
         public frmAltaPersonal(bool esCandidato)
         {
-
-            //InitializeComponent();
-
-          
             InitializeComponent();
-            //txtApellidos.KeyDown += TextBoxNoPegar;
-            //NoPegar(grpNivelIdiomas);
-            //NoPegar(groupBox7);
-            //NoPegar(grpExp1);
-            //NoPegar(grpSuperior1);
-            //NoPegar(groupBox2);
-            //NoPegar(groupBox3);
-            //NoPegar(grpIdiomas);
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             DeshabilitarCampos();
+
             this.esCandidato = esCandidato;
-         
             this.esReactivicacion = false;
 
+            dtpFechaDeNacimiento.MaxDate = DateTime.Today;
             dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
+            dttFechaAlta.MaxDate = DateTime.Today;
+            dgvAcademico.MultiSelect = false;
+            dgvAcademico.RowHeadersVisible = false;
+            dgvAcademico.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAcademico.AllowUserToResizeRows = false;
 
-          
+            dgvIdioma.MultiSelect = false;
+            dgvIdioma.RowHeadersVisible = false;
+            dgvIdioma.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvIdioma.AllowUserToResizeRows = false;
+
+            dgvLaboral.MultiSelect = false;
+            dgvLaboral.RowHeadersVisible = false;
+            dgvLaboral.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLaboral.AllowUserToResizeRows = false;
+
+
+
             inicial = false;
-
 
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
-
 
             DataTable idioma = logica.ObtenerIdioma();
             cmbIdioma.DataSource = idioma;
             cmbIdioma.DisplayMember = "idioma";
             cmbIdioma.ValueMember = "id_idiomas";
             cmbIdioma.SelectedIndex = -1;
-
-
 
             DataTable provincia = logica.ObtenerProvincia();
             cmbProvincia.DataSource = provincia;
@@ -122,7 +121,6 @@ namespace Vista
             cmbEstadoCivil.ValueMember = "id_estado_civil";
             cmbEstadoCivil.SelectedIndex = -1;
 
-
             DataTable nacionalidad = logica.ObtenerNacionalidad();
             cmbNacionalidad.DataSource = nacionalidad;
             cmbNacionalidad.DisplayMember = "nacionalidad";
@@ -149,7 +147,6 @@ namespace Vista
             cmbConvenio.ValueMember = "id_convenio";
             cmbConvenio.SelectedIndex = -1;
 
-
             DataTable puesto = logica.ObtenerPuesto();
             cmbPuesto.DataSource = puesto;
             cmbPuesto.DisplayMember = "puesto";
@@ -164,7 +161,6 @@ namespace Vista
             cmbArea.SelectedIndex = -1;
 
             //ComboBox Solapa Academico*************
-
             // Agrega los años desde 1900 hasta el año actual a la lista
             int anioActual = DateTime.Now.Year;
             List<string> listaDeAnios = new List<string>();
@@ -187,11 +183,7 @@ namespace Vista
             cmbLaboralEgreso.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralIngreso.SelectedIndex = -1;
             cmbLaboralEgreso.SelectedIndex = -1;
-
- 
-
         }
-
 
         public bool EsReactivacion
         {
@@ -270,8 +262,10 @@ namespace Vista
             string cuilIngresado = txtCuitCuil.Text;
             if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
             {
-                MessageBox.Show("El campo no puede estar vacío.");
+                
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
             else
             {
                 // Verificar si la entrada contiene solo números y tiene exactamente 11 dígitos
@@ -283,7 +277,8 @@ namespace Vista
                         if (valor)
                         {
                             DeshabilitarCampos();
-                            MessageBox.Show("El Cuit/Cuil ya esta asociado a un empleado");
+                            
+                            MessageBox.Show(Errores.CuitEnUso,Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                         else
@@ -292,20 +287,13 @@ namespace Vista
                             HabilitarCampos();
                             txtCuitCuil.Enabled = false;
                             pctFoto.Enabled = true;
-                            string numerosCuil = cuilIngresado.Substring(2, 8);
-                            txtDni.Text = numerosCuil;
                         }
                     }
                     else
                     {
                         DeshabilitarCampos();
-                        MessageBox.Show("El campo debe contener 11 digitos.");
+                        MessageBox.Show(Errores.CampoMinimo11, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }
-                else
-                {
-                    DeshabilitarCampos();
-                    MessageBox.Show("La entrada debe contener solamente numeros.");
                 }
             }
             if (esCandidato)
@@ -327,17 +315,22 @@ namespace Vista
             return true; // La cadena contiene solo números
         }
 
+        public void ValidarTotal ()
+        {
+
+        }
+
         //BOTTON PARA MODIFICAR Y GUARDAR
         private void button9_Click(object sender, EventArgs e)
         {
             switch (btnGuardar.Name)
             {
                 case "btnGuardar":
-
+        
                     Tuple<bool, string> validacion = validarTodos();
-                    if (validacion.Item1)
-                    {
-                        #region Mapeo
+            if (validacion.Item1)
+            {
+                #region Mapeo
                 Persona insert = new Persona();
              
                 if (pctFoto.Image != null)
@@ -393,18 +386,17 @@ namespace Vista
 
                 #endregion
 
-                        lblFaltanCampos2.Visible = false;
-                        int id_persona = logicaPersona.InsertarPersona(insert /*infoLaborales, infoAcademicos*/);
-                        logicaPersona.InsertarInfo(id_persona,/*infoacademico, infolaboral, listaIdiomas,*/ infoIdiom,infoLabora,infoAcademic);
+                lblFaltanCampos2.Visible = false;
+                int id_persona = logicaPersona.InsertarPersona(insert);
+                logicaPersona.InsertarInfo(id_persona, infoIdiom,infoLabora,infoAcademic);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
 
-                        MessageBox.Show("Todos los datos se cargaron correctamente.");
-                        this.Dispose();
-
-                    }
-                    else
-                    {
-                        lblFaltanCampos2.Visible = true;
-                        MessageBox.Show($"Faltan campos obligatorios de:{validacion.Item2}");
+            }
+            else
+            {
+                lblFaltanCampos2.Visible = true;
+                        MessageBox.Show($"{Errores.CamposIncompletos} {validacion.Item2}", Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
                 case "btnModificar":
@@ -466,23 +458,21 @@ namespace Vista
                     lblFaltanCampos.Visible = false;
                     lblFaltanCampos1.Visible = false;
                     lblFaltanCampos2.Visible = false;
-                    logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom,infoLabora, infoAcademic);
+                    logicaPersona.InsertarInfo(modify.id_persona, infoIdiom,infoLabora, infoAcademic);
                     logicaPersona.ActualizarDatos(modify);
-                        //logicaPersona.ActualizarDatosAcademicos(modify,cantidad);
-                        //logicaPersona.ActualizarDatosLaborales(modify,cantidad);
-                        //logicaPersona.ActualizarIdioma(modify, id_persona);
+
                         if(esReactivicacion == true)
                         {
                             logicaPersona.ReactivarPersona(modify.id_persona);
                         }
-                        
-                        MessageBox.Show("Los datos se han actualizado correctamente.");
-                    this.Dispose();
+
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
                     }
                     else
                     {
                         lblFaltanCampos2.Visible = true;
-                        MessageBox.Show($"Faltan campos obligatorios de:{validacion1.Item2}");
+                        MessageBox.Show($"{Errores.CamposIncompletos} {validacion1.Item2}", Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     #endregion
                     break;
@@ -567,18 +557,6 @@ namespace Vista
         private void button8_Click(object sender, EventArgs e)
         {
             ValidarDataGrid();
-            //if (validarVacios(tabAcademicos, infoAcademicos))
-            // {
-            //     lblFaltanCampos1.Visible = false;
-            //     tabControl.TabPages[2].Enabled = true;
-            //     RestaurarColorPredeterminado(tabAcademicos);
-            //     tabControl.SelectedTab = tabLaborales;
-            // }
-            // else
-            // {
-            //     lblFaltanCampos1.Visible = true;
-            //     MessageBox.Show("Faltan campos obligatorios");
-            // }
         }
 
         //BOTON PARA VALIDAR TAB "INFORMACION PERSONAL"
@@ -595,7 +573,7 @@ namespace Vista
             else
             {
                 lblFaltanCampos.Visible = true;
-                MessageBox.Show("Faltan campos obligatorios");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //BOTON PARA AGREGAR Y ELIMINAR FOTO
@@ -621,6 +599,7 @@ namespace Vista
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             
                 }
             }
         }
@@ -650,7 +629,10 @@ namespace Vista
         }
         private bool validarVacios(Control control, int count = -1)
         {
+
+
             bool todosCompletos = true;
+    
             foreach (Control c in control.Controls)
             {
                 if (c is GroupBox grp)
@@ -660,22 +642,25 @@ namespace Vista
                         todosCompletos = false;
                     }
                 }
+              
+               
                 if (c is TextBox txt &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
                     (count == -1 | c.AccessibleDescription.Length - 1 < count))
                 {
                     if (string.IsNullOrWhiteSpace(c.Text))
                     {
-                        //errorProvider1.SetError(txt, "Oblicatiorio");
+                       
                         cambiarColorLabel(txt, Color.Red);
                         todosCompletos = false;
                     }
                     else
                     {
                         cambiarColorLabel(txt, Color.Black);
-                        //errorProvider1.SetError(txt, "");
+                    
                     }
                 }
+
 
                 if (c is ComboBox cmb &&
                     !string.IsNullOrEmpty(c.AccessibleDescription) &&
@@ -683,14 +668,14 @@ namespace Vista
                 {
                     if (cmb.SelectedIndex == -1)
                     {
-                        //errorProvider1.SetError(c, "Oblicatiorio");
+                       
                         cambiarColorLabel(cmb, Color.Red);
                         todosCompletos = false;
                     }
                     else
                     {
                         cambiarColorLabel(cmb, Color.Black);
-                        //errorProvider1.SetError(c, "");
+                  
                     }
                 }
             }
@@ -708,8 +693,13 @@ namespace Vista
         {
             string msg = "";
             bool persona = validarVacios(tabPersonales);
+            bool academico = ValidarDataGrid(true);
+            bool resultado = persona && academico;
+
             if (!persona) msg += "\n" + tabPersonales.Text;
-            return (persona /*&& academico && laboral*/, msg).ToTuple();
+            if (!academico) msg += "\n" + tabAcademicos.Text;
+
+            return (resultado , msg).ToTuple();
         }
 
         private void cambiarColorLabel(Control control, Color color)
@@ -758,10 +748,11 @@ namespace Vista
                         {
                             //grpEspaniol.Enabled = false;
                             grpNivelIdiomas.Enabled = false;
-                            
+                         
                             btnContinuar1.Enabled = false;
                             btnEditarImagen.Enabled = false;
                             btnEliminarImagen.Enabled = false;
+                            
                             control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
 
                         }
@@ -774,7 +765,8 @@ namespace Vista
         }
         private void BotonesInvisibles()
         {
-            Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen};
+            Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen,btnAgregarIdioma,btnEliminarIdioma,btnAgregar,btnEliminarAcademico
+            ,btnEliminarLaboral,btnAgregar,btnMasLaborales1};
 
             // Ocultar todos los botones en el arreglo
             foreach (Button boton in botones)
@@ -791,32 +783,7 @@ namespace Vista
                 botonOcultar.Visible = false;
             }
         }
-        private void BotonesVisibles()
-        {
-            Button[] botones = { btnValidar,btnContinuar1,btnContinuar2,btnGuardar,btnEditarImagen,btnEliminarImagen};
-
-            foreach (Button boton in botones)
-            {
-                boton.Visible = true;
-            }
-        }
-        public void Visibilizar(string nombreControl, int len)
-        {
-            for (int i = 1; i <= len; i++)
-            {
-                string groupName = nombreControl + i;
-                Control control = Controls.Find(groupName, true).FirstOrDefault();
-
-                if (control != null && control is GroupBox)
-                {
-                    GroupBox groupBox = (GroupBox)control;
-                    groupBox.Visible = true;
-                }
-            }
-        }
         #endregion
-
-
 
         private void cmbConvenio_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -869,8 +836,15 @@ namespace Vista
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView partidoSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
-            string variable = partidoSeleccionada["cod_postal"].ToString();
-            txtCodigoPostal.Text = variable;
+            if (partidoSeleccionada != null)
+            {
+                string variable = partidoSeleccionada["cod_postal"].ToString();
+                txtCodigoPostal.Text = variable;
+            }
+            else
+            {
+                txtCodigoPostal.Text = null;
+            }
         }
 
 
@@ -878,8 +852,6 @@ namespace Vista
         private void button16_Click(object sender, EventArgs e)
         {
        
-            infoAcademicos++;
-
         }
         private void button17_Click(object sender, EventArgs e)
         {
@@ -924,7 +896,7 @@ namespace Vista
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumeros(e);
+            //SoloNumeros(e);
         }
 
         private void txtNro_KeyPress(object sender, KeyPressEventArgs e)
@@ -987,6 +959,24 @@ namespace Vista
             }
         }
 
+        private void NumerosDNI(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
+
+            }
+        }
+
+        private void LetrasYNumeros(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras, números y la tecla de retroceso
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancelar la entrada de caracteres no permitidos
+            }
+        }
+
 
         private void Espaniol_CheckedChanged(object sender, EventArgs e)
         {
@@ -1031,9 +1021,13 @@ namespace Vista
             DeshabilitarCampos();
             BotonesInvisibles();
             txtCuitCuil.Enabled = false;
-    
+            btnAtrasAcademico.Visible = true;
+            btnAtrasLaboral.Visible = true;
+            btnContinuar1.Visible = true;
+            btnContinuar2.Visible = true;
+            btnContinuar1.Enabled = true;
             Persona insert = new Persona();
-  
+
             logicaPersona.ObtenerPersona(insert, id_persona, ref infoAcademicos, ref infoLaborales);
 
             //PERSONAL
@@ -1107,6 +1101,7 @@ namespace Vista
             }
             dgvAcademico.DataSource = null;
             dgvAcademico.DataSource = mostrarProgresoNivel;
+            UtilidadesForms.TraducirColumnasDtg(ref dgvAcademico);
 
 
             //LABORAL
@@ -1122,6 +1117,7 @@ namespace Vista
             }).ToList();
 
             dgvLaboral.DataSource = infoLabora;
+            UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
 
             //IDIOMA
 
@@ -1144,16 +1140,13 @@ namespace Vista
             }
             dgvIdioma.DataSource = null;
             dgvIdioma.DataSource = mostrarIdioma;
+            UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
         }
-
-
-
 
         //Modificacion
         public void CargarDatosModificacion(int id_persona, bool es_candidato, bool esReactivar = false)
         {
 
-           
             Persona modify = new Persona();
             if(es_candidato == false)
             {
@@ -1172,15 +1165,23 @@ namespace Vista
             
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
-
             BotonesInvisiblesModificacion();
             HabilitarCampos();
             btnContinuar1.Visible = true;
             btnContinuar2.Visible = true;
+            btnAtrasAcademico.Visible = true;
+            btnAtrasLaboral.Visible = true;
             btnEditarImagen.Visible = true;
             btnEliminarImagen.Visible = true;
             btnValidar.Visible = false;
             btnGuardar.Visible = true;
+            btnAgregarIdioma.Visible = true;
+            btnEliminarIdioma.Visible = true;
+            btnAgregar.Visible = true;
+            btnEliminarAcademico.Visible=true;
+            btnEliminarLaboral.Visible=true;
+            btnAgregar.Visible=true;
+            btnMasLaborales1.Visible = true;
             txtCuitCuil.Enabled = false;
             if(esReactivar == false)
             {
@@ -1335,8 +1336,8 @@ namespace Vista
                 {
                     // El correo electrónico no es válido
                     cambiarColorLabel(txtEmail, Color.Red);
-                    MessageBox.Show("El correo electrónico no es válido.", "Correo electrónico inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEmail.Focus(); // Devolver el foco al TextBox para que el usuario pueda corregirlo
+                    MessageBox.Show(Errores.CorreoNoValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEmail.Focus();// Devolver el foco al TextBox para que el usuario pueda corregirlo
                 }
             }
         }
@@ -1355,12 +1356,7 @@ namespace Vista
                 // Los números coinciden, permitir salir del campo txtDni
                 
             }
-            else
-            {
-                // Los números no coinciden
-                MessageBox.Show("El DNI ingresado no coincide con el CUIL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDni.Focus(); // Devolver el foco
-            }
+          
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)
@@ -1406,18 +1402,8 @@ namespace Vista
                 academico.Progreso = int.Parse(cmbProgreso.SelectedValue.ToString ());
                 infoAcademic.Add(academico);
 
-              
-                mostrarIdioma.Clear();
 
-                foreach (var item in infoIdiom)
-                {
-                    IdiomaMostrar idiomaMostrar = new IdiomaMostrar();
-                    idiomaMostrar.IdiomaNombre = logicaPersona.ObtenerDescripcionIdioma(item.Idioma);
-                    idiomaMostrar.Nivel = ObtenerValorNivelById(item.Nivel);
-                    mostrarIdioma.Add(idiomaMostrar);
-                }
-
-           
+                mostrarProgresoNivel.Clear();
 
                 foreach (var item in infoAcademic)
                 {
@@ -1435,13 +1421,14 @@ namespace Vista
                 dgvAcademico.DataSource = null;
 
                 dgvAcademico.DataSource = mostrarProgresoNivel;
+                UtilidadesForms.TraducirColumnasDtg(ref dgvAcademico);
 
                 LimpiarControles(grpSuperior1);
 
             }
             else
             {
-                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1456,16 +1443,18 @@ namespace Vista
 
                 // Eliminar la fila seleccionada del DataGridView
                 infoAcademic.RemoveAt(indiceFilaSeleccionada);
+                mostrarProgresoNivel.RemoveAt(indiceFilaSeleccionada);
                 dgvAcademico.DataSource = null;
-                dgvAcademico.DataSource = infoAcademic;
+                dgvAcademico.DataSource = mostrarProgresoNivel;
+                UtilidadesForms.TraducirColumnasDtg(ref dgvAcademico);
 
                 //// Eliminar el elemento correspondiente de la lista
-           
+
             }
             else
             {
                 // Si no hay una fila seleccionada o es la última fila, mostrar un mensaje indicando al usuario que seleccione una fila válida
-                MessageBox.Show("Seleccione una fila válida para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1499,13 +1488,15 @@ namespace Vista
                 dgvLaboral.DataSource = null;
           
                 dgvLaboral.DataSource = infoLabora;
+                UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
 
                 LimpiarControles(grpExp1);
          
             }
             else
             {
-                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -1519,16 +1510,15 @@ namespace Vista
                 infoLabora.RemoveAt(indiceFilaSeleccionada);
                 dgvLaboral.DataSource = null;
                 dgvLaboral.DataSource = infoLabora;
+                UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
 
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-
-    
         private void btnAgregarIdioma_Click(object sender, EventArgs e)
         {
             string nivelSeleccionado = "";
@@ -1563,9 +1553,7 @@ namespace Vista
                     DataTable dt = new DataTable();
                     dt.Columns.Add("idioma", typeof(string));
                     dt.Columns.Add("nivel", typeof(string));
-                    
 
-                    
                     infoIdiom.Add(idioma);
                     mostrarIdioma.Clear();
 
@@ -1579,20 +1567,20 @@ namespace Vista
 
                     dgvIdioma.DataSource = null;
                     dgvIdioma.DataSource = mostrarIdioma;
+                    UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
 
                     LimpiarControles(grpIdiomas);
                     LimpiarControles(grpNivelIdiomas);
                 }
                 else
                 {
-                    MessageBox.Show("No se puede repetir el idioma.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Errores.IdiomaRepetido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-             
             }
             else
             {
 
-                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -1614,14 +1602,15 @@ namespace Vista
                 // Obtener el índice de la fila seleccionada
                 int indiceFilaSeleccionada = dgvIdioma.SelectedRows[0].Index;
                 infoIdiom.RemoveAt(indiceFilaSeleccionada);
+                mostrarIdioma.RemoveAt(indiceFilaSeleccionada);
                 dgvIdioma.DataSource = null;
-                dgvIdioma.DataSource = infoIdiom;
-         
+                dgvIdioma.DataSource = mostrarIdioma;
+                UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
             }
             else
             {
                 // Si no hay una fila seleccionada, mostrar un mensaje indicando al usuario que seleccione una fila primero
-                MessageBox.Show("Seleccione una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1692,31 +1681,21 @@ namespace Vista
 
             
         }
-        private void ValidarDataGrid()
+        private bool ValidarDataGrid(bool esValidacion = false)
         {
             if (dgvAcademico.Columns.Count > 0 && dgvAcademico.Rows.Count > 0 && dgvIdioma.Columns.Count > 0 && dgvIdioma.Rows.Count > 0)
             {
                 tabControl.TabPages[2].Enabled = true;
                 tabControl.SelectedTab = tabLaborales;
-
+                return true;
             }
             else
             {
-                MessageBox.Show("La informacion academica es obligatoria.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        
-
-        private void NoPegar(GroupBox groupBox)
-        {
-            foreach (Control control in groupBox.Controls)
-            {
-                if (control is TextBox)
+                if(esValidacion == false)
                 {
-                    
-                    control.KeyDown += TextBoxNoPegar;
+                    MessageBox.Show(Errores.InfoAcademicaOb, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                return false;
             }
         }
 
@@ -1839,14 +1818,78 @@ namespace Vista
 
                     }
                 }
-                MessageBox.Show("La descarga fue realizada con éxito");
+                MessageBox.Show(Errores.DescargarExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al intentar descargar el Pdf" + ex);
             }
         }
+
+        public string TipoDoc( int TipoDocSeleccionado)
+        {
+            switch (TipoDocSeleccionado)
+            {
+                case 1:
+                    return "DNI";
+                case 2:
+                    return "LC";
+                case 3:
+                    return "LE";
+                case 4:
+                    return "Pasaporte";
+                case 5:
+                    return "";
+                default:
+                    return null; 
+            }
+        }
+        private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            var selectedDataRowView = (DataRowView)cmbTipoDoc.SelectedItem;
+            if (selectedDataRowView == null)
+            {
+                return;
+            }
+            var value = (int)selectedDataRowView.Row[0];
+            string cuilIngresado = txtCuitCuil.Text;
+            if (string.IsNullOrEmpty(cuilIngresado))
+            {
+                return;
+            }
+            var value1 = TipoDoc(value);
+            if (value1 == "DNI")
+            {
+                txtDni.KeyPress += NumerosDNI;
+                string numerosCuil = cuilIngresado.Substring(2, 8);
+                txtDni.Text = numerosCuil;
+                txtDni.Focus(); // Devolver el foco
+                txtDni.ReadOnly = true;
+            }
+            else
+            {
+                txtDni.ReadOnly = false;
+                txtDni.KeyPress -= NumerosDNI; 
+                txtDni.KeyPress += LetrasYNumeros;
+            } 
+        }
+
+        private void txtCuitCuil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
-    
+
 }
  

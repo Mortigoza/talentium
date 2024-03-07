@@ -70,6 +70,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El campo debe contener 11 digitos..
+        /// </summary>
+        public static string CampoMinimo11 {
+            get {
+                return ResourceManager.GetString("CampoMinimo11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Hay campos incompletos..
         /// </summary>
         public static string CamposIncompletos {
@@ -102,6 +111,33 @@ namespace LogicaNegocio.Lenguajes {
         public static string CodigoIncorrecto {
             get {
                 return ResourceManager.GetString("CodigoIncorrecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo electrónico no es válido..
+        /// </summary>
+        public static string CorreoNoValido {
+            get {
+                return ResourceManager.GetString("CorreoNoValido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El Cuit/Cuil ya esta asociado a un empleado..
+        /// </summary>
+        public static string CuitEnUso {
+            get {
+                return ResourceManager.GetString("CuitEnUso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descarga fue realizada con éxito..
+        /// </summary>
+        public static string DescargarExitosa {
+            get {
+                return ResourceManager.GetString("DescargarExitosa", resourceCulture);
             }
         }
         
@@ -142,6 +178,24 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No se puede repetir el idioma..
+        /// </summary>
+        public static string IdiomaRepetido {
+            get {
+                return ResourceManager.GetString("IdiomaRepetido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La información académica es obligatoria..
+        /// </summary>
+        public static string InfoAcademicaOb {
+            get {
+                return ResourceManager.GetString("InfoAcademicaOb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Limite de intentos alcanzado, intente nuevamente a las.
         /// </summary>
         public static string LiminteIntentos {
@@ -156,6 +210,15 @@ namespace LogicaNegocio.Lenguajes {
         public static string ModNoAutorizada {
             get {
                 return ResourceManager.GetString("ModNoAutorizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Operación Exitosa..
+        /// </summary>
+        public static string OperacionExitosa {
+            get {
+                return ResourceManager.GetString("OperacionExitosa", resourceCulture);
             }
         }
         

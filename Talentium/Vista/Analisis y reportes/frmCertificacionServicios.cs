@@ -32,6 +32,7 @@ namespace Vista.Analisis_y_reportes
             dtgCertificados.AllowUserToResizeRows = false;
             dtgCertificados.ReadOnly = true;
             dtgCertificados.DataSource = null;
+            dtgCertificados.AllowUserToResizeRows = false;
             refreshDtg();
         }
 

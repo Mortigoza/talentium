@@ -47,6 +47,7 @@ namespace Vista.Lenguajes
             //Llamo al metodo interno pasandole los parametros necesarios
             //para que cambie los nombres de los objetos
             CambiarTexto(controls, frm);
+            frm.Icon = Properties.Resources.icono;
         }
 
         private static void CambiarTexto(Control.ControlCollection controls, Form frm)

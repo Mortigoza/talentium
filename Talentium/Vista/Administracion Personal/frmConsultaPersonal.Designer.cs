@@ -44,6 +44,7 @@
             this.lblArea = new System.Windows.Forms.Label();
             this.rdbActivos = new System.Windows.Forms.RadioButton();
             this.rdbInactivos = new System.Windows.Forms.RadioButton();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
             this.grpFiltro.SuspendLayout();
             this.SuspendLayout();
@@ -237,6 +238,17 @@
             this.rdbInactivos.UseVisualStyleBackColor = false;
             this.rdbInactivos.CheckedChanged += new System.EventHandler(this.Filtro_CheckedChanged);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 522);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 48;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmConsultaPersonal
             // 
             this.AcceptButton = this.btnFiltrar;
@@ -244,6 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.fondo_pared_textura_blanca2;
             this.ClientSize = new System.Drawing.Size(1147, 559);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.rdbInactivos);
             this.Controls.Add(this.rdbActivos);
             this.Controls.Add(this.grpFiltro);
@@ -284,6 +297,7 @@
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.RadioButton rdbActivos;
         private System.Windows.Forms.RadioButton rdbInactivos;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }
 

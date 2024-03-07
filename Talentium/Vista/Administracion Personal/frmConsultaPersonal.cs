@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio.Lenguajes;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -22,6 +24,11 @@ namespace Vista
         public frmConsultaPersonal()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+            dtgEmpleados.MultiSelect = false;
+            dtgEmpleados.RowHeadersVisible = false;
+            dtgEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgEmpleados.AllowUserToResizeRows = false;
 
             DataTable area = logica.ObtenerArea(true);
             cmbArea.DataSource = area;
@@ -69,7 +76,7 @@ namespace Vista
             if (resultadosFiltrados.Count == 0)
             {
                 dtgEmpleados.DataSource = null;
-                MessageBox.Show("No se encontraron resultados.", "Sin Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -79,6 +86,8 @@ namespace Vista
                 dtgEmpleados.Columns["apellidos"].HeaderText = "Apellidos";
                 dtgEmpleados.Columns["cuit_cuil"].HeaderText = "Cuit/Cuil";
                 dtgEmpleados.Columns["nro_doc"].HeaderText = "DNI";
+
+                UtilidadesForms.TraducirColumnasDtg(ref dtgEmpleados);
             }
 
             
@@ -120,7 +129,7 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un empleado.");
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -143,7 +152,7 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un empleado.");
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -181,7 +190,7 @@ namespace Vista
                     switch (btnBaja.Name)
                     {
                         case "btnBaja":
-                            result = MessageBox.Show("¿Desea dar de baja al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            result = MessageBox.Show(Errores.QuiereContinuar,Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
                             {
                                 logicaPersona.BajaPersona(id);
@@ -189,7 +198,7 @@ namespace Vista
                             }
                             break;
                         case "btnReactivar":
-                            result = MessageBox.Show("¿Desea reactivar al empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            result = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dtgEmpleados.SelectedRows.Count > 0)
                             {
                                 int idper = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
@@ -213,10 +222,15 @@ namespace Vista
                     }
                     break;
                 case 0:
-                    MessageBox.Show("Por favor, selecciona un empleado.");
+                    MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
             }
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 

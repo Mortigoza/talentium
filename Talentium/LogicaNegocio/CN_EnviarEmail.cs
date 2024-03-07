@@ -53,7 +53,7 @@ namespace LogicaNegocio
             string smtpServer = "smtp.gmail.com";
             int smtpPort = 587;
             const string smtpUsername = "talentiumteam@gmail.com";
-            const string smtpPassword = "Admin1234_";
+            const string smtpPassword = "amae iavk uazy rulb";
 
             // Crea el objeto SmtpClient
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
@@ -92,7 +92,7 @@ namespace LogicaNegocio
             string smtpServer = "smtp.gmail.com";
             int smtpPort = 587;
             const string smtpUsername = "talentiumteam@gmail.com";
-            const string smtpPassword = "Admin1234_";
+            const string smtpPassword = "amae iavk uazy rulb";
 
             // Crea el objeto SmtpClient
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
