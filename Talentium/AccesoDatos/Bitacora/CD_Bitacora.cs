@@ -32,7 +32,7 @@ namespace AccesoDatos.Bitacora
         {
             List<SqlParameter> listaParametros = new List<SqlParameter>() { };
 
-            DataTable resultado = EjecutarConsultas("consulta_bitacora_sp", listaParametros.ToArray());
+            DataTable resultado = EjecutarConsultas("consultar_bitacora_sp", listaParametros.ToArray());
             return resultado;
         }
     }

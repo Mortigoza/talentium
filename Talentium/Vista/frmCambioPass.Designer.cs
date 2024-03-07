@@ -129,16 +129,15 @@
             // lblCambioContraseña
             // 
             this.lblCambioContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblCambioContraseña.AutoSize = true;
             this.lblCambioContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambioContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCambioContraseña.Location = new System.Drawing.Point(222, 9);
+            this.lblCambioContraseña.Location = new System.Drawing.Point(0, 0);
             this.lblCambioContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCambioContraseña.Name = "lblCambioContraseña";
-            this.lblCambioContraseña.Size = new System.Drawing.Size(280, 29);
+            this.lblCambioContraseña.Size = new System.Drawing.Size(718, 50);
             this.lblCambioContraseña.TabIndex = 0;
             this.lblCambioContraseña.Text = "Cambio de Contraseña";
-            this.lblCambioContraseña.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblCambioContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbPreguntas
             // 
@@ -267,7 +266,6 @@
             this.Text = "Cambio de contraseña";
             this.Load += new System.EventHandler(this.CambioDePass_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

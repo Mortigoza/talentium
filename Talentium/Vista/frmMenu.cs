@@ -16,6 +16,7 @@ using Vista.Evaluacion_de_desempeño;
 using Vista.Gestion_de_Talento;
 using Vista.Lenguajes;
 using LogicaNegocio.Administracion_Del_Personal;
+using Vista.Bitacora;
 
 namespace Vista
 {
@@ -363,6 +364,14 @@ namespace Vista
         {
             this.Hide();
             frmConfigAltaPersonal frm = new frmConfigAltaPersonal();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBitacora frm = new frmBitacora();
             frm.ShowDialog();
             this.Show();
         }

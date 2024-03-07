@@ -10,6 +10,7 @@ using Vista.Analisis_y_reportes;
 using LogicaNegocio;
 using System.Threading;
 using Vista.Gestion_de_Talento;
+using Vista.Bitacora;
 
 namespace Vista
 {
@@ -25,11 +26,6 @@ namespace Vista
             Application.SetCompatibleTextRenderingDefault(false);
             //Properties.Settings.Default.Idioma = "es-AR";
             Application.Run(new frmLogin());
-
-
-
-
-
         }
     }
 }

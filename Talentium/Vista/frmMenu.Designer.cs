@@ -68,6 +68,7 @@
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
             this.lblTiempoRestante = new System.Windows.Forms.Label();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -299,7 +300,8 @@
             this.perfilesToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
             this.cambioDeContraseñaToolStripMenuItem,
-            this.recursosToolStripMenuItem});
+            this.recursosToolStripMenuItem,
+            this.bitacoraToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";
@@ -361,7 +363,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Location = new System.Drawing.Point(945, 504);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(107, 36);
             this.btnLogout.TabIndex = 21;
@@ -393,6 +395,13 @@
             this.lblTiempoRestante.TabIndex = 22;
             this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
             this.lblTiempoRestante.Visible = false;
+            // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -464,5 +473,6 @@
         private System.Windows.Forms.ToolStripMenuItem recursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionDeAltaDelPersonalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
     }
 }

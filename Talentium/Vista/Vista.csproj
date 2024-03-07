@@ -127,6 +127,12 @@
     <Compile Include="AsistenciasPanel.Designer.cs">
       <DependentUpon>AsistenciasPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora\frmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\frmBitacora.Designer.cs">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignarCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AsistenciasPanel.resx">
       <DependentUpon>AsistenciasPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora\frmBitacora.resx">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambioPass.resx">
       <DependentUpon>frmCambioPass.cs</DependentUpon>

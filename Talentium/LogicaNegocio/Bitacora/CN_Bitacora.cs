@@ -29,9 +29,9 @@ namespace LogicaNegocio.Bitacora
             DataTable dt = bitacora.ConsultarBitacora();
             for (int i = 0, len = dt.Rows.Count; i < len; i++)
             {
-                if (dt.Rows[i][3] != null)
+                if (dt.Rows[i][2] != null)
                 {
-                    dt.Rows[i][3] = Seguridad.DesEncriptar(dt.Rows[i][3].ToString());
+                    dt.Rows[i][2] = Seguridad.DesEncriptar(dt.Rows[i][2].ToString());
                 }
             }
             return dt;
