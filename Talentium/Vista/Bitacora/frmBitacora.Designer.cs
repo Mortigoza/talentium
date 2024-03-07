@@ -44,6 +44,7 @@
             // splContainer
             // 
             this.splContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splContainer.IsSplitterFixed = true;
             this.splContainer.Location = new System.Drawing.Point(0, 0);
             this.splContainer.Name = "splContainer";
             this.splContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
