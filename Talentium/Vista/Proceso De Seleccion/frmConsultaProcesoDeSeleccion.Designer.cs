@@ -273,7 +273,7 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Location = new System.Drawing.Point(12, 441);
             this.lnkAtras.Name = "lnkAtras";
             this.lnkAtras.Size = new System.Drawing.Size(38, 16);
             this.lnkAtras.TabIndex = 21;

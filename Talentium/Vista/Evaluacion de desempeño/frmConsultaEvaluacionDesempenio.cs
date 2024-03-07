@@ -55,6 +55,10 @@ namespace Vista.Evaluacion_de_desempeño
             cmbAnio.DataSource = DTAnio;
 
             dtgConsultaEvaluacion.AllowUserToAddRows = false;
+            dtgConsultaEvaluacion.AutoGenerateColumns = false;
+            dtgConsultaEvaluacion.MultiSelect = false;
+            dtgConsultaEvaluacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgConsultaEvaluacion.RowHeadersVisible = false;
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)

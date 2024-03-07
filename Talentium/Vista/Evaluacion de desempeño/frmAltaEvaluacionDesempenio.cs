@@ -41,6 +41,10 @@ namespace Vista.Evaluacion_de_desempeño
 
             dtgEvaluacion.RowCount = 2;
             dtgEvaluacion.AllowUserToAddRows = false;
+            dtgEvaluacion.RowHeadersVisible = false;
+            dtgEvaluacion.AutoGenerateColumns = false;
+            dtgEvaluacion.MultiSelect = false;
+            dtgEvaluacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
 

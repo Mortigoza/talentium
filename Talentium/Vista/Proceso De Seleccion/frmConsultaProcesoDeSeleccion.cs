@@ -30,6 +30,7 @@ namespace Vista
             dtgCandidatos.Enabled = false;
             btnModificarCandidato.Enabled = false;
             dtgCandidatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgCandidatos.RowHeadersVisible = false;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             int filas = entrevista.CantidadEntrevista();
             dtgCandidatos.Rows.Add(filas);
