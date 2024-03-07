@@ -16,6 +16,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
 using Vista.Lenguajes;
+using LogicaNegocio.Lenguajes;
 
 namespace Vista
 {
@@ -126,6 +127,7 @@ namespace Vista
             // Ocultar las demás columnas
 
             dtgAlta.Columns["id_persona"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgAlta);
         }
         public void cargarDtg(DataTable data)
         {
@@ -142,27 +144,30 @@ namespace Vista
             dtgModificar.Columns["id_persona"].Visible = false;
             dtgModificar.Columns["id_asistencia"].Visible = false;
             dtgModificar.Columns["id_motivo"].Visible = false;
-
+            UtilidadesForms.TraducirColumnasDtg(ref dtgModificar);
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            //boton buscar del alta
-            DataRowView selectedArea = (DataRowView)areasAltas.SelectedItem;
-            DataRowView selectedPuesto = (DataRowView)puestosAltas.SelectedItem;
-            int idA = Convert.ToInt32(selectedArea["id_area"]);
-            int idP = Convert.ToInt32(selectedPuesto["id_puesto"]);
-            if (string.IsNullOrEmpty(cuilAltas.Text))
+            if (areasAltas.Items.Count > 0 && puestosAltas.Items.Count > 0)
             {
-                DataTable asis = asistencias.filtroAlta(idA, idP, null);
-                cargar(asis);
-            }
-            else
-            {
-                DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
-                cargar(asis);
+                //boton buscar del alta
+                DataRowView selectedArea = (DataRowView)areasAltas.SelectedItem;
+                DataRowView selectedPuesto = (DataRowView)puestosAltas.SelectedItem;
+                int idA = Convert.ToInt32(selectedArea["id_area"]);
+                int idP = Convert.ToInt32(selectedPuesto["id_puesto"]);
+                if (string.IsNullOrEmpty(cuilAltas.Text))
+                {
+                    DataTable asis = asistencias.filtroAlta(idA, idP, null);
+                    cargar(asis);
+                }
+                else
+                {
+                    DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
+                    cargar(asis);
 
+                }
             }
-        }
+        } 
         private void SoloNumeros(KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
@@ -231,24 +236,27 @@ namespace Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //boton buscar del modificar
-            DataRowView selectedArea = (DataRowView)AreaMod.SelectedItem;
-            DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
-            object idA = selectedArea["id_area"];
-            object idP = selectedPuesto["id_puesto"];
-
-            DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
-          
-            cargarDtg(asis);
-            if (asis.Rows.Count >= 1)
+            if (AreaMod.Items.Count > 0 && PuestoMod.Items.Count > 0)
             {
-                btnExcel.Enabled = true;
-            }
-            else {
-                btnExcel.Enabled = false;
-            }
+                //boton buscar del modificar
+                DataRowView selectedArea = (DataRowView)AreaMod.SelectedItem;
+                DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
+                object idA = selectedArea["id_area"];
+                object idP = selectedPuesto["id_puesto"];
 
+                DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
 
+                cargarDtg(asis);
+                if (asis.Rows.Count >= 1)
+                {
+                    btnExcel.Enabled = true;
+                }
+                else
+                {
+                    btnExcel.Enabled = false;
+                }
+
+            }
         }
 
         private void AreaMod_SelectedIndexChanged(object sender, EventArgs e)
@@ -326,7 +334,7 @@ namespace Vista
                     dtgModificar.Columns["Eliminar"].Visible = false;
                 }
                 else if(e.ColumnIndex == 1) {
-                    DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     // Verificar la respuesta del usuario
                     if (result == DialogResult.Yes)
@@ -355,106 +363,34 @@ namespace Vista
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-                    using (SaveFileDialog saveDialog = new SaveFileDialog())
-                    {
-                        saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
-                        saveDialog.Title = "Elije el nombre del archivo Excel";
-                        string defaultFileName = string.Format("Reporte Inasistencia " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
-                        saveDialog.FileName = defaultFileName;
-                        if (saveDialog.ShowDialog() == DialogResult.OK)
-                        {
-                       // string rutaCompleta = Path.Combine(folderDialog.SelectedPath, defaultFileName);
-                        string rutaCompleta = saveDialog.FileName;
-
-                        SLDocument sl = new SLDocument();
-                            SLStyle style = new SLStyle();
-                            style.Font.FontSize = 12;
-                            style.Fill.SetPatternType(PatternValues.Solid);
-                            style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
-                            style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
-                            style.Font.Bold = true;
-                            sl.SetWorksheetDefaultColumnWidth(25);
-                            int numCol = 0;
-                            int numFila = 10;
-
-                            string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
-
-                            SLPicture picture = new SLPicture(rutaImagen);
-                            picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
-                            picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
-                            sl.InsertPicture(picture);
-
-                            try
-                            {
-                                foreach (DataGridViewColumn cl in dtgModificar.Columns)
-                                {
-                                    //El if esta para que las columnas ids no se muestren en el excel
-                                    if (cl.Index != 0 && cl.Index != 1 && cl.Index != 5 && cl.Index != 11)
-                                    {
-                                        string nombreColumna = cl.HeaderText;
-                                        string nombreColumnaFormateado = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreColumna.ToLower());
-
-                                        sl.SetCellValue(9, numCol, nombreColumnaFormateado);
-                                        sl.SetCellStyle(9, numCol, style);
-                                        sl.SetCellStyle(9, 9, 9, numCol, style);
-
-                                        numCol++;
-                                    }
-                                }
-
-                                DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
-                                SLStyle fechaEmisionStyle = new SLStyle();
-                                fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
-                                fechaEmisionStyle.SetFontBold(true);
-                                fechaEmisionStyle.SetFontItalic(true);
-                                fechaEmisionStyle.Font.FontSize = 12;
-                                sl.SetCellStyle(2, 10, fechaEmisionStyle); // Fila 1, Columna 1
-                                sl.SetCellValue(2, 10, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
-                                SLStyle titulo = new SLStyle();
-                                titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
-                                titulo.SetFontBold(true);
-                                titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
-                                titulo.Font.FontSize = 16;
-                                sl.SetCellStyle(6, 6, titulo);
-                                sl.SetCellValue(6, 6, "Reporte de Inasistencia");
-                                SLStyle fondo = new SLStyle();
-                                fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
-                                fondo.Fill.SetPatternType(PatternValues.Solid);
-                                fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
-                                sl.SetCellStyle(1, 1, 8, 12, fondo);
-
-                                var data = dtgModificar.Columns;
-                                var fila = dtgModificar.Rows;
-                                foreach (DataGridViewRow row in dtgModificar.Rows)
-                                {
-
-                                    sl.SetCellValue(numFila, 1, row.Cells[3].Value.ToString());
-                                    sl.SetCellValue(numFila, 2, row.Cells[4].Value.ToString());
-                                    sl.SetCellValue(numFila, 3, row.Cells[6].Value.ToString());
-                                    sl.SetCellValue(numFila, 4, row.Cells[7].Value.ToString());
-                                    sl.SetCellValue(numFila, 5, ConvertirBoolASiONo(row.Cells[8].Value));
-                                    sl.SetCellValue(numFila, 6, row.Cells[9].Value.ToString());
-                                    sl.SetCellValue(numFila, 7, ConvertirBoolASiONo(row.Cells[10].Value));
-                                    sl.SetCellValue(numFila, 8, row.Cells[12].Value.ToString());
-                                    sl.SetCellValue(numFila, 9, row.Cells[13].Value.ToString());
-                                    sl.SetCellValue(numFila, 10, row.Cells[14].Value.ToString());
-                                    numFila++;
-                                }
-                                sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa.");
-                            }
-                            catch (Exception msj)
-                            {
-                                MessageBox.Show(msj.Message);
-
-                            }
-                        }
-                    }
-                //}
+                   
             
+        }
+
+        private void dataGridModificar_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dtgModificar.Columns[e.ColumnIndex] is DataGridViewButtonColumn && (e.RowIndex >= 0))
+            {
+                if (dtgModificar.Columns[e.ColumnIndex].Name == "Modificar")
+                {
+                    e.Value = Columnas.abrir;
+                }
+                else if (dtgModificar.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    e.Value = Columnas.eliminar;
+                }
+            }
+        }
+
+        private void dataGridAlta_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dtgAlta.Columns[e.ColumnIndex] is DataGridViewButtonColumn && (e.RowIndex >= 0))
+            {
+                if (dtgAlta.Columns[e.ColumnIndex].Name == "Abrir")
+                {
+                    e.Value = Columnas.abrir;
+                }
+            }
         }
 
         private void cuilAltas_KeyPress(object sender, KeyPressEventArgs e)
@@ -465,6 +401,119 @@ namespace Vista
         private void CuilMod_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
+                saveDialog.Title = "Elije el nombre del archivo Excel";
+                string defaultFileName = string.Format("Reporte Inasistencia " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
+                saveDialog.FileName = defaultFileName;
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // string rutaCompleta = Path.Combine(folderDialog.SelectedPath, defaultFileName);
+                    string rutaCompleta = saveDialog.FileName;
+
+                    SLDocument sl = new SLDocument();
+                    SLStyle style = new SLStyle();
+                    style.Font.FontSize = 12;
+                    style.Fill.SetPatternType(PatternValues.Solid);
+                    style.Fill.SetPatternForegroundColor(System.Drawing.Color.LightBlue);
+                    style.Border.TopBorder.BorderStyle = BorderStyleValues.Medium;
+                    style.Border.BottomBorder.BorderStyle = BorderStyleValues.Medium;
+                    style.Border.LeftBorder.BorderStyle = BorderStyleValues.Medium;
+                    style.Border.RightBorder.BorderStyle = BorderStyleValues.Medium;
+                    style.Font.Bold = true;
+                    sl.SetWorksheetDefaultColumnWidth(25);
+                    int numCol = 0;
+                    int numFila = 10;
+
+                    string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources", "ImgTalentium.jpeg");
+
+                    SLPicture picture = new SLPicture(rutaImagen);
+                    picture.SetPosition(0, 0); // Establece la posición de la imagen (fila 2, columna 1)
+                    picture.ResizeInPixels(170, 110);  // Establece el tamaño de la imagen (ancho, alto)
+                    sl.InsertPicture(picture);
+
+                    try
+                    {
+                        foreach (DataGridViewColumn cl in dtgModificar.Columns)
+                        {
+                            //El if esta para que las columnas ids no se muestren en el excel
+                            if (cl.Index != 0 && cl.Index != 1 && cl.Index != 5 && cl.Index != 11)
+                            {
+                                string nombreColumna = cl.HeaderText;
+                                string nombreColumnaFormateado = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreColumna.ToLower());
+
+                                sl.SetCellValue(9, numCol, nombreColumnaFormateado);
+                                sl.SetCellStyle(9, numCol, style);
+                                sl.SetCellStyle(9, 9, 9, numCol, style);
+
+                                numCol++;
+                            }
+                        }
+
+                        DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
+                        SLStyle fechaEmisionStyle = new SLStyle();
+                        fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                        fechaEmisionStyle.SetFontBold(true);
+                        fechaEmisionStyle.SetFontItalic(true);
+                        fechaEmisionStyle.Font.FontSize = 12;
+                        sl.SetCellStyle(2, 10, fechaEmisionStyle); // Fila 1, Columna 1
+                        sl.SetCellValue(2, 10, "Fecha de Emisión: " + fechaEmision.ToString("dd/MM/yyyy"));
+                        SLStyle titulo = new SLStyle();
+                        titulo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                        titulo.SetFontBold(true);
+                        titulo.SetFontUnderline(UnderlineValues.Single); // Aplicar subrayado al texto
+                        titulo.Font.FontSize = 16;
+                        sl.SetCellStyle(6, 6, titulo);
+                        sl.SetCellValue(6, 6, "Reporte de Inasistencia");
+                        SLStyle fondo = new SLStyle();
+                        fondo.Alignment.Horizontal = HorizontalAlignmentValues.Right;
+                        fondo.Fill.SetPatternType(PatternValues.Solid);
+                        fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
+                        sl.SetCellStyle(1, 1, 8, 12, fondo);
+
+                        var data = dtgModificar.Columns;
+                        var fila = dtgModificar.Rows;
+                        foreach (DataGridViewRow row in dtgModificar.Rows)
+                        {
+
+                            sl.SetCellValue(numFila, 1, row.Cells[3].Value.ToString());
+                            sl.SetCellValue(numFila, 2, row.Cells[4].Value.ToString());
+                            sl.SetCellValue(numFila, 3, row.Cells[6].Value.ToString());
+                            sl.SetCellValue(numFila, 4, row.Cells[7].Value.ToString());
+                            sl.SetCellValue(numFila, 5, ConvertirBoolASiONo(row.Cells[8].Value));
+                            sl.SetCellValue(numFila, 6, row.Cells[9].Value.ToString());
+                            sl.SetCellValue(numFila, 7, ConvertirBoolASiONo(row.Cells[10].Value));
+                            sl.SetCellValue(numFila, 8, row.Cells[12].Value.ToString());
+                            sl.SetCellValue(numFila, 9, row.Cells[13].Value.ToString());
+                            sl.SetCellValue(numFila, 10, row.Cells[14].Value.ToString());
+                            numFila++;
+                        }
+                        sl.SaveAs(rutaCompleta);
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception msj)
+                    {
+                        MessageBox.Show(msj.Message);
+
+                    }
+                }
+            }
+            //}
+        }
+
+        private void lnkAtas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

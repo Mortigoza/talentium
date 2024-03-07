@@ -117,16 +117,223 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Apellido" xml:space="preserve">
+  <data name="apellido" xml:space="preserve">
     <value>Last name</value>
   </data>
-  <data name="Area" xml:space="preserve">
+  <data name="apellidos" xml:space="preserve">
+    <value>Surnames</value>
+  </data>
+  <data name="area" xml:space="preserve">
     <value>Area</value>
   </data>
-  <data name="Nombre" xml:space="preserve">
+  <data name="año" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="capacitacion" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="categoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="convenio" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="cuil" xml:space="preserve">
+    <value>CUIT/CUIL</value>
+  </data>
+  <data name="cuit/cuil" xml:space="preserve">
+    <value>CUIT/CUIL</value>
+  </data>
+  <data name="descripción" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="desempleño en equipo" xml:space="preserve">
+    <value>Performed as a team</value>
+  </data>
+  <data name="desempleño en equipo *" xml:space="preserve">
+    <value>Played as a team *</value>
+  </data>
+  <data name="diciplina *" xml:space="preserve">
+    <value>Discipline *</value>
+  </data>
+  <data name="disciplina" xml:space="preserve">
+    <value>Discipline</value>
+  </data>
+  <data name="dni" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="efectividad en las tareas" xml:space="preserve">
+    <value>Effectiveness in tasks</value>
+  </data>
+  <data name="efectividad en las tareas *" xml:space="preserve">
+    <value>Effectiveness in tasks *</value>
+  </data>
+  <data name="egreso" xml:space="preserve">
+    <value>Disgress</value>
+  </data>
+  <data name="eliminar" xml:space="preserve">
+    <value>Eliminate</value>
+  </data>
+  <data name="empresa" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="entrevista" xml:space="preserve">
+    <value>Interview</value>
+  </data>
+  <data name="entrevistador" xml:space="preserve">
+    <value>Interviewer</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="etapa" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="externo/interno" xml:space="preserve">
+    <value>External internal</value>
+  </data>
+  <data name="externo/interno2" xml:space="preserve">
+    <value>External/internal2</value>
+  </data>
+  <data name="fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="fecha alta" xml:space="preserve">
+    <value>High date</value>
+  </data>
+  <data name="fecha entrega" xml:space="preserve">
+    <value>Deliver date</value>
+  </data>
+  <data name="fecha recepción" xml:space="preserve">
+    <value>Reception date</value>
+  </data>
+  <data name="fecha solicitud" xml:space="preserve">
+    <value>Application date</value>
+  </data>
+  <data name="fecha_egreso" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="fecha_ingreso" xml:space="preserve">
+    <value>Admission date</value>
+  </data>
+  <data name="horas_laborales" xml:space="preserve">
+    <value>Working hours</value>
+  </data>
+  <data name="id usuario" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="idiomanombre" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ingreso" xml:space="preserve">
+    <value>Income</value>
+  </data>
+  <data name="institucion" xml:space="preserve">
+    <value>Institution</value>
+  </data>
+  <data name="jornada" xml:space="preserve">
+    <value>Working day</value>
+  </data>
+  <data name="justificada" xml:space="preserve">
+    <value>Justified</value>
+  </data>
+  <data name="mes de evaluacion" xml:space="preserve">
+    <value>Evaluation month</value>
+  </data>
+  <data name="modificar" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="motivo" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="nivel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="nivel2" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="Usuario" xml:space="preserve">
+  <data name="nombre y apellido" xml:space="preserve">
+    <value>Name and surname</value>
+  </data>
+  <data name="nombres" xml:space="preserve">
+    <value>Names</value>
+  </data>
+  <data name="nombre_categoria" xml:space="preserve">
+    <value>Name category</value>
+  </data>
+  <data name="obligatoria" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="obra social" xml:space="preserve">
+    <value>Social work</value>
+  </data>
+  <data name="obra_social" xml:space="preserve">
+    <value>Social work</value>
+  </data>
+  <data name="observaciones" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="otro_motivo" xml:space="preserve">
+    <value>Another reason</value>
+  </data>
+  <data name="perfil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="periodo" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="personal_a_cargo" xml:space="preserve">
+    <value>Personnel in charge</value>
+  </data>
+  <data name="progreso" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="puesto" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="puesto a postularse" xml:space="preserve">
+    <value>Put to postulate</value>
+  </data>
+  <data name="puntualidad" xml:space="preserve">
+    <value>Puntuality</value>
+  </data>
+  <data name="puntualidad *" xml:space="preserve">
+    <value>Puntuality *</value>
+  </data>
+  <data name="relacion con superiores" xml:space="preserve">
+    <value>Relationship with superiors</value>
+  </data>
+  <data name="relación con superiores *" xml:space="preserve">
+    <value>Relationship with superiors *</value>
+  </data>
+  <data name="seguridad y salud" xml:space="preserve">
+    <value>Security and health</value>
+  </data>
+  <data name="seguridad_salud" xml:space="preserve">
+    <value>Health Security</value>
+  </data>
+  <data name="sueldo" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="sueldos" xml:space="preserve">
+    <value>Salaries</value>
+  </data>
+  <data name="tiempo_estimado" xml:space="preserve">
+    <value>Estimated time</value>
+  </data>
+  <data name="titulo" xml:space="preserve">
+    <value>Qualification</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="área" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="abrir" xml:space="preserve">
+    <value>Open</value>
   </data>
 </root>

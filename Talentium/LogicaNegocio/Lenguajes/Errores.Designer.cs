@@ -97,6 +97,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El cuil ingresado no tiene un formato correcto..
+        /// </summary>
+        public static string CuilIncorrecto {
+            get {
+                return ResourceManager.GetString("CuilIncorrecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
         public static string Error {
@@ -115,6 +124,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Las etapas no coinciden. No se puede completar el DataGridView..
+        /// </summary>
+        public static string EtapasNoCoinciden {
+            get {
+                return ResourceManager.GetString("EtapasNoCoinciden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Limite de intentos alcanzado, intente nuevamente a las.
         /// </summary>
         public static string LiminteIntentos {
@@ -129,6 +147,15 @@ namespace LogicaNegocio.Lenguajes {
         public static string ModNoAutorizada {
             get {
                 return ResourceManager.GetString("ModNoAutorizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Operación Exitosa..
+        /// </summary>
+        public static string OperacionExitosa {
+            get {
+                return ResourceManager.GetString("OperacionExitosa", resourceCulture);
             }
         }
         
@@ -228,6 +255,15 @@ namespace LogicaNegocio.Lenguajes {
         public static string QuiereContinuar {
             get {
                 return ResourceManager.GetString("QuiereContinuar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ningún registro coincide..
+        /// </summary>
+        public static string RegNoCoincide {
+            get {
+                return ResourceManager.GetString("RegNoCoincide", resourceCulture);
             }
         }
         
