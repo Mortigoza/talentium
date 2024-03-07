@@ -139,7 +139,7 @@
             this.btnMasLaborales1 = new System.Windows.Forms.Button();
             this.lblAgregarExperienciaLaboral = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.grpExp1 = new System.Windows.Forms.GroupBox();
+            this.grpNada = new System.Windows.Forms.GroupBox();
             this.AgregarLaboral = new System.Windows.Forms.Button();
             this.nupPersonalACargo = new System.Windows.Forms.NumericUpDown();
             this.txtPuesto = new System.Windows.Forms.TextBox();
@@ -167,7 +167,7 @@
             this.grpSuperior1.SuspendLayout();
             this.tabLaborales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaboral)).BeginInit();
-            this.grpExp1.SuspendLayout();
+            this.grpNada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -179,7 +179,7 @@
             this.tabControl.Controls.Add(this.tabLaborales);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1067, 579);
@@ -199,9 +199,9 @@
             this.tabPersonales.Controls.Add(this.groupBox3);
             this.tabPersonales.Controls.Add(this.groupBox2);
             this.tabPersonales.Location = new System.Drawing.Point(4, 22);
-            this.tabPersonales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPersonales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPersonales.Name = "tabPersonales";
-            this.tabPersonales.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPersonales.Padding = new System.Windows.Forms.Padding(4);
             this.tabPersonales.Size = new System.Drawing.Size(1059, 553);
             this.tabPersonales.TabIndex = 0;
             this.tabPersonales.Text = "Datos Personales";
@@ -222,12 +222,15 @@
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(1076, 614);
+            this.btnPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
+            this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPdf.ForeColor = System.Drawing.Color.White;
+            this.btnPdf.Location = new System.Drawing.Point(840, 489);
             this.btnPdf.Name = "btnPdf";
             this.btnPdf.Size = new System.Drawing.Size(66, 34);
             this.btnPdf.TabIndex = 46;
             this.btnPdf.Text = "Descargar PDF";
-            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.UseVisualStyleBackColor = false;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click_1);
             // 
             // lblFaltanCampos
@@ -266,7 +269,7 @@
             this.dttFechaAlta.Checked = false;
             this.dttFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttFechaAlta.Location = new System.Drawing.Point(26, 217);
-            this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dttFechaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.dttFechaAlta.MaxDate = new System.DateTime(2024, 3, 6, 0, 0, 0, 0);
             this.dttFechaAlta.Name = "dttFechaAlta";
             this.dttFechaAlta.Size = new System.Drawing.Size(147, 20);
@@ -369,7 +372,7 @@
             this.btnContinuar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContinuar1.Location = new System.Drawing.Point(930, 488);
-            this.btnContinuar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContinuar1.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinuar1.Name = "btnContinuar1";
             this.btnContinuar1.Size = new System.Drawing.Size(70, 35);
             this.btnContinuar1.TabIndex = 42;
@@ -381,7 +384,7 @@
             this.btnEliminarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarImagen.BackgroundImage")));
             this.btnEliminarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminarImagen.Location = new System.Drawing.Point(917, 223);
-            this.btnEliminarImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarImagen.Name = "btnEliminarImagen";
             this.btnEliminarImagen.Size = new System.Drawing.Size(47, 39);
             this.btnEliminarImagen.TabIndex = 23;
@@ -393,7 +396,7 @@
             this.btnEditarImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditarImagen.BackgroundImage")));
             this.btnEditarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditarImagen.Location = new System.Drawing.Point(781, 223);
-            this.btnEditarImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditarImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarImagen.Name = "btnEditarImagen";
             this.btnEditarImagen.Size = new System.Drawing.Size(47, 39);
             this.btnEditarImagen.TabIndex = 22;
@@ -407,7 +410,7 @@
             this.pctFoto.Enabled = false;
             this.pctFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctFoto.InitialImage")));
             this.pctFoto.Location = new System.Drawing.Point(781, 39);
-            this.pctFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctFoto.Margin = new System.Windows.Forms.Padding(4);
             this.pctFoto.Name = "pctFoto";
             this.pctFoto.Size = new System.Drawing.Size(183, 178);
             this.pctFoto.TabIndex = 2;
@@ -434,9 +437,9 @@
             this.groupBox3.Controls.Add(this.lblAltura);
             this.groupBox3.Controls.Add(this.lblDpto);
             this.groupBox3.Location = new System.Drawing.Point(529, 282);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(464, 188);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
@@ -470,7 +473,7 @@
             this.cmbPartido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPartido.FormattingEnabled = true;
             this.cmbPartido.Location = new System.Drawing.Point(237, 41);
-            this.cmbPartido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPartido.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPartido.Name = "cmbPartido";
             this.cmbPartido.Size = new System.Drawing.Size(197, 21);
             this.cmbPartido.TabIndex = 25;
@@ -490,7 +493,7 @@
             // txtCodigoPostal
             // 
             this.txtCodigoPostal.Location = new System.Drawing.Point(310, 96);
-            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.ReadOnly = true;
             this.txtCodigoPostal.Size = new System.Drawing.Size(125, 20);
@@ -503,7 +506,7 @@
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(28, 41);
-            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(192, 21);
             this.cmbProvincia.TabIndex = 24;
@@ -513,7 +516,7 @@
             // 
             this.txtNro.AccessibleDescription = "O";
             this.txtNro.Location = new System.Drawing.Point(237, 150);
-            this.txtNro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNro.Margin = new System.Windows.Forms.Padding(4);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(53, 20);
             this.txtNro.TabIndex = 28;
@@ -534,7 +537,7 @@
             // 
             this.txtCalle.AccessibleDescription = "O";
             this.txtCalle.Location = new System.Drawing.Point(28, 150);
-            this.txtCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCalle.Margin = new System.Windows.Forms.Padding(4);
             this.txtCalle.MaxLength = 30;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(192, 20);
@@ -545,7 +548,7 @@
             // txtPiso
             // 
             this.txtPiso.Location = new System.Drawing.Point(309, 150);
-            this.txtPiso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPiso.Margin = new System.Windows.Forms.Padding(4);
             this.txtPiso.MaxLength = 30;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(53, 20);
@@ -557,7 +560,7 @@
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(29, 95);
-            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(265, 21);
             this.cmbLocalidad.TabIndex = 26;
@@ -566,7 +569,7 @@
             // txtDpto
             // 
             this.txtDpto.Location = new System.Drawing.Point(381, 150);
-            this.txtDpto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDpto.Margin = new System.Windows.Forms.Padding(4);
             this.txtDpto.MaxLength = 30;
             this.txtDpto.Name = "txtDpto";
             this.txtDpto.Size = new System.Drawing.Size(53, 20);
@@ -651,9 +654,9 @@
             this.groupBox2.Controls.Add(this.lblCuitCuil);
             this.groupBox2.Controls.Add(this.lblNroDoc);
             this.groupBox2.Location = new System.Drawing.Point(65, 29);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(415, 441);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -666,7 +669,7 @@
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.ItemHeight = 13;
             this.cmbTipoDoc.Location = new System.Drawing.Point(18, 145);
-            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(75, 21);
             this.cmbTipoDoc.TabIndex = 5;
@@ -700,6 +703,7 @@
             this.btnValidar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnValidar.FlatAppearance.BorderSize = 0;
             this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnValidar.ForeColor = System.Drawing.Color.White;
             this.btnValidar.Location = new System.Drawing.Point(224, 51);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(100, 23);
@@ -714,7 +718,7 @@
             this.cmbTipoTelAlternativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTelAlternativo.FormattingEnabled = true;
             this.cmbTipoTelAlternativo.Location = new System.Drawing.Point(199, 287);
-            this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTelAlternativo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTelAlternativo.Name = "cmbTipoTelAlternativo";
             this.cmbTipoTelAlternativo.Size = new System.Drawing.Size(104, 21);
             this.cmbTipoTelAlternativo.TabIndex = 11;
@@ -736,7 +740,7 @@
             this.cmbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoTel.FormattingEnabled = true;
             this.cmbTipoTel.Location = new System.Drawing.Point(242, 240);
-            this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoTel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoTel.Name = "cmbTipoTel";
             this.cmbTipoTel.Size = new System.Drawing.Size(149, 21);
             this.cmbTipoTel.TabIndex = 9;
@@ -756,7 +760,7 @@
             // 
             this.txtTelefono.AccessibleDescription = "O";
             this.txtTelefono.Location = new System.Drawing.Point(18, 241);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(215, 20);
@@ -778,7 +782,7 @@
             // 
             this.txtEmail.AccessibleDescription = "O";
             this.txtEmail.Location = new System.Drawing.Point(22, 192);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(373, 20);
@@ -789,7 +793,7 @@
             // txtContacto
             // 
             this.txtContacto.Location = new System.Drawing.Point(312, 288);
-            this.txtContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(4);
             this.txtContacto.MaxLength = 30;
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(80, 20);
@@ -823,7 +827,7 @@
             // 
             this.txtTelefonoAlternativo.AccessibleDescription = "O";
             this.txtTelefonoAlternativo.Location = new System.Drawing.Point(19, 288);
-            this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefonoAlternativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefonoAlternativo.MaxLength = 30;
             this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
             this.txtTelefonoAlternativo.Size = new System.Drawing.Size(171, 20);
@@ -834,7 +838,7 @@
             // nupHijos
             // 
             this.nupHijos.Location = new System.Drawing.Point(279, 390);
-            this.nupHijos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nupHijos.Margin = new System.Windows.Forms.Padding(4);
             this.nupHijos.Name = "nupHijos";
             this.nupHijos.Size = new System.Drawing.Size(116, 20);
             this.nupHijos.TabIndex = 17;
@@ -866,7 +870,7 @@
             this.dtpFechaDeNacimiento.Checked = false;
             this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(21, 390);
-            this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaDeNacimiento.MaxDate = new System.DateTime(2023, 12, 17, 0, 0, 0, 0);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(130, 20);
@@ -878,7 +882,7 @@
             // 
             this.txtApellidos.AccessibleDescription = "O";
             this.txtApellidos.Location = new System.Drawing.Point(204, 102);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidos.MaxLength = 50;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(188, 20);
@@ -891,7 +895,7 @@
             this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoCivil.FormattingEnabled = true;
             this.cmbEstadoCivil.Location = new System.Drawing.Point(169, 389);
-            this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstadoCivil.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(92, 21);
             this.cmbEstadoCivil.TabIndex = 16;
@@ -923,7 +927,7 @@
             this.txtNombres.AccessibleDescription = "O";
             this.txtNombres.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNombres.Location = new System.Drawing.Point(19, 102);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombres.MaxLength = 50;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(171, 20);
@@ -945,7 +949,7 @@
             // 
             this.txtDni.AccessibleDescription = "O";
             this.txtDni.Location = new System.Drawing.Point(98, 146);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.MaxLength = 8;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(293, 20);
@@ -978,7 +982,7 @@
             // txtCuitCuil
             // 
             this.txtCuitCuil.Location = new System.Drawing.Point(20, 51);
-            this.txtCuitCuil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCuitCuil.Margin = new System.Windows.Forms.Padding(4);
             this.txtCuitCuil.MaxLength = 11;
             this.txtCuitCuil.Name = "txtCuitCuil";
             this.txtCuitCuil.Size = new System.Drawing.Size(188, 20);
@@ -1004,7 +1008,7 @@
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.ItemHeight = 13;
             this.cmbGenero.Location = new System.Drawing.Point(201, 337);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(192, 21);
             this.cmbGenero.TabIndex = 14;
@@ -1043,9 +1047,9 @@
             this.tabAcademicos.Controls.Add(this.btnContinuar2);
             this.tabAcademicos.Controls.Add(this.grpSuperior1);
             this.tabAcademicos.Location = new System.Drawing.Point(4, 22);
-            this.tabAcademicos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAcademicos.Margin = new System.Windows.Forms.Padding(4);
             this.tabAcademicos.Name = "tabAcademicos";
-            this.tabAcademicos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAcademicos.Padding = new System.Windows.Forms.Padding(4);
             this.tabAcademicos.Size = new System.Drawing.Size(1059, 553);
             this.tabAcademicos.TabIndex = 1;
             this.tabAcademicos.Text = "Datos Académicos";
@@ -1056,8 +1060,9 @@
             // 
             this.btnEliminarAcademico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnEliminarAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarAcademico.ForeColor = System.Drawing.Color.White;
             this.btnEliminarAcademico.Location = new System.Drawing.Point(836, 449);
-            this.btnEliminarAcademico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarAcademico.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarAcademico.Name = "btnEliminarAcademico";
             this.btnEliminarAcademico.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarAcademico.TabIndex = 44;
@@ -1069,8 +1074,9 @@
             // 
             this.btnEliminarIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnEliminarIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarIdioma.ForeColor = System.Drawing.Color.White;
             this.btnEliminarIdioma.Location = new System.Drawing.Point(836, 157);
-            this.btnEliminarIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarIdioma.Name = "btnEliminarIdioma";
             this.btnEliminarIdioma.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarIdioma.TabIndex = 37;
@@ -1086,9 +1092,9 @@
             this.grpIdiomas.Controls.Add(this.cmbIdioma);
             this.grpIdiomas.Controls.Add(this.grpNivelIdiomas);
             this.grpIdiomas.Location = new System.Drawing.Point(65, 30);
-            this.grpIdiomas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpIdiomas.Margin = new System.Windows.Forms.Padding(2);
             this.grpIdiomas.Name = "grpIdiomas";
-            this.grpIdiomas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpIdiomas.Padding = new System.Windows.Forms.Padding(2);
             this.grpIdiomas.Size = new System.Drawing.Size(435, 148);
             this.grpIdiomas.TabIndex = 5;
             this.grpIdiomas.TabStop = false;
@@ -1098,8 +1104,9 @@
             // 
             this.btnAgregarIdioma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnAgregarIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarIdioma.ForeColor = System.Drawing.Color.White;
             this.btnAgregarIdioma.Location = new System.Drawing.Point(323, 107);
-            this.btnAgregarIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarIdioma.Name = "btnAgregarIdioma";
             this.btnAgregarIdioma.Size = new System.Drawing.Size(100, 23);
             this.btnAgregarIdioma.TabIndex = 36;
@@ -1122,7 +1129,7 @@
             this.cmbIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdioma.FormattingEnabled = true;
             this.cmbIdioma.Location = new System.Drawing.Point(80, 24);
-            this.cmbIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIdioma.Name = "cmbIdioma";
             this.cmbIdioma.Size = new System.Drawing.Size(92, 21);
             this.cmbIdioma.TabIndex = 31;
@@ -1143,8 +1150,8 @@
             // rdbNativoEn
             // 
             this.rdbNativoEn.AutoSize = true;
-            this.rdbNativoEn.Location = new System.Drawing.Point(79, 46);
-            this.rdbNativoEn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbNativoEn.Location = new System.Drawing.Point(98, 43);
+            this.rdbNativoEn.Margin = new System.Windows.Forms.Padding(4);
             this.rdbNativoEn.Name = "rdbNativoEn";
             this.rdbNativoEn.Size = new System.Drawing.Size(56, 17);
             this.rdbNativoEn.TabIndex = 35;
@@ -1157,7 +1164,7 @@
             // 
             this.rdbBasicoEn.AutoSize = true;
             this.rdbBasicoEn.Location = new System.Drawing.Point(7, 22);
-            this.rdbBasicoEn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbBasicoEn.Margin = new System.Windows.Forms.Padding(4);
             this.rdbBasicoEn.Name = "rdbBasicoEn";
             this.rdbBasicoEn.Size = new System.Drawing.Size(57, 17);
             this.rdbBasicoEn.TabIndex = 32;
@@ -1170,7 +1177,7 @@
             // 
             this.rdbIntermedioEn.AutoSize = true;
             this.rdbIntermedioEn.Location = new System.Drawing.Point(7, 43);
-            this.rdbIntermedioEn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbIntermedioEn.Margin = new System.Windows.Forms.Padding(4);
             this.rdbIntermedioEn.Name = "rdbIntermedioEn";
             this.rdbIntermedioEn.Size = new System.Drawing.Size(74, 17);
             this.rdbIntermedioEn.TabIndex = 34;
@@ -1182,8 +1189,8 @@
             // rdbAvanzadoEn
             // 
             this.rdbAvanzadoEn.AutoSize = true;
-            this.rdbAvanzadoEn.Location = new System.Drawing.Point(79, 22);
-            this.rdbAvanzadoEn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbAvanzadoEn.Location = new System.Drawing.Point(98, 22);
+            this.rdbAvanzadoEn.Margin = new System.Windows.Forms.Padding(4);
             this.rdbAvanzadoEn.Name = "rdbAvanzadoEn";
             this.rdbAvanzadoEn.Size = new System.Drawing.Size(73, 17);
             this.rdbAvanzadoEn.TabIndex = 33;
@@ -1199,7 +1206,7 @@
             this.dgvIdioma.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIdioma.Location = new System.Drawing.Point(528, 30);
-            this.dgvIdioma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.dgvIdioma.Name = "dgvIdioma";
             this.dgvIdioma.ReadOnly = true;
             this.dgvIdioma.RowHeadersWidth = 51;
@@ -1214,7 +1221,7 @@
             this.dgvAcademico.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAcademico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAcademico.Location = new System.Drawing.Point(528, 194);
-            this.dgvAcademico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAcademico.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAcademico.Name = "dgvAcademico";
             this.dgvAcademico.ReadOnly = true;
             this.dgvAcademico.RowHeadersWidth = 51;
@@ -1233,7 +1240,7 @@
             this.btnAtrasAcademico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtrasAcademico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAtrasAcademico.Location = new System.Drawing.Point(65, 489);
-            this.btnAtrasAcademico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtrasAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtrasAcademico.Name = "btnAtrasAcademico";
             this.btnAtrasAcademico.Size = new System.Drawing.Size(70, 35);
             this.btnAtrasAcademico.TabIndex = 92;
@@ -1264,7 +1271,7 @@
             this.btnContinuar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuar2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContinuar2.Location = new System.Drawing.Point(909, 489);
-            this.btnContinuar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContinuar2.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinuar2.Name = "btnContinuar2";
             this.btnContinuar2.Size = new System.Drawing.Size(70, 35);
             this.btnContinuar2.TabIndex = 73;
@@ -1288,9 +1295,9 @@
             this.grpSuperior1.Controls.Add(this.lblAñoIngreso);
             this.grpSuperior1.Controls.Add(this.txtTitulo);
             this.grpSuperior1.Location = new System.Drawing.Point(65, 194);
-            this.grpSuperior1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpSuperior1.Margin = new System.Windows.Forms.Padding(4);
             this.grpSuperior1.Name = "grpSuperior1";
-            this.grpSuperior1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpSuperior1.Padding = new System.Windows.Forms.Padding(4);
             this.grpSuperior1.Size = new System.Drawing.Size(423, 278);
             this.grpSuperior1.TabIndex = 6;
             this.grpSuperior1.TabStop = false;
@@ -1300,8 +1307,9 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(313, 235);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 88;
@@ -1314,7 +1322,7 @@
             this.cmbProgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso.FormattingEnabled = true;
             this.cmbProgreso.Location = new System.Drawing.Point(275, 191);
-            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProgreso.Name = "cmbProgreso";
             this.cmbProgreso.Size = new System.Drawing.Size(105, 21);
             this.cmbProgreso.TabIndex = 43;
@@ -1333,7 +1341,7 @@
             // 
             this.txtInsitutcionSuperior.AccessibleDescription = "O";
             this.txtInsitutcionSuperior.Location = new System.Drawing.Point(11, 96);
-            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInsitutcionSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.txtInsitutcionSuperior.MaxLength = 30;
             this.txtInsitutcionSuperior.Name = "txtInsitutcionSuperior";
             this.txtInsitutcionSuperior.Size = new System.Drawing.Size(393, 20);
@@ -1344,7 +1352,7 @@
             this.cmbEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEgreso.FormattingEnabled = true;
             this.cmbEgreso.Location = new System.Drawing.Point(139, 191);
-            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEgreso.Name = "cmbEgreso";
             this.cmbEgreso.Size = new System.Drawing.Size(111, 21);
             this.cmbEgreso.TabIndex = 42;
@@ -1374,7 +1382,7 @@
             this.cmbNivelAcademico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAcademico.FormattingEnabled = true;
             this.cmbNivelAcademico.Location = new System.Drawing.Point(11, 49);
-            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAcademico.Name = "cmbNivelAcademico";
             this.cmbNivelAcademico.Size = new System.Drawing.Size(177, 21);
             this.cmbNivelAcademico.TabIndex = 38;
@@ -1395,7 +1403,7 @@
             this.cmbIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIngreso.FormattingEnabled = true;
             this.cmbIngreso.Location = new System.Drawing.Point(11, 191);
-            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbIngreso.Name = "cmbIngreso";
             this.cmbIngreso.Size = new System.Drawing.Size(112, 21);
             this.cmbIngreso.TabIndex = 41;
@@ -1426,7 +1434,7 @@
             // 
             this.txtTitulo.AccessibleDescription = "O";
             this.txtTitulo.Location = new System.Drawing.Point(12, 144);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.MaxLength = 30;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(392, 20);
@@ -1442,11 +1450,11 @@
             this.tabLaborales.Controls.Add(this.btnMasLaborales1);
             this.tabLaborales.Controls.Add(this.lblAgregarExperienciaLaboral);
             this.tabLaborales.Controls.Add(this.btnGuardar);
-            this.tabLaborales.Controls.Add(this.grpExp1);
+            this.tabLaborales.Controls.Add(this.grpNada);
             this.tabLaborales.Location = new System.Drawing.Point(4, 22);
-            this.tabLaborales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabLaborales.Margin = new System.Windows.Forms.Padding(4);
             this.tabLaborales.Name = "tabLaborales";
-            this.tabLaborales.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabLaborales.Padding = new System.Windows.Forms.Padding(4);
             this.tabLaborales.Size = new System.Drawing.Size(1059, 553);
             this.tabLaborales.TabIndex = 2;
             this.tabLaborales.Text = "Datos Laborales";
@@ -1457,8 +1465,9 @@
             // 
             this.btnEliminarLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnEliminarLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarLaboral.ForeColor = System.Drawing.Color.White;
             this.btnEliminarLaboral.Location = new System.Drawing.Point(909, 444);
-            this.btnEliminarLaboral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarLaboral.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarLaboral.Name = "btnEliminarLaboral";
             this.btnEliminarLaboral.Size = new System.Drawing.Size(100, 23);
             this.btnEliminarLaboral.TabIndex = 51;
@@ -1473,7 +1482,7 @@
             this.dgvLaboral.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvLaboral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLaboral.Location = new System.Drawing.Point(561, 34);
-            this.dgvLaboral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLaboral.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLaboral.Name = "dgvLaboral";
             this.dgvLaboral.ReadOnly = true;
             this.dgvLaboral.RowHeadersWidth = 51;
@@ -1491,7 +1500,7 @@
             this.btnAtrasLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtrasLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAtrasLaboral.Location = new System.Drawing.Point(65, 485);
-            this.btnAtrasLaboral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtrasLaboral.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtrasLaboral.Name = "btnAtrasLaboral";
             this.btnAtrasLaboral.Size = new System.Drawing.Size(70, 35);
             this.btnAtrasLaboral.TabIndex = 52;
@@ -1519,7 +1528,7 @@
             this.btnMasLaborales1.FlatAppearance.BorderSize = 0;
             this.btnMasLaborales1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMasLaborales1.Location = new System.Drawing.Point(260, 22);
-            this.btnMasLaborales1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMasLaborales1.Margin = new System.Windows.Forms.Padding(4);
             this.btnMasLaborales1.Name = "btnMasLaborales1";
             this.btnMasLaborales1.Size = new System.Drawing.Size(32, 28);
             this.btnMasLaborales1.TabIndex = 95;
@@ -1545,7 +1554,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Location = new System.Drawing.Point(909, 489);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(105, 44);
             this.btnGuardar.TabIndex = 53;
@@ -1553,37 +1562,38 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.button9_Click);
             // 
-            // grpExp1
+            // grpNada
             // 
-            this.grpExp1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpExp1.Controls.Add(this.AgregarLaboral);
-            this.grpExp1.Controls.Add(this.nupPersonalACargo);
-            this.grpExp1.Controls.Add(this.txtPuesto);
-            this.grpExp1.Controls.Add(this.txtEmpresa);
-            this.grpExp1.Controls.Add(this.lblEmpresa1);
-            this.grpExp1.Controls.Add(this.cmbLaboralEgreso);
-            this.grpExp1.Controls.Add(this.lblEgresoLaboral1);
-            this.grpExp1.Controls.Add(this.cmbLaboralIngreso);
-            this.grpExp1.Controls.Add(this.lblPersonalACargo1);
-            this.grpExp1.Controls.Add(this.lblIngresoLaboral1);
-            this.grpExp1.Controls.Add(this.lblPuesto1);
-            this.grpExp1.Location = new System.Drawing.Point(65, 29);
-            this.grpExp1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpExp1.Name = "grpExp1";
-            this.grpExp1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpExp1.Size = new System.Drawing.Size(425, 305);
-            this.grpExp1.TabIndex = 71;
-            this.grpExp1.TabStop = false;
-            this.grpExp1.Text = "Experiencia Laboral";
-            this.grpExp1.Visible = false;
-            this.grpExp1.Enter += new System.EventHandler(this.groupBox6_Enter);
+            this.grpNada.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpNada.Controls.Add(this.AgregarLaboral);
+            this.grpNada.Controls.Add(this.nupPersonalACargo);
+            this.grpNada.Controls.Add(this.txtPuesto);
+            this.grpNada.Controls.Add(this.txtEmpresa);
+            this.grpNada.Controls.Add(this.lblEmpresa1);
+            this.grpNada.Controls.Add(this.cmbLaboralEgreso);
+            this.grpNada.Controls.Add(this.lblEgresoLaboral1);
+            this.grpNada.Controls.Add(this.cmbLaboralIngreso);
+            this.grpNada.Controls.Add(this.lblPersonalACargo1);
+            this.grpNada.Controls.Add(this.lblIngresoLaboral1);
+            this.grpNada.Controls.Add(this.lblPuesto1);
+            this.grpNada.Location = new System.Drawing.Point(65, 29);
+            this.grpNada.Margin = new System.Windows.Forms.Padding(4);
+            this.grpNada.Name = "grpNada";
+            this.grpNada.Padding = new System.Windows.Forms.Padding(4);
+            this.grpNada.Size = new System.Drawing.Size(425, 305);
+            this.grpNada.TabIndex = 71;
+            this.grpNada.TabStop = false;
+            this.grpNada.Text = "Experiencia Laboral";
+            this.grpNada.Visible = false;
+            this.grpNada.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // AgregarLaboral
             // 
             this.AgregarLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.AgregarLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AgregarLaboral.ForeColor = System.Drawing.Color.White;
             this.AgregarLaboral.Location = new System.Drawing.Point(307, 258);
-            this.AgregarLaboral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AgregarLaboral.Margin = new System.Windows.Forms.Padding(2);
             this.AgregarLaboral.Name = "AgregarLaboral";
             this.AgregarLaboral.Size = new System.Drawing.Size(100, 23);
             this.AgregarLaboral.TabIndex = 50;
@@ -1602,7 +1612,7 @@
             // 
             this.txtPuesto.AccessibleDescription = "O";
             this.txtPuesto.Location = new System.Drawing.Point(14, 51);
-            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
             this.txtPuesto.MaxLength = 30;
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(393, 20);
@@ -1612,7 +1622,7 @@
             // 
             this.txtEmpresa.AccessibleDescription = "O";
             this.txtEmpresa.Location = new System.Drawing.Point(16, 133);
-            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresa.MaxLength = 30;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(393, 20);
@@ -1634,7 +1644,7 @@
             this.cmbLaboralEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralEgreso.FormattingEnabled = true;
             this.cmbLaboralEgreso.Location = new System.Drawing.Point(149, 208);
-            this.cmbLaboralEgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbLaboralEgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLaboralEgreso.Name = "cmbLaboralEgreso";
             this.cmbLaboralEgreso.Size = new System.Drawing.Size(119, 21);
             this.cmbLaboralEgreso.TabIndex = 48;
@@ -1654,7 +1664,7 @@
             this.cmbLaboralIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLaboralIngreso.FormattingEnabled = true;
             this.cmbLaboralIngreso.Location = new System.Drawing.Point(15, 206);
-            this.cmbLaboralIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbLaboralIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLaboralIngreso.Name = "cmbLaboralIngreso";
             this.cmbLaboralIngreso.Size = new System.Drawing.Size(119, 21);
             this.cmbLaboralIngreso.TabIndex = 47;
@@ -1704,7 +1714,7 @@
             this.ClientSize = new System.Drawing.Size(1067, 579);
             this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAltaPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración del Personal - Altas";
@@ -1733,8 +1743,8 @@
             this.tabLaborales.ResumeLayout(false);
             this.tabLaborales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaboral)).EndInit();
-            this.grpExp1.ResumeLayout(false);
-            this.grpExp1.PerformLayout();
+            this.grpNada.ResumeLayout(false);
+            this.grpNada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPersonalACargo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -1803,7 +1813,7 @@
         private System.Windows.Forms.RadioButton rdbAvanzadoEn;
         private System.Windows.Forms.RadioButton rdbIntermedioEn;
         private System.Windows.Forms.RadioButton rdbBasicoEn;
-        private System.Windows.Forms.GroupBox grpExp1;
+        private System.Windows.Forms.GroupBox grpNada;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label lblEmpresa1;
         private System.Windows.Forms.ComboBox cmbLaboralEgreso;

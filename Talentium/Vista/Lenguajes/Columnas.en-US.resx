@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="abrir" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="accion" xml:space="preserve">
+    <value>Action</value>
+  </data>
   <data name="apellido" xml:space="preserve">
     <value>Last name</value>
   </data>
@@ -237,6 +243,12 @@
   <data name="justificada" xml:space="preserve">
     <value>Justified</value>
   </data>
+  <data name="lugar" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="mensaje" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="mes de evaluacion" xml:space="preserve">
     <value>Evaluation month</value>
   </data>
@@ -324,6 +336,9 @@
   <data name="tiempo_estimado" xml:space="preserve">
     <value>Estimated time</value>
   </data>
+  <data name="tipo" xml:space="preserve">
+    <value>Guy</value>
+  </data>
   <data name="titulo" xml:space="preserve">
     <value>Qualification</value>
   </data>
@@ -332,8 +347,5 @@
   </data>
   <data name="área" xml:space="preserve">
     <value>Area</value>
-  </data>
-  <data name="abrir" xml:space="preserve">
-    <value>Open</value>
   </data>
 </root>

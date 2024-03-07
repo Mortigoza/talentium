@@ -62,37 +62,41 @@
             // 
             // cmbMes
             // 
+            this.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMes.FormattingEnabled = true;
-            this.cmbMes.Location = new System.Drawing.Point(97, 86);
-            this.cmbMes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbMes.Location = new System.Drawing.Point(73, 70);
+            this.cmbMes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbMes.Name = "cmbMes";
-            this.cmbMes.Size = new System.Drawing.Size(121, 24);
+            this.cmbMes.Size = new System.Drawing.Size(92, 21);
             this.cmbMes.TabIndex = 3;
             // 
             // cmbAnio
             // 
+            this.cmbAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAnio.FormattingEnabled = true;
-            this.cmbAnio.Location = new System.Drawing.Point(97, 42);
-            this.cmbAnio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAnio.Location = new System.Drawing.Point(73, 34);
+            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAnio.Name = "cmbAnio";
-            this.cmbAnio.Size = new System.Drawing.Size(121, 24);
+            this.cmbAnio.Size = new System.Drawing.Size(92, 21);
             this.cmbAnio.TabIndex = 2;
             // 
             // lblMes
             // 
             this.lblMes.AutoSize = true;
-            this.lblMes.Location = new System.Drawing.Point(44, 91);
+            this.lblMes.Location = new System.Drawing.Point(33, 74);
+            this.lblMes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMes.Name = "lblMes";
-            this.lblMes.Size = new System.Drawing.Size(33, 16);
+            this.lblMes.Size = new System.Drawing.Size(27, 13);
             this.lblMes.TabIndex = 1;
             this.lblMes.Text = "Mes";
             // 
             // lblAnio
             // 
             this.lblAnio.AutoSize = true;
-            this.lblAnio.Location = new System.Drawing.Point(47, 44);
+            this.lblAnio.Location = new System.Drawing.Point(35, 36);
+            this.lblAnio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnio.Name = "lblAnio";
-            this.lblAnio.Size = new System.Drawing.Size(31, 16);
+            this.lblAnio.Size = new System.Drawing.Size(26, 13);
             this.lblAnio.TabIndex = 0;
             this.lblAnio.Text = "Año";
             // 
@@ -104,11 +108,11 @@
             this.grpFiltrosBusqueda.Controls.Add(this.cmbAreas);
             this.grpFiltrosBusqueda.Controls.Add(this.cmbPersonal);
             this.grpFiltrosBusqueda.Controls.Add(this.lblEmpleado);
-            this.grpFiltrosBusqueda.Location = new System.Drawing.Point(99, 11);
-            this.grpFiltrosBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltrosBusqueda.Location = new System.Drawing.Point(74, 9);
+            this.grpFiltrosBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpFiltrosBusqueda.Name = "grpFiltrosBusqueda";
-            this.grpFiltrosBusqueda.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpFiltrosBusqueda.Size = new System.Drawing.Size(409, 171);
+            this.grpFiltrosBusqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltrosBusqueda.Size = new System.Drawing.Size(307, 139);
             this.grpFiltrosBusqueda.TabIndex = 25;
             this.grpFiltrosBusqueda.TabStop = false;
             this.grpFiltrosBusqueda.Text = "Filtros de búsqueda *";
@@ -119,10 +123,10 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSeleccionar.Location = new System.Drawing.Point(233, 124);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSeleccionar.Location = new System.Drawing.Point(175, 101);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(112, 31);
+            this.btnSeleccionar.Size = new System.Drawing.Size(84, 25);
             this.btnSeleccionar.TabIndex = 16;
             this.btnSeleccionar.Text = "Filtrar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -131,37 +135,41 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(27, 37);
+            this.lblArea.Location = new System.Drawing.Point(20, 30);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(36, 16);
+            this.lblArea.Size = new System.Drawing.Size(29, 13);
             this.lblArea.TabIndex = 0;
             this.lblArea.Text = "Área";
             // 
             // cmbAreas
             // 
+            this.cmbAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreas.FormattingEnabled = true;
-            this.cmbAreas.Location = new System.Drawing.Point(121, 34);
-            this.cmbAreas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAreas.Location = new System.Drawing.Point(91, 28);
+            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAreas.Name = "cmbAreas";
-            this.cmbAreas.Size = new System.Drawing.Size(223, 24);
+            this.cmbAreas.Size = new System.Drawing.Size(168, 21);
             this.cmbAreas.TabIndex = 2;
             this.cmbAreas.SelectedIndexChanged += new System.EventHandler(this.cmbAreas_SelectedIndexChanged);
             // 
             // cmbPersonal
             // 
+            this.cmbPersonal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPersonal.FormattingEnabled = true;
-            this.cmbPersonal.Location = new System.Drawing.Point(121, 76);
-            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbPersonal.Location = new System.Drawing.Point(91, 62);
+            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPersonal.Name = "cmbPersonal";
-            this.cmbPersonal.Size = new System.Drawing.Size(223, 24);
+            this.cmbPersonal.Size = new System.Drawing.Size(168, 21);
             this.cmbPersonal.TabIndex = 15;
             // 
             // lblEmpleado
             // 
             this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Location = new System.Drawing.Point(27, 81);
+            this.lblEmpleado.Location = new System.Drawing.Point(20, 66);
+            this.lblEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(70, 16);
+            this.lblEmpleado.Size = new System.Drawing.Size(54, 13);
             this.lblEmpleado.TabIndex = 1;
             this.lblEmpleado.Text = "Empleado";
             // 
@@ -172,10 +180,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(793, 396);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(595, 322);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(115, 34);
+            this.btnGuardar.Size = new System.Drawing.Size(86, 28);
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -208,8 +216,8 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgEvaluacion.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgEvaluacion.Location = new System.Drawing.Point(33, 204);
-            this.dtgEvaluacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgEvaluacion.Location = new System.Drawing.Point(25, 166);
+            this.dtgEvaluacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgEvaluacion.Name = "dtgEvaluacion";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
@@ -221,7 +229,7 @@
             this.dtgEvaluacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgEvaluacion.RowHeadersWidth = 51;
             this.dtgEvaluacion.RowTemplate.Height = 24;
-            this.dtgEvaluacion.Size = new System.Drawing.Size(875, 183);
+            this.dtgEvaluacion.Size = new System.Drawing.Size(656, 149);
             this.dtgEvaluacion.TabIndex = 18;
             // 
             // NombreApellido
@@ -318,11 +326,9 @@
             this.grpPeriodo.Controls.Add(this.cmbMes);
             this.grpPeriodo.Controls.Add(this.lblMes);
             this.grpPeriodo.Controls.Add(this.cmbAnio);
-            this.grpPeriodo.Location = new System.Drawing.Point(546, 12);
-            this.grpPeriodo.Margin = new System.Windows.Forms.Padding(4);
+            this.grpPeriodo.Location = new System.Drawing.Point(410, 10);
             this.grpPeriodo.Name = "grpPeriodo";
-            this.grpPeriodo.Padding = new System.Windows.Forms.Padding(4);
-            this.grpPeriodo.Size = new System.Drawing.Size(288, 171);
+            this.grpPeriodo.Size = new System.Drawing.Size(216, 139);
             this.grpPeriodo.TabIndex = 26;
             this.grpPeriodo.TabStop = false;
             this.grpPeriodo.Text = "Periodo de evaluación";
@@ -331,9 +337,10 @@
             // 
             this.lblReferencia.AutoSize = true;
             this.lblReferencia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblReferencia.Location = new System.Drawing.Point(30, 396);
+            this.lblReferencia.Location = new System.Drawing.Point(22, 322);
+            this.lblReferencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(496, 16);
+            this.lblReferencia.Size = new System.Drawing.Size(398, 13);
             this.lblReferencia.TabIndex = 27;
             this.lblReferencia.Text = "ⓘ Elegir un valor dentro de la escala 1-6, siendo 1 el valor más bajo y 6 el más " +
     "alto.";
@@ -341,9 +348,10 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 425);
+            this.lnkAtras.Location = new System.Drawing.Point(9, 345);
+            this.lnkAtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkAtras.Name = "lnkAtras";
-            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
             this.lnkAtras.TabIndex = 28;
             this.lnkAtras.TabStop = true;
             this.lnkAtras.Text = "Atras";
@@ -351,9 +359,9 @@
             // 
             // frmAltaEvaluacionDesempenio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 450);
+            this.ClientSize = new System.Drawing.Size(706, 366);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.lblReferencia);
             this.Controls.Add(this.grpPeriodo);
@@ -361,7 +369,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgEvaluacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAltaEvaluacionDesempenio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Evaluacion de Desempeño";

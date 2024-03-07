@@ -49,17 +49,22 @@ namespace Vista.Lenguajes
             CambiarTexto(controls, frm);
             frm.Icon = Properties.Resources.icono;
         }
-
         private static void CambiarTexto(Control.ControlCollection controls, Form frm)
         {
-
             frm.Text = Strings.ResourceManager.GetString(frm.Name);
 
             foreach (Control c in controls)
             {
-                if (c is Panel | c is GroupBox)
+                if (c is Panel | c is GroupBox | c is TabControl)
                 {
                     CambiarTexto(c.Controls, frm);
+                }
+                else if (c is MenuStrip menuStrip)
+                {
+                    foreach (ToolStripMenuItem item in menuStrip.Items)
+                    {
+                        TraducirMenuItem(item);
+                    }
                 }
                 string text = Strings.ResourceManager.GetString(c.Name);
                 if (text != null)
@@ -68,5 +73,14 @@ namespace Vista.Lenguajes
                 }
             }
         }
+        private static void TraducirMenuItem(ToolStripMenuItem menuItem)
+        {
+            menuItem.Text = Strings.ResourceManager.GetString(menuItem.Name);
+            foreach (ToolStripMenuItem subItem in menuItem.DropDownItems)
+            {
+                TraducirMenuItem(subItem);
+            }
+        }
+
     }
 }

@@ -221,7 +221,7 @@ namespace Vista
                 dtpFechaDeNacimiento.Value = fn;
                 dttFechaAlta.Value = fa;
             }
-
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -912,7 +912,7 @@ namespace Vista
         }
         private void button17_Click(object sender, EventArgs e)
         {
-            grpExp1.Visible = true;
+            grpNada.Visible = true;
             btnMasLaborales1.Visible = false;
             lblAgregarExperienciaLaboral.Visible = false;
 
@@ -920,7 +920,7 @@ namespace Vista
         }
         private void button18_Click(object sender, EventArgs e)
         {
-            grpExp1.Visible = false;
+            grpNada.Visible = false;
             btnMasLaborales1.Visible = true;
             lblAgregarExperienciaLaboral.Visible = true;
             infoLaborales--;
@@ -1547,7 +1547,7 @@ namespace Vista
                 dgvLaboral.DataSource = infoLabora;
                 UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
 
-                LimpiarControles(grpExp1);
+                LimpiarControles(grpNada);
          
             }
             else

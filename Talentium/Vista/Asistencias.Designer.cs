@@ -49,8 +49,6 @@
             this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.dtgModificar = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltroMod = new System.Windows.Forms.GroupBox();
             this.lnkAtas = new System.Windows.Forms.LinkLabel();
             this.periodo = new System.Windows.Forms.CheckBox();
@@ -69,6 +67,8 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.lblCuilMod = new System.Windows.Forms.Label();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ControlAsist.SuspendLayout();
             this.tbpAlta.SuspendLayout();
             this.grbPersonalAlta.SuspendLayout();
@@ -87,21 +87,19 @@
             this.ControlAsist.Controls.Add(this.tbpModificar);
             this.ControlAsist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlAsist.Location = new System.Drawing.Point(0, 0);
-            this.ControlAsist.Margin = new System.Windows.Forms.Padding(4);
             this.ControlAsist.Name = "ControlAsist";
             this.ControlAsist.SelectedIndex = 0;
-            this.ControlAsist.Size = new System.Drawing.Size(1487, 647);
+            this.ControlAsist.Size = new System.Drawing.Size(1115, 526);
             this.ControlAsist.TabIndex = 7;
             // 
             // tbpAlta
             // 
             this.tbpAlta.Controls.Add(this.grbPersonalAlta);
             this.tbpAlta.Controls.Add(this.grbFiltrosAlta);
-            this.tbpAlta.Location = new System.Drawing.Point(4, 25);
-            this.tbpAlta.Margin = new System.Windows.Forms.Padding(4);
+            this.tbpAlta.Location = new System.Drawing.Point(4, 22);
             this.tbpAlta.Name = "tbpAlta";
-            this.tbpAlta.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpAlta.Size = new System.Drawing.Size(1479, 618);
+            this.tbpAlta.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpAlta.Size = new System.Drawing.Size(1107, 500);
             this.tbpAlta.TabIndex = 0;
             this.tbpAlta.Text = "Alta";
             this.tbpAlta.UseVisualStyleBackColor = true;
@@ -111,11 +109,10 @@
             // 
             this.grbPersonalAlta.Controls.Add(this.button1);
             this.grbPersonalAlta.Controls.Add(this.dtgAlta);
-            this.grbPersonalAlta.Location = new System.Drawing.Point(374, 31);
-            this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(5);
+            this.grbPersonalAlta.Location = new System.Drawing.Point(280, 25);
+            this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grbPersonalAlta.Name = "grbPersonalAlta";
-            this.grbPersonalAlta.Padding = new System.Windows.Forms.Padding(4);
-            this.grbPersonalAlta.Size = new System.Drawing.Size(1038, 517);
+            this.grbPersonalAlta.Size = new System.Drawing.Size(778, 420);
             this.grbPersonalAlta.TabIndex = 11;
             this.grbPersonalAlta.TabStop = false;
             this.grbPersonalAlta.Text = "Personal";
@@ -125,10 +122,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(892, 468);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(662, 374);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 49);
+            this.button1.Size = new System.Drawing.Size(101, 40);
             this.button1.TabIndex = 15;
             this.button1.Text = "Descargar Excel";
             this.button1.UseVisualStyleBackColor = false;
@@ -141,12 +137,12 @@
             this.dtgAlta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abrir});
             this.dtgAlta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtgAlta.Location = new System.Drawing.Point(9, 20);
-            this.dtgAlta.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dtgAlta.Location = new System.Drawing.Point(7, 16);
+            this.dtgAlta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgAlta.Name = "dtgAlta";
             this.dtgAlta.RowHeadersWidth = 51;
             this.dtgAlta.RowTemplate.Height = 24;
-            this.dtgAlta.Size = new System.Drawing.Size(1008, 434);
+            this.dtgAlta.Size = new System.Drawing.Size(756, 353);
             this.dtgAlta.TabIndex = 12;
             this.dtgAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dtgAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -175,11 +171,9 @@
             this.grbFiltrosAlta.Controls.Add(this.lblCuilAlta);
             this.grbFiltrosAlta.Controls.Add(this.lblAreaAlta);
             this.grbFiltrosAlta.Controls.Add(this.areasAltas);
-            this.grbFiltrosAlta.Location = new System.Drawing.Point(9, 31);
-            this.grbFiltrosAlta.Margin = new System.Windows.Forms.Padding(4);
+            this.grbFiltrosAlta.Location = new System.Drawing.Point(7, 25);
             this.grbFiltrosAlta.Name = "grbFiltrosAlta";
-            this.grbFiltrosAlta.Padding = new System.Windows.Forms.Padding(4);
-            this.grbFiltrosAlta.Size = new System.Drawing.Size(356, 517);
+            this.grbFiltrosAlta.Size = new System.Drawing.Size(267, 420);
             this.grbFiltrosAlta.TabIndex = 10;
             this.grbFiltrosAlta.TabStop = false;
             this.grbFiltrosAlta.Text = "Filtros";
@@ -188,10 +182,9 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(0, 493);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(0, 401);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(38, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(31, 13);
             this.linkLabel1.TabIndex = 23;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Atrás";
@@ -201,10 +194,9 @@
             // 
             this.lblErrorPuesto.AutoSize = true;
             this.lblErrorPuesto.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPuesto.Location = new System.Drawing.Point(59, 80);
-            this.lblErrorPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorPuesto.Location = new System.Drawing.Point(44, 65);
             this.lblErrorPuesto.Name = "lblErrorPuesto";
-            this.lblErrorPuesto.Size = new System.Drawing.Size(12, 16);
+            this.lblErrorPuesto.Size = new System.Drawing.Size(11, 13);
             this.lblErrorPuesto.TabIndex = 19;
             this.lblErrorPuesto.Text = "*";
             // 
@@ -212,20 +204,18 @@
             // 
             this.lblErrorArea.AutoSize = true;
             this.lblErrorArea.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorArea.Location = new System.Drawing.Point(47, 39);
-            this.lblErrorArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorArea.Location = new System.Drawing.Point(35, 32);
             this.lblErrorArea.Name = "lblErrorArea";
-            this.lblErrorArea.Size = new System.Drawing.Size(12, 16);
+            this.lblErrorArea.Size = new System.Drawing.Size(11, 13);
             this.lblErrorArea.TabIndex = 17;
             this.lblErrorArea.Text = "*";
             // 
             // lblPuestoAlta
             // 
             this.lblPuestoAlta.AutoSize = true;
-            this.lblPuestoAlta.Location = new System.Drawing.Point(8, 86);
-            this.lblPuestoAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuestoAlta.Location = new System.Drawing.Point(6, 70);
             this.lblPuestoAlta.Name = "lblPuestoAlta";
-            this.lblPuestoAlta.Size = new System.Drawing.Size(52, 16);
+            this.lblPuestoAlta.Size = new System.Drawing.Size(43, 13);
             this.lblPuestoAlta.TabIndex = 16;
             this.lblPuestoAlta.Text = "Puesto:";
             // 
@@ -233,10 +223,10 @@
             // 
             this.puestosAltas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.puestosAltas.FormattingEnabled = true;
-            this.puestosAltas.Location = new System.Drawing.Point(101, 76);
-            this.puestosAltas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.puestosAltas.Location = new System.Drawing.Point(76, 62);
+            this.puestosAltas.Margin = new System.Windows.Forms.Padding(2);
             this.puestosAltas.Name = "puestosAltas";
-            this.puestosAltas.Size = new System.Drawing.Size(208, 24);
+            this.puestosAltas.Size = new System.Drawing.Size(157, 21);
             this.puestosAltas.TabIndex = 15;
             // 
             // buscarAlta
@@ -244,10 +234,10 @@
             this.buscarAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.buscarAlta.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarAlta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscarAlta.Location = new System.Drawing.Point(229, 192);
-            this.buscarAlta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buscarAlta.Location = new System.Drawing.Point(172, 156);
+            this.buscarAlta.Margin = new System.Windows.Forms.Padding(2);
             this.buscarAlta.Name = "buscarAlta";
-            this.buscarAlta.Size = new System.Drawing.Size(81, 32);
+            this.buscarAlta.Size = new System.Drawing.Size(61, 26);
             this.buscarAlta.TabIndex = 13;
             this.buscarAlta.Text = "Buscar";
             this.buscarAlta.UseVisualStyleBackColor = false;
@@ -255,30 +245,28 @@
             // 
             // cuilAltas
             // 
-            this.cuilAltas.Location = new System.Drawing.Point(101, 133);
-            this.cuilAltas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cuilAltas.Location = new System.Drawing.Point(76, 108);
+            this.cuilAltas.Margin = new System.Windows.Forms.Padding(2);
             this.cuilAltas.Name = "cuilAltas";
-            this.cuilAltas.Size = new System.Drawing.Size(208, 22);
+            this.cuilAltas.Size = new System.Drawing.Size(157, 20);
             this.cuilAltas.TabIndex = 14;
             this.cuilAltas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cuilAltas_KeyPress);
             // 
             // lblCuilAlta
             // 
             this.lblCuilAlta.AutoSize = true;
-            this.lblCuilAlta.Location = new System.Drawing.Point(8, 142);
-            this.lblCuilAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuilAlta.Location = new System.Drawing.Point(6, 115);
             this.lblCuilAlta.Name = "lblCuilAlta";
-            this.lblCuilAlta.Size = new System.Drawing.Size(39, 16);
+            this.lblCuilAlta.Size = new System.Drawing.Size(34, 13);
             this.lblCuilAlta.TabIndex = 13;
             this.lblCuilAlta.Text = "CUIL:";
             // 
             // lblAreaAlta
             // 
             this.lblAreaAlta.AutoSize = true;
-            this.lblAreaAlta.Location = new System.Drawing.Point(8, 43);
-            this.lblAreaAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAreaAlta.Location = new System.Drawing.Point(6, 35);
             this.lblAreaAlta.Name = "lblAreaAlta";
-            this.lblAreaAlta.Size = new System.Drawing.Size(39, 16);
+            this.lblAreaAlta.Size = new System.Drawing.Size(32, 13);
             this.lblAreaAlta.TabIndex = 7;
             this.lblAreaAlta.Text = "Àrea:";
             // 
@@ -286,10 +274,10 @@
             // 
             this.areasAltas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.areasAltas.FormattingEnabled = true;
-            this.areasAltas.Location = new System.Drawing.Point(101, 39);
-            this.areasAltas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.areasAltas.Location = new System.Drawing.Point(76, 32);
+            this.areasAltas.Margin = new System.Windows.Forms.Padding(2);
             this.areasAltas.Name = "areasAltas";
-            this.areasAltas.Size = new System.Drawing.Size(208, 24);
+            this.areasAltas.Size = new System.Drawing.Size(157, 21);
             this.areasAltas.TabIndex = 9;
             this.areasAltas.SelectedIndexChanged += new System.EventHandler(this.areasAltas_SelectedIndexChanged);
             // 
@@ -297,11 +285,10 @@
             // 
             this.tbpModificar.Controls.Add(this.grbInasistenciasMod);
             this.tbpModificar.Controls.Add(this.grbFiltroMod);
-            this.tbpModificar.Location = new System.Drawing.Point(4, 25);
-            this.tbpModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.tbpModificar.Location = new System.Drawing.Point(4, 22);
             this.tbpModificar.Name = "tbpModificar";
-            this.tbpModificar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpModificar.Size = new System.Drawing.Size(1479, 618);
+            this.tbpModificar.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpModificar.Size = new System.Drawing.Size(1107, 500);
             this.tbpModificar.TabIndex = 1;
             this.tbpModificar.Text = "Modificaciòn y consulta";
             this.tbpModificar.UseVisualStyleBackColor = true;
@@ -310,11 +297,11 @@
             // 
             this.grbInasistenciasMod.Controls.Add(this.btnExcel);
             this.grbInasistenciasMod.Controls.Add(this.dtgModificar);
-            this.grbInasistenciasMod.Location = new System.Drawing.Point(405, 18);
-            this.grbInasistenciasMod.Margin = new System.Windows.Forms.Padding(5);
+            this.grbInasistenciasMod.Location = new System.Drawing.Point(304, 15);
+            this.grbInasistenciasMod.Margin = new System.Windows.Forms.Padding(4);
             this.grbInasistenciasMod.Name = "grbInasistenciasMod";
-            this.grbInasistenciasMod.Padding = new System.Windows.Forms.Padding(5);
-            this.grbInasistenciasMod.Size = new System.Drawing.Size(1068, 565);
+            this.grbInasistenciasMod.Padding = new System.Windows.Forms.Padding(4);
+            this.grbInasistenciasMod.Size = new System.Drawing.Size(801, 459);
             this.grbInasistenciasMod.TabIndex = 13;
             this.grbInasistenciasMod.TabStop = false;
             this.grbInasistenciasMod.Text = "Inasistencias";
@@ -324,14 +311,13 @@
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.btnExcel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcel.Location = new System.Drawing.Point(929, 474);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcel.Location = new System.Drawing.Point(691, 390);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(115, 49);
+            this.btnExcel.Size = new System.Drawing.Size(103, 40);
             this.btnExcel.TabIndex = 14;
             this.btnExcel.Text = "Descargar Excel";
             this.btnExcel.UseVisualStyleBackColor = false;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            this.btnExcel.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dtgModificar
             // 
@@ -342,39 +328,14 @@
             this.Eliminar});
             this.dtgModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgModificar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgModificar.Location = new System.Drawing.Point(4, 21);
-            this.dtgModificar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dtgModificar.Location = new System.Drawing.Point(3, 17);
+            this.dtgModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgModificar.Name = "dtgModificar";
             this.dtgModificar.RowHeadersWidth = 51;
             this.dtgModificar.RowTemplate.Height = 24;
-            this.dtgModificar.Size = new System.Drawing.Size(1055, 434);
+            this.dtgModificar.Size = new System.Drawing.Size(791, 353);
             this.dtgModificar.TabIndex = 12;
             this.dtgModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
-            // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Modificar.Text = "A";
-            this.Modificar.ToolTipText = "Abrir";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 68;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 80;
             // 
             // grbFiltroMod
             // 
@@ -395,11 +356,9 @@
             this.grbFiltroMod.Controls.Add(this.buscarMod);
             this.grbFiltroMod.Controls.Add(this.CuilMod);
             this.grbFiltroMod.Controls.Add(this.lblCuilMod);
-            this.grbFiltroMod.Location = new System.Drawing.Point(9, 18);
-            this.grbFiltroMod.Margin = new System.Windows.Forms.Padding(4);
+            this.grbFiltroMod.Location = new System.Drawing.Point(7, 15);
             this.grbFiltroMod.Name = "grbFiltroMod";
-            this.grbFiltroMod.Padding = new System.Windows.Forms.Padding(4);
-            this.grbFiltroMod.Size = new System.Drawing.Size(387, 570);
+            this.grbFiltroMod.Size = new System.Drawing.Size(290, 463);
             this.grbFiltroMod.TabIndex = 12;
             this.grbFiltroMod.TabStop = false;
             this.grbFiltroMod.Text = "Filtros";
@@ -408,10 +367,9 @@
             // lnkAtas
             // 
             this.lnkAtas.AutoSize = true;
-            this.lnkAtas.Location = new System.Drawing.Point(9, 549);
-            this.lnkAtas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkAtas.Location = new System.Drawing.Point(7, 446);
             this.lnkAtas.Name = "lnkAtas";
-            this.lnkAtas.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtas.Size = new System.Drawing.Size(31, 13);
             this.lnkAtas.TabIndex = 33;
             this.lnkAtas.TabStop = true;
             this.lnkAtas.Text = "Atrás";
@@ -420,10 +378,10 @@
             // periodo
             // 
             this.periodo.AutoSize = true;
-            this.periodo.Location = new System.Drawing.Point(12, 158);
-            this.periodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.periodo.Location = new System.Drawing.Point(9, 128);
+            this.periodo.Margin = new System.Windows.Forms.Padding(2);
             this.periodo.Name = "periodo";
-            this.periodo.Size = new System.Drawing.Size(77, 20);
+            this.periodo.Size = new System.Drawing.Size(62, 17);
             this.periodo.TabIndex = 32;
             this.periodo.Text = "Periodo";
             this.periodo.UseVisualStyleBackColor = true;
@@ -433,10 +391,9 @@
             // 
             this.lblErrorPuestoMod.AutoSize = true;
             this.lblErrorPuestoMod.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPuestoMod.Location = new System.Drawing.Point(60, 63);
-            this.lblErrorPuestoMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorPuestoMod.Location = new System.Drawing.Point(45, 51);
             this.lblErrorPuestoMod.Name = "lblErrorPuestoMod";
-            this.lblErrorPuestoMod.Size = new System.Drawing.Size(12, 16);
+            this.lblErrorPuestoMod.Size = new System.Drawing.Size(11, 13);
             this.lblErrorPuestoMod.TabIndex = 31;
             this.lblErrorPuestoMod.Text = "*";
             // 
@@ -444,20 +401,18 @@
             // 
             this.lblErrorAreaMod.AutoSize = true;
             this.lblErrorAreaMod.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorAreaMod.Location = new System.Drawing.Point(43, 34);
-            this.lblErrorAreaMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorAreaMod.Location = new System.Drawing.Point(32, 28);
             this.lblErrorAreaMod.Name = "lblErrorAreaMod";
-            this.lblErrorAreaMod.Size = new System.Drawing.Size(12, 16);
+            this.lblErrorAreaMod.Size = new System.Drawing.Size(11, 13);
             this.lblErrorAreaMod.TabIndex = 30;
             this.lblErrorAreaMod.Text = "*";
             // 
             // lblPuestoMod
             // 
             this.lblPuestoMod.AutoSize = true;
-            this.lblPuestoMod.Location = new System.Drawing.Point(8, 71);
-            this.lblPuestoMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuestoMod.Location = new System.Drawing.Point(6, 58);
             this.lblPuestoMod.Name = "lblPuestoMod";
-            this.lblPuestoMod.Size = new System.Drawing.Size(52, 16);
+            this.lblPuestoMod.Size = new System.Drawing.Size(43, 13);
             this.lblPuestoMod.TabIndex = 28;
             this.lblPuestoMod.Text = "Puesto:";
             // 
@@ -465,85 +420,81 @@
             // 
             this.PuestoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PuestoMod.FormattingEnabled = true;
-            this.PuestoMod.Location = new System.Drawing.Point(91, 73);
-            this.PuestoMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PuestoMod.Location = new System.Drawing.Point(68, 59);
+            this.PuestoMod.Margin = new System.Windows.Forms.Padding(2);
             this.PuestoMod.Name = "PuestoMod";
-            this.PuestoMod.Size = new System.Drawing.Size(208, 24);
+            this.PuestoMod.Size = new System.Drawing.Size(157, 21);
             this.PuestoMod.TabIndex = 27;
             // 
             // AreaMod
             // 
             this.AreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreaMod.FormattingEnabled = true;
-            this.AreaMod.Location = new System.Drawing.Point(91, 25);
-            this.AreaMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AreaMod.Location = new System.Drawing.Point(68, 20);
+            this.AreaMod.Margin = new System.Windows.Forms.Padding(2);
             this.AreaMod.Name = "AreaMod";
-            this.AreaMod.Size = new System.Drawing.Size(208, 24);
+            this.AreaMod.Size = new System.Drawing.Size(157, 21);
             this.AreaMod.TabIndex = 26;
             this.AreaMod.SelectedIndexChanged += new System.EventHandler(this.AreaMod_SelectedIndexChanged);
             // 
             // lblAreaMod
             // 
             this.lblAreaMod.AutoSize = true;
-            this.lblAreaMod.Location = new System.Drawing.Point(8, 42);
-            this.lblAreaMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAreaMod.Location = new System.Drawing.Point(6, 34);
             this.lblAreaMod.Name = "lblAreaMod";
-            this.lblAreaMod.Size = new System.Drawing.Size(39, 16);
+            this.lblAreaMod.Size = new System.Drawing.Size(32, 13);
             this.lblAreaMod.TabIndex = 25;
             this.lblAreaMod.Text = "Àrea:";
             // 
             // lblFechaMod
             // 
             this.lblFechaMod.AutoSize = true;
-            this.lblFechaMod.Location = new System.Drawing.Point(8, 192);
-            this.lblFechaMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaMod.Location = new System.Drawing.Point(6, 156);
             this.lblFechaMod.Name = "lblFechaMod";
-            this.lblFechaMod.Size = new System.Drawing.Size(48, 16);
+            this.lblFechaMod.Size = new System.Drawing.Size(40, 13);
             this.lblFechaMod.TabIndex = 22;
             this.lblFechaMod.Text = "Fecha:";
             // 
             // lblFechaDesdeMod
             // 
             this.lblFechaDesdeMod.AutoSize = true;
-            this.lblFechaDesdeMod.Location = new System.Drawing.Point(8, 238);
-            this.lblFechaDesdeMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaDesdeMod.Location = new System.Drawing.Point(6, 193);
             this.lblFechaDesdeMod.Name = "lblFechaDesdeMod";
-            this.lblFechaDesdeMod.Size = new System.Drawing.Size(90, 16);
+            this.lblFechaDesdeMod.Size = new System.Drawing.Size(72, 13);
             this.lblFechaDesdeMod.TabIndex = 21;
             this.lblFechaDesdeMod.Text = "Fecha desde:";
             // 
             // lblFechaHastaMod
             // 
             this.lblFechaHastaMod.AutoSize = true;
-            this.lblFechaHastaMod.Location = new System.Drawing.Point(8, 288);
-            this.lblFechaHastaMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaHastaMod.Location = new System.Drawing.Point(6, 234);
             this.lblFechaHastaMod.Name = "lblFechaHastaMod";
-            this.lblFechaHastaMod.Size = new System.Drawing.Size(84, 16);
+            this.lblFechaHastaMod.Size = new System.Drawing.Size(69, 13);
             this.lblFechaHastaMod.TabIndex = 20;
             this.lblFechaHastaMod.Text = "Fecha hasta:";
             // 
             // FechaHastaMod
             // 
-            this.FechaHastaMod.Location = new System.Drawing.Point(111, 279);
-            this.FechaHastaMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FechaHastaMod.Location = new System.Drawing.Point(83, 227);
+            this.FechaHastaMod.Margin = new System.Windows.Forms.Padding(2);
             this.FechaHastaMod.Name = "FechaHastaMod";
-            this.FechaHastaMod.Size = new System.Drawing.Size(208, 22);
+            this.FechaHastaMod.Size = new System.Drawing.Size(157, 20);
             this.FechaHastaMod.TabIndex = 19;
             // 
             // fechaDesdeMod
             // 
-            this.fechaDesdeMod.Location = new System.Drawing.Point(111, 230);
-            this.fechaDesdeMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fechaDesdeMod.Location = new System.Drawing.Point(83, 187);
+            this.fechaDesdeMod.Margin = new System.Windows.Forms.Padding(2);
             this.fechaDesdeMod.Name = "fechaDesdeMod";
-            this.fechaDesdeMod.Size = new System.Drawing.Size(208, 22);
+            this.fechaDesdeMod.Size = new System.Drawing.Size(157, 20);
             this.fechaDesdeMod.TabIndex = 18;
             // 
             // FechaMod
             // 
-            this.FechaMod.Location = new System.Drawing.Point(111, 185);
-            this.FechaMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FechaMod.Location = new System.Drawing.Point(83, 150);
+            this.FechaMod.Margin = new System.Windows.Forms.Padding(2);
             this.FechaMod.Name = "FechaMod";
-            this.FechaMod.Size = new System.Drawing.Size(208, 22);
+            this.FechaMod.Size = new System.Drawing.Size(157, 20);
             this.FechaMod.TabIndex = 17;
             // 
             // buscarMod
@@ -551,10 +502,10 @@
             this.buscarMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
             this.buscarMod.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscarMod.Location = new System.Drawing.Point(239, 338);
-            this.buscarMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buscarMod.Location = new System.Drawing.Point(179, 275);
+            this.buscarMod.Margin = new System.Windows.Forms.Padding(2);
             this.buscarMod.Name = "buscarMod";
-            this.buscarMod.Size = new System.Drawing.Size(81, 32);
+            this.buscarMod.Size = new System.Drawing.Size(61, 26);
             this.buscarMod.TabIndex = 13;
             this.buscarMod.Text = "Buscar";
             this.buscarMod.UseVisualStyleBackColor = false;
@@ -562,30 +513,53 @@
             // 
             // CuilMod
             // 
-            this.CuilMod.Location = new System.Drawing.Point(91, 118);
-            this.CuilMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CuilMod.Location = new System.Drawing.Point(68, 96);
+            this.CuilMod.Margin = new System.Windows.Forms.Padding(2);
             this.CuilMod.Name = "CuilMod";
-            this.CuilMod.Size = new System.Drawing.Size(208, 22);
+            this.CuilMod.Size = new System.Drawing.Size(157, 20);
             this.CuilMod.TabIndex = 14;
             this.CuilMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CuilMod_KeyPress);
             // 
             // lblCuilMod
             // 
             this.lblCuilMod.AutoSize = true;
-            this.lblCuilMod.Location = new System.Drawing.Point(8, 122);
-            this.lblCuilMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuilMod.Location = new System.Drawing.Point(6, 99);
             this.lblCuilMod.Name = "lblCuilMod";
-            this.lblCuilMod.Size = new System.Drawing.Size(39, 16);
+            this.lblCuilMod.Size = new System.Drawing.Size(34, 13);
             this.lblCuilMod.TabIndex = 13;
             this.lblCuilMod.Text = "CUIL:";
             // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Modificar.Text = "Añadir";
+            this.Modificar.ToolTipText = "Abrir";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 56;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 80;
+            // 
             // Asistencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 647);
+            this.ClientSize = new System.Drawing.Size(1115, 526);
             this.Controls.Add(this.ControlAsist);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Asistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asistencias";
@@ -642,10 +616,10 @@
         private System.Windows.Forms.CheckBox periodo;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.DataGridViewButtonColumn Abrir;
-        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel lnkAtas;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

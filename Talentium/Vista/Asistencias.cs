@@ -506,7 +506,6 @@ namespace Vista
                     }
                 }
             }
-            //}
         }
 
         private void lnkAtas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -517,6 +516,11 @@ namespace Vista
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

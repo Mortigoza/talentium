@@ -70,6 +70,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Accion.
+        /// </summary>
+        internal static string accion {
+            get {
+                return ResourceManager.GetString("accion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Año.
         /// </summary>
         internal static string año {
@@ -439,6 +448,24 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lugar.
+        /// </summary>
+        internal static string lugar {
+            get {
+                return ResourceManager.GetString("lugar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mensaje.
+        /// </summary>
+        internal static string mensaje {
+            get {
+                return ResourceManager.GetString("mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Mes De Evaluación.
         /// </summary>
         internal static string mes_de_evaluacion {
@@ -482,8 +509,6 @@ namespace Vista.Lenguajes {
                 return ResourceManager.GetString("nivel2", resourceCulture);
             }
         }
-        
-       
         
         /// <summary>
         ///   Busca una cadena traducida similar a Nombre.
@@ -680,6 +705,15 @@ namespace Vista.Lenguajes {
         internal static string tiempo_estimado {
             get {
                 return ResourceManager.GetString("tiempo_estimado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo.
+        /// </summary>
+        internal static string tipo {
+            get {
+                return ResourceManager.GetString("tipo", resourceCulture);
             }
         }
         
