@@ -14,6 +14,8 @@ using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
+using Vista.Lenguajes;
+
 namespace Vista
 {
     public partial class frmReporteNominaSalarial : Form
@@ -22,6 +24,8 @@ namespace Vista
         public frmReporteNominaSalarial()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+
             DataTable convA = convenios.area();
             areas.DisplayMember = "area";
             areas.DataSource = convA;
@@ -41,35 +45,53 @@ namespace Vista
             conven.DisplayMember = "convenio";
             conven.DataSource = nuevoDataTable;
 
-
+            btnExcel.Enabled = false;
+            dtgNomina.MultiSelect = false;
+            dtgNomina.RowHeadersVisible = false;
+            dtgNomina.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
 
+            }
+        }
         private void dataGridAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
         public void cargarDtg(DataTable data)
         {
-            dataGridNomina.AllowUserToAddRows = false;
-            dataGridNomina.DataSource = data;
+            if (data.Rows.Count >= 1)
+            {
+                btnExcel.Enabled = true;
+            }
+            else
+            {
+                btnExcel.Enabled = false;
+            }
+            dtgNomina.AllowUserToAddRows = false;
+            dtgNomina.DataSource = data;
 
 
             // Ocultar los id en las columnas
             
-            dataGridNomina.Columns["id_convenio"].Visible = false;
-            dataGridNomina.Columns["id_categoria"].Visible = false;
+            dtgNomina.Columns["id_convenio"].Visible = false;
+            dtgNomina.Columns["id_categoria"].Visible = false;
 
-            dataGridNomina.Columns["nombres"].HeaderText = "Nombre";
-            dataGridNomina.Columns["apellidos"].HeaderText = "Apellido";
-            dataGridNomina.Columns["cuit_cuil"].HeaderText = "Cuil";
-            dataGridNomina.Columns["fecha_alta"].HeaderText = "Fecha alta";
-            dataGridNomina.Columns["convenio"].HeaderText = "Convenio";
-            dataGridNomina.Columns["seguridad_salud"].HeaderText = "Seguridad y salud";
-            dataGridNomina.Columns["obra_social"].HeaderText = "Obra social";
-            dataGridNomina.Columns["nombre_categoria"].HeaderText = "Categoria";
-            dataGridNomina.Columns["jornada"].HeaderText = "Jornada";
-            dataGridNomina.Columns["sueldos"].HeaderText = "Sueldo";
+            dtgNomina.Columns["nombres"].HeaderText = "Nombre";
+            dtgNomina.Columns["apellidos"].HeaderText = "Apellido";
+            dtgNomina.Columns["cuit_cuil"].HeaderText = "Cuil";
+            dtgNomina.Columns["fecha_alta"].HeaderText = "Fecha alta";
+            dtgNomina.Columns["convenio"].HeaderText = "Convenio";
+            dtgNomina.Columns["seguridad_salud"].HeaderText = "Seguridad y salud";
+            dtgNomina.Columns["obra_social"].HeaderText = "Obra social";
+            dtgNomina.Columns["nombre_categoria"].HeaderText = "Categoria";
+            dtgNomina.Columns["jornada"].HeaderText = "Jornada";
+            dtgNomina.Columns["sueldos"].HeaderText = "Sueldo";
 
         }
 
@@ -113,6 +135,7 @@ namespace Vista
                     cargarDtg(cvenios);
                 }
             }
+            
         }
 
         private void areasAltas_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,22 +170,17 @@ namespace Vista
 
         private void Descargar_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
-                folderDialog.Description = "Selecciona la carpeta de destino";
-                if (folderDialog.ShowDialog() == DialogResult.OK)
+                saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
+                saveDialog.Title = "Elije el nombre del archivo Excel";
+                string defaultFileName = string.Format("Reporte Nomina salarial " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx"); // Nombre predeterminado del archivo
+                saveDialog.FileName = defaultFileName;
+                if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (SaveFileDialog saveDialog = new SaveFileDialog())
-                    {
-                        saveDialog.InitialDirectory = folderDialog.SelectedPath;
-                        saveDialog.Filter = "Archivos Excel (.xlsx)|.xlsx";
-                        saveDialog.Title = "Elije el nombre del archivo Excel";
+                    string rutaCompleta = saveDialog.FileName;
 
-                        if (saveDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            string rutaCompleta = saveDialog.FileName;
-
-                            SLDocument sl = new SLDocument();
+                    SLDocument sl = new SLDocument();
                             SLStyle style = new SLStyle();
                             style.Font.FontSize = 12;
                             style.Fill.SetPatternType(PatternValues.Solid);
@@ -185,7 +203,7 @@ namespace Vista
 
                             try
                             {
-                                foreach (DataGridViewColumn cl in dataGridNomina.Columns)
+                                foreach (DataGridViewColumn cl in dtgNomina.Columns)
                                 {
                                     //El if esta para que las columnas ids no se muestren en el excel
                                     if (cl.Index != 4 && cl.Index != 8)
@@ -201,7 +219,7 @@ namespace Vista
                                     }
                                 }
 
-                                DateTime fechaEmision = DateTime.Now; // Puedes ajustar la fecha según tus necesidades
+                                DateTime fechaEmision = DateTime.Now; 
                                 SLStyle fechaEmisionStyle = new SLStyle();
                                 fechaEmisionStyle.Alignment.Horizontal = HorizontalAlignmentValues.Right;
                                 fechaEmisionStyle.SetFontBold(true);
@@ -222,9 +240,9 @@ namespace Vista
                                 fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
                                 sl.SetCellStyle(1, 1, 8, 12, fondo);
 
-                                var data = dataGridNomina.Columns;
-                                var fila = dataGridNomina.Rows;
-                                foreach (DataGridViewRow row in dataGridNomina.Rows)
+                                var data = dtgNomina.Columns;
+                                var fila = dtgNomina.Rows;
+                                foreach (DataGridViewRow row in dtgNomina.Rows)
                                 {
                                     sl.SetCellValue(numFila, 1, row.Cells[0].Value.ToString());
                                     sl.SetCellValue(numFila, 2, row.Cells[1].Value.ToString());
@@ -239,7 +257,7 @@ namespace Vista
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa. Archivo guardado en: " + rutaCompleta);
+                                MessageBox.Show("Operación exitosa.");
                             }
                             catch (Exception msj)
                             {
@@ -247,9 +265,17 @@ namespace Vista
 
                             }
                         }
-                    }
                 }
             }
+
+        private void cuil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void lnkAtas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -60,10 +60,10 @@
             this.btnIngresarEmpleado.Enabled = false;
             this.btnIngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnIngresarEmpleado.Location = new System.Drawing.Point(195, 377);
-            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIngresarEmpleado.Location = new System.Drawing.Point(146, 306);
+            this.btnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
-            this.btnIngresarEmpleado.Size = new System.Drawing.Size(149, 41);
+            this.btnIngresarEmpleado.Size = new System.Drawing.Size(112, 33);
             this.btnIngresarEmpleado.TabIndex = 13;
             this.btnIngresarEmpleado.Text = "Ingresar Empleado";
             this.btnIngresarEmpleado.UseVisualStyleBackColor = false;
@@ -75,10 +75,10 @@
             this.btnEtapas.Enabled = false;
             this.btnEtapas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEtapas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEtapas.Location = new System.Drawing.Point(715, 377);
-            this.btnEtapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEtapas.Location = new System.Drawing.Point(536, 306);
+            this.btnEtapas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEtapas.Name = "btnEtapas";
-            this.btnEtapas.Size = new System.Drawing.Size(104, 41);
+            this.btnEtapas.Size = new System.Drawing.Size(78, 33);
             this.btnEtapas.TabIndex = 12;
             this.btnEtapas.Text = "Ver proceso";
             this.btnEtapas.UseVisualStyleBackColor = false;
@@ -89,11 +89,11 @@
             this.grpFiltros.Controls.Add(this.btnFiltrar);
             this.grpFiltros.Controls.Add(this.txtCuilCuit);
             this.grpFiltros.Controls.Add(this.lblCuilCuit);
-            this.grpFiltros.Location = new System.Drawing.Point(139, 43);
-            this.grpFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFiltros.Location = new System.Drawing.Point(104, 35);
+            this.grpFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpFiltros.Size = new System.Drawing.Size(555, 63);
+            this.grpFiltros.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltros.Size = new System.Drawing.Size(416, 51);
             this.grpFiltros.TabIndex = 9;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
@@ -103,10 +103,10 @@
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnFiltrar.Location = new System.Drawing.Point(448, 15);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar.Location = new System.Drawing.Point(336, 12);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 32);
+            this.btnFiltrar.Size = new System.Drawing.Size(56, 26);
             this.btnFiltrar.TabIndex = 6;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -114,11 +114,11 @@
             // 
             // txtCuilCuit
             // 
-            this.txtCuilCuit.Location = new System.Drawing.Point(175, 18);
-            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCuilCuit.Location = new System.Drawing.Point(131, 15);
+            this.txtCuilCuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCuilCuit.MaxLength = 11;
             this.txtCuilCuit.Name = "txtCuilCuit";
-            this.txtCuilCuit.Size = new System.Drawing.Size(223, 22);
+            this.txtCuilCuit.Size = new System.Drawing.Size(168, 20);
             this.txtCuilCuit.TabIndex = 5;
             this.txtCuilCuit.TextChanged += new System.EventHandler(this.txtCuilCuit_TextChanged);
             this.txtCuilCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuilCuit_KeyPress);
@@ -127,9 +127,10 @@
             // lblCuilCuit
             // 
             this.lblCuilCuit.AutoSize = true;
-            this.lblCuilCuit.Location = new System.Drawing.Point(17, 22);
+            this.lblCuilCuit.Location = new System.Drawing.Point(13, 18);
+            this.lblCuilCuit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCuilCuit.Name = "lblCuilCuit";
-            this.lblCuilCuit.Size = new System.Drawing.Size(71, 16);
+            this.lblCuilCuit.Size = new System.Drawing.Size(61, 13);
             this.lblCuilCuit.TabIndex = 0;
             this.lblCuilCuit.Text = "CUIL/CUIT";
             // 
@@ -144,12 +145,12 @@
             this.Fecha_Entrevista,
             this.Entrevistador,
             this.ID});
-            this.dtgCandidatos.Location = new System.Drawing.Point(40, 170);
-            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgCandidatos.Location = new System.Drawing.Point(30, 138);
+            this.dtgCandidatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgCandidatos.Name = "dtgCandidatos";
             this.dtgCandidatos.RowHeadersWidth = 51;
             this.dtgCandidatos.RowTemplate.Height = 24;
-            this.dtgCandidatos.Size = new System.Drawing.Size(779, 190);
+            this.dtgCandidatos.Size = new System.Drawing.Size(584, 154);
             this.dtgCandidatos.TabIndex = 8;
             this.dtgCandidatos.SelectionChanged += new System.EventHandler(this.dtgCandidatos_SelectionChanged);
             // 
@@ -203,10 +204,10 @@
             this.btnModificarCandidato.Enabled = false;
             this.btnModificarCandidato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarCandidato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificarCandidato.Location = new System.Drawing.Point(40, 377);
-            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarCandidato.Location = new System.Drawing.Point(30, 306);
+            this.btnModificarCandidato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarCandidato.Name = "btnModificarCandidato";
-            this.btnModificarCandidato.Size = new System.Drawing.Size(149, 41);
+            this.btnModificarCandidato.Size = new System.Drawing.Size(112, 33);
             this.btnModificarCandidato.TabIndex = 14;
             this.btnModificarCandidato.Text = "Modificar Candidato";
             this.btnModificarCandidato.UseVisualStyleBackColor = false;
@@ -215,29 +216,26 @@
             // lblCuil
             // 
             this.lblCuil.AutoSize = true;
-            this.lblCuil.Location = new System.Drawing.Point(36, 151);
-            this.lblCuil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuil.Location = new System.Drawing.Point(27, 123);
             this.lblCuil.Name = "lblCuil";
-            this.lblCuil.Size = new System.Drawing.Size(74, 16);
+            this.lblCuil.Size = new System.Drawing.Size(64, 13);
             this.lblCuil.TabIndex = 15;
             this.lblCuil.Text = "CUIL/CUIT:";
             // 
             // lblCuilLlenar
             // 
             this.lblCuilLlenar.AutoSize = true;
-            this.lblCuilLlenar.Location = new System.Drawing.Point(128, 151);
-            this.lblCuilLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuilLlenar.Location = new System.Drawing.Point(96, 123);
             this.lblCuilLlenar.Name = "lblCuilLlenar";
-            this.lblCuilLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblCuilLlenar.Size = new System.Drawing.Size(0, 13);
             this.lblCuilLlenar.TabIndex = 16;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(288, 151);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(216, 123);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 13);
             this.lblNombre.TabIndex = 17;
             this.lblNombre.Text = "Nombre: ";
             this.lblNombre.Click += new System.EventHandler(this.label2_Click);
@@ -245,29 +243,26 @@
             // lblNombreLlenar
             // 
             this.lblNombreLlenar.AutoSize = true;
-            this.lblNombreLlenar.Location = new System.Drawing.Point(359, 151);
-            this.lblNombreLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreLlenar.Location = new System.Drawing.Point(269, 123);
             this.lblNombreLlenar.Name = "lblNombreLlenar";
-            this.lblNombreLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblNombreLlenar.Size = new System.Drawing.Size(0, 13);
             this.lblNombreLlenar.TabIndex = 18;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(577, 151);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellido.Location = new System.Drawing.Point(433, 123);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(63, 16);
+            this.lblApellido.Size = new System.Drawing.Size(50, 13);
             this.lblApellido.TabIndex = 19;
             this.lblApellido.Text = "Apellido: ";
             // 
             // lblApellidoLlenar
             // 
             this.lblApellidoLlenar.AutoSize = true;
-            this.lblApellidoLlenar.Location = new System.Drawing.Point(648, 150);
-            this.lblApellidoLlenar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoLlenar.Location = new System.Drawing.Point(486, 122);
             this.lblApellidoLlenar.Name = "lblApellidoLlenar";
-            this.lblApellidoLlenar.Size = new System.Drawing.Size(0, 16);
+            this.lblApellidoLlenar.Size = new System.Drawing.Size(0, 13);
             this.lblApellidoLlenar.TabIndex = 20;
             // 
             // lnkAtras
@@ -283,7 +278,7 @@
             // 
             // frmConsultaProcesoDeSeleccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 466);
             this.Controls.Add(this.lnkAtras);
@@ -299,7 +294,7 @@
             this.Controls.Add(this.grpFiltros);
             this.Controls.Add(this.dtgCandidatos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaProcesoDeSeleccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Candidatos";

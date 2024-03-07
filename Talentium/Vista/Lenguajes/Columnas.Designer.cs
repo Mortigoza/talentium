@@ -61,6 +61,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Abrir.
+        /// </summary>
+        internal static string abrir {
+            get {
+                return ResourceManager.GetString("abrir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Año.
         /// </summary>
         internal static string año {
@@ -473,6 +482,8 @@ namespace Vista.Lenguajes {
                 return ResourceManager.GetString("nivel2", resourceCulture);
             }
         }
+        
+       
         
         /// <summary>
         ///   Busca una cadena traducida similar a Nombre.

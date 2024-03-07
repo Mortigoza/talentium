@@ -20,7 +20,7 @@
     <table class="border">
         <tr>
             <td colspan="2" align="center">
-                <h4 style="margin:0px; font-size: 20px">REPORTE DE EMPLEADO</h4>
+                <h4 style="margin:0px; font-size: 20px">REPORTE DE CANDIDATO</h4>
             </td>
         </tr>
 
@@ -135,29 +135,6 @@
         </tr>
 
         <tr>
-            <td colspan="2">
-                <h4 style="margin:0px; border-bottom:1px solid black">Datos laborales</h4>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Área:</td>
-            <td>@AREA</td>
-        </tr>
-        <tr>
-            <td>Puesto:</td>
-            <td>@PUESTO</td>
-        </tr>
-        <tr>
-            <td>Convenio:</td>
-            <td>@CONVENIO</td>
-        </tr>
-        <tr>
-            <td>Fecha de ingreso:</td>
-            <td>@FECHAING</td>
-        </tr>
-
-        <tr>
             <td colspan="2" height="20"></td>
         </tr>
 
@@ -167,22 +144,9 @@
             </td>
         </tr>
 
-        <tr>
-            <td>Puesto:</td>
-            <td>@PUESTO2</td>
-        </tr>
-        <tr>
-            <td>Empresa:</td>
-            <td>@EMPRESA</td>
-        </tr>
-        <tr>
-            <td>Duración:</td>
-            <td>@DURACION</td>
-        </tr>
-        <tr>
-            <td>Personas a cargo:</td>
-            <td>@PERCARGO</td>
-        </tr>
+        <tbody>
+            @EXPLAB
+        </tbody>
 
         <tr>
             <td colspan="2" height="20"></td>
@@ -194,26 +158,9 @@
             </td>
         </tr>
 
-        <tr>
-            <td>Institución:</td>
-            <td>@INST</td>
-        </tr>
-        <tr>
-            <td>Nivel:</td>
-            <td>@NIVEL</td>
-        </tr>
-        <tr>
-            <td>Título:</td>
-            <td>@TITULO</td>
-        </tr>
-        <tr>
-            <td>Duración:</td>
-            <td>@DURACION</td>
-        </tr>
-        <tr>
-            <td>Progreso:</td>
-            <td>@PROGRESO</td>
-        </tr>
+        <tbody>
+            @INSTTITUCION
+        </tbody>
 
         <tr>
             <td colspan="2" height="20"></td>
@@ -224,11 +171,10 @@
                 <h4 style="margin:0px; border-bottom:1px solid black">Idioma</h4>
             </td>
         </tr>
+        <tbody>
+            @NIVELIDIOMA
+        </tbody>
+       
 
-        <tr>
-            <td>Español:</td>
-            <td>@ESP</td>
-
-        </tr>
     </table>
 </body>

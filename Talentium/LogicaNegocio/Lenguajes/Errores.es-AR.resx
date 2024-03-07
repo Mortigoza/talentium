@@ -258,4 +258,16 @@
   <data name="UsrEspacios" xml:space="preserve">
     <value>El nombre de usuario no puede contener espacios.</value>
   </data>
+  <data name="CuilIncorrecto" xml:space="preserve">
+    <value>El cuil ingresado no tiene un formato correcto.</value>
+  </data>
+  <data name="EtapasNoCoinciden" xml:space="preserve">
+    <value>Las etapas no coinciden. No se puede completar el DataGridView.</value>
+  </data>
+  <data name="OperacionExitosa" xml:space="preserve">
+    <value>Operación Exitosa.</value>
+  </data>
+  <data name="RegNoCoincide" xml:space="preserve">
+    <value>Ningún registro coincide.</value>
+  </data>
 </root>

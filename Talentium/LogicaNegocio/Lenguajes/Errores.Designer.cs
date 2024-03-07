@@ -142,6 +142,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El cuil ingresado no tiene un formato correcto..
+        /// </summary>
+        public static string CuilIncorrecto {
+            get {
+                return ResourceManager.GetString("CuilIncorrecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
         public static string Error {
@@ -192,6 +201,15 @@ namespace LogicaNegocio.Lenguajes {
         public static string InfoAcademicaOb {
             get {
                 return ResourceManager.GetString("InfoAcademicaOb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las etapas no coinciden. No se puede completar el DataGridView..
+        /// </summary>
+        public static string EtapasNoCoinciden {
+            get {
+                return ResourceManager.GetString("EtapasNoCoinciden", resourceCulture);
             }
         }
         

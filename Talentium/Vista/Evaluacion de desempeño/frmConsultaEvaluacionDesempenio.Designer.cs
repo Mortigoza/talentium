@@ -51,8 +51,7 @@
             this.DesempEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
-            this.descargarExcel = new System.Windows.Forms.Button();
-            this.lnkAtras = new System.Windows.Forms.LinkLabel();
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -268,34 +267,24 @@
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos del empleado";
             // 
-            // descargarExcel
+            // btnExcel
             // 
-            this.descargarExcel.Location = new System.Drawing.Point(864, 375);
-            this.descargarExcel.Name = "descargarExcel";
-            this.descargarExcel.Size = new System.Drawing.Size(90, 43);
-            this.descargarExcel.TabIndex = 36;
-            this.descargarExcel.Text = "Descargar Excel";
-            this.descargarExcel.UseVisualStyleBackColor = true;
-            this.descargarExcel.Click += new System.EventHandler(this.descargarExcel_Click);
-            // 
-            // lnkAtras
-            // 
-            this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 402);
-            this.lnkAtras.Name = "lnkAtras";
-            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
-            this.lnkAtras.TabIndex = 37;
-            this.lnkAtras.TabStop = true;
-            this.lnkAtras.Text = "Atras";
-            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExcel.Location = new System.Drawing.Point(864, 375);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(92, 43);
+            this.btnExcel.TabIndex = 36;
+            this.btnExcel.Text = "Descargar Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.descargarExcel_Click);
             // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 430);
-            this.Controls.Add(this.lnkAtras);
-            this.Controls.Add(this.descargarExcel);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCantidadEval);
@@ -345,7 +334,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Disciplina;
         private System.Windows.Forms.DataGridViewTextBoxColumn RelSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesempEquipo;
-        private System.Windows.Forms.Button descargarExcel;
-        private System.Windows.Forms.LinkLabel lnkAtras;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

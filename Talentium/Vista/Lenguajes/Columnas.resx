@@ -333,4 +333,7 @@
   <data name="área" xml:space="preserve">
     <value>Área</value>
   </data>
+  <data name="abrir" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
 </root>

@@ -12,6 +12,7 @@ using Vista.Gestion_de_Talento;
 using Comun;
 using Vista.Lenguajes;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 
 namespace Vista
 {
@@ -40,15 +41,15 @@ namespace Vista
             {
                 dtgCandidatos.Rows[i].Cells["Etapa"].Value = lista.Rows[i]["Etapas"];
             }
-            
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCandidatos);
         }
         private void txtCuilCuit_Leave(object sender, EventArgs e)
         {
             string cuil = txtCuilCuit.Text.Trim();
             if (cuil.Length != 11 && cuil != "")
             {
-                MessageBox.Show("El cuil ingresado no tiene un formato correcto.", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CuilIncorrecto, Errores.Aviso,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCuilCuit.Focus();
             }
         }
@@ -68,13 +69,14 @@ namespace Vista
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             CargarDatos();
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCandidatos);
         }
         public void CargarDatos()
         {
             btnModificarCandidato.Enabled = true;
             if (!filtroUtilizado)
             {
-                MessageBox.Show("Por favor, introduzca el Cuil para la búsqueda.", "Aviso",
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso,
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -163,11 +165,8 @@ namespace Vista
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(txtCuilCuit.Text))
-                    {
-                        MessageBox.Show("El candidato aún no ha empezado el proceso de selección", "Aviso",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             if (dtgCandidatos.Rows.Count > 0)
@@ -247,8 +246,6 @@ namespace Vista
                 frmEntrevistaPreocupacionalCapacitacion formularioPestañas = new frmEntrevistaPreocupacionalCapacitacion();
                 MostrarFormularioPestañas(formularioPestañas, id);
             }
-
-
         }
         private void MostrarFormularioPestañas(frmEntrevistaPreocupacionalCapacitacion formulario, int idPersona)
         {
