@@ -70,7 +70,20 @@ namespace Vista
             dtpFechaDeNacimiento.MaxDate = DateTime.Today;
             dtpFechaDeNacimiento.MaxDate = DateTime.Today.AddYears(-18);
             dttFechaAlta.MaxDate = DateTime.Today;
-          
+            dgvAcademico.MultiSelect = false;
+            dgvAcademico.RowHeadersVisible = false;
+            dgvAcademico.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgvIdioma.MultiSelect = false;
+            dgvIdioma.RowHeadersVisible = false;
+            dgvIdioma.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dgvLaboral.MultiSelect = false;
+            dgvLaboral.RowHeadersVisible = false;
+            dgvLaboral.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+         
+
             inicial = false;
 
 
@@ -1819,6 +1832,11 @@ namespace Vista
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 

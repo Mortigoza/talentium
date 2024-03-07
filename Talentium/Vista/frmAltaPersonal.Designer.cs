@@ -151,6 +151,7 @@
             this.lblIngresoLaboral1 = new System.Windows.Forms.Label();
             this.lblPuesto1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.tabPersonales.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -187,6 +188,7 @@
             // 
             // tabPersonales
             // 
+            this.tabPersonales.Controls.Add(this.lnkAtras);
             this.tabPersonales.Controls.Add(this.btnPdf);
             this.tabPersonales.Controls.Add(this.lblFaltanCampos);
             this.tabPersonales.Controls.Add(this.groupBox7);
@@ -1682,6 +1684,17 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(22, 651);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.TabIndex = 47;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmAltaPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1850,5 +1863,6 @@
         public System.Windows.Forms.DateTimePicker dttFechaAlta;
         public System.Windows.Forms.ComboBox cmbConvenio;
         private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

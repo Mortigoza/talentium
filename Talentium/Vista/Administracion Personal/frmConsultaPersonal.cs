@@ -23,6 +23,9 @@ namespace Vista
         public frmConsultaPersonal()
         {
             InitializeComponent();
+            dtgEmpleados.MultiSelect = false;
+            dtgEmpleados.RowHeadersVisible = false;
+            dtgEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             DataTable area = logica.ObtenerArea(true);
             cmbArea.DataSource = area;
@@ -224,6 +227,11 @@ namespace Vista
                     break;
 
             }
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 
