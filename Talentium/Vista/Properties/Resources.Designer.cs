@@ -83,28 +83,28 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+        ///
         ///&lt;head&gt;
         ///    &lt;title&gt;Title of the document&lt;/title&gt;
         ///    &lt;style&gt;
         ///        table.border {
-        ///            border-collapse: collapse;
+        ///            width: 100%;
         ///        }
         ///
-        ///            table.border th {
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///
+        ///            table.border th,
         ///            table.border td {
         ///                padding: 5px;
-        ///                border: 1px solid black;
         ///            }
         ///    &lt;/style&gt;
         ///&lt;/head&gt;
+        ///
         ///&lt;body&gt;
-        ///    
-        ///    &lt;table style=&quot;width:100%&quot;&gt;
-        ///  [resto de la cadena truncado]&quot;;.
+        ///
+        ///    &lt;table class=&quot;border&quot;&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;
+        ///                &lt;h4 style=&quot;margin:0px; font-size: 20px&quot;&gt;REPORTE DE EMPLEADO&lt;/h4&gt;
+        ///            [resto de la cadena truncado]&quot;;.
         /// </summary>
         public static string PantillaEmpleadoPdf {
             get {
