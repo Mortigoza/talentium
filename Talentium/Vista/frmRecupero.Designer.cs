@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecupero));
             this.textBoxUsuarioRec = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIngreseUsuario = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRecuperoContraseña = new System.Windows.Forms.Label();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblIngreseCodigo = new System.Windows.Forms.Label();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
@@ -60,21 +60,21 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label1
+            // lblIngreseUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(158, 128);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ingrese su Usuario";
+            this.lblIngreseUsuario.AutoSize = true;
+            this.lblIngreseUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngreseUsuario.Location = new System.Drawing.Point(158, 128);
+            this.lblIngreseUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIngreseUsuario.Name = "lblIngreseUsuario";
+            this.lblIngreseUsuario.Size = new System.Drawing.Size(127, 17);
+            this.lblIngreseUsuario.TabIndex = 2;
+            this.lblIngreseUsuario.Text = "Ingrese su Usuario";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblRecuperoContraseña);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -82,17 +82,17 @@
             this.panel1.Size = new System.Drawing.Size(602, 50);
             this.panel1.TabIndex = 3;
             // 
-            // label2
+            // lblRecuperoContraseña
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(155, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Recupero de Contraseña";
+            this.lblRecuperoContraseña.AutoSize = true;
+            this.lblRecuperoContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecuperoContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRecuperoContraseña.Location = new System.Drawing.Point(155, 11);
+            this.lblRecuperoContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecuperoContraseña.Name = "lblRecuperoContraseña";
+            this.lblRecuperoContraseña.Size = new System.Drawing.Size(304, 29);
+            this.lblRecuperoContraseña.TabIndex = 0;
+            this.lblRecuperoContraseña.Text = "Recupero de Contraseña";
             // 
             // btnContinuar
             // 
@@ -130,18 +130,18 @@
             this.codigo.TabIndex = 2;
             this.codigo.Visible = false;
             // 
-            // label6
+            // lblIngreseCodigo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(158, 200);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Ingrese el Código";
-            this.label6.Visible = false;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblIngreseCodigo.AutoSize = true;
+            this.lblIngreseCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngreseCodigo.Location = new System.Drawing.Point(158, 200);
+            this.lblIngreseCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIngreseCodigo.Name = "lblIngreseCodigo";
+            this.lblIngreseCodigo.Size = new System.Drawing.Size(118, 17);
+            this.lblIngreseCodigo.TabIndex = 11;
+            this.lblIngreseCodigo.Text = "Ingrese el Código";
+            this.lblIngreseCodigo.Visible = false;
+            this.lblIngreseCodigo.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnVerificar
             // 
@@ -179,12 +179,12 @@
             this.ClientSize = new System.Drawing.Size(602, 366);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnVerificar);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblIngreseCodigo);
             this.Controls.Add(this.codigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblIngreseUsuario);
             this.Controls.Add(this.textBoxUsuarioRec);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -203,14 +203,14 @@
 
         private System.Windows.Forms.TextBox textBoxUsuarioRec;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIngreseUsuario;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRecuperoContraseña;
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox codigo;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblIngreseCodigo;
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.LinkLabel lnkAtras;
     }

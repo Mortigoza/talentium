@@ -45,7 +45,7 @@ namespace Vista
                     {
                         label3.Text = cnRecupero.Message;
                         label3.Visible = true;
-                        label6.Visible = true;
+                        lblIngreseCodigo.Visible = true;
                         codigo.Visible = true;
                         btnVerificar.Visible = true;
                         textBoxUsuarioRec.Enabled = false;
