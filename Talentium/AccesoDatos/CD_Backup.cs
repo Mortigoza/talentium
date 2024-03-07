@@ -23,12 +23,12 @@ namespace AccesoDatos
                     string backupQuery = $@"BACKUP DATABASE Talentium TO DISK= N'{Path}Talentium {fecha}.bak'";
                     SqlCommand command = new SqlCommand(backupQuery, connection);
                     command.ExecuteNonQuery();
-                    Console.WriteLine("¡Respaldo realizado con éxito!"); // Bitacora
+                    Console.WriteLine("¡Respaldo realizado con éxito!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al realizar el respaldo: " + ex.Message); //Bitacora
+                Console.WriteLine("Error al realizar el respaldo: " + ex.Message);
             }
         }
         public void CargarBackup(string filePath)
@@ -41,12 +41,12 @@ namespace AccesoDatos
                     string restoreQuery = $"USE master RESTORE DATABASE Talentium FROM DISK= N'{filePath}' WITH REPLACE";
                     SqlCommand command = new SqlCommand(restoreQuery, connection);
                     command.ExecuteNonQuery();
-                    Console.WriteLine("¡Restauración realizada con éxito!"); // Bitacora
+                    Console.WriteLine("¡Restauración realizada con éxito!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al restaurar la base de datos: " + ex.Message); //Bitacora
+                Console.WriteLine("Error al restaurar la base de datos: " + ex.Message);
             }
         }
     }

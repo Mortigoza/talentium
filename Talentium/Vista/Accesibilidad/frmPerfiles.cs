@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
@@ -142,6 +143,7 @@ namespace Vista.Accesibilidad
                         {
                             CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
                             cn_perfil.AltaPerfil(txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" dado de alta", "INSERT", this.Name);
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
@@ -149,7 +151,7 @@ namespace Vista.Accesibilidad
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(Errores.PerfValido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(ex.Message, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
@@ -173,6 +175,7 @@ namespace Vista.Accesibilidad
                         {
                             CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
                             cn_perfil.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
+                            CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" dado de alta", "UPDATE", this.Name);
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);
@@ -265,6 +268,7 @@ namespace Vista.Accesibilidad
                 if (cn_perfil.ConsultarPerfil(_index) == 0)
                 {
                     cn_perfil.BajaPerfil(_index);
+                    CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" eliminado", "DELETE", this.Name);
                     refreshDtg();
                 }
                 else

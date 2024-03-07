@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
+using LogicaNegocio.Bitacora;
 
 namespace Vista
 {
@@ -194,6 +195,7 @@ namespace Vista
                             if (result == DialogResult.Yes)
                             {
                                 logicaPersona.BajaPersona(id);
+                                CN_Bitacora.AltaBitacora($"Empleado dado de baja ID: {id}", "UPDATE", this.Name);
                                 Filtros(inactivo);
                             }
                             break;

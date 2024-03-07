@@ -55,7 +55,7 @@ namespace Vista
         {
             if (pass.ValidarPass(_esNuevo, allow, txtContra1.Text, txtContra2.Text, txtRespuesta.Text, cmbPreguntas.SelectedValue))
             {
-                CN_Bitacora.AltaBitacora("Cambio de contraseña", "Update", this.Name);
+                CN_Bitacora.AltaBitacora("Cambio de contraseña", "UPDATE", this.Name);
                 this.Dispose();
             }
         }

@@ -164,8 +164,8 @@ namespace Vista
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            CN_LogicaLogout logout = new CN_LogicaLogout();
-            logout.Logout(this);
+            this.DialogResult = DialogResult.OK;
+            this.Dispose();
         }
 
         private void altaCandidatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -301,14 +301,22 @@ namespace Vista
             if (minActual >= minTotal && this.Visible == true)
             {
                 CN_LogicaLogout logout = new CN_LogicaLogout();
-                logout.Logout(this, true);
+                this.DialogResult = DialogResult.Abort;
+                this.Dispose();
             }
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             CN_LogicaLogout logout = new CN_LogicaLogout();
-            logout.Logout(this);
+            if (this.DialogResult == DialogResult.OK)
+            {
+                logout.Logout(this);
+            }
+            else if (this.DialogResult == DialogResult.Abort)
+            {
+                logout.Logout(this, true);
+            }
         }
         private void configuraciónDeEntrevistasToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos.Login;
 using Comun;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 
 namespace LogicaNegocio

@@ -16,6 +16,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
 using Vista.Lenguajes;
+using LogicaNegocio.Bitacora;
 
 namespace Vista
 {
@@ -318,9 +319,10 @@ namespace Vista
                         datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
 
                         asistencias.EliminarAsistencias(datos.idAsistencia);
+                        CN_Bitacora.AltaBitacora($"Inasistencia del empleado ID: {filaSeleccionada.Cells["id_persona"]} eliminada", "DELETE", this.Name);
                         Refrescar(dataGridModificar);
                     }
-                    }
+                }
             }
         }
 

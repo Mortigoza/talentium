@@ -19,14 +19,14 @@ namespace LogicaNegocio
         }
         public void Logout(Form frm)
         {
-            CN_Bitacora.AltaBitacora("Logout manual exitoso", "Logout", frm.Name);
+            CN_Bitacora.AltaBitacora("Logout manual", "Logout", frm.Name);
             limpiarCache();
             frm.DialogResult = DialogResult.OK;
             frm.Dispose();
         }
         public void Logout(Form frm, bool porInactividad)
         {
-            CN_Bitacora.AltaBitacora("Logout por inactividad exitoso", "Logout", frm.Name);
+            CN_Bitacora.AltaBitacora("Logout por inactividad", "Logout", frm.Name);
             limpiarCache();
             frm.DialogResult = DialogResult.OK;
             frm.Dispose();
