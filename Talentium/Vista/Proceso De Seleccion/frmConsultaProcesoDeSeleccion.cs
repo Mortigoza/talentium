@@ -156,16 +156,13 @@ namespace Vista
                     lblApellidoLlenar.Text = DTCandidatos.Rows[0]["Apellido"].ToString();
                     lblCuilLlenar.Text = DTCandidatos.Rows[0]["Cuit"].ToString();
 
-                    //if (!todasCoinciden)
-                    //{
-                    //    MessageBox.Show("Las etapas no coinciden. No se puede completar el DataGridView.");
-                    //}
+                 
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(txtCuilCuit.Text))
                     {
-                        MessageBox.Show("El candidato aún no ha empezado el proceso de selección", "Aviso",
+                        MessageBox.Show("El CUIL/CUIT ingresado no corresponde a un candidato ", "Aviso",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
@@ -221,16 +218,6 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 btnEtapas.Enabled = true;
-                //object fechaEntrevista = dtgCandidatos.SelectedRows[0].Cells["Fecha_Entrevista"].Value;
-
-                //if (fechaEntrevista == null || fechaEntrevista == DBNull.Value || string.IsNullOrWhiteSpace(fechaEntrevista.ToString()))
-                //{
-                //    btnEtapas.Enabled = false;
-                //}
-                //else
-                //{
-                //    btnEtapas.Enabled = true;
-                //}
             }
             else
             {
@@ -242,8 +229,6 @@ namespace Vista
             if (dtgCandidatos.SelectedRows.Count > 0)
             {
                 int id = proceso.ObtenerIDPersona(txtCuilCuit.Text);
-                //DataGridViewRow seleccionado = dtgCandidatos.SelectedRows[0];
-                //int id = Convert.ToInt32(seleccionado.Cells["ID"].Value);
                 frmEntrevistaPreocupacionalCapacitacion formularioPestañas = new frmEntrevistaPreocupacionalCapacitacion();
                 MostrarFormularioPestañas(formularioPestañas, id);
             }
@@ -325,8 +310,10 @@ namespace Vista
             string cuil = txtCuilCuit.Text;
             DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
             int id_persona = (int)DTCandidatos.Rows[0]["ID"];
-            altaEmpleado.CargarDatosModificacion(id_persona, esCandidato);
+            altaEmpleado.CargarDatosModificacion(id_persona, !esCandidato);
             altaEmpleado.cmbConvenio.Enabled = false;
+            altaEmpleado.cmbConvenio.SelectedValue = 0;
+            altaEmpleado.dttFechaAlta.Enabled = false;
             altaEmpleado.Show();
         }
         public void FrmModificarProcesoDeSeleccion_DataGridUpdated()
@@ -346,6 +333,8 @@ namespace Vista
             altaEmpleado.dttFechaAlta.Value = DateTime.Now;
             altaEmpleado.cmbConvenio.Enabled = true;
             altaEmpleado.Show();
+            txtCuilCuit.Text = "";
+            dtgCandidatos.Rows.Clear();
         }
         private void frmConsultaProcesoDeSeleccion_Load(object sender, EventArgs e)
         {

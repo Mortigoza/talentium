@@ -407,6 +407,7 @@ namespace Vista
                         #region
 
                         Persona modify = new Persona();
+                        this.esCandidato = esCandidato;
 
                     modify.id_persona = _id_persona;
                     modify.nombres = txtNombres.Text;
@@ -418,23 +419,45 @@ namespace Vista
                     modify.id_genero = (int)cmbGenero.SelectedValue;
                     modify.hijos = (int)nupHijos.Value;
                     modify.id_area = (int)cmbArea.SelectedValue;
-                    modify.id_convenio = (int)cmbConvenio.SelectedValue;
+                        if (!esCandidato)
+                        {
+                            modify.id_convenio = (int)cmbConvenio.SelectedValue;
+                        } else
+                        {
+                            modify.id_convenio = 0;
+                        }
+                    
                     modify.id_localidad = (int)cmbLocalidad.SelectedValue;
                     modify.calle = txtCalle.Text;
                     modify.nro = int.Parse(txtNro.Text);
                     modify.piso = txtPiso.Text;
                     modify.dpto = txtDpto.Text;
                     modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
-                    modify.fecha_alta = dttFechaAlta.Value;
+                        if (!esCandidato)
+                        {
+                            modify.fecha_alta = dttFechaAlta.Value;
+                        }
+                        else
+                        {
+                            modify.fecha_alta = new DateTime(1900,01,01);
+                        }
+                        //modify.fecha_alta = dttFechaAlta.Value;
                     modify.id_estado_civil = (int)cmbEstadoCivil.SelectedValue;
                     modify.telefono = txtTelefono.Text;
                     modify.id_tipo = (int)cmbTipoTel.SelectedValue;
                     modify.telefono_alternativo = txtTelefonoAlternativo.Text;
                     modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                     modify.contacto = txtContacto.Text;
-                    modify.candidato = false;
+                        if (!esCandidato)
+                        {
+                            modify.candidato = false;
+                        }
+                        else
+                        {
+                            modify.candidato = true;
+                        }
 
-                    //ACADEMICOS
+                        //ACADEMICOS
 
                         if (pctFoto.Image != null)
                         {
