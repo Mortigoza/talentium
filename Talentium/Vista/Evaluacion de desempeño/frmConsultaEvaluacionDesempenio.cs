@@ -60,6 +60,7 @@ namespace Vista.Evaluacion_de_desempeño
             dtgConsultaEvaluacion.MultiSelect = false;
             dtgConsultaEvaluacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgConsultaEvaluacion.RowHeadersVisible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgConsultaEvaluacion);
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace Vista.Evaluacion_de_desempeño
             {
                 btnExcel.Enabled = false;
             }
+            UtilidadesForms.TraducirColumnasDtg(ref dtgConsultaEvaluacion);
         }
 
         public void CargarColumnasDataGrid()
@@ -253,7 +255,12 @@ namespace Vista.Evaluacion_de_desempeño
                         }
                     }
                 }
-            }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
+        }
+    }
         }
 
    

@@ -1,4 +1,5 @@
-﻿using LogicaNegocio.Accesibilidad;
+﻿using Comun;
+using LogicaNegocio.Accesibilidad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Lenguajes;
 
 namespace Vista.Accesibilidad
 {
@@ -17,6 +19,7 @@ namespace Vista.Accesibilidad
         public frmConfigAltaPersonal()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             // tab Tipo de Documento
             grpModificar.Enabled = false;
             grpModificarTel.Enabled = false;
@@ -159,6 +162,7 @@ namespace Vista.Accesibilidad
                 dtgDocumento.Rows[i].Cells["Nombre"].Value = tipoDoc.Rows[i]["tipo_doc"];
             }
             dtgDocumento.Columns["ID"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgDocumento);
         }
 
         private void dtgDocumento_SelectionChanged(object sender, EventArgs e)
@@ -275,6 +279,7 @@ namespace Vista.Accesibilidad
                 dtgTelefono.Rows[i].Cells["NombreTel"].Value = tipoTel.Rows[i]["tipo"];
             }
             dtgTelefono.Columns["IDTel"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgTelefono);
         }
         private void btnGuardarTelMod_Click(object sender, EventArgs e)
         {
@@ -500,6 +505,7 @@ namespace Vista.Accesibilidad
                 dtgNacionalidad.Rows[i].Cells["NombreNac"].Value = nacionalidad.Rows[i]["nacionalidad"];
             }
             dtgNacionalidad.Columns["IDNac"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgNacionalidad);
         }
 
         // tab Genero
@@ -627,6 +633,7 @@ namespace Vista.Accesibilidad
                 dtgGenero.Rows[i].Cells["NombreGen"].Value = genero.Rows[i]["genero"];
             }
             dtgGenero.Columns["IDGen"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgGenero);
         }
 
         // tab Idiomas
@@ -643,6 +650,7 @@ namespace Vista.Accesibilidad
                 dtgIdiomas.Rows[i].Cells["NombreIdioma"].Value = idioma.Rows[i]["idioma"];
             }
             dtgIdiomas.Columns["IDIdioma"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgIdiomas);
         }
 
         private void btnCancelarIdiomaMod_Click(object sender, EventArgs e)
@@ -904,6 +912,7 @@ namespace Vista.Accesibilidad
                 dtgArea.Rows[i].Cells["NombreArea"].Value = area.Rows[i]["area"];
             }
             dtgArea.Columns["IDArea"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgArea);
         }
         // tabPuesto
         private void btnCancelarPuestoAlta_Click(object sender, EventArgs e)
@@ -1038,6 +1047,7 @@ namespace Vista.Accesibilidad
                 dtgPuesto.Rows[i].Cells["NombrePuesto"].Value = puesto.Rows[i]["puesto"];
             }
             dtgPuesto.Columns["IDPuesto"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgPuesto);
         }
 
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

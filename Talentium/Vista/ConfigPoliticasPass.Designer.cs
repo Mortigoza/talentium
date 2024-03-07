@@ -185,9 +185,9 @@
             this.grpCriterios.Controls.Add(this.chcEsp);
             this.grpCriterios.Controls.Add(this.chcMay);
             this.grpCriterios.Controls.Add(this.chcNum);
-            this.grpCriterios.Location = new System.Drawing.Point(43, 30);
+            this.grpCriterios.Location = new System.Drawing.Point(33, 30);
             this.grpCriterios.Name = "grpCriterios";
-            this.grpCriterios.Size = new System.Drawing.Size(225, 270);
+            this.grpCriterios.Size = new System.Drawing.Size(245, 270);
             this.grpCriterios.TabIndex = 7;
             this.grpCriterios.TabStop = false;
             this.grpCriterios.Text = "Criterios";

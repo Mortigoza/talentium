@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Comun;
 using LogicaNegocio.Accesibilidad;
+using Vista.Lenguajes;
 
 namespace Vista.Accesibilidad
 {
@@ -17,6 +19,7 @@ namespace Vista.Accesibilidad
         public frmConfigEntrevistas()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             CargarDataGrid();
             dtgEntrevistas.AllowUserToAddRows = false;
             dtgEntrevistas.AutoGenerateColumns = false;
@@ -61,6 +64,7 @@ namespace Vista.Accesibilidad
             dtgEntrevistas.DataSource = logicaEntrevista.ConsultarEntrevistas();
             dtgEntrevistas.Columns["etapa"].DataPropertyName = "etapa";
             dtgEntrevistas.Columns["entrevista"].DataPropertyName = "entrevista";
+            UtilidadesForms.TraducirColumnasDtg(ref dtgEntrevistas);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

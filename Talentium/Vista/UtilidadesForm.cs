@@ -177,6 +177,15 @@ namespace Comun
         }
         public static void TraducirColumnasDtg(ref DataGridView dtg)
         {
+            // Configurar DTG
+            dtg.MultiSelect = false;
+            dtg.RowHeadersVisible = false;
+            dtg.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtg.AllowUserToAddRows = false;
+            dtg.AllowUserToResizeRows = false;
+            dtg.ReadOnly = true;
+
             foreach (DataGridViewColumn c in dtg.Columns)
             {
                 string text = Columnas.ResourceManager.GetString(c.HeaderText.ToLower());

@@ -31,7 +31,6 @@
             this.ControlAsist = new System.Windows.Forms.TabControl();
             this.tbpAlta = new System.Windows.Forms.TabPage();
             this.grbPersonalAlta = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dtgAlta = new System.Windows.Forms.DataGridView();
             this.Abrir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltrosAlta = new System.Windows.Forms.GroupBox();
@@ -49,6 +48,8 @@
             this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.dtgModificar = new System.Windows.Forms.DataGridView();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltroMod = new System.Windows.Forms.GroupBox();
             this.lnkAtas = new System.Windows.Forms.LinkLabel();
             this.periodo = new System.Windows.Forms.CheckBox();
@@ -67,8 +68,6 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.lblCuilMod = new System.Windows.Forms.Label();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ControlAsist.SuspendLayout();
             this.tbpAlta.SuspendLayout();
             this.grbPersonalAlta.SuspendLayout();
@@ -107,7 +106,6 @@
             // 
             // grbPersonalAlta
             // 
-            this.grbPersonalAlta.Controls.Add(this.button1);
             this.grbPersonalAlta.Controls.Add(this.dtgAlta);
             this.grbPersonalAlta.Location = new System.Drawing.Point(280, 25);
             this.grbPersonalAlta.Margin = new System.Windows.Forms.Padding(4);
@@ -116,19 +114,6 @@
             this.grbPersonalAlta.TabIndex = 11;
             this.grbPersonalAlta.TabStop = false;
             this.grbPersonalAlta.Text = "Personal";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
-            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(662, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 40);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Descargar Excel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dtgAlta
             // 
@@ -146,6 +131,7 @@
             this.dtgAlta.TabIndex = 12;
             this.dtgAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dtgAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgAlta.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgAlta_CellFormatting);
             // 
             // Abrir
             // 
@@ -336,6 +322,32 @@
             this.dtgModificar.Size = new System.Drawing.Size(791, 353);
             this.dtgModificar.TabIndex = 12;
             this.dtgModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
+            this.dtgModificar.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgModificar_CellFormatting);
+            // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Modificar.Text = "Añadir";
+            this.Modificar.ToolTipText = "Abrir";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 56;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 80;
             // 
             // grbFiltroMod
             // 
@@ -529,37 +541,14 @@
             this.lblCuilMod.TabIndex = 13;
             this.lblCuilMod.Text = "CUIL:";
             // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Modificar.Text = "Añadir";
-            this.Modificar.ToolTipText = "Abrir";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 56;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 80;
-            // 
             // Asistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 526);
             this.Controls.Add(this.ControlAsist);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Asistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asistencias";
@@ -618,7 +607,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Abrir;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel lnkAtas;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

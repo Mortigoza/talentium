@@ -135,9 +135,6 @@
   <data name="año" xml:space="preserve">
     <value>Año</value>
   </data>
-  <data name="capacitacion" xml:space="preserve">
-    <value>Capacitación</value>
-  </data>
   <data name="categoria" xml:space="preserve">
     <value>Categoría</value>
   </data>
@@ -153,13 +150,13 @@
   <data name="descripción" xml:space="preserve">
     <value>Descripción</value>
   </data>
-  <data name="desempleño en equipo" xml:space="preserve">
+  <data name="desempeño en equipo" xml:space="preserve">
     <value>Desempeñó En Equipo</value>
   </data>
-  <data name="desempleño en equipo *" xml:space="preserve">
+  <data name="desempeño en equipo *" xml:space="preserve">
     <value>Desempeñó En Equipo *</value>
   </data>
-  <data name="diciplina *" xml:space="preserve">
+  <data name="disciplina *" xml:space="preserve">
     <value>Disciplina *</value>
   </data>
   <data name="disciplina" xml:space="preserve">
@@ -347,5 +344,11 @@
   </data>
   <data name="área" xml:space="preserve">
     <value>Área</value>
+  </data>
+  <data name="nombreapellido" xml:space="preserve">
+    <value>Nombre Y Apellido</value>
+  </data>
+  <data name="capacitacion" xml:space="preserve">
+    <value>Capacitación</value>
   </data>
 </root>

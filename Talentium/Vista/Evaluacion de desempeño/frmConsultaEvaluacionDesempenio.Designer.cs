@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaEvaluacionDesempenio));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblCantidadEval = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblEvTotales = new System.Windows.Forms.Label();
             this.lblCuil = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbAnio = new System.Windows.Forms.ComboBox();
             this.cmbPersonal = new System.Windows.Forms.ComboBox();
             this.lblNombreYApellido = new System.Windows.Forms.Label();
             this.cmbAreas = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
             this.lblFiltroPorArea = new System.Windows.Forms.Label();
             this.lblFiltroPorAño = new System.Windows.Forms.Label();
             this.dtgConsultaEvaluacion = new System.Windows.Forms.DataGridView();
@@ -50,10 +50,11 @@
             this.RelSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFiltroPorEmpleado = new System.Windows.Forms.Label();
-            this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.grpDatosEmpleado = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).BeginInit();
-            this.grpDatos.SuspendLayout();
+            this.grpDatosEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -62,7 +63,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBuscar.Location = new System.Drawing.Point(321, 95);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(72, 19);
             this.btnBuscar.TabIndex = 34;
@@ -80,15 +81,15 @@
             this.lblCantidadEval.TabIndex = 33;
             this.lblCantidadEval.Text = "0";
             // 
-            // label10
+            // lblEvTotales
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 305);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(148, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "TOTAL DE EVALUACIONES:";
+            this.lblEvTotales.AutoSize = true;
+            this.lblEvTotales.Location = new System.Drawing.Point(14, 305);
+            this.lblEvTotales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEvTotales.Name = "lblEvTotales";
+            this.lblEvTotales.Size = new System.Drawing.Size(148, 13);
+            this.lblEvTotales.TabIndex = 32;
+            this.lblEvTotales.Text = "TOTAL DE EVALUACIONES:";
             // 
             // lblCuil
             // 
@@ -115,7 +116,7 @@
             this.cmbAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAnio.FormattingEnabled = true;
             this.cmbAnio.Location = new System.Drawing.Point(210, 94);
-            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAnio.Name = "cmbAnio";
             this.cmbAnio.Size = new System.Drawing.Size(92, 21);
             this.cmbAnio.TabIndex = 27;
@@ -127,7 +128,7 @@
             this.cmbPersonal.Items.AddRange(new object[] {
             "sdsad"});
             this.cmbPersonal.Location = new System.Drawing.Point(210, 63);
-            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPersonal.Name = "cmbPersonal";
             this.cmbPersonal.Size = new System.Drawing.Size(92, 21);
             this.cmbPersonal.TabIndex = 26;
@@ -147,21 +148,21 @@
             this.cmbAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreas.FormattingEnabled = true;
             this.cmbAreas.Location = new System.Drawing.Point(210, 25);
-            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAreas.Name = "cmbAreas";
             this.cmbAreas.Size = new System.Drawing.Size(92, 21);
             this.cmbAreas.TabIndex = 24;
             this.cmbAreas.SelectedIndexChanged += new System.EventHandler(this.cmbAreas_SelectedIndexChanged);
             // 
-            // label4
+            // lblNombreApellido
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 21);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Nombre y Apellido";
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.Location = new System.Drawing.Point(5, 21);
+            this.lblNombreApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(92, 13);
+            this.lblNombreApellido.TabIndex = 23;
+            this.lblNombreApellido.Text = "Nombre y Apellido";
             // 
             // lblFiltroPorArea
             // 
@@ -196,7 +197,7 @@
             this.RelSup,
             this.DesempEquipo});
             this.dtgConsultaEvaluacion.Location = new System.Drawing.Point(17, 132);
-            this.dtgConsultaEvaluacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgConsultaEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgConsultaEvaluacion.Name = "dtgConsultaEvaluacion";
             this.dtgConsultaEvaluacion.RowHeadersWidth = 51;
             this.dtgConsultaEvaluacion.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -263,26 +264,27 @@
             this.lblFiltroPorEmpleado.TabIndex = 19;
             this.lblFiltroPorEmpleado.Text = "Filtro por empleado *";
             // 
-            // grpDatos
+            // grpDatosEmpleado
             // 
-            this.grpDatos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.grpDatos.Controls.Add(this.label4);
-            this.grpDatos.Controls.Add(this.label6);
-            this.grpDatos.Controls.Add(this.lblNombreYApellido);
-            this.grpDatos.Controls.Add(this.lblCuil);
-            this.grpDatos.Location = new System.Drawing.Point(505, 52);
-            this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Size = new System.Drawing.Size(195, 63);
-            this.grpDatos.TabIndex = 35;
-            this.grpDatos.TabStop = false;
-            this.grpDatos.Text = "Datos del empleado";
+            this.grpDatosEmpleado.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.grpDatosEmpleado.Controls.Add(this.lblNombreApellido);
+            this.grpDatosEmpleado.Controls.Add(this.label6);
+            this.grpDatosEmpleado.Controls.Add(this.lblNombreYApellido);
+            this.grpDatosEmpleado.Controls.Add(this.lblCuil);
+            this.grpDatosEmpleado.Location = new System.Drawing.Point(505, 52);
+            this.grpDatosEmpleado.Name = "grpDatosEmpleado";
+            this.grpDatosEmpleado.Size = new System.Drawing.Size(195, 63);
+            this.grpDatosEmpleado.TabIndex = 35;
+            this.grpDatosEmpleado.TabStop = false;
+            this.grpDatosEmpleado.Text = "Datos del empleado";
             // 
             // btnExcel
             // 
             this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExcel.Location = new System.Drawing.Point(648, 305);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(69, 35);
             this.btnExcel.TabIndex = 36;
@@ -290,17 +292,29 @@
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.descargarExcel_Click);
             // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 37;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atrás";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // frmConsultaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(746, 349);
+            this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.grpDatos);
+            this.Controls.Add(this.grpDatosEmpleado);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCantidadEval);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblEvTotales);
             this.Controls.Add(this.cmbAnio);
             this.Controls.Add(this.cmbPersonal);
             this.Controls.Add(this.cmbAreas);
@@ -310,15 +324,15 @@
             this.Controls.Add(this.lblFiltroPorEmpleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmConsultaEvaluacionDesempenio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Evaluacion de Desempeño";
             this.Load += new System.EventHandler(this.frmConsultaEvaluacionDesempenio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgConsultaEvaluacion)).EndInit();
-            this.grpDatos.ResumeLayout(false);
-            this.grpDatos.PerformLayout();
+            this.grpDatosEmpleado.ResumeLayout(false);
+            this.grpDatosEmpleado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,19 +342,19 @@
 
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblCantidadEval;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblEvTotales;
         private System.Windows.Forms.Label lblCuil;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbAnio;
         private System.Windows.Forms.ComboBox cmbPersonal;
         private System.Windows.Forms.Label lblNombreYApellido;
         private System.Windows.Forms.ComboBox cmbAreas;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNombreApellido;
         private System.Windows.Forms.Label lblFiltroPorArea;
         private System.Windows.Forms.Label lblFiltroPorAño;
         private System.Windows.Forms.DataGridView dtgConsultaEvaluacion;
         private System.Windows.Forms.Label lblFiltroPorEmpleado;
-        private System.Windows.Forms.GroupBox grpDatos;
+        private System.Windows.Forms.GroupBox grpDatosEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn MesEvaluacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn EfectTareas;
@@ -349,5 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RelSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesempEquipo;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

@@ -16,7 +16,7 @@ namespace Comun
         public static bool noDatosPersonales { get; set; }
 
         public readonly static int Intentos = 5;
-        public readonly static double LapsoBloqueo = 0.1;
+        public readonly static double LapsoBloqueo = 10;
         public readonly static DateTime FechaDefecto = Convert.ToDateTime("1900-01-01");
     }
 }

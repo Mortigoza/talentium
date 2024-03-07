@@ -58,6 +58,8 @@ namespace Vista
             dtgConvenio.Columns["id_convenio1"].Visible = false;
             dtgConvenio.Columns["id_categoria"].Visible = false;
 
+            UtilidadesForms.TraducirColumnasDtg(ref dtgConvenio);
+
 
 
         }
@@ -89,6 +91,7 @@ namespace Vista
               || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             else
             {
@@ -102,6 +105,8 @@ namespace Vista
                 MessageBox.Show("Se agrego el convenio correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            UtilidadesForms.LimpiarControles(grpCrear);
+            cmbCategoria.SelectedIndex = -1;
 
         }
 
@@ -129,6 +134,8 @@ namespace Vista
                 MessageBox.Show("Se Modifico el convenio correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            UtilidadesForms.LimpiarControles(grpModificarConvenio);
+            cmbCateModif.SelectedIndex = -1;
 
 
         }
@@ -313,6 +320,11 @@ namespace Vista
 
             grpModificarConvenio.Enabled = false;
        
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

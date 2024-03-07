@@ -45,7 +45,7 @@ namespace Vista.Evaluacion_de_desempeño
             dtgEvaluacion.AutoGenerateColumns = false;
             dtgEvaluacion.MultiSelect = false;
             dtgEvaluacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            UtilidadesForms.TraducirColumnasDtg(ref dtgEvaluacion);
         }
 
         private void cmbAreas_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,6 +141,7 @@ namespace Vista.Evaluacion_de_desempeño
 
                 btnGuardar.Enabled = true;
             }
+            UtilidadesForms.TraducirColumnasDtg(ref dtgEvaluacion);
         }
 
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

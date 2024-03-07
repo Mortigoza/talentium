@@ -180,27 +180,18 @@ namespace Vista.Lenguajes {
         /// <summary>
         ///   Busca una cadena traducida similar a Desempeñó En Equipo.
         /// </summary>
-        internal static string desempleño_en_equipo {
+        internal static string desempeño_en_equipo {
             get {
-                return ResourceManager.GetString("desempleño en equipo", resourceCulture);
+                return ResourceManager.GetString("desempeño en equipo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Desempeñó En Equipo *.
         /// </summary>
-        internal static string desempleño_en_equipo__ {
+        internal static string desempeño_en_equipo__ {
             get {
-                return ResourceManager.GetString("desempleño en equipo *", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Disciplina *.
-        /// </summary>
-        internal static string diciplina__ {
-            get {
-                return ResourceManager.GetString("diciplina *", resourceCulture);
+                return ResourceManager.GetString("desempeño en equipo *", resourceCulture);
             }
         }
         
@@ -210,6 +201,15 @@ namespace Vista.Lenguajes {
         internal static string disciplina {
             get {
                 return ResourceManager.GetString("disciplina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Disciplina *.
+        /// </summary>
+        internal static string disciplina__ {
+            get {
+                return ResourceManager.GetString("disciplina *", resourceCulture);
             }
         }
         
@@ -534,6 +534,15 @@ namespace Vista.Lenguajes {
         internal static string nombre_y_apellido {
             get {
                 return ResourceManager.GetString("nombre y apellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre Y Apellido.
+        /// </summary>
+        internal static string nombreapellido {
+            get {
+                return ResourceManager.GetString("nombreapellido", resourceCulture);
             }
         }
         

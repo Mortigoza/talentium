@@ -32,6 +32,7 @@ namespace Vista
         private bool esCandidato;
         private bool esReactivicacion;
         private bool esEmpleado;
+        public bool pdf = false;
 
         private DateTime? fechaNull = new DateTime(1900, 1, 1);
 
@@ -68,7 +69,7 @@ namespace Vista
             //NoPegar(groupBox3);
             //NoPegar(grpIdiomas);
             btnPdf.Visible = false;
-            if (esCandidato == true) { dttFechaAlta.Visible = false; btnPdf.Visible = true; lblFechaDeIngreso.Visible = false;
+            if (esCandidato == true) { dttFechaAlta.Visible = false; btnPdf.Visible = pdf; lblFechaDeIngreso.Visible = false;
                 lblConvenio.Visible = false; cmbConvenio.Visible = false;
             }
             else { dttFechaAlta.Visible = true; btnPdf.Visible = false; lblFechaDeIngreso.Visible = true; }

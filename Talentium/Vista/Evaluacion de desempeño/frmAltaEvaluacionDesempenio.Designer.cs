@@ -46,15 +46,15 @@
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtgEvaluacion = new System.Windows.Forms.DataGridView();
+            this.grpPeriodo = new System.Windows.Forms.GroupBox();
+            this.lblReferencia = new System.Windows.Forms.Label();
+            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.NombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Efectividad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Puntualidad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.RelSuperiores = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Disciplina = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.DesempEquipo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.grpPeriodo = new System.Windows.Forms.GroupBox();
-            this.lblReferencia = new System.Windows.Forms.Label();
-            this.lnkAtras = new System.Windows.Forms.LinkLabel();
             this.grpFiltrosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEvaluacion)).BeginInit();
             this.grpPeriodo.SuspendLayout();
@@ -65,7 +65,7 @@
             this.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMes.FormattingEnabled = true;
             this.cmbMes.Location = new System.Drawing.Point(73, 70);
-            this.cmbMes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMes.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.Size = new System.Drawing.Size(92, 21);
             this.cmbMes.TabIndex = 3;
@@ -75,7 +75,7 @@
             this.cmbAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAnio.FormattingEnabled = true;
             this.cmbAnio.Location = new System.Drawing.Point(73, 34);
-            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAnio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAnio.Name = "cmbAnio";
             this.cmbAnio.Size = new System.Drawing.Size(92, 21);
             this.cmbAnio.TabIndex = 2;
@@ -109,9 +109,9 @@
             this.grpFiltrosBusqueda.Controls.Add(this.cmbPersonal);
             this.grpFiltrosBusqueda.Controls.Add(this.lblEmpleado);
             this.grpFiltrosBusqueda.Location = new System.Drawing.Point(74, 9);
-            this.grpFiltrosBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltrosBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.grpFiltrosBusqueda.Name = "grpFiltrosBusqueda";
-            this.grpFiltrosBusqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltrosBusqueda.Padding = new System.Windows.Forms.Padding(2);
             this.grpFiltrosBusqueda.Size = new System.Drawing.Size(307, 139);
             this.grpFiltrosBusqueda.TabIndex = 25;
             this.grpFiltrosBusqueda.TabStop = false;
@@ -124,7 +124,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSeleccionar.Location = new System.Drawing.Point(175, 101);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(84, 25);
             this.btnSeleccionar.TabIndex = 16;
@@ -147,7 +147,7 @@
             this.cmbAreas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreas.FormattingEnabled = true;
             this.cmbAreas.Location = new System.Drawing.Point(91, 28);
-            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAreas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAreas.Name = "cmbAreas";
             this.cmbAreas.Size = new System.Drawing.Size(168, 21);
             this.cmbAreas.TabIndex = 2;
@@ -158,7 +158,7 @@
             this.cmbPersonal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPersonal.FormattingEnabled = true;
             this.cmbPersonal.Location = new System.Drawing.Point(91, 62);
-            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPersonal.Name = "cmbPersonal";
             this.cmbPersonal.Size = new System.Drawing.Size(168, 21);
             this.cmbPersonal.TabIndex = 15;
@@ -181,7 +181,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGuardar.Location = new System.Drawing.Point(595, 322);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(86, 28);
             this.btnGuardar.TabIndex = 19;
@@ -217,7 +217,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgEvaluacion.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgEvaluacion.Location = new System.Drawing.Point(25, 166);
-            this.dtgEvaluacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEvaluacion.Name = "dtgEvaluacion";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
@@ -232,11 +232,49 @@
             this.dtgEvaluacion.Size = new System.Drawing.Size(656, 149);
             this.dtgEvaluacion.TabIndex = 18;
             // 
+            // grpPeriodo
+            // 
+            this.grpPeriodo.BackColor = System.Drawing.Color.White;
+            this.grpPeriodo.Controls.Add(this.lblAnio);
+            this.grpPeriodo.Controls.Add(this.cmbMes);
+            this.grpPeriodo.Controls.Add(this.lblMes);
+            this.grpPeriodo.Controls.Add(this.cmbAnio);
+            this.grpPeriodo.Location = new System.Drawing.Point(410, 10);
+            this.grpPeriodo.Name = "grpPeriodo";
+            this.grpPeriodo.Size = new System.Drawing.Size(216, 139);
+            this.grpPeriodo.TabIndex = 26;
+            this.grpPeriodo.TabStop = false;
+            this.grpPeriodo.Text = "Periodo de evaluación";
+            // 
+            // lblReferencia
+            // 
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblReferencia.Location = new System.Drawing.Point(22, 322);
+            this.lblReferencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(398, 13);
+            this.lblReferencia.TabIndex = 27;
+            this.lblReferencia.Text = "ⓘ Elegir un valor dentro de la escala 1-6, siendo 1 el valor más bajo y 6 el más " +
+    "alto.";
+            // 
+            // lnkAtras
+            // 
+            this.lnkAtras.AutoSize = true;
+            this.lnkAtras.Location = new System.Drawing.Point(9, 345);
+            this.lnkAtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkAtras.Name = "lnkAtras";
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.TabIndex = 28;
+            this.lnkAtras.TabStop = true;
+            this.lnkAtras.Text = "Atras";
+            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
+            // 
             // NombreApellido
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             this.NombreApellido.DefaultCellStyle = dataGridViewCellStyle2;
-            this.NombreApellido.HeaderText = "Nombre y Apellido ";
+            this.NombreApellido.HeaderText = "Nombre y Apellido";
             this.NombreApellido.MinimumWidth = 6;
             this.NombreApellido.Name = "NombreApellido";
             this.NombreApellido.Width = 125;
@@ -319,44 +357,6 @@
             this.DesempEquipo.Name = "DesempEquipo";
             this.DesempEquipo.Width = 125;
             // 
-            // grpPeriodo
-            // 
-            this.grpPeriodo.BackColor = System.Drawing.Color.White;
-            this.grpPeriodo.Controls.Add(this.lblAnio);
-            this.grpPeriodo.Controls.Add(this.cmbMes);
-            this.grpPeriodo.Controls.Add(this.lblMes);
-            this.grpPeriodo.Controls.Add(this.cmbAnio);
-            this.grpPeriodo.Location = new System.Drawing.Point(410, 10);
-            this.grpPeriodo.Name = "grpPeriodo";
-            this.grpPeriodo.Size = new System.Drawing.Size(216, 139);
-            this.grpPeriodo.TabIndex = 26;
-            this.grpPeriodo.TabStop = false;
-            this.grpPeriodo.Text = "Periodo de evaluación";
-            // 
-            // lblReferencia
-            // 
-            this.lblReferencia.AutoSize = true;
-            this.lblReferencia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblReferencia.Location = new System.Drawing.Point(22, 322);
-            this.lblReferencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(398, 13);
-            this.lblReferencia.TabIndex = 27;
-            this.lblReferencia.Text = "ⓘ Elegir un valor dentro de la escala 1-6, siendo 1 el valor más bajo y 6 el más " +
-    "alto.";
-            // 
-            // lnkAtras
-            // 
-            this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(9, 345);
-            this.lnkAtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnkAtras.Name = "lnkAtras";
-            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
-            this.lnkAtras.TabIndex = 28;
-            this.lnkAtras.TabStop = true;
-            this.lnkAtras.Text = "Atras";
-            this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
-            // 
             // frmAltaEvaluacionDesempenio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,7 +369,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgEvaluacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAltaEvaluacionDesempenio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Evaluacion de Desempeño";
@@ -398,13 +398,13 @@
         private System.Windows.Forms.DataGridView dtgEvaluacion;
         private System.Windows.Forms.GroupBox grpPeriodo;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Label lblReferencia;
+        private System.Windows.Forms.LinkLabel lnkAtras;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellido;
         private System.Windows.Forms.DataGridViewComboBoxColumn Efectividad;
         private System.Windows.Forms.DataGridViewComboBoxColumn Puntualidad;
         private System.Windows.Forms.DataGridViewComboBoxColumn RelSuperiores;
         private System.Windows.Forms.DataGridViewComboBoxColumn Disciplina;
         private System.Windows.Forms.DataGridViewComboBoxColumn DesempEquipo;
-        private System.Windows.Forms.Label lblReferencia;
-        private System.Windows.Forms.LinkLabel lnkAtras;
     }
 }

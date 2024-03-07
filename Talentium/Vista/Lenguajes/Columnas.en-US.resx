@@ -135,9 +135,6 @@
   <data name="año" xml:space="preserve">
     <value>Year</value>
   </data>
-  <data name="capacitacion" xml:space="preserve">
-    <value>Training</value>
-  </data>
   <data name="categoria" xml:space="preserve">
     <value>Category</value>
   </data>
@@ -153,13 +150,13 @@
   <data name="descripción" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="desempleño en equipo" xml:space="preserve">
+  <data name="desempeño en equipo" xml:space="preserve">
     <value>Performed as a team</value>
   </data>
-  <data name="desempleño en equipo *" xml:space="preserve">
+  <data name="desempeño en equipo *" xml:space="preserve">
     <value>Played as a team *</value>
   </data>
-  <data name="diciplina *" xml:space="preserve">
+  <data name="disciplina *" xml:space="preserve">
     <value>Discipline *</value>
   </data>
   <data name="disciplina" xml:space="preserve">
@@ -347,5 +344,11 @@
   </data>
   <data name="área" xml:space="preserve">
     <value>Area</value>
+  </data>
+  <data name="nombreapellido" xml:space="preserve">
+    <value>Name and surname</value>
+  </data>
+  <data name="capacitacion" xml:space="preserve">
+    <value>Training</value>
   </data>
 </root>

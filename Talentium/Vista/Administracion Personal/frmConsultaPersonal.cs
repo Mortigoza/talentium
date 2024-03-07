@@ -146,6 +146,10 @@ namespace Vista
                 
                 //Abre FormAltaPersonal y pasa el id_persona
                 frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(isReport);
+                if (isReport)
+                {
+                    frmAltaPersonal.pdf = true;
+                }
                 frmAltaPersonal.CargarDatosPersona(id);
                 frmAltaPersonal.ShowDialog();
             }

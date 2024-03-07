@@ -39,9 +39,6 @@ namespace Vista
                 permisos += $"{listaPermisos[i].Id}: {listaPermisos[i].Permiso}\n";
             }
             //MessageBox.Show(permisos);
-
-
-            List<ToolStripMenuItem> items;
             // AdminPersonal
             UtilidadesForms.checkPermiso(altasToolStripMenuItem, Permisos.Alta_personal);
             UtilidadesForms.checkPermiso(consultarToolStripMenuItem, Permisos.Gestion_personal);
@@ -58,24 +55,23 @@ namespace Vista
             UtilidadesForms.checkPermiso(gestiónDeAsistenciasToolStripMenuItem, Permisos.Gestion_Asistencias);
 
             // NominaSalarial
-            items = new List<ToolStripMenuItem>{
-                conveniosToolStripMenuItem, categoriasToolStripMenuItem
-            };
-            UtilidadesForms.checkPermiso(items, Permisos.Gestion_Nomina);
+            UtilidadesForms.checkPermiso(conveniosToolStripMenuItem, Permisos.Gestion_Nomina);
+            UtilidadesForms.checkPermiso(categoriasToolStripMenuItem, Permisos.Gestion_Nomina);
 
             // AnalisisYReportes
             UtilidadesForms.checkPermiso(asistenciasToolStripMenuItem1, Permisos.Gestion_Informes);
             UtilidadesForms.checkPermiso(desempeñoToolStripMenuItem, Permisos.Gestion_Informes);
             UtilidadesForms.checkPermiso(nóminaSalarialToolStripMenuItem1, Permisos.Gestion_Informes);
+            UtilidadesForms.checkPermiso(candidatoToolStripMenuItem, Permisos.Gestion_Informes);
             UtilidadesForms.checkPermiso(certificacionDeServiciosToolStripMenuItem, Permisos.Gestion_Certificado);
 
             // Accesibilidad
-            items = new List<ToolStripMenuItem> {
-                ///*puestosToolStripMenuItem*//*,*/ áreasToolStripMenuItem
-            };
-            UtilidadesForms.checkPermiso(items, Permisos.Gestion_Jerarquia);
+            UtilidadesForms.checkPermiso(configuracionDeAltaDelPersonalToolStripMenuItem, Permisos.Gestion_Jerarquia);
+            UtilidadesForms.checkPermiso(configuracionDeToolStripMenuItem, Permisos.Gestion_Jerarquia);
             UtilidadesForms.checkPermiso(usuariosToolStripMenuItem, Permisos.Gestion_Usuario);
             UtilidadesForms.checkPermiso(perfilesToolStripMenuItem, Permisos.Gestion_Perfiles);
+            UtilidadesForms.checkPermiso(configuraciónToolStripMenuItem, Permisos.Seguridad);
+            UtilidadesForms.checkPermiso(bitacoraToolStripMenuItem, Permisos.Seguridad);
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -299,9 +299,9 @@
             this.usuariosToolStripMenuItem,
             this.perfilesToolStripMenuItem,
             this.configuraciónToolStripMenuItem,
-            this.cambioDeContraseñaToolStripMenuItem,
             this.recursosToolStripMenuItem,
-            this.bitacoraToolStripMenuItem});
+            this.bitacoraToolStripMenuItem,
+            this.cambioDeContraseñaToolStripMenuItem});
             this.accesibilidadToolStripMenuItem.Name = "accesibilidadToolStripMenuItem";
             this.accesibilidadToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.accesibilidadToolStripMenuItem.Text = "Accesibilidad";

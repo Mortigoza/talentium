@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pctFoto = new System.Windows.Forms.PictureBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblTalentium = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -55,16 +55,16 @@
             this.pctFoto.TabIndex = 0;
             this.pctFoto.TabStop = false;
             // 
-            // lblTitulo
+            // lblTalentium
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(56, 274);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(314, 73);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Talentium";
+            this.lblTalentium.AutoSize = true;
+            this.lblTalentium.BackColor = System.Drawing.Color.Transparent;
+            this.lblTalentium.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTalentium.Location = new System.Drawing.Point(56, 274);
+            this.lblTalentium.Name = "lblTalentium";
+            this.lblTalentium.Size = new System.Drawing.Size(314, 73);
+            this.lblTalentium.TabIndex = 1;
+            this.lblTalentium.Text = "Talentium";
             // 
             // txtUsername
             // 
@@ -206,7 +206,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.lblTalentium);
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -224,7 +224,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pctFoto;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblTalentium;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;

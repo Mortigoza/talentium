@@ -133,6 +133,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Alta de desempeño.
+        /// </summary>
+        public static string altaEvaluaciónDeDesempeñoToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("altaEvaluaciónDeDesempeñoToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Alta de empleado.
         /// </summary>
         public static string altasToolStripMenuItem {
@@ -934,7 +943,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Certificación servicios.
+        ///   Busca una cadena traducida similar a Candidato.
         /// </summary>
         public static string candidatoToolStripMenuItem {
             get {
@@ -1510,6 +1519,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Gestion del talento.
+        /// </summary>
+        public static string gestiónDelTalentoToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("gestiónDelTalentoToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Filtros.
         /// </summary>
         public static string grbFiltroMod {
@@ -1668,6 +1686,15 @@ namespace Vista.Lenguajes {
         public static string grpCrearPuesto {
             get {
                 return ResourceManager.GetString("grpCrearPuesto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Criterios.
+        /// </summary>
+        public static string grpCriterios {
+            get {
+                return ResourceManager.GetString("grpCriterios", resourceCulture);
             }
         }
         
@@ -1947,6 +1974,15 @@ namespace Vista.Lenguajes {
         public static string lblAltaArea {
             get {
                 return ResourceManager.GetString("lblAltaArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capacitación.
+        /// </summary>
+        public static string lblAltaCapacitacion {
+            get {
+                return ResourceManager.GetString("lblAltaCapacitacion", resourceCulture);
             }
         }
         
@@ -2356,6 +2392,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a TOTAL DE EVALUACIONES:.
+        /// </summary>
+        public static string lblEvTotales {
+            get {
+                return ResourceManager.GetString("lblEvTotales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a * Faltan llenar campos obligatorios.
         /// </summary>
         public static string lblFaltanCampos {
@@ -2478,6 +2523,33 @@ namespace Vista.Lenguajes {
         public static string lblFiltro {
             get {
                 return ResourceManager.GetString("lblFiltro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtro por año *.
+        /// </summary>
+        public static string lblFiltroPorAño {
+            get {
+                return ResourceManager.GetString("lblFiltroPorAño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtro por área *.
+        /// </summary>
+        public static string lblFiltroPorArea {
+            get {
+                return ResourceManager.GetString("lblFiltroPorArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtro por empleado *.
+        /// </summary>
+        public static string lblFiltroPorEmpleado {
+            get {
+                return ResourceManager.GetString("lblFiltroPorEmpleado", resourceCulture);
             }
         }
         
@@ -2712,6 +2784,15 @@ namespace Vista.Lenguajes {
         public static string lblNombre {
             get {
                 return ResourceManager.GetString("lblNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre y apellido.
+        /// </summary>
+        public static string lblNombreApellido {
+            get {
+                return ResourceManager.GetString("lblNombreApellido", resourceCulture);
             }
         }
         
@@ -3423,6 +3504,15 @@ namespace Vista.Lenguajes {
         public static string recursosToolStripMenuItem {
             get {
                 return ResourceManager.GetString("recursosToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

@@ -522,5 +522,31 @@ namespace Vista
         {
 
         }
+
+        private void dtgAlta_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dtgAlta.Columns[e.ColumnIndex] is DataGridViewButtonCell && (e.RowIndex >= 0))
+            {
+                if (dtgAlta.Columns[e.ColumnIndex].Name == Columnas.abrir)
+                {
+                    e.Value = "a";
+                }
+            }
+        }
+
+        private void dtgModificar_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dtgModificar.Columns[e.ColumnIndex] is DataGridViewButtonCell && (e.RowIndex >= 0))
+            {
+                if (dtgModificar.Columns[e.ColumnIndex].Name == Columnas.modificar)
+                {
+                    e.Value = Columnas.abrir;
+                }
+                if (dtgModificar.Columns[e.ColumnIndex].Name == Columnas.eliminar)
+                {
+                    e.Value = Columnas.eliminar;
+                }
+            }
+        }
     }
 }

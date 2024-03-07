@@ -46,6 +46,7 @@ namespace Vista
             DataTable dt = new DataTable();
             dtgCategoria.DataSource = ObtenerCateogria;
             dtgCategoria.Columns["id_categoria"].Visible = false;
+            UtilidadesForms.TraducirColumnasDtg(ref dtgCategoria);
 
         }
 
@@ -74,6 +75,7 @@ namespace Vista
                 CargarGrid();
                 MessageBox.Show("La categoria se han guardado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            UtilidadesForms.LimpiarControles(grpCrearCategoria);
 
 
         }
@@ -158,10 +160,8 @@ namespace Vista
                     CargarGrid();
                     LimpiarControlesModificacion();
                     MessageBox.Show("La categoria se han modificado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-              
             }
-
+            UtilidadesForms.LimpiarControles(grpModificarCategoria);
         }
 
         private void txtJornadaModif_KeyPress(object sender, KeyPressEventArgs e)
@@ -240,6 +240,11 @@ namespace Vista
         private void dtgCategoria_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

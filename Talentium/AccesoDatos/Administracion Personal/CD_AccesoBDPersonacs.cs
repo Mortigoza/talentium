@@ -145,7 +145,7 @@ namespace AccesoDatos.Administracion_Personal
 
         public DataTable ObtenerTodosCand(string cuil)
         {
-            SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
             DataTable resultado = EjecutarConsultas("consultar_todos_candidatos_sp", listaParametros.ToArray());
 

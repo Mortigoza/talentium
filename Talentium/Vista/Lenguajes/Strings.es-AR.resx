@@ -409,7 +409,7 @@
     <value>Cambio de contraseña</value>
   </data>
   <data name="candidatoToolStripMenuItem" xml:space="preserve">
-    <value>Certificación servicios</value>
+    <value>Candidato</value>
   </data>
   <data name="capacitacionesToolStripMenuItem" xml:space="preserve">
     <value>Capacitaciones</value>
@@ -1280,5 +1280,32 @@
   </data>
   <data name="lblBitacora" xml:space="preserve">
     <value>Bitácora</value>
+  </data>
+  <data name="gestiónDelTalentoToolStripMenuItem" xml:space="preserve">
+    <value>Gestion del talento</value>
+  </data>
+  <data name="altaEvaluaciónDeDesempeñoToolStripMenuItem" xml:space="preserve">
+    <value>Alta de desempeño</value>
+  </data>
+  <data name="grpCriterios" xml:space="preserve">
+    <value>Criterios</value>
+  </data>
+  <data name="lblEvTotales" xml:space="preserve">
+    <value>TOTAL DE EVALUACIONES:</value>
+  </data>
+  <data name="lblAltaCapacitacion" xml:space="preserve">
+    <value>Capacitación</value>
+  </data>
+  <data name="lblFiltroPorArea" xml:space="preserve">
+    <value>Filtro por área *</value>
+  </data>
+  <data name="lblFiltroPorAño" xml:space="preserve">
+    <value>Filtro por año *</value>
+  </data>
+  <data name="lblFiltroPorEmpleado" xml:space="preserve">
+    <value>Filtro por empleado *</value>
+  </data>
+  <data name="lblNombreApellido" xml:space="preserve">
+    <value>Nombre y apellido</value>
   </data>
 </root>

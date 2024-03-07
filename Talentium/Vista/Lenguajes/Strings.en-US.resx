@@ -409,7 +409,7 @@
     <value>Change Password</value>
   </data>
   <data name="candidatoToolStripMenuItem" xml:space="preserve">
-    <value>Service Certification</value>
+    <value>Candidate</value>
   </data>
   <data name="capacitacionesToolStripMenuItem" xml:space="preserve">
     <value>Training</value>
@@ -1280,5 +1280,32 @@
   </data>
   <data name="usuariosToolStripMenuItem" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="gestiónDelTalentoToolStripMenuItem" xml:space="preserve">
+    <value>Talent Management</value>
+  </data>
+  <data name="altaEvaluaciónDeDesempeñoToolStripMenuItem" xml:space="preserve">
+    <value>Performance registration</value>
+  </data>
+  <data name="grpCriterios" xml:space="preserve">
+    <value>Criteria</value>
+  </data>
+  <data name="lblEvTotales" xml:space="preserve">
+    <value>TOTAL EVALUATIONS:</value>
+  </data>
+  <data name="lblAltaCapacitacion" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="lblFiltroPorArea" xml:space="preserve">
+    <value>Filter by area *</value>
+  </data>
+  <data name="lblFiltroPorAño" xml:space="preserve">
+    <value>Filter by year *</value>
+  </data>
+  <data name="lblFiltroPorEmpleado" xml:space="preserve">
+    <value>Filter by employee *</value>
+  </data>
+  <data name="lblNombreApellido" xml:space="preserve">
+    <value>First and last name</value>
   </data>
 </root>

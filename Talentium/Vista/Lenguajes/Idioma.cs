@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -48,6 +49,10 @@ namespace Vista.Lenguajes
             //para que cambie los nombres de los objetos
             CambiarTexto(controls, frm);
             frm.Icon = Properties.Resources.icono;
+            frm.MaximizeBox= false;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.BackColor = Color.White;
         }
         private static void CambiarTexto(Control.ControlCollection controls, Form frm)
         {
