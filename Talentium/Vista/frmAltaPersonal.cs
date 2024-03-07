@@ -38,33 +38,26 @@ namespace Vista
         private bool inicial = true;
         private int infoLaborales = 0;
         private int infoAcademicos = 1;
-
         private int nivelEspaniol = -1;
         private int nivelIngles = -1;
-
         private DateTime fn;
         private DateTime fa;
         private bool _mod = false;
-
         private int _id_persona;
-           
+        //listas
         List<InfoAcademicoDto> infoAcademic = new List<InfoAcademicoDto>();
         List<IdiomaDto> infoIdiom = new List<IdiomaDto>();
         List<infoLaboralDto> infoLabora = new List<infoLaboralDto>();
-
 
         List<IdiomaMostrar> mostrarIdioma = new List<IdiomaMostrar>();
         List<NivelProgresoMostrar> mostrarProgresoNivel = new List<NivelProgresoMostrar>();
         
         public frmAltaPersonal(bool esCandidato)
         {
-
-            //InitializeComponent();
-
             InitializeComponent();
             DeshabilitarCampos();
+
             this.esCandidato = esCandidato;
-         
             this.esReactivicacion = false;
 
             dtpFechaDeNacimiento.MaxDate = DateTime.Today;
@@ -86,18 +79,14 @@ namespace Vista
 
             inicial = false;
 
-
             tabControl.TabPages[1].Enabled = false;
             tabControl.TabPages[2].Enabled = false;
-
 
             DataTable idioma = logica.ObtenerIdioma();
             cmbIdioma.DataSource = idioma;
             cmbIdioma.DisplayMember = "idioma";
             cmbIdioma.ValueMember = "id_idiomas";
             cmbIdioma.SelectedIndex = -1;
-
-
 
             DataTable provincia = logica.ObtenerProvincia();
             cmbProvincia.DataSource = provincia;
@@ -127,7 +116,6 @@ namespace Vista
             cmbEstadoCivil.ValueMember = "id_estado_civil";
             cmbEstadoCivil.SelectedIndex = -1;
 
-
             DataTable nacionalidad = logica.ObtenerNacionalidad();
             cmbNacionalidad.DataSource = nacionalidad;
             cmbNacionalidad.DisplayMember = "nacionalidad";
@@ -153,7 +141,6 @@ namespace Vista
             cmbConvenio.DisplayMember = "convenio";
             cmbConvenio.ValueMember = "id_convenio";
             cmbConvenio.SelectedIndex = -1;
-
 
             DataTable puesto = logica.ObtenerPuesto();
             cmbPuesto.DataSource = puesto;
@@ -191,11 +178,7 @@ namespace Vista
             cmbLaboralEgreso.Items.AddRange(listaDeAnios.ToArray());
             cmbLaboralIngreso.SelectedIndex = -1;
             cmbLaboralEgreso.SelectedIndex = -1;
-
- 
-
         }
-
 
         public bool EsReactivacion
         {
@@ -496,18 +479,6 @@ namespace Vista
         private void button8_Click(object sender, EventArgs e)
         {
             ValidarDataGrid();
-            //if (validarVacios(tabAcademicos, infoAcademicos))
-            //{
-            //    lblFaltanCampos1.Visible = false;
-            //    tabControl.TabPages[2].Enabled = true;
-            //    RestaurarColorPredeterminado(tabAcademicos);
-            //    tabControl.SelectedTab = tabLaborales;
-            //}
-            //else
-            //{
-            //    lblFaltanCampos1.Visible = true;
-            //     MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
         }
 
         //BOTON PARA VALIDAR TAB "INFORMACION PERSONAL"
@@ -796,8 +767,6 @@ namespace Vista
         private void button16_Click(object sender, EventArgs e)
         {
        
-            infoAcademicos++;
-
         }
         private void button17_Click(object sender, EventArgs e)
         {
@@ -1089,14 +1058,10 @@ namespace Vista
             UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
         }
 
-
-
-
         //Modificacion
         public void CargarDatosModificacion(int id_persona, bool esReactivar = false)
         {
 
-           
             Persona modify = new Persona();
             
             btnGuardar.Name = "btnModificar";
@@ -1104,7 +1069,6 @@ namespace Vista
             
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
-
             BotonesInvisiblesModificacion();
             HabilitarCampos();
             btnContinuar1.Visible = true;
@@ -1461,8 +1425,6 @@ namespace Vista
             }
         }
 
-
-    
         private void btnAgregarIdioma_Click(object sender, EventArgs e)
         {
             string nivelSeleccionado = "";
@@ -1497,9 +1459,7 @@ namespace Vista
                     DataTable dt = new DataTable();
                     dt.Columns.Add("idioma", typeof(string));
                     dt.Columns.Add("nivel", typeof(string));
-                    
 
-                    
                     infoIdiom.Add(idioma);
                     mostrarIdioma.Clear();
 
@@ -1522,7 +1482,6 @@ namespace Vista
                 {
                     MessageBox.Show(Errores.IdiomaRepetido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-             
             }
             else
             {
@@ -1553,7 +1512,6 @@ namespace Vista
                 dgvIdioma.DataSource = null;
                 dgvIdioma.DataSource = mostrarIdioma;
                 UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
-
             }
             else
             {
@@ -1819,7 +1777,7 @@ namespace Vista
             else
             {
                 txtDni.ReadOnly = false;
-                txtDni.KeyPress -= NumerosDNI; //revisar
+                txtDni.KeyPress -= NumerosDNI; 
                 txtDni.KeyPress += LetrasYNumeros;
             } 
         }
