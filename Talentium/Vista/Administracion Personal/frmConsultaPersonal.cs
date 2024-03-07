@@ -229,7 +229,8 @@ namespace Vista
 
                                 frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
                                 frmAltaPersonal.EsReactivacion = true; // Es una reactivación
-                                frmAltaPersonal.CargarDatosModificacion(idper, true);
+                                frmAltaPersonal.CargarDatosModificacion(idper, false, true);
+                                frmAltaPersonal.dttFechaAlta.Enabled = true;
                                 frmAltaPersonal.ShowDialog();
 
                             }
