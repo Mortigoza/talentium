@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
@@ -124,6 +125,7 @@ namespace Vista
 
                     cn_usuario.IdUsuario = _idUsuario;
                     cn_usuario.BajaUsuario();
+                    CN_Bitacora.AltaBitacora($"Usuario dado de baja ID: {_idUsuario}", "UPDATE", this.Name);
                     dtgRefresh(sender, e);
                 }
             }
@@ -135,6 +137,7 @@ namespace Vista
                     // Si el boton esta en modo reactivar: reactiva al usuario seleccionado
                     cn_usuario.IdUsuario = _idUsuario;
                     cn_usuario.ReactivarUsuario();
+                    CN_Bitacora.AltaBitacora($"Usuario reactivado ID: {_idUsuario}", "UPDATE", this.Name);
                     dtgRefresh(sender, e);
                 }
             }

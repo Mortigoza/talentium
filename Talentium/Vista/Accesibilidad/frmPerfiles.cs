@@ -175,7 +175,7 @@ namespace Vista.Accesibilidad
                         {
                             CN_LogicaPerfiles cn_perfil = new CN_LogicaPerfiles();
                             cn_perfil.UpPerfil(_index, txtNombrePermiso.Text, txtDescripcion.Text, permisos.ToArray());
-                            CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" dado de alta", "UPDATE", this.Name);
+                            CN_Bitacora.AltaBitacora($"Perfil \"{txtNombrePermiso.Text}\" modificado", "UPDATE", this.Name);
                             UtilidadesForms.LimpiarControles(this);
                             DataTable dtPermisosDef = logica.ConsultarPermisosLst();
                             UtilidadesForms.ConfigListbox(dtPermisosDef, ref dtListaBd, ref dtListaMem, ref lstPermisos, ref lstPermisosAsignados);

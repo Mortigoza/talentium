@@ -1,6 +1,7 @@
 ﻿using Comun;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Bitacora;
 using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
@@ -219,6 +220,7 @@ namespace Vista
 
                     if (usuario.AltaUsuario(dtListaMem, dtgPersonas))
                     {
+
                         this.Dispose();
                     }
                     break;
@@ -235,6 +237,7 @@ namespace Vista
                     usuario.RowIndex = _rowIndex;
 
                     usuario.ModificarUsuario(dtListaMem);
+                    CN_Bitacora.AltaBitacora($"Usuario modificado ID: {_idUsuario}", "UPDATE", this.Name);
                     this.Dispose();
                     break;
             }
