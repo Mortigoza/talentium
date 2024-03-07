@@ -55,6 +55,7 @@
             this.desempeñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nóminaSalarialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.certificacionDeServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.candidatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accesibilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
             this.lblTiempoRestante = new System.Windows.Forms.Label();
-            this.candidatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -219,7 +219,7 @@
             // gestiónDeAsistenciasToolStripMenuItem
             // 
             this.gestiónDeAsistenciasToolStripMenuItem.Name = "gestiónDeAsistenciasToolStripMenuItem";
-            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.gestiónDeAsistenciasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.gestiónDeAsistenciasToolStripMenuItem.Text = "Gestión de Inasistencias";
             this.gestiónDeAsistenciasToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeAsistenciasToolStripMenuItem_Click);
             // 
@@ -285,6 +285,13 @@
             this.certificacionDeServiciosToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.certificacionDeServiciosToolStripMenuItem.Text = "Certificacion de servicios";
             this.certificacionDeServiciosToolStripMenuItem.Click += new System.EventHandler(this.certificacionDeServiciosToolStripMenuItem_Click);
+            // 
+            // candidatoToolStripMenuItem
+            // 
+            this.candidatoToolStripMenuItem.Name = "candidatoToolStripMenuItem";
+            this.candidatoToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.candidatoToolStripMenuItem.Text = "Candidato";
+            this.candidatoToolStripMenuItem.Click += new System.EventHandler(this.candidatoToolStripMenuItem_Click);
             // 
             // accesibilidadToolStripMenuItem
             // 
@@ -378,12 +385,6 @@
             this.lblTiempoRestante.TabIndex = 22;
             this.lblTiempoRestante.Text = "Su sesión se terminará por inactividad en ";
             this.lblTiempoRestante.Visible = false;
-            // 
-            // candidatoToolStripMenuItem
-            // 
-            this.candidatoToolStripMenuItem.Name = "candidatoToolStripMenuItem";
-            this.candidatoToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
-            this.candidatoToolStripMenuItem.Text = "Candidato";
             // 
             // frmMenu
             // 

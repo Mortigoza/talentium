@@ -17,7 +17,7 @@ namespace Vista
 
         CN_AdministracionDatosPersonal logicaPersona = new CN_AdministracionDatosPersonal();
         CN_AdministracionPersonalComboBox logica = new CN_AdministracionPersonalComboBox();
-
+        bool isReport = false;
         bool inactivo = false;
         public frmConsultaPersonal()
         {
@@ -29,15 +29,37 @@ namespace Vista
             cmbArea.ValueMember = "id_area";
             cmbArea.SelectedValue = -1;
         }
-
+        public void RecibirDatos(bool report)
+        {
+            isReport = report;
+            rdbActivos.Visible = false;
+            rdbInactivos.Visible = false;
+            btnModificar.Visible = false;
+            btnBaja.Visible = false;
+            txtNombre.Visible = false;
+            txtApellido.Visible = false;
+            cmbArea.Visible = false;
+            lblApellido.Visible = false;
+            lblNombre.Visible = false;
+            lblArea.Visible = false;
+        }
         private void frmConsultaPersonal_Load(object sender, EventArgs e)
         {
 
 
         }
-        private void Filtros(bool inactivo)
+        private void Filtros(bool inactivo, bool isRep)
         {
-            var persona = logicaPersona.ObtenerPersona();
+            DataTable persona;
+            if (isRep == true)
+            {
+                 persona = logicaPersona.ObtenerTodosCand(txtCuit.Text);
+            }
+            else 
+            {
+                 persona = logicaPersona.ObtenerPersona();
+
+            }
             List<Persona> personList = persona.AsEnumerable()
                 .Select(row => new Persona
                 {
@@ -97,8 +119,7 @@ namespace Vista
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Filtros(inactivo);
+            Filtros(inactivo, isReport);
         }
 
 
@@ -112,9 +133,9 @@ namespace Vista
             if (dtgEmpleados.SelectedRows.Count > 0)
             {
                 int id = Convert.ToInt32(dtgEmpleados.SelectedRows[0].Cells["id_persona"].Value);
-
+                
                 //Abre FormAltaPersonal y pasa el id_persona
-                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(false);
+                frmAltaPersonal frmAltaPersonal = new frmAltaPersonal(isReport);
                 frmAltaPersonal.CargarDatosPersona(id);
                 frmAltaPersonal.ShowDialog();
             }
@@ -165,7 +186,7 @@ namespace Vista
                 btnModificar.Enabled = false;
 
             }
-            Filtros(inactivo);
+            Filtros(inactivo, isReport);
 
         }
 
@@ -185,7 +206,7 @@ namespace Vista
                             if (result == DialogResult.Yes)
                             {
                                 logicaPersona.BajaPersona(id);
-                                Filtros(inactivo);
+                                Filtros(inactivo, isReport);
                             }
                             break;
                         case "btnReactivar":
@@ -207,7 +228,7 @@ namespace Vista
                             
                       
                                 
-                                Filtros(inactivo);
+                                Filtros(inactivo, isReport);
                             }
                             break;
                     }
@@ -217,6 +238,18 @@ namespace Vista
                     break;
 
             }
+        }
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
+
+            }
+        }
+        private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
         }
     }
 

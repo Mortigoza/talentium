@@ -56,6 +56,7 @@ namespace Vista
         List<IdiomaMostrar> mostrarIdioma = new List<IdiomaMostrar>();
         List<NivelProgresoMostrar> mostrarProgresoNivel = new List<NivelProgresoMostrar>();
         
+
         public frmAltaPersonal(bool esCandidato)
         {
 
@@ -71,6 +72,11 @@ namespace Vista
             //NoPegar(groupBox2);
             //NoPegar(groupBox3);
             //NoPegar(grpIdiomas);
+            btnPdf.Visible = false;
+            if (esCandidato == true) { dttFechaAlta.Visible = false; btnPdf.Visible = true; lblFechaDeIngreso.Visible = false;
+                lblConvenio.Visible = false; cmbConvenio.Visible = false;
+            }
+            else { dttFechaAlta.Visible = true; btnPdf.Visible = false; lblFechaDeIngreso.Visible = true; }
             DeshabilitarCampos();
             this.esCandidato = esCandidato;
          
@@ -1654,78 +1660,106 @@ namespace Vista
 
             try
             {
-                /* string iniciofecha = dtpFecDesde.Value.ToString("dd-MM-yyyy");
-                 string finfecha = dtpFecHasta.Value.ToString("dd-MM-yyyy");*/
-
                 SaveFileDialog Guardar = new SaveFileDialog();
-                Guardar.FileName = string.Format("Reporte " + DateTime.Now.ToString("ddMMyyyy") + ".pdf");
-                string filasNivel = string.Empty;
-                string filasIdioma = string.Empty;
-                for (int i = 0; i < dgvIdioma.RowCount - 1; i++)
+                Guardar.FileName = string.Format("Reporte candidato" + DateTime.Now.ToString(" dd-MM-yyyy") + ".pdf");
+                string filasNivelIdioma = string.Empty;
+                string filasAcademico = string.Empty;
+                string filasLaboral = string.Empty;
+
+                for (int i = 0; i <= dgvIdioma.RowCount - 1; i++)
                 {
-                    filasNivel += "<tr>";
-                    filasNivel += "<td>" + dgvIdioma.Rows[i].Cells[0].Value.ToString() + "</td>";
-                    filasNivel += "</tr>";
-                    filasIdioma += "<tr>";
-                    filasIdioma += "<td>" + dgvIdioma.Rows[i].Cells[1].Value.ToString() + "</td>";
-                    filasIdioma += "</tr>";
+                    filasNivelIdioma += "<tr>";
+                    filasNivelIdioma += "<td>" + dgvIdioma.Rows[i].Cells[0].Value.ToString()+": "+dgvIdioma.Rows[i].Cells[1].Value.ToString()+ "</td>";
+                    filasNivelIdioma += "</tr>";
                 }
+                for (int j = 0; j <= dgvAcademico.RowCount - 1; j++)
+                {
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Nivel: " + dgvAcademico.Rows[j].Cells[0].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>";
+
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Institución: " + dgvAcademico.Rows[j].Cells[1].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>";
+
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Titulo: " + dgvAcademico.Rows[j].Cells[2].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>"; 
+
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Ingreso: " + dgvAcademico.Rows[j].Cells[3].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>";
+
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Egreso: " + dgvAcademico.Rows[j].Cells[4].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>";
+
+                    filasAcademico += "<tr>";
+                    filasAcademico += "<td>" + "Puesto: " + dgvAcademico.Rows[j].Cells[5].Value.ToString() + "</td>";
+                    filasAcademico += "</tr>";
+                }
+                for (int j = 0; j <= dgvLaboral.RowCount - 1; j++)
+                {
+                    filasLaboral += "<tr>";
+                    filasLaboral += "<td>" + "Puesto: " + dgvLaboral.Rows[j].Cells[0].Value.ToString() + "</td>";
+                    filasLaboral += "</tr>";
+
+                    filasLaboral += "<tr>";
+                    filasLaboral += "<td>" + "Empresa: " + dgvLaboral.Rows[j].Cells[1].Value.ToString() + "</td>";
+                    filasLaboral += "</tr>";
+
+                    filasLaboral += "<tr>";
+                    filasLaboral += "<td>" + "Fecha ingreso: " + dgvLaboral.Rows[j].Cells[2].Value.ToString() + "</td>";
+                    filasLaboral += "</tr>";
+
+                    filasLaboral += "<tr>";
+                    filasLaboral += "<td>" + "Fecha egreso: " + dgvLaboral.Rows[j].Cells[3].Value.ToString() + "</td>";
+                    filasLaboral += "</tr>";
+
+                    filasLaboral += "<tr>";
+                    filasLaboral += "<td>" + "Personal a cargo: " + dgvLaboral.Rows[j].Cells[4].Value.ToString() + "</td>";
+                    filasLaboral += "</tr>";
+                }
+
+
+
                 string paginaHtmlTexto = Properties.Resources.PantillaEmpleadoPdf.ToString();
 
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMYAPE", txtNombres.Text.ToString() + " " + txtApellidos.Text.ToString());
                 paginaHtmlTexto = paginaHtmlTexto.Replace("@CUIL", txtCuitCuil.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@DOC", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@TIPODOC", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@GENERO", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHANAC", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@ECIVIL", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@HIJOS", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@NAC", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@EMAIL", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@TEL", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTERTEL", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMALTERTEL", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@DOC", txtDni.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@TIPODOC", cmbTipoDoc.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@GENERO", cmbGenero.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHANAC", dtpFechaDeNacimiento.Value.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ECIVIL", cmbEstadoCivil.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@HIJOS", nupHijos.Value.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NAC", cmbNacionalidad.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@EMAIL", txtEmail.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@TEL", txtTelefono.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTERTEL", txtTelefonoAlternativo.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NOMALTERTEL", txtContacto.Text.ToString());
 
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@PROV", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@PART", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@LOC", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@CODPOSTAL", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@CALLE", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTURA", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@PISO", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@DEPTO", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PROV", cmbProvincia.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PART", cmbPartido.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@LOC", cmbLocalidad.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CODPOSTAL", txtCodigoPostal.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@CALLE", txtCalle.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@ALTURA", txtNro.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PISO", txtPiso.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@DEPTO", txtDpto.Text.ToString());
 
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@AREA", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@CONVENIO", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAING", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO2", txtNombres.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@EMPRESA", txtCuitCuil.Text.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@DURACION", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@AREA", cmbArea.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@PUESTO", cmbPuesto.Text.ToString());
 
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@NIVELIDIOMA", filasNivelIdioma.ToString());
 
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@NIVELIDIOMA", filasNivel.ToString());
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@IDIOMA", filasIdioma.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@INSTTITUCION", filasAcademico.ToString());
 
-                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAEMIT", txtNombres.Text.ToString());
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@EXPLAB", filasLaboral.ToString());
+
+                paginaHtmlTexto = paginaHtmlTexto.Replace("@FECHAEMIT", DateTime.Now.ToString(" dd-MM-yyyy"));
 
               
-
-                /*  string filas = string.Empty;
-                  for (int i = 0; i < dgvListaEventos.RowCount - 1; i++)
-                  {
-                      filas += "<tr>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[0].Value.ToString() + "</td>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[1].Value.ToString() + "</td>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[2].Value.ToString() + "</td>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[3].Value.ToString() + "</td>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[4].Value.ToString() + "</td>";
-                      filas += "<td>" + dgvListaEventos.Rows[i].Cells[5].Value.ToString() + "</td>";
-                      filas += "</tr>";
-
-                  }
-
-                  paginaHtmlTexto = paginaHtmlTexto.Replace("@FILAS", filas);*/
 
                 if (Guardar.ShowDialog() == DialogResult.OK)
                 {
@@ -1738,24 +1772,27 @@ namespace Vista
                         PDF.Open();
 
                         PDF.Add(new Phrase(""));
-                        //se agrega la imagen al pdf
-                        using (MemoryStream streamm = new MemoryStream(foto))
+                        
+                        if (foto != null)
                         {
-                            System.Drawing.Image imagen = System.Drawing.Image.FromStream(streamm);
-                            // Convertir la imagen de System.Drawing.Image a iTextSharp.text.Image
-                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagen, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            //se agrega la imagen al pdf
+                            using (MemoryStream streamm = new MemoryStream(foto))
+                            {
+                                System.Drawing.Image imagen = System.Drawing.Image.FromStream(streamm);
+                                // Convertir la imagen de System.Drawing.Image a iTextSharp.text.Image
+                                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagen, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-                            img.ScaleToFit(80, 80);
-                            float x = PDF.PageSize.Width - PDF.RightMargin - img.ScaledWidth;
-                            float y = PDF.PageSize.Height - PDF.TopMargin - img.ScaledHeight;
+                                img.ScaleToFit(80, 80);
+                                float x = PDF.PageSize.Width - PDF.RightMargin - img.ScaledWidth;
+                                float y = PDF.PageSize.Height - PDF.TopMargin - img.ScaledHeight;
 
-                            // Establecer la posición absoluta de la imagen
-                            img.SetAbsolutePosition(x, y);
-                            //img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                            //img.SetAbsolutePosition(PDF.RightMargin, PDF.Top -70);
-                            PDF.Add(img);
+                                // Establecer la posición absoluta de la imagen
+                                img.SetAbsolutePosition(x, y);
+                                PDF.Add(img);
 
+                            }
                         }
+
 
 
                         using (StringReader sr = new StringReader(paginaHtmlTexto))
@@ -1768,7 +1805,7 @@ namespace Vista
 
                     }
                 }
-                MessageBox.Show("La descarga fue realizada con éxito");
+                MessageBox.Show("Operación exitosa.");
             }
             catch (Exception ex)
             {

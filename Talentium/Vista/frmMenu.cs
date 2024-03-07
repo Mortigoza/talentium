@@ -360,5 +360,14 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void candidatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmConsultaPersonal frm = new frmConsultaPersonal();
+            frm.RecibirDatos(true);
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

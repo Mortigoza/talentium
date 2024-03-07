@@ -68,6 +68,15 @@ namespace LogicaNegocio.Administracion_Del_Personal
 
             return AccesoDatos.ObtenerPersona();
         }
+
+        public DataTable ObtenerTodosCand(string cuil)
+        {
+            cuil.Trim();
+            if (string.IsNullOrEmpty(cuil)) {
+                cuil = null;
+            }
+            return AccesoDatos.ObtenerTodosCand(cuil);
+        } 
         public DataTable ObtenerIdioma(int id_persona)
         {
             return AccesoDatos.ObtenerIdioma(id_persona);

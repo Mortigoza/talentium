@@ -143,7 +143,14 @@ namespace AccesoDatos.Administracion_Personal
             return resultado;
         }
 
+        public DataTable ObtenerTodosCand(string cuil)
+        {
+            SqlParameter param1 = new SqlParameter("@cuil", cuil) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("consultar_todos_candidatos_sp", listaParametros.ToArray());
 
+            return resultado;
+        }
         public DataTable ObtenerPersona(int id_persona)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };

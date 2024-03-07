@@ -15,6 +15,7 @@ using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
+using Vista.Lenguajes;
 
 namespace Vista
 {
@@ -25,6 +26,19 @@ namespace Vista
         public Asistencias()
         {
             InitializeComponent();
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+
+            dtgAlta.MultiSelect = false;
+            dtgAlta.RowHeadersVisible = false;
+            dtgAlta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dtgModificar.MultiSelect = false;
+            dtgModificar.RowHeadersVisible = false;
+            dtgModificar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
+
+
             btnExcel.Visible = false;
             buscarAlta.Enabled = false;
             DataTable asistencia = asistencias.area();
@@ -32,15 +46,15 @@ namespace Vista
             areasAltas.DataSource = asistencia;
             AreaMod.DisplayMember = "area";
             AreaMod.DataSource = asistencia;
-            dataGridAlta.Columns["Abrir"].Visible = false;
-            dataGridModificar.Columns["Eliminar"].Visible = false;
-            dataGridModificar.Columns["Modificar"].Visible = false;
+            dtgAlta.Columns["Abrir"].Visible = false;
+            dtgModificar.Columns["Eliminar"].Visible = false;
+            dtgModificar.Columns["Modificar"].Visible = false;
             fechaDesdeMod.Visible = false;
             FechaHastaMod.Visible = false;
             lblFechaHastaMod.Visible = false;
             lblFechaDesdeMod.Visible = false;
-            Refrescar(dataGridAlta);
-            Refrescar(dataGridModificar);
+            Refrescar(dtgAlta);
+            Refrescar(dtgModificar);
 
         }
         public void RecibirDatos(bool ocultar)
@@ -63,12 +77,12 @@ namespace Vista
             dtg.AllowUserToResizeRows = false;
             dtg.ReadOnly = true;
 
-            dataGridModificar.Columns["Modificar"].Visible = false;
-            dataGridModificar.Columns["Eliminar"].Visible = false;
+            dtgModificar.Columns["Modificar"].Visible = false;
+            dtgModificar.Columns["Eliminar"].Visible = false;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow filaSeleccionada = dataGridAlta.CurrentRow;
+            DataGridViewRow filaSeleccionada = dtgAlta.CurrentRow;
             C_Asistencias datos = new C_Asistencias();
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -90,11 +104,11 @@ namespace Vista
                     this.Hide();
                     panel.ShowDialog();
                     this.Show();
-                    dataGridAlta.DataSource = null;
+                    dtgAlta.DataSource = null;
                     cuilAltas.Clear();
                     areasAltas.SelectedIndex = 0;
                     puestosAltas.SelectedIndex = 0;
-                    dataGridAlta.Columns["Abrir"].Visible = false;
+                    dtgAlta.Columns["Abrir"].Visible = false;
                 }
             }
         }
@@ -105,29 +119,29 @@ namespace Vista
         }
         public void cargar(DataTable data)
         {
-            dataGridAlta.AllowUserToAddRows = false;
-            dataGridAlta.DataSource = data;
-            dataGridAlta.Columns["Abrir"].Visible = true;
+            dtgAlta.AllowUserToAddRows = false;
+            dtgAlta.DataSource = data;
+            dtgAlta.Columns["Abrir"].Visible = true;
 
             // Ocultar las demás columnas
 
-            dataGridAlta.Columns["id_persona"].Visible = false;
+            dtgAlta.Columns["id_persona"].Visible = false;
         }
         public void cargarDtg(DataTable data)
         {
-            dataGridModificar.AllowUserToAddRows = false;
-            dataGridModificar.DataSource = data;
+            dtgModificar.AllowUserToAddRows = false;
+            dtgModificar.DataSource = data;
             if (!isReport)
             {
-                dataGridModificar.Columns["Modificar"].Visible = true;
-                dataGridModificar.Columns["Eliminar"].Visible = true;
+                dtgModificar.Columns["Modificar"].Visible = true;
+                dtgModificar.Columns["Eliminar"].Visible = true;
             }
             
             // Ocultar los id en las columnas
 
-            dataGridModificar.Columns["id_persona"].Visible = false;
-            dataGridModificar.Columns["id_asistencia"].Visible = false;
-            dataGridModificar.Columns["id_motivo"].Visible = false;
+            dtgModificar.Columns["id_persona"].Visible = false;
+            dtgModificar.Columns["id_asistencia"].Visible = false;
+            dtgModificar.Columns["id_motivo"].Visible = false;
 
         }
         private void button1_Click(object sender, EventArgs e)
@@ -149,7 +163,14 @@ namespace Vista
 
             }
         }
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
 
+            }
+        }
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -217,8 +238,7 @@ namespace Vista
             object idP = selectedPuesto["id_puesto"];
 
             DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
-            //corroborar las cargas del dtg aplicar la busqueda del motivo para traerlo.
-            //tengo que traer nombre y apellido de persona, dejando el id_persona y el id_motivo
+          
             cargarDtg(asis);
             if (asis.Rows.Count >= 1)
             {
@@ -248,7 +268,7 @@ namespace Vista
 
         private void dataGridModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow filaSeleccionada = dataGridModificar.CurrentRow;
+            DataGridViewRow filaSeleccionada = dtgModificar.CurrentRow;
             C_Asistencias datos = new C_Asistencias();
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -294,7 +314,7 @@ namespace Vista
                     panel.ShowDialog();
                     this.Show();
 
-                    dataGridModificar.DataSource = null;
+                    dtgModificar.DataSource = null;
                     CuilMod.Clear();
                     AreaMod.SelectedIndex = 0;
                     PuestoMod.SelectedIndex = 0;
@@ -302,8 +322,8 @@ namespace Vista
                     FechaMod.Value = DateTime.Now;
                     fechaDesdeMod.Value = DateTime.Now;
                     FechaHastaMod.Value = DateTime.Now;
-                    dataGridModificar.Columns["Modificar"].Visible = false;
-                    dataGridModificar.Columns["Eliminar"].Visible = false;
+                    dtgModificar.Columns["Modificar"].Visible = false;
+                    dtgModificar.Columns["Eliminar"].Visible = false;
                 }
                 else if(e.ColumnIndex == 1) {
                     DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -314,7 +334,7 @@ namespace Vista
                         datos.idAsistencia = Convert.ToInt32(filaSeleccionada.Cells["id_asistencia"].Value.ToString());
 
                         asistencias.EliminarAsistencias(datos.idAsistencia);
-                        Refrescar(dataGridModificar);
+                        Refrescar(dtgModificar);
                     }
                     }
             }
@@ -369,7 +389,7 @@ namespace Vista
 
                             try
                             {
-                                foreach (DataGridViewColumn cl in dataGridModificar.Columns)
+                                foreach (DataGridViewColumn cl in dtgModificar.Columns)
                                 {
                                     //El if esta para que las columnas ids no se muestren en el excel
                                     if (cl.Index != 0 && cl.Index != 1 && cl.Index != 5 && cl.Index != 11)
@@ -406,9 +426,9 @@ namespace Vista
                                 fondo.Fill.SetPatternForegroundColor(System.Drawing.Color.White);
                                 sl.SetCellStyle(1, 1, 8, 12, fondo);
 
-                                var data = dataGridModificar.Columns;
-                                var fila = dataGridModificar.Rows;
-                                foreach (DataGridViewRow row in dataGridModificar.Rows)
+                                var data = dtgModificar.Columns;
+                                var fila = dtgModificar.Rows;
+                                foreach (DataGridViewRow row in dtgModificar.Rows)
                                 {
 
                                     sl.SetCellValue(numFila, 1, row.Cells[3].Value.ToString());
@@ -435,6 +455,16 @@ namespace Vista
                     }
                 //}
             
+        }
+
+        private void cuilAltas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void CuilMod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
         }
     }
 }

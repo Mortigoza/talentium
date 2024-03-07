@@ -99,6 +99,7 @@
             this.txtCuit.Size = new System.Drawing.Size(132, 22);
             this.txtCuit.TabIndex = 4;
             this.txtCuit.TextChanged += new System.EventHandler(this.txtCuit_TextChanged);
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtApellido
             // 
