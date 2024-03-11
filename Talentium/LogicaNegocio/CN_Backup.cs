@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LogicaNegocio
 {
@@ -28,11 +29,25 @@ namespace LogicaNegocio
         }
         public void HacerBackup()
         {
-            bk.HacerBackup();
+            try
+            {
+                bk.HacerBackup();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void CargarBackup(string filePath)
         {
-            bk.CargarBackup(filePath);
+            try
+            {
+                bk.CargarBackup(filePath);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

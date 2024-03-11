@@ -49,26 +49,42 @@ namespace Vista
 
         private void btnCrearBakup_Click(object sender, EventArgs e)
         {
-            DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (ms == DialogResult.Yes)
+            try
             {
-                bk.HacerBackup();
-                CN_Bitacora.AltaBitacora("Backup de la bd creado", "Backup", this.Name);
+                DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ms == DialogResult.Yes)
+                {
+                    bk.HacerBackup();
+                    CN_Bitacora.AltaBitacora("Backup de la bd creado", "Backup", this.Name);
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnCargarBakup_Click(object sender, EventArgs e)
         {
-            DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (ms == DialogResult.Yes)
+            try
             {
-                opnBackup.InitialDirectory = bk.Path;
-                DialogResult resultado = opnBackup.ShowDialog();
-                if (resultado == DialogResult.OK)
+                DialogResult ms = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ms == DialogResult.Yes)
                 {
-                    bk.CargarBackup(opnBackup.FileName);
-                    CN_Bitacora.AltaBitacora("Backup de la bd cargado", "Backup", this.Name);
+                    opnBackup.InitialDirectory = bk.Path;
+                    DialogResult resultado = opnBackup.ShowDialog();
+                    if (resultado == DialogResult.OK)
+                    {
+                        bk.CargarBackup(opnBackup.FileName);
+                        CN_Bitacora.AltaBitacora("Backup de la bd cargado", "Backup", this.Name);
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

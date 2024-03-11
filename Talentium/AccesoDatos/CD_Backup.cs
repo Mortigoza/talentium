@@ -28,7 +28,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al realizar el respaldo: " + ex.Message);
+                throw ex;
             }
         }
         public void CargarBackup(string filePath)
@@ -38,7 +38,7 @@ namespace AccesoDatos
                 using (SqlConnection connection = GetConnection())
                 {
                     connection.Open();
-                    string restoreQuery = $"USE master RESTORE DATABASE Talentium FROM DISK= N'{filePath}' WITH REPLACE";
+                    string restoreQuery = $"USE master RESTORE DATABASE Talentium FROM DISK='{filePath}' WITH REPLACE";
                     SqlCommand command = new SqlCommand(restoreQuery, connection);
                     command.ExecuteNonQuery();
                     Console.WriteLine("¡Restauración realizada con éxito!");
@@ -46,7 +46,7 @@ namespace AccesoDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al restaurar la base de datos: " + ex.Message);
+                throw ex;
             }
         }
     }
