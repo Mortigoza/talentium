@@ -63,5 +63,14 @@ namespace AccesoDatos
 
             DataTable resultado = EjecutarConsultas("borrar_capacitaciones_persona_sp", listaParametros.ToArray());
         }
+        public DataTable ConsultaCapacitacionesObligatorias()
+        {
+            SqlParameter param1 = new SqlParameter("@id_area", IdArea) { SqlDbType = SqlDbType.Int };
+
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            DataTable resultado = EjecutarConsultas("consultar_capacitaciones_obligatorias_sp", listaParametros.ToArray());
+
+            return resultado;
+        }
     }
 }

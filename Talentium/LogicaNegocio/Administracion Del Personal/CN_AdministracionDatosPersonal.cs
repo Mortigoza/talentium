@@ -33,6 +33,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
             {
                 DataTable dt = AccesoDatos.InsertarPersona(insert);
                 int id_persona = Convert.ToInt32(dt.Rows[0][0]);
+                asignarCapacitacionesObligatorias(id_persona, insert.id_area);
                 InsertarTelefono(insert, id_persona);
 
                 return id_persona;
@@ -255,6 +256,19 @@ namespace LogicaNegocio.Administracion_Del_Personal
         public void ReactivarPersona(int id_persona)
         {
             AccesoDatos.ReactivarPersona(id_persona);
+        }
+
+        public void asignarCapacitacionesObligatorias(int idPersona, int idArea)
+        {
+            CN_AsignarCapacitaciones cap = new CN_AsignarCapacitaciones();
+            cap.IdArea = idArea;
+            DataTable dt = cap.ConsultaCapacitacionesObligatorias();
+            if (dt.Rows.Count > 0)
+            {
+                cap.IdPersona = idPersona;
+                cap.Capacitaciones = dt;
+                cap.AsignarCapacitaciones();
+            }
         }
 
     }

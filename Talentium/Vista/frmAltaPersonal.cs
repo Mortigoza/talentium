@@ -586,6 +586,7 @@ namespace Vista
                         lblFaltanCampos1.Visible = false;
                         lblFaltanCampos2.Visible = false;
                         logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom, infoLabora, infoAcademic);
+                        logicaPersona.asignarCapacitacionesObligatorias(modify.id_persona, modify.id_area);
                         logicaPersona.ActualizarDatos(modify);
 
                         CN_Bitacora.AltaBitacora($"Candidato ID: {modify.id_persona} ahora es empleado", "UPDATE", this.Name);

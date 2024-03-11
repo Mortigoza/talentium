@@ -350,9 +350,4 @@ namespace AccesoDatos.Administracion_Personal
             return dt;
         }
     }
-
-
-
-
-
 }

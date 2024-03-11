@@ -96,5 +96,10 @@ namespace LogicaNegocio
                 cd_asignar.BorrarCapacitacionPersona();
             }
         }
+        public DataTable ConsultaCapacitacionesObligatorias()
+        {
+            cd_asignar.IdArea = Convert.ToInt32(IdArea);
+            return cd_asignar.ConsultaCapacitacionesObligatorias();
+        }
     }
 }
