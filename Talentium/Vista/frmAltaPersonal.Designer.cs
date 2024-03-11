@@ -1321,6 +1321,7 @@
             // 
             this.cmbProgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgreso.FormattingEnabled = true;
+            this.cmbProgreso.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbProgreso.Location = new System.Drawing.Point(275, 191);
             this.cmbProgreso.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProgreso.Name = "cmbProgreso";
@@ -1356,6 +1357,7 @@
             this.cmbEgreso.Name = "cmbEgreso";
             this.cmbEgreso.Size = new System.Drawing.Size(111, 21);
             this.cmbEgreso.TabIndex = 42;
+            this.cmbEgreso.SelectedIndexChanged += new System.EventHandler(this.cmbEgreso_SelectedIndexChanged);
             // 
             // lblNivel
             // 

@@ -70,10 +70,19 @@ namespace LogicaNegocio.Administracion_Del_Personal
             DataTable nacionalidad = accesoDatos.ListaNacionalidad();
             return nacionalidad;
         }
-              public DataTable ObtenerProgreso()
+        public DataTable ObtenerProgreso(ComboBox cmbEgreso)
         {
-
             DataTable progreso = accesoDatos.ListaProgreso();
+            switch (cmbEgreso.SelectedIndex)
+            {
+                case 0:
+                    progreso.Rows[1].Delete();
+                    break;
+                default:
+                    progreso.Rows[0].Delete();
+                    progreso.Rows[2].Delete();
+                    break;
+            }
             return progreso;
         }
         public DataTable ObtenerTipoDoc()

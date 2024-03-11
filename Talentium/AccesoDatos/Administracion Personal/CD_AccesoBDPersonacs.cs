@@ -60,13 +60,13 @@ namespace AccesoDatos.Administracion_Personal
 
 
         public void InsertarInformacionAcademica(int id_persona, int? id_nivel, string institucion,
-            int año_ingreso, int año_egreso, string titulo, int? id_progreso)
+            int año_ingreso, int? año_egreso, string titulo, int? id_progreso)
         {
             SqlParameter param1 = new SqlParameter("@id_persona", id_persona) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@id_nivel", id_nivel) { SqlDbType = SqlDbType.Int };
             SqlParameter param3 = new SqlParameter("@institucion", institucion) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param4 = new SqlParameter("@año_ingreso", año_ingreso) { SqlDbType = SqlDbType.Int };
-            SqlParameter param5 = new SqlParameter("@año_egreso", año_egreso) { SqlDbType = SqlDbType.Int };
+            SqlParameter param5 = new SqlParameter("@año_egreso", año_egreso);
             SqlParameter param6 = new SqlParameter("@titulo", titulo) { SqlDbType = SqlDbType.NVarChar };
             SqlParameter param7 = new SqlParameter("@id_progreso", id_progreso) { SqlDbType = SqlDbType.Int };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3, param4, param5, param6, param7 };

@@ -194,7 +194,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
                 int? id_nivel = item.Nivel;
                 string institucion = item.Institucion;
                 int año_ingreso = item.Ingreso;
-                int año_egreso = item.Egreso;
+                int? año_egreso = item.Egreso;
                 string titulo = item.Titulo;
                 int? id_progreso = item.Progreso;
 

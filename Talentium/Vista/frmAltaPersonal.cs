@@ -151,12 +151,6 @@ namespace Vista
 
             cmbPartido.SelectedIndex = -1;
 
-            DataTable progreso = logica.ObtenerProgreso();
-            cmbProgreso.DataSource = progreso;
-            cmbProgreso.DisplayMember = "estado_progreso";
-            cmbProgreso.ValueMember = "id_progreso";
-            cmbProgreso.SelectedIndex = -1;
-
             DataTable convenio = logica.ObtenerConvenio();
             cmbConvenio.DataSource = convenio;
             cmbConvenio.DisplayMember = "convenio";
@@ -1143,7 +1137,7 @@ namespace Vista
             infoAcademic = infoAcademico.AsEnumerable().Select(row => new InfoAcademicoDto {
             Institucion = row.Field<string>("institucion"),
             Ingreso = row.Field<int>("año_ingreso"),
-            Egreso = row.Field<int>("año_egreso"),
+            Egreso = row.Field<int?>("año_egreso"),
             Titulo = row.Field<string>("titulo"),
                 Nivel = row.Field<int>("id_nivel"),
                 Progreso = row.Field<int>("id_progreso")
@@ -1355,16 +1349,14 @@ namespace Vista
             cmbEgreso.Items.Clear();
 
             // Agregar las opciones de años posteriores al ComboBox de egreso
-            for (int i = añoIngreso; i <= DateTime.Now.Year; i++)
+
+            cmbEgreso.Items.Add("");
+            for (int i = DateTime.Now.Year; i >= añoIngreso; i--)
             {
                 cmbEgreso.Items.Add(i);
             }
 
-            // Si la fecha de egreso actualmente seleccionada es posterior a la fecha de ingreso, deselecciónala
-            if (cmbEgreso.SelectedIndex != -1 && Convert.ToInt32(cmbEgreso.SelectedItem) < añoIngreso)
-            {
-                cmbEgreso.SelectedIndex = -1;
-            }
+            cmbEgreso.SelectedIndex = 0;
         }
 
         private void cmbLaboralIngreso_SelectedIndexChanged(object sender, EventArgs e)
@@ -1372,7 +1364,7 @@ namespace Vista
             int añoIngreso = Convert.ToInt32(cmbLaboralIngreso.SelectedItem);
             cmbLaboralEgreso.Items.Clear();
 
-            for (int i = añoIngreso; i <= DateTime.Now.Year; i++)
+            for (int i = DateTime.Now.Year; i >= añoIngreso; i--)
             {
                 cmbLaboralEgreso.Items.Add(i);
             }
@@ -1441,7 +1433,6 @@ namespace Vista
              !string.IsNullOrEmpty(txtTitulo.Text) &&
              cmbNivelAcademico.SelectedItem != null &&
              cmbIngreso.SelectedItem != null &&
-             cmbEgreso.SelectedItem != null &&
              cmbProgreso.SelectedItem != null)
             {
 
@@ -1459,7 +1450,14 @@ namespace Vista
                 academico.Institucion = txtInsitutcionSuperior.Text;
                 academico.Titulo = txtTitulo.Text;
                 academico.Ingreso = Convert.ToInt32(cmbIngreso.SelectedItem?.ToString());
-                academico.Egreso = Convert.ToInt32 (cmbEgreso.SelectedItem?.ToString ());
+                if (cmbEgreso.SelectedIndex != 0)
+                {
+                    academico.Egreso = Convert.ToInt32(cmbEgreso.SelectedItem?.ToString());
+                }
+                else
+                {
+                    academico.Egreso = null;
+                }
                 academico.Progreso = int.Parse(cmbProgreso.SelectedValue.ToString ());
                 infoAcademic.Add(academico);
 
@@ -1993,6 +1991,15 @@ namespace Vista
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void cmbEgreso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable progreso = logica.ObtenerProgreso(cmbEgreso);
+            cmbProgreso.DataSource = progreso;
+            cmbProgreso.DisplayMember = "estado_progreso";
+            cmbProgreso.ValueMember = "id_progreso";
+            cmbProgreso.SelectedIndex = -1;
         }
     }
 
