@@ -48,7 +48,6 @@
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.lblDatosDtg = new System.Windows.Forms.Label();
             this.btnCrearContrasenia = new System.Windows.Forms.Button();
             this.btnAsignarPermisos = new System.Windows.Forms.Button();
             this.btnDesasignarPermisos = new System.Windows.Forms.Button();
@@ -280,16 +279,6 @@
             this.cmbRol.TabIndex = 7;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
-            // lblDatosDtg
-            // 
-            this.lblDatosDtg.AutoSize = true;
-            this.lblDatosDtg.BackColor = System.Drawing.Color.Transparent;
-            this.lblDatosDtg.Location = new System.Drawing.Point(181, 301);
-            this.lblDatosDtg.Name = "lblDatosDtg";
-            this.lblDatosDtg.Size = new System.Drawing.Size(165, 13);
-            this.lblDatosDtg.TabIndex = 17;
-            this.lblDatosDtg.Text = "Nombre     Apellido     CUIL/CUIT";
-            // 
             // btnCrearContrasenia
             // 
             this.btnCrearContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
@@ -439,7 +428,6 @@
             this.Controls.Add(this.btnDesasignarPermisos);
             this.Controls.Add(this.btnAsignarPermisos);
             this.Controls.Add(this.btnCrearContrasenia);
-            this.Controls.Add(this.lblDatosDtg);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.btnAceptar);
@@ -487,7 +475,6 @@
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.Label lblDatosDtg;
         private System.Windows.Forms.Button btnCrearContrasenia;
         private System.Windows.Forms.Button btnAsignarPermisos;
         private System.Windows.Forms.Button btnDesasignarPermisos;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgPersonas = new System.Windows.Forms.DataGridView();
-            this.lblPersona = new System.Windows.Forms.Label();
             this.lstCapacitaciones = new System.Windows.Forms.ListBox();
             this.lstCapacitacionesAsignadas = new System.Windows.Forms.ListBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -65,16 +64,6 @@
             this.dtgPersonas.Size = new System.Drawing.Size(650, 235);
             this.dtgPersonas.TabIndex = 0;
             this.dtgPersonas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonas_RowEnter);
-            // 
-            // lblPersona
-            // 
-            this.lblPersona.AutoSize = true;
-            this.lblPersona.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersona.Location = new System.Drawing.Point(219, 298);
-            this.lblPersona.Name = "lblPersona";
-            this.lblPersona.Size = new System.Drawing.Size(209, 13);
-            this.lblPersona.TabIndex = 19;
-            this.lblPersona.Text = "Nombre Apellido CUIT/CUIL | Area: RRHH";
             // 
             // lstCapacitaciones
             // 
@@ -288,7 +277,6 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lstCapacitacionesAsignadas);
             this.Controls.Add(this.lstCapacitaciones);
-            this.Controls.Add(this.lblPersona);
             this.Controls.Add(this.grpFiltro);
             this.Controls.Add(this.dtgPersonas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -307,7 +295,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgPersonas;
-        private System.Windows.Forms.Label lblPersona;
         private System.Windows.Forms.ListBox lstCapacitaciones;
         private System.Windows.Forms.ListBox lstCapacitacionesAsignadas;
         private System.Windows.Forms.Button btnGuardar;

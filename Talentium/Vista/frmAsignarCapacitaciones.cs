@@ -1,5 +1,4 @@
 ﻿using Comun;
-using DocumentFormat.OpenXml.Drawing;
 using LogicaNegocio;
 using LogicaNegocio.Lenguajes;
 using System;
@@ -38,8 +37,6 @@ namespace Vista
             dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
 
-            //lblDatos
-            lblPersona.Text = "";
             //cmb area
             cmbArea.DataSource = null;
             cmbArea.DataSource = cn_asignar.ConsultarAreas();
@@ -107,10 +104,6 @@ namespace Vista
         {
             _idPersona = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
 
-            lblPersona.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value.ToString()} " +
-                $"{dtgPersonas.Rows[e.RowIndex].Cells[2].Value.ToString()} " +
-                $"          Puesto:  {dtgPersonas.Rows[e.RowIndex].Cells[5].Value.ToString()}";
-
             cn_asignar.IdArea = dtgPersonas.Rows[e.RowIndex].Cells[6].Value;
             DataTable dtLeft = cn_asignar.ConsultarCapacitaciones();
             cn_asignar.IdPersona = _idPersona;
@@ -146,10 +139,11 @@ namespace Vista
                 dtgPersonas.Refresh();
                 cn_asignar.IdPersona = _idPersona;
                 cn_asignar.AsignarCapacitaciones();
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

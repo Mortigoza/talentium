@@ -184,7 +184,6 @@ namespace Comun
             dtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dtg.AllowUserToAddRows = false;
             dtg.AllowUserToResizeRows = false;
-            dtg.ReadOnly = true;
 
             foreach (DataGridViewColumn c in dtg.Columns)
             {
@@ -192,7 +191,7 @@ namespace Comun
                 if (text != null)
                 {
                     c.HeaderText = text;
-                }   
+                }
             }
         }
     }

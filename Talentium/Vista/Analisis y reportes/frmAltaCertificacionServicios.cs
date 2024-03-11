@@ -55,9 +55,6 @@ namespace Vista.Analisis_y_reportes
             cmbEtapa.Items.Insert(0, Etapas.cmbEtapa_0);
             cmbEtapa.SelectedIndex = 0;
             cmbEtapa.Enabled = false;
-
-            //lblPersona
-            lblPersona.Text = "";
         }
         public frmAltaCertificacionServicios(int idCertificacion, int idEmpleado, int etapa)
         {
@@ -103,9 +100,6 @@ namespace Vista.Analisis_y_reportes
                     cmbEtapa.Enabled = false;
                     break;
             }
-
-            //lblPersona
-            lblPersona.Text = "";
 
             //Configurar controles
             grpFiltro.Enabled = false;
@@ -255,17 +249,11 @@ namespace Vista.Analisis_y_reportes
         }
         private void dtgCertificados_DataSourceChanged(object sender, EventArgs e)
         {
-            if (dtgCertificados.Rows.Count == 0)
-            {
-                lblPersona.Text = "";
-            }
         }
         private void dtgCertificados_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             _rowIndex = e.RowIndex;
             _idPersona = Convert.ToInt32(dtgCertificados.Rows[_rowIndex].Cells[0].Value);
-            lblPersona.Text = $"{dtgCertificados.Rows[_rowIndex].Cells[1].Value}    {dtgCertificados.Rows[_rowIndex].Cells[2].Value}    {dtgCertificados.Rows[_rowIndex].Cells[3].Value}";
-
         }
         #region metodos
         public void refreshDtg(DataTable dt = null)

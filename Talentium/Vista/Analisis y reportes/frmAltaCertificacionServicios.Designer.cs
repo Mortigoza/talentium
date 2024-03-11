@@ -46,7 +46,6 @@
             this.cmbEtapa = new System.Windows.Forms.ComboBox();
             this.lblFechaSolicitud = new System.Windows.Forms.Label();
             this.lblEtapa = new System.Windows.Forms.Label();
-            this.lblPersona = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
@@ -238,16 +237,6 @@
             this.lblEtapa.TabIndex = 17;
             this.lblEtapa.Text = "Etapa";
             // 
-            // lblPersona
-            // 
-            this.lblPersona.AutoSize = true;
-            this.lblPersona.BackColor = System.Drawing.Color.Transparent;
-            this.lblPersona.Location = new System.Drawing.Point(184, 312);
-            this.lblPersona.Name = "lblPersona";
-            this.lblPersona.Size = new System.Drawing.Size(141, 13);
-            this.lblPersona.TabIndex = 18;
-            this.lblPersona.Text = "Nombre Apellido CUIT/CUIL";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
@@ -299,7 +288,6 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblPersona);
             this.Controls.Add(this.lblEtapa);
             this.Controls.Add(this.lblFechaSolicitud);
             this.Controls.Add(this.cmbEtapa);
@@ -341,7 +329,6 @@
         private System.Windows.Forms.ComboBox cmbEtapa;
         private System.Windows.Forms.Label lblFechaSolicitud;
         private System.Windows.Forms.Label lblEtapa;
-        private System.Windows.Forms.Label lblPersona;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAtras;

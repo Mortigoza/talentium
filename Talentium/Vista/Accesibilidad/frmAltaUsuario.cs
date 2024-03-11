@@ -48,8 +48,6 @@ namespace Vista
             dtgPersonas.AllowUserToResizeRows = false;
             dtgPersonas.ReadOnly = true;
             dtgPersonas.DataSource = null;
-            //lblDatos
-            lblDatosDtg.Text = "";
             //cmb area
             cmbArea.DataSource = null;
             cmbArea.DataSource = usuario.ConsultarAreas();
@@ -291,7 +289,6 @@ namespace Vista
                     // Carga variables y carga el lblDatosDtg
                     _rowIndex = e.RowIndex;
                     _idPersona = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
-                    lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
                     emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
                     if (chcEmail.Checked == false)
                     {
@@ -303,7 +300,6 @@ namespace Vista
                     // Carga variables y carga el lblDatosDtg
                     _rowIndex = e.RowIndex;
                     _idPersona = Convert.ToInt32(dtgPersonas.Rows[e.RowIndex].Cells[0].Value);
-                    lblDatosDtg.Text = $"{dtgPersonas.Rows[e.RowIndex].Cells[1].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[2].Value}    {dtgPersonas.Rows[e.RowIndex].Cells[3].Value}";
                     emailPersona = dtgPersonas.Rows[e.RowIndex].Cells[6].Value.ToString();
                     txtEmail.Text = emailPersona;
                     dtgPersonas.AutoResizeColumns();

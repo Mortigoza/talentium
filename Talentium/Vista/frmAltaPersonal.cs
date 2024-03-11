@@ -1078,6 +1078,9 @@ namespace Vista
             tabControl.TabPages[2].Enabled = true;
             DeshabilitarCampos();
             BotonesInvisibles();
+
+            btnPdf.Visible = pdf;
+
             txtCuitCuil.Enabled = false;
             btnAtrasAcademico.Visible = true;
             btnAtrasLaboral.Visible = true;
