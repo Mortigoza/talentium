@@ -351,4 +351,7 @@
   <data name="capacitacion" xml:space="preserve">
     <value>Capacitación</value>
   </data>
+  <data name="grupo" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
 </root>

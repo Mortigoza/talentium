@@ -265,6 +265,10 @@ namespace LogicaNegocio
             for (int i = 0, len = dt.Rows.Count; i < len; i++)
             {
                 dt.Rows[i][1] = Seguridad.DesEncriptar(dt.Rows[i][1].ToString());
+                if (dt.Rows[i][5].ToString() == "")
+                {
+                    dt.Rows[i][5] = Errores.Personalizado;
+                }
             }
 
             return dt;

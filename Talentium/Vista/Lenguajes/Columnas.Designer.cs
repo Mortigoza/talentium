@@ -385,6 +385,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Perfil.
+        /// </summary>
+        internal static string grupo {
+            get {
+                return ResourceManager.GetString("grupo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Horas Laborales.
         /// </summary>
         internal static string horas_laborales {
