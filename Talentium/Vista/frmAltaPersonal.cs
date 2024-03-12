@@ -1172,7 +1172,14 @@ namespace Vista
                 Personal_A_Cargo = row.Field<int>("personal_a_cargo")
             }).ToList();
 
-            dgvLaboral.DataSource = infoLabora;
+            if (infoLabora.Count > 0)
+            {
+                dgvLaboral.DataSource = infoLabora;
+            }
+            else
+            {
+                dgvLaboral.DataSource = null;
+            }
             UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
 
             //IDIOMA
@@ -1522,7 +1529,9 @@ namespace Vista
  
         private void AgregarLaboral_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbLaboralIngreso.Text) && !string.IsNullOrEmpty(cmbLaboralEgreso.Text))
+            if (!string.IsNullOrEmpty(cmbLaboralIngreso.Text) && !string.IsNullOrEmpty(cmbLaboralEgreso.Text)
+                && !string.IsNullOrEmpty(txtEmpresa.Text) 
+                && !string.IsNullOrEmpty(txtPuesto.Text))
             {
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Puesto", typeof(string));
@@ -2001,6 +2010,10 @@ namespace Vista
             cmbProgreso.DisplayMember = "estado_progreso";
             cmbProgreso.ValueMember = "id_progreso";
             cmbProgreso.SelectedIndex = -1;
+        }
+
+        private void dgvLaboral_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 

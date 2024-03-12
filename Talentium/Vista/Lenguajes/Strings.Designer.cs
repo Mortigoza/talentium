@@ -493,6 +493,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Generar.
+        /// </summary>
+        public static string btnCrearContrasenia {
+            get {
+                return ResourceManager.GetString("btnCrearContrasenia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Visualizar.
         /// </summary>
         public static string btnDetalles {

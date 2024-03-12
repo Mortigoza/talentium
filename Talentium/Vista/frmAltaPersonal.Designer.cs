@@ -132,8 +132,8 @@
             this.lblAñoIngreso = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.tabLaborales = new System.Windows.Forms.TabPage();
-            this.btnEliminarLaboral = new System.Windows.Forms.Button();
             this.dgvLaboral = new System.Windows.Forms.DataGridView();
+            this.btnEliminarLaboral = new System.Windows.Forms.Button();
             this.btnAtrasLaboral = new System.Windows.Forms.Button();
             this.lblFaltanCampos2 = new System.Windows.Forms.Label();
             this.btnMasLaborales1 = new System.Windows.Forms.Button();
@@ -1445,8 +1445,8 @@
             // 
             // tabLaborales
             // 
-            this.tabLaborales.Controls.Add(this.btnEliminarLaboral);
             this.tabLaborales.Controls.Add(this.dgvLaboral);
+            this.tabLaborales.Controls.Add(this.btnEliminarLaboral);
             this.tabLaborales.Controls.Add(this.btnAtrasLaboral);
             this.tabLaborales.Controls.Add(this.lblFaltanCampos2);
             this.tabLaborales.Controls.Add(this.btnMasLaborales1);
@@ -1463,6 +1463,22 @@
             this.tabLaborales.UseVisualStyleBackColor = true;
             this.tabLaborales.Click += new System.EventHandler(this.tabLaborales_Click);
             // 
+            // dgvLaboral
+            // 
+            this.dgvLaboral.AllowUserToAddRows = false;
+            this.dgvLaboral.AllowUserToDeleteRows = false;
+            this.dgvLaboral.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvLaboral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaboral.Location = new System.Drawing.Point(548, 29);
+            this.dgvLaboral.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvLaboral.Name = "dgvLaboral";
+            this.dgvLaboral.ReadOnly = true;
+            this.dgvLaboral.RowHeadersWidth = 51;
+            this.dgvLaboral.RowTemplate.Height = 24;
+            this.dgvLaboral.Size = new System.Drawing.Size(461, 395);
+            this.dgvLaboral.TabIndex = 100;
+            this.dgvLaboral.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLaboral_RowEnter);
+            // 
             // btnEliminarLaboral
             // 
             this.btnEliminarLaboral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(142)))), ((int)(((byte)(171)))));
@@ -1476,21 +1492,6 @@
             this.btnEliminarLaboral.Text = "Eliminar";
             this.btnEliminarLaboral.UseVisualStyleBackColor = false;
             this.btnEliminarLaboral.Click += new System.EventHandler(this.btnEliminarLaboral_Click);
-            // 
-            // dgvLaboral
-            // 
-            this.dgvLaboral.AllowUserToAddRows = false;
-            this.dgvLaboral.AllowUserToDeleteRows = false;
-            this.dgvLaboral.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvLaboral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaboral.Location = new System.Drawing.Point(561, 34);
-            this.dgvLaboral.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvLaboral.Name = "dgvLaboral";
-            this.dgvLaboral.ReadOnly = true;
-            this.dgvLaboral.RowHeadersWidth = 51;
-            this.dgvLaboral.RowTemplate.Height = 24;
-            this.dgvLaboral.Size = new System.Drawing.Size(407, 393);
-            this.dgvLaboral.TabIndex = 98;
             // 
             // btnAtrasLaboral
             // 
@@ -1860,7 +1861,6 @@
         private System.Windows.Forms.Button btnAtrasAcademico;
         private System.Windows.Forms.Button btnAtrasLaboral;
         private System.Windows.Forms.DataGridView dgvAcademico;
-        private System.Windows.Forms.DataGridView dgvLaboral;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button AgregarLaboral;
         private System.Windows.Forms.GroupBox grpIdiomas;
@@ -1876,5 +1876,6 @@
         private System.Windows.Forms.Button btnPdf;
         private System.Windows.Forms.LinkLabel lnkAtras;
         public System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView dgvLaboral;
     }
 }

@@ -1308,4 +1308,7 @@
   <data name="lblNombreApellido" xml:space="preserve">
     <value>Nombre y apellido</value>
   </data>
+  <data name="btnCrearContrasenia" xml:space="preserve">
+    <value>Generar</value>
+  </data>
 </root>

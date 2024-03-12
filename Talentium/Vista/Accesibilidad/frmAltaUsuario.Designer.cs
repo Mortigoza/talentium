@@ -281,15 +281,15 @@
             // 
             // btnCrearContrasenia
             // 
-            this.btnCrearContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
+            this.btnCrearContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(171)))), ((int)(((byte)(202)))));
             this.btnCrearContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearContrasenia.ForeColor = System.Drawing.Color.White;
-            this.btnCrearContrasenia.Location = new System.Drawing.Point(209, 393);
+            this.btnCrearContrasenia.ForeColor = System.Drawing.Color.Black;
+            this.btnCrearContrasenia.Location = new System.Drawing.Point(209, 394);
             this.btnCrearContrasenia.Name = "btnCrearContrasenia";
-            this.btnCrearContrasenia.Size = new System.Drawing.Size(30, 30);
+            this.btnCrearContrasenia.Size = new System.Drawing.Size(83, 29);
             this.btnCrearContrasenia.TabIndex = 18;
-            this.btnCrearContrasenia.Text = "R";
+            this.btnCrearContrasenia.Text = "Generar";
             this.btnCrearContrasenia.UseVisualStyleBackColor = false;
             this.btnCrearContrasenia.Click += new System.EventHandler(this.btnCrearContrasenia_Click);
             // 
@@ -299,7 +299,7 @@
             this.btnAsignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisos.Location = new System.Drawing.Point(518, 390);
+            this.btnAsignarPermisos.Location = new System.Drawing.Point(559, 387);
             this.btnAsignarPermisos.Name = "btnAsignarPermisos";
             this.btnAsignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisos.TabIndex = 19;
@@ -313,7 +313,7 @@
             this.btnDesasignarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDesasignarPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisos.Location = new System.Drawing.Point(518, 431);
+            this.btnDesasignarPermisos.Location = new System.Drawing.Point(559, 428);
             this.btnDesasignarPermisos.Name = "btnDesasignarPermisos";
             this.btnDesasignarPermisos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisos.TabIndex = 20;
@@ -325,7 +325,7 @@
             // 
             this.lstPermisos.BackColor = System.Drawing.Color.White;
             this.lstPermisos.FormattingEnabled = true;
-            this.lstPermisos.Location = new System.Drawing.Point(296, 344);
+            this.lstPermisos.Location = new System.Drawing.Point(337, 341);
             this.lstPermisos.Name = "lstPermisos";
             this.lstPermisos.Size = new System.Drawing.Size(216, 173);
             this.lstPermisos.TabIndex = 23;
@@ -335,7 +335,7 @@
             // 
             this.lstPermisosAsignados.BackColor = System.Drawing.Color.White;
             this.lstPermisosAsignados.FormattingEnabled = true;
-            this.lstPermisosAsignados.Location = new System.Drawing.Point(564, 344);
+            this.lstPermisosAsignados.Location = new System.Drawing.Point(605, 341);
             this.lstPermisosAsignados.Name = "lstPermisosAsignados";
             this.lstPermisosAsignados.Size = new System.Drawing.Size(216, 173);
             this.lstPermisosAsignados.TabIndex = 24;
@@ -378,7 +378,7 @@
             this.btnAsignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(518, 344);
+            this.btnAsignarPermisosTodos.Location = new System.Drawing.Point(559, 341);
             this.btnAsignarPermisosTodos.Name = "btnAsignarPermisosTodos";
             this.btnAsignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignarPermisosTodos.TabIndex = 28;
@@ -392,7 +392,7 @@
             this.btnDesasignarPermisosTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDesasignarPermisosTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarPermisosTodos.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(518, 477);
+            this.btnDesasignarPermisosTodos.Location = new System.Drawing.Point(559, 474);
             this.btnDesasignarPermisosTodos.Name = "btnDesasignarPermisosTodos";
             this.btnDesasignarPermisosTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDesasignarPermisosTodos.TabIndex = 29;
