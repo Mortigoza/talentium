@@ -1,4 +1,5 @@
 ﻿using Comun;
+using DocumentFormat.OpenXml.Wordprocessing;
 using LogicaNegocio.Accesibilidad;
 using System;
 using System.Collections.Generic;
@@ -360,7 +361,15 @@ namespace Vista.Accesibilidad
         {
             txtNacionalidad.Clear();
         }
-
+        private void dtgNacionalidad_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgNacionalidad.Rows[e.RowIndex].Selected = true;
+                btnNacionalidadMod.Enabled = true;
+                btnBajaNacionalidad.Enabled = true;
+            }
+        }
         private void btnNacioGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNacionalidad.Text))
@@ -473,8 +482,8 @@ namespace Vista.Accesibilidad
         }
         private void dtgNacionalidad_SelectionChanged(object sender, EventArgs e)
         {
-            btnNacionalidadMod.Enabled = dtgNacionalidad.SelectedRows.Count > 0;
-            btnBajaNacionalidad.Enabled = dtgNacionalidad.SelectedRows.Count > 0;
+            txtNacioMod.Clear();
+            grpNacioMod.Enabled = false;
         }
         public void CargarDataGridNacionalidad()
         {
@@ -551,6 +560,15 @@ namespace Vista.Accesibilidad
                 }
             }
         }
+        private void dtgGenero_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgGenero.Rows[e.RowIndex].Selected = true;
+                btnGeneroMod.Enabled = true;
+                btnBajaGenero.Enabled = true;
+            }
+        }
         private void btnBajaGenero_Click(object sender, EventArgs e)
         {
             if (dtgGenero.SelectedRows.Count > 0)
@@ -593,8 +611,8 @@ namespace Vista.Accesibilidad
         }
         private void dtgGenero_SelectionChanged(object sender, EventArgs e)
         {
-            btnGeneroMod.Enabled = dtgGenero.SelectedRows.Count > 0;
-            btnBajaGenero.Enabled = dtgGenero.SelectedRows.Count > 0;
+            txtGeneroMod.Clear();
+            grpModificarGenero.Enabled = false;
         }
         private void dtgGenero_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -620,6 +638,15 @@ namespace Vista.Accesibilidad
         private void btnCancelarAltaIdioma_Click(object sender, EventArgs e)
         {
             txtIdiomasAlta.Clear();
+        }
+        private void dtgIdiomas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgIdiomas.Rows[e.RowIndex].Selected = true;
+                btnModIdiomas.Enabled = true;
+                btnBajaIdiomas.Enabled = true;
+            }
         }
         public void CargarDataGridIdioma()
         {
@@ -700,8 +727,8 @@ namespace Vista.Accesibilidad
 
         private void dtgIdiomas_SelectionChanged(object sender, EventArgs e)
         {
-            btnModIdiomas.Enabled = dtgIdiomas.SelectedRows.Count > 0;
-            btnBajaIdiomas.Enabled = dtgIdiomas.SelectedRows.Count > 0;
+            txtIdiomaMod.Clear();
+            grpModificarIdioma.Enabled=false;
         }
 
         private void txtIdiomasAlta_KeyPress(object sender, KeyPressEventArgs e)
@@ -764,7 +791,15 @@ namespace Vista.Accesibilidad
         {
             txtAreaAlta.Clear();
         }
-
+        private void dtgArea_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgArea.Rows[e.RowIndex].Selected = true;
+                btnModificarArea.Enabled = true;
+                btnBajaArea.Enabled = true;
+            }
+        }
         private void btnGuardarAltaArea_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAreaAlta.Text))
@@ -864,8 +899,8 @@ namespace Vista.Accesibilidad
 
         private void dtgArea_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificarArea.Enabled = dtgArea.SelectedRows.Count > 0;
-            btnBajaArea.Enabled = dtgArea.SelectedRows.Count > 0;
+            txtAreaMod.Clear();
+            grpModificarArea.Enabled = false;
         }
 
         private void txtAreaAlta_KeyPress(object sender, KeyPressEventArgs e)
@@ -1012,11 +1047,19 @@ namespace Vista.Accesibilidad
                 txtPuestoModificar.Text = dtgPuesto.SelectedCells[1].Value.ToString();
             }
         }
-
+        private void dtgPuesto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgPuesto.Rows[e.RowIndex].Selected = true;
+                btnModificarPuesto.Enabled = true;
+                btnBajaPuesto.Enabled = true;
+            }
+        }
         private void dtgPuesto_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificarPuesto.Enabled = dtgPuesto.SelectedRows.Count > 0;
-            btnBajaPuesto.Enabled = dtgPuesto.SelectedRows.Count > 0;
+            txtPuestoModificar.Clear();
+            grpModificarPuesto.Enabled = false;
         }
         public void CargarDataGridPuesto()
         {
@@ -1037,8 +1080,6 @@ namespace Vista.Accesibilidad
 
         private void dtgDocumento_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //txtDocumentoMod.Clear();
-            //grpModificar.Enabled = false;
         }
 
         

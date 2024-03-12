@@ -735,6 +735,7 @@
             this.dtgNacionalidad.RowTemplate.Height = 24;
             this.dtgNacionalidad.Size = new System.Drawing.Size(295, 250);
             this.dtgNacionalidad.TabIndex = 7;
+            this.dtgNacionalidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNacionalidad_CellClick);
             this.dtgNacionalidad.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNacionalidad_CellDoubleClick);
             this.dtgNacionalidad.SelectionChanged += new System.EventHandler(this.dtgNacionalidad_SelectionChanged);
             // 
@@ -921,6 +922,7 @@
             this.dtgGenero.RowTemplate.Height = 24;
             this.dtgGenero.Size = new System.Drawing.Size(295, 250);
             this.dtgGenero.TabIndex = 7;
+            this.dtgGenero.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGenero_CellClick);
             this.dtgGenero.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGenero_CellDoubleClick);
             this.dtgGenero.SelectionChanged += new System.EventHandler(this.dtgGenero_SelectionChanged);
             // 
@@ -1108,6 +1110,7 @@
             this.dtgIdiomas.RowTemplate.Height = 24;
             this.dtgIdiomas.Size = new System.Drawing.Size(295, 250);
             this.dtgIdiomas.TabIndex = 12;
+            this.dtgIdiomas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIdiomas_CellClick);
             this.dtgIdiomas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIdiomas_CellContentDoubleClick);
             this.dtgIdiomas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgIdiomas_CellDoubleClick);
             this.dtgIdiomas.SelectionChanged += new System.EventHandler(this.dtgIdiomas_SelectionChanged);
@@ -1296,6 +1299,7 @@
             this.dtgArea.RowTemplate.Height = 24;
             this.dtgArea.Size = new System.Drawing.Size(295, 250);
             this.dtgArea.TabIndex = 17;
+            this.dtgArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgArea_CellClick);
             this.dtgArea.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgArea_CellDoubleClick);
             this.dtgArea.SelectionChanged += new System.EventHandler(this.dtgArea_SelectionChanged);
             // 
@@ -1484,6 +1488,7 @@
             this.dtgPuesto.RowTemplate.Height = 24;
             this.dtgPuesto.Size = new System.Drawing.Size(295, 250);
             this.dtgPuesto.TabIndex = 17;
+            this.dtgPuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPuesto_CellClick);
             this.dtgPuesto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPuesto_CellDoubleClick);
             this.dtgPuesto.SelectionChanged += new System.EventHandler(this.dtgPuesto_SelectionChanged);
             // 
