@@ -136,3 +136,4 @@ C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\es-
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.exe
 C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.pdb
+C:\Users\diana\Desktop\Cecilia\Talentium\talentium\Talentium\Vista\obj\Debug\Vista.Bitacora.frmBitacora.resources
