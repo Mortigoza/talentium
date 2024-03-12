@@ -174,36 +174,7 @@ namespace Vista.Accesibilidad
                         MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
-
             }
-            //DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
-            //int idRegistroSeleccionado = Convert.ToInt32(filaSeleccionada.Cells["id_entrevista"].Value);
-
-            //if (dtgEntrevistas.SelectedRows.Count > 0)
-            //{
-            //    DialogResult resultado = MessageBox.Show("¿Queres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
-
-            //    if (resultado == DialogResult.OK)
-            //    {
-            //        if (logicaEntrevista.EliminarEntrevista(idRegistroSeleccionado) == false)
-            //        {
-            //            MessageBox.Show("La entrevista ha sido eliminada con éxito.");
-            //            CargarDataGrid();
-            //        } else
-            //        {
-            //            MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
-            //        }
-
-
-            //    }
-            //    else if (resultado == DialogResult.Cancel)
-            //    {
-            //        MessageBox.Show("Se ha cancelado la operación.");
-            //    }
-            //} else
-            //{
-            //    MessageBox.Show("Debe seleccionar un registro.");
-            //}
         }
 
         private void dtgEntrevistas_SelectionChanged(object sender, EventArgs e)

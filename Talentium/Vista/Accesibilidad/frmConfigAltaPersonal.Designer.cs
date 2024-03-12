@@ -361,6 +361,7 @@
             this.dtgDocumento.Size = new System.Drawing.Size(295, 250);
             this.dtgDocumento.TabIndex = 2;
             this.dtgDocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellClick);
+            this.dtgDocumento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellContentClick);
             this.dtgDocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDocumento_CellDoubleClick);
             this.dtgDocumento.SelectionChanged += new System.EventHandler(this.dtgDocumento_SelectionChanged);
             // 
@@ -547,6 +548,7 @@
             this.dtgTelefono.RowTemplate.Height = 24;
             this.dtgTelefono.Size = new System.Drawing.Size(295, 250);
             this.dtgTelefono.TabIndex = 7;
+            this.dtgTelefono.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTelefono_CellClick);
             this.dtgTelefono.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTelefono_CellDoubleClick);
             this.dtgTelefono.SelectionChanged += new System.EventHandler(this.dtgTelefono_SelectionChanged);
             // 

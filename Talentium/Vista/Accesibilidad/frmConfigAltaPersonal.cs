@@ -26,6 +26,7 @@ namespace Vista.Accesibilidad
             grpNacioMod.Enabled = false;
             grpModificarGenero.Enabled = false;
             grpModificarIdioma.Enabled = false;
+            // Cargo todos los Data Grid View
             CargarDataGrid();
             CargarDataGridTipoTel();
             CargarDataGridNacionalidad();
@@ -33,55 +34,23 @@ namespace Vista.Accesibilidad
             CargarDataGridIdioma();
             CargarDataGridArea();
             CargarDataGridPuesto();
-            // Config data grid Tipo de documento
-            dtgDocumento.AutoGenerateColumns = false;
-            dtgDocumento.AllowUserToAddRows = false;
-            dtgDocumento.MultiSelect = false;
-            dtgDocumento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgDocumento.ReadOnly = true;
-            dtgDocumento.RowHeadersVisible = false;
-            // Config data grid Tipo de teléfono
-            dtgTelefono.AutoGenerateColumns = false;
-            dtgTelefono.AllowUserToAddRows = false;
-            dtgTelefono.MultiSelect = false;
-            dtgTelefono.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgTelefono.ReadOnly = true;
-            dtgTelefono.RowHeadersVisible = false;
-            // Config data grid Nacionalidad
-            dtgNacionalidad.AutoGenerateColumns = false;
-            dtgNacionalidad.AllowUserToAddRows = false;
-            dtgNacionalidad.MultiSelect = false;
-            dtgNacionalidad.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgNacionalidad.ReadOnly = true;
-            dtgNacionalidad.RowHeadersVisible = false;
-            // Config data grid Género
-            dtgGenero.AutoGenerateColumns = false;
-            dtgGenero.AllowUserToAddRows = false;
-            dtgGenero.MultiSelect = false;
-            dtgGenero.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgGenero.ReadOnly = true;
-            dtgGenero.RowHeadersVisible = false;
-            // Config data grid Idioma
-            dtgIdiomas.AutoGenerateColumns = false;
-            dtgIdiomas.AllowUserToAddRows = false;
-            dtgIdiomas.MultiSelect = false;
-            dtgIdiomas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgIdiomas.ReadOnly = true;
-            dtgIdiomas.RowHeadersVisible = false;
-            // Config data grid Área
-            dtgArea.AutoGenerateColumns = false;
-            dtgArea.AllowUserToAddRows = false;
-            dtgArea.MultiSelect = false;
-            dtgArea.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgArea.ReadOnly = true;
-            dtgArea.RowHeadersVisible = false;
-            // Config data grid Puesto
-            dtgPuesto.AutoGenerateColumns = false;
-            dtgPuesto.AllowUserToAddRows = false;
-            dtgPuesto.MultiSelect = false;
-            dtgPuesto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgPuesto.ReadOnly = true;
-            dtgPuesto.RowHeadersVisible = false;
+            // Configuraciones para todos los Data Grid View
+            ConfigurarDataGridView(dtgDocumento);
+            ConfigurarDataGridView(dtgTelefono);
+            ConfigurarDataGridView(dtgNacionalidad);
+            ConfigurarDataGridView(dtgGenero);
+            ConfigurarDataGridView(dtgIdiomas);
+            ConfigurarDataGridView(dtgArea);
+            ConfigurarDataGridView(dtgPuesto);
+        }
+        private void ConfigurarDataGridView(DataGridView dtg)
+        {
+            dtg.AutoGenerateColumns = false;
+            dtg.AllowUserToAddRows = false;
+            dtg.MultiSelect = false;
+            dtg.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtg.ReadOnly = true;
+            dtg.RowHeadersVisible = false;
         }
         private void NavigateTabs(int offset)
         {
@@ -167,6 +136,8 @@ namespace Vista.Accesibilidad
 
         private void dtgDocumento_SelectionChanged(object sender, EventArgs e)
         {
+            txtDocumentoMod.Clear();
+            grpModificar.Enabled = false;
         }
         private void dtgDocumento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -270,6 +241,15 @@ namespace Vista.Accesibilidad
                 txtTelefonoAlta.Clear();
             }
         }
+        private void dtgTelefono_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgTelefono.Rows[e.RowIndex].Selected = true;
+                btnModificarTel.Enabled = true;
+                btnBajaTel.Enabled = true;
+            }
+        }
         public void CargarDataGridTipoTel()
         {
             DataTable tipoTel = config.ObtenerTipoTel();
@@ -308,8 +288,8 @@ namespace Vista.Accesibilidad
         }
         private void dtgTelefono_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificarTel.Enabled = dtgTelefono.SelectedRows.Count > 0;
-            btnBajaTel.Enabled = dtgTelefono.SelectedRows.Count > 0;
+            txtTipoTelMod.Clear();
+            grpModificarTel.Enabled = false;
         }
         private void dtgTelefono_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1054,5 +1034,13 @@ namespace Vista.Accesibilidad
         {
             this.Dispose();
         }
+
+        private void dtgDocumento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //txtDocumentoMod.Clear();
+            //grpModificar.Enabled = false;
+        }
+
+        
     }
 }
