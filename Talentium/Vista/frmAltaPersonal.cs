@@ -1502,26 +1502,30 @@ namespace Vista
 
         private void btnEliminarAcademico_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una fila seleccionada en el DataGridView
-            if (dgvAcademico.SelectedRows.Count > 0 )
+            DialogResult contiunar = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (contiunar == DialogResult.Yes)
             {
-                // Obtener el índice de la fila seleccionada
-                int indiceFilaSeleccionada = dgvAcademico.SelectedRows[0].Index;
+                // Verificar si hay una fila seleccionada en el DataGridView
+                if (dgvAcademico.SelectedRows.Count > 0)
+                {
+                    // Obtener el índice de la fila seleccionada
+                    int indiceFilaSeleccionada = dgvAcademico.SelectedRows[0].Index;
 
-                // Eliminar la fila seleccionada del DataGridView
-                infoAcademic.RemoveAt(indiceFilaSeleccionada);
-                mostrarProgresoNivel.RemoveAt(indiceFilaSeleccionada);
-                dgvAcademico.DataSource = null;
-                dgvAcademico.DataSource = mostrarProgresoNivel;
-                UtilidadesForms.TraducirColumnasDtg(ref dgvAcademico);
+                    // Eliminar la fila seleccionada del DataGridView
+                    infoAcademic.RemoveAt(indiceFilaSeleccionada);
+                    mostrarProgresoNivel.RemoveAt(indiceFilaSeleccionada);
+                    dgvAcademico.DataSource = null;
+                    dgvAcademico.DataSource = mostrarProgresoNivel;
+                    UtilidadesForms.TraducirColumnasDtg(ref dgvAcademico);
 
-                //// Eliminar el elemento correspondiente de la lista
+                    //// Eliminar el elemento correspondiente de la lista
 
-            }
-            else
-            {
-                // Si no hay una fila seleccionada o es la última fila, mostrar un mensaje indicando al usuario que seleccione una fila válida
-                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Si no hay una fila seleccionada o es la última fila, mostrar un mensaje indicando al usuario que seleccione una fila válida
+                    MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -1571,20 +1575,24 @@ namespace Vista
         }
         private void btnEliminarLaboral_Click(object sender, EventArgs e)
         {
-            if (dgvLaboral.SelectedRows.Count > 0 )
+            DialogResult contiunar = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (contiunar == DialogResult.Yes)
             {
-       
-                int indiceFilaSeleccionada = dgvLaboral.SelectedRows[0].Index;
+                if (dgvLaboral.SelectedRows.Count > 0)
+                {
 
-                infoLabora.RemoveAt(indiceFilaSeleccionada);
-                dgvLaboral.DataSource = null;
-                dgvLaboral.DataSource = infoLabora;
-                UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
+                    int indiceFilaSeleccionada = dgvLaboral.SelectedRows[0].Index;
 
-            }
-            else
-            {
-                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    infoLabora.RemoveAt(indiceFilaSeleccionada);
+                    dgvLaboral.DataSource = null;
+                    dgvLaboral.DataSource = infoLabora;
+                    UtilidadesForms.TraducirColumnasDtg(ref dgvLaboral);
+
+                }
+                else
+                {
+                    MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -1665,21 +1673,25 @@ namespace Vista
         }
         private void btnEliminarIdioma_Click(object sender, EventArgs e)
         {
-         
-            if (dgvIdioma.SelectedRows.Count > 0 )
+
+            DialogResult contiunar = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (contiunar == DialogResult.Yes)
             {
-                // Obtener el índice de la fila seleccionada
-                int indiceFilaSeleccionada = dgvIdioma.SelectedRows[0].Index;
-                infoIdiom.RemoveAt(indiceFilaSeleccionada);
-                mostrarIdioma.RemoveAt(indiceFilaSeleccionada);
-                dgvIdioma.DataSource = null;
-                dgvIdioma.DataSource = mostrarIdioma;
-                UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
-            }
-            else
-            {
-                // Si no hay una fila seleccionada, mostrar un mensaje indicando al usuario que seleccione una fila primero
-                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dgvIdioma.SelectedRows.Count > 0)
+                {
+                    // Obtener el índice de la fila seleccionada
+                    int indiceFilaSeleccionada = dgvIdioma.SelectedRows[0].Index;
+                    infoIdiom.RemoveAt(indiceFilaSeleccionada);
+                    mostrarIdioma.RemoveAt(indiceFilaSeleccionada);
+                    dgvIdioma.DataSource = null;
+                    dgvIdioma.DataSource = mostrarIdioma;
+                    UtilidadesForms.TraducirColumnasDtg(ref dgvIdioma);
+                }
+                else
+                {
+                    // Si no hay una fila seleccionada, mostrar un mensaje indicando al usuario que seleccione una fila primero
+                    MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
