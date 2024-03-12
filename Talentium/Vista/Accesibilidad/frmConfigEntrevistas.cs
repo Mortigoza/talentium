@@ -53,8 +53,9 @@ namespace Vista.Accesibilidad
                 }
                 else
                 {
-                    MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+                    MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
                     txtNombreEntrevista.Clear();
+                    txtInstancia.Clear();
                 }
             }
         }
@@ -121,7 +122,7 @@ namespace Vista.Accesibilidad
                         {
                             bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
 
-                            if (modificacionExitosa)
+                            if (!modificacionExitosa)
                             {
                                 MessageBox.Show("Modificación de entrevista exitosa");
                                 txtModNombre.Clear();
@@ -130,7 +131,7 @@ namespace Vista.Accesibilidad
                             }
                             else
                             {
-                                MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+                                MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
                                 txtModNombre.Clear();
                                 txtInstanciaMod.Clear();
                             }
