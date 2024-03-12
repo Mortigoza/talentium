@@ -112,5 +112,36 @@ namespace Comun
 
             return codigoGenerado;
         }
+        public static bool VerificarCuiCuil(string cuiCuil)
+        {
+            if (cuiCuil.Length != 11)
+            {
+                return false;
+            }
+
+            int[] coeficientes = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
+            int suma = 0;
+
+            for (int i = 0; i < coeficientes.Length; i++)
+            {
+                suma += int.Parse(cuiCuil[i].ToString()) * coeficientes[i];
+            }
+
+            int resto = suma % 11;
+            int digitoVerificador = 11 - resto;
+
+            if (resto == 0)
+            {
+                return int.Parse(cuiCuil[10].ToString()) == 0;
+            }
+            else if (resto == 1)
+            {
+                return int.Parse(cuiCuil[10].ToString()) == 1;
+            }
+            else
+            {
+                return int.Parse(cuiCuil[10].ToString()) == digitoVerificador;
+            }
+        }
     }
 }

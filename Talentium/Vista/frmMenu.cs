@@ -388,5 +388,19 @@ namespace Vista
             frm.ShowDialog();
             this.Show();
         }
+
+        private void frmMenu_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                tmrMouse.Enabled = true;
+                tmrMouseQuieto.Enabled = true;
+            }
+            else
+            {
+                tmrMouse.Enabled = false;
+                tmrMouseQuieto.Enabled = false;
+            }
+        }
     }
 }

@@ -60,11 +60,11 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeAltaDelPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.Button();
             this.tmrMouse = new System.Windows.Forms.Timer(this.components);
             this.tmrMouseQuieto = new System.Windows.Forms.Timer(this.components);
@@ -327,13 +327,6 @@
             this.configuraciónToolStripMenuItem.Text = "Seguridad";
             this.configuraciónToolStripMenuItem.Click += new System.EventHandler(this.configuraciónToolStripMenuItem_Click);
             // 
-            // cambioDeContraseñaToolStripMenuItem
-            // 
-            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
-            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
-            this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
-            // 
             // recursosToolStripMenuItem
             // 
             this.recursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -363,6 +356,13 @@
             this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
+            // cambioDeContraseñaToolStripMenuItem
+            // 
+            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
+            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
+            this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
             // btnLogout
             // 
@@ -426,6 +426,7 @@
             this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
+            this.VisibleChanged += new System.EventHandler(this.frmMenu_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

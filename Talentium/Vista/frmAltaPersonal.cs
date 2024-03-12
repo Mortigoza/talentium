@@ -272,37 +272,23 @@ namespace Vista
             string cuilIngresado = txtCuitCuil.Text;
             if (string.IsNullOrWhiteSpace(txtCuitCuil.Text))
             {
-                
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
             else
             {
                 // Verificar si la entrada contiene solo números y tiene exactamente 11 dígitos
                 if (EsNumero(txtCuitCuil.Text))
                 {
-                    if (txtCuitCuil.Text.Length == 11)
+                    bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
+                    if (valor)
                     {
-                        bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
-                        if (valor)
-                        {
-                            DeshabilitarCampos(this);
-                            
-                            MessageBox.Show(Errores.CuitEnUso,Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
-                        else
-                        {
-               
-                            HabilitarCampos(this);
-                            txtCuitCuil.Enabled = false;
-                            pctFoto.Enabled = true;
-                        }
+                        HabilitarCampos(this);
+                        txtCuitCuil.Enabled = false;
+                        pctFoto.Enabled = true;
                     }
                     else
                     {
                         DeshabilitarCampos(this);
-                        MessageBox.Show(Errores.CampoMinimo11, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }

@@ -8,6 +8,9 @@ using System.Data;
 using System.Data.SqlClient;
 using Comun;
 using AccesoDatos.Administracion_Personal;
+using LogicaNegocio.Lenguajes;
+using System.Windows.Forms;
+
 namespace LogicaNegocio.Administracion_Del_Personal
 {
     public class CN_AdministracionDatosPersonal
@@ -58,8 +61,22 @@ namespace LogicaNegocio.Administracion_Del_Personal
         //se crea instancia y se almacena en "AccesoDatos"
         public bool ValidarCuit(string cuit_cuil)
         {
-            return AccesoDatos.ValidarCuit(cuit_cuil);
-            
+            if (cuit_cuil.Length != 11)
+            {
+                MessageBox.Show(Errores.CampoMinimo11, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!Seguridad.VerificarCuiCuil(cuit_cuil))
+            {
+                MessageBox.Show(Errores.CuilIncorrecto, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (AccesoDatos.ValidarCuit(cuit_cuil))
+            {
+                MessageBox.Show(Errores.CuitEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         //CONSULTAS
