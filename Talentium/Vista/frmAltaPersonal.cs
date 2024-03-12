@@ -73,7 +73,7 @@ namespace Vista
                 lblConvenio.Visible = false; cmbConvenio.Visible = false;
             }
             else { dttFechaAlta.Visible = true; btnPdf.Visible = false; lblFechaDeIngreso.Visible = true; }
-            DeshabilitarCampos();
+            DeshabilitarCampos(this);
 
             this.esCandidato = esCandidato;
             this.esReactivicacion = false;
@@ -286,7 +286,7 @@ namespace Vista
                         bool valor = logicaPersona.ValidarCuit(txtCuitCuil.Text.Trim());
                         if (valor)
                         {
-                            DeshabilitarCampos();
+                            DeshabilitarCampos(this);
                             
                             MessageBox.Show(Errores.CuitEnUso,Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -294,14 +294,14 @@ namespace Vista
                         else
                         {
                
-                            HabilitarCampos();
+                            HabilitarCampos(this);
                             txtCuitCuil.Enabled = false;
                             pctFoto.Enabled = true;
                         }
                     }
                     else
                     {
-                        DeshabilitarCampos();
+                        DeshabilitarCampos(this);
                         MessageBox.Show(Errores.CampoMinimo11, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
@@ -766,55 +766,39 @@ namespace Vista
                 }
             }            
         }
-        public void HabilitarCampos()
+        public void HabilitarCampos(Control control)
         {
-
-
-            foreach (TabPage tabPage in tabControl.TabPages)
+            foreach (Control c in control.Controls)
             {
-                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
+                if (c is GroupBox | c is Panel | c is TabControl)
                 {
-                    foreach (Control control in groupBox.Controls)
-                    {
-                      
-                        grpNivelIdiomas.Enabled = true;
-                        btnContinuar1.Enabled = true;
-                        btnContinuar2.Enabled = true;
-                        btnEditarImagen.Enabled = true;
-                        btnEliminarImagen.Enabled = true;
-
-                        control.Enabled = true; // Habilitar todos los controles dentro del GroupBox
-                    }
+                    HabilitarCampos(c);
                 }
+                c.Enabled = true;
             }
+            grpNivelIdiomas.Enabled = true;
+            btnContinuar1.Enabled = true;
+            btnContinuar2.Enabled = true;
+            btnEditarImagen.Enabled = true;
+            btnEliminarImagen.Enabled = true;
         }
-        public void DeshabilitarCampos()
+        public void DeshabilitarCampos(Control control)
         {
-
-            foreach (TabPage tabPage in tabControl.TabPages)
+            foreach (Control c in control.Controls)
             {
-                foreach (GroupBox groupBox in tabPage.Controls.OfType<GroupBox>())
+                if (c is GroupBox | c is Panel | c is TabControl)
                 {
-                    foreach (Control control in groupBox.Controls)
-                    {
-                        if ((control is TextBox || control is ComboBox || control is NumericUpDown || control is DateTimePicker) && control != txtCuitCuil)
-                        {
-                            //grpEspaniol.Enabled = false;
-                            grpNivelIdiomas.Enabled = false;
-                         
-                            btnContinuar1.Enabled = false;
-                            btnEditarImagen.Enabled = false;
-                            btnEliminarImagen.Enabled = false;
-                            
-                            control.Enabled = false; // Deshabilitar todos los TextBox y ComboBox excepto el TextBox específico
-
-                        }
-                    }
+                    DeshabilitarCampos(c);
+                }
+                if ((c is TextBox | c is ComboBox | c is NumericUpDown | c is DateTimePicker) && c != txtCuitCuil)
+                {
+                    c.Enabled = false;
                 }
             }
-
-
-
+            grpNivelIdiomas.Enabled = false;
+            btnContinuar1.Enabled = false;
+            btnEditarImagen.Enabled = false;
+            btnEliminarImagen.Enabled = false;
         }
         private void BotonesInvisibles()
         {
@@ -1071,7 +1055,7 @@ namespace Vista
             
             tabControl.TabPages[1].Enabled = true;
             tabControl.TabPages[2].Enabled = true;
-            DeshabilitarCampos();
+            DeshabilitarCampos(this);
             BotonesInvisibles();
 
             btnPdf.Visible = pdf;
@@ -1229,7 +1213,7 @@ namespace Vista
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
             BotonesInvisiblesModificacion();
-            HabilitarCampos();
+            HabilitarCampos(this);
             btnContinuar1.Visible = true;
             btnContinuar2.Visible = true;
             btnAtrasAcademico.Visible = true;
