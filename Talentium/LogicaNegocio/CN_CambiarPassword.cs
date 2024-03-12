@@ -11,6 +11,27 @@ namespace LogicaNegocio
     public class CN_CambiarPassword
     {
         CD_AccesoBD acceso = new CD_AccesoBD();
+        private bool allow;
+        private bool _esNuevo;
+        private DataTable preguntas;
+
+        public bool Allow
+        {
+            get { return allow; }
+            set { allow = false; }
+        }
+        public bool _EsNuevo
+        {
+            get { return _esNuevo; }
+            set { _esNuevo = false; }
+        }
+        public DataTable Preguntas
+        {
+            get { return preguntas; }
+            set { preguntas = value; }
+        }
+        
+
         public DataTable ObtenerTodasPregutasSeg()
         {
             return acceso.ConsultarTodasPregSeg();

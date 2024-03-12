@@ -16,6 +16,39 @@ namespace LogicaNegocio
         public object IdArea { get; set; }
         public DataTable Capacitaciones { get; set; }
 
+        private DataTable dt;
+        private DataTable dtLeft;
+        private DataTable dtRight;
+        private DataTable dtListaBd;// Almacena las capacitaciones existentes en la bd
+
+        private object idPersona;
+
+        public DataTable DtLeft
+        {
+            get { return dtLeft; }
+            set { dtLeft = value; }
+        }
+        public DataTable DtRight
+        {
+            get { return dtRight; }
+            set { dtRight = value; }
+        }
+        public DataTable Dt
+        {
+            get { return dt; }
+            set { dt = value; }
+        }
+        public DataTable DtListaBd
+        {
+            get { return dtListaBd; }
+            set { dtListaBd = value; }
+        }
+        public object IdPers
+        {
+            get { return idPersona; }
+            set { idPersona = value; }
+        }
+
         CD_AccesoBD acceso = new CD_AccesoBD();
         CD_AsignarCapacitaciones cd_asignar = new CD_AsignarCapacitaciones();
         public DataTable ConsultarAreas()

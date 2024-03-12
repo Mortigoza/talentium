@@ -20,25 +20,23 @@ namespace Vista
     public partial class frmCambioPass : Form
     {
         CN_CambiarPassword pass = new CN_CambiarPassword();
-        private string rta;
-        private bool allow = false;
-        private bool _esNuevo = false;
+       
         public frmCambioPass(bool esNuevo = false)
         {
             InitializeComponent();
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
-            _esNuevo = esNuevo;
+            pass._EsNuevo = esNuevo;
             CN_PoliticaPassword config = new CN_PoliticaPassword();
             config.ConsultaPoliticaPass();
         }
         private void CambioDePass_Load(object sender, EventArgs e)
         {
             DataTable preguntas;
-            switch (_esNuevo)
+            switch (pass._EsNuevo)
             {
                 default:
                     cmbPreguntas.DroppedDown = false;
-                    preguntas = pass.ObtenerPregutasUsuarios();
+                    pass.Preguntas = pass.ObtenerPregutasUsuarios();
                     break;
 
                 case true:
@@ -47,13 +45,13 @@ namespace Vista
             }
             cmbPreguntas.ValueMember = "id_pregunta";
             cmbPreguntas.DisplayMember = (Properties.Settings.Default.Idioma == "es-AR") ? "pregunta" : "pregunta_eng";
-            cmbPreguntas.DataSource = preguntas;
+            cmbPreguntas.DataSource = pass.Preguntas;
             txtContra1.Focus();
 
         }
         private void continuar_Click(object sender, EventArgs e)
         {
-            if (pass.ValidarPass(_esNuevo, allow, txtContra1.Text, txtContra2.Text, txtRespuesta.Text, cmbPreguntas.SelectedValue))
+            if (pass.ValidarPass(pass._EsNuevo, pass.Allow, txtContra1.Text, txtContra2.Text, txtRespuesta.Text, cmbPreguntas.SelectedValue))
             {
                 CN_Bitacora.AltaBitacora("Cambio de contraseña", "UPDATE", this.Name);
                 this.Dispose();
@@ -62,9 +60,9 @@ namespace Vista
 
         private void tbContra1_Leave(object sender, EventArgs e)
         {
-            allow = (CN_Validaciones.ValCar(txtContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
+            pass.Allow = (CN_Validaciones.ValCar(txtContra1.Text, ConfigCache.caracteres, ConfigCache.mayusculas,
                 ConfigCache.numeros, ConfigCache.especiales, ConfigCache.passAnteriores, ConfigCache.noDatosPersonales));
-            if (allow)
+            if (pass.Allow)
             {
                 lblError.Visible = false;
             }

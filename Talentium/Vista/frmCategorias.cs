@@ -18,8 +18,8 @@ namespace Vista
     {
         
         CN_Categorias _categoria = new  CN_Categorias();
+        CategoriaDto categoria = new CategoriaDto();
 
-        private int id_categoria;
         public frmCategorias()
         {
             InitializeComponent();
@@ -41,10 +41,10 @@ namespace Vista
         private void CargarGrid()
         {
  
-            DataTable ObtenerCateogria = _categoria.ObtenerCategoria();
+            categoria.categorias = _categoria.ObtenerCategoria();
 
             DataTable dt = new DataTable();
-            dtgCategoria.DataSource = ObtenerCateogria;
+            dtgCategoria.DataSource = categoria.categorias;
             dtgCategoria.Columns["id_categoria"].Visible = false;
             UtilidadesForms.TraducirColumnasDtg(ref dtgCategoria);
 
@@ -67,7 +67,6 @@ namespace Vista
             }
             else
             {
-                CategoriaDto categoria = new CategoriaDto();
                 categoria.categoria = txtCategoria.Text;
                 categoria.jornada = int.Parse(txtJornada.Text);
                 categoria.sueldo = Decimal.Parse(txtSueldo.Text);
@@ -111,10 +110,10 @@ namespace Vista
             try
             {
 
-                int valor = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
-                bool eliminacionExitosa = _categoria.EliminarCategoria(valor);
+                categoria.valor = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+                categoria.eliminacionOk = _categoria.EliminarCategoria(categoria.valor);
 
-                if (eliminacionExitosa)
+                if (categoria.eliminacionOk)
                 {
                     MessageBox.Show("La categoria se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -152,11 +151,10 @@ namespace Vista
             {
 
 
-                    CategoriaDto categoriaDto = new CategoriaDto();
-                    categoriaDto.categoria = txtCategoriaModif.Text;
-                    categoriaDto.jornada = int.Parse(txtJornadaModif.Text);
-                    categoriaDto.sueldo = Decimal.Parse(txtSueldoModif.Text);
-                    _categoria.ModificarCategoria(categoriaDto, id_categoria);
+                    categoria.categoria = txtCategoriaModif.Text;
+                    categoria.jornada = int.Parse(txtJornadaModif.Text);
+                    categoria.sueldo = Decimal.Parse(txtSueldoModif.Text);
+                    _categoria.ModificarCategoria(categoria, categoria.idCategoria);
                     CargarGrid();
                     LimpiarControlesModificacion();
                     MessageBox.Show("La categoria se han modificado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -213,7 +211,7 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            id_categoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+            categoria.idCategoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
             txtCategoriaModif.Text = dtgCategoria.SelectedCells[1].Value.ToString();
             txtJornadaModif.Text = dtgCategoria.SelectedCells[2].Value.ToString();
             txtSueldoModif.Text = dtgCategoria.SelectedCells[3].Value.ToString();
@@ -228,7 +226,7 @@ namespace Vista
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewCell celda = dtgCategoria.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                id_categoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
+                categoria.idCategoria = int.Parse(dtgCategoria.SelectedCells[0].Value.ToString());
                 txtCategoriaModif.Text = dtgCategoria.SelectedCells[1].Value.ToString();
                 txtJornadaModif.Text = dtgCategoria.SelectedCells[2].Value.ToString();
                 txtSueldoModif.Text = dtgCategoria.SelectedCells[3].Value.ToString();

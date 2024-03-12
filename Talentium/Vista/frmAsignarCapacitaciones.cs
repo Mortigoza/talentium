@@ -16,9 +16,8 @@ namespace Vista
 {
     public partial class frmAsignarCapacitaciones : Form
     {
-        DataTable dtListaBd; // Almacena las capacitaciones existentes en la bd
         DataTable dtListaMem = new DataTable("Capacitaciones"); // Almacena las capacitaciones asignadas al empleado
-        private object _idPersona;
+       // private object _idPersona;
 
         CN_AsignarCapacitaciones cn_asignar = new CN_AsignarCapacitaciones();
         public frmAsignarCapacitaciones()
@@ -56,8 +55,8 @@ namespace Vista
             //lst, carga los dt en las listBox de capacitaciones
             lstCapacitaciones.DataSource = null;
             cn_asignar.IdArea = -1;
-            dtListaBd = cn_asignar.ConsultarCapacitaciones();
-            lstCapacitaciones.DataSource = dtListaBd;
+            cn_asignar.DtListaBd = cn_asignar.ConsultarCapacitaciones();
+            lstCapacitaciones.DataSource = cn_asignar.DtListaBd;
             lstCapacitaciones.ValueMember = "id_capacitaciones";
             lstCapacitaciones.DisplayMember = "capacitacion";
 
@@ -79,9 +78,9 @@ namespace Vista
             }
             else
             {
-                DataTable dt = cn_asignar.ConsultarPersonal(txtCuit.Text, txtNombre.Text, txtApellido.Text, cmbArea.SelectedValue);
+                cn_asignar.Dt = cn_asignar.ConsultarPersonal(txtCuit.Text, txtNombre.Text, txtApellido.Text, cmbArea.SelectedValue);
 
-                if (dt.Rows.Count == 0)
+                if (cn_asignar.Dt.Rows.Count == 0)
                 {
                     // Si el dtg es ejecutado y el filtrado no devuelve registros aparece un messagebox
                     MessageBox.Show(Errores.RegNoCoincide, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,7 +89,7 @@ namespace Vista
                 {
                     // Carga los registros en el dtg
                     dtgPersonas.DataSource = null;
-                    dtgPersonas.DataSource = dt;
+                    dtgPersonas.DataSource = cn_asignar.Dt;
                     dtgPersonas.Columns[0].Visible = false;
                     dtgPersonas.Columns[6].Visible = false;
                     UtilidadesForms.LimpiarControles(grpFiltro);
@@ -102,31 +101,32 @@ namespace Vista
 
         private void dtgPersonas_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _idPersona = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
+            cn_asignar.IdPers = dtgPersonas.Rows[e.RowIndex].Cells[0].Value;
 
             cn_asignar.IdArea = dtgPersonas.Rows[e.RowIndex].Cells[6].Value;
-            DataTable dtLeft = cn_asignar.ConsultarCapacitaciones();
-            cn_asignar.IdPersona = _idPersona;
-            DataTable dtRight = cn_asignar.ConsultarCapacitaciones(true);
-            UtilidadesForms.ConfigListbox(dtLeft, ref dtListaBd, ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, dtRight);
+            cn_asignar.DtLeft = cn_asignar.ConsultarCapacitaciones();
+            cn_asignar.IdPersona = cn_asignar.IdPers;
+            cn_asignar.DtRight = cn_asignar.ConsultarCapacitaciones(true);
+            var refe = cn_asignar.DtListaBd;
+            UtilidadesForms.ConfigListbox(cn_asignar.DtLeft, ref refe, ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, cn_asignar.DtRight);
         }
 
         private void btnAsignarCapacitacion_Click(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, cn_asignar.DtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
         }
         private void lstCapacitaciones_DoubleClick(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, cn_asignar.DtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
         }
 
         private void btnDesasignarCapacitacion_Click(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, cn_asignar.DtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
         }
         private void lstCapacitacionesAsignadas_DoubleClick(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, cn_asignar.DtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace Vista
                 cn_asignar.Capacitaciones = dtListaMem;
 
                 dtgPersonas.Refresh();
-                cn_asignar.IdPersona = _idPersona;
+                cn_asignar.IdPersona = cn_asignar.IdPers;
                 cn_asignar.AsignarCapacitaciones();
                 MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

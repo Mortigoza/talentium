@@ -12,8 +12,8 @@ namespace Vista
     {
         CN_Convenio _convenio = new CN_Convenio();
         CN_Categorias _categoria = new CN_Categorias();
-        private bool inicial = true;
-        private int id_convenio;
+        ConvenioDto convenio = new ConvenioDto();
+
 
 
         public frmConvenios()
@@ -32,16 +32,16 @@ namespace Vista
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (inicial)
+            if (convenio.inicial)
             {
                 return;
             }
             if (cmbCategoria.SelectedIndex != -1)
             {
-                string seleccion = cmbCategoria.SelectedValue.ToString();
-                DataTable categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
-                txtJornada.Text = categoria.Rows[0]["jornada"].ToString();
-                txtSueldo.Text = categoria.Rows[0]["sueldos"].ToString();
+                convenio.seleccion = cmbCategoria.SelectedValue.ToString();
+                convenio.categorias = _convenio.ObtenerCategoriaID(int.Parse(convenio.seleccion));
+                txtJornada.Text = convenio.categorias.Rows[0]["jornada"].ToString();
+                txtSueldo.Text = convenio.categorias.Rows[0]["sueldos"].ToString();
             }
             
             
@@ -51,9 +51,9 @@ namespace Vista
         private void CargarGrid()
         {
 
-            var ObtenerConvenio = _convenio.ObtenerConvenio();
+            convenio.convenios = _convenio.ObtenerConvenio();
 
-            dtgConvenio.DataSource = ObtenerConvenio;
+            dtgConvenio.DataSource = convenio.convenios;
             dtgConvenio.Columns["id_convenio"].Visible = false;
             dtgConvenio.Columns["id_convenio1"].Visible = false;
             dtgConvenio.Columns["id_categoria"].Visible = false;
@@ -66,16 +66,16 @@ namespace Vista
 
         private void frmConvenios_Load(object sender, EventArgs e)
         {
-            var ObtenerCateogria = _categoria.ObtenerCategoria();
-            cmbCategoria.DataSource = ObtenerCateogria;
+            convenio.cat = _categoria.ObtenerCategoria();
+            cmbCategoria.DataSource = convenio.cat;
             cmbCategoria.DisplayMember = "nombre_categoria";
             cmbCategoria.SelectedIndex = -1;
             cmbCategoria.ValueMember = "id_categoria";
-            cmbCateModif.DataSource = ObtenerCateogria.Copy();
+            cmbCateModif.DataSource = convenio.cat.Copy();
             cmbCateModif.DisplayMember = "nombre_categoria";
             cmbCateModif.SelectedIndex = -1;
             cmbCateModif.ValueMember = "id_categoria";
-            inicial = false;
+            convenio.inicial = false;
 
 
 
@@ -95,7 +95,6 @@ namespace Vista
             }
             else
             {
-                ConvenioDto convenio = new ConvenioDto();
                 convenio.convenio = txtConvenio.Text;
                 convenio.seguridad_salud = txtSeguridadSalud.Text;
                 convenio.obra_social = txtObraSocial.Text;
@@ -123,13 +122,12 @@ namespace Vista
             }
             else
             {
-                ConvenioDto convenioDto = new ConvenioDto();
-                convenioDto.convenio = txtConvenioModif.Text;
-                convenioDto.obra_social = txtObraSocialModif.Text;
-                convenioDto.seguridad_salud = txtSeguridadSaludModif.Text;
-                convenioDto.id_categoria = int.Parse(cmbCateModif.SelectedValue.ToString()); ;
+                convenio.convenio = txtConvenioModif.Text;
+                convenio.obra_social = txtObraSocialModif.Text;
+                convenio.seguridad_salud = txtSeguridadSaludModif.Text;
+                convenio.id_categoria = int.Parse(cmbCateModif.SelectedValue.ToString()); ;
                 
-                _convenio.ModificarConvenio(convenioDto, id_convenio);
+                _convenio.ModificarConvenio(convenio, convenio.id_conv);
                 CargarGrid();
                 MessageBox.Show("Se Modifico el convenio correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -151,10 +149,10 @@ namespace Vista
             try
             {
 
-                int valor = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
-                bool eliminacionExitosa = _convenio.EliminarConvenio(valor);
+                convenio.valor = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+                convenio.eliminacionOk = _convenio.EliminarConvenio(convenio.valor);
 
-                if (eliminacionExitosa)
+                if (convenio.eliminacionOk)
                 {
                     MessageBox.Show("El convenio se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -172,16 +170,16 @@ namespace Vista
 
         private void cmbCateModif_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (inicial)
+            if (convenio.inicial)
             {
                 return;
             }
             if (cmbCateModif.SelectedIndex != -1)
             {
-                string seleccion = cmbCateModif.SelectedValue.ToString();
-                DataTable categoria = _convenio.ObtenerCategoriaID(int.Parse(seleccion));
-                txtJornadaModif.Text = categoria.Rows[0]["jornada"].ToString();
-                txtSueldoModif.Text = categoria.Rows[0]["sueldos"].ToString();
+                convenio.seleccionC = cmbCateModif.SelectedValue.ToString();
+                convenio.selConv = _convenio.ObtenerCategoriaID(int.Parse(convenio.seleccionC));
+                txtJornadaModif.Text = convenio.selConv.Rows[0]["jornada"].ToString();
+                txtSueldoModif.Text = convenio.selConv.Rows[0]["sueldos"].ToString();
             }
           
             
@@ -284,7 +282,7 @@ namespace Vista
         private void btnModificar_Click(object sender, EventArgs e)
         {
             grpModificarConvenio.Enabled = true;
-            id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+            convenio.id_conv = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
             txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
             txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
             txtObraSocialModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();
@@ -298,7 +296,7 @@ namespace Vista
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewCell celda = dtgConvenio.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                id_convenio = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
+                convenio.id_conv = int.Parse(dtgConvenio.SelectedCells[0].Value.ToString());
                 txtConvenioModif.Text = dtgConvenio.SelectedCells[1].Value.ToString();
                 txtSeguridadSaludModif.Text = dtgConvenio.SelectedCells[2].Value.ToString();
                 txtObraSocialModif.Text = dtgConvenio.SelectedCells[3].Value.ToString();

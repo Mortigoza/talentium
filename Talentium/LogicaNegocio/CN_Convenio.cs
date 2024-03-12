@@ -11,6 +11,7 @@ namespace LogicaNegocio
 {
    public class CN_Convenio
     {
+
         CD_Convenios _CDAcceso = new CD_Convenios();
         public void InsertarConvenio(ConvenioDto convenio)
         {

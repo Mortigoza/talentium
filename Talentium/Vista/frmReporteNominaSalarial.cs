@@ -15,35 +15,37 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
 using Vista.Lenguajes;
-
+using Comun;
 namespace Vista
 {
     public partial class frmReporteNominaSalarial : Form
     {
         CN_Convenio convenios = new CN_Convenio();
+        ConvenioDto convenioDto = new ConvenioDto();        
         public frmReporteNominaSalarial()
         {
             InitializeComponent();
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
-
-            DataTable convA = convenios.area();
+            //traigo areas
+            convenioDto.convAreas = convenios.area();
             areas.DisplayMember = "area";
-            areas.DataSource = convA;
-            DataTable conv = convenios.ObtenerConvenio();
+            areas.DataSource = convenioDto.convAreas;
+            //traigo convenio
+            convenioDto.convenios= convenios.ObtenerConvenio();
 
             // Crear un nuevo DataTable que sea una copia del original
-            DataTable nuevoDataTable = conv.Copy();
+            convenioDto.convCopy = convenioDto.convenios.Copy();
 
             // Agregar una nueva fila vacía al principio del nuevo DataTable
-            DataRow row = nuevoDataTable.NewRow();
-            nuevoDataTable.Rows.InsertAt(row, 0);
+            convenioDto.row = convenioDto.convCopy.NewRow();
+            convenioDto.convCopy.Rows.InsertAt(convenioDto.row, 0);
 
             // Establecer el nombre de la columna "convenio" como valor vacío en la nueva fila
-            nuevoDataTable.Rows[0]["convenio"] = "Todos";
+            convenioDto.convCopy.Rows[0]["convenio"] = "Todos";
 
             // Asignar el nuevo DataTable como origen de datos al ComboBox
             conven.DisplayMember = "convenio";
-            conven.DataSource = nuevoDataTable;
+            conven.DataSource = convenioDto.convCopy;
 
             btnExcel.Enabled = false;
             dtgNomina.MultiSelect = false;
@@ -51,6 +53,7 @@ namespace Vista
             dtgNomina.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
+        //evento para permitir solo numeros.
         private void SoloNumeros(KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
@@ -97,27 +100,27 @@ namespace Vista
 
         private void buscarAlta_Click(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)conven.SelectedItem;
-            DataRowView selectedRowA = (DataRowView)areas.SelectedItem;
-            DataRowView selectedRowP = (DataRowView)puestos.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_convenio"]);
-            int idA = Convert.ToInt32(selectedRowA["id_area"]);
-            int idP = Convert.ToInt32(selectedRowP["id_puesto"]);
-            string _cuil = cuil.Text;
+            convenioDto.selectConvenio = (DataRowView)conven.SelectedItem;
+            convenioDto.selectArea = (DataRowView)areas.SelectedItem;
+            convenioDto.selectPuesto = (DataRowView)puestos.SelectedItem;
+            convenioDto.id_conv = Convert.ToInt32(convenioDto.selectConvenio["id_convenio"]);
+            convenioDto.id_areas = Convert.ToInt32(convenioDto.selectArea["id_area"]);
+            convenioDto.id_puestos = Convert.ToInt32(convenioDto.selectPuesto["id_puesto"]);
+            convenioDto.cuil = cuil.Text;
 
-            if (selectedRow["convenio"].ToString() == "Todos")
+            if (convenioDto.selectConvenio["convenio"].ToString() == "Todos")
             {
                 if (string.IsNullOrEmpty(cuil.Text))
                 {
                     //le paso cuil y convenio en null
-                    DataTable cvenios = convenios.ConsultarConveniosPersonas(idA, idP, -1, null);
-                    cargarDtg(cvenios);
+                    convenioDto.conv = convenios.ConsultarConveniosPersonas(convenioDto.id_areas, convenioDto.id_puestos, -1, null);
+                    cargarDtg(convenioDto.conv);
                 }
                 else 
                 {
                     //le paso solo convenio en null
-                    DataTable cvenios = convenios.ConsultarConveniosPersonas(idA, idP, -1, _cuil);
-                    cargarDtg(cvenios);
+                    convenioDto.conv = convenios.ConsultarConveniosPersonas(convenioDto.id_areas, convenioDto.id_puestos, -1, convenioDto.cuil);
+                    cargarDtg(convenioDto.conv);
                 }
             }
             else 
@@ -125,14 +128,14 @@ namespace Vista
                 if (string.IsNullOrEmpty(cuil.Text))
                 {
                     //le paso cuil en null
-                    DataTable cvenios = convenios.ConsultarConveniosPersonas(idA, idP, id, null);
-                    cargarDtg(cvenios);
+                    convenioDto.conv = convenios.ConsultarConveniosPersonas(convenioDto.id_areas, convenioDto.id_puestos, convenioDto.id_conv, null);
+                    cargarDtg(convenioDto.conv);
                 }
                 else
                 {
                     //le paso todo sin null
-                    DataTable cvenios = convenios.ConsultarConveniosPersonas(idA, idP, id, _cuil);
-                    cargarDtg(cvenios);
+                    convenioDto.conv = convenios.ConsultarConveniosPersonas(convenioDto.id_areas, convenioDto.id_puestos, convenioDto.id_conv, convenioDto.cuil);
+                    cargarDtg(convenioDto.conv);
                 }
             }
             
@@ -140,12 +143,12 @@ namespace Vista
 
         private void areasAltas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)areas.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_area"]);
+            convenioDto.selArea = (DataRowView)areas.SelectedItem;
+            convenioDto.id_area = Convert.ToInt32(convenioDto.selArea["id_area"]);
 
-            DataTable convenioP = convenios.puesto(id);
+            convenioDto.selConv = convenios.puesto(convenioDto.id_area);
             puestos.DisplayMember = "puesto";
-            puestos.DataSource = convenioP;
+            puestos.DataSource = convenioDto.selConv;
 
             if (areas.SelectedItem != null && puestos.Text != null)
             {

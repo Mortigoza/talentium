@@ -15,7 +15,9 @@ using Vista.Lenguajes;
 namespace Vista
 {
     public partial class frmRecupero : Form
-    {
+    {                
+        CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
+
         public frmRecupero()
         {
             InitializeComponent();
@@ -32,12 +34,11 @@ namespace Vista
             
             if (!(string.IsNullOrWhiteSpace(textBoxUsuarioRec.Text)))
             {
-                CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
                 try
                 {
                     cnRecupero.UsuarioEmail(textBoxUsuarioRec.Text);
-                    string msj = cnRecupero.Message.Substring(5);
-                    if (msj == "Error" || msj == "error")
+                    cnRecupero.msj = cnRecupero.Message.Substring(5);
+                    if (cnRecupero.msj == "Error" || cnRecupero.msj == "error")
                     {
                         MessageBox.Show(cnRecupero.Message);
                     }
@@ -67,11 +68,10 @@ namespace Vista
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            CN_LogicaLogin cnRecupero = new CN_LogicaLogin();
 
-            bool valor = cnRecupero.ValidCode(codigo.Text);
+            cnRecupero.valor = cnRecupero.ValidCode(codigo.Text);
 
-            if (valor) 
+            if (cnRecupero.valor) 
             {
                 this.Hide();
                 frmCambioPass cambioDePass;
