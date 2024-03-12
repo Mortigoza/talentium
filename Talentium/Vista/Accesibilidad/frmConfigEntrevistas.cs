@@ -179,13 +179,24 @@ namespace Vista.Accesibilidad
 
         private void dtgEntrevistas_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
-            btnEliminar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
+            txtInstanciaMod.Clear();
+            txtModNombre.Clear();
+            grpModEntrevista.Enabled = false;
         }
 
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dtgEntrevistas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgEntrevistas.Rows[e.RowIndex].Selected = true;
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }

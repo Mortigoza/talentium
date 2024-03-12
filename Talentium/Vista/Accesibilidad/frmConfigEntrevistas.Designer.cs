@@ -84,6 +84,7 @@
             this.dtgEntrevistas.RowHeadersWidth = 51;
             this.dtgEntrevistas.Size = new System.Drawing.Size(320, 353);
             this.dtgEntrevistas.TabIndex = 2;
+            this.dtgEntrevistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEntrevistas_CellClick);
             this.dtgEntrevistas.SelectionChanged += new System.EventHandler(this.dtgEntrevistas_SelectionChanged);
             this.dtgEntrevistas.DoubleClick += new System.EventHandler(this.dtgEntrevistas_DoubleClick);
             // 
