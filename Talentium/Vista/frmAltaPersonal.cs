@@ -630,8 +630,8 @@ namespace Vista
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             
+                    MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
         }
@@ -1918,7 +1918,7 @@ namespace Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar descargar el Pdf" + ex);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

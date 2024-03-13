@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista.Gestion_de_Talento
@@ -250,7 +251,7 @@ namespace Vista.Gestion_de_Talento
             {
                 if(!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                 {
-                    DialogResult result = MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
+                    DialogResult result = MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         this.Close();
@@ -258,14 +259,14 @@ namespace Vista.Gestion_de_Talento
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido ingresar la etapa. Revise los datos y vuelva a intentarlo.");
+                    MessageBox.Show(Errores.RegNoCargado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 if(!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                 {
-                    DialogResult result = MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
+                    DialogResult result = MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         this.Close();
@@ -273,7 +274,7 @@ namespace Vista.Gestion_de_Talento
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido actualizar la etapa. Revise los datos y vuelva a intentarlo.");
+                    MessageBox.Show(Errores.RegNoCargado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

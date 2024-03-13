@@ -152,12 +152,12 @@ namespace Vista
                     try
                     {
                         asistencias.insertarAsistencias(asistencia);
-                        MessageBox.Show("operación realizada con éxito");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
-                    catch (Exception exe)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cargar asistencias" + exe);
+                        MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                     this.Hide();
@@ -180,9 +180,9 @@ namespace Vista
                     MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al ingresar los datos: "+ ex);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

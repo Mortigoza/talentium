@@ -276,4 +276,10 @@
   <data name="DocEnUso" xml:space="preserve">
     <value>El registro se encuentra en uso.</value>
   </data>
+  <data name="RegNoEliminado" xml:space="preserve">
+    <value>El registro no pudo ser eliminado.</value>
+  </data>
+  <data name="RegNoCargado" xml:space="preserve">
+    <value>No se ha podido cargar el registro. Revise los datos y vuelva a intentarlo.</value>
+  </data>
 </root>

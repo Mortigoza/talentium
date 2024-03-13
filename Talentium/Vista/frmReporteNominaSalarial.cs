@@ -15,6 +15,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
 using Vista.Lenguajes;
+using LogicaNegocio.Lenguajes;
 
 namespace Vista
 {
@@ -257,13 +258,13 @@ namespace Vista
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa.");
-                            }
-                            catch (Exception msj)
-                            {
-                                MessageBox.Show(msj.Message);
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                            catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                            }
+                    }
                         }
                 }
             }

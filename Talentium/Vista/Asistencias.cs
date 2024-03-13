@@ -483,9 +483,9 @@ namespace Vista
                         sl.SaveAs(rutaCompleta);
                         MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception msj)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show(msj.Message);
+                        MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }

@@ -117,7 +117,7 @@ namespace Vista.Evaluacion_de_desempeño
                 }
                 else
                 {
-                    MessageBox.Show("La Evaluación de desempeño que intenta crear ya se encuentra registrada anteriormente.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
