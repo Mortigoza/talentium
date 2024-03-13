@@ -34,7 +34,7 @@ namespace Vista.Gestion_de_Talento
             cmbExternaInternaMod.Items.AddRange(new string[] { Niveles.cmbExternaInterna0, Niveles.cmbExternaInterna1 });
             cmbNivelAlta.SelectedIndex = 0;
             cmbNivelMod.SelectedIndex = 0;
-            cmbExternaInternaAlta.SelectedIndex = 0; 
+            cmbExternaInternaAlta.SelectedIndex = 0;
             cmbExternaInternaMod.SelectedIndex = 0;
             //cmbArea
             DataTable cnCapa = cnCapacitaciones.area();
@@ -65,7 +65,7 @@ namespace Vista.Gestion_de_Talento
             {
                 cap = cnCapacitaciones.ConsultaCapacitaciones();
             }
-            else 
+            else
             {
                 cap = cnCapacitaciones.filtrarCapacitaciones(txtFiltro.Text);
 
@@ -99,7 +99,7 @@ namespace Vista.Gestion_de_Talento
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text)) 
+            if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text))
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -122,9 +122,9 @@ namespace Vista.Gestion_de_Talento
         {
             _rowIndex = e.RowIndex;
             _idCapacitacion = Convert.ToInt32(dtgCapacitacion.Rows[_rowIndex].Cells[0].Value);
-            
+
         }
-        public void cargaCtrMod() 
+        public void cargaCtrMod()
         {
             txtNombreMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[1].Value.ToString();
             cmbNivelMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[2].Value;
@@ -254,6 +254,22 @@ namespace Vista.Gestion_de_Talento
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dtgCapacitacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgCapacitacion.Rows[e.RowIndex].Selected = true;
+                btnModificar.Enabled = true;
+                btnBaja.Enabled = true;
+            }
+        }
+
+        private void dtgCapacitacion_SelectionChanged(object sender, EventArgs e)
+        {
+            grpModificacion.Enabled = false;
+            limpiarControles(grpModificacion);
         }
     }
 }

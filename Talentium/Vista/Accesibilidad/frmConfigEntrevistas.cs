@@ -53,8 +53,9 @@ namespace Vista.Accesibilidad
                 }
                 else
                 {
-                    MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+                    MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
                     txtNombreEntrevista.Clear();
+                    txtInstancia.Clear();
                 }
             }
         }
@@ -121,7 +122,7 @@ namespace Vista.Accesibilidad
                         {
                             bool modificacionExitosa = logicaEntrevista.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
 
-                            if (modificacionExitosa)
+                            if (!modificacionExitosa)
                             {
                                 MessageBox.Show("Modificación de entrevista exitosa");
                                 txtModNombre.Clear();
@@ -130,7 +131,7 @@ namespace Vista.Accesibilidad
                             }
                             else
                             {
-                                MessageBox.Show("Ese nombre de entrevista ya está en uso.");
+                                MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
                                 txtModNombre.Clear();
                                 txtInstanciaMod.Clear();
                             }
@@ -174,47 +175,29 @@ namespace Vista.Accesibilidad
                         MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
-
             }
-            //DataGridViewRow filaSeleccionada = dtgEntrevistas.SelectedRows[0];
-            //int idRegistroSeleccionado = Convert.ToInt32(filaSeleccionada.Cells["id_entrevista"].Value);
-
-            //if (dtgEntrevistas.SelectedRows.Count > 0)
-            //{
-            //    DialogResult resultado = MessageBox.Show("¿Queres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
-
-            //    if (resultado == DialogResult.OK)
-            //    {
-            //        if (logicaEntrevista.EliminarEntrevista(idRegistroSeleccionado) == false)
-            //        {
-            //            MessageBox.Show("La entrevista ha sido eliminada con éxito.");
-            //            CargarDataGrid();
-            //        } else
-            //        {
-            //            MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
-            //        }
-
-
-            //    }
-            //    else if (resultado == DialogResult.Cancel)
-            //    {
-            //        MessageBox.Show("Se ha cancelado la operación.");
-            //    }
-            //} else
-            //{
-            //    MessageBox.Show("Debe seleccionar un registro.");
-            //}
         }
 
         private void dtgEntrevistas_SelectionChanged(object sender, EventArgs e)
         {
-            btnModificar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
-            btnEliminar.Enabled = dtgEntrevistas.SelectedRows.Count > 0;
+            txtInstanciaMod.Clear();
+            txtModNombre.Clear();
+            grpModEntrevista.Enabled = false;
         }
 
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dtgEntrevistas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dtgEntrevistas.Rows[e.RowIndex].Selected = true;
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }

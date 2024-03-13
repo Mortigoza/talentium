@@ -19,13 +19,14 @@ namespace AccesoDatos.Accesibilidad
 
             return resultado;
         }
-        public bool ConsultarEntrevistaRepetida(string entrevista)
+        public bool ConsultarEntrevistaRepetida(int instancia, string entrevista)
         {
-            SqlParameter param1 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1 };
+            SqlParameter param1 = new SqlParameter("instancia", instancia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultadoEntrevista = EjecutarConsultas("consultar_entrevista_repetida_sp", listaParametros.ToArray());
 
-            return resultadoEntrevista.Rows.Count != 0;
+            return resultadoEntrevista.Rows.Count != 0; //si es !=0 quiere decir que ya hay un registro que coincide
         }
         public DataTable ConsultarEntrevistas()
         {

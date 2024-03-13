@@ -150,6 +150,7 @@ namespace Vista
             cmbTipoDoc.SelectedIndex = -1;
 
             cmbPartido.SelectedIndex = -1;
+            cmbLocalidad.SelectedIndex = -1;
 
             DataTable convenio = logica.ObtenerConvenio();
             cmbConvenio.DataSource = convenio;
@@ -858,10 +859,10 @@ namespace Vista
         }
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView partidoSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
-            if (partidoSeleccionada != null)
+            DataRowView localidadSeleccionada = cmbLocalidad.SelectedItem as DataRowView;
+            if (localidadSeleccionada != null)
             {
-                string variable = partidoSeleccionada["cod_postal"].ToString();
+                string variable = localidadSeleccionada["cod_postal"].ToString();
                 txtCodigoPostal.Text = variable;
             }
             else

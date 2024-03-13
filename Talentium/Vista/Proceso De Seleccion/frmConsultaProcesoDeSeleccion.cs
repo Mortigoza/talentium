@@ -73,7 +73,6 @@ namespace Vista
         }
         public void CargarDatos()
         {
-            btnModificarCandidato.Enabled = true;
             if (!filtroUtilizado)
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso,
@@ -88,6 +87,7 @@ namespace Vista
                 if (DTCandidatos != null && DTCandidatos.Rows.Count > 0)
                 {
                     btnModificarCandidato.Enabled = true;
+                    btnEtapas.Enabled = true;
                     bool todasCoinciden = true;
                     int numFilasDataGridView = dtgCandidatos.Rows.Count;
 
@@ -217,14 +217,6 @@ namespace Vista
 
         private void dtgCandidatos_SelectionChanged(object sender, EventArgs e)
         {
-            if (dtgCandidatos.SelectedRows.Count > 0)
-            {
-                btnEtapas.Enabled = true;
-            }
-            else
-            {
-                btnEtapas.Enabled = false;
-            }
         }
         private void btnEtapas_Click(object sender, EventArgs e)
         {

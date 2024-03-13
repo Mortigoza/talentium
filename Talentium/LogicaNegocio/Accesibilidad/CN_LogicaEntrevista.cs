@@ -13,7 +13,7 @@ namespace LogicaNegocio.Accesibilidad
         CD_Entrevista entrevistaDatos = new CD_Entrevista();
         public bool ValidarEntrevista(int instancia, string entrevista)
         {
-            if (!entrevistaDatos.ConsultarEntrevistaRepetida(entrevista))
+            if (!entrevistaDatos.ConsultarEntrevistaRepetida(instancia, entrevista))
             {
                 entrevistaDatos.InsertarEntrevista(instancia, entrevista);
                 return false;
@@ -32,8 +32,15 @@ namespace LogicaNegocio.Accesibilidad
         }
         public bool ModificarEntrevista(int idRegistroSeleccionado, int etapa, string nuevaEntrevista)
         {
-            entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
+            if (!entrevistaDatos.ConsultarEntrevistaRepetida(etapa, nuevaEntrevista))
+            {
+                entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
+                return false;
+            }
+
             return true;
+            //entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
+            //return true;
         }
         public bool EntrevistaAsociadaAPersona(int id_entrevista)
         {
