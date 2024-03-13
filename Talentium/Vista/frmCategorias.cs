@@ -117,16 +117,16 @@ namespace Vista
 
                 if (eliminacionExitosa)
                 {
-                    MessageBox.Show("La categoria se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar la categoria.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Errores.RegNoEliminado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar la categoria: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             CargarGrid();
       
@@ -147,7 +147,7 @@ namespace Vista
                string.IsNullOrWhiteSpace(txtJornadaModif.Text) ||
                string.IsNullOrWhiteSpace(txtSueldoModif.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -160,7 +160,7 @@ namespace Vista
                     _categoria.ModificarCategoria(categoriaDto, id_categoria);
                     CargarGrid();
                     LimpiarControlesModificacion();
-                    MessageBox.Show("La categoria se han modificado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             UtilidadesForms.LimpiarControles(grpModificarCategoria);
         }

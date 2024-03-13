@@ -236,7 +236,7 @@ namespace Vista.Gestion_de_Talento
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

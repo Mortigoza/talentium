@@ -46,6 +46,7 @@ namespace Vista.Evaluacion_de_desempeño
             dtgEvaluacion.AutoGenerateColumns = false;
             dtgEvaluacion.MultiSelect = false;
             dtgEvaluacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgEvaluacion.ReadOnly = true;
             UtilidadesForms.TraducirColumnasDtg(ref dtgEvaluacion);
         }
 
@@ -116,13 +117,14 @@ namespace Vista.Evaluacion_de_desempeño
                 }
                 else
                 {
-                    MessageBox.Show("La Evaluación de desempeño que intenta crear ya se encuentra registrada anteriormente.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            dtgEvaluacion.ReadOnly = true;
             if (cmbPersonal.SelectedItem != null)
             {
                 // Obtener el ID, nombre y apellido de la persona seleccionada del ComboBox
@@ -140,6 +142,7 @@ namespace Vista.Evaluacion_de_desempeño
                 dtgEvaluacion.Rows[rowIndex].Cells["NombreApellido"].Value = nombreCompleto;
 
                 btnGuardar.Enabled = true;
+                dtgEvaluacion.ReadOnly = false;
             }
             UtilidadesForms.TraducirColumnasDtg(ref dtgEvaluacion);
         }

@@ -247,11 +247,11 @@ namespace Vista.Evaluacion_de_desempeño
                                 sl.SaveAs(rutaCompleta);
                         MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                            catch (Exception msj)
-                            {
-                                MessageBox.Show(msj.Message);
+                            catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                            }
+                    }
                         }
                     }
                 }

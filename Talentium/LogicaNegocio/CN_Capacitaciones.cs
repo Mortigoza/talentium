@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos;
+using LogicaNegocio.Lenguajes;
+
 namespace LogicaNegocio
 {
     public class CN_Capacitaciones
@@ -135,9 +137,9 @@ namespace LogicaNegocio
                 }
                 return cap;
             }
-            catch (Exception e) 
+            catch (Exception ex)
             {
-                MessageBox.Show("error al realizar la consulta " + e);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;    
             }
             
@@ -175,9 +177,9 @@ namespace LogicaNegocio
                 }
                 return cap;
             }
-            catch (Exception e) 
+            catch (Exception ex)
             {
-                MessageBox.Show("error al realizar la consulta " + e);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;    
             }
             

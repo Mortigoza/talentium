@@ -139,5 +139,31 @@ namespace Vista.Analisis_y_reportes
         {
             this.Dispose();
         }
+
+        private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
+
+            }
+        }
+        private void SoloLetras(KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no alfabéticos
+
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
     }
 }

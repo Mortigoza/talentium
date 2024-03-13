@@ -403,11 +403,29 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No se ha podido cargar el registro. Revise los datos y vuelva a intentarlo..
+        /// </summary>
+        public static string RegNoCargado {
+            get {
+                return ResourceManager.GetString("RegNoCargado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ningún registro coincide..
         /// </summary>
         public static string RegNoCoincide {
             get {
                 return ResourceManager.GetString("RegNoCoincide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El registro no pudo ser eliminado..
+        /// </summary>
+        public static string RegNoEliminado {
+            get {
+                return ResourceManager.GetString("RegNoEliminado", resourceCulture);
             }
         }
         

@@ -276,4 +276,10 @@
   <data name="DocEnUso" xml:space="preserve">
     <value>The record is in use.</value>
   </data>
+  <data name="RegNoEliminado" xml:space="preserve">
+    <value>The record could not be deleted.</value>
+  </data>
+  <data name="RegNoCargado" xml:space="preserve">
+    <value>The record could not be loaded. Please review the data and try again.</value>
+  </data>
 </root>

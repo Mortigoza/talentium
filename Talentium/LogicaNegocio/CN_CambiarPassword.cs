@@ -37,7 +37,7 @@ namespace LogicaNegocio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualiar la contraseña" + ex);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void insertarPass(string user, string pass) 
@@ -53,7 +53,7 @@ namespace LogicaNegocio
                 acceso.InsertarNuevaPass(user, psw, dig, nueva );
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al actualiar la contraseña" + ex);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public bool ValidarPass(bool esNuevo, bool allow, string contra1, string contra2, string respuesta, object idPregunta)

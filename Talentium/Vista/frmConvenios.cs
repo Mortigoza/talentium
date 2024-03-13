@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -90,8 +91,8 @@ namespace Vista
               string.IsNullOrWhiteSpace(txtSeguridadSalud.Text))
               || cmbCategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
@@ -102,7 +103,7 @@ namespace Vista
                 convenio.id_categoria = int.Parse(cmbCategoria.SelectedValue.ToString());
                 _convenio.InsertarConvenio(convenio);
                 CargarGrid();
-                MessageBox.Show("Se agrego el convenio correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             UtilidadesForms.LimpiarControles(grpCrear);
@@ -119,7 +120,7 @@ namespace Vista
          string.IsNullOrWhiteSpace(txtSeguridadSaludModif.Text))
          || cmbCateModif.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -131,7 +132,7 @@ namespace Vista
                 
                 _convenio.ModificarConvenio(convenioDto, id_convenio);
                 CargarGrid();
-                MessageBox.Show("Se Modifico el convenio correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             UtilidadesForms.LimpiarControles(grpModificarConvenio);
@@ -156,16 +157,16 @@ namespace Vista
 
                 if (eliminacionExitosa)
                 {
-                    MessageBox.Show("El convenio se eliminó exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar el convenio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Errores.RegNoEliminado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar el convenio: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             CargarGrid();
         }

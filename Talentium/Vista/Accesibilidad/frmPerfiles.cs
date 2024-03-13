@@ -151,7 +151,7 @@ namespace Vista.Accesibilidad
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -183,7 +183,7 @@ namespace Vista.Accesibilidad
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else

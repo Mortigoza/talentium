@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista.Gestion_de_Talento
@@ -250,40 +251,38 @@ namespace Vista.Gestion_de_Talento
                 MessageBox.Show("Por favor, complete todos los campos antes de guardar la información.");
             }
 
-            if (!camposIncompletos)
+            bool esInsercion = string.IsNullOrEmpty(fechaEntrevista.ToString()) && string.IsNullOrEmpty(entrevistador) && string.IsNullOrEmpty(estado);
+
+            if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
             {
-                if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
+                if(!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                 {
-                    if (!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
+                    DialogResult result = MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
                     {
-                        DialogResult result = MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
-                        if (result == DialogResult.OK)
-                        {
-                            this.Close();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido ingresar la etapa. Revise los datos y vuelva a intentarlo.");
+                        this.Close();
                     }
                 }
                 else
                 {
-                    if (!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
-                    {
-                        DialogResult result = MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
-                        if (result == DialogResult.OK)
-                        {
-                            this.Close();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido actualizar la etapa. Revise los datos y vuelva a intentarlo.");
-                    }
+                    MessageBox.Show(Errores.RegNoCargado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-                
+            else
+            {
+                if(!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
+                {
+                    DialogResult result = MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Errores.RegNoCargado, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
 
