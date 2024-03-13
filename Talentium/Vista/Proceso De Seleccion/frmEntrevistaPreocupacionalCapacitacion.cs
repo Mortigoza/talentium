@@ -243,39 +243,48 @@ namespace Vista.Gestion_de_Talento
                     }
                 }
             }
-
+            bool camposIncompletos = false;
             bool esInsercion = string.IsNullOrEmpty(fechaEntrevista.ToString()) && string.IsNullOrEmpty(entrevistador) && string.IsNullOrEmpty(estado);
+            if (string.IsNullOrEmpty(fechaEntrevista.ToString()) || string.IsNullOrEmpty(entrevistador) || string.IsNullOrEmpty(estado))
+            {
+                camposIncompletos = true;
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar la información.");
+            }
 
-            if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
+            if (!camposIncompletos)
             {
-                if(!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
+                if (!logicaEntrevista.VerificarExistenciaEntrevista(id_persona, id_entrevista))
                 {
-                    DialogResult result = MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
-                    if (result == DialogResult.OK)
+                    if (!proceso.InsertarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                     {
-                        this.Close();
+                        DialogResult result = MessageBox.Show("Se ha ingresado la etapa de forma correcta!");
+                        if (result == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido ingresar la etapa. Revise los datos y vuelva a intentarlo.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido ingresar la etapa. Revise los datos y vuelva a intentarlo.");
-                }
-            }
-            else
-            {
-                if(!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
-                {
-                    DialogResult result = MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
-                    if (result == DialogResult.OK)
+                    if (!proceso.ModificarEtapa(id_persona, id_entrevista, fechaEntrevista, entrevistador, estado, null))
                     {
-                        this.Close();
+                        DialogResult result = MessageBox.Show("Se ha actualizado la etapa de forma correcta!");
+                        if (result == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido actualizar la etapa. Revise los datos y vuelva a intentarlo.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No se ha podido actualizar la etapa. Revise los datos y vuelva a intentarlo.");
-                }
             }
+                
         }
 
 
