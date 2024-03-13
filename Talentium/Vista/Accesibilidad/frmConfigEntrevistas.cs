@@ -115,7 +115,7 @@ namespace Vista.Accesibilidad
                     {
                         string nuevaEntrevista = txtModNombre.Text.Trim();
 
-                        if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(etapa.ToString()))
+                        if (string.IsNullOrWhiteSpace(nuevaEntrevista) || string.IsNullOrWhiteSpace(etapa.ToString()))
                         {
                             MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
@@ -133,8 +133,8 @@ namespace Vista.Accesibilidad
                             else
                             {
                                 MessageBox.Show(Errores.EntYaIngresada, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                txtModNombre.Clear();
-                                txtInstanciaMod.Clear();
+                                txtInstanciaMod.Text = dtgEntrevistas.SelectedCells[1].Value.ToString();
+                                txtModNombre.Text = dtgEntrevistas.SelectedCells[2].Value.ToString();
                             }
                         }
                     }

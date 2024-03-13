@@ -13,7 +13,8 @@ namespace LogicaNegocio.Accesibilidad
         CD_Entrevista entrevistaDatos = new CD_Entrevista();
         public bool ValidarEntrevista(int instancia, string entrevista)
         {
-            if (!entrevistaDatos.ConsultarEntrevistaRepetida(instancia, entrevista))
+            DataTable dt = entrevistaDatos.ConsultarEntrevistaRepetida(instancia, entrevista);
+            if ((int)dt.Rows[0][0] == 0)
             {
                 entrevistaDatos.InsertarEntrevista(instancia, entrevista);
                 return false;
@@ -32,7 +33,8 @@ namespace LogicaNegocio.Accesibilidad
         }
         public bool ModificarEntrevista(int idRegistroSeleccionado, int etapa, string nuevaEntrevista)
         {
-            if (!entrevistaDatos.ConsultarEntrevistaRepetida(etapa, nuevaEntrevista))
+            DataTable dt = entrevistaDatos.ConsultarEntrevistaRepetidaMod(etapa, nuevaEntrevista, idRegistroSeleccionado);
+            if ((int)dt.Rows[0][0] == 0)
             {
                 entrevistaDatos.ModificarEntrevista(idRegistroSeleccionado, etapa, nuevaEntrevista);
                 return false;

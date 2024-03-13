@@ -12,21 +12,31 @@ namespace AccesoDatos.Accesibilidad
     {
         public DataTable InsertarEntrevista(int instancia, string entrevista)
         {
-            SqlParameter param1 = new SqlParameter("instancia", instancia) { SqlDbType = SqlDbType.Int };
-            SqlParameter param2 = new SqlParameter("entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param1 = new SqlParameter("@instancia", instancia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultado = EjecutarConsultas("alta_entrevista_sp", listaParametros.ToArray(), true);
 
             return resultado;
         }
-        public bool ConsultarEntrevistaRepetida(int instancia, string entrevista)
+        public DataTable ConsultarEntrevistaRepetida(int instancia, string entrevista)
         {
-            SqlParameter param1 = new SqlParameter("instancia", instancia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param1 = new SqlParameter("@instancia", instancia) { SqlDbType = SqlDbType.Int };
             SqlParameter param2 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
             List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2 };
             DataTable resultadoEntrevista = EjecutarConsultas("consultar_entrevista_repetida_sp", listaParametros.ToArray());
 
-            return resultadoEntrevista.Rows.Count != 0; //si es !=0 quiere decir que ya hay un registro que coincide
+            return resultadoEntrevista; //si es !=0 quiere decir que ya hay un registro que coincide
+        }
+        public DataTable ConsultarEntrevistaRepetidaMod(int instancia, string entrevista, int idEntrevista)
+        {
+            SqlParameter param1 = new SqlParameter("@instancia", instancia) { SqlDbType = SqlDbType.Int };
+            SqlParameter param2 = new SqlParameter("@entrevista", entrevista) { SqlDbType = SqlDbType.NVarChar };
+            SqlParameter param3 = new SqlParameter("@id_entrevista", idEntrevista) { SqlDbType = SqlDbType.Int };
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1, param2, param3 };
+            DataTable resultadoEntrevista = EjecutarConsultas("consultar_entrevista_repetida_mod_sp", listaParametros.ToArray());
+
+            return resultadoEntrevista; //si es !=0 quiere decir que ya hay un registro que coincide
         }
         public DataTable ConsultarEntrevistas()
         {
