@@ -109,8 +109,6 @@ namespace Vista
                             {
                                 idPersona = idPer,
                                 Fecha = fecha,
-                                //FechaDesde = dttFechaDesde.Value,
-                                //FechaHasta = dttFechaHasta.Value,
                                 idMotivo = (int)selectedMotivo["id_motivo"],
                                 OtroMotivo = txtOtro.Text,
                                 Justificada = checkJustificada.Checked,
@@ -128,8 +126,6 @@ namespace Vista
                         {
                             idPersona = idPer,
                             Fecha = dttFecha.Value,
-                            //FechaDesde = dttFechaDesde.Value,
-                            //FechaHasta = dttFechaHasta.Value,
                             idMotivo = (int)selectedMotivo["id_motivo"],
                             OtroMotivo = txtOtro.Text,
                             Justificada = checkJustificada.Checked,
@@ -139,16 +135,6 @@ namespace Vista
 
                         asistencia.Add(nuevaAsistencia);
                     }
-                    /* asistencias.IdPersona = idPer;
-                     asistencias.Fecha = dttFecha.Value;
-                     asistencias.FechaDesde = dttFechaDesde.Value;
-                     asistencias.FechaHasta = dttFechaHasta.Value;
-                     asistencias.IdMotivo = selectedMotivo["id_motivo"];
-                     asistencias.OtroMotivo = txtOtro.Text;
-                     asistencias.Justificada = checkJustificada.Checked;
-                     asistencias.Observaciones = txtObservaciones.Text;
-                     asistencias.Periodo = checkPeriodo.Checked;
-                     */
                     try
                     {
                         asistencias.insertarAsistencias(asistencia);

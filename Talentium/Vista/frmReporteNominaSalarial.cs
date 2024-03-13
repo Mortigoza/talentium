@@ -270,7 +270,11 @@ namespace Vista
 
         private void cuil_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumeros(e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            //SoloNumeros(e);
         }
 
         private void lnkAtas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

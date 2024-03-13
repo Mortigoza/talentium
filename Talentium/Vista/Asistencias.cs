@@ -168,14 +168,6 @@ namespace Vista
 
                 }
             }
-        } 
-        private void SoloNumeros(KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-
-            }
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -386,7 +378,6 @@ namespace Vista
             {
                 e.Handled = true;
             }
-            //SoloNumeros(e);
         }
 
         private void CuilMod_KeyPress(object sender, KeyPressEventArgs e)
@@ -395,7 +386,6 @@ namespace Vista
             {
                 e.Handled = true;
             }
-            //SoloNumeros(e);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

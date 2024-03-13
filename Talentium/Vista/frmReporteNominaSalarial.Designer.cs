@@ -32,6 +32,7 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.dtgNomina = new System.Windows.Forms.DataGridView();
             this.grbFiltrosAlta = new System.Windows.Forms.GroupBox();
+            this.lnkAtas = new System.Windows.Forms.LinkLabel();
             this.convenio = new System.Windows.Forms.Label();
             this.conven = new System.Windows.Forms.ComboBox();
             this.lblErrorPuesto = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.lblCuilAlta = new System.Windows.Forms.Label();
             this.lblAreaAlta = new System.Windows.Forms.Label();
             this.areas = new System.Windows.Forms.ComboBox();
-            this.lnkAtas = new System.Windows.Forms.LinkLabel();
             this.grbPersonalAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNomina)).BeginInit();
             this.grbFiltrosAlta.SuspendLayout();
@@ -110,6 +110,17 @@
             this.grbFiltrosAlta.TabStop = false;
             this.grbFiltrosAlta.Text = "Filtros";
             this.grbFiltrosAlta.Enter += new System.EventHandler(this.grbFiltrosAlta_Enter);
+            // 
+            // lnkAtas
+            // 
+            this.lnkAtas.AutoSize = true;
+            this.lnkAtas.Location = new System.Drawing.Point(7, 497);
+            this.lnkAtas.Name = "lnkAtas";
+            this.lnkAtas.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtas.TabIndex = 22;
+            this.lnkAtas.TabStop = true;
+            this.lnkAtas.Text = "Atrás";
+            this.lnkAtas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtas_LinkClicked);
             // 
             // convenio
             // 
@@ -190,6 +201,7 @@
             // 
             this.cuil.Location = new System.Drawing.Point(101, 151);
             this.cuil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cuil.MaxLength = 11;
             this.cuil.Name = "cuil";
             this.cuil.Size = new System.Drawing.Size(208, 22);
             this.cuil.TabIndex = 14;
@@ -225,17 +237,6 @@
             this.areas.Size = new System.Drawing.Size(208, 24);
             this.areas.TabIndex = 9;
             this.areas.SelectedIndexChanged += new System.EventHandler(this.areasAltas_SelectedIndexChanged);
-            // 
-            // lnkAtas
-            // 
-            this.lnkAtas.AutoSize = true;
-            this.lnkAtas.Location = new System.Drawing.Point(7, 497);
-            this.lnkAtas.Name = "lnkAtas";
-            this.lnkAtas.Size = new System.Drawing.Size(38, 16);
-            this.lnkAtas.TabIndex = 22;
-            this.lnkAtas.TabStop = true;
-            this.lnkAtas.Text = "Atrás";
-            this.lnkAtas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtas_LinkClicked);
             // 
             // frmReporteNominaSalarial
             // 
