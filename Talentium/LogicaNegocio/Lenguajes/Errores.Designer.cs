@@ -124,11 +124,29 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El cuil ingresado no tiene un formato correcto..
+        /// </summary>
+        public static string CuilIncorrecto {
+            get {
+                return ResourceManager.GetString("CuilIncorrecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El Cuit/Cuil ya esta asociado a un empleado..
         /// </summary>
         public static string CuitEnUso {
             get {
                 return ResourceManager.GetString("CuitEnUso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descarga fue realizada con éxito..
+        /// </summary>
+        public static string DescargaExitosa {
+            get {
+                return ResourceManager.GetString("DescargaExitosa", resourceCulture);
             }
         }
         
@@ -142,11 +160,11 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El cuil ingresado no tiene un formato correcto..
+        ///   Busca una cadena traducida similar a La entrevista ya está ingresada. Por favor, ingrese otra..
         /// </summary>
-        public static string CuilIncorrecto {
+        public static string EntYaIngresada {
             get {
-                return ResourceManager.GetString("CuilIncorrecto", resourceCulture);
+                return ResourceManager.GetString("EntYaIngresada", resourceCulture);
             }
         }
         
@@ -178,6 +196,24 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Las etapas no coinciden. No se puede completar el DataGridView..
+        /// </summary>
+        public static string EtapasNoCoinciden {
+            get {
+                return ResourceManager.GetString("EtapasNoCoinciden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El valor de etapa no es un número válido..
+        /// </summary>
+        public static string EtapNoValida {
+            get {
+                return ResourceManager.GetString("EtapNoValida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Utilice al menos un filtro..
         /// </summary>
         public static string FiltroIncompleto {
@@ -201,15 +237,6 @@ namespace LogicaNegocio.Lenguajes {
         public static string InfoAcademicaOb {
             get {
                 return ResourceManager.GetString("InfoAcademicaOb", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Las etapas no coinciden. No se puede completar el DataGridView..
-        /// </summary>
-        public static string EtapasNoCoinciden {
-            get {
-                return ResourceManager.GetString("EtapasNoCoinciden", resourceCulture);
             }
         }
         

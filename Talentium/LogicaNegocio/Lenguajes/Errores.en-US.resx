@@ -264,10 +264,13 @@
   <data name="EtapasNoCoinciden" xml:space="preserve">
     <value>The stages do not match. The DataGridView cannot be completed.</value>
   </data>
-  <data name="OperacionExitosa" xml:space="preserve">
-    <value>Successful Operation.</value>
+  <data name="DescargarExitosa" xml:space="preserve">
+    <value>The download was completed successfully</value>
   </data>
-  <data name="RegNoCoincide" xml:space="preserve">
-    <value>No records match.</value>
+  <data name="EntYaIngresada" xml:space="preserve">
+    <value>The interview is already entered. Please enter another one.</value>
+  </data>
+  <data name="EtapNoValida" xml:space="preserve">
+    <value>The stage value is not a valid number.</value>
   </data>
 </root>

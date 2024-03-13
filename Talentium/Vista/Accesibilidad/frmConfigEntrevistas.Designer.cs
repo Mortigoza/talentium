@@ -55,19 +55,17 @@
             // 
             // txtNombreEntrevista
             // 
-            this.txtNombreEntrevista.Location = new System.Drawing.Point(259, 45);
-            this.txtNombreEntrevista.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreEntrevista.Location = new System.Drawing.Point(194, 37);
             this.txtNombreEntrevista.Name = "txtNombreEntrevista";
-            this.txtNombreEntrevista.Size = new System.Drawing.Size(255, 22);
+            this.txtNombreEntrevista.Size = new System.Drawing.Size(192, 20);
             this.txtNombreEntrevista.TabIndex = 0;
             // 
             // lblNombreEntrevista
             // 
             this.lblNombreEntrevista.AutoSize = true;
-            this.lblNombreEntrevista.Location = new System.Drawing.Point(192, 49);
-            this.lblNombreEntrevista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreEntrevista.Location = new System.Drawing.Point(144, 40);
             this.lblNombreEntrevista.Name = "lblNombreEntrevista";
-            this.lblNombreEntrevista.Size = new System.Drawing.Size(56, 16);
+            this.lblNombreEntrevista.Size = new System.Drawing.Size(44, 13);
             this.lblNombreEntrevista.TabIndex = 1;
             this.lblNombreEntrevista.Text = "Nombre";
             // 
@@ -78,11 +76,10 @@
             this.dtgEntrevistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.etapa,
             this.entrevista});
-            this.dtgEntrevistas.Location = new System.Drawing.Point(44, 62);
-            this.dtgEntrevistas.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgEntrevistas.Location = new System.Drawing.Point(33, 50);
             this.dtgEntrevistas.Name = "dtgEntrevistas";
             this.dtgEntrevistas.RowHeadersWidth = 51;
-            this.dtgEntrevistas.Size = new System.Drawing.Size(320, 353);
+            this.dtgEntrevistas.Size = new System.Drawing.Size(240, 287);
             this.dtgEntrevistas.TabIndex = 2;
             this.dtgEntrevistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEntrevistas_CellClick);
             this.dtgEntrevistas.SelectionChanged += new System.EventHandler(this.dtgEntrevistas_SelectionChanged);
@@ -109,10 +106,9 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(415, 109);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(311, 89);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -127,11 +123,9 @@
             this.grpAltaEntrevista.Controls.Add(this.btnGuardar);
             this.grpAltaEntrevista.Controls.Add(this.lblNombreEntrevista);
             this.grpAltaEntrevista.Controls.Add(this.txtNombreEntrevista);
-            this.grpAltaEntrevista.Location = new System.Drawing.Point(405, 62);
-            this.grpAltaEntrevista.Margin = new System.Windows.Forms.Padding(4);
+            this.grpAltaEntrevista.Location = new System.Drawing.Point(304, 50);
             this.grpAltaEntrevista.Name = "grpAltaEntrevista";
-            this.grpAltaEntrevista.Padding = new System.Windows.Forms.Padding(4);
-            this.grpAltaEntrevista.Size = new System.Drawing.Size(531, 158);
+            this.grpAltaEntrevista.Size = new System.Drawing.Size(398, 128);
             this.grpAltaEntrevista.TabIndex = 4;
             this.grpAltaEntrevista.TabStop = false;
             this.grpAltaEntrevista.Text = "Alta de Entrevista";
@@ -139,30 +133,28 @@
             // lblInstancia
             // 
             this.lblInstancia.AutoSize = true;
-            this.lblInstancia.Location = new System.Drawing.Point(9, 49);
-            this.lblInstancia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstancia.Location = new System.Drawing.Point(7, 40);
             this.lblInstancia.Name = "lblInstancia";
-            this.lblInstancia.Size = new System.Drawing.Size(60, 16);
+            this.lblInstancia.Size = new System.Drawing.Size(50, 13);
             this.lblInstancia.TabIndex = 6;
             this.lblInstancia.Text = "Instancia";
             // 
             // txtInstancia
             // 
-            this.txtInstancia.Location = new System.Drawing.Point(83, 45);
-            this.txtInstancia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInstancia.Location = new System.Drawing.Point(62, 37);
             this.txtInstancia.Name = "txtInstancia";
-            this.txtInstancia.Size = new System.Drawing.Size(67, 22);
+            this.txtInstancia.Size = new System.Drawing.Size(51, 20);
             this.txtInstancia.TabIndex = 5;
+            this.txtInstancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(13, 109);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(10, 89);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -177,11 +169,9 @@
             this.grpModEntrevista.Controls.Add(this.btnModGuardar);
             this.grpModEntrevista.Controls.Add(this.lblModEntrevista);
             this.grpModEntrevista.Controls.Add(this.txtModNombre);
-            this.grpModEntrevista.Location = new System.Drawing.Point(405, 257);
-            this.grpModEntrevista.Margin = new System.Windows.Forms.Padding(4);
+            this.grpModEntrevista.Location = new System.Drawing.Point(304, 209);
             this.grpModEntrevista.Name = "grpModEntrevista";
-            this.grpModEntrevista.Padding = new System.Windows.Forms.Padding(4);
-            this.grpModEntrevista.Size = new System.Drawing.Size(531, 158);
+            this.grpModEntrevista.Size = new System.Drawing.Size(398, 128);
             this.grpModEntrevista.TabIndex = 5;
             this.grpModEntrevista.TabStop = false;
             this.grpModEntrevista.Text = "Modificar Entrevista";
@@ -189,30 +179,28 @@
             // lblInstanciaMod
             // 
             this.lblInstanciaMod.AutoSize = true;
-            this.lblInstanciaMod.Location = new System.Drawing.Point(9, 49);
-            this.lblInstanciaMod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstanciaMod.Location = new System.Drawing.Point(7, 40);
             this.lblInstanciaMod.Name = "lblInstanciaMod";
-            this.lblInstanciaMod.Size = new System.Drawing.Size(60, 16);
+            this.lblInstanciaMod.Size = new System.Drawing.Size(50, 13);
             this.lblInstanciaMod.TabIndex = 8;
             this.lblInstanciaMod.Text = "Instancia";
             // 
             // txtInstanciaMod
             // 
-            this.txtInstanciaMod.Location = new System.Drawing.Point(83, 45);
-            this.txtInstanciaMod.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInstanciaMod.Location = new System.Drawing.Point(62, 37);
             this.txtInstanciaMod.Name = "txtInstanciaMod";
-            this.txtInstanciaMod.Size = new System.Drawing.Size(67, 22);
+            this.txtInstanciaMod.Size = new System.Drawing.Size(51, 20);
             this.txtInstanciaMod.TabIndex = 7;
+            this.txtInstanciaMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // btnModCancelar
             // 
             this.btnModCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModCancelar.Location = new System.Drawing.Point(13, 109);
-            this.btnModCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModCancelar.Location = new System.Drawing.Point(10, 89);
             this.btnModCancelar.Name = "btnModCancelar";
-            this.btnModCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnModCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnModCancelar.TabIndex = 4;
             this.btnModCancelar.Text = "Cancelar";
             this.btnModCancelar.UseVisualStyleBackColor = false;
@@ -223,10 +211,9 @@
             this.btnModGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(113)))), ((int)(((byte)(141)))));
             this.btnModGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModGuardar.Location = new System.Drawing.Point(415, 109);
-            this.btnModGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModGuardar.Location = new System.Drawing.Point(311, 89);
             this.btnModGuardar.Name = "btnModGuardar";
-            this.btnModGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnModGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnModGuardar.TabIndex = 3;
             this.btnModGuardar.Text = "Guardar";
             this.btnModGuardar.UseVisualStyleBackColor = false;
@@ -235,19 +222,17 @@
             // lblModEntrevista
             // 
             this.lblModEntrevista.AutoSize = true;
-            this.lblModEntrevista.Location = new System.Drawing.Point(192, 49);
-            this.lblModEntrevista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModEntrevista.Location = new System.Drawing.Point(144, 40);
             this.lblModEntrevista.Name = "lblModEntrevista";
-            this.lblModEntrevista.Size = new System.Drawing.Size(56, 16);
+            this.lblModEntrevista.Size = new System.Drawing.Size(44, 13);
             this.lblModEntrevista.TabIndex = 1;
             this.lblModEntrevista.Text = "Nombre";
             // 
             // txtModNombre
             // 
-            this.txtModNombre.Location = new System.Drawing.Point(259, 45);
-            this.txtModNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtModNombre.Location = new System.Drawing.Point(194, 37);
             this.txtModNombre.Name = "txtModNombre";
-            this.txtModNombre.Size = new System.Drawing.Size(255, 22);
+            this.txtModNombre.Size = new System.Drawing.Size(192, 20);
             this.txtModNombre.TabIndex = 0;
             // 
             // btnModificar
@@ -256,10 +241,9 @@
             this.btnModificar.Enabled = false;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnModificar.Location = new System.Drawing.Point(44, 423);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Location = new System.Drawing.Point(33, 344);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -271,10 +255,9 @@
             this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar.Location = new System.Drawing.Point(264, 423);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(198, 344);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Dar de Baja";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -283,9 +266,10 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Location = new System.Drawing.Point(9, 7);
+            this.lnkAtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkAtras.Name = "lnkAtras";
-            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
+            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
             this.lnkAtras.TabIndex = 7;
             this.lnkAtras.TabStop = true;
             this.lnkAtras.Text = "Atras";
@@ -293,17 +277,16 @@
             // 
             // frmConfigEntrevistas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(979, 486);
+            this.ClientSize = new System.Drawing.Size(734, 395);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModEntrevista);
             this.Controls.Add(this.dtgEntrevistas);
             this.Controls.Add(this.grpAltaEntrevista);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmConfigEntrevistas";
             this.Text = "Configurar Entrevistas del Proceso de Seleccion";
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntrevistas)).EndInit();

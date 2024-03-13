@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista.Accesibilidad
@@ -33,27 +34,27 @@ namespace Vista.Accesibilidad
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string entrevista = txtNombreEntrevista.Text.Trim();
-            int instancia = Convert.ToInt32(txtInstancia.Text.Trim());
 
-            if (string.IsNullOrWhiteSpace(entrevista) && string.IsNullOrWhiteSpace(instancia.ToString()))
+            if (string.IsNullOrWhiteSpace(txtNombreEntrevista.Text.Trim()) && string.IsNullOrWhiteSpace(txtInstancia.Text.Trim()))
             {
-                MessageBox.Show("Debe completar todos los campos.");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                string entrevista = txtNombreEntrevista.Text.Trim();
+                int instancia = Convert.ToInt32(txtInstancia.Text.Trim());
                 bool esEntrevistaValida = logicaEntrevista.ValidarEntrevista(instancia, entrevista);
 
                 if (!esEntrevistaValida)
                 {
-                    MessageBox.Show("Alta de entrevista exitosa.");
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNombreEntrevista.Clear();
                     txtInstancia.Clear();
                     CargarDataGrid();
                 }
                 else
                 {
-                    MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
+                    MessageBox.Show(Errores.EntYaIngresada, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtNombreEntrevista.Clear();
                     txtInstancia.Clear();
                 }
@@ -116,7 +117,7 @@ namespace Vista.Accesibilidad
 
                         if (string.IsNullOrWhiteSpace(nuevaEntrevista) && string.IsNullOrWhiteSpace(etapa.ToString()))
                         {
-                            MessageBox.Show("Debe completar los campos.");
+                            MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
@@ -124,14 +125,14 @@ namespace Vista.Accesibilidad
 
                             if (!modificacionExitosa)
                             {
-                                MessageBox.Show("Modificación de entrevista exitosa");
+                                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 txtModNombre.Clear();
                                 txtInstanciaMod.Clear();
                                 CargarDataGrid();
                             }
                             else
                             {
-                                MessageBox.Show("La entrevista ya está ingresada. Por favor, ingrese otra.");
+                                MessageBox.Show(Errores.EntYaIngresada, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 txtModNombre.Clear();
                                 txtInstanciaMod.Clear();
                             }
@@ -139,7 +140,7 @@ namespace Vista.Accesibilidad
                     }
                     else
                     {
-                        MessageBox.Show("El valor de etapa no es un número válido.");
+                        MessageBox.Show(Errores.EtapNoValida, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -162,17 +163,13 @@ namespace Vista.Accesibilidad
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar la entrevista?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         logicaEntrevista.EliminarEntrevista(id_entrevista);
-                        MessageBox.Show("La entrevista ha sido eliminada con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGrid();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -182,6 +179,7 @@ namespace Vista.Accesibilidad
         {
             txtInstanciaMod.Clear();
             txtModNombre.Clear();
+            grpAltaEntrevista.Enabled = true;
             grpModEntrevista.Enabled = false;
         }
 
@@ -198,6 +196,19 @@ namespace Vista.Accesibilidad
                 btnModificar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
+        }
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancela la entrada de caracteres no numéricos
+
+            }
+        }
+
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
         }
     }
 }
