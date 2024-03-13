@@ -58,28 +58,34 @@
             this.dtgPersonas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPersonas.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dtgPersonas.Location = new System.Drawing.Point(222, 51);
+            this.dtgPersonas.Location = new System.Drawing.Point(296, 63);
+            this.dtgPersonas.Margin = new System.Windows.Forms.Padding(4);
             this.dtgPersonas.Name = "dtgPersonas";
             this.dtgPersonas.ReadOnly = true;
-            this.dtgPersonas.Size = new System.Drawing.Size(650, 235);
+            this.dtgPersonas.RowHeadersWidth = 51;
+            this.dtgPersonas.Size = new System.Drawing.Size(867, 289);
             this.dtgPersonas.TabIndex = 0;
             this.dtgPersonas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPersonas_RowEnter);
             // 
             // lstCapacitaciones
             // 
             this.lstCapacitaciones.FormattingEnabled = true;
-            this.lstCapacitaciones.Location = new System.Drawing.Point(171, 359);
+            this.lstCapacitaciones.ItemHeight = 16;
+            this.lstCapacitaciones.Location = new System.Drawing.Point(228, 442);
+            this.lstCapacitaciones.Margin = new System.Windows.Forms.Padding(4);
             this.lstCapacitaciones.Name = "lstCapacitaciones";
-            this.lstCapacitaciones.Size = new System.Drawing.Size(238, 238);
+            this.lstCapacitaciones.Size = new System.Drawing.Size(316, 292);
             this.lstCapacitaciones.TabIndex = 20;
             this.lstCapacitaciones.DoubleClick += new System.EventHandler(this.lstCapacitaciones_DoubleClick);
             // 
             // lstCapacitacionesAsignadas
             // 
             this.lstCapacitacionesAsignadas.FormattingEnabled = true;
-            this.lstCapacitacionesAsignadas.Location = new System.Drawing.Point(510, 359);
+            this.lstCapacitacionesAsignadas.ItemHeight = 16;
+            this.lstCapacitacionesAsignadas.Location = new System.Drawing.Point(680, 442);
+            this.lstCapacitacionesAsignadas.Margin = new System.Windows.Forms.Padding(4);
             this.lstCapacitacionesAsignadas.Name = "lstCapacitacionesAsignadas";
-            this.lstCapacitacionesAsignadas.Size = new System.Drawing.Size(238, 238);
+            this.lstCapacitacionesAsignadas.Size = new System.Drawing.Size(316, 292);
             this.lstCapacitacionesAsignadas.TabIndex = 21;
             this.lstCapacitacionesAsignadas.DoubleClick += new System.EventHandler(this.lstCapacitacionesAsignadas_DoubleClick);
             // 
@@ -89,9 +95,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(828, 586);
+            this.btnGuardar.Location = new System.Drawing.Point(1104, 721);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -100,18 +107,20 @@
             // lblCapacitaciones
             // 
             this.lblCapacitaciones.AutoSize = true;
-            this.lblCapacitaciones.Location = new System.Drawing.Point(168, 343);
+            this.lblCapacitaciones.Location = new System.Drawing.Point(224, 422);
+            this.lblCapacitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacitaciones.Name = "lblCapacitaciones";
-            this.lblCapacitaciones.Size = new System.Drawing.Size(80, 13);
+            this.lblCapacitaciones.Size = new System.Drawing.Size(101, 16);
             this.lblCapacitaciones.TabIndex = 23;
             this.lblCapacitaciones.Text = "Capacitaciones";
             // 
             // lblCapacitacionesAsignadas
             // 
             this.lblCapacitacionesAsignadas.AutoSize = true;
-            this.lblCapacitacionesAsignadas.Location = new System.Drawing.Point(507, 343);
+            this.lblCapacitacionesAsignadas.Location = new System.Drawing.Point(676, 422);
+            this.lblCapacitacionesAsignadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacitacionesAsignadas.Name = "lblCapacitacionesAsignadas";
-            this.lblCapacitacionesAsignadas.Size = new System.Drawing.Size(132, 13);
+            this.lblCapacitacionesAsignadas.Size = new System.Drawing.Size(169, 16);
             this.lblCapacitacionesAsignadas.TabIndex = 24;
             this.lblCapacitacionesAsignadas.Text = "Capacitaciones Asignadas";
             // 
@@ -121,9 +130,10 @@
             this.btnDesasignarCapacitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDesasignarCapacitacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesasignarCapacitacion.ForeColor = System.Drawing.Color.White;
-            this.btnDesasignarCapacitacion.Location = new System.Drawing.Point(438, 484);
+            this.btnDesasignarCapacitacion.Location = new System.Drawing.Point(584, 596);
+            this.btnDesasignarCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesasignarCapacitacion.Name = "btnDesasignarCapacitacion";
-            this.btnDesasignarCapacitacion.Size = new System.Drawing.Size(40, 40);
+            this.btnDesasignarCapacitacion.Size = new System.Drawing.Size(53, 49);
             this.btnDesasignarCapacitacion.TabIndex = 26;
             this.btnDesasignarCapacitacion.Text = "<";
             this.btnDesasignarCapacitacion.UseVisualStyleBackColor = false;
@@ -135,9 +145,10 @@
             this.btnAsignarCapacitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsignarCapacitacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAsignarCapacitacion.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarCapacitacion.Location = new System.Drawing.Point(438, 418);
+            this.btnAsignarCapacitacion.Location = new System.Drawing.Point(584, 514);
+            this.btnAsignarCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnAsignarCapacitacion.Name = "btnAsignarCapacitacion";
-            this.btnAsignarCapacitacion.Size = new System.Drawing.Size(40, 40);
+            this.btnAsignarCapacitacion.Size = new System.Drawing.Size(53, 49);
             this.btnAsignarCapacitacion.TabIndex = 25;
             this.btnAsignarCapacitacion.Text = ">";
             this.btnAsignarCapacitacion.UseVisualStyleBackColor = false;
@@ -147,35 +158,41 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Location = new System.Drawing.Point(14, 64);
+            this.lblNombre.Location = new System.Drawing.Point(19, 79);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(17, 41);
+            this.txtCuit.Location = new System.Drawing.Point(23, 50);
+            this.txtCuit.Margin = new System.Windows.Forms.Padding(4);
             this.txtCuit.MaxLength = 30;
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.Size = new System.Drawing.Size(132, 22);
             this.txtCuit.TabIndex = 4;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(17, 80);
+            this.txtNombre.Location = new System.Drawing.Point(23, 98);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 6;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
             this.lblCuit.BackColor = System.Drawing.Color.Transparent;
-            this.lblCuit.Location = new System.Drawing.Point(14, 25);
+            this.lblCuit.Location = new System.Drawing.Point(19, 31);
+            this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(67, 13);
+            this.lblCuit.Size = new System.Drawing.Size(77, 16);
             this.lblCuit.TabIndex = 1;
             this.lblCuit.Text = "CUIT / CUIL";
             // 
@@ -183,9 +200,10 @@
             // 
             this.lblArea.AutoSize = true;
             this.lblArea.BackColor = System.Drawing.Color.Transparent;
-            this.lblArea.Location = new System.Drawing.Point(14, 142);
+            this.lblArea.Location = new System.Drawing.Point(19, 175);
+            this.lblArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(29, 13);
+            this.lblArea.Size = new System.Drawing.Size(36, 16);
             this.lblArea.TabIndex = 8;
             this.lblArea.Text = "Area";
             // 
@@ -195,9 +213,10 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(17, 200);
+            this.btnFiltrar.Location = new System.Drawing.Point(23, 246);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(100, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(133, 28);
             this.btnFiltrar.TabIndex = 7;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -210,9 +229,10 @@
             this.cmbArea.Items.AddRange(new object[] {
             "RRHH",
             ""});
-            this.cmbArea.Location = new System.Drawing.Point(17, 158);
+            this.cmbArea.Location = new System.Drawing.Point(23, 194);
+            this.cmbArea.Margin = new System.Windows.Forms.Padding(4);
             this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(100, 21);
+            this.cmbArea.Size = new System.Drawing.Size(132, 24);
             this.cmbArea.TabIndex = 9;
             // 
             // grpFiltro
@@ -227,37 +247,43 @@
             this.grpFiltro.Controls.Add(this.txtNombre);
             this.grpFiltro.Controls.Add(this.txtCuit);
             this.grpFiltro.Controls.Add(this.lblNombre);
-            this.grpFiltro.Location = new System.Drawing.Point(37, 46);
+            this.grpFiltro.Location = new System.Drawing.Point(49, 57);
+            this.grpFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.grpFiltro.Name = "grpFiltro";
-            this.grpFiltro.Size = new System.Drawing.Size(137, 240);
+            this.grpFiltro.Padding = new System.Windows.Forms.Padding(4);
+            this.grpFiltro.Size = new System.Drawing.Size(183, 295);
             this.grpFiltro.TabIndex = 13;
             this.grpFiltro.TabStop = false;
             this.grpFiltro.Text = "Filtro";
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(17, 119);
+            this.txtApellido.Location = new System.Drawing.Point(23, 146);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.Size = new System.Drawing.Size(132, 22);
             this.txtApellido.TabIndex = 11;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.BackColor = System.Drawing.Color.Transparent;
-            this.lblApellido.Location = new System.Drawing.Point(17, 103);
+            this.lblApellido.Location = new System.Drawing.Point(23, 127);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.Size = new System.Drawing.Size(57, 16);
             this.lblApellido.TabIndex = 10;
             this.lblApellido.Text = "Apellido";
             // 
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Location = new System.Drawing.Point(16, 11);
+            this.lnkAtras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkAtras.Name = "lnkAtras";
-            this.lnkAtras.Size = new System.Drawing.Size(31, 13);
+            this.lnkAtras.Size = new System.Drawing.Size(38, 16);
             this.lnkAtras.TabIndex = 32;
             this.lnkAtras.TabStop = true;
             this.lnkAtras.Text = "Atrás";
@@ -265,10 +291,10 @@
             // 
             // frmAsignarCapacitaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(927, 636);
+            this.ClientSize = new System.Drawing.Size(1236, 783);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnDesasignarCapacitacion);
             this.Controls.Add(this.btnAsignarCapacitacion);
@@ -280,6 +306,7 @@
             this.Controls.Add(this.grpFiltro);
             this.Controls.Add(this.dtgPersonas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmAsignarCapacitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

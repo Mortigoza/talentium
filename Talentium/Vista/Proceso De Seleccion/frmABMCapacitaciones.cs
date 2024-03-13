@@ -47,6 +47,30 @@ namespace Vista.Gestion_de_Talento
             //dtg
             dtgCapacitacion.Columns.Clear();
         }
+        public void CleanCtrls(bool ctlAlta) {
+            if (ctlAlta == true)
+            {
+                txtNombreAlta.Clear();
+                txtTiempoEstimadoAlta.Clear();
+                cmbNivelAlta.SelectedIndex = 0;
+                cmbAreaAlta.SelectedIndex = 0;
+                cmbExternaInternaAlta.SelectedIndex = 0;
+                chcObligatorioAlta.Checked = false;
+            }
+            else {
+                txtNombreMod.Clear();
+                txtTiempoEstimadoMod.Clear();
+                cmbAreaMod.SelectedIndex = 0;
+                cmbNivelMod.SelectedIndex = 0;
+                cmbExternaInternaMod.SelectedIndex = 0;
+                chcObligatorioMod.Checked = false;
+                bloquearGroupBox(grpModificacion, grpAlta);
+            }
+           
+        }
+        public void evalHrs(string hr) {
+            
+        }
         public void limpiarControles(Control control)
         {
             foreach (Control item in control.Controls)
@@ -99,14 +123,15 @@ namespace Vista.Gestion_de_Talento
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text))
+            if (string.IsNullOrWhiteSpace(txtNombreAlta.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoAlta.Text)
+                || cnCapacitaciones.esCero(txtTiempoEstimadoAlta.Text))
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             cnCapacitaciones.IdArea = cmbAreaAlta.SelectedValue;
-            cnCapacitaciones.Capacitacion = txtNombreAlta.Text;
+            cnCapacitaciones.Capacitacion = txtNombreAlta.Text.Trim();
             cnCapacitaciones.IdNivel = cmbNivelAlta.SelectedIndex;
             cnCapacitaciones.ExternaInterna = cmbExternaInternaAlta.SelectedIndex;
             cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoAlta.Text;
@@ -163,7 +188,8 @@ namespace Vista.Gestion_de_Talento
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreMod.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoMod.Text))
+            if (string.IsNullOrWhiteSpace(txtNombreMod.Text) || string.IsNullOrWhiteSpace(txtTiempoEstimadoMod.Text)
+                || cnCapacitaciones.esCero(txtTiempoEstimadoMod.Text))
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -171,7 +197,7 @@ namespace Vista.Gestion_de_Talento
 
             cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
             cnCapacitaciones.IdArea = cmbAreaMod.SelectedValue;
-            cnCapacitaciones.Capacitacion = txtNombreMod.Text;
+            cnCapacitaciones.Capacitacion = txtNombreMod.Text.Trim();
             cnCapacitaciones.IdNivel = cmbNivelMod.SelectedIndex;
             cnCapacitaciones.ExternaInterna = cmbExternaInternaMod.SelectedIndex;
             cnCapacitaciones.TiempoEstimado = txtTiempoEstimadoMod.Text;
@@ -205,7 +231,7 @@ namespace Vista.Gestion_de_Talento
                 {
                     cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
                     cnCapacitaciones.EliminarCapacitaciones();
-                    cargarDTG(true);
+                    cargarDTG(false);
 
                 }
                 catch (Exception ex)
@@ -222,23 +248,13 @@ namespace Vista.Gestion_de_Talento
 
         private void btnCancelarAlta_Click(object sender, EventArgs e)
         {
-            txtNombreAlta.Clear();
-            txtTiempoEstimadoAlta.Clear();
-            cmbNivelAlta.SelectedIndex = 0;
-            cmbAreaAlta.SelectedIndex = 0;
-            cmbExternaInternaAlta.SelectedIndex = 0;
-            chcObligatorioAlta.Checked = false;
+            limpiarControles(grpAlta);
         }
 
         private void btnCancelarMod_Click(object sender, EventArgs e)
         {
-            txtNombreMod.Clear();
-            txtTiempoEstimadoMod.Clear();
-            cmbAreaMod.SelectedIndex = 0;
-            cmbNivelMod.SelectedIndex = 0;
-            cmbExternaInternaMod.SelectedIndex = 0;
-            chcObligatorioMod.Checked = false;
-            bloquearGroupBox(grpModificacion, grpAlta);
+            limpiarControles(grpModificacion);
+
         }
         private void bloquearGroupBox(GroupBox grpActual, GroupBox grpBloqueado)
         {
@@ -270,6 +286,17 @@ namespace Vista.Gestion_de_Talento
         {
             grpModificacion.Enabled = false;
             limpiarControles(grpModificacion);
+        }
+
+        private void txtNombreAlta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            cargarDTG(false);
+
         }
     }
 }

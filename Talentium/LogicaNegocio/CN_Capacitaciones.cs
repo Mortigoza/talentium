@@ -75,6 +75,23 @@ namespace LogicaNegocio
             return dt;
         }
 
+
+            public bool esCero(string numero)
+        {
+            bool esCero = false;
+            for (int i = 0; i < numero.Length; i++)
+            {
+                if (numero[i] is '0' || numero[i] is ' ')
+                {
+                    esCero = true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return esCero;
+        }
         public void AltaCapacitaciones()
         {
             capacitaciones.IdArea = (int)idArea;

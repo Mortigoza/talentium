@@ -333,19 +333,19 @@ namespace Vista
                             insert.foto_perfil = new byte[0];
                         }
 
-                        insert.apellidos = txtApellidos.Text;
-                        insert.nombres = txtNombres.Text;
+                        insert.apellidos = txtApellidos.Text.Trim();
+                        insert.nombres = txtNombres.Text.Trim();
                         insert.id_tipo_doc = int.Parse(cmbTipoDoc.SelectedValue.ToString());
                         insert.nro_doc = txtDni.Text;
                         insert.cuit_cuil = txtCuitCuil.Text;
-                        insert.calle = txtCalle.Text;
+                        insert.calle = txtCalle.Text.Trim();
                         insert.nro = txtNro.Text.Length;
                         insert.dpto = txtDpto.Text;
                         insert.piso = txtPiso.Text;
                         insert.id_localidad = int.Parse(cmbLocalidad.SelectedValue.ToString());
                         insert.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
                         insert.id_area = int.Parse(cmbArea.SelectedValue.ToString());
-                        insert.email = txtEmail.Text;
+                        insert.email = txtEmail.Text.Trim();
                         insert.id_nacionalidad = int.Parse(cmbNacionalidad.SelectedValue.ToString());
                         insert.id_genero = int.Parse(cmbGenero.SelectedValue.ToString());
                         insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
@@ -366,11 +366,11 @@ namespace Vista
                         //insert.id_convenio = int.Parse(cmbConvenio.SelectedValue.ToString());
                         //insert.fecha_alta = dttFechaAlta.Value;
                 
-                        insert.telefono = txtTelefono.Text;
+                        insert.telefono = txtTelefono.Text.Trim();
                         insert.id_tipo = (int)cmbTipoTel.SelectedValue;
-                        insert.telefono_alternativo = txtTelefonoAlternativo.Text;
+                        insert.telefono_alternativo = txtTelefonoAlternativo.Text.Trim();
                         insert.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
-                        insert.contacto = txtContacto.Text;
+                        insert.contacto = txtContacto.Text.Trim();
                 
 
                         #endregion
@@ -406,11 +406,11 @@ namespace Vista
                         this.esCandidato = esCandidato;
 
                     modify.id_persona = _id_persona;
-                    modify.nombres = txtNombres.Text;
-                    modify.apellidos = txtApellidos.Text;
+                    modify.nombres = txtNombres.Text.Trim();
+                    modify.apellidos = txtApellidos.Text.Trim();
                     modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
                     modify.nro_doc = txtDni.Text;
-                    modify.email = txtEmail.Text;
+                    modify.email = txtEmail.Text.Trim();
                     modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
                     modify.id_genero = (int)cmbGenero.SelectedValue;
                     modify.hijos = (int)nupHijos.Value;
@@ -424,7 +424,7 @@ namespace Vista
                         }
                     
                     modify.id_localidad = (int)cmbLocalidad.SelectedValue;
-                    modify.calle = txtCalle.Text;
+                    modify.calle = txtCalle.Text.Trim();
                     modify.nro = int.Parse(txtNro.Text);
                     modify.piso = txtPiso.Text;
                     modify.dpto = txtDpto.Text;
@@ -439,9 +439,9 @@ namespace Vista
                         }
                         //modify.fecha_alta = dttFechaAlta.Value;
                     modify.id_estado_civil = (int)cmbEstadoCivil.SelectedValue;
-                    modify.telefono = txtTelefono.Text;
+                    modify.telefono = txtTelefono.Text.Trim();
                     modify.id_tipo = (int)cmbTipoTel.SelectedValue;
-                    modify.telefono_alternativo = txtTelefonoAlternativo.Text;
+                    modify.telefono_alternativo = txtTelefonoAlternativo.Text.Trim();
                     modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                     modify.contacto = txtContacto.Text;
                         if (!esCandidato)
@@ -515,29 +515,29 @@ namespace Vista
                         Persona modify = new Persona();
 
                         modify.id_persona = _id_persona;
-                        modify.nombres = txtNombres.Text;
-                        modify.apellidos = txtApellidos.Text;
+                        modify.nombres = txtNombres.Text.Trim();
+                        modify.apellidos = txtApellidos.Text.Trim();
                         modify.id_tipo_doc = (int)cmbTipoDoc.SelectedValue;
                         modify.nro_doc = txtDni.Text;
-                        modify.email = txtEmail.Text;
+                        modify.email = txtEmail.Text.Trim();
                         modify.id_nacionalidad = (int)cmbNacionalidad.SelectedValue;
                         modify.id_genero = (int)cmbGenero.SelectedValue;
                         modify.hijos = (int)nupHijos.Value;
                         modify.id_area = (int)cmbArea.SelectedValue;
                         modify.id_convenio = (int)cmbConvenio.SelectedValue;
                         modify.id_localidad = (int)cmbLocalidad.SelectedValue;
-                        modify.calle = txtCalle.Text;
+                        modify.calle = txtCalle.Text.Trim();
                         modify.nro = int.Parse(txtNro.Text);
                         modify.piso = txtPiso.Text;
                         modify.dpto = txtDpto.Text;
                         modify.fecha_nacimiento = dtpFechaDeNacimiento.Value;
                         modify.fecha_alta = dttFechaAlta.Value;
                         modify.id_estado_civil = (int)cmbEstadoCivil.SelectedValue;
-                        modify.telefono = txtTelefono.Text;
+                        modify.telefono = txtTelefono.Text.Trim();
                         modify.id_tipo = (int)cmbTipoTel.SelectedValue;
-                        modify.telefono_alternativo = txtTelefonoAlternativo.Text;
+                        modify.telefono_alternativo = txtTelefonoAlternativo.Text.Trim();
                         modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
-                        modify.contacto = txtContacto.Text;
+                        modify.contacto = txtContacto.Text.Trim();
                         modify.candidato = false;
 
                         //ACADEMICOS
@@ -1408,6 +1408,7 @@ namespace Vista
         
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            
             if (!string.IsNullOrEmpty(txtInsitutcionSuperior.Text) &&
              !string.IsNullOrEmpty(txtTitulo.Text) &&
              cmbNivelAcademico.SelectedItem != null &&
@@ -1426,8 +1427,8 @@ namespace Vista
                 InfoAcademicoDto academico = new InfoAcademicoDto();
 
                 academico.Nivel = int.Parse(cmbNivelAcademico.SelectedValue.ToString());
-                academico.Institucion = txtInsitutcionSuperior.Text;
-                academico.Titulo = txtTitulo.Text;
+                academico.Institucion = txtInsitutcionSuperior.Text.Trim();
+                academico.Titulo = txtTitulo.Text.Trim();
                 academico.Ingreso = Convert.ToInt32(cmbIngreso.SelectedItem?.ToString());
                 if (cmbEgreso.SelectedIndex != 0)
                 {
@@ -1517,8 +1518,8 @@ namespace Vista
 
                 infoLaboralDto laboral = new infoLaboralDto();
 
-                laboral.Puesto = txtPuesto.Text;
-                laboral.Empresa = txtEmpresa.Text;
+                laboral.Puesto = txtPuesto.Text.Trim();
+                laboral.Empresa = txtEmpresa.Text.Trim();
                 laboral.Fecha_Ingreso = Convert.ToInt32(cmbLaboralIngreso.SelectedItem?.ToString());
                 laboral.Fecha_Egreso = Convert.ToInt32(cmbLaboralIngreso.SelectedItem?.ToString());
                 laboral.Personal_A_Cargo = Convert.ToInt32(nupPersonalACargo.Value);
@@ -1965,6 +1966,7 @@ namespace Vista
             }
             else
             {
+                txtDni.Text = null;
                 txtDni.ReadOnly = false;
                 txtDni.KeyPress -= NumerosDNI; 
                 txtDni.KeyPress += LetrasYNumeros;
