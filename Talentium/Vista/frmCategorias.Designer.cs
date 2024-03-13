@@ -298,7 +298,7 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Location = new System.Drawing.Point(12, 446);
             this.lnkAtras.Name = "lnkAtras";
             this.lnkAtras.Size = new System.Drawing.Size(31, 13);
             this.lnkAtras.TabIndex = 34;
@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 453);
+            this.ClientSize = new System.Drawing.Size(704, 468);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.grpModificarCategoria);

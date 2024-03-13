@@ -151,7 +151,7 @@
     <value>El usuario se encuentra dado de baja.</value>
   </data>
   <data name="UsrInvalido" xml:space="preserve">
-    <value>Usuario invalido. Porfavor verifique que el usuario sea correcto.</value>
+    <value>Usuario invalido. Por favor verifique que el usuario sea correcto.</value>
   </data>
   <data name="UsrPswIncorrecto" xml:space="preserve">
     <value>Usuario o contraseña incorrectos.</value>

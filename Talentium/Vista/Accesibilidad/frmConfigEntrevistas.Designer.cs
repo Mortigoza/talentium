@@ -266,7 +266,7 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(9, 7);
+            this.lnkAtras.Location = new System.Drawing.Point(11, 387);
             this.lnkAtras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lnkAtras.Name = "lnkAtras";
             this.lnkAtras.Size = new System.Drawing.Size(31, 13);
@@ -280,7 +280,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(734, 395);
+            this.ClientSize = new System.Drawing.Size(734, 409);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);

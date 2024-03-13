@@ -248,7 +248,7 @@ namespace Vista.Gestion_de_Talento
             if (string.IsNullOrEmpty(fechaEntrevista.ToString()) || string.IsNullOrEmpty(entrevistador) || string.IsNullOrEmpty(estado))
             {
                 camposIncompletos = true;
-                MessageBox.Show("Por favor, complete todos los campos antes de guardar la información.");
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             bool esInsercion = string.IsNullOrEmpty(fechaEntrevista.ToString()) && string.IsNullOrEmpty(entrevistador) && string.IsNullOrEmpty(estado);

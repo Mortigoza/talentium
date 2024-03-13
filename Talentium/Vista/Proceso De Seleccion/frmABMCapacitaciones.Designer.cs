@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMCapacitaciones));
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.lblFiltro = new System.Windows.Forms.Label();
+            this.lblFiltroCap = new System.Windows.Forms.Label();
             this.btnBaja = new System.Windows.Forms.Button();
             this.dtgCapacitacion = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +80,7 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFiltrar.Location = new System.Drawing.Point(534, 52);
+            this.btnFiltrar.Location = new System.Drawing.Point(530, 52);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(64, 30);
@@ -91,22 +91,23 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(253, 58);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Location = new System.Drawing.Point(230, 58);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(274, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(293, 20);
             this.txtFiltro.TabIndex = 12;
             // 
-            // lblFiltro
+            // lblFiltroCap
             // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(61, 58);
-            this.lblFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(167, 13);
-            this.lblFiltro.TabIndex = 11;
-            this.lblFiltro.Text = "Filtrar por nombre de capacitacion";
-            this.lblFiltro.Click += new System.EventHandler(this.label9_Click);
+            this.lblFiltroCap.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblFiltroCap.Location = new System.Drawing.Point(11, 58);
+            this.lblFiltroCap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFiltroCap.Name = "lblFiltroCap";
+            this.lblFiltroCap.Size = new System.Drawing.Size(213, 20);
+            this.lblFiltroCap.TabIndex = 11;
+            this.lblFiltroCap.Text = "Filtrar por nombre de capacitacion";
+            this.lblFiltroCap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFiltroCap.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnBaja
             // 
@@ -133,7 +134,7 @@
             this.Column3,
             this.Column4});
             this.dtgCapacitacion.Location = new System.Drawing.Point(41, 111);
-            this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgCapacitacion.Margin = new System.Windows.Forms.Padding(4);
             this.dtgCapacitacion.Name = "dtgCapacitacion";
             this.dtgCapacitacion.RowHeadersWidth = 51;
             this.dtgCapacitacion.RowTemplate.Height = 24;
@@ -189,9 +190,9 @@
             this.grpModificacion.Controls.Add(this.lblNombreMod);
             this.grpModificacion.Controls.Add(this.txtNombreMod);
             this.grpModificacion.Location = new System.Drawing.Point(738, 333);
-            this.grpModificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificacion.Margin = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Name = "grpModificacion";
-            this.grpModificacion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpModificacion.Padding = new System.Windows.Forms.Padding(4);
             this.grpModificacion.Size = new System.Drawing.Size(567, 295);
             this.grpModificacion.TabIndex = 8;
             this.grpModificacion.TabStop = false;
@@ -225,7 +226,7 @@
             this.cmbExternaInternaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaMod.FormattingEnabled = true;
             this.cmbExternaInternaMod.Location = new System.Drawing.Point(30, 173);
-            this.cmbExternaInternaMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbExternaInternaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaMod.Name = "cmbExternaInternaMod";
             this.cmbExternaInternaMod.Size = new System.Drawing.Size(120, 21);
             this.cmbExternaInternaMod.TabIndex = 17;
@@ -245,7 +246,7 @@
             this.cmbNivelMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelMod.FormattingEnabled = true;
             this.cmbNivelMod.Location = new System.Drawing.Point(317, 76);
-            this.cmbNivelMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelMod.Name = "cmbNivelMod";
             this.cmbNivelMod.Size = new System.Drawing.Size(147, 21);
             this.cmbNivelMod.TabIndex = 16;
@@ -255,7 +256,7 @@
             this.cmbAreaMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaMod.FormattingEnabled = true;
             this.cmbAreaMod.Location = new System.Drawing.Point(317, 174);
-            this.cmbAreaMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAreaMod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaMod.Name = "cmbAreaMod";
             this.cmbAreaMod.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaMod.TabIndex = 21;
@@ -294,7 +295,7 @@
             this.btnCancelarMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelarMod.Location = new System.Drawing.Point(351, 239);
-            this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelarMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarMod.Name = "btnCancelarMod";
             this.btnCancelarMod.Size = new System.Drawing.Size(75, 29);
             this.btnCancelarMod.TabIndex = 11;
@@ -309,7 +310,7 @@
             this.btnGuardarMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarMod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardarMod.Location = new System.Drawing.Point(459, 239);
-            this.btnGuardarMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarMod.Name = "btnGuardarMod";
             this.btnGuardarMod.Size = new System.Drawing.Size(75, 29);
             this.btnGuardarMod.TabIndex = 10;
@@ -329,7 +330,7 @@
             // txtNombreMod
             // 
             this.txtNombreMod.Location = new System.Drawing.Point(30, 76);
-            this.txtNombreMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreMod.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreMod.Name = "txtNombreMod";
             this.txtNombreMod.Size = new System.Drawing.Size(261, 20);
             this.txtNombreMod.TabIndex = 1;
@@ -351,9 +352,9 @@
             this.grpAlta.Controls.Add(this.lblAltaCapacitacion);
             this.grpAlta.Controls.Add(this.txtNombreAlta);
             this.grpAlta.Location = new System.Drawing.Point(738, 58);
-            this.grpAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAlta.Margin = new System.Windows.Forms.Padding(4);
             this.grpAlta.Name = "grpAlta";
-            this.grpAlta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAlta.Padding = new System.Windows.Forms.Padding(4);
             this.grpAlta.Size = new System.Drawing.Size(567, 257);
             this.grpAlta.TabIndex = 7;
             this.grpAlta.TabStop = false;
@@ -387,7 +388,7 @@
             this.cmbExternaInternaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExternaInternaAlta.FormattingEnabled = true;
             this.cmbExternaInternaAlta.Location = new System.Drawing.Point(30, 130);
-            this.cmbExternaInternaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbExternaInternaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExternaInternaAlta.Name = "cmbExternaInternaAlta";
             this.cmbExternaInternaAlta.Size = new System.Drawing.Size(120, 21);
             this.cmbExternaInternaAlta.TabIndex = 16;
@@ -397,7 +398,7 @@
             this.cmbAreaAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAreaAlta.FormattingEnabled = true;
             this.cmbAreaAlta.Location = new System.Drawing.Point(317, 131);
-            this.cmbAreaAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAreaAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAreaAlta.Name = "cmbAreaAlta";
             this.cmbAreaAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbAreaAlta.TabIndex = 15;
@@ -416,7 +417,7 @@
             this.cmbNivelAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivelAlta.FormattingEnabled = true;
             this.cmbNivelAlta.Location = new System.Drawing.Point(317, 58);
-            this.cmbNivelAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelAlta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAlta.Name = "cmbNivelAlta";
             this.cmbNivelAlta.Size = new System.Drawing.Size(147, 21);
             this.cmbNivelAlta.TabIndex = 13;
@@ -428,7 +429,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Location = new System.Drawing.Point(351, 204);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 29);
             this.btnCancelar.TabIndex = 10;
@@ -443,7 +444,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Location = new System.Drawing.Point(459, 204);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 29);
             this.btnGuardar.TabIndex = 9;
@@ -491,7 +492,7 @@
             // txtNombreAlta
             // 
             this.txtNombreAlta.Location = new System.Drawing.Point(30, 59);
-            this.txtNombreAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreAlta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreAlta.Name = "txtNombreAlta";
             this.txtNombreAlta.Size = new System.Drawing.Size(261, 20);
             this.txtNombreAlta.TabIndex = 0;
@@ -504,7 +505,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificar.Location = new System.Drawing.Point(458, 531);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(110, 31);
             this.btnModificar.TabIndex = 14;
@@ -515,7 +516,7 @@
             // lnkAtras
             // 
             this.lnkAtras.AutoSize = true;
-            this.lnkAtras.Location = new System.Drawing.Point(12, 9);
+            this.lnkAtras.Location = new System.Drawing.Point(12, 638);
             this.lnkAtras.Name = "lnkAtras";
             this.lnkAtras.Size = new System.Drawing.Size(31, 13);
             this.lnkAtras.TabIndex = 32;
@@ -531,7 +532,7 @@
             this.btnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefrescar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRefrescar.Location = new System.Drawing.Point(616, 52);
+            this.btnRefrescar.Location = new System.Drawing.Point(612, 52);
             this.btnRefrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(30, 30);
@@ -551,13 +552,13 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.lblFiltroCap);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.dtgCapacitacion);
             this.Controls.Add(this.grpModificacion);
             this.Controls.Add(this.grpAlta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmABMCapacitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -577,7 +578,7 @@
 
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.Label lblFiltroCap;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.DataGridView dtgCapacitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

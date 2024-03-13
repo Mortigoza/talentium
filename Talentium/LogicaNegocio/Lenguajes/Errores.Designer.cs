@@ -511,7 +511,7 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario invalido. Porfavor verifique que el usuario sea correcto..
+        ///   Busca una cadena traducida similar a Usuario invalido. Por favor verifique que el usuario sea correcto..
         /// </summary>
         public static string UsrInvalido {
             get {

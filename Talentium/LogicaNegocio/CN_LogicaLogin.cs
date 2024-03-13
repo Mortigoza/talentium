@@ -139,28 +139,6 @@ namespace LogicaNegocio
                     DateTime fhCaducidad = tup.Item2;
 
                     Message = email.Enviar(UserCache.id, correo, cod, fhCaducidad);
-
-
-                    //string feHoy = Convert.ToString(DateTime.Now);
-                    //string fechaHoy = feHoy.Substring(0, 8);
-                    //string fecha = Convert.ToString(tabla.Rows[0][1]);
-                    //string substFecha = fecha.Substring(0, 8);
-                    //if (fechaHoy == substFecha && !string.IsNullOrWhiteSpace(fecha))
-                    //{
-
-                    //}
-                    //else 
-                    //{
-                    //   /* string message = email.Enviar("mairaaracelirodriguez@gmail.com", "145E12");
-                    //    MessageBox.Show(message); */
-                    //}
-
-                    //Console.WriteLine(tabla);
-                    //Console.WriteLine(tabla.Rows[0][0]);
-
-
-                    /* string message = email.Enviar("mairaaracelirodriguez@gmail.com", "145E12");
-                      MessageBox.Show(message);*/
                 }
                 catch (Exception e)
                 {

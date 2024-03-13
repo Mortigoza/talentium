@@ -1335,4 +1335,7 @@
   <data name="frmConsultaProcesoDeSeleccion" xml:space="preserve">
     <value>Proceso de selección - Consulta</value>
   </data>
+  <data name="lblFiltroCap" xml:space="preserve">
+    <value>Filtrar por nombre de capacitación</value>
+  </data>
 </root>

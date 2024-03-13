@@ -58,7 +58,7 @@ namespace Vista
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, Errores.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Errores.UsrInvalido, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             } else
             {
