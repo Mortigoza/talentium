@@ -92,11 +92,9 @@ namespace AccesoDatos
         }
 
         //traer puesto
-        public DataTable Puestos(int id)
+        public DataTable Puestos()
         {
-            SqlParameter param1 = new SqlParameter("@id_areas", id) { SqlDbType = SqlDbType.Int };
-
-            List<SqlParameter> listaParametros = new List<SqlParameter>() { param1};
+            List<SqlParameter> listaParametros = new List<SqlParameter>() { };
             DataTable resultado = EjecutarConsultas("consultarPuestos_sp", listaParametros.ToArray());
 
             return resultado;

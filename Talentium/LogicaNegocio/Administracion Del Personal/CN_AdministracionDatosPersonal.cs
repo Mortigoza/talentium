@@ -193,6 +193,7 @@ namespace LogicaNegocio.Administracion_Del_Personal
         public DataTable ActualizarDatos(Persona modify)
         {
             DataTable resultado = AccesoDatos.ActualizarDatos(modify);
+            ActualizarTelefono(modify, modify.id_persona);
             return resultado;
         }
 

@@ -67,7 +67,6 @@ namespace Vista
             else 
             {
                  persona = logicaPersona.ObtenerPersona();
-
             }
             List<Persona> personList = persona.AsEnumerable()
                 .Select(row => new Persona
@@ -77,7 +76,7 @@ namespace Vista
                     apellidos = row.Field<string>("apellidos"),
                     cuit_cuil = row.Field<string>("cuit_cuil"),
                     nro_doc = row.Field<string>("nro_doc"),
-                    id_area = row.Field<int>("id_area"), // Asegúrate de agregar esta línea para obtener el área
+                    id_area = row.Field<int>("id_area"),
                     id_baja = row.Field<bool>("id_baja")
                 })
                 .ToList();
@@ -86,10 +85,9 @@ namespace Vista
             string filtroNombres = txtNombre.Text.Trim();
             string filtroApellidos = txtApellido.Text.Trim();
             string filtroCuil = txtCuit.Text;
-            int? filtroIdArea = (int?)cmbArea.SelectedValue; // Obtén el área seleccionada desde el ComboBox
+            int? filtroIdArea = (int?)cmbArea.SelectedValue; 
 
 
-            // Realizar el filtrado en base a los valores de los campos de texto y el área seleccionada
             var resultadosFiltrados = personList.Where(persona1 =>
                 (string.IsNullOrEmpty(filtroNombres) || persona1.nombres.ToLower().Contains(filtroNombres.ToLower())) &&
                 (string.IsNullOrEmpty(filtroApellidos) || persona1.apellidos.ToLower().Contains(filtroApellidos.ToLower())) &&
@@ -105,7 +103,6 @@ namespace Vista
             else
             {
                 dtgEmpleados.DataSource = resultadosFiltrados;
-                // Cambia el nombre de las columnas
                 dtgEmpleados.Columns["nombres"].HeaderText = "Nombres";
                 dtgEmpleados.Columns["apellidos"].HeaderText = "Apellidos";
                 dtgEmpleados.Columns["cuit_cuil"].HeaderText = "Cuit/Cuil";
@@ -116,7 +113,6 @@ namespace Vista
 
             
 
-            // Oculta las columnas que no necesitas
             foreach (DataGridViewColumn columna in dtgEmpleados.Columns)
             {
                 if (columna.Name != "nombres" && columna.Name != "apellidos" && columna.Name != "cuit_cuil" && columna.Name != "nro_doc")

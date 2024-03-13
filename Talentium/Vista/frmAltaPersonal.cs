@@ -351,7 +351,7 @@ namespace Vista
                         insert.fecha_nacimiento = dtpFechaDeNacimiento.Value;
                         insert.id_estado_civil = int.Parse(cmbEstadoCivil.SelectedValue.ToString());
                         insert.hijos = (int)nupHijos.Value;
-                        insert.candidato = esCandidato;
+                        insert.es_candidato = esCandidato;
                                 if (esCandidato)
                                 {
                                     insert.id_convenio = 0;
@@ -424,6 +424,7 @@ namespace Vista
                         }
                     
                     modify.id_localidad = (int)cmbLocalidad.SelectedValue;
+                    modify.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
                     modify.calle = txtCalle.Text.Trim();
                     modify.nro = int.Parse(txtNro.Text);
                     modify.piso = txtPiso.Text;
@@ -446,11 +447,11 @@ namespace Vista
                     modify.contacto = txtContacto.Text;
                         if (!esCandidato)
                         {
-                            modify.candidato = false;
+                            modify.es_candidato = false;
                         }
                         else
                         {
-                            modify.candidato = true;
+                            modify.es_candidato = true;
                         }
 
                         //ACADEMICOS
@@ -526,6 +527,7 @@ namespace Vista
                         modify.id_area = (int)cmbArea.SelectedValue;
                         modify.id_convenio = (int)cmbConvenio.SelectedValue;
                         modify.id_localidad = (int)cmbLocalidad.SelectedValue;
+                        modify.id_puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
                         modify.calle = txtCalle.Text.Trim();
                         modify.nro = int.Parse(txtNro.Text);
                         modify.piso = txtPiso.Text;
@@ -538,7 +540,7 @@ namespace Vista
                         modify.telefono_alternativo = txtTelefonoAlternativo.Text.Trim();
                         modify.id_tipo_alternativo = (int)cmbTipoTelAlternativo.SelectedValue;
                         modify.contacto = txtContacto.Text.Trim();
-                        modify.candidato = false;
+                        modify.es_candidato = false;
 
                         //ACADEMICOS
 
@@ -564,7 +566,7 @@ namespace Vista
                         lblFaltanCampos.Visible = false;
                         lblFaltanCampos1.Visible = false;
                         lblFaltanCampos2.Visible = false;
-                        logicaPersona.InsertarInfo(modify.id_persona/*,infoacademico,infolaboral,listaIdiomas*/, infoIdiom, infoLabora, infoAcademic);
+                        logicaPersona.InsertarInfo(modify.id_persona, infoIdiom, infoLabora, infoAcademic);
                         logicaPersona.asignarCapacitacionesObligatorias(modify.id_persona, modify.id_area);
                         logicaPersona.ActualizarDatos(modify);
 
@@ -917,7 +919,7 @@ namespace Vista
 
         private void txtNro_KeyPress(object sender, KeyPressEventArgs e)
         {
-        
+            SoloNumeros(e);
         }
 
         private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
@@ -1057,19 +1059,6 @@ namespace Vista
             logicaPersona.ObtenerPersona(insert, id_persona, ref infoAcademicos, ref infoLaborales);
 
             //PERSONAL
-            //TextBox
-            txtCuitCuil.Text = insert.cuit_cuil;
-            txtApellidos.Text = insert.apellidos;
-            txtNombres.Text = insert.nombres;
-            txtDni.Text = insert.nro_doc;
-            txtEmail.Text = insert.email;
-            txtTelefono.Text = insert.telefono;
-            txtTelefonoAlternativo.Text = insert.telefono_alternativo;
-            txtContacto.Text = insert.contacto;
-            txtCalle.Text = insert.calle;
-            txtNro.Text = insert.nro.ToString();
-            txtDpto.Text = insert.dpto;
-            txtPiso.Text = insert.piso;
             //ComboBox
             cmbTipoDoc.SelectedValue = insert.id_tipo_doc;
             cmbTipoTel.SelectedValue = insert.id_tipo;
@@ -1083,6 +1072,19 @@ namespace Vista
             cmbProvincia.SelectedValue = insert.id_provincia;
             cmbPartido.SelectedValue = insert.id_partido;
             cmbLocalidad.SelectedValue = insert.id_localidad;
+            //TextBox
+            txtCuitCuil.Text = insert.cuit_cuil;
+            txtApellidos.Text = insert.apellidos;
+            txtNombres.Text = insert.nombres;
+            txtDni.Text = insert.nro_doc;
+            txtEmail.Text = insert.email;
+            txtTelefono.Text = insert.telefono;
+            txtTelefonoAlternativo.Text = insert.telefono_alternativo;
+            txtContacto.Text = insert.contacto;
+            txtCalle.Text = insert.calle;
+            txtNro.Text = insert.nro.ToString();
+            txtDpto.Text = insert.dpto;
+            txtPiso.Text = insert.piso;
             //DateTime y Numeric
             nupHijos.Value = insert.hijos;
          
@@ -1521,7 +1523,7 @@ namespace Vista
                 laboral.Puesto = txtPuesto.Text.Trim();
                 laboral.Empresa = txtEmpresa.Text.Trim();
                 laboral.Fecha_Ingreso = Convert.ToInt32(cmbLaboralIngreso.SelectedItem?.ToString());
-                laboral.Fecha_Egreso = Convert.ToInt32(cmbLaboralIngreso.SelectedItem?.ToString());
+                laboral.Fecha_Egreso = Convert.ToInt32(cmbLaboralEgreso.SelectedItem?.ToString());
                 laboral.Personal_A_Cargo = Convert.ToInt32(nupPersonalACargo.Value);
                 infoLabora.Add(laboral);
 

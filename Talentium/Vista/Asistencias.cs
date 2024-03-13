@@ -18,6 +18,7 @@ using System.Globalization;
 using Vista.Lenguajes;
 using LogicaNegocio.Lenguajes;
 using LogicaNegocio.Bitacora;
+using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace Vista
 {
@@ -42,12 +43,22 @@ namespace Vista
 
 
             btnExcel.Visible = false;
-            buscarAlta.Enabled = false;
             DataTable asistencia = asistencias.area();
             areasAltas.DisplayMember = "area";
             areasAltas.DataSource = asistencia;
+
             AreaMod.DisplayMember = "area";
             AreaMod.DataSource = asistencia;
+
+
+            DataTable asistenciaMod = asistencias.puesto();
+            PuestoMod.DisplayMember = "puesto";
+            PuestoMod.DataSource = asistenciaMod;
+
+            DataTable asistenciaP = asistencias.puesto();
+            puestosAltas.DisplayMember = "puesto";
+            puestosAltas.DataSource = asistenciaP;
+
             dtgAlta.Columns["Abrir"].Visible = false;
             dtgModificar.Columns["Eliminar"].Visible = false;
             dtgModificar.Columns["Modificar"].Visible = false;
@@ -181,17 +192,6 @@ namespace Vista
 
         private void areasAltas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)areasAltas.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_area"]);
-
-            DataTable asistenciaP = asistencias.puesto(id);
-            puestosAltas.DisplayMember = "puesto";
-            puestosAltas.DataSource = asistenciaP;
-
-            if (areasAltas.SelectedItem != null && puestosAltas.Text != null)
-            {
-                buscarAlta.Enabled = true;
-            }
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -254,17 +254,6 @@ namespace Vista
 
         private void AreaMod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)areasAltas.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_area"]);
-
-            DataTable asistenciaP = asistencias.puesto(id);
-            PuestoMod.DisplayMember = "puesto";
-            PuestoMod.DataSource = asistenciaP;
-
-            if (areasAltas.SelectedItem != null && puestosAltas.Text != null)
-            {
-                buscarAlta.Enabled = true;
-            }
         }
 
         private void dataGridModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)

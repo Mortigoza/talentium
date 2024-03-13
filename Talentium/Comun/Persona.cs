@@ -54,7 +54,7 @@ namespace Comun
         public string telefono_alternativo { get; set; }
         public int id_tipo_alternativo { get; set; }
         public string contacto   { get; set; }
-        public bool candidato { get; set; }
+        public bool es_candidato { get; set; }
 
         public bool id_baja { get; set; }
 

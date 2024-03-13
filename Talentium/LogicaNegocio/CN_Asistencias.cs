@@ -95,9 +95,9 @@ namespace LogicaNegocio
         {
             return asistencias.Areas();  
         }
-        public DataTable puesto(int id)
+        public DataTable puesto()
         {
-            return asistencias.Puestos(id);
+            return asistencias.Puestos();
         }
         public DataTable motivo()
         {
