@@ -20,8 +20,6 @@ namespace Vista.Gestion_de_Talento
     public partial class frmABMCapacitaciones : Form
     {
         CN_Capacitaciones cnCapacitaciones = new CN_Capacitaciones();
-        int _rowIndex = -1;
-        int _idCapacitacion = -1;
         public frmABMCapacitaciones()
         {
             InitializeComponent();
@@ -37,13 +35,13 @@ namespace Vista.Gestion_de_Talento
             cmbExternaInternaAlta.SelectedIndex = 0; 
             cmbExternaInternaMod.SelectedIndex = 0;
             //cmbArea
-            DataTable cnCapa = cnCapacitaciones.area();
+            cnCapacitaciones.CnDT = cnCapacitaciones.area();
             cmbAreaAlta.ValueMember = "id_area";
             cmbAreaAlta.DisplayMember = "area";
-            cmbAreaAlta.DataSource = cnCapa.Copy();
+            cmbAreaAlta.DataSource = cnCapacitaciones.CnDT.Copy();
             cmbAreaMod.ValueMember = "id_area";
             cmbAreaMod.DisplayMember = "area";
-            cmbAreaMod.DataSource = cnCapa.Copy();
+            cmbAreaMod.DataSource = cnCapacitaciones.CnDT.Copy();
             //dtg
             dtgCapacitacion.Columns.Clear();
         }
@@ -59,19 +57,18 @@ namespace Vista.Gestion_de_Talento
         }
         public void cargarDTG(bool like)
         {
-            DataTable cap;
             //traer capacitaciones al dtg
             if (like == false)
             {
-                cap = cnCapacitaciones.ConsultaCapacitaciones();
+                cnCapacitaciones.Cap = cnCapacitaciones.ConsultaCapacitaciones();
             }
             else 
             {
-                cap = cnCapacitaciones.filtrarCapacitaciones(txtFiltro.Text);
+                cnCapacitaciones.Cap = cnCapacitaciones.filtrarCapacitaciones(txtFiltro.Text);
 
             }
             dtgCapacitacion.DataSource = null;
-            dtgCapacitacion.DataSource = cap;
+            dtgCapacitacion.DataSource = cnCapacitaciones.Cap;
             dtgCapacitacion.AllowUserToAddRows = false;
             dtgCapacitacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgCapacitacion.MultiSelect = false;
@@ -120,25 +117,25 @@ namespace Vista.Gestion_de_Talento
 
         private void dtgCapacitacion_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _rowIndex = e.RowIndex;
-            _idCapacitacion = Convert.ToInt32(dtgCapacitacion.Rows[_rowIndex].Cells[0].Value);
+            cnCapacitaciones._RowIndex = e.RowIndex;
+            cnCapacitaciones._IdCapacitacion = Convert.ToInt32(dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[0].Value);
             
         }
         public void cargaCtrMod() 
         {
-            txtNombreMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[1].Value.ToString();
-            cmbNivelMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[2].Value;
-            if (dtgCapacitacion.Rows[_rowIndex].Cells[4].Value.ToString() == "")
+            txtNombreMod.Text = dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[1].Value.ToString();
+            cmbNivelMod.SelectedIndex = (int)dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[2].Value;
+            if (dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[4].Value.ToString() == "")
             {
                 cmbAreaMod.SelectedValue = -1;
             }
             else
             {
-                cmbAreaMod.SelectedValue = (int)dtgCapacitacion.Rows[_rowIndex].Cells[4].Value;
+                cmbAreaMod.SelectedValue = (int)dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[4].Value;
             }
-            cmbExternaInternaMod.SelectedIndex = (int)dtgCapacitacion.Rows[_rowIndex].Cells[5].Value;
-            txtTiempoEstimadoMod.Text = dtgCapacitacion.Rows[_rowIndex].Cells[6].Value.ToString();
-            chcObligatorioMod.Checked = (bool)dtgCapacitacion.Rows[_rowIndex].Cells[7].Value;
+            cmbExternaInternaMod.SelectedIndex = (int)dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[5].Value;
+            txtTiempoEstimadoMod.Text = dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[6].Value.ToString();
+            chcObligatorioMod.Checked = (bool)dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[7].Value;
 
 
         }
@@ -169,7 +166,7 @@ namespace Vista.Gestion_de_Talento
                 return;
             }
 
-            cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
+            cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[0].Value;
             cnCapacitaciones.IdArea = cmbAreaMod.SelectedValue;
             cnCapacitaciones.Capacitacion = txtNombreMod.Text;
             cnCapacitaciones.IdNivel = cmbNivelMod.SelectedIndex;
@@ -203,7 +200,7 @@ namespace Vista.Gestion_de_Talento
 
                 try
                 {
-                    cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[_rowIndex].Cells[0].Value;
+                    cnCapacitaciones.IdCapacitacionesMod = dtgCapacitacion.Rows[cnCapacitaciones._RowIndex].Cells[0].Value;
                     cnCapacitaciones.EliminarCapacitaciones();
                     cargarDTG(true);
 

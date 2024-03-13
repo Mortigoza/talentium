@@ -14,7 +14,90 @@ namespace LogicaNegocio
         CD_Seleccion seleccionDatos = new CD_Seleccion();
         CD_AccesoBD accesoDatos = new CD_AccesoBD();
         CD_Entrevista entrevistaDatos = new CD_Entrevista();
+        private bool filtroUtilizado = false;
+        private int filas;
+        private int nFilas;
+        private string cuil;
+        private string cuilCuit;
+        private string etapaDT;
+        private string etapaDG;
+        private string nomCol;
+        private string nomEtapa;
+        private string valFecha;
+        private string newNomCol;
+        private DataTable lista;
+        private DataTable entrevPersonal;
+        private DataTable todasEtapas;
+        private DataTable dtCandidatos;
+        private bool todasCoinciden = true;
+        private bool etapaAntDatos = true;
 
+        public bool Tcoinciden
+        {
+            get { return todasCoinciden; }
+            set { todasCoinciden = value; }
+        }
+        public DataTable DtCandidatos
+        {
+            get { return dtCandidatos; }
+            set { dtCandidatos = value; }
+        } 
+
+        public DataTable Lista
+        {
+            get { return lista; }
+            set { lista = value; }
+        }
+        public string NewNomCol
+        {
+            get { return newNomCol; }
+            set { newNomCol = value; }
+        }
+        public string NomCol
+        {
+            get { return nomCol; }
+            set { nomCol = value; }
+        }
+        public string ValFecha
+        {
+            get { return valFecha; }
+            set { valFecha = value; }
+        } 
+        public string EtapaDT
+        {
+            get { return etapaDT; }
+            set { etapaDT = value; }
+        } 
+        public string EtapaDG
+        {
+            get { return etapaDG; }
+            set { etapaDG = value; }
+        }
+        public string CuilCuit
+        {
+            get { return cuilCuit; }
+            set { cuilCuit = value; }
+        }
+        public string Cuil
+        {
+            get { return cuil; }
+            set { cuil = value; }
+        }
+        public int Nfilas
+        {
+            get { return nFilas; }
+            set { nFilas = value; }
+        }
+        public int Filas
+        {
+            get { return filas; }
+            set { filas = value; }
+        }
+        public bool FiltroUtilizado
+        {
+            get { return filtroUtilizado; }
+            set { filtroUtilizado = value; }
+        }
         public DataTable ConsultarCandidato(int id_persona)
         {
             return seleccionDatos.ConsultarCandidato(id_persona);

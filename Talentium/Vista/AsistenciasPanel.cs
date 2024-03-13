@@ -12,8 +12,7 @@ namespace Vista
     {
         CN_Asistencias asistencias = new CN_Asistencias();
         C_Asistencias datos;
-        int idPer = 0;
-        int idAsis = 0;
+        
         public AsistenciasPanel(C_Asistencias dato)
         {
             InitializeComponent();
@@ -30,8 +29,8 @@ namespace Vista
             valorApellido.Text = listaObjetos [0].Apellido; 
             valorArea.Text = listaObjetos [0].Area; 
             valorPuesto.Text = listaObjetos [0].Puesto;
-            idPer = listaObjetos[0].idPersona;
-            idAsis = listaObjetos[0].idAsistencia;
+            datos.idPer = listaObjetos[0].idPersona;
+            datos.idAsis = listaObjetos[0].idAsistencia;
             checkPeriodo.Checked = listaObjetos[0].Periodo;
             if (!dato.Alta) {
                 dttFecha.Value = listaObjetos[0].Fecha;
@@ -99,19 +98,17 @@ namespace Vista
                 if (datos.Alta)
                 {
                     List<Asistencia> asistencia = new List<Asistencia>();
-                    DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+                    datos.selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
 
                     if (checkPeriodo.Checked)
                     {
-                        for (DateTime fecha = dttFechaDesde.Value; fecha <= dttFechaHasta.Value;)
+                        for (datos.fecha = dttFechaDesde.Value; datos.fecha <= dttFechaHasta.Value;)
                         {
                             Asistencia nuevaAsistencia = new Asistencia
                             {
-                                idPersona = idPer,
-                                Fecha = fecha,
-                                //FechaDesde = dttFechaDesde.Value,
-                                //FechaHasta = dttFechaHasta.Value,
-                                idMotivo = (int)selectedMotivo["id_motivo"],
+                                idPersona = datos.idPer,
+                                Fecha = datos.fecha,
+                                idMotivo = (int)datos.selectedMotivo["id_motivo"],
                                 OtroMotivo = txtOtro.Text,
                                 Justificada = checkJustificada.Checked,
                                 Observaciones = txtObservaciones.Text,
@@ -119,18 +116,16 @@ namespace Vista
                             };
 
                             asistencia.Add(nuevaAsistencia);
-                            fecha = fecha.AddDays(1);
+                            datos.fecha = datos.fecha.AddDays(1);
                         }
                     }
                     else
                     {
                         Asistencia nuevaAsistencia = new Asistencia
                         {
-                            idPersona = idPer,
+                            idPersona = datos.idPer,
                             Fecha = dttFecha.Value,
-                            //FechaDesde = dttFechaDesde.Value,
-                            //FechaHasta = dttFechaHasta.Value,
-                            idMotivo = (int)selectedMotivo["id_motivo"],
+                            idMotivo = (int)datos.selectedMotivo["id_motivo"],
                             OtroMotivo = txtOtro.Text,
                             Justificada = checkJustificada.Checked,
                             Observaciones = txtObservaciones.Text,
@@ -139,16 +134,6 @@ namespace Vista
 
                         asistencia.Add(nuevaAsistencia);
                     }
-                    /* asistencias.IdPersona = idPer;
-                     asistencias.Fecha = dttFecha.Value;
-                     asistencias.FechaDesde = dttFechaDesde.Value;
-                     asistencias.FechaHasta = dttFechaHasta.Value;
-                     asistencias.IdMotivo = selectedMotivo["id_motivo"];
-                     asistencias.OtroMotivo = txtOtro.Text;
-                     asistencias.Justificada = checkJustificada.Checked;
-                     asistencias.Observaciones = txtObservaciones.Text;
-                     asistencias.Periodo = checkPeriodo.Checked;
-                     */
                     try
                     {
                         asistencias.insertarAsistencias(asistencia);
@@ -164,13 +149,13 @@ namespace Vista
                 }
                 else 
                 {
-                    DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
-                    asistencias.IdPersona = idPer;
-                    asistencias.IdAsistencia = idAsis;
+                    datos.selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
+                    asistencias.IdPersona = datos.idPer;
+                    asistencias.IdAsistencia = datos.idAsis;
                     asistencias.Fecha = dttFecha.Value;
                     asistencias.FechaDesde = dttFechaDesde.Value;
                     asistencias.FechaHasta = dttFechaHasta.Value;
-                    asistencias.IdMotivo = selectedMotivo["id_motivo"];
+                    asistencias.IdMotivo = datos.selectedMotivo["id_motivo"];
                     asistencias.OtroMotivo = txtOtro.Text;
                     asistencias.Justificada = checkJustificada.Checked;
                     asistencias.Observaciones = txtObservaciones.Text;
@@ -220,9 +205,9 @@ namespace Vista
 
         private void cmbMotivo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedMotivo = (DataRowView)cmbMotivo.SelectedItem;
-            var valor = asistencias.revisarMotivo(selectedMotivo["id_motivo"]);
-            if (valor == 9)
+            datos.cbMotivo = (DataRowView)cmbMotivo.SelectedItem;
+            datos.valor = asistencias.revisarMotivo(datos.cbMotivo["id_motivo"]);
+            if (datos.valor == 9)
             {
                 txtOtro.Visible = true;
                 lblOtro.Visible = true;

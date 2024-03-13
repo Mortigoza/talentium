@@ -17,8 +17,7 @@ namespace Vista
     public partial class frmAsignarCapacitaciones : Form
     {
         DataTable dtListaMem = new DataTable("Capacitaciones"); // Almacena las capacitaciones asignadas al empleado
-       // private object _idPersona;
-
+        DataTable dtListaBd;// Almacena las capacitaciones existentes en la bd
         CN_AsignarCapacitaciones cn_asignar = new CN_AsignarCapacitaciones();
         public frmAsignarCapacitaciones()
         {
@@ -55,8 +54,8 @@ namespace Vista
             //lst, carga los dt en las listBox de capacitaciones
             lstCapacitaciones.DataSource = null;
             cn_asignar.IdArea = -1;
-            cn_asignar.DtListaBd = cn_asignar.ConsultarCapacitaciones();
-            lstCapacitaciones.DataSource = cn_asignar.DtListaBd;
+            dtListaBd = cn_asignar.ConsultarCapacitaciones();
+            lstCapacitaciones.DataSource = dtListaBd;
             lstCapacitaciones.ValueMember = "id_capacitaciones";
             lstCapacitaciones.DisplayMember = "capacitacion";
 
@@ -107,26 +106,25 @@ namespace Vista
             cn_asignar.DtLeft = cn_asignar.ConsultarCapacitaciones();
             cn_asignar.IdPersona = cn_asignar.IdPers;
             cn_asignar.DtRight = cn_asignar.ConsultarCapacitaciones(true);
-            var refe = cn_asignar.DtListaBd;
-            UtilidadesForms.ConfigListbox(cn_asignar.DtLeft, ref refe, ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, cn_asignar.DtRight);
+            UtilidadesForms.ConfigListbox(cn_asignar.DtLeft, ref dtListaBd , ref dtListaMem, ref lstCapacitaciones, ref lstCapacitacionesAsignadas, true, cn_asignar.DtRight);
         }
 
         private void btnAsignarCapacitacion_Click(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, cn_asignar.DtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
         }
         private void lstCapacitaciones_DoubleClick(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, cn_asignar.DtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitaciones, lstCapacitacionesAsignadas, dtListaBd, dtListaMem, lstCapacitaciones.SelectedIndex);
         }
 
         private void btnDesasignarCapacitacion_Click(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, cn_asignar.DtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
         }
         private void lstCapacitacionesAsignadas_DoubleClick(object sender, EventArgs e)
         {
-            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, cn_asignar.DtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
+            UtilidadesForms.moverListboxRow(lstCapacitacionesAsignadas, lstCapacitaciones, dtListaMem, dtListaBd, lstCapacitacionesAsignadas.SelectedIndex);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

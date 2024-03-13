@@ -20,7 +20,6 @@ namespace Vista
     {
         CN_LogicaProcesoSeleccion proceso = new CN_LogicaProcesoSeleccion();
         CN_LogicaEntrevista entrevista = new CN_LogicaEntrevista();
-        private bool filtroUtilizado = false;
         public frmConsultaProcesoDeSeleccion()
         {
             InitializeComponent();
@@ -33,20 +32,20 @@ namespace Vista
             dtgCandidatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgCandidatos.RowHeadersVisible = false;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
-            int filas = entrevista.CantidadEntrevista();
-            dtgCandidatos.Rows.Add(filas);
-            DataTable lista = entrevista.ConsultarEntrevistas();
-            lista.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
-            for (int i = 0; i < filas; i++)
+            proceso.Filas = entrevista.CantidadEntrevista();
+            dtgCandidatos.Rows.Add(proceso.Filas);
+            proceso.Lista = entrevista.ConsultarEntrevistas();
+            proceso.Lista.Columns.Add("Etapas", typeof(string), "Etapa + '-' + Entrevista");
+            for (int i = 0; i < proceso.Filas; i++)
             {
-                dtgCandidatos.Rows[i].Cells["Etapa"].Value = lista.Rows[i]["Etapas"];
+                dtgCandidatos.Rows[i].Cells["Etapa"].Value = proceso.Lista.Rows[i]["Etapas"];
             }
             UtilidadesForms.TraducirColumnasDtg(ref dtgCandidatos);
         }
         private void txtCuilCuit_Leave(object sender, EventArgs e)
         {
-            string cuil = txtCuilCuit.Text.Trim();
-            if (cuil.Length != 11 && cuil != "")
+            proceso.Cuil = txtCuilCuit.Text.Trim();
+            if (proceso.Cuil.Length != 11 && proceso.Cuil != "")
             {
                 MessageBox.Show(Errores.CuilIncorrecto, Errores.Aviso,
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -63,7 +62,7 @@ namespace Vista
 
         private void txtCuilCuit_TextChanged(object sender, EventArgs e)
         {
-            filtroUtilizado = true;
+            proceso.FiltroUtilizado = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace Vista
         public void CargarDatos()
         {
             btnModificarCandidato.Enabled = true;
-            if (!filtroUtilizado)
+            if (!proceso.FiltroUtilizado)
             {
                 MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso,
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -83,57 +82,56 @@ namespace Vista
             {
                 dtgCandidatos.Enabled = true;
                 dtgCandidatos.ReadOnly = true;
-                string cuil = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
-                DataTable DTCandidatos = proceso.ObtenerCandidatosFiltros(cuil);
-                if (DTCandidatos != null && DTCandidatos.Rows.Count > 0)
+                proceso.CuilCuit = string.IsNullOrEmpty(txtCuilCuit.Text) ? null : txtCuilCuit.Text;
+                proceso.DtCandidatos = proceso.ObtenerCandidatosFiltros(proceso.CuilCuit);
+                if (proceso.DtCandidatos != null && proceso.DtCandidatos.Rows.Count > 0)
                 {
                     btnModificarCandidato.Enabled = true;
-                    bool todasCoinciden = true;
-                    int numFilasDataGridView = dtgCandidatos.Rows.Count;
+                    proceso.Nfilas = dtgCandidatos.Rows.Count;
 
-                    for (int i = 0; i < DTCandidatos.Rows.Count; i++)
+                    for (int i = 0; i < proceso.DtCandidatos.Rows.Count; i++)
                     {
-                        if(string.IsNullOrEmpty(DTCandidatos.Rows[i]["Estado"].ToString()) ||
-                            string.IsNullOrEmpty(DTCandidatos.Rows[i]["Fecha_Entrevista"].ToString()) ||
-                            string.IsNullOrEmpty(DTCandidatos.Rows[i]["Entrevistador"].ToString()))
+                        if(string.IsNullOrEmpty(proceso.DtCandidatos.Rows[i]["Estado"].ToString()) ||
+                            string.IsNullOrEmpty(proceso.DtCandidatos.Rows[i]["Fecha_Entrevista"].ToString()) ||
+                            string.IsNullOrEmpty(proceso.DtCandidatos.Rows[i]["Entrevistador"].ToString()))
                         {
                             // Dejar los campos de Estado, Fecha_Entrevista y Entrevistador vacíos
-                            DTCandidatos.Rows[i]["Estado"] = DBNull.Value;
-                            DTCandidatos.Rows[i]["Fecha_Entrevista"] = DBNull.Value;
-                            DTCandidatos.Rows[i]["Entrevistador"] = DBNull.Value;
+                            proceso.DtCandidatos.Rows[i]["Estado"] = DBNull.Value;
+                            proceso.DtCandidatos.Rows[i]["Fecha_Entrevista"] = DBNull.Value;
+                            proceso.DtCandidatos.Rows[i]["Entrevistador"] = DBNull.Value;
                         }
-                        if (i < numFilasDataGridView)
+                        if (i < proceso.Nfilas)
                         {
-                            string etapaDataTable = DTCandidatos.Rows[i]["Etapa"].ToString();
-                            string etapaDataGridView = dtgCandidatos.Rows[i].Cells["Etapa"].Value.ToString();
+                            proceso.EtapaDT = proceso.DtCandidatos.Rows[i]["Etapa"].ToString();
+                            proceso.EtapaDG = dtgCandidatos.Rows[i].Cells["Etapa"].Value.ToString();
 
-                            if (etapaDataTable != etapaDataGridView)
+                            if (proceso.EtapaDT != proceso.EtapaDG)
                             {
-                                todasCoinciden = false;
+                                proceso.Tcoinciden = false;
                                 break;
                             }
 
                             for (int j = 0; j < dtgCandidatos.Columns.Count; j++)
                             {
-                                string nombreColumna = dtgCandidatos.Columns[j].Name;
-                                if (nombreColumna != "Etapa")
+                                proceso.NomCol = dtgCandidatos.Columns[j].Name;
+                                if (proceso.NomCol != "Etapa")
                                 {
-                                    if (nombreColumna == "Fecha_Entrevista")
+                                    if (proceso.NomCol== "Fecha_Entrevista")
                                     {
-                                        string valorFecha = DTCandidatos.Rows[i][nombreColumna].ToString();
+                                        proceso.ValFecha = proceso.DtCandidatos.Rows[i][proceso.NomCol].ToString();
                                         DateTime fechaEntrevista;
-                                        if (DateTime.TryParse(valorFecha, out fechaEntrevista))
+                                        if (DateTime.TryParse(proceso.ValFecha, out fechaEntrevista))
                                         {
-                                            dtgCandidatos.Rows[i].Cells[nombreColumna].Value = fechaEntrevista;
+                                            dtgCandidatos.Rows[i].Cells[proceso.NomCol].Value = fechaEntrevista;
                                         }
                                         else
                                         {
-                                            dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DateTime.MinValue;
+                                            dtgCandidatos.Rows[i].Cells[proceso.NomCol].Value = DateTime.MinValue;
                                         }
                                     }
                                     else
                                     {
-                                        dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DTCandidatos.Rows[i][nombreColumna].ToString();
+                                        dtgCandidatos.Rows[i].Cells[proceso.NomCol].Value = proceso.DtCandidatos.Rows[i][proceso.NomCol].ToString();
                                     }
                                 }
                             }
@@ -146,17 +144,17 @@ namespace Vista
 
                             for (int j = 0; j < dtgCandidatos.Columns.Count; j++)
                             {
-                                string nombreColumna = dtgCandidatos.Columns[j].Name;
-                                if (nombreColumna != "Etapa")
+                                proceso.NewNomCol = dtgCandidatos.Columns[j].Name;
+                                if (proceso.NewNomCol != "Etapa")
                                 {
-                                    dtgCandidatos.Rows[i].Cells[nombreColumna].Value = DTCandidatos.Rows[i][nombreColumna].ToString();
+                                    dtgCandidatos.Rows[i].Cells[proceso.NewNomCol].Value = proceso.DtCandidatos.Rows[i][proceso.NewNomCol].ToString();
                                 }
                             }
                         }
                     }
-                    lblNombreLlenar.Text = DTCandidatos.Rows[0]["Nombre"].ToString();
-                    lblApellidoLlenar.Text = DTCandidatos.Rows[0]["Apellido"].ToString();
-                    lblCuilLlenar.Text = DTCandidatos.Rows[0]["Cuit"].ToString();
+                    lblNombreLlenar.Text = proceso.DtCandidatos.Rows[0]["Nombre"].ToString();
+                    lblApellidoLlenar.Text = proceso.DtCandidatos.Rows[0]["Apellido"].ToString();
+                    lblCuilLlenar.Text = proceso.DtCandidatos.Rows[0]["Cuit"].ToString();
 
                  
                 }

@@ -31,7 +31,6 @@ namespace Vista
         }
         private void CambioDePass_Load(object sender, EventArgs e)
         {
-            DataTable preguntas;
             switch (pass._EsNuevo)
             {
                 default:
@@ -40,7 +39,7 @@ namespace Vista
                     break;
 
                 case true:
-                    preguntas = pass.ObtenerTodasPregutasSeg();
+                    pass.Preguntas = pass.ObtenerTodasPregutasSeg();
                     break;
             }
             cmbPreguntas.ValueMember = "id_pregunta";

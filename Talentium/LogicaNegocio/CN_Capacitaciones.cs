@@ -20,8 +20,32 @@ namespace LogicaNegocio
         private int externaInterna;
         private string tiempoEstimado;
         private bool obligatorio;
+        private int _rowIndex = -1;
+        private int _idCapacitacion = -1;
+        private DataTable cnDT;
+        private DataTable cap;
 
+        public DataTable Cap
+        {
+            get { return cap; }
+            set { cap = value; }
+        }
 
+        public DataTable CnDT
+        {
+            get { return cnDT; }
+            set { cnDT = value; }
+        }
+        public int _IdCapacitacion
+        {
+            get { return _idCapacitacion; }
+            set { _idCapacitacion = value; }
+        }
+        public int _RowIndex
+        {
+            get { return _rowIndex; }
+            set { _rowIndex = value; }
+        }
         public object IdArea
         {
             get { return idArea; }

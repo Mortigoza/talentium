@@ -24,7 +24,8 @@ namespace Vista
     public partial class Asistencias : Form
     {
         CN_Asistencias asistencias = new CN_Asistencias();
-        public bool isReport = false;
+        C_Asistencias datos = new C_Asistencias();
+
         public Asistencias()
         {
             InitializeComponent();
@@ -43,11 +44,11 @@ namespace Vista
 
             btnExcel.Visible = false;
             buscarAlta.Enabled = false;
-            DataTable asistencia = asistencias.area();
+            datos.asistenciaCb = asistencias.area();
             areasAltas.DisplayMember = "area";
-            areasAltas.DataSource = asistencia;
+            areasAltas.DataSource = datos.asistenciaCb;
             AreaMod.DisplayMember = "area";
-            AreaMod.DataSource = asistencia;
+            AreaMod.DataSource = datos.asistenciaCb;
             dtgAlta.Columns["Abrir"].Visible = false;
             dtgModificar.Columns["Eliminar"].Visible = false;
             dtgModificar.Columns["Modificar"].Visible = false;
@@ -61,7 +62,7 @@ namespace Vista
         }
         public void RecibirDatos(bool ocultar)
         {
-            isReport = ocultar;
+            datos.isReport = ocultar;
             btnExcel.Visible = ocultar;
             btnExcel.Enabled = false; 
             ControlAsist.TabPages.Remove(tbpAlta);
@@ -85,7 +86,6 @@ namespace Vista
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dtgAlta.CurrentRow;
-            C_Asistencias datos = new C_Asistencias();
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (e.ColumnIndex == 0) // Índice de la primera columna de botón
@@ -134,7 +134,7 @@ namespace Vista
         {
             dtgModificar.AllowUserToAddRows = false;
             dtgModificar.DataSource = data;
-            if (!isReport)
+            if (!datos.isReport)
             {
                 dtgModificar.Columns["Modificar"].Visible = true;
                 dtgModificar.Columns["Eliminar"].Visible = true;
@@ -152,19 +152,19 @@ namespace Vista
             if (areasAltas.Items.Count > 0 && puestosAltas.Items.Count > 0)
             {
                 //boton buscar del alta
-                DataRowView selectedArea = (DataRowView)areasAltas.SelectedItem;
-                DataRowView selectedPuesto = (DataRowView)puestosAltas.SelectedItem;
-                int idA = Convert.ToInt32(selectedArea["id_area"]);
-                int idP = Convert.ToInt32(selectedPuesto["id_puesto"]);
+                datos.selectedA = (DataRowView)areasAltas.SelectedItem;
+                datos.selectedP = (DataRowView)puestosAltas.SelectedItem;
+                datos.idA = Convert.ToInt32(datos.selectedA["id_area"]);
+                datos.idP = Convert.ToInt32(datos.selectedP["id_puesto"]);
                 if (string.IsNullOrEmpty(cuilAltas.Text))
                 {
-                    DataTable asis = asistencias.filtroAlta(idA, idP, null);
-                    cargar(asis);
+                    datos.asistenciaCargar = asistencias.filtroAlta(datos.idA, datos.idP, null);
+                    cargar(datos.asistenciaCargar);
                 }
                 else
                 {
-                    DataTable asis = asistencias.filtroAlta(idA, idP, cuilAltas.Text);
-                    cargar(asis);
+                    datos.asistenciaCargar = asistencias.filtroAlta(datos.idA, datos.idP, cuilAltas.Text);
+                    cargar(datos.asistenciaCargar);
 
                 }
             }
@@ -189,12 +189,12 @@ namespace Vista
 
         private void areasAltas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)areasAltas.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_area"]);
+            datos.selectedAA = (DataRowView)areasAltas.SelectedItem;
+            datos.idAP = Convert.ToInt32(datos.selectedAA["id_area"]);
 
-            DataTable asistenciaP = asistencias.puesto(id);
+            datos.selectedAP = asistencias.puesto(datos.idAP);
             puestosAltas.DisplayMember = "puesto";
-            puestosAltas.DataSource = asistenciaP;
+            puestosAltas.DataSource = datos.selectedAP;
 
             if (areasAltas.SelectedItem != null && puestosAltas.Text != null)
             {
@@ -240,15 +240,15 @@ namespace Vista
             if (AreaMod.Items.Count > 0 && PuestoMod.Items.Count > 0)
             {
                 //boton buscar del modificar
-                DataRowView selectedArea = (DataRowView)AreaMod.SelectedItem;
-                DataRowView selectedPuesto = (DataRowView)PuestoMod.SelectedItem;
-                object idA = selectedArea["id_area"];
-                object idP = selectedPuesto["id_puesto"];
+                datos.selectedMA = (DataRowView)AreaMod.SelectedItem;
+                datos.selectedMP = (DataRowView)PuestoMod.SelectedItem;
+                datos.idAs = datos.selectedMA["id_area"];
+                datos.idPs = datos.selectedMP["id_puesto"];
 
-                DataTable asis = asistencias.filtroModificacion(periodo.Checked, idA, idP, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
+                datos.dtAs = asistencias.filtroModificacion(periodo.Checked, datos.idAs, datos.idPs, CuilMod.Text, FechaMod.Value, fechaDesdeMod.Value, FechaHastaMod.Value);
 
-                cargarDtg(asis);
-                if (asis.Rows.Count >= 1)
+                cargarDtg(datos.dtAs);
+                if (datos.dtAs.Rows.Count >= 1)
                 {
                     btnExcel.Enabled = true;
                 }
@@ -262,12 +262,12 @@ namespace Vista
 
         private void AreaMod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)areasAltas.SelectedItem;
-            int id = Convert.ToInt32(selectedRow["id_area"]);
+            datos.selectedArea= (DataRowView)areasAltas.SelectedItem;
+            datos.idAM = Convert.ToInt32(datos.selectedArea["id_area"]);
 
-            DataTable asistenciaP = asistencias.puesto(id);
+            datos.selectedPuesto = asistencias.puesto(datos.idAM);
             PuestoMod.DisplayMember = "puesto";
-            PuestoMod.DataSource = asistenciaP;
+            PuestoMod.DataSource = datos.selectedPuesto;
 
             if (areasAltas.SelectedItem != null && puestosAltas.Text != null)
             {
@@ -278,7 +278,6 @@ namespace Vista
         private void dataGridModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dtgModificar.CurrentRow;
-            C_Asistencias datos = new C_Asistencias();
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (e.ColumnIndex == 0) // Índice de la primera columna de botón
@@ -295,27 +294,15 @@ namespace Vista
                         datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
 
                         datos.Periodo = Convert.ToBoolean(filaSeleccionada.Cells["periodo"].Value.ToString());
-                        /* if (datos.Periodo)
-                         {
-                             datos.Fecha = DateTime.Now;
-                             datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
-                             datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
-                         }
-                         else
-                         {*/
+                      
                         datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
-                        /*     datos.Fecha_desde = DateTime.Now;
-                             datos.Fecha_hasta = DateTime.Now;
-
-                         }*/
+                        
                         datos.Justificada = Convert.ToBoolean(filaSeleccionada.Cells["justificada"].Value.ToString());
                         datos.Id_motivo = Convert.ToInt32(filaSeleccionada.Cells["id_motivo"].Value.ToString());
                         datos.Otro_motivo = filaSeleccionada.Cells["otro_motivo"].Value.ToString();
                         datos.Observaciones = filaSeleccionada.Cells["observaciones"].Value.ToString();
                         datos.Alta = false;
-                        // y así sucesivamente para las otras columnas
 
-                        // Ahora puedes trabajar con los valores obtenidos
                     }
                     AsistenciasPanel panel = new AsistenciasPanel(datos);
 
@@ -355,6 +342,7 @@ namespace Vista
         {
 
         }
+       // se convierte el booleano en si y no para exportar en la columna del excel
         private string ConvertirBoolASiONo(object valor)
         {
             if (valor is bool)

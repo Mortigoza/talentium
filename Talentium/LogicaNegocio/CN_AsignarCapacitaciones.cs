@@ -19,7 +19,7 @@ namespace LogicaNegocio
         private DataTable dt;
         private DataTable dtLeft;
         private DataTable dtRight;
-        private DataTable dtListaBd;// Almacena las capacitaciones existentes en la bd
+        
 
         private object idPersona;
 
@@ -38,11 +38,7 @@ namespace LogicaNegocio
             get { return dt; }
             set { dt = value; }
         }
-        public DataTable DtListaBd
-        {
-            get { return dtListaBd; }
-            set { dtListaBd = value; }
-        }
+       
         public object IdPers
         {
             get { return idPersona; }
