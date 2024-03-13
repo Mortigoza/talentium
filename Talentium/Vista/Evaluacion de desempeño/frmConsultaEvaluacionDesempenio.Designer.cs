@@ -186,6 +186,8 @@
             // 
             // dtgConsultaEvaluacion
             // 
+            this.dtgConsultaEvaluacion.AllowUserToAddRows = false;
+            this.dtgConsultaEvaluacion.AllowUserToDeleteRows = false;
             this.dtgConsultaEvaluacion.BackgroundColor = System.Drawing.Color.White;
             this.dtgConsultaEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgConsultaEvaluacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -199,6 +201,7 @@
             this.dtgConsultaEvaluacion.Location = new System.Drawing.Point(17, 132);
             this.dtgConsultaEvaluacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgConsultaEvaluacion.Name = "dtgConsultaEvaluacion";
+            this.dtgConsultaEvaluacion.ReadOnly = true;
             this.dtgConsultaEvaluacion.RowHeadersWidth = 51;
             this.dtgConsultaEvaluacion.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgConsultaEvaluacion.RowTemplate.Height = 24;
@@ -210,6 +213,7 @@
             this.Anio.HeaderText = "Año";
             this.Anio.MinimumWidth = 6;
             this.Anio.Name = "Anio";
+            this.Anio.ReadOnly = true;
             this.Anio.Width = 60;
             // 
             // MesEvaluacion
@@ -217,6 +221,7 @@
             this.MesEvaluacion.HeaderText = "Mes de Evaluacion";
             this.MesEvaluacion.MinimumWidth = 6;
             this.MesEvaluacion.Name = "MesEvaluacion";
+            this.MesEvaluacion.ReadOnly = true;
             this.MesEvaluacion.Width = 90;
             // 
             // EfectTareas
@@ -224,6 +229,7 @@
             this.EfectTareas.HeaderText = "Efectividad en las tareas";
             this.EfectTareas.MinimumWidth = 6;
             this.EfectTareas.Name = "EfectTareas";
+            this.EfectTareas.ReadOnly = true;
             this.EfectTareas.Width = 95;
             // 
             // Puntualidad
@@ -231,6 +237,7 @@
             this.Puntualidad.HeaderText = "Puntualidad";
             this.Puntualidad.MinimumWidth = 6;
             this.Puntualidad.Name = "Puntualidad";
+            this.Puntualidad.ReadOnly = true;
             this.Puntualidad.Width = 95;
             // 
             // Disciplina
@@ -238,6 +245,7 @@
             this.Disciplina.HeaderText = "Disciplina";
             this.Disciplina.MinimumWidth = 6;
             this.Disciplina.Name = "Disciplina";
+            this.Disciplina.ReadOnly = true;
             this.Disciplina.Width = 95;
             // 
             // RelSup
@@ -245,6 +253,7 @@
             this.RelSup.HeaderText = "Relacion con superiores";
             this.RelSup.MinimumWidth = 6;
             this.RelSup.Name = "RelSup";
+            this.RelSup.ReadOnly = true;
             this.RelSup.Width = 95;
             // 
             // DesempEquipo
@@ -252,6 +261,7 @@
             this.DesempEquipo.HeaderText = "Desempeño en equipo";
             this.DesempEquipo.MinimumWidth = 6;
             this.DesempEquipo.Name = "DesempEquipo";
+            this.DesempEquipo.ReadOnly = true;
             this.DesempEquipo.Width = 95;
             // 
             // lblFiltroPorEmpleado

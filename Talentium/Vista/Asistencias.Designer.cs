@@ -48,8 +48,6 @@
             this.grbInasistenciasMod = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.dtgModificar = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbFiltroMod = new System.Windows.Forms.GroupBox();
             this.lnkAtas = new System.Windows.Forms.LinkLabel();
             this.periodo = new System.Windows.Forms.CheckBox();
@@ -68,6 +66,8 @@
             this.buscarMod = new System.Windows.Forms.Button();
             this.CuilMod = new System.Windows.Forms.TextBox();
             this.lblCuilMod = new System.Windows.Forms.Label();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ControlAsist.SuspendLayout();
             this.tbpAlta.SuspendLayout();
             this.grbPersonalAlta.SuspendLayout();
@@ -324,31 +324,6 @@
             this.dtgModificar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridModificar_CellContentClick);
             this.dtgModificar.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgModificar_CellFormatting);
             // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.MinimumWidth = 6;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Modificar.Text = "Añadir";
-            this.Modificar.ToolTipText = "Abrir";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 56;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 80;
-            // 
             // grbFiltroMod
             // 
             this.grbFiltroMod.Controls.Add(this.lnkAtas);
@@ -540,6 +515,31 @@
             this.lblCuilMod.Size = new System.Drawing.Size(34, 13);
             this.lblCuilMod.TabIndex = 13;
             this.lblCuilMod.Text = "CUIL:";
+            // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.MinimumWidth = 6;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Modificar.Text = "Abrir";
+            this.Modificar.ToolTipText = "Abrir";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 56;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 80;
             // 
             // Asistencias
             // 

@@ -21,7 +21,8 @@ namespace Vista
             datos = dato;
             
             DataTable asistencia = asistencias.motivo();
-            cmbMotivo.DisplayMember = "motivo";//id_motivo es el id
+            cmbMotivo.ValueMember = "id_motivo";//id_motivo es el id
+            cmbMotivo.DisplayMember = "motivo";
             cmbMotivo.DataSource = asistencia;
 
             List<C_Asistencias> listaObjetos = new List<C_Asistencias>();
@@ -36,9 +37,7 @@ namespace Vista
             if (!dato.Alta) {
                 dttFecha.Value = listaObjetos[0].Fecha;
                 checkPeriodo.Enabled = false;
-                /*
-                dttFechaDesde.Value = listaObjetos[0].Fecha_desde;
-                dttFechaHasta.Value = listaObjetos[0].Fecha_hasta;*/
+                cmbMotivo.SelectedValue = listaObjetos[0].Id_motivo;
             }
             txtOtro.Text = listaObjetos[0].Otro_motivo;
             checkJustificada.Checked = listaObjetos[0].Justificada;
@@ -232,6 +231,11 @@ namespace Vista
                 txtOtro.Visible = false;
                 lblOtro.Visible = false;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

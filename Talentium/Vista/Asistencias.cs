@@ -293,29 +293,13 @@ namespace Vista
                         datos.Apellido = filaSeleccionada.Cells["Apellido"].Value.ToString();
                         datos.Area = filaSeleccionada.Cells["Area"].Value.ToString();
                         datos.Puesto = filaSeleccionada.Cells["Puesto"].Value.ToString();
-
                         datos.Periodo = Convert.ToBoolean(filaSeleccionada.Cells["periodo"].Value.ToString());
-                        /* if (datos.Periodo)
-                         {
-                             datos.Fecha = DateTime.Now;
-                             datos.Fecha_desde = Convert.ToDateTime(filaSeleccionada.Cells["fecha_desde"].Value.ToString());
-                             datos.Fecha_hasta = Convert.ToDateTime(filaSeleccionada.Cells["fecha_hasta"].Value.ToString());
-                         }
-                         else
-                         {*/
                         datos.Fecha = Convert.ToDateTime(filaSeleccionada.Cells["fecha"].Value.ToString());
-                        /*     datos.Fecha_desde = DateTime.Now;
-                             datos.Fecha_hasta = DateTime.Now;
-
-                         }*/
                         datos.Justificada = Convert.ToBoolean(filaSeleccionada.Cells["justificada"].Value.ToString());
                         datos.Id_motivo = Convert.ToInt32(filaSeleccionada.Cells["id_motivo"].Value.ToString());
                         datos.Otro_motivo = filaSeleccionada.Cells["otro_motivo"].Value.ToString();
                         datos.Observaciones = filaSeleccionada.Cells["observaciones"].Value.ToString();
                         datos.Alta = false;
-                        // y así sucesivamente para las otras columnas
-
-                        // Ahora puedes trabajar con los valores obtenidos
                     }
                     AsistenciasPanel panel = new AsistenciasPanel(datos);
 

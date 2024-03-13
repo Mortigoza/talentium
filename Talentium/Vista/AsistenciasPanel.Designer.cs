@@ -53,6 +53,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.checkPeriodo = new System.Windows.Forms.CheckBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -298,11 +299,23 @@
             this.txtObservaciones.Size = new System.Drawing.Size(301, 128);
             this.txtObservaciones.TabIndex = 26;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 543);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(31, 13);
+            this.linkLabel1.TabIndex = 27;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Atrás";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // AsistenciasPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 565);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.checkPeriodo);
             this.Controls.Add(this.btnCancelar);
@@ -367,5 +380,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox checkPeriodo;
         private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
