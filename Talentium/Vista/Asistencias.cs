@@ -382,12 +382,20 @@ namespace Vista
 
         private void cuilAltas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumeros(e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            //SoloNumeros(e);
         }
 
         private void CuilMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumeros(e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            //SoloNumeros(e);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -531,6 +539,12 @@ namespace Vista
                     e.Value = Columnas.eliminar;
                 }
             }
+        }
+
+        private void fechaDesdeMod_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaDesde = fechaDesdeMod.Value;
+            FechaHastaMod.MinDate = fechaDesde;
         }
     }
 }

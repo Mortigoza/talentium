@@ -238,5 +238,11 @@ namespace Vista
         {
             this.Dispose();
         }
+
+        private void dttFechaDesde_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaDesde = dttFechaDesde.Value;
+            dttFechaHasta.MinDate = fechaDesde;
+        }
     }
 }

@@ -62,7 +62,7 @@ namespace Vista
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
             btnPdf.Visible = false;
             if (esCandidato == true) { dttFechaAlta.Visible = false; btnPdf.Visible = pdf; lblFechaDeIngreso.Visible = false;
-                lblConvenio.Visible = false; cmbConvenio.Visible = false;
+                lblConvenio.Visible = false; cmbConvenio.Visible = false; lblAst20.Visible = false; lblAst19.Visible = false;
             }
             else { dttFechaAlta.Visible = true; btnPdf.Visible = false; lblFechaDeIngreso.Visible = true; }
             DeshabilitarCampos(this);
