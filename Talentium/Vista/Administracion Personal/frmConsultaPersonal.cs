@@ -83,8 +83,8 @@ namespace Vista
                 .ToList();
 
 
-            string filtroNombres = txtNombre.Text;
-            string filtroApellidos = txtApellido.Text;
+            string filtroNombres = txtNombre.Text.Trim();
+            string filtroApellidos = txtApellido.Text.Trim();
             string filtroCuil = txtCuit.Text;
             int? filtroIdArea = (int?)cmbArea.SelectedValue; // Obtén el área seleccionada desde el ComboBox
 
@@ -256,22 +256,33 @@ namespace Vista
 
             }
         }
-        private void SoloNumeros(KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar == (char)Keys.Space)
-            {
-                e.Handled = true; // Cancela la entrada de caracteres no numéricos
-
-            }
-        }
         private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SoloNumeros(e);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 

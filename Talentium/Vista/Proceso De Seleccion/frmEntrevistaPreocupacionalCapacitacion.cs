@@ -244,7 +244,6 @@ namespace Vista.Gestion_de_Talento
                 }
             }
             bool camposIncompletos = false;
-            bool esInsercion = string.IsNullOrEmpty(fechaEntrevista.ToString()) && string.IsNullOrEmpty(entrevistador) && string.IsNullOrEmpty(estado);
             if (string.IsNullOrEmpty(fechaEntrevista.ToString()) || string.IsNullOrEmpty(entrevistador) || string.IsNullOrEmpty(estado))
             {
                 camposIncompletos = true;
