@@ -443,6 +443,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono.ico" />
+    <Content Include="Resources\iconRefresh.png" />
     <Content Include="Resources\ImgTalentium.jpeg" />
     <None Include="Resources\PantillaEmpleadoPdf.html" />
   </ItemGroup>

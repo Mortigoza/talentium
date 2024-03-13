@@ -58,7 +58,7 @@ namespace Vista
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Verifique que el usuario sea valido \n " + "(" +ex.Message + ")");
                 }
             } else
             {

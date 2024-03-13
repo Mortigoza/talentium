@@ -24,6 +24,9 @@ namespace Vista
         public frmAsignarCapacitaciones()
         {
             InitializeComponent();
+            txtApellido.KeyPress += txtApellido_KeyPress;
+            txtNombre.KeyPress += txtNombre_KeyPress;
+            txtCuit.KeyPress += txtCuit_KeyPress;
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
 
             #region config
@@ -155,6 +158,41 @@ namespace Vista
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es una letra ni una tecla de control, se cancela el evento
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es una letra ni una tecla de control, se cancela el evento
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Si no es un número ni una tecla de control, se cancela el evento
+                e.Handled = true;
+            }
+
+            if (txtCuit.TextLength >= 11 && !char.IsControl(e.KeyChar))
+            {
+                // Si excede 11 caracteres y no es una tecla de control, se cancela el evento
+                e.Handled = true;
+            }
         }
     }
 }
