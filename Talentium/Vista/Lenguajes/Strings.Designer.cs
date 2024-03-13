@@ -196,7 +196,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asistencias.
+        ///   Busca una cadena traducida similar a Inasistencias.
         /// </summary>
         public static string Asistencias {
             get {
@@ -205,7 +205,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asistencias.
+        ///   Busca una cadena traducida similar a Inasistencias.
         /// </summary>
         public static string AsistenciasPanel {
             get {
@@ -214,7 +214,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asistencias.
+        ///   Busca una cadena traducida similar a Inasistencias.
         /// </summary>
         public static string asistenciasToolStripMenuItem {
             get {
@@ -1168,6 +1168,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Candidato - Alta.
+        /// </summary>
+        public static string frmAltaCandidato {
+            get {
+                return ResourceManager.GetString("frmAltaCandidato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Certificacion servicios - Alta.
         /// </summary>
         public static string frmAltaCertificacionServicios {
@@ -1186,7 +1195,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Personal - Alta.
+        ///   Busca una cadena traducida similar a Administración de personal.
         /// </summary>
         public static string frmAltaPersonal {
             get {
@@ -1231,7 +1240,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asistencias.
+        ///   Busca una cadena traducida similar a Inasistencias.
         /// </summary>
         public static string frmAsistencias {
             get {
@@ -1240,7 +1249,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asistencias - Panel.
+        ///   Busca una cadena traducida similar a Inasistencias - Panel.
         /// </summary>
         public static string frmAsistenciasPanel {
             get {
@@ -1285,6 +1294,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Candidatos - Consulta.
+        /// </summary>
+        public static string frmCandidatosConsulta {
+            get {
+                return ResourceManager.GetString("frmCandidatosConsulta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Categorias.
         /// </summary>
         public static string frmCategorias {
@@ -1299,6 +1317,24 @@ namespace Vista.Lenguajes {
         public static string frmCertificacionServicios {
             get {
                 return ResourceManager.GetString("frmCertificacionServicios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Candidato - Consulta.
+        /// </summary>
+        public static string frmConCandidato {
+            get {
+                return ResourceManager.GetString("frmConCandidato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Personal - Consulta.
+        /// </summary>
+        public static string frmConEmpleado {
+            get {
+                return ResourceManager.GetString("frmConEmpleado", resourceCulture);
             }
         }
         
@@ -1335,6 +1371,15 @@ namespace Vista.Lenguajes {
         public static string frmConsultaPersonal {
             get {
                 return ResourceManager.GetString("frmConsultaPersonal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Proceso de selección - Consulta.
+        /// </summary>
+        public static string frmConsultaProcesoDeSeleccion {
+            get {
+                return ResourceManager.GetString("frmConsultaProcesoDeSeleccion", resourceCulture);
             }
         }
         
@@ -1384,11 +1429,29 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Candidato - Modificación.
+        /// </summary>
+        public static string frmModCandidato {
+            get {
+                return ResourceManager.GetString("frmModCandidato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Certificacion servicios - Modificación.
         /// </summary>
         public static string frmModCertificacionServicios {
             get {
                 return ResourceManager.GetString("frmModCertificacionServicios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Personal - Modificación.
+        /// </summary>
+        public static string frmModEmpleado {
+            get {
+                return ResourceManager.GetString("frmModEmpleado", resourceCulture);
             }
         }
         
@@ -1438,6 +1501,15 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Reporte de nomina salarial.
+        /// </summary>
+        public static string frmReporteNominaSalarial {
+            get {
+                return ResourceManager.GetString("frmReporteNominaSalarial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Gestión de candidato.
         /// </summary>
         public static string gestiónCandidatoToolStripMenuItem {
@@ -1447,7 +1519,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Gestion de asistencias.
+        ///   Busca una cadena traducida similar a Gestion de inasistencias.
         /// </summary>
         public static string gestionDeAsistenciasToolStripMenuItem {
             get {
@@ -3513,15 +3585,6 @@ namespace Vista.Lenguajes {
         public static string recursosToolStripMenuItem {
             get {
                 return ResourceManager.GetString("recursosToolStripMenuItem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

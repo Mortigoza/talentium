@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LogicaNegocio;
 using Comun;
 using Vista.Lenguajes;
+using LogicaNegocio.Lenguajes;
 
 namespace Vista.Evaluacion_de_desempeño
 {
@@ -98,8 +99,7 @@ namespace Vista.Evaluacion_de_desempeño
                 }
                 if (algunaCeldaSinCompletar)
                 {
-                    MessageBox.Show("Por favor, seleccione una opción en todos los campos antes de guardar.", "Aviso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -108,7 +108,7 @@ namespace Vista.Evaluacion_de_desempeño
 
                 if (!esEvaluacionValida)
                 {
-                    MessageBox.Show("Alta de Evaluación de Desempeño exitosa.");
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UtilidadesForms.LimpiarDataGrid(dtgEvaluacion);
                     // ya se limpia el data grid pero me faltan los otros controles.
                     // UtilidadesForms.LimpiarControles(groupBox1);

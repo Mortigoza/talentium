@@ -70,6 +70,7 @@
             this.dtgCategoria.TabIndex = 0;
             this.dtgCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
             this.dtgCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellDoubleClick);
+            this.dtgCategoria.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategoria_CellContentClick);
             this.dtgCategoria.Leave += new System.EventHandler(this.dtgCategoria_Leave);
             // 
             // btnBaja
@@ -286,7 +287,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModificar.Location = new System.Drawing.Point(37, 398);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(56, 20);
             this.btnModificar.TabIndex = 9;

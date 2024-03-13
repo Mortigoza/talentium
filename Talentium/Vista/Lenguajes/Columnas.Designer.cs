@@ -178,7 +178,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desempeñó En Equipo.
+        ///   Busca una cadena traducida similar a Desempeño En Equipo.
         /// </summary>
         internal static string desempeño_en_equipo {
             get {
@@ -187,7 +187,7 @@ namespace Vista.Lenguajes {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desempeñó En Equipo *.
+        ///   Busca una cadena traducida similar a Desempeño En Equipo *.
         /// </summary>
         internal static string desempeño_en_equipo__ {
             get {

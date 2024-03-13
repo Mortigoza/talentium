@@ -60,14 +60,6 @@ namespace Vista
         {
             InitializeComponent();
             Idioma.CargarIdioma(this.Controls, this); //Asigno los nombres a los controles del formulario
-            //txtApellidos.KeyDown += TextBoxNoPegar;
-            //NoPegar(grpNivelIdiomas);
-            //NoPegar(groupBox7);
-            //NoPegar(grpExp1);
-            //NoPegar(grpSuperior1);
-            //NoPegar(groupBox2);
-            //NoPegar(groupBox3);
-            //NoPegar(grpIdiomas);
             btnPdf.Visible = false;
             if (esCandidato == true) { dttFechaAlta.Visible = false; btnPdf.Visible = pdf; lblFechaDeIngreso.Visible = false;
                 lblConvenio.Visible = false; cmbConvenio.Visible = false;
@@ -1037,7 +1029,14 @@ namespace Vista
 
         public void CargarDatosPersona(int id_persona, Persona modify = null)
         {
-
+            if (pdf)
+            {
+                this.Text = Strings.frmConCandidato;
+            }
+            else
+            {
+                this.Text = Strings.frmConEmpleado;
+            }
             _mod = true;
             
             tabControl.TabPages[1].Enabled = true;
@@ -1182,12 +1181,14 @@ namespace Vista
         {
 
             Persona modify = new Persona();
-            if(es_candidato == false)
+            if (es_candidato == false)
             {
                 btnGuardar.Name = "btnModificar";
                 btnGuardar.Text = "Modificar";
-            } else
+            }
+            else
             {
+                this.Text = Strings.frmModCandidato;
                 btnGuardar.Name = "btnIngresarEmp";
                 btnGuardar.Text = "Ingresar Empleado";
                 dttFechaAlta.Enabled = true;
@@ -1195,8 +1196,8 @@ namespace Vista
                 dttFechaAlta.MaxDate = DateTime.Now;
                 dttFechaAlta.Value = DateTime.Today;
             }
-            
-            
+
+
             _id_persona = id_persona;
             CargarDatosPersona(id_persona, modify);
             BotonesInvisiblesModificacion();
@@ -1212,12 +1213,12 @@ namespace Vista
             btnAgregarIdioma.Visible = true;
             btnEliminarIdioma.Visible = true;
             btnAgregar.Visible = true;
-            btnEliminarAcademico.Visible=true;
-            btnEliminarLaboral.Visible=true;
-            btnAgregar.Visible=true;
+            btnEliminarAcademico.Visible = true;
+            btnEliminarLaboral.Visible = true;
+            btnAgregar.Visible = true;
             btnMasLaborales1.Visible = true;
             txtCuitCuil.Enabled = false;
-            if(esReactivar == false)
+            if (esReactivar == false)
             {
                 dttFechaAlta.Enabled = false;
                 esReactivicacion = false;
@@ -1226,7 +1227,6 @@ namespace Vista
             {
                 EsReactivacion = true;
             }
-           
         }
 
         //Controles vacios

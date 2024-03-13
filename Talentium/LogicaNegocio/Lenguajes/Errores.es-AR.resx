@@ -273,4 +273,7 @@
   <data name="EtapNoValida" xml:space="preserve">
     <value>El valor de etapa no es un número válido.</value>
   </data>
+  <data name="DocEnUso" xml:space="preserve">
+    <value>El registro se encuentra en uso.</value>
+  </data>
 </root>

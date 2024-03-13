@@ -16,7 +16,7 @@ using SpreadsheetLight.Drawing;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using System.Globalization;
-
+using LogicaNegocio.Lenguajes;
 
 namespace Vista.Evaluacion_de_desempeño
 {
@@ -245,8 +245,8 @@ namespace Vista.Evaluacion_de_desempeño
                                     numFila++;
                                 }
                                 sl.SaveAs(rutaCompleta);
-                                MessageBox.Show("Operación exitosa.");
-                            }
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                             catch (Exception msj)
                             {
                                 MessageBox.Show(msj.Message);

@@ -273,4 +273,7 @@
   <data name="EtapNoValida" xml:space="preserve">
     <value>The stage value is not a valid number.</value>
   </data>
+  <data name="DocEnUso" xml:space="preserve">
+    <value>The record is in use.</value>
+  </data>
 </root>

@@ -39,6 +39,7 @@ namespace Vista
         }
         public void RecibirDatos(bool report)
         {
+            this.Text = Strings.frmCandidatosConsulta;
             isReport = report;
             rdbActivos.Visible = false;
             rdbInactivos.Visible = false;
@@ -90,8 +91,8 @@ namespace Vista
 
             // Realizar el filtrado en base a los valores de los campos de texto y el área seleccionada
             var resultadosFiltrados = personList.Where(persona1 =>
-                (string.IsNullOrEmpty(filtroNombres) || persona1.nombres.Contains(filtroNombres)) &&
-                (string.IsNullOrEmpty(filtroApellidos) || persona1.apellidos.Contains(filtroApellidos)) &&
+                (string.IsNullOrEmpty(filtroNombres) || persona1.nombres.ToLower().Contains(filtroNombres.ToLower())) &&
+                (string.IsNullOrEmpty(filtroApellidos) || persona1.apellidos.ToLower().Contains(filtroApellidos.ToLower())) &&
                 (string.IsNullOrEmpty(filtroCuil) || persona1.cuit_cuil.Contains(filtroCuil)) &&
             (filtroIdArea == -1 || persona1.id_area == filtroIdArea) && (persona1.id_baja == inactivo)
             ).ToList();

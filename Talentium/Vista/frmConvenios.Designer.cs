@@ -83,6 +83,7 @@
             this.dtgConvenio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellContentClick);
             this.dtgConvenio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellContentClick);
             this.dtgConvenio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellDoubleClick);
+            this.dtgConvenio.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConvenio_CellContentClick);
             // 
             // btnBaja
             // 

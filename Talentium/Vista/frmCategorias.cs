@@ -1,5 +1,6 @@
 ﻿using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,7 @@ namespace Vista
                string.IsNullOrWhiteSpace(txtSueldo.Text) ||
                string.IsNullOrWhiteSpace(txtJornada.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que todos los campos estén llenos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -73,7 +74,7 @@ namespace Vista
                 categoria.sueldo = Decimal.Parse(txtSueldo.Text);
                 _categoria.InsertarCategoria(categoria);
                 CargarGrid();
-                MessageBox.Show("La categoria se han guardado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             UtilidadesForms.LimpiarControles(grpCrearCategoria);
 

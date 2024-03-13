@@ -160,13 +160,13 @@
     <value>Asignar capacitaciones</value>
   </data>
   <data name="Asistencias" xml:space="preserve">
-    <value>Asistencias</value>
+    <value>Inasistencias</value>
   </data>
   <data name="AsistenciasPanel" xml:space="preserve">
-    <value>Asistencias</value>
+    <value>Inasistencias</value>
   </data>
   <data name="asistenciasToolStripMenuItem" xml:space="preserve">
-    <value>Asistencias</value>
+    <value>Inasistencias</value>
   </data>
   <data name="asistenciasToolStripMenuItem1" xml:space="preserve">
     <value>Inasistencias</value>
@@ -487,7 +487,7 @@
     <value>Evaluaciones de desempeño - Alta</value>
   </data>
   <data name="frmAltaPersonal" xml:space="preserve">
-    <value>Personal - Alta</value>
+    <value>Administración de personal</value>
   </data>
   <data name="frmAltaProcesoDeSeleccion" xml:space="preserve">
     <value>Proceso de selección - Alta</value>
@@ -502,10 +502,10 @@
     <value>Asignar capacitaciones</value>
   </data>
   <data name="frmAsistencias" xml:space="preserve">
-    <value>Asistencias</value>
+    <value>Inasistencias</value>
   </data>
   <data name="frmAsistenciasPanel" xml:space="preserve">
-    <value>Asistencias - Panel</value>
+    <value>Inasistencias - Panel</value>
   </data>
   <data name="frmBitacora" xml:space="preserve">
     <value>Bitácora</value>
@@ -571,7 +571,7 @@
     <value>Recupero de contraseña</value>
   </data>
   <data name="gestionDeAsistenciasToolStripMenuItem" xml:space="preserve">
-    <value>Gestion de asistencias</value>
+    <value>Gestion de inasistencias</value>
   </data>
   <data name="gestionDeCandidatoToolStripMenuItem" xml:space="preserve">
     <value>Gestion de candidato</value>
@@ -1308,10 +1308,31 @@
   <data name="lblNombreApellido" xml:space="preserve">
     <value>Nombre y apellido</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="frmReporteNominaSalarial" xml:space="preserve">
+    <value>Reporte de nomina salarial</value>
   </data>
   <data name="btnCrearContrasenia" xml:space="preserve">
     <value>Generar</value>
+  </data>
+  <data name="frmCandidatosConsulta" xml:space="preserve">
+    <value>Candidatos - Consulta</value>
+  </data>
+  <data name="frmAltaCandidato" xml:space="preserve">
+    <value>Candidato - Alta</value>
+  </data>
+  <data name="frmConCandidato" xml:space="preserve">
+    <value>Candidato - Consulta</value>
+  </data>
+  <data name="frmConEmpleado" xml:space="preserve">
+    <value>Personal - Consulta</value>
+  </data>
+  <data name="frmModCandidato" xml:space="preserve">
+    <value>Candidato - Modificación</value>
+  </data>
+  <data name="frmModEmpleado" xml:space="preserve">
+    <value>Personal - Modificación</value>
+  </data>
+  <data name="frmConsultaProcesoDeSeleccion" xml:space="preserve">
+    <value>Proceso de selección - Consulta</value>
   </data>
 </root>

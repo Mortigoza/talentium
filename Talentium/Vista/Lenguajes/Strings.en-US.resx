@@ -160,13 +160,13 @@
     <value>Assign Training</value>
   </data>
   <data name="Asistencias" xml:space="preserve">
-    <value>Attendance</value>
+    <value>Absences</value>
   </data>
   <data name="AsistenciasPanel" xml:space="preserve">
-    <value>Attendance</value>
+    <value>Absences</value>
   </data>
   <data name="asistenciasToolStripMenuItem" xml:space="preserve">
-    <value>Attendance</value>
+    <value>Absences</value>
   </data>
   <data name="asistenciasToolStripMenuItem1" xml:space="preserve">
     <value>Absences</value>
@@ -487,7 +487,7 @@
     <value>Performance evaluations - Registration</value>
   </data>
   <data name="frmAltaPersonal" xml:space="preserve">
-    <value>Staff - Registration</value>
+    <value>Personnel Management</value>
   </data>
   <data name="frmAltaProcesoDeSeleccion" xml:space="preserve">
     <value>Selection Process - Registration</value>
@@ -502,10 +502,10 @@
     <value>Assign Training</value>
   </data>
   <data name="frmAsistencias" xml:space="preserve">
-    <value>Attendance</value>
+    <value>Absences</value>
   </data>
   <data name="frmAsistenciasPanel" xml:space="preserve">
-    <value>Attendance - Panel</value>
+    <value>Absences - Panel</value>
   </data>
   <data name="frmBitacora" xml:space="preserve">
     <value>Logbook</value>
@@ -571,7 +571,7 @@
     <value>Password recovery</value>
   </data>
   <data name="gestionDeAsistenciasToolStripMenuItem" xml:space="preserve">
-    <value>Attendance Management</value>
+    <value>Absences Management</value>
   </data>
   <data name="gestionDeCandidatoToolStripMenuItem" xml:space="preserve">
     <value>Candidate Management</value>
@@ -598,7 +598,7 @@
     <value>Candidate Management</value>
   </data>
   <data name="gestiónDeAsistenciasToolStripMenuItem" xml:space="preserve">
-    <value>Attendance Management</value>
+    <value>Absences Management</value>
   </data>
   <data name="grbFiltroMod" xml:space="preserve">
     <value>Filters</value>
@@ -1310,5 +1310,29 @@
   </data>
   <data name="btnCrearContrasenia" xml:space="preserve">
     <value>Generate</value>
+  </data>
+  <data name="frmCandidatosConsulta" xml:space="preserve">
+    <value>Candidates - Inquiry</value>
+  </data>
+  <data name="frmAltaCandidato" xml:space="preserve">
+    <value>Candidate - Registration</value>
+  </data>
+  <data name="frmConCandidato" xml:space="preserve">
+    <value>Candidate - Inquiry</value>
+  </data>
+  <data name="frmConEmpleado" xml:space="preserve">
+    <value>Personnel - Inquiry</value>
+  </data>
+  <data name="frmModCandidato" xml:space="preserve">
+    <value>Candidate - Modification</value>
+  </data>
+  <data name="frmModEmpleado" xml:space="preserve">
+    <value>Personnel - Modification</value>
+  </data>
+  <data name="frmReporteNominaSalarial" xml:space="preserve">
+    <value>Payroll Report</value>
+  </data>
+  <data name="frmConsultaProcesoDeSeleccion" xml:space="preserve">
+    <value>Selection Process - Inquiry</value>
   </data>
 </root>

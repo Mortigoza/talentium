@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using Comun;
 using LogicaNegocio;
+using LogicaNegocio.Lenguajes;
 using Vista.Lenguajes;
 
 namespace Vista
@@ -176,7 +177,7 @@ namespace Vista
                     asistencias.Periodo = checkPeriodo.Checked;
                     asistencias.ModificarAsistencias();
                     this.Hide();
-                    MessageBox.Show("operación realizada con éxito");
+                    MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex) 

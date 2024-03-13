@@ -273,4 +273,7 @@
   <data name="DescargaExitosa" xml:space="preserve">
     <value>La descarga fue realizada con éxito.</value>
   </data>
+  <data name="DocEnUso" xml:space="preserve">
+    <value>El registro se encuentra en uso.</value>
+  </data>
 </root>

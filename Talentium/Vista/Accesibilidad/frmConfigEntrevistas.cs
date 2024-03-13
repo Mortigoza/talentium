@@ -159,7 +159,7 @@ namespace Vista.Accesibilidad
                 int id_entrevista = Convert.ToInt32(dtgEntrevistas.SelectedCells[0].Value);
                 if (logicaEntrevista.EntrevistaAsociadaAPersona(id_entrevista) == true)
                 {
-                    MessageBox.Show("No se puede eliminar la entrevista porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

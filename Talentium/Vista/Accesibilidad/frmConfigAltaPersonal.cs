@@ -1,6 +1,7 @@
 ﻿using Comun;
 using DocumentFormat.OpenXml.Wordprocessing;
 using LogicaNegocio.Accesibilidad;
+using LogicaNegocio.Lenguajes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,43 +80,43 @@ namespace Vista.Accesibilidad
 
                 if (string.IsNullOrWhiteSpace(txtDocumentoMod.Text))
                 {
-                    MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (!config.ModificarTipoDoc(id_tipo_doc, txtDocumentoMod.Text))
                     {
-                        MessageBox.Show("Se modificó el Tipo de documento correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGrid();
                         txtDocumentoMod.Clear();
                         grpModificar.Enabled = false;
                     }
                     else
                     {
-                        MessageBox.Show("El Tipo de documento ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtDocumentoMod.Clear();
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.RegNoSelec, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void btnGuardarAlta_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDocumento.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if(!config.ValidarTipoDoc(txtDocumento.Text))
             {
                 CargarDataGrid();
-                MessageBox.Show("Se agregó el Tipo de documento correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtDocumento.Clear();
             } else
             {
-                MessageBox.Show("El Tipo de documento ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDocumento.Clear();
             }
         }
@@ -176,21 +177,17 @@ namespace Vista.Accesibilidad
                 int id_tipo_doc = Convert.ToInt32(dtgDocumento.SelectedRows[0].Cells[0].Value);
                 if (config.TipoDocAsociadoAPersona(id_tipo_doc))
                 {
-                    MessageBox.Show("No se puede eliminar el tipo de documento porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el tipo de documento?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarTipoDoc(id_tipo_doc);
-                        MessageBox.Show("El tipo de documento ha sido eliminado con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGrid();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -228,17 +225,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtTelefonoAlta.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarTipoTel(txtTelefonoAlta.Text))
             {
                 CargarDataGridTipoTel();
-                MessageBox.Show("Se agregó el Tipo de teléfono correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTelefonoAlta.Clear();
             }
             else
             {
-                MessageBox.Show("El Tipo de teléfono ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTelefonoAlta.Clear();
             }
         }
@@ -267,18 +264,18 @@ namespace Vista.Accesibilidad
             int id_tipo_tel = (int)dtgTelefono.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtTipoTelMod.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarTipoTel(id_tipo_tel, txtTipoTelMod.Text))
             {
                 CargarDataGridTipoTel();
-                MessageBox.Show("Se modificó el Tipo de teléfono correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTipoTelMod.Clear();
                 grpModificarTel.Enabled = false;
             }
             else
             {
-                MessageBox.Show("El Tipo de teléfono ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTipoTelMod.Clear();
             }
         }
@@ -321,21 +318,17 @@ namespace Vista.Accesibilidad
                 int id_tel = Convert.ToInt32(dtgTelefono.SelectedCells[0].Value);
                 if (config.TipoTelAsociadoAPersona(id_tel) == true)
                 {
-                    MessageBox.Show("No se puede eliminar el tipo de teléfono porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el tipo de teléfono?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarTipoTel(id_tel);
-                        MessageBox.Show("El tipo de teléfono ha sido eliminado con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridTipoTel();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
 
@@ -374,17 +367,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtNacionalidad.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarNacionalidad(txtNacionalidad.Text))
             {
                 CargarDataGridNacionalidad();
-                MessageBox.Show("Se agregó la nacionalidad correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNacionalidad.Clear();
             }
             else
             {
-                MessageBox.Show("La nacionalidad ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNacionalidad.Clear();
             }
         }
@@ -400,18 +393,18 @@ namespace Vista.Accesibilidad
             int id_nacionalidad = (int)dtgNacionalidad.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtNacioMod.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarNacionalidad(id_nacionalidad, txtNacioMod.Text))
             {
                 CargarDataGridNacionalidad();
-                MessageBox.Show("Se modificó la nacionalidad correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNacioMod.Clear();
                 grpNacioMod.Enabled = false;
             }
             else
             {
-                MessageBox.Show("La nacionalidad ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNacioMod.Clear();
             }
         }
@@ -438,21 +431,17 @@ namespace Vista.Accesibilidad
                 int id_nacionalidad = Convert.ToInt32(dtgNacionalidad.SelectedCells[0].Value);
                 if (config.NacionalidadAsociadaAPersona(id_nacionalidad) == true)
                 {
-                    MessageBox.Show("No se puede eliminar la nacionalidad porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar la nacionalidad?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarNacionalidad(id_nacionalidad);
-                        MessageBox.Show("La nacionalidad ha sido eliminada con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridNacionalidad();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -507,17 +496,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtGenero.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarGenero(txtGenero.Text))
             {
                 CargarDataGridGenero();
-                MessageBox.Show("Se agregó el género correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtGenero.Clear();
             }
             else
             {
-                MessageBox.Show("El género ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtGenero.Clear();
             }
         }
@@ -531,18 +520,18 @@ namespace Vista.Accesibilidad
             int id_genero = (int)dtgGenero.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtGeneroMod.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarGenero(id_genero, txtGeneroMod.Text))
             {
                 CargarDataGridGenero();
-                MessageBox.Show("Se modificó el género correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtGeneroMod.Clear();
                 grpModificarGenero.Enabled = false;
             }
             else
             {
-                MessageBox.Show("El género ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtGeneroMod.Clear();
             }
         }
@@ -576,21 +565,17 @@ namespace Vista.Accesibilidad
                 int id_genero = Convert.ToInt32(dtgGenero.SelectedCells[0].Value);
                 if (config.GeneroAsociadoAPersona(id_genero) == true)
                 {
-                    MessageBox.Show("No se puede eliminar el género porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el género?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarGenero(id_genero);
-                        MessageBox.Show("El género ha sido eliminada con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridGenero();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -670,17 +655,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtIdiomasAlta.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarIdioma(txtIdiomasAlta.Text))
             {
                 CargarDataGridIdioma();
-                MessageBox.Show("Se agregó el idioma correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdiomasAlta.Clear();
             }
             else
             {
-                MessageBox.Show("El idioma ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtIdiomasAlta.Clear();
             }
         }
@@ -690,18 +675,18 @@ namespace Vista.Accesibilidad
             int id_idioma = (int)dtgIdiomas.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtIdiomaMod.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarIdioma(id_idioma, txtIdiomaMod.Text))
             {
                 CargarDataGridIdioma();
-                MessageBox.Show("Se modificó el idioma correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdiomaMod.Clear();
                 grpModificarIdioma.Enabled = false;
             }
             else
             {
-                MessageBox.Show("El idioma ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtIdiomaMod.Clear();
             }
         }
@@ -766,21 +751,17 @@ namespace Vista.Accesibilidad
                 int id_idiomas = Convert.ToInt32(dtgIdiomas.SelectedCells[0].Value);
                 if (config.IdiomaAsociadoAPersona(id_idiomas) == true)
                 {
-                    MessageBox.Show("No se puede eliminar el idioma porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el idioma?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarIdioma(id_idiomas);
-                        MessageBox.Show("El idioma ha sido eliminada con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridIdioma();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -804,17 +785,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtAreaAlta.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarArea(txtAreaAlta.Text))
             {
                 CargarDataGridArea();
-                MessageBox.Show("Se agregó el área correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtAreaAlta.Clear();
             }
             else
             {
-                MessageBox.Show("El área ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtAreaAlta.Clear();
             }
         }
@@ -830,18 +811,18 @@ namespace Vista.Accesibilidad
             int id_area = (int)dtgArea.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtAreaMod.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarArea(id_area, txtAreaMod.Text))
             {
                 CargarDataGridArea();
-                MessageBox.Show("Se modificó el área correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtAreaMod.Clear();
                 grpModificarArea.Enabled = false;
             }
             else
             {
-                MessageBox.Show("El área ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtAreaMod.Clear();
             }
         }
@@ -853,21 +834,17 @@ namespace Vista.Accesibilidad
                 int id_area = Convert.ToInt32(dtgArea.SelectedCells[0].Value);
                 if (config.AreaAsociadoAPersona(id_area) == true)
                 {
-                    MessageBox.Show("No se puede eliminar el área porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el área?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarArea(id_area);
-                        MessageBox.Show("El área ha sido eliminado con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridArea();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }
@@ -939,17 +916,17 @@ namespace Vista.Accesibilidad
         {
             if (string.IsNullOrWhiteSpace(txtPuestoAlta.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ValidarPuesto(txtPuestoAlta.Text))
             {
                 CargarDataGridPuesto();
-                MessageBox.Show("Se agregó el puesto correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtPuestoAlta.Clear();
             }
             else
             {
-                MessageBox.Show("El puesto ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPuestoAlta.Clear();
             }
         }
@@ -965,18 +942,18 @@ namespace Vista.Accesibilidad
             int id_puesto = (int)dtgPuesto.SelectedCells[0].Value;
             if (string.IsNullOrWhiteSpace(txtPuestoModificar.Text))
             {
-                MessageBox.Show("Por favor, asegúrate de que el campo esté completo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Errores.CamposIncompletos, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!config.ModificarPuesto(id_puesto, txtPuestoModificar.Text))
             {
                 CargarDataGridPuesto();
-                MessageBox.Show("Se modificó el puesto correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtPuestoModificar.Clear();
                 grpModificarPuesto.Enabled = false;
             }
             else
             {
-                MessageBox.Show("El puesto ya se encuentra en uso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPuestoModificar.Clear();
             }
         }
@@ -1003,21 +980,17 @@ namespace Vista.Accesibilidad
                 int id_puesto = Convert.ToInt32(dtgPuesto.SelectedCells[0].Value);
                 if (config.PuestoAsociadoAPersona(id_puesto) == true)
                 {
-                    MessageBox.Show("No se puede eliminar el puesto porque se encuentra en uso.");
+                    MessageBox.Show(Errores.DocEnUso, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    DialogResult resultado = MessageBox.Show("¿Quieres eliminar el puesto?", "Confirmar eliminación", MessageBoxButtons.OKCancel);
+                    DialogResult resultado = MessageBox.Show(Errores.QuiereContinuar, Errores.Aviso, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.OK)
+                    if (resultado == DialogResult.Yes)
                     {
                         config.EliminarPuesto(id_puesto);
-                        MessageBox.Show("El puesto ha sido eliminado con éxito.");
+                        MessageBox.Show(Errores.OperacionExitosa, Errores.Aviso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDataGridPuesto();
-                    }
-                    else if (resultado == DialogResult.Cancel)
-                    {
-                        MessageBox.Show("Se ha cancelado la operación.");
                     }
                 }
             }

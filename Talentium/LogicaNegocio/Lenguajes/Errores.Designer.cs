@@ -160,6 +160,15 @@ namespace LogicaNegocio.Lenguajes {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El registro se encuentra en uso..
+        /// </summary>
+        public static string DocEnUso {
+            get {
+                return ResourceManager.GetString("DocEnUso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a La entrevista ya está ingresada. Por favor, ingrese otra..
         /// </summary>
         public static string EntYaIngresada {
